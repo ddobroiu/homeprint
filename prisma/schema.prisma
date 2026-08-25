@@ -227,6 +227,30 @@ model AbandonedCart {
   @@unique([email, configuratorId])
 }
 
+/// Generări AI: previzualizare mică + filigran; print full quality doar la comandă.
+model AiGraphicGeneration {
+  id                String   @id @default(cuid())
+  ipHash            String
+  previewUrl        String   @unique
+  cleanPublicId     String?
+  printWidthCm      Int      @default(100)
+  printHeightCm     Int      @default(100)
+  userPrompt        String   @default("") @db.Text
+  imagePrompt       String?  @db.Text
+  product           String?
+  productKind       String?
+  material          String?
+  referenceImageUrl String?
+  mode              String   @default("create")
+  productionStatus  String   @default("preview")
+  orderId           String?
+  createdAt         DateTime @default(now())
+
+  @@index([ipHash, createdAt])
+  @@index([orderId])
+  @@index([productionStatus])
+}
+
 /// Cerere de retragere dintr-un contract la distanță (OUG 18/2026 - dreptul de retur).
 model WithdrawalRequest {
   id          String   @id @default(cuid())
