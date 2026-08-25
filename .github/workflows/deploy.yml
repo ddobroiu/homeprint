@@ -70,7 +70,7 @@ jobs:
                 container_name: homeprint-app
                 restart: unless-stopped
                 ports:
-                  - "3001:3000"
+                  - "3008:3000"
                 env_file: .env
             EOF
 
