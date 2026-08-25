@@ -807,7 +807,6 @@ export default function CheckoutPage() {
                         </p>
                         <p className="text-xs text-slate-700 dark:text-slate-300">
                           Procesată securizat prin Stripe (Visa, Mastercard).
-                          Disponibilă de la {MIN_CARD_PAYMENT} lei.
                         </p>
                       </div>
                     </label>

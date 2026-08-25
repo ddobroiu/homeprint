@@ -122,7 +122,17 @@ export default function Footer() {
 
                         <span className="hidden md:inline mx-2">•</span>
 
-                        <a href="https://e-web.ro" target="_blank" className="text-[10px] uppercase font-bold tracking-widest text-stone-600 hover:text-amber-500 transition-colors">Site realizat de e-web.ro</a>
+                        {/* Rețeaua noastră */}
+                        <div className="flex flex-wrap items-center justify-center gap-4 text-[10px] uppercase font-bold tracking-widest text-stone-600">
+                            <a href="https://www.adbanner.ro" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors">AdBanner</a>
+                            <a href="https://www.euprint.ro" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors">EuPrint</a>
+                            <a href="https://www.prynt.ro" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors">Prynt.ro</a>
+                            <a href="https://www.tablou.net" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors">Tablou.net</a>
+                            <a href="https://www.shopprint.ro" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors">ShopPrint</a>
+                            <a href="https://www.anexa1.ro" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors">Anexa1</a>
+                            <span className="text-stone-400">|</span>
+                            <a href="https://e-web.ro" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors">Site realizat de e-web.ro</a>
+                        </div>
                     </div>
                 </div>
             </div>
