@@ -8,11 +8,18 @@
  * This is intentionally NOT spintax (word-swap within one skeleton) - the
  * variants should differ in headline formula, section order/angle, and which
  * facts are surfaced, not just synonyms.
+ *
+ * The seed is salted with this site's own domain before hashing, so the same
+ * locality/județ page picks a DIFFERENT variant on each site in the network
+ * instead of every site rendering byte-identical copy for the same slug.
  */
+
+import { siteConfig } from "@/lib/siteConfig";
 
 export function hashSeed(str: string): number {
     let h = 0;
-    for (let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) >>> 0;
+    const salted = `${siteConfig.domain}::${str}`;
+    for (let i = 0; i < salted.length; i++) h = (h * 31 + salted.charCodeAt(i)) >>> 0;
     return h;
 }
 
