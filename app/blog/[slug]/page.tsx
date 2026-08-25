@@ -63,7 +63,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 description={post.description}
                 datePublished={post.date}
                 authorName={post.author || "Echipa HomePrint"}
-                image={post.hero || "/logo.png"}
+                image={post.hero || "/logo.svg"}
                 url={`/blog/${post.slug}`}
             />
             <div className="container mx-auto px-4 md:px-8">
@@ -180,7 +180,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                                 {POSTS.filter(p => p.slug !== post.slug && p.tags.some(t => post.tags.includes(t))).slice(0, 2).map((rp) => (
                                     <Link key={rp.slug} href={`/blog/${rp.slug}`} className="group block">
                                         <div className="relative h-48 rounded-2xl overflow-hidden mb-4">
-                                            <Image src={rp.hero || "/logo.png"} alt={rp.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                                            <Image src={rp.hero || "/logo.svg"} alt={rp.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                                             <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors"></div>
                                         </div>
                                         <h4 className="font-bold text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-2 leading-tight">

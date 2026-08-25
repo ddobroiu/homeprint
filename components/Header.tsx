@@ -97,7 +97,7 @@ const MobileNav = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }
             <Link href="/" className="flex items-center" onClick={onClose}>
               <div className="relative h-7 w-28">
                 <Image
-                  src="/logo.png"
+                  src="/logo.svg"
                   alt="HomePrint.ro"
                   fill
                   className="object-contain"
@@ -373,7 +373,7 @@ export default function Header() {
             <Link href="/" className="flex items-center group">
               <div className="relative h-10 w-36">
                 <Image
-                  src="/logo.png"
+                  src="/logo.svg"
                   alt="HomePrint.ro"
                   fill
                   className="object-contain"

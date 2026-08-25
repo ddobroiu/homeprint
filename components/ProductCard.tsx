@@ -124,14 +124,27 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
 
     const CardContent = (
     <>
+      {/* Etichetă categorie - deasupra imaginii, stil editorial */}
+      <div className="flex items-center gap-2 px-5 pt-5">
+        <span className="text-[10px] font-bold text-amber-700 uppercase tracking-[0.2em]">
+          {product.metadata?.category || product.category || "Produs"}
+        </span>
+        {product.metadata?.subcategory && (
+          <>
+            <span className="w-1 h-1 rounded-full bg-stone-300"></span>
+            <span className="text-[10px] text-stone-400 uppercase tracking-[0.15em] font-semibold">{product.metadata.subcategory}</span>
+          </>
+        )}
+      </div>
+
       {/* Imagine */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 group">
+      <div className="relative aspect-[5/4] overflow-hidden mx-5 mt-3 rounded-xl bg-stone-100 group">
         {finalImg.startsWith('http') ? (
           <img
             src={finalImg}
             alt={`${product.title} - Tipar digital și personalizare online ${catRaw ? `din categoria ${catRaw}` : ''}`}
             title={`${product.title} | HomePrint România`}
-            className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 group-hover:opacity-90 mix-blend-multiply"
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
             loading={priority ? "eager" : "lazy"}
             onError={() => setImgError(true)}
           />
@@ -142,65 +155,51 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
             title={`${product.title} | HomePrint România`}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            className="object-cover transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-105 group-hover:opacity-90 mix-blend-multiply"
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
             loading={priority ? undefined : "lazy"}
             priority={priority}
             onError={() => setImgError(true)}
           />
         )}
-        
-        {/* Glow efect pe hover in interior */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        
+
         {/* Badge Multi-Variant */}
         {isMultiVariant && (
-          <div className="absolute top-4 right-4 bg-slate-950 text-white px-2.5 py-1 rounded-md shadow-lg shadow-slate-900/20 z-10 flex items-center gap-1.5">
+          <div className="absolute top-3 right-3 bg-stone-900/90 backdrop-blur text-white px-2.5 py-1 rounded-full z-10 flex items-center gap-1.5">
             <div className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></div>
-            <span className="text-[9px] font-black uppercase tracking-widest text-amber-50">4 VARIANTE</span>
+            <span className="text-[9px] font-bold uppercase tracking-widest">4 variante</span>
           </div>
         )}
       </div>
 
       {/* Conținut */}
-      <div className="p-6 flex flex-col flex-1 bg-white relative">
+      <div className="px-5 pt-4 pb-5 flex flex-col flex-1 relative">
         <div className="mb-auto">
-          <div className="text-[10px] font-black text-amber-600 mb-2 uppercase tracking-[0.2em] flex items-center gap-2">
-            <span>{product.metadata?.category || product.category || "Produs"}</span>
-            {product.metadata?.subcategory && (
-              <>
-                 <span className="w-1 h-1 rounded-full bg-slate-300"></span>
-                 <span className="text-slate-500">{product.metadata.subcategory}</span>
-              </>
-            )}
-          </div>
-          <h3 className="text-xl font-black text-slate-900 leading-tight tracking-tight group-hover:text-amber-600 transition-colors duration-300">
+          <h3 className="text-lg leading-snug text-stone-900 group-hover:text-amber-700 transition-colors duration-300">
             {product.title}
           </h3>
-          <div className="mt-2.5 flex items-center">
-            <span className="text-sm font-black text-amber-700 bg-amber-50 border border-amber-100/50 px-2.5 py-1 rounded-md tracking-tight">De la {product.price} RON</span>
-          </div>
           {product.description && (
             <div
-              className="mt-3 text-sm text-slate-500 line-clamp-2 font-medium leading-relaxed"
+              className="mt-2 text-sm text-stone-500 line-clamp-2 leading-relaxed"
               dangerouslySetInnerHTML={{ __html: product.description }}
             />
           )}
           {!product.description && (
-            <p className="mt-3 text-sm text-slate-500 line-clamp-2 font-medium leading-relaxed">
+            <p className="mt-2 text-sm text-stone-500 line-clamp-2 leading-relaxed">
               Materiale publicitare de înaltă performanță pentru afacerea ta.
             </p>
           )}
         </div>
 
         {/* Footer Card */}
-        <div className="mt-6 flex items-center justify-between group/btn cursor-pointer">
-          <span className="text-xs font-black uppercase tracking-[0.2em] text-slate-900 group-hover:text-amber-600 transition-colors flex items-center gap-2">
-            {isMultiVariant ? "Alege Varianta" : "Configurează"}
-            <div className="w-0 h-[2px] bg-amber-500 group-hover:w-4 transition-all duration-300 ease-out"></div>
-          </span>
-          <div className="w-10 h-10 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-400 group-hover:bg-amber-500 group-hover:text-white group-hover:border-amber-500 transition-all duration-300 group-hover:-rotate-45 group-hover:shadow-lg group-hover:shadow-amber-500/20">
-            <ArrowRight size={16} strokeWidth={2.5} />
+        <div className="mt-4 pt-4 border-t border-stone-100 flex items-center justify-between group/btn cursor-pointer">
+          <div>
+            <span className="text-[10px] text-stone-400 uppercase tracking-widest font-semibold block">De la</span>
+            <span className="text-base font-bold text-stone-900 tracking-tight">{product.price} RON</span>
           </div>
+          <span className="text-xs font-bold uppercase tracking-[0.15em] text-amber-700 group-hover:text-amber-800 transition-colors flex items-center gap-1.5">
+            {isMultiVariant ? "Alege" : "Configurează"}
+            <ArrowRight size={14} strokeWidth={2.5} className="transition-transform group-hover:translate-x-0.5" />
+          </span>
         </div>
       </div>
     </>
@@ -211,14 +210,14 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
       {isMultiVariant ? (
         <div
           onClick={handleClick}
-          className="group flex flex-col bg-white border border-slate-200/50 rounded-3xl overflow-hidden hover:shadow-elevated transition-all duration-500 hover:-translate-y-2 h-full cursor-pointer animate-slide-up"
+          className="group flex flex-col bg-[#FBF7F1] border border-stone-200 rounded-2xl overflow-hidden hover:border-amber-300 hover:shadow-[0_12px_32px_-16px_rgba(120,53,15,0.25)] transition-all duration-500 h-full cursor-pointer"
         >
           {CardContent}
         </div>
       ) : (
         <Link
           href={href}
-          className="group flex flex-col bg-white border border-slate-200/50 rounded-3xl overflow-hidden hover:shadow-elevated transition-all duration-500 hover:-translate-y-2 h-full animate-slide-up"
+          className="group flex flex-col bg-[#FBF7F1] border border-stone-200 rounded-2xl overflow-hidden hover:border-amber-300 hover:shadow-[0_12px_32px_-16px_rgba(120,53,15,0.25)] transition-all duration-500 h-full"
         >
           {CardContent}
         </Link>

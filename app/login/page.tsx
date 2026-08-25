@@ -118,7 +118,7 @@ export default function LoginPage() {
                 <div className="flex justify-center mb-4">
                     <Link href="/" className="inline-block relative w-48 h-12">
                         <Image
-                            src="/logo.png"
+                            src="/logo.svg"
                             alt="HomePrint Logo"
                             fill
                             className="object-contain"

@@ -27,7 +27,7 @@ export default function RollupPage() {
             <ProductSchema
                 name="Sistem Expozițional Rollup Banner"
                 description="Comandă rollup banner premium cu casetă aluminiu, print HD și geantă de transport inclusă."
-                image="/logo.png"
+                image="/logo.svg"
                 url="/configurator/rollup"
                 price="150.00"
             />

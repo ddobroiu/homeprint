@@ -49,9 +49,9 @@ export const metadata: Metadata = {
   ],
   manifest: '/manifest.json',
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+    icon: '/logo.svg',
+    shortcut: '/logo.svg',
+    apple: '/logo.svg',
   },
   verification: {
     google: 'FPQT6X0QSD',
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/logo.png",
+        url: "/logo.svg",
         width: 1200,
         height: 630,
         alt: "HomePrint.ro - Tipar Digital Profesional",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "HomePrint.ro | Print Digital Online",
     description: "Bannere, canvas și semnalistică cu personalizare rapidă.",
-    images: ["/logo.png"],
+    images: ["/logo.svg"],
   },
   robots: {
     index: true,
@@ -141,7 +141,7 @@ export default function RootLayout({
             `,
           }}
         />
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" href="/logo.svg" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
         <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
       </head>

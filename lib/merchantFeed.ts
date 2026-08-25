@@ -62,7 +62,7 @@ export function merchantImageLink(
   baseUrl: string
 ): string {
   const base = baseUrl.replace(/\/$/, "");
-  const fallback = `${base}/logo.png`;
+  const fallback = `${base}/logo.svg`;
 
   if (!imageCandidate || !String(imageCandidate).trim()) {
     return fallback;

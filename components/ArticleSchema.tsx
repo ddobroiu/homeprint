@@ -13,7 +13,7 @@ interface ArticleSchemaProps {
 export default function ArticleSchema({
     title,
     description,
-    image = "/logo.png",
+    image = "/logo.svg",
     datePublished,
     dateModified,
     authorName,
@@ -40,7 +40,7 @@ export default function ArticleSchema({
             "name": "HomePrint.ro",
             "logo": {
                 "@type": "ImageObject",
-                "url": `${baseUrl}/logo.png`
+                "url": `${baseUrl}/logo.svg`
             }
         },
         "mainEntityOfPage": {

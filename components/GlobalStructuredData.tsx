@@ -14,7 +14,7 @@ export default function GlobalStructuredData() {
         "@id": `${baseUrl}/#organization`,
         "name": siteConfig.name,
         "url": baseUrl,
-        "logo": `${baseUrl}/logo.png`,
+        "logo": `${baseUrl}/logo.svg`,
         "description": "Tipografie digitală și producție publicitară online - bannere, afișe, canvas, autocolante și materiale rigide.",
         "address": {
             "@type": "PostalAddress",
@@ -41,7 +41,7 @@ export default function GlobalStructuredData() {
         "name": siteConfig.name,
         "description": siteConfig.description,
         "url": baseUrl,
-        "logo": `${baseUrl}/logo.png`,
+        "logo": `${baseUrl}/logo.svg`,
         "image": `${baseUrl}/homeprint.webp`,
         "telephone": `+40${siteConfig.phone.replace(/\s+/g, '').replace(/^0/, '')}`,
         "email": siteConfig.email,
