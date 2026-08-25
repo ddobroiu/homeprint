@@ -1,0 +1,21 @@
+{
+    "name": "HomePrint.ro - Producător Bannere Publicitare",
+    "short_name": "HomePrint",
+    "description": "Comandă online bannere publicitare, mesh și rollup la prețuri de producător.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ea580c",
+    "icons": [
+        {
+            "src": "/simbol.jpg",
+            "sizes": "192x192",
+            "type": "image/jpeg"
+        },
+        {
+            "src": "/simbol.jpg",
+            "sizes": "512x512",
+            "type": "image/jpeg"
+        }
+    ]
+}
