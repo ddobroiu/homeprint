@@ -3,7 +3,7 @@ import { Facebook, Instagram, Mail, Music } from "lucide-react";
 export const siteConfig = {
     name: "HomePrint",
     domain: "HomePrint.ro",
-    url: "https://www.HomePrint.ro",
+    url: "https://www.homeprint.ro",
     description: "HomePrint.ro - Tipografie Digitală Online.",
     email: "contact@HomePrint.ro",
     phone: "0750 473 111",
