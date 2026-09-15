@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
     return [
       // Fosta pagină de schimb de linkuri către site-urile din rețea - eliminată.
       { source: '/parteneri', destination: '/', permanent: true },
+      // Vechile pagini de dimensiune /banner/300x100 -> noile pagini /dimensiuni/...
+      { source: '/banner/:size(\d{1,4}x\d{1,4})', destination: '/dimensiuni/banner/:size', permanent: true },
+      { source: '/banner-verso/:size(\d{1,4}x\d{1,4})', destination: '/dimensiuni/banner-verso/:size', permanent: true },
       // Canonicalize non-www -> www
       {
         source: "/:path*",

@@ -1,4 +1,5 @@
 import { LOCS_PER_SITEMAP } from '@/lib/seo/sitemapPaging';
+import { getAllDimensionEntries, DIMENSION_URLS_PER_SITEMAP, DIMENSION_PRODUCT_IDS, dimensionUrl } from '@/lib/seo/dimensionPages';
 import { bannerProducts } from '@/lib/products/banner-products';
 import { signageProducts } from '@/lib/products/signage-products';
 import canvasProductsRaw from '@/lib/products/canvas-products.json';
@@ -25,8 +26,6 @@ import { INDUSTRIE_DATA } from '@/lib/seo/industriiData';
  * Products that actually have an `app/<product>/[...slug]/page.tsx` route, i.e.
  * the only ones where /<product>/<W>x<H> resolves. Keep in sync with the app dir.
  */
-const DIMENSION_CAPABLE_PRODUCTS = ['banner', 'banner-verso'];
-
 const REAL_PRODUCT_KEYS = [
     'banner', 'banner-verso', 'mesh', 'afise', 'autocolante', 'canvas', 'tapet', 'rollup',
     'window-graphics', 'pliante', 'flayere', 'plexiglass', 'pvc-forex', 'alucobond',
@@ -37,17 +36,6 @@ const REAL_PRODUCT_KEYS = [
 // square/landscape/portrait/banner/A-series presets already shown as quick
 // picks on the live configurator pages (see components/SeoDimensionLanding.tsx),
 // instead of a brute-force every-5cm-from-20-to-500 mesh (~10,000 combos/product).
-const CURATED_DIMENSIONS: Array<{ w: number; h: number }> = [
-    { w: 20, h: 20 }, { w: 30, h: 30 }, { w: 40, h: 40 }, { w: 50, h: 50 }, { w: 60, h: 60 }, { w: 100, h: 100 },
-    { w: 70, h: 70 }, { w: 80, h: 80 }, { w: 90, h: 90 },
-    { w: 30, h: 20 }, { w: 40, h: 30 }, { w: 60, h: 40 }, { w: 90, h: 60 }, { w: 120, h: 80 }, { w: 150, h: 100 },
-    { w: 100, h: 70 },
-    { w: 20, h: 30 }, { w: 30, h: 40 }, { w: 60, h: 90 }, { w: 70, h: 100 }, { w: 80, h: 120 }, { w: 100, h: 150 },
-    { w: 200, h: 100 }, { w: 300, h: 100 }, { w: 400, h: 100 }, { w: 300, h: 150 }, { w: 500, h: 150 },
-    { w: 200, h: 150 }, { w: 250, h: 150 }, { w: 300, h: 200 }, { w: 400, h: 200 }, { w: 500, h: 200 }, { w: 600, h: 150 },
-    { w: 21, h: 30 }, { w: 30, h: 42 }, { w: 42, h: 60 }
-];
-
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.homeprint.ro';
 
 const ALL_PRODUCTS = [
@@ -147,28 +135,22 @@ export async function GET(request: Request, props: any) {
         }
 
     } else if (id && id.startsWith('dimensions-')) {
-        const part = parseInt(id.replace('dimensions-', ''));
+        // Pagini de dimensiune: /dimensiuni/{produs}/{L}x{H}, una pentru fiecare
+        // combinație din grila lib/seo/dimensionPages.ts. Indexul (app/sitemap.xml)
+        // anunță câte părți există folosind aceeași constantă DIMENSION_URLS_PER_SITEMAP.
+        const part = parseInt(id.replace('dimensions-', '')) || 0;
+        const entries = getAllDimensionEntries();
+        const startIdx = part * DIMENSION_URLS_PER_SITEMAP;
+        const slice = entries.slice(startIdx, startIdx + DIMENSION_URLS_PER_SITEMAP);
 
-        // Curated product x dimension combinations. Only these products have a
-        // `[...slug]` route that renders a size page.
-        // The rest have no dimension route at all, so every combo we used to emit
-        // for them 404'd (verified live: /afise/100x100, /canvas/50x70 → 404).
-        const allCombos: Array<{ pk: string; w: number; h: number }> = [];
-        for (const pk of DIMENSION_CAPABLE_PRODUCTS) {
-            for (const dim of CURATED_DIMENSIONS) {
-                allCombos.push({ pk, w: dim.w, h: dim.h });
+        if (part === 0) {
+            xml += generateUrlNode(`${BASE_URL}/dimensiuni`, '0.7', 'monthly');
+            for (const pid of DIMENSION_PRODUCT_IDS) {
+                xml += generateUrlNode(`${BASE_URL}/dimensiuni/${pid}`, '0.6', 'monthly');
             }
         }
-
-        const MAX_PER_PART = 45000;
-        const startIdx = part * MAX_PER_PART;
-        const endIdx = startIdx + MAX_PER_PART;
-        const pageCombos = allCombos.slice(startIdx, endIdx);
-
-        for (const combo of pageCombos) {
-            // Real, working shape is /<product>/<W>x<H>. The old
-            // /configurator/<product>-<W>x<H> form 308-redirected to a 404.
-            xml += generateUrlNode(`${BASE_URL}/${combo.pk}/${combo.w}x${combo.h}`, '0.5', 'monthly');
+        for (const e of slice) {
+            xml += generateUrlNode(`${BASE_URL}${dimensionUrl(e.productId, e.w, e.h)}`, '0.5', 'monthly');
         }
 
     } else if (id && id.startsWith('intents-')) {

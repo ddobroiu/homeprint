@@ -26,6 +26,7 @@ const GUIDE_LINKS = [
     { href: "/servicii", label: "Finisaje și montaj" },
     { href: "/blog", label: "Ghiduri de măsurare și montaj" },
     { href: "/judet", label: "Livrare pe județe" },
+    { href: "/dimensiuni", label: "Prețuri pe dimensiuni" },
     { href: "/sectoare-bucuresti", label: "Sectoare București" },
 ];
 
