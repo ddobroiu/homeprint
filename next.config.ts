@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      // Fosta pagină de schimb de linkuri către site-urile din rețea - eliminată.
+      { source: '/parteneri', destination: '/', permanent: true },
       // Canonicalize non-www -> www
       {
         source: "/:path*",

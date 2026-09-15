@@ -4,20 +4,11 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getLocalitateBySlug, getJudetBySlug } from "@/lib/localitati";
 import { CONFIGURATORS_REGISTRY } from "@/lib/configurators-registry";
-import { getTargetLocalities, getTargetLocalitiesForJudet } from "@/lib/seo/targetLocalities";
 import { getLocalityPageVariant } from "@/lib/seo/localityPageVariants";
 
-// Only the curated ~350-400 localities get a real page; anything else 404s
-// instead of being rendered on demand (closes the crawl-trap where every one
-// of the 13k+ localities in ro_localitati.json was reachable/indexable).
-export async function generateStaticParams() {
-    return getTargetLocalities().map(({ judet, loc }) => ({
-        judetSlug: judet.slug,
-        localitateSlug: loc.slug,
-    }));
-}
-
-export const dynamicParams = false;
+// Toate localitățile au pagină: nu pre-generăm nimic, se randează la cerere din
+// lib/seo/ro_localitati.json. Restrângerea la o listă "curată" (plus
+// dynamicParams = false) scotea ~13.000 de pagini care aduceau trafic organic.
 
 // Seeded random for deterministic Spintax & Ratings
 function getSeededRandom(seedStr: string) {
@@ -66,7 +57,7 @@ export default async function LocalitatePage({ params }: { params: Promise<{ jud
     if (!loc || !judet) notFound();
 
     const configurators = CONFIGURATORS_REGISTRY;
-    const siblingLocalities = getTargetLocalitiesForJudet(judet.slug).map((m) => m.loc);
+    const siblingLocalities = judet.localitati;
     const variant = getLocalityPageVariant(loc.name, judet.name, loc.slug);
 
     return (

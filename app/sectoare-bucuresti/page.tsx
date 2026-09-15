@@ -6,8 +6,8 @@ import { MapPin, ArrowRight, Zap, ShieldCheck, Truck } from 'lucide-react';
 import { getJudetBySlug } from '@/lib/localitati';
 
 export const metadata: Metadata = {
-    title: 'Print & Publicitate pe Sectoare în București',
-    description: 'Servicii rapide de tipar digital în București. Livrare în toate sectoarele: Sector 1, 2, 3, 4, 5 și 6. Producție proprie, preț instant.',
+    title: 'Fototapet, canvas și print pe sectoare în București',
+    description: 'Decor printat pentru apartamente și birouri din București: fototapet, canvas, postere, autocolante de perete, plus bannere și semnalistică. Livrare în sectoarele 1-6 în 24-48h, preț instant.',
     alternates: { canonical: 'https://www.homeprint.ro/sectoare-bucuresti' }
 };
 

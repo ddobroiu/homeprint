@@ -5,8 +5,8 @@ import { ArrowRight, Settings, Zap, ShieldCheck } from 'lucide-react';
 import { MATERIALE_DATA } from '@/lib/seo/materialeData';
 
 export const metadata: Metadata = {
-    title: 'Materiale și Suporturi de Print',
-    description: 'Descoperă gama completă de materiale de print: Banner Mesh, Autocolant Sablat, Blueback, Plexiglass Opal. Specificații tehnice și utilizări recomandate.',
+    title: 'Materiale de print pentru decor și publicitate',
+    description: 'Ghidul materialelor HomePrint: tapet mat și adeziv pentru fototapet, pânză polyester pentru canvas, hârtie foto pentru postere, vinil pentru autocolante, plus frontlit, mesh, plexiglas și panouri rigide. Unde se folosește fiecare.',
   alternates: { canonical: 'https://www.homeprint.ro/material' }
 };
 

@@ -15,7 +15,7 @@ export default function GlobalStructuredData() {
         "name": siteConfig.name,
         "url": baseUrl,
         "logo": `${baseUrl}/logo.svg`,
-        "description": "Tipografie digitală și producție publicitară online - bannere, afișe, canvas, autocolante și materiale rigide.",
+        "description": "HomePrint.ro printează decor pentru casă și birou: fototapet personalizat, tablouri canvas, postere de artă și autocolante decorative de perete, plus întregul catalog de print publicitar (bannere, roll-up, panouri rigide, textile, kituri fonduri UE). Producție proprie, livrare în 24-48h.",
         "address": {
             "@type": "PostalAddress",
             "addressCountry": "RO",

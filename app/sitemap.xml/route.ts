@@ -1,3 +1,5 @@
+import { LOCS_PER_SITEMAP } from "@/lib/seo/sitemapPaging";
+import { JUDETE_FULL_DATA } from "@/lib/localitati";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.homeprint.ro';
 
 export async function GET() {
@@ -6,10 +8,24 @@ export async function GET() {
     // Main sitemap
     xml += `  <sitemap>\n    <loc>${BASE_URL}/server-sitemap/main</loc>\n  </sitemap>\n`;
 
-    // JUDEȚ x LOCALITATE x PRODUCT sitemap - curated list of major
-    // municipii/orașe plus every județ reședință (see lib/seo/targetLocalities.ts)
-    // crossed with the real configurator catalog. Comfortably fits in one part.
-    xml += `  <sitemap>\n    <loc>${BASE_URL}/server-sitemap/localities</loc>\n  </sitemap>\n`;
+    // LOCALITĂȚI: fiecare județ, cu TOATE localitățile lui, împărțite în părți
+    // de câte LOCS_PER_SITEMAP. Paginile de localitate sunt cele care aduc
+    // traficul organic, așa că sunt listate integral (~13.300), nu doar
+    // reședințele de județ.
+    //
+    // Numărul de părți se calculează din aceeași constantă pe care o folosește
+    // generatorul, altfel localitățile din coada fiecărui județ n-ar fi servite
+    // niciodată.
+    for (let i = 0; i < JUDETE_FULL_DATA.length; i++) {
+        const parts = Math.max(
+            1,
+            Math.ceil(JUDETE_FULL_DATA[i].localitati.length / LOCS_PER_SITEMAP)
+        );
+        for (let p = 0; p < parts; p++) {
+            xml += `  <sitemap>\n    <loc>${BASE_URL}/server-sitemap/${i}-${p}</loc>\n  </sitemap>\n`;
+        }
+    }
+
 
     // DIMENSIONS SITEMAP - curated product x standard-dimension combinations
     // (~500 URLs), fits in a single part.

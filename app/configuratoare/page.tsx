@@ -6,8 +6,8 @@ import { ArrowRight, Settings, Zap, ShieldCheck, Box } from 'lucide-react';
 import { CONFIGURATORS_REGISTRY } from '@/lib/configurators-registry';
 
 export const metadata: Metadata = {
-    title: 'Configuratoare Online Print - Ofertare Imediată',
-    description: 'Folosește configuratoarele noastre online pentru bannere, autocolante, canvas și materiale publicitare. Calculează prețul instant și comandă personalizat.',
+    title: 'Configuratoare cu preț instant - Fototapet, Canvas, Postere și Print Publicitar',
+    description: 'Pui dimensiunile peretelui sau ale tabloului și vezi prețul pe loc: fototapet, canvas, postere, autocolante decorative, apoi bannere, roll-up, panouri rigide, textile și kituri fonduri UE.',
     alternates: { canonical: 'https://www.homeprint.ro/configuratoare' }
 };
 

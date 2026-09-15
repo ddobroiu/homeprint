@@ -251,7 +251,7 @@ export default function StockBannerConfigurator({ productSlug, renderOnlyConfigu
                 image={product.image}
                 price={priceData.finalPrice}
                 sku={product.id}
-                url={`https://www.prynt.ro/banner-product/${product.slug}`}
+                url={`https://www.homeprint.ro/banner-product/${product.slug}`}
             />
 
             <div className={`container mx-auto ${renderOnlyConfigurator ? 'px-0' : 'px-4'} py-8 lg:py-16`}>

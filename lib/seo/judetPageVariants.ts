@@ -19,18 +19,18 @@ export function getJudetPageVariant(judetName: string, judetSlug: string): Judet
     const variants: JudetPageVariant[] = [
         {
             metaTitle: `Producție Publicitară în Județul ${n}`,
-            metaDescription: `Livrăm materiale publicitare, bannere și tablouri canvas în tot județul ${n}. Vezi lista localităților și produsele noastre de top.`,
+            metaDescription: `Livrăm fototapet personalizat, tablouri canvas, postere și autocolante decorative în tot județul ${n}, plus bannere și materiale publicitare. Vezi lista localităților.`,
             h1Prefix: "Producție Publicitară",
             subtitle: "Alege localitatea ta pentru a vedea oferta personalizată și timpul de livrare estimat prin DPD Express.",
             configuratorsHeading: "Sisteme de Configurare în",
             faq: [
                 { q: `HomePrint livrează în tot județul ${n}?`, a: `Da, livrăm materiale publicitare și print digital în toate localitățile din județul ${n} prin curierat rapid DPD Express.` },
-                { q: `Cum pot comanda bannere sau canvas în ${n}?`, a: "Comanda se face direct online. Alegeți produsul, introduceți dimensiunile dorite în configurator și finalizați comanda. Producția începe imediat după confirmarea graficii." },
+                { q: `Cum pot comanda fototapet sau canvas în ${n}?`, a: "Comanda se face direct online. Alegeți produsul, introduceți dimensiunile dorite în configurator și finalizați comanda. Producția începe imediat după confirmarea graficii." },
             ],
         },
         {
             metaTitle: `Tipografie Online pentru ${n} — Livrare Rapidă`,
-            metaDescription: `Comandă online materiale publicitare pentru afacerea ta din ${n}: bannere, autocolante, canvas. Configurator cu preț instant, fără telefoane.`,
+            metaDescription: `Comandă online decor printat și materiale publicitare în ${n}: fototapet, canvas, postere, autocolante, bannere. Configurator cu preț instant, fără telefoane.`,
             h1Prefix: "Tipografie Online pentru",
             subtitle: "Configurezi online, vezi prețul exact instant și primești comanda prin curier, oriunde ai fi în județ.",
             configuratorsHeading: "Ce Poți Configura Online pentru",
@@ -40,13 +40,13 @@ export function getJudetPageVariant(judetName: string, judetSlug: string): Judet
             ],
         },
         {
-            metaTitle: `Bannere, Autocolante și Canvas — Comenzi din ${n}`,
-            metaDescription: `Afacerile din ${n} comandă bannere, autocolante decupate, canvas și materiale rigide direct online, cu producție proprie și livrare prin curier.`,
+            metaTitle: `Fototapet, Canvas și Autocolante — Comenzi din ${n}`,
+            metaDescription: `Casele și birourile din ${n} comandă fototapet, canvas, autocolante decorative și panouri rigide direct online, cu producție proprie și livrare prin curier.`,
             h1Prefix: "Materiale Publicitare pentru",
             subtitle: "De la un singur banner de deschidere până la seturi complete de semnalistică — totul configurabil online.",
             configuratorsHeading: "Produse Disponibile pentru Afaceri din",
             faq: [
-                { q: `Ce comandă cel mai des o afacere mică din ${n}?`, a: "Bannere pentru exterior, autocolante pentru vitrină și materiale de interior sunt cele mai frecvente comenzi ale afacerilor locale." },
+                { q: `Ce comandă cel mai des o afacere mică din ${n}?`, a: "Grafică de perete pentru birou sau recepție (fototapet, canvas, autocolante decorative), apoi un banner de deschidere și autocolante pentru vitrină." },
                 { q: `Livrați și în localități mai mici din ${n}, nu doar reședința de județ?`, a: `Da, livrăm în toate localitățile listate mai jos din județul ${n}, nu doar în orașul reședință.` },
             ],
         },
@@ -74,7 +74,7 @@ export function getJudetPageVariant(judetName: string, judetSlug: string): Judet
         },
         {
             metaTitle: `Furnizor de Print și Publicitate pentru Județul ${n}`,
-            metaDescription: `Bannere, semnalistică, autocolante și canvas produse local și livrate rapid oriunde în județul ${n}. Configurator online cu preț instant.`,
+            metaDescription: `Fototapet, canvas, postere și autocolante de perete, plus bannere și semnalistică, produse și livrate rapid oriunde în județul ${n}. Configurator online cu preț instant.`,
             h1Prefix: "Furnizor de Print pentru Afaceri din",
             subtitle: "De la un singur produs până la comenzi recurente pentru mai multe puncte de lucru — totul se configurează online.",
             configuratorsHeading: "Sistemele Noastre de Configurare pentru",

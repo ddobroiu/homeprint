@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { getJudetBySlug } from "@/lib/localitati";
-import { getTargetLocalitiesForJudet } from "@/lib/seo/targetLocalities";
 import { getProducts } from "@/lib/products";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -41,8 +40,9 @@ export default async function JudetPage({ params }: { params: Promise<{ judetSlu
         return idxA !== -1 ? -1 : 1;
     });
 
-    const targetLocalities = getTargetLocalitiesForJudet(judet.slug);
-    const primaryLocalitySlug = targetLocalities[0]?.loc.slug || judet.localitati[0]?.slug;
+    // Indexul județului listează toate localitățile lui, nu doar reședința.
+    const targetLocalities = judet.localitati.map((loc) => ({ loc }));
+    const primaryLocalitySlug = judet.localitati[0]?.slug;
     const variant = getJudetPageVariant(judet.name, judet.slug);
 
     return (

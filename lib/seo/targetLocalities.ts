@@ -1,98 +1,57 @@
-// Curated list of real, well-known Romanian localities (all 41 județ reședințe
-// plus other major municipii / orașe) used to build the județ x localitate
-// sitemap section without the previous full combinatorics (every locality in
-// lib/seo/ro_localitati.json, ~13k+ entries).
+// AdBanner.ro locality strategy (agreed Sept 2026): ONE page set per județ
+// reședință plus București and its six sectors - 48 localities, not the ~13k
+// entries in lib/seo/ro_localitati.json and not the old ~220-town list. Each
+// page carries real local content; the list is frozen so Google can settle on
+// it. Do not widen it without a measured reason.
 //
-// Matching is case- and diacritics-insensitive against each județ's
-// `localitati` array in ro_localitati.json. If a name below has no match in a
-// given județ, it is silently skipped (see getTargetLocalitiesReport()).
+// Matching is by (județ slug, locality name) so a village that happens to share
+// the reședință's name in another județ (Slobozia, Giurgiu, Suceava ...) is not
+// pulled in. Ilfov has no reședință, so Voluntari (its largest oraș) stands in.
 import { JUDETE_FULL_DATA, Judet, Localitate } from "@/lib/localitati";
 
-export const TARGET_LOCALITIES: string[] = [
-    // Alba
-    "Alba Iulia", "Aiud", "Blaj", "Sebeș", "Cugir", "Ocna Mureș",
-    // Arad
-    "Arad", "Ineu", "Lipova", "Chișineu-Criș", "Sântana", "Curtici", "Pecica",
-    // Argeș
-    "Pitești", "Câmpulung", "Curtea de Argeș", "Mioveni", "Topoloveni",
-    // Bacău
-    "Bacău", "Onești", "Moinești", "Comănești", "Buhuși", "Târgu Ocna",
-    // Bihor
-    "Oradea", "Beiuș", "Salonta", "Marghita", "Aleșd", "Ștei", "Valea lui Mihai",
-    // Bistrița-Năsăud
-    "Bistrița", "Năsăud", "Beclean",
-    // Botoșani
-    "Botoșani", "Dorohoi", "Darabani", "Săveni",
-    // Brăila
-    "Brăila", "Ianca", "Însurăței",
-    // Brașov
-    "Brașov", "Făgăraș", "Săcele", "Codlea", "Zărnești", "Râșnov", "Predeal", "Victoria", "Rupea",
-    // Buzău
-    "Buzău", "Râmnicu Sărat", "Nehoiu",
-    // Caraș-Severin
-    "Reșița", "Caransebeș", "Oravița", "Bocșa", "Oțelu Roșu", "Moldova Nouă", "Anina",
-    // Călărași
-    "Călărași", "Oltenița", "Budești",
-    // Cluj
-    "Cluj-Napoca", "Turda", "Dej", "Câmpia Turzii", "Gherla", "Huedin",
-    // Constanța
-    "Constanța", "Medgidia", "Mangalia", "Năvodari", "Eforie", "Cernavodă", "Ovidiu", "Techirghiol", "Murfatlar", "Hârșova",
-    // Covasna
-    "Sfântu Gheorghe", "Târgu Secuiesc", "Baraolt", "Întorsura Buzăului",
-    // Dâmbovița
-    "Târgoviște", "Moreni", "Pucioasa", "Găești", "Titu", "Fieni",
-    // Dolj
-    "Craiova", "Băilești", "Calafat", "Filiași",
-    // Galați
-    "Galați", "Tecuci",
-    // Giurgiu
-    "Giurgiu", "Bolintin-Vale",
-    // Gorj
-    "Târgu Jiu", "Motru", "Rovinari", "Târgu Cărbunești",
-    // Harghita
-    "Miercurea Ciuc", "Odorheiu Secuiesc", "Gheorgheni", "Toplița", "Cristuru Secuiesc", "Bălan", "Vlăhița",
-    // Hunedoara
-    "Deva", "Hunedoara", "Petroșani", "Orăștie", "Brad", "Vulcan", "Lupeni", "Hațeg", "Simeria", "Călan",
-    // Ialomița
-    "Slobozia", "Fetești", "Urziceni", "Țăndărei",
-    // Iași
-    "Iași", "Pașcani", "Târgu Frumos", "Hârlău",
-    // Ilfov (no traditional județ reședință - covered via other orașe)
-    "Voluntari", "Otopeni", "Buftea", "Pantelimon", "Popești-Leordeni", "Chitila", "Măgurele", "Bragadiru", "Chiajna", "Afumați",
-    // Maramureș
-    "Baia Mare", "Sighetu Marmației", "Baia Sprie", "Vișeu de Sus", "Borșa", "Târgu Lăpuș",
-    // Mehedinți
-    "Drobeta-Turnu Severin", "Orșova", "Strehaia", "Vânju Mare",
-    // Mureș
-    "Târgu Mureș", "Reghin", "Sighișoara", "Târnăveni", "Luduș", "Sovata", "Iernut",
-    // Neamț
-    "Piatra Neamț", "Roman", "Târgu Neamț", "Bicaz",
-    // Olt
-    "Slatina", "Caracal", "Balș", "Corabia",
-    // Prahova
-    "Ploiești", "Câmpina", "Sinaia", "Bușteni", "Azuga", "Mizil", "Vălenii de Munte",
-    // Satu Mare
-    "Satu Mare", "Carei", "Negrești-Oaș",
-    // Sălaj
-    "Zalău", "Șimleu Silvaniei", "Jibou", "Cehu Silvaniei",
-    // Sibiu
-    "Sibiu", "Mediaș", "Cisnădie", "Avrig", "Agnita", "Copșa Mică",
-    // Suceava
-    "Suceava", "Fălticeni", "Rădăuți", "Câmpulung Moldovenesc", "Vatra Dornei", "Siret", "Gura Humorului",
-    // Teleorman
-    "Alexandria", "Roșiorii de Vede", "Turnu Măgurele", "Zimnicea", "Videle",
-    // Timiș
-    "Timișoara", "Lugoj", "Sânnicolau Mare", "Jimbolia", "Făget", "Deta", "Recaș",
-    // Tulcea
-    "Tulcea", "Măcin", "Babadag", "Isaccea",
-    // Vaslui
-    "Vaslui", "Bârlad", "Huși", "Negrești",
-    // Vâlcea
-    "Râmnicu Vâlcea", "Drăgășani", "Băbeni", "Horezu",
-    // Vrancea
-    "Focșani", "Adjud", "Panciu", "Odobești", "Mărășești",
-    // București
-    "București",
+export const TARGET_LOCALITIES: Array<{ judet: string; name: string }> = [
+    { judet: "alba", name: "Alba Iulia" },
+    { judet: "arad", name: "Arad" },
+    { judet: "arges", name: "Pitești" },
+    { judet: "bacau", name: "Bacău" },
+    { judet: "bihor", name: "Oradea" },
+    { judet: "bistrita-nasaud", name: "Bistrița" },
+    { judet: "botosani", name: "Botoșani" },
+    { judet: "braila", name: "Brăila" },
+    { judet: "brasov", name: "Brașov" },
+    { judet: "bucuresti", name: "București" },
+    { judet: "buzau", name: "Buzău" },
+    { judet: "calarasi", name: "Călărași" },
+    { judet: "caras-severin", name: "Reșița" },
+    { judet: "cluj", name: "Cluj-Napoca" },
+    { judet: "constanta", name: "Constanța" },
+    { judet: "covasna", name: "Sfântu Gheorghe" },
+    { judet: "dambovita", name: "Târgoviște" },
+    { judet: "dolj", name: "Craiova" },
+    { judet: "galati", name: "Galați" },
+    { judet: "giurgiu", name: "Giurgiu" },
+    { judet: "gorj", name: "Târgu Jiu" },
+    { judet: "harghita", name: "Miercurea Ciuc" },
+    { judet: "hunedoara", name: "Deva" },
+    { judet: "ialomita", name: "Slobozia" },
+    { judet: "iasi", name: "Iași" },
+    { judet: "ilfov", name: "Voluntari" },
+    { judet: "maramures", name: "Baia Mare" },
+    { judet: "mehedinti", name: "Drobeta-Turnu Severin" },
+    { judet: "mures", name: "Târgu Mureș" },
+    { judet: "neamt", name: "Piatra Neamț" },
+    { judet: "olt", name: "Slatina" },
+    { judet: "prahova", name: "Ploiești" },
+    { judet: "salaj", name: "Zalău" },
+    { judet: "satu-mare", name: "Satu Mare" },
+    { judet: "sibiu", name: "Sibiu" },
+    { judet: "suceava", name: "Suceava" },
+    { judet: "teleorman", name: "Alexandria" },
+    { judet: "timis", name: "Timișoara" },
+    { judet: "tulcea", name: "Tulcea" },
+    { judet: "valcea", name: "Râmnicu Vâlcea" },
+    { judet: "vaslui", name: "Vaslui" },
+    { judet: "vrancea", name: "Focșani" },
 ];
 
 export function normalizeLocName(s: string): string {
@@ -109,46 +68,30 @@ export type MatchedLocality = { judet: Judet; loc: Localitate };
 let _cache: MatchedLocality[] | null = null;
 
 /**
- * Resolves TARGET_LOCALITIES against JUDETE_FULL_DATA (case/diacritics-insensitive).
- * Also includes București's individual sector entries ("Sector 1".."Sector 6")
- * when present in the data, since they are indexed as separate localities.
- * If a județ has no match in TARGET_LOCALITIES at all (e.g. Ilfov, which has no
- * traditional județ reședință), it falls back to that județ's first listed
- * locality so every județ still gets at least one page in the sitemap.
+ * Resolves TARGET_LOCALITIES against JUDETE_FULL_DATA (case/diacritics-insensitive,
+ * within the named județ only). For București the six sector entries are added
+ * as separate landing pages. The reședință always comes first in its județ's
+ * list, which lib/seo/localContent.ts relies on.
  */
 export function getTargetLocalities(): MatchedLocality[] {
     if (_cache) return _cache;
 
-    const targetSet = new Set(TARGET_LOCALITIES.map(normalizeLocName));
     const result: MatchedLocality[] = [];
-    const matchedJudeteSlugs = new Set<string>();
 
-    for (const judet of JUDETE_FULL_DATA) {
-        let matchedInThisJudet = false;
+    for (const target of TARGET_LOCALITIES) {
+        const judet = JUDETE_FULL_DATA.find((j) => j.slug === target.judet);
+        if (!judet) continue;
 
-        for (const loc of judet.localitati) {
-            if (targetSet.has(normalizeLocName(loc.name))) {
-                result.push({ judet, loc });
-                matchedInThisJudet = true;
-            }
-        }
+        const wanted = normalizeLocName(target.name);
+        const loc = judet.localitati.find((l) => normalizeLocName(l.name) === wanted);
+        if (loc) result.push({ judet, loc });
 
-        // București: also include individual sectors as separate landing pages.
-        if (normalizeLocName(judet.name) === "bucuresti") {
-            for (const loc of judet.localitati) {
-                if (/^sector[1-6]$/.test(normalizeLocName(loc.name))) {
-                    result.push({ judet, loc });
-                    matchedInThisJudet = true;
+        if (target.judet === "bucuresti") {
+            for (const sector of judet.localitati) {
+                if (/^sector[1-6]$/.test(normalizeLocName(sector.name))) {
+                    result.push({ judet, loc: sector });
                 }
             }
-        }
-
-        if (matchedInThisJudet) {
-            matchedJudeteSlugs.add(judet.slug);
-        } else if (judet.localitati.length > 0) {
-            // Fallback: no curated name matched in this județ - use its first
-            // listed locality so the județ still has locality-level pages.
-            result.push({ judet, loc: judet.localitati[0] });
         }
     }
 

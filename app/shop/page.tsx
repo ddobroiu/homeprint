@@ -15,9 +15,9 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     }
 
     return {
-        title: 'Shop - Toate Produsele și Serviciile',
-        description: 'Explorează gama noastră completă de produse de tipar digital: de la tablouri canvas și acrilice, până la bannere publicitare, autocolante și semnalistică.',
-        keywords: ['shop print', 'homeprint produse', 'bannere online', 'tablouri personalizate', 'autocolante vinyl', 'rollup', 'afise'],
+        title: 'Shop - Decor printat, bannere și tot catalogul HomePrint',
+        description: 'Tablouri canvas gata de agățat, fototapet, postere și autocolante decorative pentru casă și birou, plus bannere, semnalistică și kituri fonduri UE. Producție proprie, livrare 24-48h.',
+        keywords: ['shop decor', 'homeprint produse', 'tablouri canvas', 'fototapet', 'postere', 'autocolante decorative', 'bannere online'],
         alternates: { canonical: '/shop' },
     };
 }

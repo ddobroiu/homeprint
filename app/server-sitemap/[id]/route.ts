@@ -1,3 +1,4 @@
+import { LOCS_PER_SITEMAP } from '@/lib/seo/sitemapPaging';
 import { bannerProducts } from '@/lib/products/banner-products';
 import { signageProducts } from '@/lib/products/signage-products';
 import canvasProductsRaw from '@/lib/products/canvas-products.json';
@@ -8,7 +9,6 @@ import { getAllPosts } from '@/lib/blogPosts';
 import { listAllLandingRoutes } from '@/lib/landingData';
 import { JUDETE_FULL_DATA } from '@/lib/localitati';
 import { CONFIGURATORS_REGISTRY } from '@/lib/configurators-registry';
-import { getTargetLocalities } from '@/lib/seo/targetLocalities';
 
 import { PRODUCT_INTENTS, INTENT_LABELS, MARKETING_INTENTS } from '@/lib/seo/intents';
 import { MATERIALE_DATA } from '@/lib/seo/materialeData';
@@ -71,8 +71,15 @@ const PRODUCT_ROUTE_PREFIX = new Map<string, string>([
     ...euFundsProducts.map((p) => [p.id, 'programe-finantare'] as [string, string]),
 ]);
 
-function generateUrlNode(url: string, priority: string, changefreq: string) {
-    return `  <url>\n    <loc>${url}</loc>\n    <lastmod>${new Date().toISOString()}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>\n`;
+/**
+ * Last meaningful content change for evergreen pages. Bump when the catalog or
+ * copy actually changes. A per-request `new Date()` told Google every URL
+ * changed today, every day, so it learned to ignore the field.
+ */
+const CONTENT_LASTMOD = '2026-09-11';
+
+function generateUrlNode(url: string, priority: string, changefreq: string, lastmod: string = CONTENT_LASTMOD) {
+    return `  <url>\n    <loc>${url}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>\n`;
 }
 
 export async function GET(request: Request, props: any) {
@@ -113,7 +120,7 @@ export async function GET(request: Request, props: any) {
         }
 
         for (const post of getAllPosts()) {
-            xml += generateUrlNode(`${BASE_URL}/blog/${post.slug}`, '0.7', 'weekly');
+            xml += generateUrlNode(`${BASE_URL}/blog/${post.slug}`, '0.7', 'weekly', post.date ? post.date.slice(0, 10) : CONTENT_LASTMOD);
         }
 
         for (const route of listAllLandingRoutes()) {
@@ -239,31 +246,43 @@ export async function GET(request: Request, props: any) {
             xml += generateUrlNode(`${BASE_URL}${path}`, '0.6', 'monthly');
         }
 
-    } else if (id === 'localities') {
-        // Curated județ x localitate x product sitemap: only the localities
-        // matched in lib/seo/targetLocalities.ts (major municipii/orașe plus
-        // every județ reședință - ~350-400 localities, not all ~13,300 in
-        // ro_localitati.json), crossed with the real configurator catalog
-        // (CONFIGURATORS_REGISTRY, ~20 products, not the 600+ SEO campaign
-        // keyword list). "/personalizat" and "/ieftin" sub-variants are
-        // dropped - one canonical page per locality x product.
-        for (const { judet, loc } of getTargetLocalities()) {
-            xml += generateUrlNode(`${BASE_URL}/judet/${judet.slug}/${loc.slug}`, '0.5', 'monthly');
+    } else {
+        // TOATE localitățile județului, paginat: id-ul e "{judetIndex}-{pagePart}".
+        //
+        // Paginile de localitate sunt cele care aduc traficul organic, deci le
+        // listăm pe toate (~13.300 din lib/seo/ro_localitati.json), încrucișate
+        // cu configuratoarele reale. Indexul (app/sitemap.xml) anunță câte părți
+        // are fiecare județ folosind aceeași constantă LOCS_PER_SITEMAP.
+        //
+        // Un id necunoscut (inclusiv vechiul "localities") dă un urlset valid,
+        // dar gol, ca să nu erorizeze URL-urile de sitemap deja indexate.
+        const [judetIndexStr, pagePartStr] = String(id ?? '').split('-');
+        const judetIndex = parseInt(judetIndexStr);
+        const pagePart = parseInt(pagePartStr || '0');
+        const judet = Number.isInteger(judetIndex) ? JUDETE_FULL_DATA[judetIndex] : undefined;
 
-            for (const cfg of CONFIGURATORS_REGISTRY) {
-                const cfgSlug = (cfg as any).slug || cfg.id;
-                xml += generateUrlNode(`${BASE_URL}/judet/${judet.slug}/${loc.slug}/${cfgSlug}`, '0.4', 'monthly');
+        if (judet) {
+            const startLocIndex = pagePart * LOCS_PER_SITEMAP;
+            const localitiesSlice = judet.localitati.slice(
+                startLocIndex,
+                startLocIndex + LOCS_PER_SITEMAP
+            );
+
+            // Pagina județului o emitem o singură dată, nu în fiecare parte.
+            if (pagePart === 0) {
+                xml += generateUrlNode(`${BASE_URL}/judet/${judet.slug}`, '0.6', 'monthly');
+            }
+
+            for (const loc of localitiesSlice) {
+                xml += generateUrlNode(`${BASE_URL}/judet/${judet.slug}/${loc.slug}`, '0.5', 'monthly');
+
+                for (const cfg of CONFIGURATORS_REGISTRY) {
+                    const cfgSlug = (cfg as any).slug || cfg.id;
+                    xml += generateUrlNode(`${BASE_URL}/judet/${judet.slug}/${loc.slug}/${cfgSlug}`, '0.4', 'monthly');
+                }
             }
         }
-    } else {
-        // Legacy paginated "{judetIndex}-{pagePart}" id scheme, kept only so
-        // previously indexed/cached sitemap URLs don't error. The județ x
-        // localitate x product combinatorics now live under the single
-        // /server-sitemap/localities sitemap above, so this intentionally
-        // emits an empty (but valid) urlset rather than regenerating the old
-        // full locality x campaign-product matrix.
     }
-
     xml += `</urlset>`;
 
     return new Response(xml, {

@@ -160,7 +160,7 @@ export default function Navbar() {
                             <div className="relative w-40 sm:w-48 h-9">
                                 <Image
                                     src="/logo.svg"
-                                    alt="HomePrint.ro"
+                                    alt="HomePrint.ro - fototapet, canvas și decor printat pentru casă și birou"
                                     fill
                                     className="object-contain object-left group-hover:opacity-85 transition-opacity"
                                     priority
@@ -257,7 +257,7 @@ export default function Navbar() {
                         <div className="relative w-32 h-9">
                             <Image
                                 src="/logo.svg"
-                                alt="HomePrint.ro"
+                                alt="HomePrint.ro - fototapet, canvas și decor printat pentru casă și birou"
                                 fill
                                 className="object-contain object-left"
                                 priority

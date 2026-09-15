@@ -31,20 +31,20 @@ export const viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.homeprint.ro"),
   title: {
-    default: "HomePrint.ro - Tipar Digital & Producție Publicitară",
+    default: "HomePrint.ro - Fototapet, Canvas și Decor Printat pentru Casă și Birou",
     template: "%s | HomePrint",
   },
   description:
-    "Tipărire bannere, afise si autocolante la comanda cu livrare instanta. Livrare rapidă în toată țara.",
+    "HomePrint.ro printează decor pentru casă și birou: fototapet personalizat, tablouri canvas, postere de artă și autocolante de perete, plus bannere, panouri rigide, textile și kituri fonduri UE. Producție proprie, livrare 24-48h.",
   keywords: [
-    "tipar digital",
+    "fototapet personalizat",
+    "tablou canvas personalizat",
+    "postere de artă",
+    "autocolante decorative perete",
+    "decor birou",
+    "print pentru casă",
     "bannere publicitare",
-    "afișe personalizate",
-    "canvas pe pânză",
-    "autocolante vinyl",
     "materiale rigide",
-    "publicitate outdoor",
-    "print online România",
     "homeprint"
   ],
   manifest: '/manifest.json',
@@ -57,27 +57,27 @@ export const metadata: Metadata = {
     google: 'FPQT6X0QSD',
   },
   openGraph: {
-    title: "HomePrint.ro | Tipar Digital & Producție Publicitară",
+    title: "HomePrint.ro | Decor printat pentru casă și birou",
     description:
-      "Tipar digital profesional: bannere, afișe, canvas și autocolante. Configuratoare online cu prețuri instant.",
+      "Fototapet, canvas, postere și autocolante de perete personalizate, cameră cu cameră. Configurator cu preț instant, producție proprie.",
     url: "https://www.homeprint.ro",
     siteName: "HomePrint.ro",
     locale: "ro_RO",
     type: "website",
     images: [
       {
-        url: "/logo.svg",
+        url: "/products/tapet/tapet-1.jpg",
         width: 1200,
         height: 630,
-        alt: "HomePrint.ro - Tipar Digital Profesional",
+        alt: "HomePrint.ro - Fototapet personalizat montat într-un living",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "HomePrint.ro | Print Digital Online",
-    description: "Bannere, canvas și semnalistică cu personalizare rapidă.",
-    images: ["/logo.svg"],
+    title: "HomePrint.ro | Fototapet, canvas și decor printat",
+    description: "Pereți personalizați pentru living, dormitor, birou și hol. Preț instant, livrare 24-48h.",
+    images: ["/products/tapet/tapet-1.jpg"],
   },
   robots: {
     index: true,
@@ -130,14 +130,16 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* GA4 property "homeprint.ro" (520944536). In the initial HTML so Google's
-            tag checker can see it; Consent Mode above gates storage. */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4J0WMEX7J3" />
+        {/* GA4 property "HomePrint.ro", în contul Culoarea din Viata SA SRL.
+            În HTML-ul inițial ca verificatorul Google să îl vadă; Consent Mode
+            de mai sus controlează stocarea. Vechiul ID G-4J0WMEX7J3 aparținea
+            contului Analytics mutat la coș și a fost înlocuit. */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4KY7Q4B6J" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               gtag('js', new Date());
-              gtag('config', 'G-4J0WMEX7J3');
+              gtag('config', 'G-Z4KY7Q4B6J');
             `,
           }}
         />
