@@ -24,7 +24,7 @@ const GALLERY_BASE = [
 const productFaqs: QA[] = [
     { question: "Ce înseamnă plastifiere Soft Touch?", answer: "Este un finisaj premium mat, foarte fin la atingere, care oferă senzația de catifea. Conferă cărților de vizită o notă luxoasă." },
     { question: "Cum pregătesc fișierul grafic?", answer: "Dimensiunea brută (cu bleed) trebuie să fie 94x54 mm (pentru tăiere la 90x50 mm). Toate fonturile trebuie convertite la curbe, iar culorile în format CMYK." },
-    { question: "Cât durează execuția?", answer: "Pentru cărțile din carton standard/premium 24-48h. Pentru materiale speciale (plastic translucid, lemn, metalic) timpul de producție este de 4-7 zile lucrătoare." }
+    { question: "Cât durează execuția?", answer: "Pentru cărțile din carton standard/premium 24-48h. Pentru materiale speciale (plastic translucid, lemn, metalic) timpul de producție este de 2-4 zile lucrătoare." }
 ];
 
 export default function ConfiguratorCartiVizita({ productImage }: { productImage?: string }) {

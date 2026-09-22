@@ -178,7 +178,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
                 priceImpact: 'Similar cu banner simplu'
             }
         ],
-        turnaroundTime: '3-5 zile lucrătoare',
+        turnaroundTime: '2-4 zile lucrătoare',
         technicalSpecs: [
             'Necesită 2 grafici separate (față + verso)',
             'Graficile trebuie să fie oglindite dacă designul continuă'
@@ -314,7 +314,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             ]
         },
         options: [],
-        turnaroundTime: '1-3 zile lucrătoare',
+        turnaroundTime: '2-4 zile lucrătoare',
         shippingNotes: 'Livrat în tub pentru protecție (formate mari)',
         technicalSpecs: [
             'Rezoluție: 1440 DPI',
@@ -454,7 +454,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
                 values: ['Am fotografie', 'Design Pro colaj/editare (+40 RON)']
             }
         ],
-        turnaroundTime: '3-5 zile lucrătoare',
+        turnaroundTime: '2-4 zile lucrătoare',
         shippingNotes: 'Livrat cu protecție specială, pregătit pentru montaj imediat',
         technicalSpecs: [
             'Margine oglindită AUTOMATĂ (imaginea continuă pe laterale)',
@@ -520,7 +520,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
                 values: ['Am grafică', 'Design Pro (+200 RON)']
             }
         ],
-        turnaroundTime: '3-5 zile lucrătoare',
+        turnaroundTime: '2-4 zile lucrătoare',
         image: '/products/tapet/tapet-1.webp'
     },
     {
@@ -566,7 +566,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             ]
         },
         options: [],
-        turnaroundTime: '3-5 zile lucrătoare',
+        turnaroundTime: '2-4 zile lucrătoare',
         shippingNotes: 'Livrat în geantă de transport, gata de utilizare',
         technicalSpecs: [
             'Casetă aluminiu premium cu mecanism smooth',
@@ -755,7 +755,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
                 values: ['Față (simplu)', 'Față-Verso (+30%)']
             }
         ],
-        turnaroundTime: '1-3 zile lucrătoare',
+        turnaroundTime: '2-4 zile lucrătoare',
         image: '/products/flayere/flayere-1.webp'
     },
     {
@@ -832,7 +832,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
                 values: ['PNRR', 'FEADR', 'POCU', 'Regio', 'Altul']
             }
         ],
-        turnaroundTime: '5-7 zile lucrătoare',
+        turnaroundTime: '2-4 zile lucrătoare',
         technicalSpecs: [
             'Include logo UE, flag România, informații beneficiar',
             'Layout conform ghid vizual oficial',
@@ -901,7 +901,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
                 values: ['O singură față', 'Față-Verso']
             }
         ],
-        turnaroundTime: '5-7 zile lucrătoare',
+        turnaroundTime: '2-4 zile lucrătoare',
         shippingNotes: 'Livrat cu folie protecție, fragil - manipulare atentă',
         image: '/products/master/placi-plexiglass-transparent-personalizat-print-uv.png'
     },
@@ -952,7 +952,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
                 priceImpact: '3mm: standard | 10mm: +30%'
             }
         ],
-        turnaroundTime: '3-5 zile lucrătoare',
+        turnaroundTime: '2-4 zile lucrătoare',
         image: '/products/master/placi-pvc-forex-personalizat-print-uv.png'
     },
     {
@@ -1001,7 +1001,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
                 values: ["Alb", "Argintiu (Silver)", "Antracit (Gri Închis)", "Negru", "Rosu", "Albastru", "Verde", "Galben", "Brushed (Aluminiu Perișat)"]
             }
         ],
-        turnaroundTime: '5-7 zile lucrătoare',
+        turnaroundTime: '2-4 zile lucrătoare',
         technicalSpecs: [
             'Rezistență UV extremă (10+ ani)',
             'Impermeabil 100%',
@@ -1098,7 +1098,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
                 values: ['3mm', '4mm', '5mm']
             }
         ],
-        turnaroundTime: '3-5 zile lucrătoare',
+        turnaroundTime: '2-4 zile lucrătoare',
         technicalSpecs: [
             'Impermeabil 100%',
             'Rezistent la temperaturi -20°C / +80°C',
@@ -1198,7 +1198,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             { id: 'roundedCorners', name: 'Colturi Rotunjite', type: 'radio', values: ['Nu', 'Da'] },
             { id: 'specialShape', name: 'Decupare Forma', type: 'radio', values: ['Nu', 'Da'] }
         ],
-        turnaroundTime: '1-3 zile lucrătoare',
+        turnaroundTime: '2-4 zile lucrătoare',
         image: '/products/master/carti-de-vizita-premium-personalizate-online-ieftine.png'
     }
 ];
