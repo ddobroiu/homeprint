@@ -72,12 +72,12 @@ export default function CanvasConfigurator({ productSlug, initialWidth: initW, i
       title: productTitle || "Tablou Canvas",
       price: displayedTotal / input.quantity,
       quantity: input.quantity,
-      metadata: { "Dimensiune": input.frameType === "framed" ? input.framedSize : `${input.width_cm}x${input.height_cm}cm`, "Tip": input.frameType === "framed" ? "Cu Ramă" : "Fără Ramă", artworkUrl: artworkUrl || productImage }
+      metadata: { "Dimensiune": input.frameType === "framed" ? input.framedSize : `${input.width_cm}x${input.height_cm}cm`, "Tip": input.frameType === "framed" ? "Cu șasiu" : "Fără șasiu (doar pânza)", artworkUrl: artworkUrl || productImage }
     });
     toast.success("Adăugat în coș!");
   }
 
-  const summaryStep1 = input.frameType === "framed" ? "Cu Ramă" : "Fără Ramă";
+  const summaryStep1 = input.frameType === "framed" ? "Cu șasiu" : "Fără șasiu (doar pânza)";
   const summaryStep2 = input.frameType === "framed" ? `${input.framedSize}cm` : `${input.width_cm}x${input.height_cm}cm`;
 
   return (
@@ -111,8 +111,8 @@ export default function CanvasConfigurator({ productSlug, initialWidth: initW, i
             <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg border border-gray-200 dark:border-slate-800 px-4">
                <AccordionStep stepNumber={1} title="Tip Montaj" summary={summaryStep1} isOpen={activeStep === 1} onClick={() => setActiveStep(1)}>
                   <div className="grid grid-cols-2 gap-2 pt-2">
-                    <OptionButton active={input.frameType === "framed"} onClick={() => updateInput("frameType", "framed")} title="Cu Ramă (Șasiu)" subtitle="Gata de pus pe perete" />
-                    <OptionButton active={input.frameType === "none"} onClick={() => updateInput("frameType", "none")} title="Fără Ramă" subtitle="Doar pânza" />
+                    <OptionButton active={input.frameType === "framed"} onClick={() => updateInput("frameType", "framed")} title="Cu șasiu" subtitle="Întins pe lemn, gata de pus pe perete" />
+                    <OptionButton active={input.frameType === "none"} onClick={() => updateInput("frameType", "none")} title="Fără șasiu" subtitle="Doar pânza" />
                   </div>
                </AccordionStep>
 
