@@ -30,6 +30,12 @@ export async function GET() {
 
     // DIMENSIONS SITEMAP - curated product x standard-dimension combinations
     // (~500 URLs), fits in a single part.
+    // PREȚURI PE CANTITĂȚI: /preturi/{produs}/{format}-{n}-buc (~180 URL-uri)
+    xml += `  <sitemap>
+    <loc>${BASE_URL}/server-sitemap/preturi</loc>
+  </sitemap>
+`;
+
     // DIMENSIUNI: /dimensiuni/{produs}/{L}x{H}, paginat cu aceeași constantă ca
     // generatorul (lib/seo/dimensionPages.ts).
     for (let d = 0; d < getDimensionSitemapParts(); d++) {
