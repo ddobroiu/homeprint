@@ -6,6 +6,9 @@ import { notFound } from "next/navigation";
 import CategorySeoContent from "@/components/CategorySeoContent";
 import ProductJsonLd from "@/components/ProductJsonLd";
 import { prisma } from "@/lib/prisma";
+import { parseIntentSlug, getIntentSpec, MARKETING_CONTENT } from "@/lib/seo/intentContent";
+import { IntentLanding } from "@/components/seo/IntentLanding";
+import { siteConfig } from "@/lib/siteConfig";
 
 import AfiseConfigurator from "@/components/AfiseConfigurator";
 import AutocolanteConfigurator from "@/components/AutocolanteConfigurator";
@@ -27,6 +30,15 @@ import TextileConfigurator from "@/components/TextileConfigurator";
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }) {
     const { slug } = await params;
     const slugStr = slug.join("/");
+    const intentHit = slug.length === 1 ? parseIntentSlug(slug[0]) : null;
+    if (intentHit) {
+        const spec = getIntentSpec(intentHit.productId, intentHit.intent);
+        const mk = MARKETING_CONTENT[intentHit.intent];
+        const title = `${spec?.title ?? mk?.title(intentHit.productName) ?? `${intentHit.productName} ${intentHit.intentLabel}`} | ${siteConfig.name}`;
+        const description = String(spec?.lead ?? mk?.lead(intentHit.productName) ?? "").slice(0, 158);
+        const base = String(siteConfig.url || "").toLowerCase().replace(/\/$/, "");
+        return { title: { absolute: title }, description, alternates: { canonical: `${base}/${slug[0]}` }, openGraph: { title, description, url: `${base}/${slug[0]}`, siteName: siteConfig.name, locale: "ro_RO", type: "website" }, robots: { index: true, follow: true } };
+    }
     const product = getProductBySlug(slugStr);
     const landing = slug.length > 1 ? getLandingInfo(slug[0], slug[1]) : getLandingInfo(slug[0], slug[0]);
 
@@ -74,6 +86,10 @@ function resolveSpecificConfigurator(initialId: string, slugStr: string) {
 export default async function CatchAllSlugPage({ params }: { params: Promise<{ slug: string[] }> }) {
     const { slug } = await params;
     const slugStr = slug.join("/");
+    const intentHit = slug.length === 1 ? parseIntentSlug(slug[0]) : null;
+    if (intentHit) {
+        return <IntentLanding productId={intentHit.productId} productName={intentHit.productName} intent={intentHit.intent} intentLabel={intentHit.intentLabel} configHref={`/${intentHit.productId}`} />;
+    }
 
     // 1. Try to find a product matching the SLUG
     const product = getProductBySlug(slugStr);
