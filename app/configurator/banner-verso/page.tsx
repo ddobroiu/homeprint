@@ -48,7 +48,7 @@ export default function BannerVersoPage() {
                         },
                         {
                             question: "Cât durează producția unui banner față-verso?",
-                            answer: "Procesul e mai laborios decât la un banner simplu (print, uscare, verificare aliniere pe ambele fețe), dar livrarea standard rămâne tot 24-48h lucrătoare din momentul aprobării graficii."
+                            answer: "Procesul e mai laborios decât la un banner simplu (print, uscare, verificare aliniere pe ambele fețe), dar livrarea standard rămâne tot 2-4 zile lucrătoare din momentul aprobării graficii."
                         }
                     ]}
                 />
@@ -115,7 +115,7 @@ export default function BannerVersoPage() {
                                     },
                                     {
                                         q: "Cât durează producția unui banner față-verso?",
-                                        a: "Procesul e mai laborios decât la un banner simplu (print, uscare, verificare aliniere pe ambele fețe), dar livrarea standard rămâne tot 24-48h lucrătoare din momentul aprobării graficii."
+                                        a: "Procesul e mai laborios decât la un banner simplu (print, uscare, verificare aliniere pe ambele fețe), dar livrarea standard rămâne tot 2-4 zile lucrătoare din momentul aprobării graficii."
                                     }
                                 ].map((faq, idx) => (
                                     <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">

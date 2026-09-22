@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     template: "%s | HomePrint",
   },
   description:
-    "HomePrint.ro printează decor pentru casă și birou: fototapet personalizat, tablouri canvas, postere de artă și autocolante de perete, plus bannere, panouri rigide, textile și kituri fonduri UE. Producție proprie, livrare 24-48h.",
+    "HomePrint.ro printează decor pentru casă și birou: fototapet personalizat, tablouri canvas, postere de artă și autocolante de perete, plus bannere, panouri rigide, textile și kituri fonduri UE. Producție proprie, livrare 2-4 zile lucrătoare.",
   keywords: [
     "fototapet personalizat",
     "tablou canvas personalizat",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "HomePrint.ro | Fototapet, canvas și decor printat",
-    description: "Pereți personalizați pentru living, dormitor, birou și hol. Preț instant, livrare 24-48h.",
+    description: "Pereți personalizați pentru living, dormitor, birou și hol. Preț instant, livrare 2-4 zile lucrătoare.",
     images: ["/products/tapet/tapet-1.jpg"],
   },
   robots: {

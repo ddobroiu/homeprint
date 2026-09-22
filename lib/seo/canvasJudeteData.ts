@@ -32,7 +32,7 @@ function buildCanvasJudetEntry(slug: string, name: string): LandingInfo {
       shortDescription: `Configurator online pentru tablouri canvas din poze proprii, cu livrare rapidă în ${name}. Alege dimensiunea și tipul de margine.`,
       seoTitle: `Canvas din Poza Ta — Comandă Online din ${name}`,
       seoDescription: `Încarci poza, alegi dimensiunea și marginea, iar noi producem și livrăm tabloul canvas direct în ${name}.`,
-      contentHtml: `<h2>Configurator Canvas Online pentru ${name}</h2><p>Nu ai nevoie de nimic altceva decât o poză bună și câteva minute — restul se configurează online: dimensiune, tip de margine (albă, oglindă sau răsfrântă) și cantitate.</p><p>Pentru clienții din <strong>${name}</strong>, livrarea se face prin curier rapid, cu tabloul gata de agățat, șasiu de lemn inclus.</p><ul><li>Previzualizare reală înainte de comandă</li><li>Șasiu de lemn masiv inclus în preț</li><li>Producție 24-48h din momentul confirmării</li></ul>`,
+      contentHtml: `<h2>Configurator Canvas Online pentru ${name}</h2><p>Nu ai nevoie de nimic altceva decât o poză bună și câteva minute — restul se configurează online: dimensiune, tip de margine (albă, oglindă sau răsfrântă) și cantitate.</p><p>Pentru clienții din <strong>${name}</strong>, livrarea se face prin curier rapid, cu tabloul gata de agățat, șasiu de lemn inclus.</p><ul><li>Previzualizare reală înainte de comandă</li><li>Șasiu de lemn masiv inclus în preț</li><li>Producție 2-4 zile lucrătoare din momentul confirmării</li></ul>`,
     },
     {
       title: `Canvas Foto Personalizat, Livrat în ${name}`,

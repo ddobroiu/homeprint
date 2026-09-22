@@ -62,7 +62,7 @@ export function getJudetPageVariant(judetName: string, judetSlug: string): Judet
             ],
         },
         {
-            metaTitle: `${n}: Materiale Publicitare Personalizate, Livrare 24-48h`,
+            metaTitle: `${n}: Materiale Publicitare Personalizate, Livrare 2-4 zile lucrătoare`,
             metaDescription: `Configurezi, plătești online și primești comanda acasă sau la birou, oriunde în județul ${n}. Producție proprie, fără costuri ascunse.`,
             h1Prefix: "Comandă Online, Livrare Rapidă în",
             subtitle: "Producție proprie înseamnă control direct asupra calității și a termenelor de livrare, fără intermediari.",

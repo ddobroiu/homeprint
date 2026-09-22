@@ -122,7 +122,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ [
                 },
                 {
                   q: "Cât durează execuția?",
-                  a: "Fiind producători direcți, timpul de producție este de obicei de 24-48 de ore lucrătoare de la confirmarea graficii."
+                  a: "Fiind producători direcți, timpul de producție este de obicei de 2-4 zile lucrătoare lucrătoare de la confirmarea graficii."
                 }
               ].map((faq, idx) => (
                 <div key={idx} className="bg-slate-900/40 backdrop-blur-sm p-8 rounded-3xl border border-white/5 shadow-soft hover:border-green-500/30 transition-all duration-500 group">

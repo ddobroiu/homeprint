@@ -51,7 +51,7 @@ export default function CanvasPage() {
                         },
                         {
                             question: "În cât timp e gata comanda?",
-                            answer: "Producția durează aproximativ 24h lucrătoare (pânza se întinde manual), plus livrare prin curier — de regulă ajunge în 24-48h."
+                            answer: "Producția durează aproximativ 24h lucrătoare (pânza se întinde manual), plus livrare prin curier — de regulă ajunge în 2-4 zile lucrătoare."
                         }
                     ]}
                 />
@@ -124,7 +124,7 @@ export default function CanvasPage() {
                                     },
                                     {
                                         q: "În cât timp e gata comanda?",
-                                        a: "Producția durează aproximativ 24h lucrătoare (pânza se întinde manual), plus livrare prin curier — de regulă ajunge în 24-48h."
+                                        a: "Producția durează aproximativ 24h lucrătoare (pânza se întinde manual), plus livrare prin curier — de regulă ajunge în 2-4 zile lucrătoare."
                                     }
                                 ].map((faq, idx) => (
                                     <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">

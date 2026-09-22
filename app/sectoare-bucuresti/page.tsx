@@ -7,7 +7,7 @@ import { getJudetBySlug } from '@/lib/localitati';
 
 export const metadata: Metadata = {
     title: 'Fototapet, canvas și print pe sectoare în București',
-    description: 'Decor printat pentru apartamente și birouri din București: fototapet, canvas, postere, autocolante de perete, plus bannere și semnalistică. Livrare în sectoarele 1-6 în 24-48h, preț instant.',
+    description: 'Decor printat pentru apartamente și birouri din București: fototapet, canvas, postere, autocolante de perete, plus bannere și semnalistică. Livrare în sectoarele 1-6 în 2-4 zile lucrătoare, preț instant.',
     alternates: { canonical: 'https://www.homeprint.ro/sectoare-bucuresti' }
 };
 

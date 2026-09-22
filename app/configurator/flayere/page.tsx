@@ -51,7 +51,7 @@ export default function FlyerePage() {
                         },
                         {
                             question: "Cât de repede primesc comanda?",
-                            answer: "Producția digitală pentru flyere e rapidă, fără timpi de uscare — pentru tiraje standard, livrarea prin curier durează de regulă 24-48h din momentul aprobării machetei."
+                            answer: "Producția digitală pentru flyere e rapidă, fără timpi de uscare — pentru tiraje standard, livrarea prin curier durează de regulă 2-4 zile lucrătoare din momentul aprobării machetei."
                         }
                     ]}
                 />
@@ -115,7 +115,7 @@ export default function FlyerePage() {
                                     },
                                     {
                                         q: "Cât de repede primesc comanda?",
-                                        a: "Producția digitală pentru flyere e rapidă, fără timpi de uscare — pentru tiraje standard, livrarea prin curier durează de regulă 24-48h din momentul aprobării machetei."
+                                        a: "Producția digitală pentru flyere e rapidă, fără timpi de uscare — pentru tiraje standard, livrarea prin curier durează de regulă 2-4 zile lucrătoare din momentul aprobării machetei."
                                     }
                                 ].map((faq, idx) => (
                                     <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">

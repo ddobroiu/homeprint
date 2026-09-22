@@ -11,6 +11,8 @@ import { buildLocalContent } from "@/lib/seo/localContent";
 import { isIndexableLocality, getSiblingLocalitySlugs } from "@/lib/seo/indexableLocalities";
 import { LocalFaq } from "@/components/LocalFaq";
 import { LocalSizePrices } from "@/components/seo/LocalSizePrices";
+import { getFromPrice } from "@/lib/seo/fromPrice";
+import { whatsappHref } from "@/components/seo/WhatsAppBar";
 
 import { MATERIALE_DATA } from "@/lib/seo/materialeData";
 import { REGLEMENTARI_DATA } from "@/lib/seo/reglementariData";
@@ -52,8 +54,11 @@ export async function generateMetadata({ params }: { params: Promise<{ judetSlug
     const targetInfo = targetSlug ? getTargetInfo(targetSlug) : null;
     const productTitle = targetInfo ? `${product.title} ${targetInfo.label}` : product.title;
 
-    const title = `Print ${productTitle} în ${loc.name}`;
-    const { description } = buildLocalContent({
+    const fromPrice = getFromPrice([baseSlug, (product as any).routeSlug?.replace('configurator/', ''), product.id]);
+    const title = fromPrice
+        ? `${productTitle} în ${loc.name} – de la ${fromPrice.text}, gata în 2-4 zile`
+        : `Print ${productTitle} în ${loc.name}`;
+    const { description: baseDescription } = buildLocalContent({
         brand: "homeprint",
         productTitle,
         productSlug: baseSlug,
@@ -62,6 +67,9 @@ export async function generateMetadata({ params }: { params: Promise<{ judetSlug
         judetSlug: judet.slug,
         judetName: judet.name,
     });
+    const description = fromPrice
+        ? `De la ${fromPrice.text}/buc (${fromPrice.basis}). ${baseDescription}`.slice(0, 158)
+        : baseDescription;
 
     const routeUrl = `https://HomePrint.ro/judet/${judet.slug}/${loc.slug}/${productSlug.join('/')}`;
 
@@ -197,6 +205,15 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                                <a 
+                                    href={whatsappHref(`Bună ziua, aș dori o ofertă pentru ${product.title} în ${loc.name}.`)}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-10 py-5 bg-[#25D366] text-white border-2 border-[#25D366] rounded-2xl font-black text-lg hover:border-amber-500 hover:text-amber-600 transition-all flex items-center justify-center gap-3 shadow-sm active:scale-95 group uppercase italic tracking-tighter"
+                                >
+                                    <MessageCircle size={22} className="group-hover:text-amber-500" />
+                                    WHATSAPP
+                                </a>
                                 <Link 
                                     href={shopUrl} 
                                     className="px-10 py-5 bg-amber-600 text-white rounded-2xl font-black text-lg hover:bg-amber-500 transition-all flex items-center justify-center gap-3 shadow-2xl shadow-amber-500/20 active:scale-95 group uppercase italic tracking-tighter"
@@ -204,15 +221,6 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
                                     <Zap size={22} className="fill-current group-hover:animate-pulse" />
                                     CONFIGUREAZĂ ONLINE
                                 </Link>
-                                <a 
-                                    href={`https://wa.me/40750473111?text=Bună%20ziua,%20as%20dori%20mai%20multe%20detalii%20despre%20${encodeURIComponent(product.title)}%20în%20${encodeURIComponent(loc.name)}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="px-10 py-5 bg-white text-slate-900 border-2 border-slate-200 rounded-2xl font-black text-lg hover:border-amber-500 hover:text-amber-600 transition-all flex items-center justify-center gap-3 shadow-sm active:scale-95 group uppercase italic tracking-tighter"
-                                >
-                                    <MessageCircle size={22} className="group-hover:text-amber-500" />
-                                    WHATSAPP
-                                </a>
                             </div>
 
                             <LocalSizePrices productIds={[baseSlug, productCategoryKey]} locName={loc.name} />
@@ -255,13 +263,83 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
                                     <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/80 backdrop-blur-md rounded-2xl border border-white/50 shadow-lg flex items-center justify-between">
                                         <div className="flex items-center gap-3">
                                             <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-                                            <span className="text-xs font-black text-slate-900 uppercase">Livrare prin curier în {loc.name}</span>
+                                            <span className="text-xs font-black text-slate-900 uppercase truncate">Livrare prin curier în {loc.name}</span>
                                         </div>
                                         <span className="text-[10px] font-bold text-amber-600">24H Livrare</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Other Products Section - MOVED HIGHER */}
+            <div className="max-w-7xl mx-auto px-4 py-24">
+                <div className="text-center mb-16">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-500 text-[10px] font-black uppercase tracking-widest mb-4">
+                        <Zap size={14} className="text-amber-500" /> TOATE CONFIGURATOARELE
+                    </div>
+                    <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase leading-none">Produse în {loc.name}</h2>
+                    <p className="text-slate-500 mt-4 font-medium italic">Vezi toată gama de produse disponibile cu livrare rapidă.</p>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
+                    {CONFIGURATORS_REGISTRY.slice(0, 18).map((config) => {
+                        const rpSlug = config.slug || config.id;
+                        if (rpSlug === baseSlug) return null;
+
+                        return (
+                            <Link
+                                key={config.id}
+                                href={`/judet/${judet.slug}/${loc.slug}/${rpSlug}`}
+                                className="group relative flex flex-col items-center text-center rounded-[2rem] border border-slate-200/60 transition-all duration-500 overflow-hidden hover:border-amber-400 hover:shadow-[0_20px_40px_-15px_rgba(16,185,129,0.15)] hover:-translate-y-2 bg-white h-full"
+                            >
+                                <div className="w-full aspect-square relative bg-slate-50 border-b border-slate-100 flex items-center justify-center overflow-hidden">
+                                    {config.image ? (
+                                        <Image
+                                            src={config.image}
+                                            alt={config.name}
+                                            width={320}
+                                            height={320}
+                                            sizes="(max-width: 640px) 45vw, 220px"
+                                            loading="lazy"
+                                            className="w-[70%] h-[70%] object-contain p-4 transition-transform duration-700 group-hover:scale-110"
+                                        />
+                                    ) : (
+                                        <div className="w-full h-full bg-slate-200 animate-pulse flex items-center justify-center text-slate-400 font-black uppercase text-[10px] tracking-widest">Imagine Lipsă</div>
+                                    )}
+                                    <div className="absolute inset-0 bg-amber-500/0 group-hover:bg-amber-500/[0.03] transition-colors duration-500" />
+                                </div>
+
+                                <div className="p-4 w-full flex-1 flex flex-col items-center justify-center bg-white relative">
+                                    <h4 className="font-black text-[10px] md:text-xs leading-tight tracking-tight transition-all duration-300 text-slate-800 group-hover:text-amber-600 uppercase italic tracking-tighter">
+                                        {config.name}
+                                    </h4>
+                                </div>
+                            </Link>
+                        );
+                    })}
+                </div>
+            </div>
+
+            {/* Local FAQ Section */}
+            <div className="bg-white py-24 border-t border-slate-100">
+                <div className="max-w-4xl mx-auto px-4">
+                    <div className="text-center mb-16">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-500 text-[10px] font-black uppercase tracking-widest mb-4">
+                            <HelpCircle size={14} className="text-amber-500" /> SUPORT LOCAL {loc.name.toUpperCase()}
+                        </div>
+                        <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase leading-none">Întrebări Frecvente</h2>
+                        <p className="text-slate-500 mt-4 font-medium italic">Tot ce trebuie să știi despre comanda ta de {productTitle.toLowerCase()} în {loc.name}.</p>
+                    </div>
+                    
+                    <div className="bg-slate-50/50 rounded-[3rem] p-8 md:p-12 border border-slate-100">
+                        <LocalFaq 
+                            productTitle={productTitle} 
+                            locName={loc.name} 
+                            judetName={judet.name}
+                        />
                     </div>
                 </div>
             </div>
@@ -311,78 +389,6 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
                 </div>
             </div>
 
-            {/* Other Products Section - MOVED HIGHER */}
-            <div className="max-w-7xl mx-auto px-4 py-24">
-                <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-500 text-[10px] font-black uppercase tracking-widest mb-4">
-                        <Zap size={14} className="text-amber-500" /> TOATE CONFIGURATOARELE
-                    </div>
-                    <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase leading-none">Produse în {loc.name}</h2>
-                    <p className="text-slate-500 mt-4 font-medium italic">Vezi toată gama de produse disponibile cu livrare rapidă.</p>
-                </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
-                    {CONFIGURATORS_REGISTRY.slice(0, 18).map((config) => {
-                        const rpSlug = config.slug || config.id;
-                        if (rpSlug === baseSlug) return null;
-
-                        return (
-                            <Link
-                                key={config.id}
-                                href={`/judet/${judet.slug}/${loc.slug}/${rpSlug}`}
-                                className="group relative flex flex-col items-center text-center rounded-[2rem] border border-slate-200/60 transition-all duration-500 overflow-hidden hover:border-amber-400 hover:shadow-[0_20px_40px_-15px_rgba(16,185,129,0.15)] hover:-translate-y-2 bg-white h-full"
-                            >
-                                <div className="w-full aspect-square relative bg-slate-50 border-b border-slate-100 flex items-center justify-center overflow-hidden">
-                                    {config.image ? (
-                                        <img
-                                            src={config.image}
-                                            alt={config.name}
-                                            className="w-[70%] h-[70%] object-contain p-4 transition-transform duration-700 group-hover:scale-110"
-                                        />
-                                    ) : (
-                                        <div className="w-full h-full bg-slate-200 animate-pulse flex items-center justify-center text-slate-400 font-black uppercase text-[10px] tracking-widest">Imagine Lipsă</div>
-                                    )}
-                                    <div className="absolute inset-0 bg-amber-500/0 group-hover:bg-amber-500/[0.03] transition-colors duration-500" />
-                                </div>
-
-                                <div className="p-4 w-full flex-1 flex flex-col items-center justify-center bg-white relative">
-                                    <h4 className="font-black text-[10px] md:text-xs leading-tight tracking-tight transition-all duration-300 text-slate-800 group-hover:text-amber-600 uppercase italic tracking-tighter">
-                                        {config.name}
-                                    </h4>
-                                </div>
-                            </Link>
-                        );
-                    })}
-                </div>
-            </div>
-
-            {/* Proximity Network */}
-            <div className="bg-slate-900 py-24">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
-                        <div>
-                            <p className="text-amber-400 font-bold uppercase tracking-[0.2em] text-[10px] mb-3">Rețeaua Națională</p>
-                            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase leading-[1]">Alte locații din județul {judet.name}</h2>
-                        </div>
-                        <Link href={`/judet/${judet.slug}`} className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl text-sm font-bold transition-all backdrop-blur-md">
-                            Vezi tot județul
-                        </Link>
-                    </div>
-
-                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                        {judet.localitati.filter(l => l.slug !== loc.slug).slice(0, 18).map((l, i) => (
-                            <Link
-                                key={l.slug}
-                                href={`/judet/${judet.slug}/${l.slug}/${productSlug.join('/')}`}
-                                className="px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white/60 hover:text-white hover:bg-white/10 hover:border-amber-500/50 transition-all text-xs font-bold truncate text-center"
-                            >
-                                {product.title.split(' ')[0]} {l.name}
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            </div>
-
             {/* Sibling Curated Localities - internal cross-links within the same judet, same product */}
             {siblingLocalities.length > 0 && (
                 <div className="bg-white py-24 border-t border-slate-100">
@@ -412,23 +418,29 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
                 </div>
             )}
 
-            {/* Local FAQ Section */}
-            <div className="bg-white py-24 border-t border-slate-100">
-                <div className="max-w-4xl mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-500 text-[10px] font-black uppercase tracking-widest mb-4">
-                            <HelpCircle size={14} className="text-amber-500" /> SUPORT LOCAL {loc.name.toUpperCase()}
+            {/* Proximity Network */}
+            <div className="bg-slate-900 py-24">
+                <div className="max-w-7xl mx-auto px-4">
+                    <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
+                        <div>
+                            <p className="text-amber-400 font-bold uppercase tracking-[0.2em] text-[10px] mb-3">Rețeaua Națională</p>
+                            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase leading-[1]">Alte locații din județul {judet.name}</h2>
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase leading-none">Întrebări Frecvente</h2>
-                        <p className="text-slate-500 mt-4 font-medium italic">Tot ce trebuie să știi despre comanda ta de {productTitle.toLowerCase()} în {loc.name}.</p>
+                        <Link href={`/judet/${judet.slug}`} className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl text-sm font-bold transition-all backdrop-blur-md">
+                            Vezi tot județul
+                        </Link>
                     </div>
-                    
-                    <div className="bg-slate-50/50 rounded-[3rem] p-8 md:p-12 border border-slate-100">
-                        <LocalFaq 
-                            productTitle={productTitle} 
-                            locName={loc.name} 
-                            judetName={judet.name}
-                        />
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                        {judet.localitati.filter(l => l.slug !== loc.slug).slice(0, 18).map((l, i) => (
+                            <Link
+                                key={l.slug}
+                                href={`/judet/${judet.slug}/${l.slug}/${productSlug.join('/')}`}
+                                className="px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white/60 hover:text-white hover:bg-white/10 hover:border-amber-500/50 transition-all text-xs font-bold truncate text-center"
+                            >
+                                {product.title.split(' ')[0]} {l.name}
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </div>

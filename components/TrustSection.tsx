@@ -21,7 +21,7 @@ const trustPoints = [
     {
         icon: Clock,
         title: "Producție Rapidă",
-        description: "Majoritatea comenzilor sunt gata de livrare în 24-48 de ore.",
+        description: "Majoritatea comenzilor sunt gata de livrare în 2-4 zile lucrătoare.",
         color: "text-amber-400",
         bgColor: "bg-amber-500/10",
     },

@@ -8,7 +8,7 @@ import { SeoDimensionsLinks } from '@/components/SeoDimensionsLinks';
 
 export const metadata: Metadata = {
   title: 'Banner Personalizat - Configurator Online Banner Outdoor',
-  description: 'Comandă bannere personalizate online. Material PVC premium (frontlit), tiv și capse incluse. Preț instant și livrare rapidă în 24-48h.',
+  description: 'Comandă bannere personalizate online. Material PVC premium (frontlit), tiv și capse incluse. Preț instant și livrare rapidă în 2-4 zile lucrătoare.',
   keywords: ['banner personalizat', 'bannere publicitare', 'configurator banner', 'print outdoor', 'banner pvc pret', 'homeprint'],
   alternates: {
     canonical: '/configurator/banner',

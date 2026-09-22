@@ -15,7 +15,7 @@ export default function GlobalStructuredData() {
         "name": siteConfig.name,
         "url": baseUrl,
         "logo": `${baseUrl}/logo.svg`,
-        "description": "HomePrint.ro printează decor pentru casă și birou: fototapet personalizat, tablouri canvas, postere de artă și autocolante decorative de perete, plus întregul catalog de print publicitar (bannere, roll-up, panouri rigide, textile, kituri fonduri UE). Producție proprie, livrare în 24-48h.",
+        "description": "HomePrint.ro printează decor pentru casă și birou: fototapet personalizat, tablouri canvas, postere de artă și autocolante decorative de perete, plus întregul catalog de print publicitar (bannere, roll-up, panouri rigide, textile, kituri fonduri UE). Producție proprie, livrare în 2-4 zile lucrătoare.",
         "address": {
             "@type": "PostalAddress",
             "addressCountry": "RO",
@@ -101,7 +101,7 @@ export default function GlobalStructuredData() {
             "name": `Care este timpul de execuție pentru ${lastSlug}?`,
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Executăm comenzile în 24-48 de ore lucrătoare de la confirmarea graficii, utilizând echipamente HP Latex / UV de ultimă generație."
+              "text": "Executăm comenzile în 2-4 zile lucrătoare lucrătoare de la confirmarea graficii, utilizând echipamente HP Latex / UV de ultimă generație."
             }
           },
           {

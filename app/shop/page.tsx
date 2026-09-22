@@ -16,7 +16,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
 
     return {
         title: 'Shop - Decor printat, bannere și tot catalogul HomePrint',
-        description: 'Tablouri canvas gata de agățat, fototapet, postere și autocolante decorative pentru casă și birou, plus bannere, semnalistică și kituri fonduri UE. Producție proprie, livrare 24-48h.',
+        description: 'Tablouri canvas gata de agățat, fototapet, postere și autocolante decorative pentru casă și birou, plus bannere, semnalistică și kituri fonduri UE. Producție proprie, livrare 2-4 zile lucrătoare.',
         keywords: ['shop decor', 'homeprint produse', 'tablouri canvas', 'fototapet', 'postere', 'autocolante decorative', 'bannere online'],
         alternates: { canonical: '/shop' },
     };

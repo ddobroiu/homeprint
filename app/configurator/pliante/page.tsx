@@ -51,7 +51,7 @@ export default function PliantePage() {
                         },
                         {
                             question: "Cât durează producția pentru un pliant?",
-                            answer: "Pliere mecanizată, fără procese manuale — producție rapidă, livrare prin curier de regulă în 24-48h din momentul aprobării machetei."
+                            answer: "Pliere mecanizată, fără procese manuale — producție rapidă, livrare prin curier de regulă în 2-4 zile lucrătoare din momentul aprobării machetei."
                         }
                     ]}
                 />
@@ -108,7 +108,7 @@ export default function PliantePage() {
                                     },
                                     {
                                         q: "Cât durează producția pentru un pliant?",
-                                        a: "Pliere mecanizată, fără procese manuale — producție rapidă, livrare prin curier de regulă în 24-48h din momentul aprobării machetei."
+                                        a: "Pliere mecanizată, fără procese manuale — producție rapidă, livrare prin curier de regulă în 2-4 zile lucrătoare din momentul aprobării machetei."
                                     }
                                 ].map((faq, idx) => (
                                     <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">

@@ -185,7 +185,7 @@ export default function SaleRentBannerConfigurator({ product }: { product: any }
                 <div className="p-6 lg:p-8">
                     {activeProductTab === 'descriere' && <div className="prose dark:prose-invert max-w-none text-sm" dangerouslySetInnerHTML={{ __html: product.description || "" }} />}
                     {activeProductTab === 'recenzii' && <Reviews productSlug={product.slug} />}
-                    {activeProductTab === 'faq' && <FaqAccordion qa={[{ question: "Cât durează?", answer: "24-48h." }]} />}
+                    {activeProductTab === 'faq' && <FaqAccordion qa={[{ question: "Cât durează?", answer: "2-4 zile lucrătoare." }]} />}
                 </div>
             </div>
             <div className="container mx-auto px-4 mt-8"><QuickNav title="Alte tipuri de bannere?" /><div className="mt-12"><RelatedProducts category="bannere" /></div></div>

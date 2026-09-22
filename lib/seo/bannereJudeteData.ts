@@ -32,7 +32,7 @@ function buildBannerJudetEntry(slug: string, name: string): LandingInfo {
       shortDescription: `Configurator online pentru bannere personalizate, cu producție proprie și livrare rapidă în ${name}. Preț calculat instant.`,
       seoTitle: `Comandă Banner Online ${name} | Preț Instant, Fără Telefon`,
       seoDescription: `Configurezi dimensiunea, alegi materialul și vezi prețul final înainte de comandă. Producem și livrăm bannere direct în ${name}.`,
-      contentHtml: `<h2>Configurator Online pentru Bannere — Zona ${name}</h2><p>Nu mai e nevoie de telefoane sau negocieri: alegi dimensiunea, materialul și opțiunile direct în configurator, iar prețul se actualizează instant.</p><p>Pentru comenzi din <strong>${name}</strong>, livrarea se face prin curier rapid, cu bannerul roluit sau pliat corespunzător formatului ales.</p><ul><li>Materiale Frontlit (interior/exterior) și Mesh (fațade mari, rezistent la vânt)</li><li>Tiv și capse incluse standard, fără costuri ascunse</li><li>Producție 24-48h din momentul confirmării graficii</li></ul>`,
+      contentHtml: `<h2>Configurator Online pentru Bannere — Zona ${name}</h2><p>Nu mai e nevoie de telefoane sau negocieri: alegi dimensiunea, materialul și opțiunile direct în configurator, iar prețul se actualizează instant.</p><p>Pentru comenzi din <strong>${name}</strong>, livrarea se face prin curier rapid, cu bannerul roluit sau pliat corespunzător formatului ales.</p><ul><li>Materiale Frontlit (interior/exterior) și Mesh (fațade mari, rezistent la vânt)</li><li>Tiv și capse incluse standard, fără costuri ascunse</li><li>Producție 2-4 zile lucrătoare din momentul confirmării graficii</li></ul>`,
     },
     {
       title: `Bannere Rezistente la Exterior pentru ${name}`,

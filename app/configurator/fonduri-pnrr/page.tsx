@@ -52,7 +52,7 @@ export default function FonduriPNRRPage() {
                     },
                     {
                         question: "Cât durează producția unui panou PNRR de șantier?",
-                        answer: "Print UV direct pe placa aleasă (Forex sau Alucobond, în funcție de tip), fără timp de uscare — producție rapidă, livrare prin curier de regulă în 24-48h din momentul aprobării machetei conforme."
+                        answer: "Print UV direct pe placa aleasă (Forex sau Alucobond, în funcție de tip), fără timp de uscare — producție rapidă, livrare prin curier de regulă în 2-4 zile lucrătoare din momentul aprobării machetei conforme."
                     }
                 ]}
             />
@@ -124,7 +124,7 @@ export default function FonduriPNRRPage() {
                                 },
                                 {
                                     q: "Cât durează producția unui panou PNRR de șantier?",
-                                    a: "Print UV direct pe placa aleasă (Forex sau Alucobond, în funcție de tip), fără timp de uscare — producție rapidă, livrare prin curier de regulă în 24-48h din momentul aprobării machetei conforme."
+                                    a: "Print UV direct pe placa aleasă (Forex sau Alucobond, în funcție de tip), fără timp de uscare — producție rapidă, livrare prin curier de regulă în 2-4 zile lucrătoare din momentul aprobării machetei conforme."
                                 }
                             ].map((faq, idx) => (
                                 <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">

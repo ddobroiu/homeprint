@@ -4,7 +4,7 @@ export const siteConfig = {
     name: "HomePrint",
     domain: "HomePrint.ro",
     url: "https://www.homeprint.ro",
-    description: "HomePrint.ro - Decor printat pentru casă și birou: fototapet personalizat, tablouri canvas, postere de artă și autocolante de perete, produse în atelier propriu și livrate în 24-48h. Tot catalogul de print publicitar rămâne disponibil: bannere, roll-up, panouri rigide, textile, kituri fonduri UE.",
+    description: "HomePrint.ro - Decor printat pentru casă și birou: fototapet personalizat, tablouri canvas, postere de artă și autocolante de perete, produse în atelier propriu și livrate în 2-4 zile lucrătoare. Tot catalogul de print publicitar rămâne disponibil: bannere, roll-up, panouri rigide, textile, kituri fonduri UE.",
     email: "contact@HomePrint.ro",
     phone: "0750 473 111",
     address: "Jud. Buzău, Sat Topliceni, Com. Topliceni, G Topliceni, nr. 214",

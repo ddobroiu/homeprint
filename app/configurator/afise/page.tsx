@@ -52,7 +52,7 @@ export default function AfisePage() {
                         },
                         {
                             question: "Cât de repede primesc afișele comandate?",
-                            answer: "Print digital, fără timpi de uscare — pentru tiraje standard, producția și livrarea prin curier durează de regulă 24-48h lucrătoare din momentul aprobării graficii."
+                            answer: "Print digital, fără timpi de uscare — pentru tiraje standard, producția și livrarea prin curier durează de regulă 2-4 zile lucrătoare din momentul aprobării graficii."
                         }
                     ]}
                 />
@@ -119,7 +119,7 @@ export default function AfisePage() {
                                     },
                                     {
                                         q: "Cât de repede primesc afișele comandate?",
-                                        a: "Print digital, fără timpi de uscare — pentru tiraje standard, producția și livrarea prin curier durează de regulă 24-48h lucrătoare din momentul aprobării graficii."
+                                        a: "Print digital, fără timpi de uscare — pentru tiraje standard, producția și livrarea prin curier durează de regulă 2-4 zile lucrătoare din momentul aprobării graficii."
                                     }
                                 ].map((faq, idx) => (
                                     <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">

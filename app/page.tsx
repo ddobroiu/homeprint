@@ -9,8 +9,8 @@ import PromoSection from '@/components/PromoSection';
 
 export const metadata: Metadata = {
   authors: [{ name: 'Echipa HomePrint.ro', url: 'https://www.homeprint.ro' }],
-  title: 'Fototapet, Canvas și Decor Printat pentru Casă și Birou | Preț Instant, Livrare 24-48h',
-  description: 'HomePrint printează decor pentru casă și birou: fototapet personalizat, tablouri canvas, postere de artă, autocolante decorative de perete și plexiglas. Tot catalogul rămâne disponibil: bannere, roll-up, panouri rigide, textile, kituri fonduri UE. Preț instant, atelier propriu, livrare 24-48h.',
+  title: 'Fototapet, Canvas și Decor Printat pentru Casă și Birou | Preț Instant, Livrare 2-4 zile lucrătoare',
+  description: 'HomePrint printează decor pentru casă și birou: fototapet personalizat, tablouri canvas, postere de artă, autocolante decorative de perete și plexiglas. Tot catalogul rămâne disponibil: bannere, roll-up, panouri rigide, textile, kituri fonduri UE. Preț instant, atelier propriu, livrare 2-4 zile lucrătoare.',
   keywords: ['fototapet personalizat', 'tablou canvas personalizat', 'postere de artă', 'autocolante decorative perete', 'decor birou', 'tapet foto living', 'canvas din poza ta', 'homeprint'],
   other: {
     "article:published_time": "2024-01-01T08:00:00+02:00",
@@ -231,7 +231,7 @@ export default function Home() {
             </h1>
             <p className="text-stone-600 text-lg md:text-xl leading-relaxed mb-7">
               Fototapet, tablouri canvas, postere de artă și autocolante de perete, printate după poza sau ideea ta.
-              Pui dimensiunile peretelui, vezi prețul pe loc și primești comanda acasă în 24-48h.
+              Pui dimensiunile peretelui, vezi prețul pe loc și primești comanda acasă în 2-4 zile lucrătoare.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/tapet" className="inline-flex items-center justify-center gap-2 bg-[#1F4D3A] text-white font-bold px-7 py-4 rounded-xl hover:bg-[#173B2C] transition-colors">
@@ -414,7 +414,7 @@ export default function Home() {
               {[
                 { icon: Factory, title: "Producție proprie", desc: "Print latex și UV în atelierul nostru, pe materialele pe care le-am ales și testat noi." },
                 { icon: ShieldCheck, title: "Fișier verificat de un om", desc: "Un grafician verifică rezoluția, proporțiile și culorile și îți trimite bunul de tipar înainte de print." },
-                { icon: Truck, title: "Livrare în 24-48h", desc: "Tapetul pleacă rulat în tub rigid, canvasul în colțare de carton. AWB și factură pe e-mail." },
+                { icon: Truck, title: "Livrare în 2-4 zile lucrătoare", desc: "Tapetul pleacă rulat în tub rigid, canvasul în colțare de carton. AWB și factură pe e-mail." },
               ].map((f) => (
                 <li key={f.title} className="rounded-2xl bg-white border border-[#E4D9C8] p-5">
                   <div className="w-10 h-10 rounded-xl bg-[#1F4D3A]/10 text-[#1F4D3A] flex items-center justify-center mb-3">

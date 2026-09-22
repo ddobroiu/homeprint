@@ -24,10 +24,7 @@ import { NumberInput } from "./ui/NumberInput";
 import { OptionButton } from "./ui/OptionButton";
 
 const GALLERY = [
-  "/products/rollup/rollup-1.webp",
-  "/products/rollup/rollup-2.webp",
-  "/products/rollup/rollup-3.webp",
-  "/products/rollup/rollup-4.webp"
+  "/products/rollup/rollup-1.webp"
 ] as const;
 
 const productFaqs: QA[] = [

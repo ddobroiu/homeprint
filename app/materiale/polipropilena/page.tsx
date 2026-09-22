@@ -48,7 +48,7 @@ export default function PolipropilenaPage() {
                         },
                         {
                             question: "Cât durează producția și livrarea?",
-                            answer: "Print UV direct pe panou, fără timp de uscare — producție rapidă, livrare prin curier de regulă în 24-48h."
+                            answer: "Print UV direct pe panou, fără timp de uscare — producție rapidă, livrare prin curier de regulă în 2-4 zile lucrătoare."
                         }
                     ]}
                 />
@@ -121,7 +121,7 @@ export default function PolipropilenaPage() {
                                     },
                                     {
                                         q: "Cât durează producția și livrarea?",
-                                        a: "Print UV direct pe panou, fără timp de uscare — producție rapidă, livrare prin curier de regulă în 24-48h."
+                                        a: "Print UV direct pe panou, fără timp de uscare — producție rapidă, livrare prin curier de regulă în 2-4 zile lucrătoare."
                                     }
                                 ].map((faq, idx) => (
                                     <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">

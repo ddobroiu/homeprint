@@ -1801,7 +1801,7 @@ export const seoCampaignProducts: any[] = [
         slug: "banner-personalizat-online-creare-design-propriul-banner",
         routeSlug: "configurator/banner",
         title: "Banner Personalizat (Creat Online)",
-        description: "Creează-ți propriul banner personalizat online. Încarcă designul tău sau alege opțiunile dorite și primești produsul gata de montaj în 24-48h.",
+        description: "Creează-ți propriul banner personalizat online. Încarcă designul tău sau alege opțiunile dorite și primești produsul gata de montaj în 2-4 zile lucrătoare.",
         image: "/products/banner/banner-1.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
