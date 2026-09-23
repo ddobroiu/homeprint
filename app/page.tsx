@@ -363,8 +363,8 @@ export default function Home() {
                   <div className="pt-3 flex flex-col flex-1">
                     <h3 className="text-stone-900 font-bold text-sm md:text-base leading-tight group-hover:text-[#1F4D3A] transition-colors">{p.name}</h3>
                     <p className="text-stone-500 text-xs leading-snug mt-1.5 line-clamp-2 hidden md:block">{p.description}</p>
-                    <div className="mt-auto pt-3 flex items-center justify-between gap-2">
-                      {price ? <span className="text-[#B5563A] font-bold text-sm whitespace-nowrap">{price}</span> : <span className="text-stone-400 text-xs">preț în configurator</span>}
+                    <div className="mt-auto pt-3 flex flex-wrap items-center justify-between gap-x-2 gap-y-1">
+                      {price ? <span className="text-[#B5563A] font-bold text-sm">{price}</span> : <span className="text-stone-400 text-xs">preț în configurator</span>}
                       <span className="text-stone-400 text-[10px] uppercase tracking-wider hidden sm:inline">{p.turnaroundTime.replace(" lucrătoare", "")}</span>
                     </div>
                   </div>
