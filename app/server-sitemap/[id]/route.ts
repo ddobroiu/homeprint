@@ -221,13 +221,13 @@ export async function GET(request: Request, props: any) {
     } else if (id && id.startsWith('recomandat-')) {
         const part = parseInt(id.replace('recomandat-', ''));
         const allRecomandat = [];
-        const { configuratorProducts } = await import('@/lib/products/configurator-products');
+        const { CONFIGURATORS_REGISTRY } = await import('@/lib/configurators-registry');
         
         // Note: "/pentru-{x}" is dropped - app/recomandat/[productSlug]/[targetSlug]/page.tsx
         // strips the "pentru-" prefix before resolving content, so it is a
         // duplicate-content alias of "/{x}", not a distinct page.
-        for (const prod of configuratorProducts) {
-            const pSlug = prod.slug || prod.id;
+        for (const prod of CONFIGURATORS_REGISTRY) {
+            const pSlug = prod.slug;
             // Existing intents
             const intents = PRODUCT_INTENTS[prod.id] || [];
             for (const intent of intents) {

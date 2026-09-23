@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
-    title: 'Panouri Alucobond (Dibond) pentru Fațadă și Firmă Permanentă | HomePrint',
+    title: 'Panouri Alucobond (Dibond) pentru Fațadă și Firmă Permanentă',
     description: 'Panouri compozite din aluminiu (Alucobond/Dibond), cel mai durabil material rigid pentru firme de fațadă și semnalistică permanentă de exterior. Print UV direct, planeitate perfectă. Preț instant.',
     keywords: ['alucobond personalizat', 'dibond firma', 'panou aluminiu fatada', 'firma exterior permanenta', 'panou compozit aluminiu', 'homeprint'],
     alternates: {
@@ -16,9 +16,10 @@ export const metadata: Metadata = {
 
 export default function AlucobondPage() {
     return (
+        <>
+        <h1 className="sr-only">Panouri Alucobond (Dibond) pentru Firmă și Fațadă Permanentă</h1>
         <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Se încarcă configuratorul Alucobond...</div>}>
             <div className="pt-20">
-                <h1 className="sr-only">Panouri Alucobond (Dibond) pentru Firmă și Fațadă Permanentă</h1>
                 <BreadcrumbSchema
                     items={[
                         { name: "Acasă", item: "/" },
@@ -137,5 +138,6 @@ export default function AlucobondPage() {
                 </section>
             </div>
         </Suspense>
+        </>
     );
 }

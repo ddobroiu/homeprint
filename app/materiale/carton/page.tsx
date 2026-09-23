@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
-    title: 'Panouri din Carton pentru Semnalistică Temporară de Interior | HomePrint',
+    title: 'Panouri din Carton pentru Semnalistică Temporară de Interior',
     description: 'Panouri din carton ondulat sau fagure (honeycomb), cea mai ieftină soluție rigidă pentru semnalistică temporară de interior, display-uri și evenimente. Preț instant.',
     keywords: ['carton personalizat', 'carton ondulat', 'carton fagure honeycomb', 'display carton eveniment', 'panou carton indoor', 'homeprint'],
     alternates: {
@@ -16,9 +16,10 @@ export const metadata: Metadata = {
 
 export default function CartonPage() {
     return (
+        <>
+        <h1 className="sr-only">Panouri din Carton pentru Semnalistică Temporară de Interior</h1>
         <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Se încarcă configuratorul Carton...</div>}>
             <div className="pt-20">
-                <h1 className="sr-only">Panouri din Carton pentru Semnalistică Temporară de Interior</h1>
                 <BreadcrumbSchema
                     items={[
                         { name: "Acasă", item: "/" },
@@ -137,5 +138,6 @@ export default function CartonPage() {
                 </section>
             </div>
         </Suspense>
+        </>
     );
 }

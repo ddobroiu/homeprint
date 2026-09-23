@@ -6,14 +6,14 @@ import FAQSchema from "@/components/FAQSchema";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Tricouri cu Logo pentru Echipă sau Eveniment | HomePrint',
+    title: 'Tricouri cu Logo pentru Echipă sau Eveniment',
     description: 'Tricouri personalizate cu logo-ul firmei sau design de eveniment. Bumbac 100%, print DTF rezistent, comenzi în cantitate, preț instant.',
     keywords: ['tricouri cu logo firma', 'tricouri echipa', 'tricouri promotionale', 'print dtf', 'homeprint'],
     alternates: {
         canonical: '/configurator/tricouri',
     },
     openGraph: {
-        title: 'Tricouri cu Logo pentru Echipă sau Eveniment | HomePrint',
+        title: 'Tricouri cu Logo pentru Echipă sau Eveniment',
         description: 'Personalizezi logo-ul, alegi cantitatea, comanzi online.',
         images: ['/placeholder.png'],
     }
@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 export default function TricouriPage() {
     return (
         <div className="pt-20">
+            <h1 className="sr-only">Tricouri cu Logo pentru Echipă sau Eveniment</h1>
             <BreadcrumbSchema
                 items={[
                     { name: "Acasă", item: "/" },

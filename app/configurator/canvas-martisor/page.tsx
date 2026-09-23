@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 export default function CanvasMartisorPage() {
     return (
         <>
+            <h1 className="sr-only">Tablou canvas de Mărțișor</h1>
             <div className="pt-20">
                 <Suspense fallback={<div className="min-h-[60svh] flex items-center justify-center">Se încarcă configuratorul de mărțișoare...</div>}>
                     <div className="min-h-screen bg-transparent pb-20">

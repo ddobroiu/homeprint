@@ -23,6 +23,7 @@ export default function Canvas8MartiePage() {
 
     return (
         <div className="pt-24 max-w-7xl mx-auto px-4">
+            <h1 className="sr-only">Tablou canvas cadou de 8 Martie</h1>
             <Breadcrumbs items={breadcrumbItems} />
             <Suspense fallback={<div className="min-h-[60svh] flex items-center justify-center">Se încarcă configuratorul de 8 Martie...</div>}>
                 <div className="min-h-screen bg-transparent pb-20">

@@ -6,14 +6,14 @@ import FAQSchema from "@/components/FAQSchema";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Șepci cu Logo pentru Echipă sau Eveniment | HomePrint',
+    title: 'Șepci cu Logo pentru Echipă sau Eveniment',
     description: 'Șepci personalizate cu logo-ul firmei, pentru echipă, promoții sau evenimente. Print DTF rezistent, comenzi în cantitate, preț instant.',
     keywords: ['sepci cu logo firma', 'sepci promotionale', 'sepci echipa', 'print dtf', 'homeprint'],
     alternates: {
         canonical: '/configurator/sepci',
     },
     openGraph: {
-        title: 'Șepci cu Logo pentru Echipă sau Eveniment | HomePrint',
+        title: 'Șepci cu Logo pentru Echipă sau Eveniment',
         description: 'Personalizezi logo-ul, alegi cantitatea, comanzi online.',
         images: ['/placeholder.png'],
     }
@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 export default function SepciConfigPage() {
     return (
         <div className="pt-20">
+            <h1 className="sr-only">Șepci cu Logo pentru Echipă sau Eveniment</h1>
             <BreadcrumbSchema
                 items={[
                     { name: "Acasă", item: "/" },

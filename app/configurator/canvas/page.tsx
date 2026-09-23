@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 import { SeoDimensionsLinks } from '@/components/SeoDimensionsLinks';
 
 export const metadata: Metadata = {
-    title: "Tablou Canvas pentru Birou sau Showroom | HomePrint",
+    title: "Tablou Canvas pentru Birou sau Showroom",
     description: "Tablouri canvas pe pânză premium pentru decor de birou, showroom sau recepție — inclusiv din propriile vizualuri de brand, cu editor online Visionboard. Rezistență și finisaje impecabile.",
     keywords: ['tablou canvas birou', 'canvas decor showroom', 'print canvas business', 'homeprint', 'visionboard canvas'],
 };

@@ -1,3 +1,4 @@
+import { siteConfig } from "@/lib/siteConfig";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ judetSlug
     const title = variant.metaTitle;
     const description = variant.metaDescription;
 
-    const routeUrl = `https://HomePrint.ro/judet/${judet.slug}/${loc.slug}`;
+    const routeUrl = `${siteConfig.url}/judet/${judet.slug}/${loc.slug}`;
 
     return {
         title,
@@ -74,7 +75,7 @@ export default async function LocalitatePage({ params }: { params: Promise<{ jud
                             "provider": {
                                 "@type": "LocalBusiness",
                                 "name": "HomePrint",
-                                "url": `https://HomePrint.ro/judet/${judet.slug}/${loc.slug}`,
+                                "url": `${siteConfig.url}/judet/${judet.slug}/${loc.slug}`,
                                 "areaServed": { "@type": "City", "name": loc.name }
                             }
                         },
@@ -82,8 +83,8 @@ export default async function LocalitatePage({ params }: { params: Promise<{ jud
                             "@context": "https://schema.org",
                             "@type": "BreadcrumbList",
                             "itemListElement": [
-                                { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://HomePrint.ro/" },
-                                { "@type": "ListItem", "position": 2, "name": judet.name, "item": `https://HomePrint.ro/judet/${judet.slug}` },
+                                { "@type": "ListItem", "position": 1, "name": "Acasă", "item": `${siteConfig.url}/` },
+                                { "@type": "ListItem", "position": 2, "name": judet.name, "item": `${siteConfig.url}/judet/${judet.slug}` },
                                 { "@type": "ListItem", "position": 3, "name": loc.name }
                             ]
                         },

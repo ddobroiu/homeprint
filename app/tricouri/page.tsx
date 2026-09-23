@@ -9,7 +9,7 @@ import FaqAccordion from "@/components/FaqAccordion";
 import type { QA } from "@/types";
 
 export const metadata = {
-    title: "Tricouri Personalizate pentru Familie și Cadouri - Print DTF | HomePrint.ro",
+    title: "Tricouri Personalizate pentru Familie și Cadouri - Print DTF",
     description: "Tricouri personalizate pentru revederi de familie, zile de naștere sau prima ta mică afacere de acasă. Bumbac 100%, print DTF rezistent la spălări repetate, mărimi de la copii (110 cm) la adulți (XXXL), fără comandă minimă. Încarci o poză sau un desen și comanzi online în câteva minute.",
     keywords: [
         "tricouri personalizate",
@@ -23,7 +23,7 @@ export const metadata = {
     ],
     alternates: { canonical: "/tricouri" },
     openGraph: {
-        title: "Tricouri Personalizate pentru Familie și Cadouri | Print DTF | HomePrint.ro",
+        title: "Tricouri Personalizate pentru Familie și Cadouri | Print DTF",
         description: "De la 8 tricouri pentru o revedere de familie la primul stoc al unei mici afaceri de acasă — bumbac 100%, print DTF rezistent, mărimi de la copii la adulți, fără comandă minimă.",
         images: [{
             url: "/products/banner/banner-1.webp",

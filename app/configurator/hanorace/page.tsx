@@ -13,7 +13,7 @@ export const metadata: Metadata = {
         canonical: '/configurator/hanorace',
     },
     openGraph: {
-        title: 'Hanorace Personalizate cu Logo pentru Echipă | HomePrint',
+        title: 'Hanorace Personalizate cu Logo pentru Echipă',
         description: 'Personalizezi logo-ul, alegi cantitatea, comanzi online.',
         images: ['/placeholder.png'],
     }
@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 export default function HanoracePage() {
     return (
         <div className="pt-20">
+            <h1 className="sr-only">Hanorace Personalizate cu Logo pentru Echipă</h1>
             <BreadcrumbSchema
                 items={[
                     { name: "Acasă", item: "/" },

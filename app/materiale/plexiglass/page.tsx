@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
-    title: 'Plexiglas Personalizat pentru Firme Indoor și Display-uri Premium | HomePrint',
+    title: 'Plexiglas Personalizat pentru Firme Indoor și Display-uri Premium',
     description: 'Plăci de plexiglas (sticlă acrilică) transparente sau albe, debitate CNC, pentru firme indoor premium, meniuri și display-uri de showroom. Print UV direct, grosimi 2-10mm. Preț instant.',
     keywords: ['plexiglas personalizat', 'placi plexiglas firma', 'sticla acrilica showroom', 'print uv plexiglas', 'meniu plexiglas', 'homeprint'],
     alternates: {
@@ -16,9 +16,10 @@ export const metadata: Metadata = {
 
 export default function PlexiglassPage() {
     return (
+        <>
+        <h1 className="sr-only">Plexiglas Personalizat pentru Firme Indoor Premium și Display-uri</h1>
         <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Se încarcă configuratorul Plexiglas...</div>}>
             <div className="pt-20">
-                <h1 className="sr-only">Plexiglas Personalizat pentru Firme Indoor Premium și Display-uri</h1>
                 <BreadcrumbSchema
                     items={[
                         { name: "Acasă", item: "/" },
@@ -137,5 +138,6 @@ export default function PlexiglassPage() {
                 </section>
             </div>
         </Suspense>
+        </>
     );
 }
