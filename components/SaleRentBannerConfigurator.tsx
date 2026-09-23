@@ -17,6 +17,20 @@ import { OptionButton } from "./ui/OptionButton";
 import { NumberInput } from "./ui/NumberInput";
 import MobilePriceBar from "./MobilePriceBar";
 
+/** "100x50cm" -> 100 x 50 cm; "1x0.5m" / "0-5m-x-1m" -> 100 x 50 cm. Sub 10 fara "cm" = metri. */
+function parseVariantSizeCm(size: string): { width_cm: number; height_cm: number } {
+    const raw = String(size || "").toLowerCase().trim();
+    const isCm = /cm/.test(raw);
+    const s = raw.replace(/cm|m/g, "").replace(/\s/g, "").replace(/-x-/g, "x").replace(/-x/g, "x").replace(/x-/g, "x");
+    const [wPart, hPart] = s.split("x");
+    if (!wPart || !hPart) return { width_cm: 0, height_cm: 0 };
+    let w = parseFloat(wPart.replace(/-/g, "."));
+    let h = parseFloat(hPart.replace(/-/g, "."));
+    if (!isFinite(w) || !isFinite(h)) return { width_cm: 0, height_cm: 0 };
+    if (!isCm && w < 10 && h < 10) { w *= 100; h *= 100; }
+    return { width_cm: Math.round(w), height_cm: Math.round(h) };
+}
+
 export default function SaleRentBannerConfigurator({ product }: { product: any }) {
     const { addItem } = useCart();
     const toast = useToast();
@@ -45,12 +59,7 @@ export default function SaleRentBannerConfigurator({ product }: { product: any }
 
     const priceData = useMemo(() => {
         if (!selectedVariant) return { finalPrice: 0, discountPercent: 0, upsellMessage: null as string | null };
-        let width_cm = 0, height_cm = 0;
-        try {
-            let s = selectedVariant.size.toLowerCase().replace(/[m\s]/g, '').replace(/-x-/g, 'x').replace(/-x/g, 'x').replace(/x-/g, 'x');
-            const [wPart, hPart] = s.split('x');
-            if (wPart && hPart) { width_cm = parseFloat(wPart.replace(/-/g, '.')) * 100; height_cm = parseFloat(hPart.replace(/-/g, '.')) * 100; }
-        } catch (e) {}
+        const { width_cm, height_cm } = parseVariantSizeCm(selectedVariant.size);
         const calculated = calculateBannerPrice({ width_cm, height_cm, quantity, material, want_wind_holes: wantWindHoles, want_hem_and_grommets: true, designOption: "upload" });
         const upsell = getBannerUpsell({ width_cm, height_cm, quantity, material, want_wind_holes: wantWindHoles, want_hem_and_grommets: true, designOption: "upload" });
         return { finalPrice: calculated.finalPrice, discountPercent: 0, upsellMessage: upsell?.hasUpsell ? upsell.message : null };
