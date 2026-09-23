@@ -148,7 +148,7 @@ export default function CategorySeoContent({ kind }: { kind: string }) {
       return (
         <div className="space-y-6">
           <h2 className="text-3xl font-black text-white uppercase tracking-tighter italic border-b-2 border-green-500 pb-3 inline-block">Personalizare Produs</h2>
-          <p className="text-slate-400 text-lg leading-relaxed font-medium italic">Configurează dimensiunile și opțiunile, încarcă fișierele și obține prețul instant. Beneficiezi de livrare rapidă 24–48h național.</p>
+          <p className="text-slate-400 text-lg leading-relaxed font-medium italic">Configurează dimensiunile și opțiunile, încarcă fișierele și obține prețul instant. Beneficiezi de producție 2-4 zile lucrătoare, livrare prin curier în toată țara.</p>
         </div>
       );
   }

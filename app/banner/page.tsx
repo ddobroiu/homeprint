@@ -161,7 +161,7 @@ export default async function BannerPage({ searchParams }: { searchParams: Promi
                 },
                 {
                   q: "Cât de repede se livrează comanda?",
-                  a: "Tehnologia UV ne permite uscarea instantă a printului. Timpul standard este de 24-48 ore lucrătoare oriunde în țară, din momentul validării comenzii."
+                  a: "Tehnologia UV ne permite uscarea instantă a printului. Timpul standard este de 2-4 zile lucrătoare oriunde în țară, din momentul validării comenzii."
                 },
                 {
                   q: "Bannerele rezistă la soare (raze UV)?",

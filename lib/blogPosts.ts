@@ -505,7 +505,7 @@ const STATIC_POSTS: BlogPost[] = [
       <p>Dacă vrei un banner „La mulți ani!” generic, fără vârstă sau an scris pe el, îl poți refolosi an de an, la fiecare zi de naștere din familie. Depozitează-l rulat, cu fața printată spre exterior, într-un loc uscat, ferit de temperaturi extreme – niciodată împăturit, pentru că pliurile lasă urme permanente pe suprafața PVC, mai ales iarna.</p>
 
       <h2 class="text-xl font-bold mt-10 mb-3">Cât durează de la comandă la primire</h2>
-      <p>Odată confirmată comanda, un banner standard iese din producție de regulă în sub 24 de ore lucrătoare – tăiere, tiv la cald și capse incluse. Dacă evenimentul e programat exact, spune-ne data la confirmarea comenzii, ca să știi sigur la ce interval te poți baza pentru livrare.</p>
+      <p>Odată confirmată comanda, un banner standard iese din producție de regulă în 2-4 zile lucrătoare – tăiere, tiv la cald și capse incluse. Dacă evenimentul e programat exact, spune-ne data la confirmarea comenzii, ca să știi sigur la ce interval te poți baza pentru livrare.</p>
 
       <h2 class="text-xl font-bold mt-10 mb-3">Dacă nu ești sigur ce să alegi, spune-ne doar ocazia</h2>
       <p>Nu trebuie să știi din start diferența tehnică dintre frontlit și blockout. Dacă ne spui pur și simplu ce sărbătorești și unde vrei să montezi bannerul (gard, balcon, perete), îți recomandăm direct configurația corectă – util mai ales la prima comandă, când nu ai încă un reper de comparație.</p>
