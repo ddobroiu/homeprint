@@ -50,7 +50,7 @@ jobs:
         with:
           host: 178.104.33.34
           username: root
-          password: ${{ secrets.SERVER_PASSWORD }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
           command_timeout: 60m
           timeout: 120s
           script: |
