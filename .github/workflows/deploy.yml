@@ -68,6 +68,9 @@ jobs:
             # Seria Oblio a grupului print (o singură serie pentru toate site-urile de print)
             sed -i '/^OBLIO_SERIE_FACTURA=/d' .env
             echo "OBLIO_SERIE_FACTURA=PRT" >> .env
+            # Notificarile de comanda merg la adresa site-ului (redirectionata spre shopprint)
+            sed -i '/^ADMIN_EMAIL=/d' .env
+            echo "ADMIN_EMAIL=contact@homeprint.ro" >> .env
             sed -i '/^PIXABAY_API_KEY=/d' .env
             echo "PIXABAY_API_KEY=${{ secrets.PIXABAY_API_KEY }}" >> .env
             # Cheia Resend (email) se poate roti din secretul dedicat; dacă lipsește, rămâne cea din ENV_CONTENTS
