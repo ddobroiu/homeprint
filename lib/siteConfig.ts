@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Mail, Music } from "lucide-react";
+import { COMPANY } from "@/lib/company";
 
 export const siteConfig = {
     name: "HomePrint",
@@ -7,7 +8,7 @@ export const siteConfig = {
     description: "HomePrint.ro - Decor printat pentru casă și birou: fototapet personalizat, tablouri canvas, postere de artă și autocolante de perete, produse în atelier propriu și livrate în 2-4 zile lucrătoare. Tot catalogul de print publicitar rămâne disponibil: bannere, roll-up, panouri rigide, textile, kituri fonduri UE.",
     email: "contact@HomePrint.ro",
     phone: "0750 473 111",
-    address: "Jud. Buzău, Sat Topliceni, Com. Topliceni, G Topliceni, nr. 214",
+    address: COMPANY.address.full,
     // --- MENIUL PRINCIPAL (HEADER) ---
     // Toate familiile de produse rămân accesibile; gruparea pune decorul primul,
     // pentru că asta caută publicul HomePrint (case, designeri, birouri).
@@ -100,19 +101,16 @@ export const siteConfig = {
         },
     ],
     business: {
-        // TODO confirm before launch: same entity as AdBanner/EuPrint ("CULOAREA DIN
-        // VIATA SA SRL", CUI 44820819) or a new/different SRL for HomePrint? Kept the
-        // shared entity as the default since most of the network invoices under it.
-        legalName: "CULOAREA DIN VIATA SA SRL",
+        // Operatorul confirmat de proprietar: aceeași firmă pentru toate site-urile de print (lib/company.ts).
+        legalName: COMPANY.legalName,
         tradeName: "HomePrint",
-        cui: "44820819",
-        regCom: "J2021001108100",
-        vatId: "44820819",
+        cui: COMPANY.cui,
+        regCom: COMPANY.regCom,
         address: {
-            fullAddress: "Jud. Buzău, Sat Topliceni, Com. Topliceni, nr. 214",
+            fullAddress: COMPANY.address.full,
             city: "Topliceni",
             county: "Buzău",
-            postalCode: "127630",
+            postalCode: COMPANY.address.postalCode,
             country: "România",
         },
         contact: {

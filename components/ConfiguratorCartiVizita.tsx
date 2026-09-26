@@ -290,7 +290,7 @@ export default function ConfiguratorCartiVizita({ productImage }: { productImage
                               <div className="space-y-3">
                                  <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest italic leading-none">Investiție Identitate</p>
                                  <p className="text-5xl sm:text-7xl font-black text-slate-900 italic tracking-tighter leading-none">{formatMoneyDisplay(displayedTotal)}</p>
-                                 <p className="text-[10px] font-black text-indigo-600 uppercase tracking-widest italic">TVA Inclus • ~{formatMoneyDisplay(displayedTotal/input.quantity)}/buc</p>
+                                 <p className="text-[10px] font-black text-indigo-600 uppercase tracking-widest italic">Preț final; furnizorul nu este plătitor de TVA • ~{formatMoneyDisplay(displayedTotal/input.quantity)}/buc</p>
                               </div>
                               <div className="text-right">
                                  <DeliveryEstimation />

@@ -294,7 +294,7 @@ export default function ConfiguratorPolipropilena({ initialWidth: initW, initial
                               <div className="space-y-3">
                                  <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest italic leading-none">Total Investiție</p>
                                  <p className="text-5xl sm:text-7xl font-black text-slate-900 italic tracking-tighter leading-none">{formatMoneyDisplay(displayedTotal)}</p>
-                                 <p className="text-[10px] font-black text-amber-600 uppercase tracking-widest italic">TVA Inclus • Material Economic</p>
+                                 <p className="text-[10px] font-black text-amber-600 uppercase tracking-widest italic">Preț final; furnizorul nu este plătitor de TVA • Material Economic</p>
                               </div>
                               <div className="text-right">
                                  <DeliveryEstimation />

@@ -21,6 +21,7 @@ import {
   Package,
 } from "lucide-react";
 import CheckoutForm from "./CheckoutForm";
+import { LEGAL_VERSION, PERSONALIZED_WITHDRAWAL_NOTE } from "@/lib/company";
 import DeliveryInfo from "@/components/DeliveryInfo";
 import DiscountCodeInput from "@/components/DiscountCodeInput";
 import { getEstimatedShippingCost, validateDpdShipment } from "@/lib/shippingUtils";
@@ -641,6 +642,7 @@ export default function CheckoutPage() {
       createAccount: createAccount && !session?.user,
       paymentMethod,
       acceptTerms,
+      termsVersion: LEGAL_VERSION,
       source: 'homeprint.ro',
 
       discountCode,
@@ -1020,7 +1022,7 @@ export default function CheckoutPage() {
                         {dpdError ? "---" : fmt(totalWithShipping)}
                       </p>
                       <p className="text-[11px] text-slate-700 dark:text-slate-400">
-                        TVA inclus • {hasFreeShipping ? "livrare gratuită" : "include transport"}
+                        Preț final; furnizorul nu este plătitor de TVA • {hasFreeShipping ? "livrare gratuită" : "include transport"}
                       </p>
                     </div>
                   </div>
@@ -1041,6 +1043,10 @@ export default function CheckoutPage() {
                       </span>
                     </label>
                   )}
+                  <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-xs leading-relaxed text-amber-900">
+                    <strong>Important:</strong> {PERSONALIZED_WITHDRAWAL_NOTE}{" "}
+                    <Link href="/termeni#retragere" target="_blank" className="font-semibold underline">Detalii</Link>
+                  </p>
                   <label className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
                     <input
                       type="checkbox"
@@ -1049,15 +1055,15 @@ export default function CheckoutPage() {
                       className="mt-0.5 h-4 w-4 rounded border-slate-300 text-amber-600 focus:ring-amber-500"
                     />
                     <span>
-                      Confirm că am citit și sunt de acord cu{" "}
+                      Am citit și sunt de acord cu{" "}
                       <Link
-                        href="/termeni-si-conditii"
+                        href="/termeni"
                         className="text-amber-600 dark:text-amber-400 font-semibold underline-offset-2 hover:underline"
                         target="_blank"
                       >
                         Termenii și condițiile
                       </Link>{" "}
-                      și cu{" "}
+                      și{" "}
                       <Link
                         href="/confidentialitate"
                         className="text-amber-600 dark:text-amber-400 font-semibold underline-offset-2 hover:underline"

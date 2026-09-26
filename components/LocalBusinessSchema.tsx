@@ -12,10 +12,8 @@ export default function LocalBusinessSchema() {
     "url": siteConfig.url,
     "logo": siteConfig.ogImage,
     "image": siteConfig.ogImage,
-    "telephone": siteConfig.business.contact.phone,
     "email": siteConfig.business.contact.email,
     "taxID": siteConfig.business.cui,
-    "vatID": siteConfig.business.vatId,
     "address": {
       "@type": "PostalAddress",
       "streetAddress": siteConfig.business.address.fullAddress,

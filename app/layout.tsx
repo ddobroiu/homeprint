@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import ClientLayoutWrapper from "../components/ClientLayoutWrapper";
 import ContactButton from "../components/ContactButton";
 import CookieConsent from "../components/CookieConsent";
+import { CONSENT_MODE_BOOTSTRAP } from "@/lib/cookieConsent";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -100,54 +101,13 @@ export default function RootLayout({
   return (
     <html lang="ro" data-theme="light">
       <head>
-        {/* Consent Mode v2 — must run before gtag.js, so it lives here in the root
-            layout <head>. (`Script strategy="beforeInteractive"` is ignored inside
-            client components, so it cannot live in CookieConsent.) */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('consent', 'default', {
-                'ad_storage': 'denied',
-                'ad_user_data': 'denied',
-                'ad_personalization': 'denied',
-                'analytics_storage': 'denied',
-                'functionality_storage': 'granted',
-                'security_storage': 'granted',
-                'wait_for_update': 500
-              });
-              try {
-                if (localStorage.getItem('cookie_consent') === 'granted') {
-                  gtag('consent', 'update', {
-                    'ad_storage': 'granted',
-                    'ad_user_data': 'granted',
-                    'ad_personalization': 'granted',
-                    'analytics_storage': 'granted'
-                  });
-                }
-              } catch (e) {}
-            `,
-          }}
-        />
-        {/* GA4 property "HomePrint.ro", în contul Culoarea din Viata SA SRL.
-            În HTML-ul inițial ca verificatorul Google să îl vadă; Consent Mode
-            de mai sus controlează stocarea. Vechiul ID G-4J0WMEX7J3 aparținea
-            contului Analytics mutat la coș și a fost înlocuit. */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4KY7Q4B6J" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              gtag('js', new Date());
-              gtag('config', 'G-Z4KY7Q4B6J');
-            `,
-          }}
-        />
+        {/* Consent Mode v2 — implicit refuzat; rulează înaintea oricărui script Google.
+            Scripturile de statistică/marketing (GA4, Ads, GTM, Meta, t.js) le încarcă CookieConsent,
+            numai după consimțământ (config în lib/company.ts → TRACKING). */}
+        <script dangerouslySetInnerHTML={{ __html: CONSENT_MODE_BOOTSTRAP }} />
         <link rel="icon" href="/logo.svg" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
         <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
-        {/* Tracking propriu al site-urilor de print (vizite si surse de trafic), vezi adminul shopprint → Monitorizare */}
-        <script defer src="https://www.shopprint.ro/t.js" />
       </head>
 
       <body className={`${inter.variable} ${outfit.variable} bg-white text-slate-900 antialiased font-sans selection:bg-amber-500 selection:text-white relative`}>

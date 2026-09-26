@@ -299,7 +299,7 @@ export default function ConfiguratorAlucobond({ initialWidth: initW, initialHeig
                               <div className="space-y-3">
                                  <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest italic leading-none">Total Proiect</p>
                                  <p className="text-5xl sm:text-7xl font-black text-slate-900 italic tracking-tighter leading-none">{formatMoneyDisplay(displayedTotal)}</p>
-                                 <p className="text-[10px] font-black text-green-600 uppercase tracking-widest italic">TVA Inclus • Panel Aluminiu Compozit</p>
+                                 <p className="text-[10px] font-black text-green-600 uppercase tracking-widest italic">Preț final; furnizorul nu este plătitor de TVA • Panel Aluminiu Compozit</p>
                               </div>
                               <div className="text-right">
                                  <DeliveryEstimation />
