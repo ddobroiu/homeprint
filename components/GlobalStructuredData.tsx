@@ -45,7 +45,7 @@ export default function GlobalStructuredData() {
         "description": siteConfig.description,
         "url": baseUrl,
         "logo": `${baseUrl}/logo.svg`,
-        "image": `${baseUrl}/homeprint.webp`,
+        "image": `${baseUrl}/logo.svg`,
         "email": CONTACT_EMAIL,
         "priceRange": "$$",
         "address": {
@@ -77,6 +77,7 @@ export default function GlobalStructuredData() {
         "@id": `${baseUrl}/#website`,
         "name": siteConfig.name,
         "url": baseUrl,
+        "inLanguage": "ro-RO",
         "publisher": { "@id": `${baseUrl}/#organization` },
         "potentialAction": {
             "@type": "SearchAction",
