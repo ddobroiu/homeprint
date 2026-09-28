@@ -17,7 +17,6 @@ function getBranding(source?: string | null) {
     if (s.includes('euprint.ro')) return { name: 'EuPrint', home: 'https://www.euprint.ro' };
     if (s.includes('homeprint.ro')) return { name: 'HomePrint', home: 'https://www.homeprint.ro' };
     if (s.includes('tablou.net')) return { name: 'Tablou.net', home: 'https://www.tablou.net' };
-    if (s.includes('visionboard.ro')) return { name: 'VisionBoard', home: 'https://www.visionboard.ro' };
     return { name: 'HomePrint', home: '/' };
 }
 
