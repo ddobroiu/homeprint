@@ -2,6 +2,7 @@ export const dynamic = 'force-dynamic';
 import { alerta, faraCredite } from '@/lib/alerts';
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
+import { CHAT_MODEL, chatOptions } from '@/lib/ai-model';
 import { tools, SYSTEM_PROMPT } from '@/lib/ai-shared';
 import { executeTool } from '@/lib/ai-tool-runner';
 import { getAuthSession } from '@/lib/auth';
@@ -161,12 +162,11 @@ export async function POST(req: Request) {
 
     // Primul apel OpenAI - optimizat pentru viteză
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o",
+      model: CHAT_MODEL,
       messages: messagesPayload as any,
       tools: tools,
       tool_choice: "auto",
-      temperature: 0.1, // Reduced from 0.2 for more consistent, concise responses
-      max_tokens: 300, // Limit response length for faster replies
+      ...chatOptions(CHAT_MODEL, { temperature: 0.1, maxTokens: 300 }),
     });
 
     const responseMessage = completion.choices[0].message;
@@ -194,10 +194,9 @@ export async function POST(req: Request) {
       }
 
       const finalRes = await openai.chat.completions.create({
-        model: "gpt-4o",
+        model: CHAT_MODEL,
         messages: messagesPayload as any,
-        temperature: 0.1,
-        max_tokens: 300,
+        ...chatOptions(CHAT_MODEL, { temperature: 0.1, maxTokens: 300 }),
       });
 
       finalReply = finalRes.choices[0].message.content;
