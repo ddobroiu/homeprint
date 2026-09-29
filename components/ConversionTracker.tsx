@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import { readConsent } from "@/lib/cookieConsent";
+import { CONSENT_CHANGE_EVENT, readConsent } from "@/lib/cookieConsent";
+import { loadTikTok, trackTikTok } from "@/lib/tiktok";
 
 type TrackingWindow = Window & {
     dataLayer?: unknown[];
@@ -64,6 +65,49 @@ export default function ConversionTracker({ orderNo, value, currency = "RON" }: 
         }, 0);
 
         return () => window.clearTimeout(timer);
+    }, [orderNo, value, currency]);
+
+    // TikTok Pixel: CompletePayment, numai cu consimțământ la marketing, o singură dată per comandă.
+    // Dacă acordul vine după afișarea paginii (bannerul), trimitem la evenimentul de schimbare a consimțământului.
+    useEffect(() => {
+        if (!orderNo) return;
+        const key = `tt_purchase_${orderNo}`;
+
+        const fire = () => {
+            if (!readConsent()?.marketing) return false;
+            try {
+                if (localStorage.getItem(key)) return true;
+            } catch {
+                if ((window as unknown as Record<string, unknown>)[key]) return true;
+            }
+            loadTikTok(); // idempotent; permis pe pagina de mulțumire
+            const params: Record<string, unknown> = {
+                currency,
+                content_type: "product",
+                order_id: String(orderNo),
+                event_id: `order-${orderNo}`,
+            };
+            if (typeof value === "number" && value > 0) params.value = Number(value.toFixed(2));
+            if (!trackTikTok("CompletePayment", params, { event_id: `order-${orderNo}` })) return false;
+            try {
+                localStorage.setItem(key, "1");
+            } catch {
+                (window as unknown as Record<string, unknown>)[key] = true;
+            }
+            return true;
+        };
+
+        const onChange = () => {
+            if (fire()) window.removeEventListener(CONSENT_CHANGE_EVENT, onChange);
+        };
+        const timer = window.setTimeout(() => {
+            if (!fire()) window.addEventListener(CONSENT_CHANGE_EVENT, onChange);
+        }, 0);
+
+        return () => {
+            window.clearTimeout(timer);
+            window.removeEventListener(CONSENT_CHANGE_EVENT, onChange);
+        };
     }, [orderNo, value, currency]);
 
     return null;

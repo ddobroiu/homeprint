@@ -1,6 +1,8 @@
 // Datele operatorului (comerciantului) și constantele legale ale site-ului.
 // SINGURA sursă pentru identificarea firmei: subsol, contact, pagini legale, JSON-LD,
 // checkout, PDF-uri. Aceleași date pe toate site-urile de print (aceeași firmă).
+import { TIKTOK_PIXEL_ID } from "@/lib/tiktok";
+
 export const COMPANY = {
     legalName: "CULOAREA DIN VIAȚA SA S.R.L.",
     /** Pentru PDF-uri cu fonturi fără diacritice (Helvetica în @react-pdf). */
@@ -36,8 +38,8 @@ export const VAT_NOTE_SENTENCE = "Preț final; furnizorul nu este plătitor de T
 export const VAT_NOTE_ASCII = "Pret final; furnizorul nu este platitor de TVA.";
 
 /** Versiunea documentelor legale (Termeni, Confidențialitate, Cookies, Livrare și retur). */
-export const LEGAL_VERSION = "2026-09-26";
-export const LEGAL_EFFECTIVE_DATE = "26 septembrie 2026";
+export const LEGAL_VERSION = "2026-09-29";
+export const LEGAL_EFFECTIVE_DATE = "29 septembrie 2026";
 
 /** Link-uri legale folosite în subsol, checkout și în paginile legale. */
 export const LEGAL_LINKS = [
@@ -88,4 +90,6 @@ export const TRACKING: {
     ga4Ids: ["G-Z4KY7Q4B6J"],
     googleAdsIds: [],
     siteAnalyticsSrc: "https://www.shopprint.ro/t.js",
+    /** TikTok Pixel (lib/tiktok.ts): numai cu consimțământ la marketing. */
+    tiktokPixelId: TIKTOK_PIXEL_ID,
 };
