@@ -3,6 +3,7 @@ import { alerta, faraCredite } from '@/lib/alerts';
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { CHAT_MODEL, chatOptions } from '@/lib/ai-model';
+import { trackOpenAI } from '@/lib/aiUsage';
 import { tools, SYSTEM_PROMPT } from '@/lib/ai-shared';
 import { executeTool } from '@/lib/ai-tool-runner';
 import { getAuthSession } from '@/lib/auth';
@@ -161,13 +162,13 @@ export async function POST(req: Request) {
     // }
 
     // Primul apel OpenAI - optimizat pentru viteză
-    const completion = await openai.chat.completions.create({
+    const completion = await trackOpenAI("asistent-site", CHAT_MODEL, () => openai.chat.completions.create({
       model: CHAT_MODEL,
       messages: messagesPayload as any,
       tools: tools,
       tool_choice: "auto",
       ...chatOptions(CHAT_MODEL, { temperature: 0.1, maxTokens: 300 }),
-    });
+    }));
 
     const responseMessage = completion.choices[0].message;
     let finalReply = responseMessage.content;
@@ -193,11 +194,11 @@ export async function POST(req: Request) {
         });
       }
 
-      const finalRes = await openai.chat.completions.create({
+      const finalRes = await trackOpenAI("asistent-site", CHAT_MODEL, () => openai.chat.completions.create({
         model: CHAT_MODEL,
         messages: messagesPayload as any,
         ...chatOptions(CHAT_MODEL, { temperature: 0.1, maxTokens: 300 }),
-      });
+      }));
 
       finalReply = finalRes.choices[0].message.content;
     }
