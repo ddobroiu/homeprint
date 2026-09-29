@@ -20,6 +20,18 @@ import { MATERIALE_DATA } from "@/lib/seo/materialeData";
 import { REGLEMENTARI_DATA } from "@/lib/seo/reglementariData";
 import { STILURI_DATA } from "@/lib/seo/stiluriData";
 import { INTENT_LABELS } from "@/lib/seo/intents";
+import { localProductCanonical, resolveLocalProductKey } from "@/lib/seo/siteSpecialization";
+import { withDisplayName, nearbyLocalities } from "@/lib/seo/localityData";
+import { Breadcrumbs, LocalProductJsonLd, FromPriceNote, LocalityFacts } from "@/components/seo/LocalitySeo";
+import { JUDET_LOCALITY_SLUGS } from "@/lib/seo/mainTowns";
+
+// Randare la prima cerere, apoi din cache (ISR, 7 zile): Googlebot nu mai randează pagina la fiecare vizită.
+// Cache-ul ISR stă doar în memorie (next.config: experimental.isrFlushToDisk=false), nu pe disc.
+export const revalidate = 604800;
+export const dynamicParams = true;
+export function generateStaticParams() {
+    return [];
+}
 
 function getTargetInfo(slug: string) {
     const normalized = slug.startsWith('pentru-') ? slug.replace('pentru-', '') : slug;
@@ -44,10 +56,12 @@ function getTargetInfo(slug: string) {
 
 export async function generateMetadata({ params }: { params: Promise<{ judetSlug: string, localitateSlug: string, productSlug: string[] }> }) {
     const { judetSlug, localitateSlug, productSlug } = await params;
-    const baseSlug = productSlug[0];
-    const targetSlug = productSlug[1];
+    // Aliasurile /configurator/... randează exact produsul de pe calea scurtă (același conținut ca pagina canonică).
+    const aliasKey = resolveLocalProductKey(productSlug);
+    const baseSlug = aliasKey ?? productSlug[0];
+    const targetSlug = aliasKey ? undefined : productSlug[1];
 
-    const loc = getLocalitateBySlug(judetSlug, localitateSlug);
+    const loc = withDisplayName(judetSlug, getLocalitateBySlug(judetSlug, localitateSlug));
     const judet = getJudetBySlug(judetSlug);
     const product = getProductBySlug(baseSlug);
 
@@ -74,7 +88,7 @@ export async function generateMetadata({ params }: { params: Promise<{ judetSlug
         ? `De la ${fromPrice.text}/buc (${fromPrice.basis}). ${baseDescription}`.slice(0, 158)
         : baseDescription;
 
-    const routeUrl = `${siteConfig.url}/judet/${judet.slug}/${loc.slug}/${productSlug.join('/')}`;
+    const routeUrl = localProductCanonical(siteConfig.url, judet.slug, loc.slug, productSlug).url;
 
     return {
         title,
@@ -92,12 +106,14 @@ export async function generateMetadata({ params }: { params: Promise<{ judetSlug
 
 export default async function ProductLocalityPage({ params }: { params: Promise<{ judetSlug: string, localitateSlug: string, productSlug: string[] }> }) {
     const { judetSlug, localitateSlug, productSlug } = await params;
-    const loc = getLocalitateBySlug(judetSlug, localitateSlug);
+    const loc = withDisplayName(judetSlug, getLocalitateBySlug(judetSlug, localitateSlug));
     const judet = getJudetBySlug(judetSlug);
 
     // Greedy Product Resolution for multi-segment slugs (e.g. banner-product/xxx)
-    let productResolved = getProductBySlug(productSlug.join('/'));
-    let baseSlug = productSlug.join('/');
+    // Aliasurile /configurator/... randează exact produsul de pe calea scurtă (același conținut ca pagina canonică).
+    const aliasKey = resolveLocalProductKey(productSlug);
+    let productResolved = getProductBySlug(aliasKey ?? productSlug.join('/'));
+    let baseSlug = aliasKey ?? productSlug.join('/');
     let targetSlug = null;
 
     if (!productResolved && productSlug.length > 1) {
@@ -115,6 +131,7 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
     const productTitle = targetInfo ? `${productBaseName} ${targetInfo.label}` : productBaseName;
 
     const productImage = (product as any).image || ((product as any).images?.[0]) || "/products/banner/banner-1.webp";
+    const canonicalProductUrl = localProductCanonical(siteConfig.url, judet.slug, loc.slug, productSlug).url;
     
     let shopUrl = (product as any).routeSlug || (product as any).slug || product.id;
     if (!shopUrl.startsWith('/') && !shopUrl.startsWith('http')) {
@@ -156,60 +173,49 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
 
     // Cross-links to the other curated (indexable) towns in the same judet, for
     // the same product — these indexed pages otherwise link nowhere to each other.
-    const siblingLocalities = getSiblingLocalitySlugs(judet.slug, loc.slug, 4)
-        .map((siblingSlug) => getLocalitateBySlug(judet.slug, siblingSlug))
+    // Legăturile interne folosesc calea scurtă, canonică (/judet/{j}/{l}/{cheie}), nu aliasul /configurator/...
+    const localKey = resolveLocalProductKey(productSlug);
+    const productPath = localKey ?? productSlug.join('/');
+    // Același produs în orașele principale ale județului (lib/seo/mainTowns.ts).
+    const siblingLocalities = (JUDET_LOCALITY_SLUGS[judet.slug] ?? [])
+        .filter((s) => s !== loc.slug)
+        .slice(0, 8)
+        .map((s) => withDisplayName(judet.slug, getLocalitateBySlug(judet.slug, s)))
         .filter((l): l is NonNullable<typeof l> => Boolean(l));
 
     return (
         <div className="bg-[#fafafc] min-h-screen font-sans overflow-x-hidden w-full max-w-full box-border">
-            <script
-                id={`schema-${judetSlug}-${localitateSlug}-${productSlug.join('-')}`}
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify([
-                        {
-                            "@context": "https://schema.org/",
-                            "@type": "Product",
-                            "name": `${productTitle} - Livrare în ${loc.name}`,
-                            "image": productImage,
-                            "description": `Printăm și livrăm ${productTitle} în ${loc.name}, ${judet.name}. Calitate premium UV.`,
-                            "brand": { "@type": "Brand", "name": "HomePrint" },
-                            "manufacturer": { "@type": "Organization", "name": "HomePrint", "url": `${siteConfig.url}` },
-                        },
-                        {
-                            "@context": "https://schema.org",
-                            "@type": "BreadcrumbList",
-                            itemListElement: [
-                                { "@type": "ListItem", position: 1, name: "Acasă", item: `${siteConfig.url}/` },
-                                { "@type": "ListItem", position: 2, name: judet.name, item: `${siteConfig.url}/judet/${judet.slug}` },
-                                { "@type": "ListItem", position: 3, name: loc.name, item: `${siteConfig.url}/judet/${judet.slug}/${loc.slug}` },
-                                { "@type": "ListItem", position: 4, name: productTitle, item: `${siteConfig.url}/judet/${judet.slug}/${loc.slug}/${productSlug.join("/")}` },
-                            ],
-                        },
-                        {
-                            "@context": "https://schema.org",
-                            "@type": "FAQPage",
-                            mainEntity: getLocalFaqs({ productTitle, locName: loc.name, judetName: judet.name }).map((f) => ({
-                                "@type": "Question",
-                                name: f.question,
-                                acceptedAnswer: { "@type": "Answer", text: f.answer },
-                            })),
-                        }
-                    ])
-                }}
+            <LocalProductJsonLd
+                name={`${productTitle} în ${loc.name}`}
+                description={heroText}
+                image={productImage}
+                url={canonicalProductUrl}
+                siteName={siteConfig.name}
+                siteUrl={siteConfig.url}
+                serviceType={productBaseName}
+                locName={loc.name}
+                judetName={judet.name}
+                productIds={[baseSlug, productCategoryKey]}
+                faqs={getLocalFaqs({ productTitle, locName: loc.name, judetName: judet.name })}
             />
 
             {/* Premium Header Space */}
             <div className="w-full bg-white border-b border-slate-100 overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 py-8 md:py-16">
                     {/* Breadcrumbs */}
-                    <nav className="flex items-center gap-2 text-[10px] md:text-xs font-bold text-slate-400 mb-8 uppercase tracking-[0.2em]">
-                        <Link href="/judet" className="hover:text-amber-500 transition-colors">Județe</Link> 
-                        <span className="opacity-30">/</span>
-                        <Link href={`/judet/${judet.slug}`} className="hover:text-slate-900 transition-colors">{judet.name}</Link>
-                        <span className="opacity-30">/</span>
-                        <Link href={`/judet/${judet.slug}/${loc.slug}`} className="hover:text-slate-900 transition-colors">{loc.name}</Link>
-                    </nav>
+                    <Breadcrumbs
+                        siteUrl={siteConfig.url}
+                        items={[
+                            { name: "Acasă", href: "/" },
+                            { name: "Județe", href: "/judet" },
+                            { name: judet.name, href: `/judet/${judet.slug}` },
+                            { name: loc.name, href: `/judet/${judet.slug}/${loc.slug}` },
+                            { name: productTitle },
+                        ]}
+                        className="flex flex-wrap items-center gap-2 text-[10px] md:text-xs font-bold text-slate-400 mb-8 uppercase tracking-[0.2em]"
+                        linkClassName="hover:text-slate-900 transition-colors"
+                        currentClassName="text-slate-600"
+                    />
 
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 items-start">
                         {/* LEFT: Product Info */}
@@ -247,6 +253,7 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
                             </div>
 
                             <LocalSizePrices productIds={[baseSlug, productCategoryKey]} locName={loc.name} />
+                            <FromPriceNote productIds={[baseSlug, productCategoryKey]} />
 
                             <div className="flex flex-wrap gap-8">
                                 <div className="flex items-center gap-3">
@@ -430,7 +437,7 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
                             {siblingLocalities.map((sibling) => (
                                 <Link
                                     key={sibling.slug}
-                                    href={`/judet/${judet.slug}/${sibling.slug}/${productSlug.join('/')}`}
+                                    href={`/judet/${judet.slug}/${sibling.slug}/${productPath}`}
                                     className="px-4 py-3 bg-slate-50 border border-slate-100 rounded-xl text-slate-600 hover:text-amber-600 hover:bg-amber-50 hover:border-amber-200 transition-all text-xs font-bold truncate text-center"
                                 >
                                     {productTitle} {sibling.name}
@@ -440,6 +447,9 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
                     </div>
                 </div>
             )}
+
+            {/* Date reale despre localitate (doar dacă există în lib/seo/data/judete) */}
+            <LocalityFacts judetSlug={judet.slug} locSlug={loc.slug} locName={loc.name} />
 
             {/* Proximity Network */}
             <div className="bg-slate-900 py-24">
@@ -455,10 +465,10 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                        {judet.localitati.filter(l => l.slug !== loc.slug).slice(0, 18).map((l, i) => (
+                        {nearbyLocalities(judet.slug, judet.localitati, loc.slug, 18).map((l, i) => (
                             <Link
                                 key={l.slug}
-                                href={`/judet/${judet.slug}/${l.slug}/${productSlug.join('/')}`}
+                                href={`/judet/${judet.slug}/${l.slug}/${productPath}`}
                                 className="px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white/60 hover:text-white hover:bg-white/10 hover:border-amber-500/50 transition-all text-xs font-bold truncate text-center"
                             >
                                 {product.title.split(' ')[0]} {l.name}
