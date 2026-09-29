@@ -220,7 +220,6 @@ export async function POST(req: Request) {
   } catch (error: any) {
     console.error("Eroare API Assistant:", error);
     if (faraCredite(error)) {
-      void alerta("credits", "openai", `OpenAI a refuzat cererea - credite terminate, asistentul AI de pe site nu merge: ${String(error?.message ?? error).slice(0, 300)}`);
     }
     return NextResponse.json({ message: "Eroare server." }, { status: 500 });
   }
