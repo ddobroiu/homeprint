@@ -13,6 +13,23 @@ const TIKTOK_SCRIPT_ID = "ttq-init";
 /** Pagina de mulțumire după comandă: exclusă pentru Clarity (este sub /checkout), permisă pentru conversie. */
 const TIKTOK_THANK_YOU_PATH = "/checkout/success";
 
+// tt_ttclid: click id-ul TikTok din URL-ul de pe reclamă (?ttclid=), păstrat 30 de zile NUMAI cu marketing,
+// ca pagina de checkout să-l transmită Events API pe server (lib/tiktok-events.ts)
+const TTCLID_COOKIE = "tt_ttclid";
+const TIKTOK_COOKIES = ["_ttp", "_tt_enable_cookie", TTCLID_COOKIE];
+
+/** Salvează ?ttclid= din URL-ul curent (apelat doar cu consimțământ pentru marketing). */
+function captureTtclid() {
+    try {
+        const ttclid = new URLSearchParams(window.location.search).get("ttclid");
+        if (ttclid && ttclid.length <= 500) {
+            document.cookie = `${TTCLID_COOKIE}=${encodeURIComponent(ttclid)}; Path=/; Max-Age=${60 * 60 * 24 * 30}; SameSite=Lax${window.location.protocol === "https:" ? "; Secure" : ""}`;
+        }
+    } catch {
+        // nu strică niciodată pagina
+    }
+}
+
 export function isTikTokExcludedPath(pathname: string | null | undefined): boolean {
     const p = pathname || "/";
     if (p === TIKTOK_THANK_YOU_PATH || p.startsWith(TIKTOK_THANK_YOU_PATH + "/")) return false;
@@ -52,6 +69,8 @@ export function isTikTokLoaded(): boolean {
 /** Încarcă pixelul (o singură dată pe durata paginii). Apelați numai cu consimțământ la marketing. */
 export function loadTikTok(pathname?: string | null) {
     if (!TIKTOK_PIXEL_ID || typeof window === "undefined") return;
+    // apelată numai cu marketing acceptat (CookieConsent / ConversionTracker)
+    captureTtclid();
     const path = pathname ?? window.location.pathname;
     if (isTikTokExcludedPath(path)) return;
     const w = win();
@@ -102,7 +121,7 @@ export function revokeTikTok() {
     const host = window.location.hostname;
     const registrable = host.split(".").slice(-2).join(".");
     const domains = ["", host, "." + host, "." + host.replace(/^www\./, ""), "." + registrable];
-    for (const name of ["_ttp", "_tt_enable_cookie"]) {
+    for (const name of TIKTOK_COOKIES) {
         for (const d of domains) {
             document.cookie = `${name}=; Max-Age=0; path=/${d ? `; domain=${d}` : ""}`;
         }

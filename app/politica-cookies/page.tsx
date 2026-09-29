@@ -49,7 +49,10 @@ const marketing: Row[] = [
         ? [{ name: "_fbp, fr", provider: "Meta Platforms Ireland Limited (Meta Pixel)", purpose: "Măsurarea conversiilor din reclamele Facebook/Instagram și publicuri de remarketing.", duration: "până la 90 de zile" }]
         : []),
     ...(TRACKING.tiktokPixelId
-        ? [{ name: "_ttp, _tt_enable_cookie", provider: "TikTok Technology Limited, Irlanda (TikTok Pixel)", purpose: "Măsurarea eficienței reclamelor TikTok (de exemplu comenzile finalizate după o reclamă) și retargeting (reclame relevante pe TikTok). Nu se încarcă pe paginile de cont, autentificare, coș și plată; pe pagina de confirmare a comenzii se transmit doar numărul, valoarea și moneda comenzii. Datele pot fi transferate în afara UE (de exemplu în baza clauzelor contractuale standard).", duration: "_ttp: aproximativ 13 luni; _tt_enable_cookie: aproximativ 13 luni" }]
+        ? [
+            { name: "_ttp, _tt_enable_cookie", provider: "TikTok Technology Limited, Irlanda (TikTok Pixel)", purpose: "Măsurarea eficienței reclamelor TikTok (de exemplu comenzile finalizate după o reclamă) și retargeting (reclame relevante pe TikTok). Nu se încarcă pe paginile de cont, autentificare, coș și plată; pe pagina de confirmare a comenzii pixelul primește numărul, valoarea și moneda comenzii. După o plată cu cardul, serverul nostru trimite la TikTok (Events API) valoarea, moneda și numărul comenzii, e-mailul/telefonul/contul criptate (SHA-256), adresa IP, browserul și _ttp/ttclid – numai cu acest consimțământ. Datele pot fi transferate în afara UE (de exemplu în baza clauzelor contractuale standard).", duration: "_ttp: aproximativ 13 luni; _tt_enable_cookie: aproximativ 13 luni" },
+            { name: "tt_ttclid", provider: "HomePrint (cookie propriu, pentru TikTok)", purpose: "Identificatorul clicului pe o reclamă TikTok (ttclid din adresa paginii), transmis la TikTok împreună cu o comandă plătită, pentru măsurarea conversiei.", duration: "30 de zile" },
+        ]
         : []),
 ];
 

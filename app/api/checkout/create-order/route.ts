@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { fulfillOrder } from '@/lib/orderService';
 import { LEGAL_VERSION } from '@/lib/company';
 import { getAuthSession } from '@/lib/auth';
+import { clientIp, tiktokCheckoutMetadata } from '@/lib/tiktok-events';
 import { prisma } from '@/lib/prisma';
 import Stripe from 'stripe';
 import { getEstimatedShippingCost } from '@/lib/shippingUtils';
@@ -105,6 +106,15 @@ export async function POST(req: NextRequest) {
 
             const stripe = new Stripe(secret);
 
+            // TikTok Events API (lib/tiktok-events.ts): acord + _ttp/ttclid/IP/UA numai cu marketing acceptat
+            const tiktok = tiktokCheckoutMetadata({
+                marketing: orderData.tiktokConsent === true,
+                ttp: req.cookies.get('_ttp')?.value,
+                ttclid: req.cookies.get('tt_ttclid')?.value,
+                ip: clientIp(req.headers),
+                userAgent: req.headers.get('user-agent'),
+            });
+
             const session = await stripe.checkout.sessions.create({
                 mode: 'payment',
                 payment_method_types: ['card'],
@@ -147,7 +157,8 @@ export async function POST(req: NextRequest) {
                         options: i.options,
                         dimensions: i.dimensions
                     })).slice(0, 4000)), // Limit just in case
-                    marketing: JSON.stringify(orderData.marketing || {}).slice(0, 500)
+                    marketing: JSON.stringify(orderData.marketing || {}).slice(0, 500),
+                    ...tiktok,
                 }
             });
 

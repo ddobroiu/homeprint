@@ -6,6 +6,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { prisma } from '@/lib/prisma';
 import { fulfillOrder } from '@/lib/orderService';
+import { sendTikTokPurchase } from '@/lib/tiktok-events';
 
 export const dynamic = 'force-dynamic';
 
@@ -134,6 +135,30 @@ export async function POST(req: NextRequest) {
             }
 
             console.log(`[HomePrint Webhook] Order fulfilled successfully: ${result.orderNo}`);
+
+            // TikTok CompletePayment (server), o singură dată: ajungem aici doar la prima creare a comenzii
+            // (sesiunile deja procesate ies mai sus). Numai cu acordul de marketing salvat în metadata sesiunii.
+            // event_id = "order-<nr>", ca pixelul din components/ConversionTracker.tsx (deduplicare).
+            if (result.orderNo) {
+                const items: any[] = Array.isArray(checkoutData.items) ? checkoutData.items : Array.isArray(checkoutData.cart) ? checkoutData.cart : [];
+                void sendTikTokPurchase({
+                    eventId: `order-${result.orderNo}`,
+                    orderId: String(result.orderNo),
+                    value: (session.amount_total ?? 0) / 100,
+                    currency: session.currency || 'ron',
+                    contents: items.map((it) => ({
+                        content_id: String(it.productId || it.id || it.name || 'produs').slice(0, 100),
+                        content_name: String(it.name || '').slice(0, 200) || undefined,
+                        quantity: Number(it.quantity) || 1,
+                        price: Number(it.unitAmount ?? it.price ?? 0) || 0,
+                    })),
+                    pageUrl: 'https://www.homeprint.ro/checkout/success/stripe',
+                    email: session.customer_details?.email || session.customer_email || checkoutData.address?.email,
+                    phone: session.customer_details?.phone || checkoutData.address?.telefon || checkoutData.address?.phone,
+                    externalId: checkoutData.userId || session.metadata?.userId || null,
+                    metadata: session.metadata,
+                });
+            }
 
         } catch (error) {
             console.error('[HomePrint Webhook] Error fulfilling order:', error);
