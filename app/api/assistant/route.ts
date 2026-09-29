@@ -1,5 +1,5 @@
 export const dynamic = 'force-dynamic';
-import { alerta, faraCredite } from '@/lib/alerts';
+import { faraCredite } from '@/lib/alerts';
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { CHAT_MODEL, chatOptions } from '@/lib/ai-model';
