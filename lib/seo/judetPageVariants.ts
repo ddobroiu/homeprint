@@ -35,7 +35,7 @@ export function getJudetPageVariant(judetName: string, judetSlug: string): Judet
             subtitle: "Configurezi online, vezi prețul exact instant și primești comanda prin curier, oriunde ai fi în județ.",
             configuratorsHeading: "Ce Poți Configura Online pentru",
             faq: [
-                { q: `Cât durează producția pentru o comandă din ${n}?`, a: "De regulă 2-4 zile lucrătoare, în funcție de produs și cantitate, plus timpul de livrare al curierului." },
+                { q: `Cât durează producția pentru o comandă din ${n}?`, a: "De regulă 2-4 zile lucrătoare până la adresa ta, producție și livrare prin curier incluse." },
                 { q: `Pot vedea prețul înainte să plasez comanda?`, a: `Da — configuratorul calculează prețul exact în timp real pentru orice comandă din ${n}, pe măsură ce alegi dimensiunile și materialul.` },
             ],
         },

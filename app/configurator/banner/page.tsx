@@ -54,7 +54,7 @@ export default function BannerPage() {
           },
           {
             question: "Cât de repede se livrează comanda?",
-            answer: "Datorită imprimantelor UV industriale folosite, cerneala se usucă instant (nu necesită timp de așteptare pentru evaporarea solvenților). Din momentul aprobării graficii (BT) și finalizării configurării în site, timpul standard de producție + livrare prin Curier este între 24 și 48 de ore lucrătoare, național."
+            answer: "Datorită imprimantelor UV industriale folosite, cerneala se usucă instant (nu necesită timp de așteptare pentru evaporarea solvenților). Din momentul aprobării graficii (BT) și finalizării configurării în site, timpul standard de producție + livrare prin curier este de 2-4 zile lucrătoare, național."
           },
           {
             question: "Bannerele rezistă la soare (raze UV) și nu se decolorează?",
@@ -128,7 +128,7 @@ export default function BannerPage() {
                 },
                 {
                   q: "Cât de repede se livrează comanda?",
-                  a: "Datorită imprimantelor UV industriale folosite, cerneala se usucă instant (nu necesită timp de așteptare pentru evaporarea solvenților). Din momentul aprobării graficii (BT) și finalizării configurării în site, timpul standard de producție + livrare prin Curier este între 24 și 48 de ore lucrătoare, național."
+                  a: "Datorită imprimantelor UV industriale folosite, cerneala se usucă instant (nu necesită timp de așteptare pentru evaporarea solvenților). Din momentul aprobării graficii (BT) și finalizării configurării în site, timpul standard de producție + livrare prin curier este de 2-4 zile lucrătoare, național."
                 },
                 {
                   q: "Bannerele rezistă la soare (raze UV) și nu se decolorează?",

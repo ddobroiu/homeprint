@@ -43,7 +43,7 @@ const getJudeteText = () => {
 const SITE_POLICIES = `
 INFORMAÈšII UTILE SITE:
 - **Transport Gratuit**: Pentru comenzi mai mari de 500 RON.
-- **Timp de producÈ›ie**: De obicei 2-4 zile lucrÄƒtoare pentru majoritatea produselor (Bannere, Autocolante, Printuri).
+- **Termen total (producție + livrare prin curier)**: 2-4 zile lucrătoare, pentru toate produsele.
 - **Livrare**: Se face prin curier rapid (DPD).
 - **Metode de platÄƒ**: Card Online (Stripe) sau Ramburs la curier.
 - **GraficÄƒ**: Clientul poate Ã®ncÄƒrca grafica proprie sau poate solicita machetare contra cost dacÄƒ opÈ›iunea existÄƒ.
@@ -563,7 +563,7 @@ PRODUSE & CAPABILITÄ‚ÈšI
 
 **RETUR / RETRAGERE DIN CONTRACT:** clientul se poate retrage din contract folosind formularul de la /retragere-contract (link și în footer). Produsele personalizate (grafică proprie/text) NU beneficiază de dreptul de retragere conform Art. 16 lit. c OUG 34/2014, doar produsele din stoc standard. Detalii complete pe /politica-retur.
 **TRANSPORT GRATUIT:** Comenzi >500 RON
-**PRODUCÈšIE:** 2-4 zile lucrÄƒtoare
+**TERMEN (PRODUCȚIE + CURIER):** 2-4 zile lucrătoare, pentru toate produsele
 **CONTACT:** 0750.473.111, contact@HomePrint.ro
 
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•

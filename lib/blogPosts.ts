@@ -237,7 +237,7 @@ const STATIC_POSTS: BlogPost[] = [
       </ul>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">Categoria 3: termene de producție și livrare</h2>
-      <p>Pentru produsele standard (bannere, roll-up-uri, panouri PVC), producția e gata în maxim 24-48 de ore lucrătoare de la confirmarea comenzii și validarea fișierului grafic. Pentru urgențe legate de un eveniment, control sau vizită oficială, sunați direct înainte de a genera solicitarea de ofertă – de multe ori putem prioritiza producția în aceeași zi pentru materiale simple. Livrăm la nivel național, inclusiv în mai multe locații ale aceleiași instituții (primării cu sate arondate, rețele de școli sau dispensare dintr-un județ), cu facturare centralizată sau separată pe subunitate, în funcție de cum o cere achiziția.</p>
+      <p>Pentru produsele standard (bannere, roll-up-uri, panouri PVC), comanda ajunge la dumneavoastră în 2-4 zile lucrătoare de la confirmarea comenzii și validarea fișierului grafic, producție și livrare incluse. Pentru urgențe legate de un eveniment, control sau vizită oficială, sunați direct înainte de a genera solicitarea de ofertă – vă confirmăm pe loc dacă termenul standard de 2-4 zile lucrătoare (producție și livrare incluse) se potrivește cu data voastră. Livrăm la nivel național, inclusiv în mai multe locații ale aceleiași instituții (primării cu sate arondate, rețele de școli sau dispensare dintr-un județ), cu facturare centralizată sau separată pe subunitate, în funcție de cum o cere achiziția.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">Categoria 4: proiecte cu finanțare europeană (PNRR, fonduri structurale)</h2>
       <p>Producem panouri temporare de șantier, plăci permanente de informare și autocolante conform manualului de identitate vizuală (MIV) specific fiecărui program de finanțare, respectând poziționarea siglelor, proporțiile și textele obligatorii. Folosim print UV, care garantează rezistența culorilor pe toată perioada de monitorizare și sustenabilitate a proiectului.</p>
@@ -1738,14 +1738,14 @@ const STATIC_POSTS: BlogPost[] = [
       <ul class="list-disc pl-6 space-y-2 my-6">
         <li><b>Ce comanzi întâi:</b> Autocolantul cu programul și logo-ul – sunt mici, ieftine și te scapă de „geamul gol” chiar din prima zi.</li>
         <li><b>Ce comanzi pentru lansare:</b> Window graphics pe o secțiune a ferestrei, cu mesajul de deschidere sau ofertă introductivă.</li>
-        <li><b>Termen realist:</b> 3-5 zile producție pentru ambele.</li>
+        <li><b>Termen realist:</b> 2-4 zile lucrătoare pentru ambele, producție și livrare incluse.</li>
       </ul>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">3. Semnalistica de interior — al treilea pas, dar nu ultimul din listă</h2>
       <p>Odată ce clientul a intrat, are nevoie de indicatoare simple: unde plătește, unde sunt produsele expuse. Aici intră panourile rigide ușoare (<a href="/materiale/pvc-forex">PVC Forex</a>) montate pe perete, plus un eventual roll-up pentru ofertele care se schimbă (promoții sezoniere, produse noi).</p>
       <ul class="list-disc pl-6 space-y-2 my-6">
         <li><b>Ce comanzi:</b> Panouri direcționale simple pentru zonele fixe și <a href="/configurator/rollup">un roll-up</a> pentru mesajele care se actualizează des.</li>
-        <li><b>Termen realist:</b> 4-6 zile pentru panouri rigide cu print UV direct, 2-3 zile pentru roll-up.</li>
+        <li><b>Termen realist:</b> 2-4 zile lucrătoare atât pentru panourile rigide cu print UV direct, cât și pentru roll-up, producție și livrare incluse.</li>
       </ul>
 
       <div class="overflow-x-auto my-12 shadow-xl rounded-3xl border border-slate-100">
@@ -1768,13 +1768,13 @@ const STATIC_POSTS: BlogPost[] = [
             <tr>
               <td class="px-6 py-4 font-bold bg-slate-50">2. Fereastră/vitrină</td>
               <td class="px-6 py-4 text-center">Autocolante logo/program + window graphics lansare</td>
-              <td class="px-6 py-4 text-center">3-5 zile</td>
+              <td class="px-6 py-4 text-center">2-4 zile</td>
               <td class="px-6 py-4 text-center font-medium">2 săptămâni</td>
             </tr>
             <tr>
               <td class="px-6 py-4 font-bold bg-slate-50">3. Interior</td>
               <td class="px-6 py-4 text-center">Panouri direcționale + roll-up oferte</td>
-              <td class="px-6 py-4 text-center">4-6 zile</td>
+              <td class="px-6 py-4 text-center">2-4 zile</td>
               <td class="px-6 py-4 text-center font-medium">10 zile</td>
             </tr>
           </tbody>
@@ -2096,7 +2096,7 @@ const STATIC_POSTS: BlogPost[] = [
       </div>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">Ce înseamnă, tehnic, „urgent” pentru un atelier de print</h2>
-      <p>Un banner standard, cu poza sau textul validate de la prima trimitere, poate ieși din producție în câteva ore – tiv, capse și tăiere incluse. Ce prelungește termenul aproape de fiecare dată nu e coada de producție în sine, ci timpul pierdut în clarificări: o poză neclară descoperită la verificare sau o dimensiune schimbată în ultimul moment.</p>
+      <p>Un banner standard, cu poza sau textul validate de la prima trimitere, ajunge la tine în 2-4 zile lucrătoare, producție și livrare incluse – cu tiv, capse și tăiere. Ce prelungește termenul aproape de fiecare dată nu e coada de producție în sine, ci timpul pierdut în clarificări: o poză neclară descoperită la verificare sau o dimensiune schimbată în ultimul moment.</p>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">Dacă nu ești sigur ce material alegi, nu ghici – întreabă direct</h2>
       <p>Dacă nu știi dacă ai nevoie de frontlit sau blockout, cel mai rapid mod de a afla nu e să alegi la întâmplare în configurator, ci să descrii scenariul de montaj într-o singură propoziție – „banner pe gard, la o petrecere de curte, montat mâine dimineață”. Echipa noastră poate recomanda configurația corectă în câteva minute.</p>
@@ -2461,7 +2461,7 @@ function buildCountyPost(j: Judet, index: number, siteName: string, shortName: s
         <h2>Livrați și în ${mainLocality}?</h2>
         <p>Da, livrăm prin curier în ${mainLocality} și în toate localitățile din județul ${j.name}${otherLocalities.length ? `, inclusiv ${otherLocalities.slice(0, 2).join(" și ")}` : ""}.</p>
         <h2>Cât durează producția?</h2>
-        <p>De regulă 2-4 zile lucrătoare, în funcție de produs și cantitate, plus timpul de livrare al curierului până la adresa ta.</p>
+        <p>De regulă 2-4 zile lucrătoare până la adresa ta, producție și livrare prin curier incluse.</p>
         <h2>Ce pot comanda?</h2>
         <ul>${productListHtml}</ul>
         <h2>Pot vedea prețul înainte să comand?</h2>

@@ -46,7 +46,7 @@ export function getLocalityPageVariant(locName: string, judetName: string, locSl
             trustHeading: "Parteneriat Local fără Intermediari",
             faq: [
                 { q: `Ce servicii de print sunt disponibile în ${loc}?`, a: `În ${loc} livrăm decor printat pentru casă și birou: fototapet personalizat, tablouri canvas, postere de artă și autocolante de perete, dar și bannere, roll-up-uri și panouri rigide pentru firme, toate direct la adresa ta.` },
-                { q: `Cât durează livrarea în ${loc}?`, a: "Comenzile sunt produse în 2-4 zile lucrătoare și expediate prin DPD Express, ajungând de regulă în ziua următoare finalizării producției." },
+                { q: `Cât durează livrarea în ${loc}?`, a: "Comenzile ajung la tine prin DPD Express în 2-4 zile lucrătoare, producție inclusă." },
                 { q: "Cum pot vedea prețurile pentru produsele mele?", a: "Alege orice produs din lista de mai sus și folosește configuratorul online. Prețul se calculează instantaneu pe baza dimensiunilor și opțiunilor tale." },
             ],
         },
@@ -101,7 +101,7 @@ export function getLocalityPageVariant(locName: string, judetName: string, locSl
             productsSubtitle: "Fiecare configurator include previzualizare vizuală, ca să știi exact ce vei primi.",
             trustHeading: "Control Direct, de la Grafică la Livrare",
             faq: [
-                { q: `Cât de repede pot primi o comandă în ${loc}?`, a: "De regulă în 2-4 zile lucrătoare de la confirmarea graficii, plus timpul de curierat." },
+                { q: `Cât de repede pot primi o comandă în ${loc}?`, a: "De regulă în 2-4 zile lucrătoare de la confirmarea graficii, cu tot cu livrarea prin curier." },
                 { q: "Pot comanda o singură bucată pentru test?", a: "Da, nu există comandă minimă — poți testa calitatea cu o singură piesă." },
                 { q: "Ce se întâmplă dacă produsul ajunge deteriorat?", a: "Refacem gratuit orice comandă care ajunge cu defecte de material sau de print." },
             ],

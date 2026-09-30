@@ -8,7 +8,7 @@ import { prisma } from "@/lib/prisma";
 
 export const metadata = {
   title: "Bannere Publicitare Ieftine (Frontlit) | Publicitate Outdoor",
-  description: "Configurează online bannere publicitare la orice dimensiune. Prețuri de producător de la 9€/mp. Finisaje gratuite (tiv, capse). Livrare rapidă 24h. Sistem centralizat pentru outdoor și indoor. Print de mari și mici dimensiuni cu preț de producător și rezistență UV.",
+  description: "Configurează online bannere publicitare la orice dimensiune. Prețuri de producător de la 9€/mp. Finisaje gratuite (tiv, capse). Livrare în 2-4 zile lucrătoare. Sistem centralizat pentru outdoor și indoor. Print de mari și mici dimensiuni cu preț de producător și rezistență UV.",
   keywords: [
     "bannere publicitare",
     "bannere ieftine",

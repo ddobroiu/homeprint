@@ -51,7 +51,7 @@ export default function CartiVizitaPage() {
                         },
                         {
                             question: "Cât durează de la comandă la livrare?",
-                            answer: "Producția standard pentru cărți de vizită durează 1-2 zile lucrătoare, plus timpul de curierat — de regulă ai comanda în mână în 2-4 zile lucrătoare din momentul aprobării machetei."
+                            answer: "De regulă ai cărțile de vizită în mână în 2-4 zile lucrătoare din momentul aprobării machetei, producție și livrare prin curier incluse."
                         }
                     ]}
                 />
@@ -117,7 +117,7 @@ export default function CartiVizitaPage() {
                                     },
                                     {
                                         q: "Cât durează de la comandă la livrare?",
-                                        a: "Producția standard pentru cărți de vizită durează 1-2 zile lucrătoare, plus timpul de curierat — de regulă ai comanda în mână în 2-4 zile lucrătoare din momentul aprobării machetei."
+                                        a: "De regulă ai cărțile de vizită în mână în 2-4 zile lucrătoare din momentul aprobării machetei, producție și livrare prin curier incluse."
                                     }
                                 ].map((faq, idx) => (
                                     <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">

@@ -8,8 +8,8 @@ import { SeoDimensionsLinks } from '@/components/SeoDimensionsLinks';
 
 export const metadata: Metadata = {
     title: "Tablou Canvas pentru Birou sau Showroom",
-    description: "Tablouri canvas pe pânză premium pentru decor de birou, showroom sau recepție — inclusiv din propriile vizualuri de brand, cu editor online Visionboard. Rezistență și finisaje impecabile.",
-    keywords: ['tablou canvas birou', 'canvas decor showroom', 'print canvas business', 'homeprint', 'visionboard canvas'],
+    description: "Tablouri canvas pe pânză premium pentru decor de birou, showroom sau recepție — inclusiv din propriile vizualuri de brand, cu editor online. Rezistență și finisaje impecabile.",
+    keywords: ['tablou canvas birou', 'canvas decor showroom', 'print canvas business', 'homeprint'],
 };
 
 export default function CanvasPage() {
@@ -24,7 +24,7 @@ export default function CanvasPage() {
             />
             <ProductSchema
                 name="Tablou Canvas pentru Decor Business"
-                description="Tablou canvas pe pânză 100% bumbac și șasiu din lemn natural — potrivit pentru decor de birou, showroom sau recepție, editabil online cu Visionboard."
+                description="Tablou canvas pe pânză 100% bumbac și șasiu din lemn natural — potrivit pentru decor de birou, showroom sau recepție, editabil online."
                 image="/products/canvas/canvas-1.webp"
                 url="/configurator/canvas"
                 price="55.00"
@@ -39,7 +39,7 @@ export default function CanvasPage() {
                     faqs={[
                         {
                             question: "Pot folosi un canvas cu logo-ul sau imaginea de brand a firmei?",
-                            answer: "Da — poți încărca orice imagine (logo, poză de produs, vizual de campanie) sau o poți compune direct în editorul online Visionboard, disponibil din configurator."
+                            answer: "Da — poți încărca orice imagine (logo, poză de produs, vizual de campanie) sau o poți compune direct în editorul online, disponibil din configurator."
                         },
                         {
                             question: "Se potrivește pentru spații comerciale (recepție, showroom)?",
@@ -51,7 +51,7 @@ export default function CanvasPage() {
                         },
                         {
                             question: "În cât timp e gata comanda?",
-                            answer: "Producția durează aproximativ 24h lucrătoare (pânza se întinde manual), plus livrare prin curier — de regulă ajunge în 2-4 zile lucrătoare."
+                            answer: "Pânza se întinde manual, iar comanda ajunge de regulă în 2-4 zile lucrătoare, producție și livrare prin curier incluse."
                         }
                     ]}
                 />
@@ -82,7 +82,7 @@ export default function CanvasPage() {
                                     <li className="flex items-start gap-3">
                                         <div className="mt-1 bg-green-100 text-green-600 p-1 rounded-full"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg></div>
                                         <div>
-                                            <strong className="block text-slate-900">Editor online integrat (Visionboard)</strong>
+                                            <strong className="block text-slate-900">Editor online integrat</strong>
                                             <span className="text-slate-600 text-sm">Compui vizualul direct din browser, fără să ai nevoie de un designer separat pentru un canvas simplu.</span>
                                         </div>
                                     </li>
@@ -112,7 +112,7 @@ export default function CanvasPage() {
                                 {[
                                     {
                                         q: "Pot folosi un canvas cu logo-ul sau imaginea de brand a firmei?",
-                                        a: "Da — poți încărca orice imagine (logo, poză de produs, vizual de campanie) sau o poți compune direct în editorul online Visionboard, disponibil din configurator."
+                                        a: "Da — poți încărca orice imagine (logo, poză de produs, vizual de campanie) sau o poți compune direct în editorul online, disponibil din configurator."
                                     },
                                     {
                                         q: "Se potrivește pentru spații comerciale (recepție, showroom)?",
@@ -124,7 +124,7 @@ export default function CanvasPage() {
                                     },
                                     {
                                         q: "În cât timp e gata comanda?",
-                                        a: "Producția durează aproximativ 24h lucrătoare (pânza se întinde manual), plus livrare prin curier — de regulă ajunge în 2-4 zile lucrătoare."
+                                        a: "Pânza se întinde manual, iar comanda ajunge de regulă în 2-4 zile lucrătoare, producție și livrare prin curier incluse."
                                     }
                                 ].map((faq, idx) => (
                                     <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">

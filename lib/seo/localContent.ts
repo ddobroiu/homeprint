@@ -56,7 +56,7 @@ const BRAND_VOICES: Record<BrandKey, BrandVoice> = {
     heroOpeners: [
       "Afacerile din {localitate} aleg HomePrint pentru {produs} — comandă azi, gata rapid.",
       "Producem {produs} pentru clienți din {localitate} și din județul {judet}, cu focus pe publicitate outdoor.",
-      "HomePrint echipează afacerile din {localitate} cu {produs} rezistent și vizibil de departe.",
+      "HomePrint pregătește {produs} pentru afacerile din {localitate}, cu prețul calculat pe loc în configurator.",
     ],
     deliveryClosers: {
       apropiat: "Fiind aproape de producție, {produs} ajunge în {localitate} de regulă în 2-4 zile lucrătoare.",

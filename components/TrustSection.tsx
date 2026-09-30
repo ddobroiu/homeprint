@@ -14,14 +14,14 @@ const trustPoints = [
     {
         icon: Truck,
         title: "Livrare Rapidă",
-        description: "Expediere prin DPD în 1-2 zile lucrătoare de la finalizarea producției.",
+        description: "Comanda ajunge prin DPD în 2-4 zile lucrătoare, producție inclusă.",
         color: "text-green-400",
         bgColor: "bg-green-500/10",
     },
     {
         icon: Clock,
         title: "Producție Rapidă",
-        description: "Majoritatea comenzilor sunt gata de livrare în 2-4 zile lucrătoare.",
+        description: "Comenzile ajung la tine în 2-4 zile lucrătoare, producție inclusă.",
         color: "text-amber-400",
         bgColor: "bg-amber-500/10",
     },

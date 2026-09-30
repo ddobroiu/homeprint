@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useDebounce } from "@/hooks/useDebounce"; // Local hook
 import { Truck } from "lucide-react";
+import GarantieLegalaLine from "@/components/legal/GarantieLegalaLine";
 
 type Props = {
     county?: string;
@@ -25,7 +26,7 @@ export default function DeliveryEstimation({ county }: Props) {
                     setLabel(data.label);
                 } else {
                     // Fallback dacă nu primim un răspuns clar
-                    setLabel("2-3 zile lucrătoare");
+                    setLabel("2-4 zile lucrătoare");
                 }
                 setLoading(false);
             })
@@ -43,14 +44,17 @@ export default function DeliveryEstimation({ county }: Props) {
     }, [debouncedCounty]);
 
     return (
-        <div className="text-[11px] sm:text-xs flex items-center gap-1.5 bg-gradient-to-r from-amber-50/50 to-teal-50/50 border border-amber-100 rounded-xl px-3 py-2 shadow-sm whitespace-nowrap">
-            <Truck className="w-4 h-4 text-amber-600 shrink-0" strokeWidth={2.5} />
-            <span className="text-slate-500 font-bold">Livrare estimată:</span>
-            {loading ? (
-                <span className="animate-pulse bg-slate-200 h-3 w-16 rounded"></span>
-            ) : (
-                <span className="font-extrabold text-amber-700">{label}</span>
-            )}
+        <div className="flex flex-col items-end gap-1.5">
+            <div className="text-[11px] sm:text-xs flex items-center gap-1.5 bg-gradient-to-r from-amber-50/50 to-teal-50/50 border border-amber-100 rounded-xl px-3 py-2 shadow-sm whitespace-nowrap">
+                <Truck className="w-4 h-4 text-amber-600 shrink-0" strokeWidth={2.5} />
+                <span className="text-slate-500 font-bold">Livrare estimată:</span>
+                {loading ? (
+                    <span className="animate-pulse bg-slate-200 h-3 w-16 rounded"></span>
+                ) : (
+                    <span className="font-extrabold text-amber-700">{label}</span>
+                )}
+            </div>
+            <GarantieLegalaLine />
         </div>
     );
 }
