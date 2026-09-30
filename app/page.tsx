@@ -6,6 +6,7 @@ import { ArrowRight, Sofa, BedDouble, Briefcase, DoorOpen, Baby, Factory, Shield
 import { siteConfig } from '@/lib/siteConfig';
 import { CONFIGURATORS_REGISTRY } from '@/lib/configurators-registry';
 import PromoSection from '@/components/PromoSection';
+import AiChatWidget from '@/components/AiChatWidget';
 
 export const metadata: Metadata = {
   authors: [{ name: 'Echipa HomePrint.ro', url: 'https://www.homeprint.ro' }],
@@ -244,6 +245,22 @@ export default function Home() {
             <p className="text-stone-500 text-sm mt-5">
               Ai nevoie de bannere, roll-up sau panouri rigide pentru firmă? <Link href="#produse" className="text-[#1F4D3A] font-bold underline underline-offset-4">Tot catalogul e mai jos</Link>.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ASISTENT AI: preț instant în chat */}
+      <section className="pb-4 md:pb-8">
+        <div className="container mx-auto px-4 max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-7">
+            <p className="text-[#1F4D3A] font-bold uppercase tracking-[0.18em] text-xs md:text-sm mb-3">Asistent online</p>
+            <h2 className="text-3xl md:text-4xl text-stone-900 leading-tight mb-4">Întreabă de preț direct în chat</h2>
+            <p className="text-stone-600 text-lg leading-relaxed max-w-xl">
+              Spune ce vrei pe perete (fototapet, canvas, autocolant) și dimensiunile, iar asistentul îți calculează prețul din configurator și îți dă linkul de comandă. Dacă preferi să vorbești cu un om, te trimite pe WhatsApp.
+            </p>
+          </div>
+          <div className="lg:col-span-5">
+            <AiChatWidget />
           </div>
         </div>
       </section>
