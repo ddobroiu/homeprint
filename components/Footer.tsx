@@ -36,6 +36,7 @@ const GUIDE_LINKS = [
 ];
 
 const COMPANY_LINKS = [
+    { href: "/ghid-print", label: "Ghid de alegere și prețuri" },
     { href: "/despre-noi", label: "Despre HomePrint" },
     { href: "/industrii", label: "Decor pentru birouri și spații comerciale" },
     { href: "/seap", label: "Achiziții SEAP / SICAP" },
