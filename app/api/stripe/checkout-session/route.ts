@@ -88,7 +88,9 @@ export async function POST(req: NextRequest) {
         project: 'homeprint'
       },
       // Tagged on the payment too: the Stripe account is shared by several sites
-      payment_intent_data: { metadata: { group: 'print', project: 'homeprint', source: 'homeprint.ro' } },
+      payment_intent_data: { metadata: { group: 'print', project: 'homeprint', source: 'homeprint.ro' }, statement_descriptor_suffix: 'HOMEPRINT' },
+      // Contul Stripe e comun cu alte site-uri: numele site-ului pe pagina de plata
+      branding_settings: { display_name: 'HomePrint' },
       // 3. Redirect după plată (Embedded Checkout)
       return_url: `${origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
     });

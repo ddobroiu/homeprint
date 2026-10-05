@@ -186,7 +186,9 @@ export async function POST(req: NextRequest) {
                 success_url: `${origin}/checkout/success/stripe?session_id={CHECKOUT_SESSION_ID}`,
                 cancel_url: `${origin}/checkout`,
                 // Tagged on the payment too: the Stripe account is shared by several sites
-                payment_intent_data: { metadata: { group: 'print', project: 'homeprint', source } },
+                payment_intent_data: { metadata: { group: 'print', project: 'homeprint', source }, statement_descriptor_suffix: 'HOMEPRINT' },
+                // Contul Stripe e comun cu alte site-uri: numele site-ului pe pagina de plata
+                branding_settings: { display_name: 'HomePrint' },
                 metadata: {
                     source: source,
                     group: 'print',
