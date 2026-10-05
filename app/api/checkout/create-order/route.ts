@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { guardCheckoutItems } from '@/lib/checkoutGuard';
 import { fulfillOrder } from '@/lib/orderService';
 import { optOut } from '@/lib/mail-optout';
 import { checkDiscountCode } from '@/lib/discount-server';
@@ -21,6 +22,9 @@ export const revalidate = 0;
 export async function POST(req: NextRequest) {
     try {
         const orderData = await req.json();
+        // Prețurile din coș vin din browser: le verificăm pe server (lib/checkoutGuard.ts) înainte de orice altceva
+        const itemsCheck = guardCheckoutItems(orderData?.items);
+        if (!itemsCheck.ok) return NextResponse.json({ error: itemsCheck.error }, { status: 400 });
         // Vizitatorul din tracking-ul propriu (www.shopprint.ro/t.js): leaga comanda de sursa vizitei
         const ptVid = req.cookies.get('_pt_vid')?.value;
         if (ptVid && /^[a-f0-9]{32}$/i.test(ptVid)) orderData.marketing = { ...(orderData.marketing || {}), vid: ptVid.toLowerCase() };

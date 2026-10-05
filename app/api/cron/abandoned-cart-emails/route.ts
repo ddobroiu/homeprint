@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { sendAbandonedCartEmail } from '@/lib/emailMarketing';
+import { requireCronOrAdmin } from '@/lib/apiAuth';
 
 export const maxDuration = 300; // 5 minutes
 export const dynamic = 'force-dynamic';
@@ -15,7 +16,9 @@ interface AbandonedCartWithData {
   lastEmailSent: Date | null;
 }
 
-export async function POST() {
+export async function POST(req: Request) {
+  const denied = requireCronOrAdmin(req);
+  if (denied) return denied;
   try {
     console.log('[Cron] Starting abandoned cart email job...');
 
@@ -144,7 +147,9 @@ export async function POST() {
   }
 }
 
-export async function GET() {
+export async function GET(req: Request) {
+  const denied = requireCronOrAdmin(req);
+  if (denied) return denied;
   return NextResponse.json({
     message: 'Use POST to trigger abandoned cart email job',
     endpoint: '/api/cron/abandoned-cart-emails'

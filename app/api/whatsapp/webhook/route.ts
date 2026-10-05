@@ -1,5 +1,6 @@
 import { faraCredite } from "@/lib/alerts";
 import { NextResponse } from "next/server";
+import { verifyMetaSignature } from "@/lib/apiAuth";
 import OpenAI from "openai";
 import { CHAT_MODEL, chatOptions } from "@/lib/ai-model";
 import { trackOpenAI } from "@/lib/aiUsage";
@@ -145,7 +146,12 @@ export async function POST(req: Request) {
       api_secret: process.env.CLOUDINARY_API_SECRET,
     });
 
-    const body = await req.json();
+    // Doar Meta poate apela webhook-ul: verificăm X-Hub-Signature-256 pe corpul brut (lib/apiAuth.ts)
+    const rawBody = await req.text();
+    if (!verifyMetaSignature(rawBody, req.headers.get("x-hub-signature-256"))) {
+      return new NextResponse("Forbidden", { status: 403 });
+    }
+    const body = JSON.parse(rawBody);
 
     if (body.object === "whatsapp_business_account") {
       const entry = body.entry?.[0];

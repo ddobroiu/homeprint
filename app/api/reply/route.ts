@@ -4,8 +4,11 @@ export const dynamic = 'force-dynamic';
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { sendWhatsAppMessage } from "@/lib/whatsapp-utils";
+import { requireAdmin } from '@/lib/apiAuth';
 
 export async function POST(req: Request) {
+  const denied = requireAdmin(req);
+  if (denied) return denied;
   try {
     const body = await req.json();
     const { conversationId, message } = body;

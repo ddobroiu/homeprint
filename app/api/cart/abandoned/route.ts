@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { sendAbandonedCartEmail } from '@/lib/emailMarketing';
+import { requireCronOrAdmin } from '@/lib/apiAuth';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -57,6 +58,8 @@ export async function POST(req: Request) {
 
 // Send abandoned cart recovery emails (called by cron or manual trigger)
 export async function PUT(req: Request) {
+  const denied = requireCronOrAdmin(req);
+  if (denied) return denied;
   try {
     const { delay = '1h' } = await req.json();
 

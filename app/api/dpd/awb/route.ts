@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { calculateShippingParams, determinePackingType } from '@/lib/shippingUtils';
 import { createShipment, printExtended, decodeBase64PdfToBuffer, trackingUrlForAwb, type CreateShipmentRequest, type ShipmentSender } from '../../../../lib/dpdService';
+import { requireAdmin } from '@/lib/apiAuth';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -18,6 +19,8 @@ export const dynamic = 'force-dynamic';
  * NOTE: DPD requires a valid serviceId and address (siteName+postCode or siteId etc.).
  */
 export async function POST(req: NextRequest) {
+  const denied = requireAdmin(req);
+  if (denied) return denied;
   try {
     const { shipment, print, orderId } = (await req.json()) as {
       shipment?: CreateShipmentRequest;

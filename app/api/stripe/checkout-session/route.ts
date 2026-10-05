@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { guardCheckoutItems } from '@/lib/checkoutGuard';
 import Stripe from 'stripe';
 import { prisma } from '@/lib/prisma';
 import { getEstimatedShippingCost } from '@/lib/shippingUtils';
@@ -19,6 +20,9 @@ export async function POST(req: NextRequest) {
   if (!Array.isArray(cart) || cart.length === 0) {
     return NextResponse.json({ error: 'Coșul este gol.' }, { status: 400 });
   }
+  // Prețurile din coș vin din browser: le verificăm pe server (lib/checkoutGuard.ts)
+  const itemsCheck = guardCheckoutItems(cart);
+  if (!itemsCheck.ok) return NextResponse.json({ error: itemsCheck.error }, { status: 400 });
 
     const subtotal = (cart ?? []).reduce((s: number, it: any) => s + (Number(it.unitAmount ?? it.price ?? 0) * Number(it.quantity ?? 1)), 0);
   const costLivrare = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : getEstimatedShippingCost(address?.country || 'RO', cart);

@@ -9,8 +9,12 @@ type AdminSession = {
 const ALG = 'sha256';
 
 function getSecret() {
-    const s = process.env.ADMIN_ACTION_SECRET || process.env.ADMIN_PANEL_SECRET || "default_secret_change_me_in_prod";
-    return s;
+    const s = process.env.ADMIN_ACTION_SECRET || process.env.ADMIN_PANEL_SECRET;
+    if (s) return s;
+    // In productie, fara secret, nu acceptam si nu emitem sesiuni de admin (altfel oricine
+    // ar putea semna un cookie cu secretul implicit, care e public in cod).
+    if (process.env.NODE_ENV === 'production') throw new Error('ADMIN_ACTION_SECRET lipseste');
+    return "default_secret_change_me_in_prod";
 }
 
 export function signAdminSession(ttlMs = 7 * 24 * 60 * 60 * 1000) {

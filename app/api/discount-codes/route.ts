@@ -7,11 +7,17 @@ import {
   getActiveDiscountCodes,
   deactivateExpiredCodes
 } from '@/lib/discountCodes';
+import { isAdminRequest } from '@/lib/apiAuth';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { action } = body;
+
+    // Public e doar „validate” (un singur cod, la checkout); apply/create sunt doar pentru admin
+    if (action !== 'validate' && !isAdminRequest(request)) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
     switch (action) {
       case 'validate': {
@@ -82,13 +88,17 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET(request: NextRequest) {
+  // Lista codurilor active și curățenia sunt doar pentru admin (cookie admin_auth)
+  if (!isAdminRequest(request)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
   try {
     const { searchParams } = new URL(request.url);
     const action = searchParams.get('action');
 
     switch (action) {
       case 'list': {
-        const limit = parseInt(searchParams.get('limit') || '50');
+        const limit = Math.min(Math.max(parseInt(searchParams.get('limit') || '50', 10) || 50, 1), 200);
         const codes = await getActiveDiscountCodes(limit);
         return NextResponse.json(codes);
       }

@@ -3,6 +3,7 @@ import { prisma } from '@/lib/prisma';
 import { sendAbandonedCartEmail, sendPostPurchaseFollowUp } from '@/lib/emailMarketing';
 import { deactivateExpiredCodes } from '@/lib/discountCodes';
 import { getResend } from '@/lib/email';
+import { requireCronOrAdmin } from '@/lib/apiAuth';
 
 export const maxDuration = 300; // 5 minutes max
 export const dynamic = 'force-dynamic';
@@ -17,6 +18,8 @@ interface DailyStats {
 }
 
 export async function POST(request: Request) {
+  const denied = requireCronOrAdmin(request);
+  if (denied) return denied;
   const startTime = Date.now();
   console.log('ðŸ¤– [Daily Cron] Starting automated marketing tasks...');
 
@@ -243,7 +246,9 @@ export async function POST(request: Request) {
 }
 
 // GET endpoint for manual trigger & status check
-export async function GET() {
+export async function GET(req: Request) {
+  const denied = requireCronOrAdmin(req);
+  if (denied) return denied;
   try {
     // Return system status and next actions
     const now = new Date();

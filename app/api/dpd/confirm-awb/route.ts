@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getResend } from '../../../../lib/email';
 import { createShipment, printExtended, trackingUrlForAwb, type CreateShipmentRequest } from '../../../../lib/dpdService';
 import { prisma } from '../../../../lib/prisma';
+import { requireAdmin } from '@/lib/apiAuth';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -18,6 +19,8 @@ export const dynamic = 'force-dynamic';
  * Behavior: creates shipment, prints label (PDF base64) and emails AWB to client.
  */
 export async function POST(req: NextRequest) {
+  const denied = requireAdmin(req);
+  if (denied) return denied;
   try {
     const { shipment, email, name, orderId } = (await req.json()) as {
       shipment?: CreateShipmentRequest;

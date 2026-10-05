@@ -1,6 +1,7 @@
 export const dynamic = 'force-dynamic';
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { requireAdmin } from '@/lib/apiAuth';
 
 export async function POST(request: Request) {
   try {
@@ -90,7 +91,9 @@ export async function POST(request: Request) {
 }
 
 // GET endpoint for testing/debugging
-export async function GET() {
+export async function GET(req: Request) {
+  const denied = requireAdmin(req);
+  if (denied) return denied;
   try {
     const carts = await prisma.abandonedCart.findMany({
       orderBy: { createdAt: 'desc' },

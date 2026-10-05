@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { guardCheckoutItems } from '@/lib/checkoutGuard';
 import { fulfillOrder } from '../../../../lib/orderService';
 import { getAuthSession } from '@/lib/auth';
 
@@ -30,6 +31,15 @@ export async function POST(req: NextRequest) {
 
     if (!orderData?.address || !orderData?.billing || !orderData?.cart) {
       return NextResponse.json({ success: false, message: 'Date de comandă invalide.' }, { status: 400 });
+    }
+    // Ruta nu încasează bani: doar ramburs sau ordin de plată (cardul trece prin /api/checkout/create-order + Stripe)
+    if (paymentMethod !== 'Ramburs' && paymentMethod !== 'OP') {
+      return NextResponse.json({ success: false, message: 'Metodă de plată invalidă.' }, { status: 400 });
+    }
+    // Prețurile din coș vin din browser: le verificăm pe server (lib/checkoutGuard.ts)
+    const itemsCheck = guardCheckoutItems(orderData.cart);
+    if (!itemsCheck.ok) {
+      return NextResponse.json({ success: false, message: itemsCheck.error }, { status: 400 });
     }
 
     // Trimitem paymentMethod corect către fulfillOrder

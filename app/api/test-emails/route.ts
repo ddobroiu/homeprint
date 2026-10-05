@@ -1,9 +1,12 @@
 import { NextResponse } from 'next/server';
 import { sendEmail } from '@/lib/email';
+import { requireAdmin } from '@/lib/apiAuth';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
+  const denied = requireAdmin(request);
+  if (denied) return denied;
   try {
     const { to = 'contact@homeprint.ro' } = await request.json().catch(() => ({}));
 

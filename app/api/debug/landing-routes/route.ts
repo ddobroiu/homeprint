@@ -1,8 +1,11 @@
 export const dynamic = 'force-dynamic';
 import { NextResponse } from 'next/server';
 import { listAllLandingRoutes, getLandingInfo, LANDING_CATALOG } from '@/lib/landingData';
+import { requireAdmin } from '@/lib/apiAuth';
 
-export async function GET() {
+export async function GET(req: Request) {
+  const denied = requireAdmin(req);
+  if (denied) return denied;
   try {
     const routes = listAllLandingRoutes();
     const sample = {
