@@ -27,7 +27,7 @@ export default function PolipropilenaPage() {
                 <ProductSchema
                     name="Panou Polipropilenă Celulară (Akyplac)"
                     description="Panou ușor și rezistent la apă din polipropilenă celulară, ideal pentru anunțuri imobiliare și semnalistică de șantier."
-                    image="/products/master/placi-polipropilena-alveolara-canalit-ieftine.png"
+                    image="/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp"
                     url="/materiale/polipropilena"
                     price="25.00"
                 />

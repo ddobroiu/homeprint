@@ -1,4 +1,7 @@
 "use client";
+import SignageModelShelf from "./SignageModelShelf";
+import { AccordionStep } from "./ui/AccordionStep";
+import { MobileConfiguratorSummary } from "./ui/MobileConfiguratorSummary";
 
 import React, { useMemo, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
@@ -26,6 +29,7 @@ export default function SignageConfigurator({ productSlug: propSlug }: SignageCo
     const searchParams = useSearchParams();
     const productSlug = propSlug || searchParams.get('product');
     const { addItem } = useCart();
+    const [activeStep, setActiveStep] = useState(1);
 
     // Determine current product
     const currentProduct = useMemo(() => {
@@ -100,11 +104,11 @@ export default function SignageConfigurator({ productSlug: propSlug }: SignageCo
     }
 
     if (!currentProduct) {
-        return <div className="p-10 text-center">Niciun produs selectat.</div>;
+        return <SignageModelShelf/>;
     }
 
     return (
-        <main className="bg-slate-50 dark:bg-slate-800 min-h-screen py-10">
+        <main data-unified-product-configurator className="bg-slate-50 dark:bg-slate-800 min-h-screen py-10 pb-28">
             <div className="container mx-auto px-4 max-w-7xl">
                 <div className="flex flex-col lg:flex-row gap-8 items-start">
 
@@ -134,7 +138,7 @@ export default function SignageConfigurator({ productSlug: propSlug }: SignageCo
 
                     {/* Right: Configurator */}
                     <div className="w-full lg:w-1/2 flex flex-col gap-6">
-                        <div className="bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100">
+                        <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-gray-200">
                             <div className="mb-6">
                                 <span className="inline-block px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-[10px] font-black uppercase tracking-widest mb-3">Produs în Stoc</span>
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white mb-4 leading-tight">{currentProduct.title}</h2>
@@ -152,7 +156,7 @@ export default function SignageConfigurator({ productSlug: propSlug }: SignageCo
 
                             <hr className="my-8 border-slate-100" />
 
-                            {/* Configuration Logic */}
+                            <div className="bg-white rounded-xl sm:rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-gray-200 px-3 sm:px-4"><AccordionStep stepNumber={1} title="Material & Dimensiuni" summary={activeMaterial || selectedDim.label} isOpen={activeStep === 1} onClick={() => setActiveStep(1)}>{/* Configuration Logic */}
                             {hasVariants && groupedVariants && currentProduct.variants ? (
                                 <div className="space-y-8">
                                     {/* Material Tabs */}
@@ -164,7 +168,7 @@ export default function SignageConfigurator({ productSlug: propSlug }: SignageCo
                                                     key={mat}
                                                     onClick={() => setActiveMaterial(mat)}
                                                     className={`px-6 py-3 rounded-full text-sm font-black transition-all border ${activeMaterial === mat 
-                                                        ? "bg-slate-900 text-white border-slate-900 shadow-lg shadow-slate-200" 
+                                                        ? "bg-emerald-50 text-emerald-800 border-emerald-600 shadow-lg shadow-slate-200" 
                                                         : "bg-white text-slate-600 dark:text-slate-400 border-slate-200 hover:border-slate-400"}`}
                                                 >
                                                     {mat}
@@ -231,13 +235,13 @@ export default function SignageConfigurator({ productSlug: propSlug }: SignageCo
                                 </div>
                             )}
 
-                            <div className="mt-8 pt-8 border-t border-slate-50 space-y-4">
+</AccordionStep><AccordionStep stepNumber={2} title="Cantitate" summary={`${quantity} buc.`} isOpen={activeStep === 2} onClick={() => setActiveStep(2)} isLast={true}>                            <div className="mt-8 pt-8 border-t border-slate-50 space-y-4">
                                 <NumberInput label="Cantitate" value={quantity} onChange={setQuantity} />
                                 <div className="bg-amber-50/50 p-4 rounded-2xl border border-amber-100/50">
                                     <DeliveryEstimation />
                                 </div>
                             </div>
-                        </div>
+                        </AccordionStep></div></div>
 
                         {/* Custom Configuration Links */}
                         <div className="bg-slate-900 rounded-3xl p-6 shadow-xl text-white">
@@ -308,6 +312,8 @@ export default function SignageConfigurator({ productSlug: propSlug }: SignageCo
                     </div>
                 </div>
             </div>
-        </main>
+        <SignageModelShelf/>
+        <MobileConfiguratorSummary total={finalPrice} onAdd={handleAddToCart} disabled={false} />
+</main>
     );
 }

@@ -23,7 +23,7 @@ import {
 } from "@/lib/pricing";
 
 const GALLERY_BASE = [
-  "/products/autocolante/autocolante-1.webp"
+  "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"
 ] as const;
 
 /* --- FAQs SPECIFIC PRODUSULUI --- */
@@ -237,7 +237,7 @@ export default function AutocolanteConfigurator({ productSlug, initialWidth: ini
               <div className="aspect-square bg-gray-50 dark:bg-slate-800 flex items-center justify-center overflow-hidden">
                 <img src={activeImage} alt="Autocolant" className="h-full w-full object-cover" />
               </div>
-              <div className="p-2 grid grid-cols-4 gap-2">
+              <div className="p-2 grid grid-cols-4 gap-2 print-product-gallery">
                 {GALLERY.map((src, i) => <button key={src} onClick={() => setActiveIndex(i)} className={`relative rounded-lg aspect-square ${activeIndex === i ? "ring-2 ring-offset-2 ring-amber-500" : "hover:opacity-80"}`}><img src={src} alt="Thumb" className="w-full h-full object-cover" /></button>)}
               </div>
             </div>

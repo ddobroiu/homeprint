@@ -117,7 +117,7 @@ export const EXTRA_SEO_CAMPAIGN_DATA: Record<string, LandingInfo> = {
         shortDescription: "Sistem tip perete (backdrop) extensibil, ușor de transportat și montat.",
         seoTitle: "Spider Pop-Up | Panou Expozitional | Backdrop Evenimente",
         seoDescription: "Sistem profesional tip spider pentru expoziții și conferințe. Include structură, print și geantă transport.",
-        images: ["/products/rollup/rollup-1.webp"],
+        images: ["/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp"],
         contentHtml: `
       <h2>Standul tău în 5 minute</h2>
       <p>Sistemele Spider Pop-Up sunt alegerea preferată pentru prezentări corporate și standuri expoziționale. Datorită structurii ingenioase, puteți crea un fundal de mari dimensiuni în doar câteva minute.</p>
@@ -135,7 +135,7 @@ export const EXTRA_SEO_CAMPAIGN_DATA: Record<string, LandingInfo> = {
         shortDescription: "Structură ușoară tip X, montaj ultra-rapid și preț imbatabil.",
         seoTitle: "X-Banner Stand | Sistem Afisaj Economic",
         seoDescription: "Alege un X-Banner pentru campanii temporare sau expoziții. Ieftin, ușor și rapid de instalat.",
-        images: ["/products/rollup/rollup-1.webp"],
+        images: ["/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp"],
         contentHtml: `
       <h2>Promovare Eficientă cu Costuri Minime</h2>
       <p>X-Bannerul este soluția ideală atunci când aveți nevoie de un afișaj portabil la un preț foarte mic. Structura în formă de X oferă stabilitate și permite schimbarea printului în câteva secunde.</p>
@@ -171,7 +171,7 @@ export const EXTRA_SEO_CAMPAIGN_DATA: Record<string, LandingInfo> = {
         shortDescription: "Sistem tip A-Board cu afișe interschimbabile, fețe duble pentru impact stradal.",
         seoTitle: "People Stopper | Semn Stradal A-Board | Reclama Trotuar",
         seoDescription: "Oprește trecătorii cu un people stopper elegant. Sistem click pentru schimbare rapidă a afișelor.",
-        images: ["/products/afise/afise-1.webp"],
+        images: ["/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp"],
         contentHtml: `
       <h2>Captează Atenția Trecătorilor</h2>
       <p>People stopper-ul sau panoul tip A este cea mai eficientă metodă de a atrage clienții din trafic pietonal direct în locația ta. Poți afișa zilnic un meniu nou, o promoție sau un mesaj de bun venit.</p>
@@ -189,7 +189,7 @@ export const EXTRA_SEO_CAMPAIGN_DATA: Record<string, LandingInfo> = {
         shortDescription: "Întâmpină-ți invitații cu stil! Panouri imprimate pe placă rigidă sau canvas.",
         seoTitle: "Panou Welcome Nunta | Decor Sala Personalizat",
         seoDescription: "Panouri de nuntă personalizate cu numele mirilor și data evenimentului. Design-uri variate și print de calitate.",
-        images: ["/products/canvas/canvas-1.webp"],
+        images: ["/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp"],
         contentHtml: `
       <h2>Un Detalii Memorabil pentru Ziua Ta</h2>
       <p>Panoul de primire este primul contact pe care invitații îl au cu atmosfera nunții tale. Realizăm panouri personalizate care se integrează perfect în decorul evenimentului, fie că alegi un stil boho, clasic sau modern.</p>

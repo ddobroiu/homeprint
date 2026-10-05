@@ -89,7 +89,13 @@ export async function GET(request: Request, props: any) {
     let xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 
     if (id === 'main') {
+        xml += generateUrlNode(`${BASE_URL}/blog`, '0.8', 'weekly', '2026-10-04');
+        xml += generateUrlNode(`${BASE_URL}/ghid-print`, '0.8', 'monthly', '2026-10-04');
+        xml += generateUrlNode(`${BASE_URL}/pregatire-fisiere`, '0.8', 'monthly', '2026-10-04');
+        xml += generateUrlNode(`${BASE_URL}/print-romania`, '0.8', 'monthly', '2026-10-03');
         const staticRoutes = [
+            "/configurator/personaj-propriu",
+            "/configurator/decor-foto-copil",
             '', '/shop', '/shop/bannere', '/shop/canvas', '/shop/semnalistica',
             '/shop/panouri-sticla', '/shop/fonduri-europene', '/configurator/banner', '/configurator/rollup',
             '/configurator/afise', '/configurator/autocolante', '/configurator/pliante', '/configurator/flayere',
@@ -100,7 +106,7 @@ export async function GET(request: Request, props: any) {
         ];
 
         for (const route of staticRoutes) {
-            xml += generateUrlNode(`${BASE_URL}${route}`, route === '' ? '1.0' : '0.8', 'daily');
+            xml += generateUrlNode(`${BASE_URL}${route}`, route === '' ? '1.0' : '0.8', 'daily', route === '' ? '2026-10-04' : CONTENT_LASTMOD);
         }
 
         for (const product of ALL_PRODUCTS) {
@@ -129,7 +135,7 @@ export async function GET(request: Request, props: any) {
         }
 
         for (const post of getAllPosts()) {
-            xml += generateUrlNode(`${BASE_URL}/blog/${post.slug}`, '0.7', 'weekly', post.date ? post.date.slice(0, 10) : CONTENT_LASTMOD);
+            xml += generateUrlNode(`${BASE_URL}/blog/${post.slug}`, '0.7', 'weekly', (post.modified || post.date) ? (post.modified || post.date).slice(0, 10) : CONTENT_LASTMOD);
         }
 
         for (const route of listAllLandingRoutes()) {

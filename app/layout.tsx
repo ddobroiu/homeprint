@@ -1,6 +1,10 @@
 import { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
+import "./brand-design.css";
+import "./brand-help.css";
+import "./editorial.css";
+import { brandKey, brandDesign } from "@/lib/brandDesign";
 import { Providers } from "../components/Providers";
 import GlobalStructuredData from "../components/GlobalStructuredData";
 import Header from "../components/Navbar"; // Use Navbar as Header
@@ -26,7 +30,6 @@ const outfit = Fraunces({
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
 };
 
 export const metadata: Metadata = {
@@ -35,8 +38,7 @@ export const metadata: Metadata = {
     default: "HomePrint.ro - Fototapet, Canvas și Decor Printat pentru Casă și Birou",
     template: "%s | HomePrint",
   },
-  description:
-    "HomePrint.ro printează decor pentru casă și birou: fototapet personalizat, tablouri canvas, postere de artă și autocolante de perete, plus bannere, panouri rigide, textile și kituri fonduri UE. Producție proprie, livrare 2-4 zile lucrătoare.",
+  description: brandDesign.intro,
   keywords: [
     "fototapet personalizat",
     "tablou canvas personalizat",
@@ -59,8 +61,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "HomePrint.ro | Decor printat pentru casă și birou",
-    description:
-      "Fototapet, canvas, postere și autocolante de perete personalizate, cameră cu cameră. Configurator cu preț instant, producție proprie.",
+    description: brandDesign.intro,
     url: "https://www.homeprint.ro",
     siteName: "HomePrint.ro",
     locale: "ro_RO",
@@ -77,7 +78,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "HomePrint.ro | Fototapet, canvas și decor printat",
-    description: "Pereți personalizați pentru living, dormitor, birou și hol. Preț instant, livrare 2-4 zile lucrătoare.",
+    description: brandDesign.intro,
     images: ["/products/tapet/tapet-1.jpg"],
   },
   robots: {
@@ -110,7 +111,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
       </head>
 
-      <body className={`${inter.variable} ${outfit.variable} bg-white text-slate-900 antialiased font-sans selection:bg-amber-500 selection:text-white relative`}>
+      <body data-brand={brandKey} className={`${inter.variable} ${outfit.variable} bg-white text-slate-900 antialiased font-sans selection:bg-amber-500 selection:text-white relative`}>
         <CookieConsent />
         <Providers>
           <Header />

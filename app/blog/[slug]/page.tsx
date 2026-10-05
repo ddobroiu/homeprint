@@ -1,3 +1,5 @@
+import { articleOutline } from "@/lib/articleOutline";
+import { EDITORIAL_POSTS } from "@/lib/blogPosts";
 import React from "react";
 import { getPostBySlug, POSTS } from "@/lib/blogPosts";
 import Link from "next/link";
@@ -24,11 +26,14 @@ export async function generateMetadata({ params }: PageProps) {
     return {
         title: `${post.title} | Blog HomePrint.ro`,
         description: post.description,
+        alternates: { canonical: `/blog/${post.slug}` },
+        robots: { index: post.indexable !== false, follow: true },
         openGraph: {
             title: post.title,
             description: post.description,
             type: "article",
             publishedTime: post.date,
+            modifiedTime: post.modified || post.date,
             authors: [post.author || "Echipa HomePrint"],
             images: post.hero ? [{ url: post.hero, width: 1200, height: 630, alt: post.title }] : undefined,
         },
@@ -49,8 +54,9 @@ export default async function BlogPostPage({ params }: PageProps) {
         notFound();
     }
 
+    const { contentHtml, outline } = articleOutline(post.contentHtml);
     return (
-        <main className="min-h-screen pt-24 pb-20 bg-white">
+        <main className="editorial-page min-h-screen pt-24 pb-20 bg-white">
             <BreadcrumbSchema
                 items={[
                     { name: "Acasă", item: "/" },
@@ -62,6 +68,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 title={post.title}
                 description={post.description}
                 datePublished={post.date}
+                dateModified={post.modified || post.date}
                 authorName={post.author || "Echipa HomePrint"}
                 image={post.hero || "/logo.svg"}
                 url={`/blog/${post.slug}`}
@@ -111,49 +118,14 @@ export default async function BlogPostPage({ params }: PageProps) {
                         </div>
                     )}
 
+                    <nav aria-label="Cuprins" className="editorial-toc mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6"><h2 className="font-bold mb-3">Cuprins</h2><ol className="list-decimal pl-5 space-y-2">{outline.map(item => <li key={item.id}><a className="text-slate-700 underline underline-offset-4" href={`#${item.id}`}>{item.title}</a></li>)}</ol></nav>
                     {/* Content */}
                     <div
-                        className="prose prose-slate lg:prose-xl prose-headings:font-black prose-headings:text-slate-900 prose-p:text-slate-600 prose-p:leading-relaxed prose-a:text-amber-600 prose-a:font-bold prose-a:no-underline hover:prose-a:underline"
-                        dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+                        className="editorial-content prose prose-slate lg:prose-xl prose-headings:font-black prose-headings:text-slate-900 prose-p:text-slate-600 prose-p:leading-relaxed prose-a:text-amber-600 prose-a:font-bold prose-a:no-underline hover:prose-a:underline"
+                        dangerouslySetInnerHTML={{ __html: contentHtml }}
                     />
 
-                    {/* CTA SECTION */}
-                    <div className="mt-16 p-8 md:p-12 bg-slate-900 rounded-[2rem] text-white overflow-hidden relative group">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-amber-600/20 rounded-full blur-[80px] -mr-32 -mt-32 pointer-events-none group-hover:bg-amber-600/30 transition-colors"></div>
-                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-600/10 rounded-full blur-[80px] -ml-32 -mb-32 pointer-events-none group-hover:bg-indigo-600/20 transition-colors"></div>
-
-                        <div className="relative z-10 text-center">
-                            <h3 className="text-2xl md:text-3xl font-black mb-4">Ești gata să transformi ideile în materiale reale?</h3>
-                            <p className="text-slate-400 mb-8 max-w-xl mx-auto">
-                                Folosește configuratoarele noastre online pentru a obține preț instant și a plasa comanda în câteva minute.
-                            </p>
-
-                            <div className="flex flex-wrap justify-center gap-3">
-                                {[
-                                    { label: "Bannere", href: "/configurator/banner" },
-                                    { label: "Autocolante", href: "/configurator/autocolante" },
-                                    { label: "Afișe", href: "/configurator/afise" },
-                                    { label: "Canvas", href: "/configurator/canvas" },
-                                    { label: "Roll-up", href: "/configurator/rollup" },
-                                    { label: "Plexiglass", href: "/materiale/plexiglass" }
-                                ].map((cta) => (
-                                    <Link
-                                        key={cta.href}
-                                        href={cta.href}
-                                        className="px-6 py-3 bg-white/10 hover:bg-amber-600 text-white rounded-xl font-bold transition-all hover:scale-105"
-                                    >
-                                        {cta.label}
-                                    </Link>
-                                ))}
-                                <Link
-                                    href="/shop"
-                                    className="px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white rounded-xl font-bold transition-all hover:scale-105 shadow-lg shadow-amber-600/20"
-                                >
-                                    Toate produsele
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
+                    <aside className="mt-12 rounded-2xl border border-slate-200 p-6"><h2 className="text-xl font-bold mb-4">Planul unui perete de accent</h2><ul className="space-y-3">{EDITORIAL_POSTS.filter(item => item.slug !== post.slug).map(item => <li key={item.slug}><Link className="underline underline-offset-4" href={`/blog/${item.slug}`}>{item.title}</Link></li>)}<li><Link className="underline underline-offset-4" href="/ghid-print">HomePrint: alegerea produsului</Link></li></ul></aside>
 
                     {/* Related Articles or Newsletter? */}
                     {/* Share Button */}
@@ -170,14 +142,14 @@ export default async function BlogPostPage({ params }: PageProps) {
                     </div>
 
                     {/* Related Post Section */}
-                    {POSTS.filter(p => p.slug !== post.slug && p.tags.some(t => post.tags.includes(t))).length > 0 && (
+                    {POSTS.filter(p => p.indexable !== false && p.slug !== post.slug && p.tags.some(t => post.tags.includes(t))).length > 0 && (
                         <div className="mt-24">
                             <h3 className="text-2xl font-black text-slate-900 mb-8 flex items-center gap-3">
                                 <span className="w-8 h-1 bg-amber-500 rounded-full"></span>
                                 Articole Similare
                             </h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                {POSTS.filter(p => p.slug !== post.slug && p.tags.some(t => post.tags.includes(t))).slice(0, 2).map((rp) => (
+                                {POSTS.filter(p => p.indexable !== false && p.slug !== post.slug && p.tags.some(t => post.tags.includes(t))).slice(0, 2).map((rp) => (
                                     <Link key={rp.slug} href={`/blog/${rp.slug}`} className="group block">
                                         <div className="relative h-48 rounded-2xl overflow-hidden mb-4">
                                             <Image src={rp.hero || "/logo.svg"} alt={rp.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />

@@ -16,12 +16,12 @@ export default function SectoareBucurestiPage() {
     const sectoare = bucuresti?.localitati.filter(l => l.name.startsWith('Sector')) || [];
 
     const sectorImages: Record<string, string> = {
-        'sector-1': '/products/banner/banner-1.webp',
-        'sector-2': '/products/banner/banner-1.webp',
-        'sector-3': '/products/banner/banner-1.webp',
-        'sector-4': '/products/banner/banner-1.webp',
-        'sector-5': '/products/banner/banner-1.webp',
-        'sector-6': '/products/banner/banner-1.webp',
+        'sector-1': '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
+        'sector-2': '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
+        'sector-3': '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
+        'sector-4': '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
+        'sector-5': '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
+        'sector-6': '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
     };
 
     return (
@@ -115,7 +115,7 @@ export default function SectoareBucurestiPage() {
                             </div>
                         </div>
                         <div className="relative rounded-[3rem] overflow-hidden aspect-square rotate-3 border-8 border-white shadow-2xl">
-                             <Image src="/products/banner/banner-1.webp" alt="HomePrint Bucharest Hub" fill className="object-cover" />
+                             <Image src="/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp" alt="HomePrint Bucharest Hub" fill className="object-cover" />
                              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
                         </div>
                     </div>

@@ -21,7 +21,8 @@ import {
 import ProductJsonLd from "@/components/ProductJsonLd";
 
 const GALLERY_BASE = [
-    "/products/autocolante/autocolante-1.webp"
+    "/products/autocolante/autocolante-1.webp",
+    "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
 ] as const;
 
 /* --- FAQs SPECIFIC PRODUSULUI --- */
@@ -272,7 +273,7 @@ export default function AutocolanteConfigurator({ productSlug, initialWidth: ini
                                     <img src={activeImage} alt="Autocolante" className="max-h-full max-w-full object-contain" />
                                 )}
                             </div>
-                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100">
+                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100 print-product-gallery">
                                 {GALLERY.map((src, i) => (
                                     <button
                                         key={i}

@@ -21,7 +21,8 @@ import ProductJsonLd from "@/components/ProductJsonLd";
 import { PopularDimensions } from "./PopularDimensions";
 
 const GALLERY_BASE = [
-    "/products/afise/afise-1.webp"
+    "/products/afise/afise-1.webp",
+    "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
 ] as const;
 
 const afiseFaqs: QA[] = [
@@ -196,7 +197,7 @@ export default function AfiseConfigurator({ productSlug, initialWidth, initialHe
                                 />
                                 )}
                             </div>
-                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100">
+                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100 print-product-gallery">
                                 {GALLERY.map((src, i) => (
                                     <button
                                         key={i}

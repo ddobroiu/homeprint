@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 import { ArrowRight, Settings, Zap, ShieldCheck, Box } from 'lucide-react';
 import { CONFIGURATORS_REGISTRY } from '@/lib/configurators-registry';
+import SearchProductShelf from '@/components/SearchProductShelf';
 
 export const metadata: Metadata = {
     title: 'Configuratoare cu preț instant - Fototapet, Canvas, Postere și Print Publicitar',
@@ -91,6 +92,11 @@ export default function ConfiguratoarePage() {
                         );
                     })}
                 </div>
+            </div>
+
+            {/* Configuratoarele noi (personaj propriu, poza copilului) si modelele gata facute */}
+            <div className="container mx-auto px-6">
+                <SearchProductShelf />
             </div>
 
             {/* Features Bar */}

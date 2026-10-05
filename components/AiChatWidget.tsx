@@ -25,7 +25,7 @@ function waPhoneE164(roPhone: string) {
 
 const AI_CHAT_STORAGE_KEY = `${String(siteConfig.domain || "site").toLowerCase().replace(/[^a-z0-9]+/g, "_")}_ai_chat_conversation_id`;
 
-export default function AiChatWidget() {
+export default function AiChatWidget({ compact = false }: { compact?: boolean } = {}) {
   const [messages, setMessages] = useState<Msg[]>(DEFAULT_MESSAGES);
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(false);
@@ -275,7 +275,7 @@ export default function AiChatWidget() {
       </div>
 
       <div className="p-4 md:p-5">
-        <div ref={scrollRef} className="h-[320px] md:h-[360px] overflow-auto pr-1 space-y-3">
+        <div ref={scrollRef} className={compact ? "h-[170px] md:h-[220px] overflow-auto pr-1 space-y-3" : "h-[320px] md:h-[360px] overflow-auto pr-1 space-y-3"}>
           {messages.map((m, idx) => (
             <div
               key={idx}

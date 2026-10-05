@@ -69,9 +69,10 @@ function FonduriTypeSwitch() {
 
 const GALLERY_BASE = [
     "/products/fonduri/pnrr-1.webp",
+    "/products/grafica-originala/kit-vizibilitate-proiect-panou-afis-etichete.webp",
     "/products/fonduri/pnrr-2.webp",
     "/products/fonduri/pnrr-3.jpg",
-    "/products/fonduri/pnrr-4.jpg"
+    "/products/fonduri/pnrr-4.jpg",
 ] as const;
 
 const fonduriFaqs: QA[] = [
@@ -245,7 +246,7 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
                                     sizes="(max-width: 768px) 100vw, 50vw"
                                 />
                             </div>
-                            <div className="p-2 grid grid-cols-4 gap-2">
+                            <div className="p-2 grid grid-cols-4 gap-2 print-product-gallery">
                                 {GALLERY.map((src, i) => (
                                     <button
                                         key={src}

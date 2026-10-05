@@ -1,10 +1,11 @@
+import { applyCatalogBannerAsset } from "../bannerProductAssets";
 // Doar pentru server (pagini, sitemap, feed): data.json e mare și nu trebuie să ajungă în bundle-ul clientului.
 import data from "./data.json";
 import { CATALOG_CATEGORIES, catalogProductUrl, type CatalogCategorySlug, type CatalogProduct } from "./types";
 
 export * from "./types";
 
-export const CATALOG_PRODUCTS = data as unknown as CatalogProduct[];
+export const CATALOG_PRODUCTS = (data as unknown as CatalogProduct[]).map(applyCatalogBannerAsset);
 
 const BY_KEY = new Map(CATALOG_PRODUCTS.map((p) => [`${p.category}/${p.slug}`, p]));
 

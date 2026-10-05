@@ -2,6 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { brandDesign } from "@/lib/brandDesign";
 import { siteConfig } from "@/lib/siteConfig";
 import { COMPANY, CONTACT_EMAIL } from "@/lib/company";
 import FooterLegal from "@/components/legal/FooterLegal";
@@ -36,6 +38,9 @@ const GUIDE_LINKS = [
 ];
 
 const COMPANY_LINKS = [
+    { href: "/print-romania", label: "Print cu livrare în România" },
+    { href: "/pregatire-fisiere", label: "Pregătirea fișierelor" },
+    { href: "/ghid-print", label: "Ghid de alegere și prețuri" },
     { href: "/despre-noi", label: "Despre HomePrint" },
     { href: "/industrii", label: "Decor pentru birouri și spații comerciale" },
     { href: "/seap", label: "Achiziții SEAP / SICAP" },
@@ -53,19 +58,15 @@ export default function Footer() {
 
 
     return (
-        <footer className="bg-[#F3ECE1] text-stone-600 relative isolate border-t border-[#E4D9C8] overflow-hidden">
+        <footer className="brand-footer bg-[#F3ECE1] text-stone-600 relative isolate border-t border-[#E4D9C8] overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-[#1F4D3A]/50 to-transparent" />
 
             <div className="container mx-auto px-6 lg:px-12 !max-w-7xl py-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 mb-8">
                     {/* Brand */}
                     <div className="lg:col-span-4 flex flex-col gap-4">
-                        <Link href="/" className="inline-block">
-                            <span className="text-2xl text-stone-900 tracking-tight">Home<span className="text-[#1F4D3A]">Print</span></span>
-                        </Link>
-                        <p className="text-sm text-stone-600 leading-relaxed max-w-sm">
-                            Fototapet, canvas, postere și autocolante de perete, produse în atelier propriu și livrate în toată țara.
-                        </p>
+                        <Link href="/" className="inline-block"><Image src="/logo.svg" alt={brandDesign.name} width={340} height={90} className="brand-footer-logo-image" /></Link>
+                        <p className="brand-footer-intro">{brandDesign.intro}</p>
                         <div className="space-y-3 text-sm">
                             <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-3 hover:text-stone-900 transition-colors">
                                 <Mail size={16} className="text-[#1F4D3A] shrink-0" />
@@ -96,6 +97,7 @@ export default function Footer() {
                         </div>
                     </div>
 
+                    <div className="lg:col-span-12"><Link href="/#configuratoare" className="design-text-link">Toate configuratoarele</Link></div>
                     <FooterColumn title="Produse" links={PRODUCT_LINKS} />
                     <FooterColumn title="Ghiduri" links={GUIDE_LINKS} />
                     <FooterColumn title="Firme & instituții" links={COMPANY_LINKS} />

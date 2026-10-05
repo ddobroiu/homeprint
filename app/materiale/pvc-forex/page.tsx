@@ -30,7 +30,7 @@ export default function PVCForexPage() {
                 <ProductSchema
                     name="Panou PVC Forex Personalizat"
                     description="Panou rigid din PVC expandat (Forex), la mijloc între polipropilenă și Alucobond ca durabilitate, ideal pentru firme de magazin și semnalistică outdoor/indoor."
-                    image="/products/master/placi-pvc-forex-personalizat-print-uv.png"
+                    image="/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp"
                     url="/materiale/pvc-forex"
                     price="35.00"
                 />

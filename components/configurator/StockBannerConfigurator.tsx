@@ -1,537 +1,128 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
-import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
-import { usePathname } from "next/navigation";
+import React, { useMemo, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { ShoppingCart, UploadCloud, Check, Ruler, PencilRuler } from "lucide-react";
+import { bannerProducts } from "@/lib/products/banner-products";
+import { getLandingInfo } from "@/lib/landingData";
+import { STOCK_BANNER_DEFAULTS } from "@/lib/configuratorPresets";
+import { calculateBannerPrice, calculateBannerVersoPrice, formatMoneyDisplay, BANNER_CONSTANTS } from "@/lib/pricing";
+import { siteConfig } from "@/lib/siteConfig";
 import { useCart } from "@/components/CartContext";
 import { useToast } from "@/components/ToastProvider";
+import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
+import BannerModeSwitch, { type BannerProductMode } from "./ui/BannerModeSwitch";
+import { AccordionStep } from "./ui/AccordionStep";
 import { OptionButton } from "./ui/OptionButton";
 import { NumberInput } from "./ui/NumberInput";
-
-const TabButton = ({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) => (
-    <button
-        onClick={onClick}
-        className={`px-4 py-2 text-sm font-bold transition-all border-b-2 ${
-            active ? 'border-amber-600 text-amber-600' : 'border-transparent text-gray-500 hover:text-gray-700 dark:text-gray-300'
-        }`}
-    >
-        {children}
-    </button>
-);
-
-const TabButtonSEO = ({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) => (
-    <button
-        onClick={onClick}
-        className={`flex-1 py-3 px-4 text-sm font-bold transition-colors ${
-            active ? 'bg-white text-amber-600' : 'text-gray-500 hover:text-gray-700 dark:text-gray-300'
-        }`}
-    >
-        {children}
-    </button>
-);
-import { 
-    Plus, 
-    Minus, 
-    ShoppingCart, 
-    Info, 
-    Check,
-    ChevronDown, 
-    X, 
-    UploadCloud, 
-    MessageCircle, 
-    TrendingUp,
-    CheckCircle2,
-    Truck,
-    ShieldCheck,
-    ChevronRight,
-    Sparkles,
-    Ruler,
-    Percent,
-    PencilRuler
-} from "lucide-react";
-import Link from "next/link";
-import { bannerProducts } from "@/lib/products/banner-products";
 import DeliveryEstimation from "./DeliveryEstimation";
-import { calculateBannerPrice, formatMoneyDisplay, BANNER_CONSTANTS, getBannerUpsell, type PriceInputBanner } from "@/lib/pricing";
-import FaqAccordion from "./FaqAccordion";
-import { QA } from "@/types/configurator";
-import Reviews from "@/components/Reviews";
 import ProductJsonLd from "@/components/ProductJsonLd";
-import Image from "next/image";
-import QuickNav from "@/components/QuickNav";
 import PopularDesigns from "@/components/PopularDesigns";
-import { getLandingInfo } from "@/lib/landingData";
+import Reviews from "@/components/Reviews";
 
-const bannerFaqs: QA[] = [
-    { question: "Ce materiale sunt disponibile?", answer: "Oferim Frontlit 440g (Standard) și Frontlit 510g (Premium), ambele fiind materiale PVC durabile, special concepute pentru uz exterior." },
-    { question: "Ce finisaje sunt incluse?", answer: "Toate bannerele vin cu tiv de rezistență pe tot perimetrul și capse metalice de prindere." },
-    { question: "Cât durează producția?", answer: "Comanda ajunge la tine în 2-4 zile lucrătoare, producție și livrare prin curier incluse." },
+const SIZES = [{ w: 100, h: 50 }, { w: 150, h: 75 }, { w: 200, h: 100 }, { w: 250, h: 125 }, { w: 300, h: 150 }, { w: 400, h: 200 }];
+type DesignMode = "standard" | "upload" | "pro";
+const MODES: { value: DesignMode; title: string; detail: string }[] = [
+    { value: "standard", title: "Păstrez grafica din exemplu", detail: "Poți adăuga un nume și un telefon. Fără taxă de grafică." },
+    { value: "upload", title: "Încarc grafica mea", detail: "Ai deja macheta? Trimite fișierul pregătit pentru imprimare." },
+    { value: "pro", title: "Vreau grafică personalizată", detail: "+50 lei pentru realizarea unei machete după indicațiile tale." },
 ];
 
-const PREDEFINED_DIMENSIONS = [
-    { label: "100x50 cm", w: 100, h: 50 },
-    { label: "150x50 cm", w: 150, h: 50 },
-    { label: "200x50 cm", w: 200, h: 50 },
-    { label: "300x50 cm", w: 300, h: 50 },
-    { label: "100x75 cm", w: 100, h: 75 },
-    { label: "150x75 cm", w: 150, h: 75 },
-    { label: "100x100 cm", w: 100, h: 100 },
-    { label: "150x100 cm", w: 150, h: 100 },
-    { label: "200x100 cm", w: 200, h: 100 },
-    { label: "300x100 cm", w: 300, h: 100 },
-    { label: "400x100 cm", w: 400, h: 100 },
-    { label: "300x150 cm", w: 300, h: 150 },
-    { label: "400x150 cm", w: 400, h: 150 },
-];
-
-const AccordionStep = ({ stepNumber, title, summary, isOpen, onClick, children, isLast = false }: { stepNumber: number; title: string; summary: string; isOpen: boolean; onClick: () => void; children: React.ReactNode; isLast?: boolean; }) => (
-    <div className="relative pl-12">
-        <div className="absolute top-5 left-0 flex flex-col items-center h-full">
-            <span className={`flex items-center justify-center w-8 h-8 rounded-full text-md font-bold transition-colors ${isOpen ? 'bg-amber-600 text-white' : 'bg-gray-200 text-gray-700 dark:text-gray-300'}`}>{stepNumber}</span>
-            {!isLast && <div className="w-px grow bg-gray-200 mt-2"></div>}
-        </div>
-        <div className="flex-1">
-            <button type="button" className="w-full flex items-center justify-between py-5 text-left focus:outline-none" onClick={onClick}>
-                <div>
-                    <h2 className="text-lg font-bold text-gray-800">{title}</h2>
-                    {!isOpen && <p className="text-sm text-gray-500 truncate max-w-[200px] sm:max-w-md">{summary}</p>}
-                </div>
-                <ChevronDown className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
-            </button>
-            <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100 pb-5" : "grid-rows-[0fr] opacity-0"}`}>
-                <div className="overflow-hidden">{children}</div>
-            </div>
-        </div>
-    </div>
-);
-
-interface Props {
-    productSlug: string;
-    renderOnlyConfigurator?: boolean;
-}
-
-function StockBannerModeLinks() {
-    const pathname = usePathname() || "";
-    const isVerso = pathname.includes("banner-verso");
-    const isMesh = pathname.includes("/mesh");
-    const isBannerProductPath =
-        pathname === "/configurator/banner" ||
-        /^\/configurator\/banner-/.test(pathname);
-    const isFace = !isVerso && !isMesh && isBannerProductPath;
-
-    return (
-        <div className="inline-flex flex-wrap gap-1 rounded-lg border border-gray-300 bg-white p-1 shadow-sm shrink-0">
-            <Link
-                href="/configurator/banner"
-                className={`px-3 sm:px-4 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all ${isFace ? "bg-amber-600 text-white shadow-md" : "text-gray-600 dark:text-gray-400 hover:bg-slate-50 dark:hover:bg-slate-800"}`}
-            >
-                O față
-            </Link>
-            <Link
-                href="/configurator/banner-verso"
-                className={`px-3 sm:px-4 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all ${isVerso ? "bg-amber-600 text-white shadow-md" : "text-gray-600 dark:text-gray-400 hover:bg-slate-50 dark:hover:bg-slate-800"}`}
-            >
-                Față-verso
-            </Link>
-            <Link
-                href="/configurator/mesh"
-                className={`px-3 sm:px-4 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all ${isMesh ? "bg-amber-600 text-white shadow-md" : "text-gray-600 dark:text-gray-400 hover:bg-slate-50 dark:hover:bg-slate-800"}`}
-            >
-                Mesh
-            </Link>
-        </div>
-    );
-}
-
-export default function StockBannerConfigurator({ productSlug, renderOnlyConfigurator }: Props) {
+export default function StockBannerConfigurator({ productSlug, renderOnlyConfigurator }: { productSlug: string; renderOnlyConfigurator?: boolean }) {
     const { addItem } = useCart();
-    const { success } = useToast();
-
+    const { success, error } = useToast();
     const product = useMemo(() => {
         const found = bannerProducts.find(p => p.slug === productSlug);
         if (found) return found;
-
-        const landingInfo = getLandingInfo("bannere", productSlug);
-        if (landingInfo) {
-            return {
-                id: landingInfo.key,
-                slug: landingInfo.key,
-                title: landingInfo.title,
-                description: landingInfo.shortDescription,
-                image: landingInfo.images?.[0] || "/products/banner/banner-personalizat-acces-parcare-nu-blocati_6107382.jpg",
-                price: 49,
-                category: "Bannere",
-                tags: ["seo", "banner", landingInfo.key]
-            };
-        }
-        return undefined;
+        const landing = getLandingInfo("bannere", productSlug);
+        return landing ? { id: landing.key, slug: landing.key, title: landing.title, description: landing.shortDescription, image: landing.images?.[0] || "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp", category: "Bannere", longDescription: undefined } : undefined;
     }, [productSlug]);
-
-    const [width, setWidth] = useState(200);
-    const [height, setHeight] = useState(100);
-    const [material, setMaterial] = useState<"frontlit_440" | "frontlit_510">("frontlit_440");
-    const [bannerType, setBannerType] = useState<"single" | "double">("single");
-    const [wantWindHoles, setWantWindHoles] = useState(false);
-    const [quantity, setQuantity] = useState(1);
-    const [activeProductTab, setActiveProductTab] = useState<'descriere' | 'recenzii' | 'faq'>('descriere');
-    const [activeStep, setActiveStep] = useState(1);
-    const [customText, setCustomText] = useState("");
-    const [designOption, setDesignOption] = useState<'standard' | 'upload'>('standard');
+    const [width, setWidth] = useState(STOCK_BANNER_DEFAULTS.width);
+    const height = width / 2;
+    const [customSize, setCustomSize] = useState(!SIZES.some(s => s.w === STOCK_BANNER_DEFAULTS.width && s.h === STOCK_BANNER_DEFAULTS.height));
+    const [quantity, setQuantity] = useState(STOCK_BANNER_DEFAULTS.quantity);
+    const [bannerMode, setBannerMode] = useState<BannerProductMode>("single");
+    const [material, setMaterial] = useState<"frontlit_440" | "frontlit_510">(STOCK_BANNER_DEFAULTS.material);
+    const materialLabel = bannerMode === "double" ? "Blockout 650g" : bannerMode === "mesh" ? "Mesh microperforat" : material === "frontlit_510" ? "Frontlit 510g Premium" : "Frontlit 440g Standard";
+    const modeLabel = bannerMode === "double" ? "Față-verso" : bannerMode === "mesh" ? "Mesh" : "O singură față";
+    const [wantWindHoles, setWantWindHoles] = useState(STOCK_BANNER_DEFAULTS.wantWindHoles);
+    const [designOption, setDesignOption] = useState<DesignMode>("standard");
+    const [addText, setAddText] = useState(false);
+    const [contactName, setContactName] = useState("");
+    const [contactPhone, setContactPhone] = useState("");
+    const [instructions, setInstructions] = useState("");
     const [artworkUrl, setArtworkUrl] = useState<string | null>(null);
-    // Incadrarea graficii pe format (pozitie, zoom) si pixelii imaginii, salvate in comanda
+    const [fileName, setFileName] = useState("");
+    const [isImage, setIsImage] = useState(false);
+    const [uploading, setUploading] = useState(false);
+    const [uploadError, setUploadError] = useState("");
     const [artworkFit, setArtworkFit] = useState<ArtworkFit>(DEFAULT_FIT);
     const [artworkPx, setArtworkPx] = useState<{ w: number; h: number } | null>(null);
-    const [uploading, setUploading] = useState(false);
+    const [activeStep, setActiveStep] = useState(1);
+    const [tab, setTab] = useState<"description" | "reviews">("description");
+    const printPrice = useMemo(() => bannerMode === "double" ? calculateBannerVersoPrice({ width_cm: width, height_cm: height, quantity, want_wind_holes: wantWindHoles, same_graphic: true, designOption: "upload" }) : calculateBannerPrice({ width_cm: width, height_cm: height, quantity, material: bannerMode === "mesh" ? "mesh" : material, banner_type: "single", want_wind_holes: bannerMode === "mesh" ? false : wantWindHoles, want_hem_and_grommets: true, designOption: "upload" }), [width, height, quantity, material, wantWindHoles, bannerMode]);
+    const graphicFee = designOption === "pro" ? BANNER_CONSTANTS.PRO_DESIGN_FEE : 0;
+    const total = Math.round((printPrice.finalPrice + graphicFee) * 100) / 100;
+    const validSize = Number.isFinite(width) && Number.isFinite(height) && width >= 2 && height >= 1 && width === height * 2 && Number.isInteger(quantity) && quantity > 0;
+    const canOrder = validSize && !uploading && (designOption !== "upload" || !!artworkUrl) && (designOption !== "pro" || !!instructions.trim()) && (designOption !== "standard" || !addText || !!(contactName.trim() || contactPhone.trim() || instructions.trim()));
 
-    if (!product) return null;
-
-    const priceData = useMemo(() => {
-        const input: PriceInputBanner = {
-            width_cm: width,
-            height_cm: height,
-            quantity: quantity,
-            material: material,
-            banner_type: bannerType,
-            want_wind_holes: wantWindHoles,
-            want_hem_and_grommets: true,
-            designOption: "upload"
-        };
-        const price = calculateBannerPrice(input);
-        const upsell = getBannerUpsell(input);
-        return { ...price, upsell };
-    }, [width, height, quantity, material, bannerType, wantWindHoles]);
-
-    const handleAddToCart = () => {
-        addItem({
-            id: `stock-banner-${product.id}-${width}x${height}-${Date.now()}`,
-            productId: 'banner',
-            title: `${product.title} - ${width}x${height} cm`,
-            price: priceData.finalPrice / quantity,
-            quantity: quantity,
-            metadata: {
-                "Dimensiune": `${width}x${height} cm`,
-                "Tip": bannerType === 'double' ? "Față-Verso" : "O singură față",
-                "Material": material === 'frontlit_510' ? "Frontlit 510g (Premium)" : "Frontlit 440g (Standard)",
-                "Finisaje": `Tiv + Capse${wantWindHoles ? ' + Găuri de Vânt' : ''}`,
-                "Imagine": product.image,
-                "Text Personalizat": customText || "-",
-                "Optiune Grafica": designOption === 'standard' ? 'Model Standard' : 'Fisier Proprie',
-                ...(designOption === 'upload' && artworkUrl ? { "Fisier": artworkUrl } : {}),
-                ...(designOption === "upload" && artworkUrl ? fitMetadata(width, height, artworkPx, artworkFit) : {}),
-            }
-        });
-        success("Produsul a fost adăugat în coș!");
-    };
-
-    const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    async function handleFileUpload(e: React.ChangeEvent<HTMLInputElement>) {
         const file = e.target.files?.[0];
         if (!file) return;
-        setArtworkFit(DEFAULT_FIT);
-        setArtworkPx(null);
-        setUploading(true);
+        setArtworkUrl(null); setUploadError(""); setUploading(true); setArtworkPx(null); setArtworkFit(DEFAULT_FIT); setFileName("");
         try {
-            const formData = new FormData();
-            formData.append('file', file);
-            const res = await fetch('/api/upload', { method: 'POST', body: formData });
-            if (res.ok) {
-                const data = await res.json();
-                setArtworkUrl(data.url);
-            } else {
-                setArtworkUrl(URL.createObjectURL(file));
-            }
-        } catch (err) {
-            setArtworkUrl(URL.createObjectURL(file));
-        } finally {
-            setUploading(false);
-        }
-    };
-
-    const summaryStep1 = `${width}x${height} cm, ${quantity} buc.`;
-    const summaryStep2 = `${bannerType === 'double' ? 'Față-Verso, ' : ''}${material === 'frontlit_510' ? 'Premium' : 'Standard'}${wantWindHoles ? ', cu găuri' : ''}`;
-    const summaryStep3 = designOption === 'standard' ? 'Model Standard' : 'Grafică Proprie';
-
-    return (
-        <div className="bg-slate-50 dark:bg-slate-800 min-h-screen pb-20 w-full max-w-full overflow-x-hidden box-border">
-            <ProductJsonLd
-                name={product.title.replace(/^Banner Banner /i, 'Banner ')}
-                description={product.description}
-                image={product.image}
-                price={priceData.finalPrice}
-                sku={product.id}
-                url={`https://www.homeprint.ro/banner-product/${product.slug}`}
-            />
-
-            <div className={`container mx-auto ${renderOnlyConfigurator ? 'px-0' : 'px-4'} py-8 lg:py-16`}>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-                    <div className="lg:sticky lg:top-24 h-max w-full">
-                        <div className="bg-white sm:rounded-2xl shadow-sm border border-gray-200 dark:border-slate-800 overflow-hidden relative group">
-                            <div className="aspect-square relative bg-white flex items-center justify-center p-4">
-                                {designOption === "upload" && artworkUrl ? (
-                                    <div className="absolute inset-0 p-4">
-                                        <ArtworkFitEditor
-                                            widthCm={width}
-                                            heightCm={height}
-                                            imageUrl={artworkUrl}
-                                            fit={artworkFit}
-                                            onChange={setArtworkFit}
-                                            onImageSize={setArtworkPx}
-                                            safeMarginCm={3}
-                                            viewingFactor={1.5}
-                                        />
-                                    </div>
-                                ) : (
-                                    <Image 
-                                    src={product.image} 
-                                    alt={product.title} 
-                                    fill 
-                                    className="object-contain p-4 sm:p-8"
-                                    priority 
-                                />
-                                )}
-                            </div>
-                        </div>
+            const data = new FormData(); data.append("file", file);
+            const response = await fetch("/api/upload", { method: "POST", body: data });
+            if (!response.ok) throw new Error("Fișierul nu a fost salvat. Încearcă din nou.");
+            const result = await response.json();
+            if (typeof result.url !== "string" || !/^https?:\/\//.test(result.url)) throw new Error("Nu am primit un fișier salvat valid.");
+            setArtworkUrl(result.url); setFileName(file.name); setIsImage(file.type.startsWith("image/") && !file.name.toLowerCase().endsWith(".svg"));
+        } catch (e) { setUploadError(e instanceof Error ? e.message : "Încărcarea nu a reușit. Încearcă din nou."); }
+        finally { setUploading(false); }
+    }
+    function handleAddToCart() {
+        if (!product || !canOrder) { error("Completează dimensiunile și opțiunea de grafică înainte de a adăuga produsul."); return; }
+        const useText = designOption === "pro" || (designOption === "standard" && addText);
+        addItem({ id: `stock-banner-${product.id}-${width}x${height}-${Date.now()}`, productId: bannerMode === "double" ? "banner-verso" : bannerMode === "mesh" ? "mesh" : "banner", slug: product.slug, routeSlug: `/banner-product/${product.slug}`, image: product.image, title: `${product.title} · ${modeLabel} · ${width} × ${height} cm`, width, height, price: total / quantity, quantity,
+            metadata: { "Dimensiune": `${width}x${height} cm`, "Tip": modeLabel, "Material": materialLabel, bannerMode, ...(bannerMode === "double" ? { "Grafică față-verso": "Identică pe ambele fețe" } : {}), "Finisaje": `Tiv + Capse${bannerMode !== "mesh" && wantWindHoles ? " + Găuri de Vânt" : ""}`, "Imagine": product.image, "Model ales": product.title, "Model slug": product.slug, "Optiune Grafica": MODES.find(m => m.value === designOption)?.title, designOption, "Taxă grafică": graphicFee, "Nume pe grafică": useText ? contactName.trim() : "-", "Telefon pe grafică": useText ? contactPhone.trim() : "-", "Text Personalizat": useText ? [contactName.trim(), contactPhone.trim(), instructions.trim()].filter(Boolean).join(" | ") || "-" : "-", "Indicații grafică": useText ? instructions.trim() : "-", ...(designOption === "upload" && artworkUrl ? { "Fisier": artworkUrl, "Nume fișier": fileName, ...(isImage ? fitMetadata(width, height, artworkPx, artworkFit) : {}) } : {}) } });
+        success("Bannerul și opțiunile tale au fost adăugate în coș.");
+    }
+    if (!product) return null;
+    const inputClass = "w-full p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all shadow-sm text-lg font-medium bg-white text-slate-900";
+    return <div className="bg-slate-50 pb-24 text-slate-900">
+        <ProductJsonLd name={product.title} description={product.description} image={product.image} price={printPrice.finalPrice} sku={product.id} url={`${siteConfig.url}/banner-product/${product.slug}`} />
+        <div className={`mx-auto max-w-7xl ${renderOnlyConfigurator ? "px-0" : "px-4"} py-8 lg:py-12`}>
+            <Link href="/shop/bannere" className="mb-6 inline-flex text-sm font-semibold text-emerald-700">← Toate modelele de banner</Link>
+            <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
+                <div className="lg:sticky lg:top-24">
+                    <div className="relative aspect-square overflow-hidden rounded-xl sm:rounded-2xl border border-gray-200 bg-white shadow-sm">
+                        {designOption === "upload" && artworkUrl && isImage ? <div className="absolute inset-0 p-4"><ArtworkFitEditor widthCm={width} heightCm={height} imageUrl={artworkUrl} fit={artworkFit} onChange={setArtworkFit} onImageSize={setArtworkPx} safeMarginCm={3} viewingFactor={1.5} /></div> : <Image src={product.image} alt={product.title} fill priority sizes="(max-width: 1024px) 100vw, 50vw" className="object-contain p-5" />}
                     </div>
-
-                    <div className={`${renderOnlyConfigurator ? 'w-full' : 'px-4 sm:px-0 w-full'}`}>
-                        {!renderOnlyConfigurator && (
-                            <header className="mb-6 sm:mb-8">
-                                <div className="flex flex-col gap-3 mb-3 sm:mb-4">
-                                    <h1 className="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tight leading-tight break-words">
-                                        {product.title.replace(/^Banner Banner /i, 'Banner ').replace(/^Banner Banner/i, 'Banner')}
-                                    </h1>
-                                    <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2">
-                                        <StockBannerModeLinks />
-                                        <div className="flex rounded-lg border border-slate-200 bg-slate-50 p-0.5 shrink-0">
-                                            <button type="button" onClick={() => setBannerType("single")} className={`flex-1 px-3 py-1.5 rounded-md text-xs font-semibold transition-all ${bannerType === "single" ? "bg-white text-amber-700 shadow-sm" : "text-slate-500"}`}>O față (acest model)</button>
-                                            <button type="button" onClick={() => setBannerType("double")} className={`flex-1 px-3 py-1.5 rounded-md text-xs font-semibold transition-all ${bannerType === "double" ? "bg-white text-amber-700 shadow-sm" : "text-slate-500"}`}>Față-verso PVC</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p className="text-xs sm:text-sm text-gray-500">Configurează dimensiunile și comandă online în câteva minute.</p>
-                            </header>
-                        )}
-
-                        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 dark:border-slate-800 px-4 py-2 mb-8">
-                            <AccordionStep stepNumber={1} title="Alege Dimensiunea" summary={summaryStep1} isOpen={activeStep === 1} onClick={() => setActiveStep(1)}>
-                                 <div className="space-y-6">
-                                     <div className="grid grid-cols-2 gap-4 animate-in fade-in duration-300">
-                                         <div>
-                                             <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Lungime (cm)</label>
-                                             <div className="flex bg-slate-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm">
-                                                 <input 
-                                                     type="number" 
-                                                     value={width} 
-                                                     onChange={(e) => setWidth(Math.max(1, parseInt(e.target.value) || 0))}
-                                                     className="w-full text-center py-4 text-xl font-bold text-slate-900 dark:text-white bg-transparent focus:outline-none"
-                                                 />
-                                             </div>
-                                         </div>
-                                         <div>
-                                             <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Înălțime (cm)</label>
-                                             <div className="flex bg-slate-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm">
-                                                 <input 
-                                                     type="number" 
-                                                     value={height} 
-                                                     onChange={(e) => setHeight(Math.max(1, parseInt(e.target.value) || 0))}
-                                                     className="w-full text-center py-4 text-xl font-bold text-slate-900 dark:text-white bg-transparent focus:outline-none"
-                                                 />
-                                             </div>
-                                         </div>
-                                     </div>
-                                     
-                                     <div className="pt-2">
-                                         <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-3 px-1">Modele Predefinite</label>
-                                         <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                                             {PREDEFINED_DIMENSIONS.map((dim, idx) => (
-                                                 <button 
-                                                     key={idx} 
-                                                     onClick={() => { setWidth(dim.w); setHeight(dim.h); }} 
-                                                     className={`px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg border font-bold text-[10px] sm:text-xs transition-all ${width === dim.w && height === dim.h ? "border-amber-600 bg-amber-50 text-amber-700 ring-2 ring-amber-100" : "border-gray-200 dark:border-slate-800 bg-white text-gray-500 hover:border-gray-300"}`}
-                                                 >
-                                                     {dim.label}
-                                                 </button>
-                                             ))}
-                                         </div>
-                                     </div>
-
-                                     <div className="pt-2">
-                                         <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 px-1">Telefon / Indicații (Opțional)</label>
-                                         <input type="text" value={customText} onChange={(e) => setCustomText(e.target.value)} placeholder="Ex: nr. telefon, text dorit..." className="w-full p-4 border border-gray-200 dark:border-slate-800 rounded-xl text-sm bg-slate-50 dark:bg-slate-800" />
-                                     </div>
-
-                                     <div className="pt-2">
-                                         <NumberInput label="Cantitate (bucăți)" value={quantity} onChange={setQuantity} />
-                                     </div>
-
-                                 </div>
-                             </AccordionStep>
-
-                            <AccordionStep stepNumber={2} title="Material & Finisaje" summary={summaryStep2} isOpen={activeStep === 2} onClick={() => setActiveStep(2)}>
-                                <div className="space-y-4">
-                                    <div className="grid grid-cols-2 gap-3">
-                                        <OptionButton active={material === "frontlit_440"} onClick={() => setMaterial("frontlit_440")} title="440g Standard" subtitle="Economic" />
-                                        <OptionButton active={material === "frontlit_510"} onClick={() => setMaterial("frontlit_510")} title="510g Premium" subtitle="Rezistent" />
-                                    </div>
-                                    <label className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-800 rounded-xl cursor-pointer">
-                                        <input type="checkbox" checked={wantWindHoles} onChange={e => setWantWindHoles(e.target.checked)} className="w-5 h-5 text-amber-600 rounded" />
-                                        <span className="text-sm font-bold">Adaugă găuri de vânt</span>
-                                    </label>
-                                </div>
-                            </AccordionStep>
-
-                            <AccordionStep stepNumber={3} title="Grafică" summary={summaryStep3} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
-                                <div className="space-y-4">
-                                    {/* Editor Online button removed from here, moved to tabs below */}
-
-                                        <div className="flex -mb-px overflow-x-auto no-scrollbar">
-                                            <TabButton active={designOption === 'standard'} onClick={() => setDesignOption('standard')}>Standard</TabButton>
-                                            <TabButton active={designOption === 'upload'} onClick={() => setDesignOption('upload')}>Încărcare Machetă</TabButton>
-                                            <Link 
-                                                href={`/editor?w=${width}&h=${height}`}
-                                                className="px-4 py-2 text-sm font-bold transition-all rounded-t-lg bg-orange-600 text-white hover:bg-orange-700 flex items-center gap-2 shrink-0 ml-auto"
-                                            >
-                                                <PencilRuler size={14} />
-                                                Editor Online
-                                            </Link>
-                                        </div>
-
-                                    {designOption === 'standard' && (
-                                        <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl text-sm border border-slate-200">
-                                            <p className="text-gray-600 dark:text-gray-400 mb-2">Se va folosi modelul din imaginea de prezentare.</p>
-                                        </div>
-                                    )}
-
-                                    {designOption === 'upload' && (
-                                        <div className="space-y-3">
-                                            <label className="flex flex-col items-center justify-center w-full h-32 px-4 transition bg-white border-2 border-gray-300 border-dashed rounded-xl appearance-none cursor-pointer hover:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-500">
-                                                <UploadCloud className="w-8 h-8 text-gray-400 mb-1" />
-                                                <span className="font-medium text-gray-600 dark:text-gray-400">Apasă pentru a încărca fișierul</span>
-                                                <input type="file" className="hidden" onChange={handleFileUpload} />
-                                            </label>
-                                            {artworkUrl && <p className="text-amber-600 font-bold text-center text-sm">Grafică proprie recepționată!</p>}
-                                        </div>
-                                    )}
-                                </div>
-                            </AccordionStep>
-                        </div>
-
-                        <div className="mt-8 bg-white lg:rounded-2xl border lg:border-gray-200 dark:border-slate-800 lg:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] p-4 lg:p-6 mb-24 lg:mb-0">
-                            <div className="flex flex-col gap-4">
-                                <button onClick={handleAddToCart} className="w-full py-4 text-lg font-bold bg-amber-600 text-white rounded-xl shadow-xl hover:bg-amber-700 transition-all flex items-center justify-center gap-2 active:scale-95 shadow-amber-500/20">
-                                    <ShoppingCart size={24} className="shrink-0" />
-                                    <span>Adaugă în Coș</span>
-                                </button>
-
-                                <div className="flex flex-col gap-1 w-full border-t border-gray-100 pt-3 mt-1">
-                                    <div className="flex flex-row justify-between items-center w-full gap-2">
-                                        <div className="flex flex-col items-start leading-none">
-                                            <span className="text-[10px] text-gray-500 uppercase font-bold tracking-wider mb-1">Preț Total</span>
-                                            <span className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tighter">{formatMoneyDisplay(priceData.finalPrice)}</span>
-                                        </div>
-                                        <div className="flex-shrink-0">
-                                            <DeliveryEstimation />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* STICKY BOTTOM BAR FOR MOBILE */}
-                        <div className="fixed bottom-0 left-0 right-0 z-[100] lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-200 p-4 pb-safe animate-in slide-in-from-bottom duration-300 shadow-[0_-10px_25px_-5px_rgba(0,0,0,0.1)]">
-                            <div className="flex items-center justify-between gap-4 max-w-md mx-auto">
-                                <div className="flex flex-col leading-none">
-                                    <span className="text-[10px] text-gray-500 uppercase font-bold tracking-widest mb-1">Total Plată</span>
-                                    <span className="text-xl font-black text-slate-900 dark:text-white">{formatMoneyDisplay(priceData.finalPrice)}</span>
-                                </div>
-                                <button 
-                                    onClick={handleAddToCart}
-                                    className="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-amber-600/20 flex items-center justify-center gap-2 active:scale-[0.98] transition-all text-sm"
-                                >
-                                    <ShoppingCart size={18} strokeWidth={2.5} />
-                                    Adaugă
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* BUTOANE SECUNDARE - WHATSAPP ȘI CERERE OFERTĂ */}
-                        <div className="mt-4 lg:mt-6 bg-gradient-to-br from-slate-50 to-gray-100 rounded-xl border border-slate-200 p-4">
-                            <p className="text-xs text-gray-600 dark:text-gray-400 mb-3 text-center font-medium">Ai nevoie de ajutor sau o ofertă personalizată?</p>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <a
-                                    href="https://wa.me/40750473111?text=Buna%20ziua,%20ma%20intereseaza%20o%20oferta."
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-amber-600 hover:from-green-700 hover:to-amber-700 text-white font-semibold py-2.5 px-4 rounded-lg shadow-md hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] transition-all duration-200"
-                                >
-                                    <MessageCircle size={18} />
-                                    <span className="text-sm">WhatsApp</span>
-                                </a>
-                                <button
-                                    type="button"
-                                    onClick={() => window.location.href = '/contact'}
-                                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white font-semibold py-2.5 px-4 rounded-lg shadow-md hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] transition-all duration-200"
-                                >
-                                    <Info size={18} />
-                                    <span className="text-sm">Cerere Ofertă</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <p className="mt-3 text-sm leading-relaxed text-slate-500">{designOption === "standard" ? "Grafica de referință pentru modelul ales. Numele și telefonul introduse se transmit împreună cu comanda; nu sunt afișate automat în această fotografie." : designOption === "pro" ? "Imaginea este un punct de plecare. Macheta personalizată se realizează după indicațiile din comandă." : artworkUrl && !isImage ? `Fișier salvat: ${fileName}. Pentru acest format nu este disponibilă o previzualizare în browser.` : "Încarcă propriul fișier. Fotografia modelului rămâne doar o referință până la încărcare."}</p>
                 </div>
-
-                <div className="mt-16 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-                    <nav className="flex border-b border-gray-100 bg-slate-50 dark:bg-slate-800/50">
-                        <TabButtonSEO active={activeProductTab === "descriere"} onClick={() => setActiveProductTab("descriere")}>Descriere</TabButtonSEO>
-                        <TabButtonSEO active={activeProductTab === "recenzii"} onClick={() => setActiveProductTab("recenzii")}>Recenzii</TabButtonSEO>
-                        <TabButtonSEO active={activeProductTab === "faq"} onClick={() => setActiveProductTab("faq")}>FAQ</TabButtonSEO>
-                    </nav>
-                    <div className="p-8">
-                        {activeProductTab === 'descriere' && (
-                            <div className="prose dark:prose-invert max-w-none text-sm text-gray-600 dark:text-gray-400">
-                                <h3 className="font-bold text-slate-900 dark:text-white text-lg mb-4">{product.title}</h3>
-                                <p>{product.description}</p>
-                                <ul className="mt-4 list-disc pl-5">
-                                    <li>Print UV durabil la exterior</li>
-                                    <li>Tiv și capse incluse</li>
-                                    <li>Material PVC Frontlit premium</li>
-                                </ul>
-                            </div>
-                        )}
-                        {activeProductTab === 'recenzii' && <Reviews productSlug={productSlug} />}
-                        {activeProductTab === 'faq' && <FaqAccordion qa={bannerFaqs} />}
-                    </div>
+                <div className="space-y-5 brand-configurator">
+                    <BannerModeSwitch value={bannerMode} onChange={setBannerMode} />
+                    <p className="text-sm text-slate-600" role="status">{bannerMode === "double" ? "Păstrăm grafica acestui model, imprimată identic pe ambele fețe. Prețul este calculat pentru Blockout față-verso." : bannerMode === "mesh" ? "Păstrăm grafica acestui model și o imprimăm pe mesh microperforat. Prețul este calculat pentru mesh." : "Păstrăm grafica acestui model, imprimată pe o singură față."}</p>
+                    <header><p className="mb-2 text-xs font-bold uppercase tracking-widest text-emerald-700">{product.category}</p><h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 leading-tight">{product.title}</h1><p className="mt-3 leading-relaxed text-slate-600">{product.description}</p></header>
+                    <div data-stock-banner-steps className="bg-white rounded-xl sm:rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-gray-200 px-3 sm:px-4"><AccordionStep stepNumber={1} title="Dimensiuni & Cantitate" summary={`${width} × ${height} cm · ${quantity} buc.`} isOpen={activeStep === 1} onClick={() => setActiveStep(1)}><p className="mb-4 text-sm text-gray-600">Alege un format de mai jos sau introdu o lățime personalizată. Raportul lățime × înălțime rămâne 2:1.</p>
+                        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">{SIZES.map(s => <button key={`${s.w}x${s.h}`} type="button" aria-pressed={!customSize && width === s.w && height === s.h} onClick={() => { setWidth(s.w); setCustomSize(false); }} className={`rounded-xl border px-3 py-3 text-sm font-semibold ${!customSize && width === s.w && height === s.h ? "border-emerald-600 bg-emerald-50 text-emerald-800" : "border-slate-200"}`}>{s.w} × {s.h} cm</button>)}</div>
+                        <button type="button" onClick={() => setCustomSize(!customSize)} aria-expanded={customSize} aria-controls="stock-banner-custom-size" className={`mt-4 flex w-full items-center gap-3 rounded-xl border-2 px-4 py-4 text-left transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500 ${customSize ? "border-emerald-600 bg-emerald-100" : "border-emerald-600 bg-emerald-50 hover:bg-emerald-100"}`}><Ruler size={24} className="shrink-0 text-emerald-700" /><span><strong className="block text-base text-emerald-900">Am nevoie de altă dimensiune</strong><span className="mt-1 block text-sm text-emerald-800">Introdu lățimea dorită; înălțimea se calculează automat.</span></span><span className="ml-auto font-bold text-emerald-800">{customSize ? "−" : "+"}</span></button>
+                        {customSize && <div id="stock-banner-custom-size" className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 rounded-xl border border-emerald-200 bg-emerald-50/50 p-3"><label className="text-sm">Lățime (cm)<input aria-label="Lățime (cm)" type="number" min={2} step={2} value={width} onChange={e => setWidth(Number(e.target.value))} className={inputClass} /></label><label className="text-sm">Înălțime calculată (cm)<input aria-label="Înălțime (cm)" type="number" min={1} value={height} readOnly aria-readonly="true" className={inputClass} /></label></div>}
+                        <div className="mt-5"><NumberInput label="Cantitate" value={quantity} onChange={setQuantity} /></div>
+                    <button type="button" onClick={() => setActiveStep(2)} className="btn-outline mt-5 inline-flex min-h-11 items-center justify-center px-4 py-2 text-sm font-semibold">Continuă cu materialul →</button></AccordionStep>
+                    <AccordionStep stepNumber={2} title="Material & Finisaje" summary={`${materialLabel} · Tiv + capse`} isOpen={activeStep === 2} onClick={() => setActiveStep(2)}>{bannerMode === "single" ? <div className="grid grid-cols-2 gap-3"><OptionButton active={material === "frontlit_440"} onClick={() => setMaterial("frontlit_440")} title="Frontlit 440g" subtitle="Standard" /><OptionButton active={material === "frontlit_510"} onClick={() => setMaterial("frontlit_510")} title="Frontlit 510g" subtitle="Premium" /></div> : <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4"><strong className="text-sm text-emerald-900">{materialLabel}</strong><p className="mt-2 text-sm text-slate-600">{bannerMode === "double" ? "Material opac pentru imprimare pe ambele fețe, cu aceeași grafică." : "Material microperforat pentru imprimarea modelului ales."}</p></div>}<p className="mt-3 flex items-center gap-2 text-sm text-slate-600"><Check size={16} /> Tiv și capse incluse. {bannerMode === "double" ? "Imprimare pe ambele fețe." : "Imprimare pe o singură față."}</p>{bannerMode !== "mesh" && <label className="mt-4 flex items-center gap-3 text-sm"><input type="checkbox" checked={wantWindHoles} onChange={e => setWantWindHoles(e.target.checked)} /> Adaugă găuri de vânt</label>}<button type="button" onClick={() => setActiveStep(3)} className="btn-outline mt-5 inline-flex min-h-11 items-center justify-center px-4 py-2 text-sm font-semibold">Continuă cu grafica →</button></AccordionStep>
+                    <AccordionStep stepNumber={3} title="Grafică" summary={MODES.find(m => m.value === designOption)?.title || "Grafică"} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}><div className="space-y-2">{MODES.map(m => <label key={m.value} className={`flex cursor-pointer items-start gap-3 rounded-lg border-2 p-3 ${designOption === m.value ? "border-emerald-600 bg-emerald-50" : "border-gray-300 bg-white hover:border-gray-400"}`}><input type="radio" name="banner-graphic" value={m.value} checked={designOption === m.value} onChange={() => setDesignOption(m.value)} className="mt-1" /><span><strong className="block text-sm">{m.title}</strong><span className="mt-1 block text-sm leading-relaxed text-slate-600">{m.detail}</span></span></label>)}</div>
+                        {designOption === "standard" && <label className="mt-4 flex items-start gap-3 text-sm"><input type="checkbox" checked={addText} onChange={e => setAddText(e.target.checked)} className="mt-1" /><span>Vreau să adaug un nume, un număr de telefon sau un text scurt pe această grafică.</span></label>}
+                        {(designOption === "pro" || (designOption === "standard" && addText)) && <div className="mt-4 space-y-3"><label className="block text-sm font-medium">Nume / firmă pe banner<input maxLength={120} value={contactName} onChange={e => setContactName(e.target.value)} placeholder="Scrie exact cum vrei să apară" className={`${inputClass} mt-1`} /></label><label className="block text-sm font-medium">Telefon pe banner<input type="tel" maxLength={40} value={contactPhone} onChange={e => setContactPhone(e.target.value)} placeholder="Numărul care va fi imprimat" className={`${inputClass} mt-1`} /></label><label className="block text-sm font-medium">{designOption === "pro" ? "Descrie grafica dorită (obligatoriu)" : "Text sau indicații suplimentare"}<textarea maxLength={2000} rows={3} value={instructions} onChange={e => setInstructions(e.target.value)} placeholder={designOption === "pro" ? "Ce mesaj, culori și elemente dorești?" : "Ce text adăugăm și unde ai dori să apară?"} className={`${inputClass} mt-1`} /></label></div>}
+                        {designOption === "upload" && <div className="mt-4"><label className="flex cursor-pointer flex-col items-center gap-2 rounded-xl border-2 border-dashed border-slate-300 p-6 text-center"><UploadCloud size={28} /><strong className="text-sm">{uploading ? "Se încarcă fișierul…" : "Alege fișierul tău"}</strong><span className="text-xs text-slate-500">JPG, PNG, WebP, PDF sau fișier vectorial. Nu încărca fotografia unui banner în locul machetei de print.</span><input type="file" accept=".jpg,.jpeg,.png,.webp,.pdf,.svg,.ai,.eps,.psd,.tif,.tiff" disabled={uploading} onChange={handleFileUpload} className="max-w-full text-sm" /></label>{artworkUrl && <p role="status" className="mt-3 break-words text-sm text-emerald-700">Fișier salvat: {fileName}</p>}{uploadError && <p role="alert" className="mt-3 text-sm text-red-700">{uploadError}</p>}</div>}
+                    </AccordionStep></div>
+                    <section className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6"><dl className="space-y-2 text-sm"><div className="flex justify-between"><dt>Imprimare și finisare · {quantity || 0} buc.</dt><dd>{formatMoneyDisplay(printPrice.finalPrice)}</dd></div><div className="flex justify-between"><dt>Grafică {designOption === "pro" ? "personalizată (o singură taxă)" : designOption === "standard" ? "din exemplu" : "proprie"}</dt><dd>{formatMoneyDisplay(graphicFee)}</dd></div><div className="flex justify-between border-t pt-3 text-xl font-bold"><dt>Total</dt><dd data-banner-total={total}>{formatMoneyDisplay(total)}</dd></div></dl><button type="button" onClick={handleAddToCart} disabled={!canOrder} className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-5 py-4 text-lg font-bold text-white shadow-xl shadow-emerald-500/20 hover:bg-emerald-700 active:scale-95 disabled:cursor-not-allowed disabled:bg-slate-300"><ShoppingCart size={20} /> Adaugă în coș</button>{!canOrder && <p role="status" className="mt-3 text-sm text-slate-600">{!validSize ? "Introdu dimensiuni pozitive și o cantitate întreagă." : uploading ? "Așteaptă salvarea fișierului." : designOption === "upload" ? "Încarcă un fișier pentru a continua." : designOption === "pro" ? "Descrie ce grafică dorești." : "Completează cel puțin un nume, telefon sau text."}</p>}<div className="mt-4"><DeliveryEstimation /></div><Link href="/contact" className="mt-4 inline-flex text-sm font-medium text-emerald-700">Ai nevoie de ajutor? Contactează-ne →</Link></section>
                 </div>
-
-                <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
-                    <div className="p-6 bg-white rounded-2xl border border-gray-100 text-center">
-                        <ShieldCheck className="w-8 h-8 text-amber-500 mx-auto mb-3" />
-                        <h4 className="font-bold text-sm">Garanție UV</h4>
-                    </div>
-                    <div className="p-6 bg-white rounded-2xl border border-gray-100 text-center">
-                        <Truck className="w-8 h-8 text-amber-500 mx-auto mb-3" />
-                        <h4 className="font-bold text-sm">Livrare 2-4 zile</h4>
-                    </div>
-                    <div className="p-6 bg-white rounded-2xl border border-gray-100 text-center">
-                        <Check className="w-8 h-8 text-amber-500 mx-auto mb-3" />
-                        <h4 className="font-bold text-sm">Finisaje Incluse</h4>
-                    </div>
-                    <div className="p-6 bg-white rounded-2xl border border-gray-100 text-center">
-                        <MessageCircle className="w-8 h-8 text-amber-500 mx-auto mb-3" />
-                        <h4 className="font-bold text-sm">Suport 24/7</h4>
-                    </div>
-                </div>
-
-                {!renderOnlyConfigurator && (
-                     <>
-                        <div className="mt-20">
-                            <QuickNav title="Alte Produse" />
-                        </div>
-                        <div className="mt-16">
-                            <PopularDesigns currentSlug={product.slug} products={bannerProducts} />
-                        </div>
-                     </>
-                )}
             </div>
+            <section className="mt-12 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8"><div className="mb-5 flex gap-5 border-b pb-3"><button type="button" onClick={() => setTab("description")} aria-pressed={tab === "description"} className={tab === "description" ? "font-bold text-emerald-700" : "text-slate-500"}>Despre acest model</button><button type="button" onClick={() => setTab("reviews")} aria-pressed={tab === "reviews"} className={tab === "reviews" ? "font-bold text-emerald-700" : "text-slate-500"}>Recenzii</button></div>{tab === "reviews" ? <Reviews productSlug={productSlug} /> : <div className="prose prose-slate max-w-none"><h2>{product.title}</h2>{product.longDescription ? <div dangerouslySetInnerHTML={{ __html: product.longDescription }} /> : <p>{product.description}</p>}</div>}</section>
+<div className="fixed bottom-0 left-0 right-0 z-[100] lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-200 p-4 pb-safe shadow-[0_-10px_25px_-5px_rgba(0,0,0,0.1)]"><div className="mx-auto flex max-w-md items-center justify-between gap-4"><div className="flex flex-col leading-none"><span className="mb-1 text-[10px] font-bold uppercase tracking-widest text-gray-500">Total Plată</span><span className="text-xl font-black text-slate-900">{formatMoneyDisplay(total)}</span></div><button type="button" onClick={handleAddToCart} disabled={!canOrder} className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-600/20 hover:bg-emerald-700 disabled:opacity-50"><ShoppingCart size={18} /> Adaugă</button></div></div>
+            {!renderOnlyConfigurator && <PopularDesigns title="Alte modele din aceeași categorie" currentSlug={product.slug} products={bannerProducts.filter(p => p.category === product.category)} />}
         </div>
-    );
+    </div>;
 }

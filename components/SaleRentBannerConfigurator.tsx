@@ -3,7 +3,7 @@ import React, { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import { useCart } from "@/components/CartContext";
 import { useToast } from "@/components/ToastProvider";
-import { ShoppingCart, Check, ChevronDown, Package, ShieldCheck, Ruler, Sparkles, MessageCircle, Info, Minus, Plus, UploadCloud, X } from "lucide-react";
+import { ShoppingCart, Check, ChevronDown, Package, ShieldCheck, Ruler, MessageCircle, Info, Minus, Plus, UploadCloud, X } from "lucide-react";
 import DeliveryEstimation from "./DeliveryEstimation";
 import Reviews from "./Reviews";
 import FaqAccordion from "./FaqAccordion";

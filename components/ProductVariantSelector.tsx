@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { X, Check, Image as ImageIcon, Frame, Wallpaper, StickyNote, ArrowRight, Sparkles } from "lucide-react";
+import { X, Check, Image as ImageIcon, Frame, Wallpaper, StickyNote, ArrowRight, CircleCheck } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface ProductVariant {
@@ -52,7 +52,7 @@ const VARIANT_INFO = {
     },
     autocolant: {
         name: 'Autocolant',
-        icon: Sparkles,
+        icon: CircleCheck,
         description: 'Sticker autoadeziv decorativ pentru suprafețe netede.',
         gradient: 'from-orange-500 to-amber-500',
         bg: 'bg-orange-50',

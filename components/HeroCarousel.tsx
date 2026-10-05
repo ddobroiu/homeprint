@@ -11,7 +11,7 @@ const HERO_ITEMS = [
         title: 'Bannere Publicitare',
         subtitle: 'Format Mare. Calitate Ultra HD.',
         description: 'Bannere outdoor rezistente la intemperii. Printate la rezoluție fotografică pentru impact stradal maxim.',
-        image: '/products/banner/banner-1.webp',
+        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
         link: '/configurator/banner',
         accent: 'bg-amber-500',
         badge: 'Outdoor'
@@ -21,7 +21,7 @@ const HERO_ITEMS = [
         title: 'Kituri Fonduri EU',
         subtitle: 'Conform manualului de identitate.',
         description: 'Panouri, plăci și autocolante reglementate pentru proiecte PNRR, Regio. Aprobare sigură.',
-        image: '/products/master/pachet-vizibilitate-fonduri-europene-pnrr.png',
+        image: '/products/grafica-originala/kit-vizibilitate-proiect-panou-afis-etichete.webp',
         link: '/fonduri-pnrr',
         accent: 'bg-amber-600',
         badge: 'Instituțional'
@@ -31,7 +31,7 @@ const HERO_ITEMS = [
         title: 'Autocolante & Stickere',
         subtitle: 'Decupaj digital precis pe contur.',
         description: 'Forme personalizate, rezistență UV excepțională și culori vibrante, gata de aplicare.',
-        image: '/products/autocolante/autocolante-1.webp',
+        image: '/products/grafica-originala/autocolant-vinil-grafica-botanica.webp',
         link: '/configurator/autocolante',
         accent: 'bg-pink-500',
         badge: 'Custom'
@@ -41,7 +41,7 @@ const HERO_ITEMS = [
         title: 'Roll-up Banners',
         subtitle: 'Impact vizual oriunde mergi.',
         description: 'Sisteme expoziționale premium. Portabilitate maximă, montaj rapid în 30 de secunde.',
-        image: '/products/rollup/rollup-1.webp',
+        image: '/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp',
         link: '/configurator/rollup',
         accent: 'bg-amber-500',
         badge: 'Expo'

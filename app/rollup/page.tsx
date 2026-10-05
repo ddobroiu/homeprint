@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description:
       "Atrage atenția la evenimente cu un Rollup Banner profesional. Include print, mecanism aluminiu și geantă de transport.",
     images: [{
-      url: "/products/rollup/rollup-1.webp",
+      url: "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp",
       width: 1200,
       height: 630,
       alt: "Rollup banner retractabil HomePrint.ro"

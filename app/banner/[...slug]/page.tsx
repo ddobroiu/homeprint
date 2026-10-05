@@ -1,3 +1,5 @@
+import { bannerProducts as stockBannerModels } from "@/lib/products/banner-products";
+import StockBannerConfigurator from "@/components/configurator/StockBannerConfigurator";
 import { notFound } from "next/navigation";
 import { Suspense } from "react"; // <--- IMPORT OBLIGATORIU
 import ProductJsonLd from "@/components/ProductJsonLd";
@@ -19,6 +21,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const resolved = await params;
   const slugPath = (resolved?.slug ?? []).join("/");
+  const stockModel = stockBannerModels.find(p => p.slug === slugPath);
+  if (stockModel) return { title: stockModel.title, description: stockModel.description, openGraph: { title: stockModel.title, description: stockModel.description, images: [stockModel.image] } };
 
   // 1. Check for programmatic SEO landing first
   const landingSEO = getLandingInfo("bannere", slugPath);
@@ -29,7 +33,7 @@ export async function generateMetadata({ params }: Props) {
       openGraph: {
         title: landingSEO.seoTitle || landingSEO.title,
         description: landingSEO.shortDescription,
-        images: landingSEO.images || ["/products/banner/banner-1.webp"]
+        images: landingSEO.images || ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"]
       },
     };
   }
@@ -55,6 +59,8 @@ export default async function Page({ params }: Props) {
   const resolved = await params;
   const slugParts: string[] = resolved?.slug ?? [];
   const joinedSlug = slugParts.join("/");
+  const stockModel = stockBannerModels.find(p => p.slug === joinedSlug);
+  if (stockModel) return <StockBannerConfigurator productSlug={stockModel.slug} />;
 
   // 1. Check for programmatic SEO landing first
   const landingSEO = getLandingInfo("bannere", joinedSlug);
@@ -69,7 +75,7 @@ export default async function Page({ params }: Props) {
       slug: landingSEO.key,
       title: landingSEO.title,
       description: landingSEO.shortDescription,
-      images: landingSEO.images || ["/products/banner/banner-1.webp"],
+      images: landingSEO.images || ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
       contentHtml: landingSEO.contentHtml,
       metadata: { type: 'custom' }
     };
@@ -87,10 +93,10 @@ export default async function Page({ params }: Props) {
 
   // LOGICA IMAGINE ROBUSTĂ
   const slugKey = String(product.slug ?? product.id ?? "").toLowerCase();
-  const genericSet = new Set<string>(["/products/banner/banner-1.webp", "/placeholder.png"]);
+  const genericSet = new Set<string>(["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp", "/placeholder.png"]);
   const imgs = product.images ?? [];
   let img = imgs.find((x: string) => !!x && slugKey && x.toLowerCase().includes(slugKey));
-  if (!img) img = imgs.find((x: string) => !!x && !genericSet.has(x.toLowerCase())) ?? imgs[0] ?? "/products/banner/banner-1.webp";
+  if (!img) img = imgs.find((x: string) => !!x && !genericSet.has(x.toLowerCase())) ?? imgs[0] ?? "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp";
 
 
 

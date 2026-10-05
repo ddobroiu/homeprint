@@ -18,7 +18,8 @@ import {
 
 const GALLERY_BASE = [
     "/products/master/placi-polipropilena-alveolara-canalit-ieftine.png",
-    "/products/materiale/polipropilena/polipropilena-2.webp"
+    "/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp",
+    "/products/materiale/polipropilena/polipropilena-2.webp",
 ] as const;
 
 const productFaqs: QA[] = [
@@ -167,7 +168,7 @@ export default function ConfiguratorPolipropilena({ initialWidth: initW, initial
                                     <img src={activeImage} alt="Polipropilena" className="max-h-full max-w-full object-contain" />
                                 )}
                             </div>
-                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100">
+                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100 print-product-gallery">
                                 {GALLERY.map((src, i) => (
                                     <button
                                         key={i}

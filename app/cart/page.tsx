@@ -1,5 +1,6 @@
 "use client";
 
+import { isCustomerProductMeta } from "@/lib/customerProductMeta";
 import { useCart } from "@/components/CartContext";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,22 +9,22 @@ import { useEffect, useState } from "react";
 import { getEstimatedShippingCost } from "@/lib/shippingUtils";
 
 const DEFAULT_IMAGES: Record<string, string> = {
-    'canvas': '/products/canvas/canvas-1.webp',
-    'banner': '/products/banner/banner-1.webp',
-    'banner-verso': '/products/banner/banner-1.webp',
-    'mesh': '/products/mesh/mesh_publicitar_personalizat.jpg',
-    'autocolante': '/products/autocolante/autocolante-1.webp',
-    'afise': '/products/afise/afise-1.webp',
-    'tapet': '/products/tapet/tapet-1.webp',
-    'rollup': '/products/rollup/rollup-1.webp',
-    'window-graphics': '/products/window-graphics/window-graphics-1.webp',
-    'pliante': '/products/pliante/pliante-1.webp',
-    'flayere': '/products/flayere/flayere-1.webp',
-    'fonduri-eu': '/products/master/pachet-vizibilitate-fonduri-europene-pnrr.png',
+    'canvas': '/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp',
+    'banner': '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
+    'banner-verso': '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
+    'mesh': '/products/grafica-originala/banner-mesh-perforat-grafica-constructii.webp',
+    'autocolante': '/products/grafica-originala/autocolant-vinil-grafica-botanica.webp',
+    'afise': '/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp',
+    'tapet': '/products/grafica-originala/fototapet-personalizat-grafica-botanica-rola.webp',
+    'rollup': '/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp',
+    'window-graphics': '/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp',
+    'pliante': '/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp',
+    'flayere': '/products/grafica-originala/flyer-publicitar-grafica-atelier-creativ.webp',
+    'fonduri-eu': '/products/grafica-originala/kit-vizibilitate-proiect-panou-afis-etichete.webp',
     'plexiglass': '/products/materiale/plexiglass/plexiglass-1.webp',
     'pvc-forex': '/products/materiale/pvc-forex/pvc-forex-1.webp',
     'alucobond': '/products/materiale/alucobond/alucobond-1.webp',
-    'polipropilena': '/products/master/placi-polipropilena-alveolara-canalit-ieftine.png',
+    'polipropilena': '/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp',
 };
 
 export default function CartPage() {
@@ -106,7 +107,7 @@ export default function CartPage() {
                                         {/* Options Display form metadata */}
                                         <div className="flex flex-wrap gap-2 mb-6">
                                             {item.metadata && Object.entries(item.metadata)
-                                                .filter(([key]) => !['artworkUrl', 'artworkUrlVerso', 'textDesign', 'textDesignVerso', 'designOption', 'width', 'height', 'width_cm', 'height_cm'].includes(key))
+                                                .filter(([key]) => isCustomerProductMeta(key, item.metadata) && !['artworkUrl', 'artworkUrlVerso', 'textDesign', 'textDesignVerso', 'designOption', 'width', 'height', 'width_cm', 'height_cm'].includes(key))
                                                 .map(([key, value]) => (
                                                     <span key={key} className="text-[10px] font-bold uppercase tracking-widest text-slate-600 bg-slate-100/80 px-4 py-2 rounded-xl">
                                                         <span className="text-slate-400 font-medium mr-1">{key}:</span> <span className="text-slate-900">{typeof value === 'object' ? JSON.stringify(value) : value}</span>

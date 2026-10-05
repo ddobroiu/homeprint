@@ -1,4 +1,6 @@
 "use client";
+import { AccordionStep } from "@/components/configurator/ui/AccordionStep";
+import { MobileConfiguratorSummary } from "@/components/configurator/ui/MobileConfiguratorSummary";
 
 import React, { useMemo, useState } from "react";
 import Image from "next/image";
@@ -31,6 +33,7 @@ function firstAvailableSelection(p: CatalogProduct): string[] {
 
 export default function CatalogProductView({ product }: { product: CatalogProduct }) {
   const { addItem } = useCart();
+    const [activeStep, setActiveStep] = useState(1);
   const [activeImage, setActiveImage] = useState(0);
   const [selection, setSelection] = useState<string[]>(() => firstAvailableSelection(product));
   const [quantity, setQuantity] = useState(product.qty?.minQty ?? 1);
@@ -168,7 +171,7 @@ export default function CatalogProductView({ product }: { product: CatalogProduc
   const images = product.images.length ? product.images : ["/logo.png"];
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8 items-start">
+    <div data-unified-product-configurator className="flex flex-col lg:flex-row gap-8 items-start pb-28 lg:pb-0">
       {/* Galerie */}
       <div className="w-full lg:w-1/2 lg:sticky lg:top-24">
         <div className="relative aspect-square rounded-3xl overflow-hidden bg-white border border-slate-200">
@@ -182,7 +185,7 @@ export default function CatalogProductView({ product }: { product: CatalogProduc
           />
         </div>
         {images.length > 1 && (
-          <div className="mt-3 grid grid-cols-4 gap-3">
+          <div className="mt-3 print-product-gallery">
             {images.map((src, i) => (
               <button
                 key={src}
@@ -203,7 +206,7 @@ export default function CatalogProductView({ product }: { product: CatalogProduc
         <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">{product.title}</h1>
         <p className="mt-3 text-slate-600 leading-relaxed">{product.short}</p>
 
-        <div className="mt-6 space-y-6">
+<div className="bg-white rounded-xl sm:rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-gray-200 px-3 sm:px-4 mt-6"><AccordionStep stepNumber={1} title="Format & Opțiuni" summary={selection.filter(Boolean).join(" · ")} isOpen={activeStep === 1} onClick={() => setActiveStep(1)}>
           {product.kind === "sqm" && product.sqm && (
             <>
               {product.sqm.materials.length > 1 && (
@@ -215,7 +218,7 @@ export default function CatalogProductView({ product }: { product: CatalogProduc
                         key={m.name}
                         type="button"
                         onClick={() => setMaterialIdx(i)}
-                        className={`px-4 py-2 rounded-xl text-sm font-semibold border ${materialIdx === i ? "bg-slate-900 text-white border-slate-900" : "bg-white text-slate-700 border-slate-300 hover:border-slate-500"}`}
+                        className={`px-4 py-2 rounded-xl text-sm font-semibold border ${materialIdx === i ? "bg-emerald-50 text-emerald-800 border-emerald-600" : "bg-white text-slate-700 border-slate-300 hover:border-slate-500"}`}
                       >
                         {m.name}
                       </button>
@@ -263,7 +266,7 @@ export default function CatalogProductView({ product }: { product: CatalogProduc
                         type="button"
                         disabled={!available}
                         onClick={() => choose(optIdx, val)}
-                        className={`px-4 py-2 rounded-xl text-sm font-semibold border inline-flex items-center gap-1.5 ${active ? "bg-slate-900 text-white border-slate-900" : "bg-white text-slate-700 border-slate-300 hover:border-slate-500"} ${available ? "" : "opacity-40 cursor-not-allowed"}`}
+                        className={`px-4 py-2 rounded-xl text-sm font-semibold border inline-flex items-center gap-1.5 ${active ? "bg-emerald-50 text-emerald-800 border-emerald-600" : "bg-white text-slate-700 border-slate-300 hover:border-slate-500"} ${available ? "" : "opacity-40 cursor-not-allowed"}`}
                       >
                         {active && <Check size={14} />}
                         {val}
@@ -275,14 +278,14 @@ export default function CatalogProductView({ product }: { product: CatalogProduc
             ) : null,
           )}
 
-          <NumberInput
+          
+
+</AccordionStep><AccordionStep stepNumber={2} title="Cantitate" summary={`${quantity} buc.`} isOpen={activeStep === 2} onClick={() => setActiveStep(2)}><NumberInput
             label={product.kind === "qty" && product.qty ? `Cantitate (minim ${product.qty.minQty})` : "Cantitate"}
             value={quantity}
             onChange={setQuantity}
             min={product.qty?.minQty ?? 1}
-          />
-
-          {needsArtwork && (
+          /></AccordionStep>{needsArtwork ? <AccordionStep stepNumber={3} title="Grafică" summary={artworkMode === "upload" ? "Grafică proprie" : "Fișier trimis ulterior"} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>          {needsArtwork && (
             <fieldset>
               <legend className="block text-sm font-bold text-slate-900 mb-2">
                 Grafica ta{product.artwork === "optional" ? " (opțional)" : ""}
@@ -291,14 +294,14 @@ export default function CatalogProductView({ product }: { product: CatalogProduc
                 <button
                   type="button"
                   onClick={() => setArtworkMode("upload")}
-                  className={`px-4 py-2 rounded-xl text-sm font-semibold border ${artworkMode === "upload" ? "bg-slate-900 text-white border-slate-900" : "bg-white text-slate-700 border-slate-300"}`}
+                  className={`px-4 py-2 rounded-xl text-sm font-semibold border ${artworkMode === "upload" ? "bg-emerald-50 text-emerald-800 border-emerald-600" : "bg-white text-slate-700 border-slate-300"}`}
                 >
                   Încarc acum
                 </button>
                 <button
                   type="button"
                   onClick={() => setArtworkMode("later")}
-                  className={`px-4 py-2 rounded-xl text-sm font-semibold border ${artworkMode === "later" ? "bg-slate-900 text-white border-slate-900" : "bg-white text-slate-700 border-slate-300"}`}
+                  className={`px-4 py-2 rounded-xl text-sm font-semibold border ${artworkMode === "later" ? "bg-emerald-50 text-emerald-800 border-emerald-600" : "bg-white text-slate-700 border-slate-300"}`}
                 >
                   Trimit după comandă
                 </button>
@@ -321,9 +324,9 @@ export default function CatalogProductView({ product }: { product: CatalogProduc
               )}
             </fieldset>
           )}
-        </div>
+        
 
-        <div className="mt-8 pt-6 border-t border-slate-200">
+</AccordionStep> : <p className="pb-4 text-sm text-slate-500">Acest produs nu necesită un fișier de grafică.</p>}</div>        <div className="mt-8 pt-6 border-t border-slate-200">
           {product.kind === "sqm" && pricing && "totalSqm" in pricing && (
             <p className="text-sm text-slate-600 mb-2">
               Suprafață totală: <strong>{pricing.totalSqm} m²</strong> · {formatMoneyDisplay(pricing.perSqm ?? 0)} / m²
@@ -370,6 +373,7 @@ export default function CatalogProductView({ product }: { product: CatalogProduc
           </a>
         </div>
       </div>
-    </div>
+    <MobileConfiguratorSummary total={pricing?.total || 0} onAdd={handleAdd} disabled={!canAdd || uploading} />
+</div>
   );
 }

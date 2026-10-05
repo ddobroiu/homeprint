@@ -23,7 +23,7 @@ import {
 } from "@/lib/pricing";
 
 const GALLERY = [
-  "/products/pliante/pliante-1.webp"
+  "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp"
 ] as const;
 
 /* --- UI COMPONENTS --- */
@@ -73,7 +73,7 @@ type Props = { productSlug?: string; initialWidth?: number; initialHeight?: numb
 /* --- MAIN COMPONENT --- */
 export default function PlianteConfigurator({ productSlug, productImage }: Props) {
   const { addItem } = useCart();
-  const GALLERY = useMemo(() => productImage ? [productImage, "/products/pliante/pliante-1.webp"] : ["/products/pliante/pliante-1.webp"], [productImage]);
+  const GALLERY = useMemo(() => productImage ? [productImage, "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp"] : ["/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp"], [productImage]);
   const [weight, setWeight] = useState<PlianteWeightKey>("115");
   const [quantity, setQuantity] = useState<number>(MIN_QTY);
   const [fold, setFold] = useState<PlianteFoldType>("simplu");
@@ -184,7 +184,7 @@ export default function PlianteConfigurator({ productSlug, productImage }: Props
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
-              <div className="p-2 grid grid-cols-4 gap-2">
+              <div className="p-2 grid grid-cols-4 gap-2 print-product-gallery">
                 {GALLERY.map((src, i) => (
                   <button 
                     key={src} 

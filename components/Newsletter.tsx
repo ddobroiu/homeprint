@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Mail, Check, ShieldCheck, Sparkles } from 'lucide-react';
+import { Mail, Check, ShieldCheck } from 'lucide-react';
 
 interface NewsletterProps {
   siteName: string;
@@ -62,7 +62,7 @@ export default function Newsletter({ siteName, siteDomain }: NewsletterProps) {
             <div className="md:col-span-3">
               <div className="flex items-center gap-2 mb-4">
                 <span className="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-wider rounded-full flex items-center gap-1.5">
-                  <Sparkles size={12} />
+                  
                   Oferte Exclusive
                 </span>
               </div>

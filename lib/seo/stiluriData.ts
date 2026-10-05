@@ -27,7 +27,7 @@ export const STILURI_DATA: StyleData[] = [
         ],
         matchingSpaces: ['Birouri IT', 'Apartamente moderne', 'Showroom-uri', 'Zone de recepție'],
         relatedProductId: 'canvas',
-        image: '/products/canvas/canvas-1.webp'
+        image: '/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp'
     },
     {
         id: 'retro-vintage',
@@ -44,7 +44,7 @@ export const STILURI_DATA: StyleData[] = [
         ],
         matchingSpaces: ['Cafenele concept', 'Barbershop-uri', 'Restaurante tradiționale', 'Locuințe boeme'],
         relatedProductId: 'tricouri',
-        image: '/products/master/tricouri-personalizate-bumbac-print-digital-online.png'
+        image: '/products/grafica-originala/tricou-personalizat-grafica-munte-aventura.webp'
     },
     {
         id: 'industrial',
@@ -78,7 +78,7 @@ export const STILURI_DATA: StyleData[] = [
         ],
         matchingSpaces: ['Săli de fitness', 'Săli de conferințe', 'Startups', 'Camere de studiu'],
         relatedProductId: 'canvas',
-        image: '/products/canvas/canvas-1.webp'
+        image: '/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp'
     },
     {
         id: 'abstract',
@@ -95,6 +95,6 @@ export const STILURI_DATA: StyleData[] = [
         ],
         matchingSpaces: ['Living-uri moderne', 'Hoteluri de lux', 'Cabinete private', 'Coridoare lungi'],
         relatedProductId: 'canvas',
-        image: '/products/canvas/canvas-1.webp'
+        image: '/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp'
     }
 ];

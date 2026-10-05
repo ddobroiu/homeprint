@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Zap, MessageCircle, Star, ShieldCheck, Truck, Award, Sparkles, Ruler, ChevronRight, Info, CheckCircle2, ChevronDown, HelpCircle } from "lucide-react";
+import { Zap, MessageCircle, Star, ShieldCheck, Truck, Award, Ruler, ChevronRight, Info, CheckCircle2, ChevronDown, HelpCircle } from "lucide-react";
 import { spintax } from "@/lib/seo/spintax";
 import { useRouter } from "next/navigation";
 import { CONFIGURATORS_REGISTRY } from "@/lib/configurators-registry";
@@ -118,7 +118,7 @@ export function SeoDimensionLanding({ productId, productName, w, h }: SeoDimensi
 
                             <div className="bg-amber-50 border border-amber-100 rounded-2xl p-4 mb-10 flex items-start gap-4 max-w-xl mx-auto lg:mx-0 text-left">
                                 <div className="p-2 bg-amber-500 text-white rounded-lg shrink-0">
-                                    <Sparkles size={18} />
+                                    
                                 </div>
                                 <div>
                                     <h4 className="text-amber-900 font-black text-sm uppercase tracking-tight leading-none mb-1">Dimensiune Personalizată?</h4>
@@ -153,7 +153,7 @@ export function SeoDimensionLanding({ productId, productName, w, h }: SeoDimensi
                                         alt={`${productName} ${w}x${h} cm`} 
                                         fill
                                         className="object-contain relative z-10 drop-shadow-[0_20px_40px_rgba(0,0,0,0.1)] group-hover:scale-105 transition-transform duration-700 ease-out" 
-                                        onError={() => setImgSrc('/products/banner/banner-1.webp')}
+                                        onError={() => setImgSrc('/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp')}
                                         sizes="(max-width: 768px) 100vw, 50vw"
                                         priority
                                     />

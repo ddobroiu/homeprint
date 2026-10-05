@@ -12,6 +12,7 @@ import DeliveryEstimation from "./DeliveryEstimation";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import Link from 'next/link';
 import Image from "next/image";
+import { ORIGINAL_PRINT_IMAGES } from "@/lib/originalPrintImages";
 import FaqAccordion from "./FaqAccordion";
 import Reviews from "./Reviews";
 import QuickNav from "./QuickNav";
@@ -350,20 +351,28 @@ export default function TextileConfigurator({ type, productSlug, productImage, r
     // Când schimbăm tipul (dacă devine relevant din afara prop-urilor, deși e static aici), sau modelul
     const selectedModelConfig = useMemo(() => AVAILABLE_MODELS.find(m => m.id === input.model) || AVAILABLE_MODELS[0], [AVAILABLE_MODELS, input.model]);
 
+    const [colorPicked, setColorPicked] = useState(false);
     const galleryImages = useMemo(() => {
         let currentImgUrl = selectedModelConfig?.images?.[input.color];
         if (!currentImgUrl) {
             currentImgUrl = type === "tricouri" ? "/products/banner/banner-1.webp" : "/products/banner/banner-1.webp";
         }
-        return productImage ? [productImage, currentImgUrl] : [currentImgUrl];
-    }, [productImage, type, selectedModelConfig, input.color]);
+        const originalFront = type === "hanorace" ? "/products/poze-produse-seo/hanorac-personalizat-fata.webp" : type === "sepci" ? "/products/poze-produse-seo/sapca-personalizata-fata.webp" : "/products/poze-produse-seo/tricou-alb-personalizat-fata.webp";
+        const originalBack = type === "hanorace" ? "/products/poze-produse-seo/hanorac-personalizat-spate.webp" : type === "sepci" ? "/products/poze-produse-seo/sapca-personalizata-lateral.webp" : "/products/poze-produse-seo/tricou-alb-personalizat-spate.webp";
+        const examples = [originalFront, originalBack, ORIGINAL_PRINT_IMAGES[type]];
+        const others = [...new Set([...(productImage ? [productImage] : []), ...examples].filter(src => src !== currentImgUrl))];
+        // Dupa ce clientul alege o culoare, haina in culoarea aleasa trece in prim-plan; pana atunci exemplul de grafica.
+        return colorPicked ? [currentImgUrl, ...others] : [...others, currentImgUrl];
+    }, [productImage, type, selectedModelConfig, input.color, colorPicked]);
+    // Haina in culoarea aleasa (si fundalul editorului de grafica)
+    const colorImage = colorPicked ? galleryImages[0] : galleryImages[galleryImages.length - 1];
 
     const [viewMode, setViewMode] = useState<ViewMode>('gallery');
 
     const [activeImage, setActiveImage] = useState<string>(galleryImages[0]);
 
     useEffect(() => {
-        if (!productImage && galleryImages[0]) {
+        if (galleryImages[0]) {
             setActiveImage(galleryImages[0]);
         }
     }, [galleryImages, productImage]);
@@ -530,6 +539,7 @@ export default function TextileConfigurator({ type, productSlug, productImage, r
                                 </button>
                             </div>
 
+                            <p className="px-4 pt-3 text-xs text-slate-500">Exemplu de grafică. Alegi modelul, culoarea și fișierul pentru imprimare în configurator.</p>
                             <div className="aspect-square relative bg-white flex items-center justify-center p-8">
                                 {input.designOption === "upload" && artworkUrl ? (
                                     <div className="absolute inset-0 p-4">
@@ -541,12 +551,12 @@ export default function TextileConfigurator({ type, productSlug, productImage, r
                                             onChange={setArtworkFit}
                                             onImageSize={setArtworkPx}
                                             viewingFactor={0.8}
-                                            mockup={{ src: galleryImages[galleryImages.length - 1], area: PRINT_AREA, label: "Zona de print" }}
+                                            mockup={{ src: colorImage, area: PRINT_AREA, label: "Zona de print" }}
                                         />
                                     </div>
                                 ) : productImage ? (
                                     <Image 
-                                        src={productImage} 
+                                        src={activeImage} 
                                         alt="Model" 
                                         fill
                                         className="object-contain animate-in fade-in duration-300" 
@@ -563,6 +573,9 @@ export default function TextileConfigurator({ type, productSlug, productImage, r
                                         priority
                                     />
                                 )}
+                            </div>
+                            <div className="grid grid-cols-4 gap-2 border-t border-slate-100 p-3" aria-label="Imagini produs">
+                                {galleryImages.map((src, index) => <button key={src} type="button" onClick={() => { setActiveImage(src); setViewMode('gallery'); }} aria-label={`Vezi imaginea ${index + 1}`} aria-pressed={activeImage === src} className={`relative aspect-square rounded-lg border bg-white ${activeImage === src ? 'border-emerald-600' : 'border-slate-200'}`}><Image src={src} alt={`Exemplu ${type}, imaginea ${index + 1}`} fill sizes="100px" className="object-contain p-1" /></button>)}
                             </div>
                         </div>
                     </div>
@@ -608,7 +621,7 @@ export default function TextileConfigurator({ type, productSlug, productImage, r
                                             {selectedModelConfig.colors.map(color => (
                                                 <button
                                                     key={color}
-                                                    onClick={() => updateInput("color", color)}
+                                                    onClick={() => { updateInput("color", color); setColorPicked(true); }}
                                                     className={`px-3 py-2 text-sm font-semibold rounded-lg border-2 transition-all ${input.color === color ? 'border-amber-600 bg-amber-50 text-amber-700' : 'border-gray-200 dark:border-slate-800 bg-white hover:border-gray-400 text-gray-700 dark:text-gray-300'}`}
                                                 >
                                                     {color}

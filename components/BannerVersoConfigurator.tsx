@@ -66,7 +66,7 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
   }));
 
   const [viewMode, setViewMode] = useState<'gallery' | 'shape'>('gallery');
-  const galleryImages = useMemo(() => productImage ? [productImage, "/products/banner/banner-1.webp"] : ["/products/fata-verso/banner-verso-1.webp", "/products/banner/banner-1.webp"], [productImage]);
+  const galleryImages = useMemo(() => productImage ? [productImage, "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"] : ["/products/fata-verso/banner-verso-1.webp", "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"], [productImage]);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [activeImage, setActiveImage] = useState<string>(galleryImages[0]);
   const [artworkUrl, setArtworkUrl] = useState<string | null>(null);
@@ -149,7 +149,7 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
                 )}
               </div>
               {viewMode === 'gallery' && !artworkUrl && (
-                <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100 dark:border-slate-800">
+                <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100 dark:border-slate-800 print-product-gallery">
                   {galleryImages.map((src, i) => (
                     <button key={src} onClick={() => setActiveIndex(i)} className={`relative rounded-lg aspect-square overflow-hidden transition-all ${activeIndex === i ? "ring-2 ring-amber-500 ring-offset-2" : "hover:opacity-80"}`}><Image src={src} alt="Miniatura" fill className="object-cover" sizes="100px" /></button>
                   ))}

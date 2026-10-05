@@ -2,11 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { 
-    Zap, MessageCircle, Sparkles, ShieldCheck, Truck, 
-    Layers, Info, CheckCircle2, HelpCircle, ArrowRight,
-    Palette, MapPin, MousePointer2, Star
-} from "lucide-react";
+import { Zap, MessageCircle, CircleCheck, ShieldCheck, Truck, Layers, Info, CheckCircle2, HelpCircle, ArrowRight, Palette, MapPin, MousePointer2, Star } from "lucide-react";
 import { StyleData } from "@/lib/seo/stiluriData";
 import { useRouter } from "next/navigation";
 import MasterConfigurator from "@/components/MasterConfigurator";
@@ -200,7 +196,7 @@ export function SeoStyleLanding({ style }: SeoStyleLandingProps) {
                             { icon: ShieldCheck, label: "Verificare 1:1", desc: "Calitate CONTROLATĂ" },
                             { icon: Truck, label: "Ambalare Lux", desc: "Protecție TOTALĂ" },
                             { icon: Palette, label: "Culori LatEx", desc: "Eco-Friendly HD" },
-                            { icon: Sparkles, label: "Finisaj Manual", desc: "Atenție la Detalii" }
+                            { icon: CircleCheck, label: "Finisaj Manual", desc: "Atenție la Detalii" }
                         ].map((item: any, i: number) => (
                             <div key={i} className="text-center group flex flex-col items-center">
                                 <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-amber-500 mb-4 group-hover:bg-slate-900 group-hover:text-white transition-all">

@@ -1,3 +1,6 @@
+import { brandProductIntro } from "@/lib/brandProductContent";
+import BrandPageNote from "@/components/design/BrandPageNote";
+import { isIndexableLocalPage } from "@/lib/seo/localIndexPolicy";
 import CatalogLocalityPage from "@/components/catalog/CatalogLocalityPage";
 import { getCatalogFamily, familyLocalMetadata } from "@/lib/catalog/localSeo";
 import { LocalProductFacts } from "@/components/seo/LocalProductFacts";
@@ -6,11 +9,11 @@ import { siteConfig } from "@/lib/siteConfig";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { getLocalitateBySlug, getJudetBySlug } from "@/lib/localitati";
 import { getProductBySlug, getProducts } from "@/lib/products";
 import Script from "next/script";
-import { ShieldCheck, Zap, Truck, MessageCircle, Star, Info, HelpCircle, MapPin, ArrowRight, ChevronLeft, ChevronRight, Globe, Award, Sparkles, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, Zap, Truck, MessageCircle, Star, Info, HelpCircle, MapPin, ArrowRight, ChevronLeft, ChevronRight, Globe, Award, CheckCircle2 } from "lucide-react";
 import { CONFIGURATORS_REGISTRY } from "@/lib/configurators-registry";
 import { buildLocalContent } from "@/lib/seo/localContent";
 import { isIndexableLocality, getSiblingLocalitySlugs } from "@/lib/seo/indexableLocalities";
@@ -59,6 +62,12 @@ function getTargetInfo(slug: string) {
 
 export async function generateMetadata({ params }: { params: Promise<{ judetSlug: string, localitateSlug: string, productSlug: string[] }> }) {
     const { judetSlug, localitateSlug, productSlug } = await params;
+    if (productSlug.length > 1 && ["ieftin", "pret", "preturi", "personalizat", "personalizate"].includes(productSlug[productSlug.length - 1])) {
+        const basePath = productSlug.slice(0, -1);
+        const resolved = resolveLocalProductKey(basePath);
+        if (resolved || getProductBySlug(basePath.join('/'))) permanentRedirect(`/judet/${judetSlug}/${localitateSlug}/${resolved ?? basePath.join('/')}`);
+    }
+
     // Familiile din catalogul /produse au pagina lor pe localitate.
     const catalogFamily = productSlug.length === 1 ? getCatalogFamily(productSlug[0]) : undefined;
     if (catalogFamily) {
@@ -68,8 +77,12 @@ export async function generateMetadata({ params }: { params: Promise<{ judetSlug
         return familyLocalMetadata(catalogFamily, { locName: cLoc.name, locSlug: cLoc.slug, judetName: cJudet.name, judetSlug: cJudet.slug });
     }
     const aliasKey = resolveLocalProductKey(productSlug);
-    const baseSlug = aliasKey ?? productSlug[0];
-    const targetSlug = aliasKey ? undefined : productSlug[1];
+    if (aliasKey && productSlug.join('/') !== aliasKey) permanentRedirect(`/judet/${judetSlug}/${localitateSlug}/${aliasKey}`);
+
+    // Aceeasi rezolvare ca in pagina: produsul complet are prioritate fata de modificatori.
+    const fullProduct = !aliasKey ? getProductBySlug(productSlug.join('/')) : undefined;
+    const baseSlug = aliasKey ?? (fullProduct ? productSlug.join('/') : productSlug[0]);
+    const targetSlug = aliasKey || fullProduct ? undefined : productSlug[1];
 
     const loc = withDisplayName(judetSlug, getLocalitateBySlug(judetSlug, localitateSlug));
     const judet = getJudetBySlug(judetSlug);
@@ -78,6 +91,13 @@ export async function generateMetadata({ params }: { params: Promise<{ judetSlug
     if (!loc || !judet || !product) return {};
 
     const targetInfo = targetSlug ? getTargetInfo(targetSlug) : null;
+    if (targetSlug && !targetInfo) {
+        if (productSlug.length === 2 && ["ieftin", "pret", "preturi", "personalizat", "personalizate"].includes(targetSlug)) {
+            permanentRedirect(`/judet/${judetSlug}/${localitateSlug}/${baseSlug}`);
+        }
+        notFound();
+    }
+
     const productBaseName = getProductDisplayName([baseSlug, product.id, (product as any).routeSlug], product.title);
     const productTitle = targetInfo ? `${productBaseName} ${targetInfo.label}` : productBaseName;
 
@@ -110,12 +130,18 @@ export async function generateMetadata({ params }: { params: Promise<{ judetSlug
             images: [(product as any).image || '/placeholder.png'],
         },
         alternates: { canonical: routeUrl },
-        robots: { index: true, follow: true }
+        robots: { index: isIndexableLocalPage(siteConfig.url, judet.slug, loc.slug, productSlug), follow: true }
     };
 }
 
 export default async function ProductLocalityPage({ params }: { params: Promise<{ judetSlug: string, localitateSlug: string, productSlug: string[] }> }) {
     const { judetSlug, localitateSlug, productSlug } = await params;
+    if (productSlug.length > 1 && ["ieftin", "pret", "preturi", "personalizat", "personalizate"].includes(productSlug[productSlug.length - 1])) {
+        const basePath = productSlug.slice(0, -1);
+        const resolved = resolveLocalProductKey(basePath);
+        if (resolved || getProductBySlug(basePath.join('/'))) permanentRedirect(`/judet/${judetSlug}/${localitateSlug}/${resolved ?? basePath.join('/')}`);
+    }
+
     const catalogFamily = productSlug.length === 1 ? getCatalogFamily(productSlug[0]) : undefined;
     if (catalogFamily) {
         const cLoc = getLocalitateBySlug(judetSlug, localitateSlug);
@@ -129,6 +155,8 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
     // Greedy Product Resolution for multi-segment slugs (e.g. banner-product/xxx)
     // Aliasurile /configurator/... randează exact produsul de pe calea scurtă (același conținut ca pagina canonică).
     const aliasKey = resolveLocalProductKey(productSlug);
+    if (aliasKey && productSlug.join('/') !== aliasKey) permanentRedirect(`/judet/${judetSlug}/${localitateSlug}/${aliasKey}`);
+
     let productResolved = getProductBySlug(aliasKey ?? productSlug.join('/'));
     let baseSlug = aliasKey ?? productSlug.join('/');
     let targetSlug = null;
@@ -137,6 +165,7 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
         // Fallback: product is the first segment, second segment is the modifier (material/intent)
         baseSlug = productSlug[0];
         productResolved = getProductBySlug(baseSlug);
+        if (productSlug.length !== 2) notFound();
         targetSlug = productSlug[1];
     }
 
@@ -144,10 +173,17 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
     if (!loc || !judet || !product) notFound();
 
     const targetInfo = targetSlug ? getTargetInfo(targetSlug) : null;
+    if (targetSlug && !targetInfo) {
+        if (productSlug.length === 2 && ["ieftin", "pret", "preturi", "personalizat", "personalizate"].includes(targetSlug)) {
+            permanentRedirect(`/judet/${judetSlug}/${localitateSlug}/${baseSlug}`);
+        }
+        notFound();
+    }
+
     const productBaseName = getProductDisplayName([baseSlug, product.id, (product as any).routeSlug], product.title);
     const productTitle = targetInfo ? `${productBaseName} ${targetInfo.label}` : productBaseName;
 
-    const productImage = (product as any).image || ((product as any).images?.[0]) || "/products/banner/banner-1.webp";
+    const productImage = (product as any).image || ((product as any).images?.[0]) || "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp";
     const canonicalProductUrl = localProductCanonical(siteConfig.url, judet.slug, loc.slug, productSlug).url;
     
     let shopUrl = (product as any).routeSlug || (product as any).slug || product.id;
@@ -181,7 +217,7 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
     if (shopUrl.startsWith('/configurator/')) {
         shopUrl = shopUrl.replace('/configurator/', '/');
     }
-    const { heroText } = buildLocalContent({
+    const { heroText: localityContext } = buildLocalContent({
         brand: "homeprint",
         productTitle,
         productSlug: productCategoryKey,
@@ -194,6 +230,7 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
     // Cross-links to the other curated (indexable) towns in the same judet, for
     // the same product — these indexed pages otherwise link nowhere to each other.
     // Legăturile interne folosesc calea scurtă, canonică (/judet/{j}/{l}/{cheie}), nu aliasul /configurator/...
+    const heroText = brandProductIntro(productTitle, [baseSlug, productCategoryKey], loc.name);
     const localKey = resolveLocalProductKey(productSlug);
     const productPath = localKey ?? productSlug.join('/');
     // Același produs în orașele principale ale județului (lib/seo/mainTowns.ts).
@@ -204,7 +241,7 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
         .filter((l): l is NonNullable<typeof l> => Boolean(l));
 
     return (
-        <div className="bg-[#fafafc] min-h-screen font-sans overflow-x-hidden w-full max-w-full box-border">
+        <div className="brand-local-product bg-[#fafafc] min-h-screen font-sans overflow-x-hidden w-full max-w-full box-border">
             <LocalProductJsonLd
                 name={`${productTitle} în ${loc.name}`}
                 description={heroText}
@@ -475,6 +512,7 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
             </div>
             {/* Spacing for mobile sticky footer */}
             <div className="h-24 md:hidden"></div>
+            <BrandPageNote />
         </div>
     );
 }

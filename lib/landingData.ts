@@ -1,3 +1,4 @@
+import { SEARCH_PRODUCTS } from "./searchProductDefinitions";
 // lib/landingData.ts
 // Catalog data-driven pentru landing pages.
 // Acesta centralizează toate datele SEO din modulele specifice.
@@ -88,6 +89,13 @@ export const LANDING_CATALOG: LandingCatalog = {
 };
 
 // --- HELPER FUNCTIONS ---
+
+// Real configurable models replace the generic entries at the same stable URLs.
+for (const product of SEARCH_PRODUCTS) {
+  LANDING_CATALOG[product.category] ||= {};
+  LANDING_CATALOG[product.category][product.slug] = { key: product.slug, title: product.title, shortDescription: product.short, seoTitle: product.title, seoDescription: product.short, images: [product.image] };
+  for (const alias of product.aliases || []) delete LANDING_CATALOG[product.category][alias];
+}
 
 // Helper: list all landing routes for generateStaticParams
 // Exclude duplicate/alias categories to avoid duplicate content penalties

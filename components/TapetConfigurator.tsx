@@ -3,7 +3,7 @@ import React, { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import { useCart } from "@/components/CartContext";
 import { useToast } from "@/components/ToastProvider";
-import { ShoppingCart, Check, UploadCloud, MessageCircle, Ruler, Layers, Sparkles, TrendingUp, Info } from "lucide-react";
+import { ShoppingCart, Check, UploadCloud, MessageCircle, Ruler, Layers, TrendingUp, Info } from "lucide-react";
 import DeliveryEstimation from "./DeliveryEstimation";
 import FaqAccordion from "./FaqAccordion";
 import { QA } from "@/types";
@@ -95,7 +95,7 @@ export default function TapetConfigurator({ productSlug, initialWidth: initW, in
                    <div className="lg:sticky top-24 h-max space-y-8 text-slate-900 dark:text-white">
                         <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg border border-gray-200 dark:border-slate-800 overflow-hidden">
                            <div className="aspect-square relative flex items-center justify-center overflow-hidden">
-                                <Image src={productImage || "/products/tapet/tapet-1.webp"} alt="Tapet Personalizat" fill className="object-contain p-8" priority />
+                                <Image src={productImage || "/products/grafica-originala/fototapet-personalizat-grafica-botanica-rola.webp"} alt="Tapet Personalizat" fill className="object-contain p-8" priority />
                            </div>
                         </div>
 
@@ -105,7 +105,7 @@ export default function TapetConfigurator({ productSlug, initialWidth: initW, in
                             <div><p className="text-[10px] font-bold uppercase text-gray-500 mb-0.5">Material</p><p className="text-xs font-bold text-gray-800 dark:text-gray-200">Vinilic 400g</p></div>
                           </div>
                           <div className="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-gray-200 dark:border-slate-800">
-                             <div className="w-10 h-10 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center shrink-0"><Sparkles size={18} /></div>
+                             <div className="w-10 h-10 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center shrink-0"></div>
                              <div><p className="text-[10px] font-bold uppercase text-gray-500 mb-0.5">Impact</p><p className="text-xs font-bold text-gray-800 dark:text-gray-200">Interior Premium</p></div>
                           </div>
                         </div>

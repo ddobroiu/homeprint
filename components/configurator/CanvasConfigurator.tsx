@@ -2,15 +2,17 @@
 
 import React, { useMemo, useState, useEffect, useRef } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
+import { uploadArtworkImage, browserImageUrl } from "@/lib/uploadArtworkImage";
 import { useSearchParams } from "next/navigation";
 import { useCart } from "@/components/CartContext";
-import { Plus, Minus, ShoppingCart, Info, ChevronDown, X, UploadCloud, MessageCircle, TrendingUp, Box, Image as ImageIcon, Sparkles, Settings2, FileText, Truck, Shield, HelpCircle, Star, Palette, Trash2, PencilRuler } from "lucide-react";
+import { Plus, Minus, ShoppingCart, Info, ChevronDown, X, UploadCloud, MessageCircle, TrendingUp, Box, Image as ImageIcon, Settings2, FileText, Truck, Shield, HelpCircle, Star, Palette, Trash2, PencilRuler } from "lucide-react";
 import Link from 'next/link';
 import ProductCarousel from '@/components/ProductCarousel';
 import DeliveryEstimation from "./DeliveryEstimation";
 import FaqAccordion from "./FaqAccordion";
 import { QA } from "@/types/configurator";
 import Script from "next/script";
+import { canvasTextureSource } from "./canvasTextureSource";
 import { QRCodeSVG } from "qrcode.react";
 import {
     calculateCanvasPrice,
@@ -23,7 +25,8 @@ import { PopularDimensions } from "./PopularDimensions";
 
 const GALLERY_BASE = [
     "/products/canvas/canvas-1.webp",
-    "/products/canvas/canvas-2.webp"
+    "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
+    "/products/canvas/canvas-2.webp",
 ] as const;
 
 const productFaqs: QA[] = [
@@ -275,11 +278,7 @@ export default function CanvasConfigurator({ productSlug, initialWidth: initW, i
         setArtworkPx(null);
         try {
             setUploading(true);
-            const form = new FormData(); form.append("file", file);
-            const res = await fetch("/api/upload", { method: "POST", body: form });
-            if (!res.ok) throw new Error("Upload eșuat");
-            const data = await res.json();
-            setArtworkUrl(data.url);
+            setArtworkUrl(await uploadArtworkImage(file));
         } catch (e: any) {
             setUploadError(e?.message ?? "Eroare la upload");
         } finally {
@@ -364,6 +363,7 @@ export default function CanvasConfigurator({ productSlug, initialWidth: initW, i
     const summaryStep3 = input.designOption === 'upload' ? 'Grafică proprie' : 'Design Pro';
 
     const modelViewerRef = useRef<any>(null);
+    const previewUploadRef = useRef<HTMLInputElement>(null);
 
     // Calculate currentW/currentH earlier for use in texture logic
     let currentW = input.width_cm || 40;
@@ -386,7 +386,7 @@ export default function CanvasConfigurator({ productSlug, initialWidth: initW, i
 
         const updateTexture = async () => {
             try {
-                const sourceImg = artworkUrl;
+                const sourceImg = artworkUrl ? browserImageUrl(artworkUrl) : null;
                 if (!sourceImg) return;
 
                 if (!viewer.model) {
@@ -399,7 +399,7 @@ export default function CanvasConfigurator({ productSlug, initialWidth: initW, i
                 // If it's a local uploaded path, it's fine. If external, might need proxy?
                 // Uploaded files are usually relative local paths or blob URLs.
                 // activeImage could be external relative path.
-                img.src = sourceImg;
+                img.src = canvasTextureSource(sourceImg);
                 await new Promise((r, e) => { img.onload = r; img.onerror = e; });
 
                 // 2. Crop/Scale Canvas
@@ -460,7 +460,8 @@ export default function CanvasConfigurator({ productSlug, initialWidth: initW, i
                 }
             } catch (e) {
                 console.error("Texture error:", e);
-                setIsArtLoaded(true); // Fail safe to allow interaction even if texture fails
+                setIsArtLoaded(false);
+                setUploadError("Fotografia nu a putut fi afișată în 3D. Încearcă o imagine JPG sau PNG.");
             }
         };
 
@@ -529,6 +530,7 @@ export default function CanvasConfigurator({ productSlug, initialWidth: initW, i
 
     return (
         <main className="bg-slate-50 dark:bg-slate-800 min-h-screen">
+            <input ref={previewUploadRef} type="file" accept="image/jpeg,image/png,image/webp" className="hidden" aria-label="Fotografie pentru canvas 3D" onChange={e => { const file = e.target.files?.[0] ?? null; if (file) { updateInput("designOption", "upload"); setActiveStep(3); void handleArtworkFileInput(file); } e.target.value = ""; }} />
             <Script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js" />
 
             <div className="container mx-auto px-4 py-8 lg:py-16">
@@ -562,7 +564,7 @@ export default function CanvasConfigurator({ productSlug, initialWidth: initW, i
                                                     <ArtworkFitEditor
                                                         widthCm={currentW}
                                                         heightCm={currentH}
-                                                        imageUrl={artworkUrl}
+                                                        imageUrl={browserImageUrl(artworkUrl)}
                                                         fit={artworkFit}
                                                         onChange={setArtworkFit}
                                                         onImageSize={setArtworkPx}
@@ -630,11 +632,12 @@ export default function CanvasConfigurator({ productSlug, initialWidth: initW, i
                                                     Încarcă propria ta fotografie pentru a vizualiza tabloul personalizat în 3D și Realitate Augmentată.
                                                 </p>
                                                 <button
-                                                    onClick={() => document.getElementById('photo-upload-input')?.click()}
+                                                    type="button" disabled={uploading} onClick={() => previewUploadRef.current?.click()}
                                                     className="mt-6 px-6 py-2.5 bg-amber-600 text-white font-bold rounded-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] hover:bg-amber-700 transition-all active:scale-95 text-sm"
                                                 >
-                                                    ÎNCARCĂ POZA ACUM
+                                                    {uploading ? "SE ÎNCARCĂ…" : "ÎNCARCĂ POZA ACUM"}
                                                 </button>
+                                                {uploadError && <p role="alert" className="mt-3 text-sm text-red-700">{uploadError}</p>}
                                             </div>
                                         )}
 
@@ -729,7 +732,7 @@ export default function CanvasConfigurator({ productSlug, initialWidth: initW, i
 
                             {/* THUMBNAILS - ONLY IN GALLERY MODE */}
                             {viewMode === 'gallery' && (
-                                <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100 bg-white">
+                                <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100 bg-white print-product-gallery">
                                     {GALLERY.map((src, i) => (
                                         <button
                                             key={i}

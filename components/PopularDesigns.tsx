@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { bannerProducts } from "@/lib/products/banner-products";
-import { ArrowRight, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Product {
     id: string;
@@ -89,16 +89,16 @@ export default function PopularDesigns({
                 >
                     {displayProducts.map((product) => (
                         <Link
-                            href={`/configurator/banner?productSlug=${product.slug}`}
+                            href={`/banner-product/${product.slug}`}
                             key={product.id}
                             className="group min-w-[260px] w-[260px] sm:min-w-[300px] sm:w-[300px] bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 block shrink-0"
                         >
-                            <div className="relative aspect-[3/2] bg-gray-100 overflow-hidden border-b border-gray-50">
+                            <div className="relative aspect-square bg-white overflow-hidden border-b border-gray-50">
                                 <Image
                                     src={product.image}
                                     alt={product.title}
                                     fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                    className="object-contain p-3 group-hover:scale-105 transition-transform duration-500"
                                     sizes="300px"
                                 />
                                 <div className="absolute top-2 left-2">
@@ -124,7 +124,7 @@ export default function PopularDesigns({
                     {/* View All Card */}
                     <Link href="/shop/bannere" className="min-w-[150px] bg-slate-100 rounded-xl border-2 border-dashed border-slate-300 flex flex-col items-center justify-center gap-2 hover:bg-slate-200 hover:border-slate-400 transition-all shrink-0 text-gray-500 hover:text-gray-800">
                         <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
-                            <Sparkles size={20} />
+                            
                         </div>
                         <span className="font-bold text-sm">Vezi Toate</span>
                     </Link>

@@ -51,7 +51,7 @@ export default function CatalogLocalityPage({ family, loc, judet }: { family: Ca
   ];
 
   return (
-    <main className="bg-slate-50 min-h-screen pt-24 pb-24">
+    <div className="brand-catalog-local bg-slate-50 min-h-screen pt-24 pb-24">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 max-w-7xl">
         <nav className="flex flex-wrap items-center gap-2 text-sm text-slate-500" aria-label="Breadcrumb">
@@ -209,6 +209,6 @@ export default function CatalogLocalityPage({ family, loc, judet }: { family: Ca
           </div>
         </section>
       </div>
-    </main>
+    </div>
   );
 }

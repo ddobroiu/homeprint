@@ -117,6 +117,11 @@ type Props = { productSlug?: string; initialWidth?: number; initialHeight?: numb
 type ViewMode = 'gallery' | 'shape';
 
 /* --- MAIN COMPONENT --- */
+const VERSO_GALLERY = [
+    "/products/banner/verso/banner-verso-1.webp",
+    "/products/grafica-originala/banner-fata-verso-blockout-grafica-eveniment.webp",
+];
+
 export default function BannerVersoConfigurator({ productSlug, initialWidth: initW, initialHeight: initH, productImage, renderOnlyConfigurator = false }: Props) {
     const { addItem } = useCart();
     const router = useRouter();
@@ -144,7 +149,7 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
     const [lengthText, setLengthText] = useState(input.width_cm ? String(input.width_cm) : "");
     const [heightText, setHeightText] = useState(input.height_cm ? String(input.height_cm) : "");
 
-    const galleryImages = useMemo(() => productImage ? [productImage, "/products/banner/verso/banner-verso-1.webp"] : ["/products/banner/verso/banner-verso-1.webp"], [productImage]);
+    const galleryImages = useMemo(() => productImage ? [productImage, ...VERSO_GALLERY.filter(src => src !== productImage)] : [...VERSO_GALLERY], [productImage]);
 
     const [viewMode, setViewMode] = useState<ViewMode>('gallery');
 
@@ -431,7 +436,7 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
 
                             {viewMode === 'gallery' && (
                                 <div className="p-2">
-                                    <div className="grid grid-cols-4 gap-2">
+                                    <div className="grid grid-cols-4 gap-2 print-product-gallery">
                                         {galleryImages.map((src, i) => (
                                             <button key={src} onClick={() => setActiveIndex(i)} className={`relative rounded-lg aspect-square ${activeIndex === i ? "ring-2 ring-offset-2 ring-amber-500" : "hover:opacity-80"}`}><img src={src} alt="Miniatura" loading="lazy" className="w-full h-full object-cover" /></button>
                                         ))}

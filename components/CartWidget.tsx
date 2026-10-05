@@ -278,15 +278,15 @@ export default function CartWidget() {
 
                         // Mapăm slug-uri la imagini default
                         const defaultImages: Record<string, string> = {
-                          'banner': '/products/banner/banner-1.webp',
-                          'afise': '/products/afise/afise-1.webp',
-                          'autocolante': '/products/autocolante/autocolante-1.webp',
-                          'flayere': '/products/flayere/flayere-1.webp',
-                          'pliante': '/products/pliante/pliante-1.webp',
+                          'banner': '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
+                          'afise': '/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp',
+                          'autocolante': '/products/grafica-originala/autocolant-vinil-grafica-botanica.webp',
+                          'flayere': '/products/grafica-originala/flyer-publicitar-grafica-atelier-creativ.webp',
+                          'pliante': '/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp',
                           'canvas': 'https://pub-5e0f8c0a4c03499b92d64adf2a42dd22.r2.dev/canvas/gutscheincode-für-dotcomcanvas-1.png',
-                          'rollup': '/products/rollup/rollup-1.webp',
-                          'tapet': '/products/tapet/tapet-1.webp',
-                          'window-graphics': '/products/window-graphics/window-graphics-1.webp',
+                          'rollup': '/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp',
+                          'tapet': '/products/grafica-originala/fototapet-personalizat-grafica-botanica-rola.webp',
+                          'window-graphics': '/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp',
                         };
 
                         // Căutăm imaginea default bazată pe slug

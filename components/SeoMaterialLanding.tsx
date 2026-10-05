@@ -2,11 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { 
-    Zap, MessageCircle, Sparkles, ShieldCheck, Truck, 
-    Layers, Info, CheckCircle2, HelpCircle, ArrowRight,
-    Settings, Target, Award, Palette
-} from "lucide-react";
+import { Zap, MessageCircle, CircleCheck, ShieldCheck, Truck, Layers, Info, CheckCircle2, HelpCircle, ArrowRight, Settings, Target, Award, Palette } from "lucide-react";
 import { MaterialData } from "@/lib/seo/materialeData";
 import { useRouter } from "next/navigation";
 import MasterConfigurator from "@/components/MasterConfigurator";
@@ -203,7 +199,7 @@ export function SeoMaterialLanding({ material }: SeoMaterialLandingProps) {
                             { icon: ShieldCheck, label: "Testat Industrial", desc: "Standarde de Calitate" },
                             { icon: Truck, label: "Logisitică Rapidă", desc: "Livrare Securizată" },
                             { icon: Palette, label: "Cromatism HD", desc: "Cerneluri Latex Eco" },
-                            { icon: Sparkles, label: "Control Calitate", desc: "Verificare 1:1" }
+                            { icon: CircleCheck, label: "Control Calitate", desc: "Verificare 1:1" }
                         ].map((item, i) => (
                             <div key={i} className="text-center group flex flex-col items-center">
                                 <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-amber-500 mb-4 group-hover:bg-slate-900 group-hover:text-white transition-all">

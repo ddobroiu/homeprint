@@ -65,7 +65,7 @@ export default async function JudetPage({ params }: Params) {
     const bannerFrom = getFromPrice(["tapet"]);
 
     return (
-        <div className="bg-white">
+        <div className="brand-county bg-white">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{

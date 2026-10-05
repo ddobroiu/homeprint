@@ -29,7 +29,7 @@ export default function WindowGraphicsPage() {
                 <ProductSchema
                     name="Window Graphics - Autocolant Perforat One-Way Vision"
                     description="Autocolant perforat One-Way Vision pentru vitrine de magazin — vizibilitate dintr-o singură direcție, personalul vede afară, publicul vede reclama."
-                    image="/products/window-graphics/window-graphics-1.webp"
+                    image="/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp"
                     url="/configurator/window-graphics"
                     price="40.00"
                 />

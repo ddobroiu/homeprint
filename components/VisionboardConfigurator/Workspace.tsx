@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Settings, Sparkles } from 'lucide-react';
+import { Settings } from 'lucide-react';
 import { CanvasElement } from './CanvasElement';
 import { ZoomControls } from './ZoomControls';
 import { ConfigElement } from './Configurator.types';
@@ -157,7 +157,7 @@ export const Workspace: React.FC<WorkspaceProps> = ({
                                 fontSize: '0.75rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px'
                             }}
                         >
-                            <Sparkles size={14} /> Reîmprospătează 3D
+                             Reîmprospătează 3D
                         </button>
                     </div>
                 )}

@@ -19,10 +19,11 @@ export default function BannereClient() {
 
     // Filter products
     const filteredProducts = useMemo(() => {
-        return bannerProducts.filter(product => {
+        return [...bannerProducts].sort((a, b) => a.category.localeCompare(b.category, "ro") || a.title.localeCompare(b.title, "ro")).filter(product => {
             const matchesCategory = categoryFilter === "Toate" || product.category === categoryFilter;
-            const matchesSearch = product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                product.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+            const normalize = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+            const query = normalize(searchQuery);
+            const matchesSearch = normalize(product.title).includes(query) || product.tags.some(tag => normalize(tag).includes(query));
             return matchesCategory && matchesSearch;
         });
     }, [categoryFilter, searchQuery]);
@@ -33,11 +34,11 @@ export default function BannereClient() {
             <div className="bg-slate-900 text-white pt-32 pb-16">
                 <div className="container mx-auto px-4 text-center">
                     <h1 className="text-3xl md:text-5xl font-black mb-4">
-                        Bannere Publicitare - Modele Predefinite
+                        Alege grafica bannerului tău
                     </h1>
                     <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-8">
                         Alege dintr-o gamă variată de modele pentru afacerea ta. Imobiliare, Auto, HoReCa și multe altele.
-                        Personalizează dimensiunile și comandă online!
+                        Păstrează modelul, adaugă datele tale, încarcă o machetă sau cere grafică personalizată la 50 lei.
                     </p>
                     <div className="flex justify-center gap-4 flex-wrap">
                         <div className="flex items-center gap-2 text-amber-400 font-bold bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
@@ -124,12 +125,12 @@ export default function BannereClient() {
                         {filteredProducts.map((product) => (
                             <Link href={`/banner-product/${product.slug}`} key={product.id} className="group flex flex-col bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 h-full">
                                 {/* Image Area */}
-                                <div className="relative aspect-[3/2] bg-gray-100 overflow-hidden border-b border-gray-50">
+                                <div className="relative aspect-square bg-white overflow-hidden border-b border-gray-50">
                                     <Image
                                         src={product.image}
                                         alt={product.title}
                                         fill
-                                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                        className="object-contain p-3 group-hover:scale-105 transition-transform duration-500"
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     />
                                     <div className="absolute top-3 left-3">

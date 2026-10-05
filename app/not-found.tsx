@@ -1,6 +1,6 @@
 
 import Link from "next/link";
-import { ArrowRight, Home, LayoutGrid, Printer, Image as ImageIcon, FileText, Sparkles } from "lucide-react";
+import { ArrowRight, Home, LayoutGrid, Printer, Image as ImageIcon, FileText } from "lucide-react";
 
 export default function NotFound() {
     return (
@@ -16,7 +16,7 @@ export default function NotFound() {
                     </h1>
                     <div className="absolute inset-0 flex items-center justify-center">
                         <div className="bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 p-8 rounded-[40px] shadow-2xl transform -rotate-2">
-                            <Sparkles size={48} className="text-amber-600 mb-4 mx-auto animate-bounce" />
+                            
                             <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-2 uppercase tracking-tight">Pagina nu a fost găsită</h2>
                             <p className="text-slate-500 dark:text-slate-400 max-w-xs mx-auto text-sm font-medium">
                                 Se pare că linkul accesat nu mai există sau a fost mutat într-o locație nouă.
@@ -42,7 +42,7 @@ export default function NotFound() {
                         </Link>
 
                         <Link href="/configurator/fonduri-eu" className="group bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-200 dark:border-slate-800 hover:border-amber-500 transition-all hover:shadow-xl hover:-translate-y-1">
-                            <Sparkles className="text-amber-600 mb-3 group-hover:scale-110 transition-transform" />
+                            
                             <h3 className="font-bold text-slate-900 dark:text-white text-sm mb-1">Fonduri UE</h3>
                             <p className="text-[10px] text-slate-500">Kituri vizibilitate</p>
                         </Link>

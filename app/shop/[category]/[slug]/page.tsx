@@ -1,5 +1,8 @@
+import SearchProductPage from "@/components/SearchProductPage";
+import { findSearchProduct, searchProductPath } from "@/lib/searchProductDefinitions";
+import { siteConfig } from "@/lib/siteConfig";
 import { Metadata, ResolvingMetadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import ConfiguratorDispatcher from "@/components/configurator/ConfiguratorDispatcher";
 import { Suspense } from 'react';
 import ProductStructuredData from '@/components/ProductStructuredData';
@@ -33,6 +36,11 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
     const { category, slug } = await params;
+    const model = findSearchProduct(category, slug);
+    if (model) {
+        const url = `${siteConfig.url}${searchProductPath(model)}`;
+        return { title: model.title, description: model.short.slice(0,160), alternates: { canonical: url }, openGraph: { title: model.title, description: model.short, url, images: [model.image] } };
+    }
     const internalCategory = categoryMap[category] || category;
     const landingSEO = getLandingInfo(internalCategory, slug);
 
@@ -60,6 +68,11 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 
 export default async function GenericLandingPage({ params }: Props) {
     const { category, slug } = await params;
+    const model = findSearchProduct(category, slug);
+    if (model) {
+        if (slug !== model.slug) permanentRedirect(searchProductPath(model));
+        return <SearchProductPage product={model} />;
+    }
     const internalCategory = categoryMap[category] || category;
     const landingSEO = getLandingInfo(internalCategory, slug);
 
@@ -79,7 +92,7 @@ export default async function GenericLandingPage({ params }: Props) {
     if (configuratorId === 'fonduri-pnrr' || configuratorId === 'fonduri') configuratorId = 'fonduri-eu';
 
     return (
-        <div className="pt-24 max-w-7xl mx-auto px-4">
+        <div className="pt-24 w-full max-w-7xl mx-auto px-4">
             <Breadcrumbs items={breadcrumbItems} />
 
             <div className="mb-8 mt-6">

@@ -18,7 +18,8 @@ import {
 } from "@/lib/pricing";
 
 const GALLERY_BASE = [
-    "/products/window-graphics/window-graphics-1.webp"
+    "/products/window-graphics/window-graphics-1.webp",
+    "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp",
 ] as const;
 
 const productFaqs: QA[] = [
@@ -195,7 +196,7 @@ export default function WindowGraphicsConfigurator({ initialWidth: initW, initia
                                 />
                                 )}
                             </div>
-                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100">
+                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100 print-product-gallery">
                                 {GALLERY.map((src, i) => (
                                     <button
                                         key={i}

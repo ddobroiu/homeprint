@@ -18,7 +18,7 @@ export const metadata = {
         title: "Șepci Personalizate | Print DTF Profesional | Publicitate Outdoor",
         description: "Personalizează șepci premium. Print DTF de înaltă rezistență. Ideal pentru firmă, evenimente sau cadouri. Sistem centralizat pentru outdoor și indoor. Print de mari și mici dimensiuni cu preț de producător și rezistență UV.",
         images: [{
-            url: "/products/banner/banner-1.webp",
+            url: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
             width: 1200,
             height: 630,
             alt: "Șepci Personalizate"

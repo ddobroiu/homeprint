@@ -3,7 +3,7 @@
 import { useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { canvasProducts } from '@/lib/products/canvas-products';
 interface Product {
     id: string;
@@ -42,7 +42,7 @@ export default function ProductCarousel({
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between mb-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
-                        <Sparkles className="text-amber-500" size={24} />
+                        
                         {title}
                     </h2>
                     <Link href="/configurator/canvas" className="text-amber-600 font-bold text-sm hover:underline flex items-center gap-1">

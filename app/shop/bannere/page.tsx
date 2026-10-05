@@ -14,7 +14,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 
 export default function BannersShopPage() {
     return (
-        <div className="pt-24 max-w-7xl mx-auto px-4">
+        <div className="pt-24 w-full max-w-7xl mx-auto px-4">
             <Breadcrumbs items={[{ label: 'Produse', href: '/shop' }, { label: 'Bannere', href: '/shop/bannere' }]} />
             <BannereClient />
         </div>

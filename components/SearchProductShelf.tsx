@@ -1,0 +1,21 @@
+import Link from "next/link";
+import Image from "next/image";
+import { SEARCH_PRODUCTS, searchProductPath, searchProductPrice, searchProductDefaults } from "@/lib/searchProductDefinitions";
+import { formatMoneyDisplay } from "@/lib/pricing";
+
+export default function SearchProductShelf() {
+    const groups = [
+        { id: "modele-rollup", title: "Roll-up personalizat pentru prezentări și afaceri", products: SEARCH_PRODUCTS.filter(p => p.category === "rollup") },
+        { id: "modele-pvc-petreceri", title: "Decoruri PVC decupate pentru petreceri", products: SEARCH_PRODUCTS.filter(p => p.category === "pvc-forex") },
+        { id: "modele-afise", title: "Afișe pentru magazin, servicii și anunțuri", products: SEARCH_PRODUCTS.filter(p => p.category === "afise") },
+        { id: "modele-autocolante", title: "Autocolante pentru uși, mașini și semnalizare", products: SEARCH_PRODUCTS.filter(p => p.category === "autocolante" && !p.slug.startsWith("etichete-")) },
+        { id: "modele-etichete", title: "Etichete pentru produse și ambalaje", products: SEARCH_PRODUCTS.filter(p => p.slug.startsWith("etichete-")) },
+    ];
+    return <section data-search-product-shelf className="my-10">
+        <div className="mb-6 max-w-3xl"><h2 className="text-2xl font-extrabold text-slate-900">Modele pentru afacerea și proiectele tale</h2><p className="mt-3 leading-relaxed text-slate-600">Alege un decor PVC, un afiș, un autocolant sau o etichetă, apoi configurează dimensiunea, cantitatea și textele. Poți păstra modelul ori încărca grafica proprie.</p></div>
+        <Link href="/configurator/decor-foto-copil" className="mb-6 block rounded-2xl border-2 border-emerald-600 bg-emerald-50 p-5"><Image src="/products/decor-foto-copil/decor-pvc-fotografia-copilului-silueta-decupata.webp" alt="Fotografia copilului imprimată pe PVC și decupată pe contur" width={240} height={240} className="mb-4 rounded-xl bg-white object-contain"/><strong className="text-xl text-slate-900">Decor aniversar cu fotografia copilului</strong><p className="mt-2 text-slate-700">Încarcă fotografia copilului și alege o dimensiune prestabilită sau introdu dimensiunea ta. Prelucrare foto: 50 lei; decupare: 20% din PVC-ul imprimat.</p><span className="mt-3 inline-block font-bold text-emerald-800">Deschide configuratorul dedicat →</span></Link>
+        <Link href="/configurator/personaj-propriu" className="mb-6 block rounded-2xl border-2 border-emerald-600 bg-white p-5"><strong className="text-xl text-slate-900">Ai propriul personaj? Încarcă imaginea aici</strong><p className="mt-2 text-slate-700">Alege dimensiunea decorului. Pregătire personaj și contur: 50 lei pentru configurație; decupare fizică: 20% din PVC-ul imprimat.</p><span className="mt-3 inline-block font-bold text-emerald-800">Configurează personajul tău →</span></Link>
+        <nav aria-label="Tipuri de modele" className="mb-8 flex flex-wrap gap-2">{groups.map(g=><a key={g.id} href={`#${g.id}`} className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 hover:border-emerald-600">{g.id==="modele-rollup"?"Roll-up":g.id==="modele-pvc-petreceri"?"Decoruri PVC":g.id==="modele-afise"?"Afișe":g.id==="modele-autocolante"?"Autocolante":"Etichete"} · {g.products.length}</a>)}</nav>
+        {groups.map(g=><div key={g.id} id={g.id} className="mb-10 scroll-mt-28"><h3 className="mb-5 text-xl font-bold text-slate-900">{g.title}</h3><div className="grid grid-cols-2 gap-4 lg:grid-cols-4">{g.products.map(p=>{const defaults=searchProductDefaults(p);return <Link data-search-product-card key={`${p.category}/${p.slug}`} href={searchProductPath(p)} className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition-shadow hover:shadow-md"><div className="relative aspect-square"><Image src={p.image} alt={p.title} fill className="object-contain p-4 transition-transform group-hover:scale-105" sizes="(max-width:1024px) 50vw,25vw" /></div><div className="p-4"><h4 className="text-sm font-bold leading-relaxed text-slate-900">{p.title}</h4><p className="mt-2 text-sm font-semibold text-emerald-700">{formatMoneyDisplay(searchProductPrice(p).total)}</p><p className="mt-1 text-xs text-slate-500">{defaults.quantity} buc. · {p.category==="afise"?defaults.size:`${defaults.width} × ${defaults.height} cm`}</p></div></Link>;})}</div></div>)}
+    </section>;
+}

@@ -94,6 +94,13 @@ const nextConfig: NextConfig = {
         destination: '/tapet',
         permanent: true,
       },
+      // 05.10: categoriile modelelor gata facute nu au pagina proprie; lista lor e pe /shop (SearchProductShelf)
+      { source: '/shop/pvc-forex', destination: '/shop#modele-pvc-petreceri', permanent: false },
+      { source: '/shop/afise', destination: '/shop#modele-afise', permanent: false },
+      { source: '/shop/autocolante', destination: '/shop#modele-autocolante', permanent: false },
+      { source: '/shop/rollup', destination: '/shop#modele-rollup', permanent: false },
+      // 05.10: produsul scos din catalog (proprietar); kiturile PNRR sunt in configurator
+      { source: '/produse/panouri-si-semnalizare/panou-informativ-pnrr', destination: '/configurator/fonduri-pnrr', permanent: true },
     ];
   },
 
@@ -118,6 +125,8 @@ const nextConfig: NextConfig = {
   // SWC compiler options for modern browsers
   // This tells Next.js to NOT transpile modern JS features
   experimental: {
+    // cel mult 2 poze optimizate in paralel (implicit: cate nuclee are serverul)
+    imgOptConcurrency: 2,
     isrFlushToDisk: false,
     /*
     serverActions: {
@@ -146,7 +155,11 @@ const nextConfig: NextConfig = {
   */
 
   images: {
-    formats: ['image/avif', 'image/webp'],
+    // 05.10: containerul (1 GB) era oprit de OOM cand libvips codifica AVIF / latimi de 3840 px pentru zeci de poze
+    // deodata (ex. /shop/bannere). Doar WebP, maxim 1920 px, rezultatele tinute 30 de zile.
+    formats: ['image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    minimumCacheTTL: 2592000,
     remotePatterns: [
       { protocol: 'https', hostname: 'www.homeprint.ro', pathname: '/**' },
       { protocol: 'https', hostname: 'res.cloudinary.com', pathname: '/**' },

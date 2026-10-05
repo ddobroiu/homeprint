@@ -1,3 +1,6 @@
+import { calculateBannerPrice } from "@/lib/pricing";
+import { stockBannerDefaultInput } from "@/lib/configuratorPresets";
+import { siteConfig } from "@/lib/siteConfig";
 import { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
 import { bannerProducts } from '@/lib/products/banner-products';
@@ -30,7 +33,7 @@ async function getProduct(slug: string) {
             slug: cleanSlug,
             title: landing.title,
             description: landing.seoDescription || landing.shortDescription,
-            image: landing.images?.[0] || '/products/banner/banner-1.webp',
+            image: landing.images?.[0] || '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
             price: '49 LEI/mp',
             type: 'seo',
             longDescription: landing.contentHtml,
@@ -92,10 +95,10 @@ export default async function BannerProductPage({ params }: Props) {
                 image: product.image,
                 sku: product.id,
                 offers: {
-                    price: "49.00",
+                    price: calculateBannerPrice(stockBannerDefaultInput()).finalPrice.toFixed(2),
                     priceCurrency: "RON",
                     availability: "https://schema.org/InStock",
-                    url: `https://www.HomePrint.ro/banner-product/${product.slug}`
+                    url: `${siteConfig.url}/banner-product/${product.slug}`
                 }
             }} />
 
@@ -109,7 +112,7 @@ export default async function BannerProductPage({ params }: Props) {
             </Suspense>
 
             {/* Content SEO Section */}
-            {(product as any).longDescription && (
+            {product.type === "seo" && (product as any).longDescription && (
                 <section className="container mx-auto px-4 py-16 border-t border-slate-100">
                     <div className="max-w-4xl mx-auto prose prose-slate prose-lg">
                         <div dangerouslySetInnerHTML={{ __html: (product as any).longDescription }} />

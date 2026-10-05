@@ -1,3 +1,4 @@
+import editorialPosts from "./editorialPosts.json";
 import { JUDETE_DATA } from "./judeteData";
 
 export type BlogPost = {
@@ -10,6 +11,8 @@ export type BlogPost = {
   tags: string[];
   hero?: string;
   contentHtml: string;
+  indexable?: boolean;
+  modified?: string;
 };
 
 const STATIC_POSTS: BlogPost[] = [
@@ -464,11 +467,12 @@ const STATIC_POSTS: BlogPost[] = [
   },
   {
     slug: "ghid-bannere-publicitare-homeprint",
+    modified: "2026-10-04T08:00:00.000Z",
     source: "HomePrint.ro",
     title: "Primul banner comandat pentru o petrecere de familie: 5 pași ca să nu greșești dimensiunea",
     description: "Comanzi pentru prima dată un banner pentru ziua de naștere a copilului, o nuntă mică în curte sau o vânzare de garaj și nu știi ce înseamnă opțiunile din configurator. Ghid pas cu pas, explicat pentru cineva care n-a mai comandat print până acum.",
     date: "2026-06-29T10:00:00Z",
-    author: "Echipa HomePrint",
+    author: "HomePrint",
     tags: ["banner", "configurator", "print outdoor", "ghid comanda"],
     contentHtml: `
       <p>Majoritatea oamenilor care comandă pentru prima dată un <a href="/configurator/banner">banner personalizat</a> o fac pentru un eveniment de familie – o zi de naștere, o nuntă mică organizată în curte, o vânzare de garaj sau un banner „Bun venit acasă”. Nemulțumirea cea mai frecventă nu vine din calitatea printului, ci din faptul că unele opțiuni din configurator par tehnice și neclare pentru cineva care nu a mai comandat până acum. Parcurgem cei 5 pași, explicați simplu, ca să știi exact ce alegi la fiecare.</p>
@@ -498,7 +502,7 @@ const STATIC_POSTS: BlogPost[] = [
 
       <div class="my-10 p-8 bg-amber-50 border-l-4 border-amber-500 rounded-r-2xl">
         <h3 class="text-amber-900 font-bold mb-2">Sfat rapid înainte să confirmi comanda:</h3>
-        <p class="text-amber-800 italic">Verifică de două ori orientarea dimensiunilor (lățime vs. înălțime) – este cea mai comună greșeală la comenzi online și singura care nu se poate corecta după ce bannerul e deja printat.</p>
+        <p class="text-amber-800 italic">Într-o cameră, diferența dintre un format vertical și unul orizontal schimbă compoziția, nu doar dimensiunea. Notează separat lățimea și înălțimea și compară conturul cu locul liber de pe perete. Confirmă orientarea în fișier și în comandă; dacă observi o neconcordanță după trimitere, discută imediat stadiul realizării, fără să presupui că modificarea mai este posibilă.</p>
       </div>
 
       <h2 class="text-xl font-bold mt-10 mb-3">Dacă bannerul se refolosește la evenimente viitoare</h2>
@@ -559,110 +563,15 @@ const STATIC_POSTS: BlogPost[] = [
   },
   {
     slug: "autocolante-decupate-la-contur-polimeric-sau-monomeric",
+    modified: "2026-10-04T08:00:00.000Z",
     source: "HomePrint.ro",
-    title: "Autocolantul de pe mașina ta cu logo-ul micii afaceri se dezlipește pe la colțuri? Iată de ce",
-    description: "Un autocolant pus pe geamul mașinii personale pentru a-ți promova afacerea de acasă și unul pus pe cutia poștală par identice, dar folosesc adesea folii complet diferite chimic. Explicăm diferența dintre folia monomerică și cea polimerică, ca să nu plătești în plus pentru ce nu ai nevoie – sau invers.",
+    title: "Autocolante pentru decor: alegerea foliei, suprafeței și aplicării",
+    description: "Alege un autocolant pentru perete, geam sau mobilier după suprafață, adeziv și modul de aplicare. Clarifică diferența dintre polimeric și cast.",
     date: '2026-07-07T11:21:00.000Z',
-    author: "Expert Print HomePrint",
+    author: "HomePrint",
     tags: ["autocolante", "folie polimerica", "folie monomerica", "colantare auto", "ghid materiale"],
     contentHtml: `
-      <p>Mulți oameni care pornesc o mică afacere de acasă ajung să comande un autocolant cu logo pentru geamul mașinii personale, ca reclamă mobilă gratuită la fiecare drum. Alții au nevoie doar de un autocolant decorativ pe cutia poștală sau pe geamul garajului. Deși ambele comenzi par „un sticker”, la comandă se ascunde o diferență chimică reală între tipul de folie folosit – iar alegerea greșită se vede fie în portofel de la început, fie pe suprafață după 1-2 ani.</p>
-
-      <h2 class="text-2xl font-bold mt-10 mb-4">Cele două feluri în care se fabrică folia</h2>
-      <p>Folia <b>monomerică (calandrată)</b> se obține prin trecerea materialului plastic topit printre role industriale sub presiune, care îl întind la grosimea finală – un proces rapid și ieftin, dar care „îngheață” în material tensiuni interne. Aceste tensiuni sunt motivul pentru care folia monomerică tinde să se contracte ușor (shrinkage) în timp, mai ales la căldură – relevant pentru un autocolant lăsat pe geamul mașinii parcate la soare, vară de vară.</p>
-      <p>Folia <b>polimerică (cast/turnată)</b> se obține prin turnarea materialului lichid direct pe o suprafață, unde se solidifică fără presiune mecanică. Procesul e mai lent și mai scump, dar rezultatul e un material fără tensiuni interne, extrem de subțire și flexibil, care nu se contractă practic deloc în timp.</p>
-
-      <h2 class="text-2xl font-bold mt-10 mb-4">De ce contează pe caroseria unei mașini, dar mai puțin pe cutia poștală</h2>
-      <p>Pe o suprafață perfect plană – o cutie poștală, o ușă de garaj, o vitrină mică de acasă – diferența de comportament e mai puțin vizibilă pe termen scurt. Dar pe o suprafață curbă, cum e bara sau portiera unei mașini pe care ai pus logo-ul afacerii tale, folia monomerică, fiind mai rigidă și cu tensiuni interne, tinde să se ridice de pe margini în câteva luni. Folia polimerică, flexibilă și fără tensiuni, urmează curbura fără să se dezlipească – de aceea rămâne singura variantă recomandată pentru <b>autocolante mari pe caroserie sau colantări auto parțiale</b>.</p>
-
-      <div class="overflow-x-auto my-10 shadow-xl rounded-2xl border border-slate-100">
-        <table class="min-w-full bg-white">
-          <thead class="bg-slate-900 text-white">
-            <tr>
-              <th class="px-6 py-4 text-left">Caracteristică</th>
-              <th class="px-6 py-4 text-center">Monomeric (calandrat)</th>
-              <th class="px-6 py-4 text-center">Polimeric (turnat/cast)</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-100">
-            <tr>
-              <td class="px-6 py-4 font-bold bg-slate-50">Grosime tipică</td>
-              <td class="px-6 py-4 text-center">80-100 microni</td>
-              <td class="px-6 py-4 text-center">50-60 microni</td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4 font-bold bg-slate-50">Durată de viață exterior</td>
-              <td class="px-6 py-4 text-center">1-3 ani</td>
-              <td class="px-6 py-4 text-center text-amber-600 font-bold">5-7 ani</td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4 font-bold bg-slate-50">Aplicare pe suprafețe curbe</td>
-              <td class="px-6 py-4 text-center text-red-500">Nerecomandat</td>
-              <td class="px-6 py-4 text-center text-amber-600 font-bold">Excelent</td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4 font-bold bg-slate-50">Contracție în timp (shrinkage)</td>
-              <td class="px-6 py-4 text-center">Vizibilă</td>
-              <td class="px-6 py-4 text-center text-amber-600 font-bold">Minimă</td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4 font-bold bg-slate-50">Preț</td>
-              <td class="px-6 py-4 text-center text-amber-600 font-bold">Scăzut</td>
-              <td class="px-6 py-4 text-center">Ridicat</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="overflow-x-auto my-10 shadow-xl rounded-2xl border border-slate-100">
-        <table class="min-w-full bg-white">
-          <thead class="bg-slate-900 text-white">
-            <tr>
-              <th class="px-6 py-4 text-left">Caracteristică</th>
-              <th class="px-6 py-4 text-center">Monomeric (calandrat)</th>
-              <th class="px-6 py-4 text-center">Polimeric (turnat/cast)</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-100">
-            <tr>
-              <td class="px-6 py-4 font-bold bg-slate-50">Durată de viață exterior</td>
-              <td class="px-6 py-4 text-center">1-3 ani</td>
-              <td class="px-6 py-4 text-center text-amber-600 font-bold">5-7 ani</td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4 font-bold bg-slate-50">Aplicare pe caroserie de mașină</td>
-              <td class="px-6 py-4 text-center text-red-500">Nerecomandat</td>
-              <td class="px-6 py-4 text-center text-amber-600 font-bold">Excelent</td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4 font-bold bg-slate-50">Cutie poștală, ușă de garaj, suprafață plană</td>
-              <td class="px-6 py-4 text-center text-amber-600 font-bold">Suficient</td>
-              <td class="px-6 py-4 text-center">Ok, dar cost în plus inutil</td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4 font-bold bg-slate-50">Preț</td>
-              <td class="px-6 py-4 text-center text-amber-600 font-bold">Scăzut</td>
-              <td class="px-6 py-4 text-center">Ridicat</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h2 class="text-2xl font-bold mt-10 mb-4">Când monomericul e de fapt alegerea corectă pentru un proiect de acasă</h2>
-      <p>Nu recomandăm automat varianta scumpă. Pentru un autocolant pe cutia poștală, pe geamul de la garaj sau pe o ladă de flori din curte – suprafețe plane, care nu stau ani întregi expuse la fel de intens ca o mașină – folia monomerică e complet suficientă și costă mult mai puțin. Plătești în plus degeaba dacă alegi polimeric pentru un <a href="/configurator/autocolante">autocolant decupat la contur</a> care oricum va fi înlocuit la o renovare sau schimbare de decor peste 1-2 ani.</p>
-
-      <h2 class="text-2xl font-bold mt-10 mb-4">Autocolantul pentru mașina personală: aici merită investiția</h2>
-      <p>Dacă logo-ul afacerii tale de acasă merge pe geamul sau portiera mașinii cu care mergi zilnic, ai nevoie de folie polimerică, gândită special pentru suprafețe curbe, cu grosime și elasticitate calibrate să urmeze curbura caroseriei fără să se rupă la colțuri. O folie monomerică aplicată pe o suprafață curbă va ceda vizibil în câteva luni, cu ridicări pe margini – exact opusul efectului dorit pentru o reclamă mobilă gândită să dureze ani de zile.</p>
-
-      <div class="my-10 p-8 bg-amber-50 border-l-4 border-amber-500 rounded-r-2xl">
-        <h3 class="text-amber-900 font-bold mb-2">Un detaliu util dacă vrei să scoți autocolantul mai târziu:</h3>
-        <p class="text-amber-800 italic">Folia polimerică de calitate se desprinde de regulă curat, fără reziduu de adeziv pe caroserie – relevant dacă vinzi mașina sau vrei să scoți logo-ul mai târziu. Folia monomerică ieftină, mai ales după mult timp la soare, poate lăsa urme de adeziv întărit, greu de îndepărtat fără produse chimice speciale.</p>
-      </div>
-
-      <h2 class="text-2xl font-bold mt-10 mb-4">O regulă simplă, dacă nu vrei să reții toată chimia din spate</h2>
-      <p>Dacă suprafața e plană și autocolantul rămâne pe loc sub 2 ani (cutie poștală, geam de garaj, decor temporar de sezon) – monomeric. Dacă suprafața e curbă (mașină) sau vrei ca autocolantul să reziste peste 3-4 ani la exterior – polimeric, indiferent de costul suplimentar.</p>
-
-      <p>Dacă nu ești sigur ce tip de folie se potrivește proiectului tău de acasă, spune-ne suprafața pe care se aplică și cât timp vrei să reziste – îți recomandăm direct varianta corectă înainte să plasezi comanda în <a href="/configurator/autocolante">configuratorul de autocolante</a>.</p>
+<p>Pentru un autocolant de decor, începe cu suprafața pe care îl vei folosi: perete, geam, mobilier sau alt suport. Două materiale care arată asemănător în previzualizare pot avea adezivi și utilizări diferite. Nu alege după promisiunea unei durate universale și nu considera «polimeric» și «cast» sinonime.</p><h2>Materialul trebuie identificat exact</h2><p>Există folii monomerice și polimerice calandrate, iar foliile cast, adică turnate, reprezintă o categorie distinctă. Înainte de comandă, verifică denumirea produsului, adezivul și suprafețele recomandate. <a href='https://graphics.averydennison.com/eu-en/home/products/digital-imaging-media/polymeric-calendered/mpi-2000-specialty-series/mpi-2601-wall-film.html'>Un exemplu de folie polimerică pentru pereți din documentația Avery Dennison</a> arată de ce categoria nu trebuie confundată cu materialele cast. Exemplul explică alegerea, fără să confirme că modelul respectiv este disponibil la HomePrint.</p><h2>Separă geamul de peretele vopsit</h2><p>O suprafață netedă de sticlă și un perete vopsit nu cer automat același adeziv. Pe perete, verifică starea vopselei, curățenia, uscarea și recomandările de aplicare. Pe geam, ține cont și de tratamentele sau funcțiile speciale. Nu testa compatibilitatea prin aplicarea întregii grafici pe o suprafață despre care nu ai informații.</p><table><thead><tr><th>Unde aplici</th><th>Ce verifici înainte</th></tr></thead><tbody><tr><td>Perete</td><td>Vopsea stabilă și material recomandat pentru suprafață</td></tr><tr><td>Geam</td><td>Compatibilitate, vizibilitate și metodă de aplicare</td></tr><tr><td>Mobilier</td><td>Finisajul, adezivul și comportamentul la îndepărtare</td></tr></tbody></table><h2>Gândește îndepărtarea de la început</h2><p>Pentru decor temporar, clarifică dacă produsul este destinat îndepărtării și în ce condiții. Termenul «removabil» nu trebuie transformat într-o promisiune că orice suprafață va rămâne neatinsă. Finisajul de dedesubt, durata și condițiile de utilizare contează. Într-un spațiu închiriat, discută cu administratorul înainte de intervenție.</p><h2>Decuparea și adezivul sunt decizii diferite</h2><p>Decuparea la contur descrie forma piesei, nu compatibilitatea ei cu peretele. Pregătește un contur care poate fi realizat conform cerințelor produsului și verifică dimensiunile fiecărui element. La un set de piese, notează ordinea și distanțele; nu deduce poziția dintr-o singură fotografie de prezentare.</p><h2>Aplicarea urmează produsul concret</h2><p>Nu prelua automat metoda umedă sau uscată dintr-un tutorial pentru altă folie. Cere instrucțiunile materialului și pregătește uneltele recomandate. Dacă suprafața este sensibilă ori compoziția este mare, clarifică necesitatea unei persoane cu experiență. O racletă și o imagine de pe internet nu confirmă că lucrarea poate fi făcută fără riscuri pentru finisaj.</p><h2>Lista de verificare HomePrint</h2><ul><li>Suprafața și starea ei sunt identificate.</li><li>Produsul și adezivul sunt potrivite utilizării confirmate.</li><li>Dimensiunile și contururile sunt aprobate.</li><li>Aplicarea și eventuala îndepărtare sunt clarificate.</li><li>Opțiunile disponibile sunt verificate în comandă.</li></ul><p>Consultă <a href='/configurator/autocolante'>configuratorul de autocolante</a> și <a href='/pregatire-fisiere'>pregătirea graficii</a>. Pentru decorul întregului perete, compară și <a href='/blog/plan-perete-accent-tapet-canvas-masuratori'>tapetul cu un canvas</a>, înainte să fixezi soluția.</p>
     `,
   },
   {
@@ -713,11 +622,12 @@ const STATIC_POSTS: BlogPost[] = [
   },
   {
     slug: "banner-frontlit-vs-banner-blockout-alegerea-corecta",
+    modified: "2026-10-04T08:00:00.000Z",
     source: "HomePrint.ro",
     title: "Bannerul de la petrecerea de weekend „dispare” la prânz? Testul simplu care îți spune de ce",
     description: "Ai montat bannerul de aniversare între doi stâlpi din curte și la prânz, cu soare puternic, textul aproape că dispare. Nu e o problemă de calitate a printului – explicăm testul simplu prin care afli, înainte de comandă, dacă ai nevoie de material blockout, nu de frontlit standard.",
     date: '2026-07-15T13:55:00.000Z',
-    author: "Echipa HomePrint.ro",
+    author: "HomePrint",
     tags: ["bannere", "frontlit", "blockout", "structura banner", "publicitate outdoor"],
     contentHtml: `
       <p>„Am montat bannerul aseară și arăta perfect, dar azi la prânz abia se mai citește” este o observație pe care o auzim des de la clienți care organizează o petrecere în curte sau un eveniment de familie afară. Nu e o problemă de producție – e o problemă fizică simplă, legată de tipul de material ales pentru locul unde stă montat bannerul. Iată cum verifici din start dacă ai nevoie de frontlit standard sau de blockout.</p>
@@ -730,15 +640,15 @@ const STATIC_POSTS: BlogPost[] = [
       </ul>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">De ce se întâmplă asta fizic</h2>
-      <p>Bannerul frontlit este construit dintr-o singură structură de poliester țesut, îmbrăcat într-un strat de PVC – suficient de opac pentru lumină reflectată normal, dar nu blochează complet lumina care trece direct prin grosimea materialului la intensitate mare. Bannerul <a href="/configurator/banner-verso">blockout</a> rezolvă exact această problemă printr-o inserție interioară opacă (un strat de polimer sau carbon negru) sandvișată între două straturi de PVC printabile – practic trei straturi lipite, față de structura simplă a frontlitului.</p>
+      <p>Într-un spațiu interior, verifică din ce direcție vine lumina și dacă materialul va fi privit dintr-o singură parte. Frontlit și Blockout nu se aleg doar după culoarea de fundal a machetei. Consultă opțiunile produsului pentru utilizarea prevăzută și compară nevoia de opacitate cu felul în care piesa va fi afișată.</p>
 
       <div class="my-10 p-8 bg-amber-50 border-l-4 border-amber-500 rounded-r-2xl">
         <h3 class="text-amber-900 font-bold mb-2">Bonus tehnic: printul față-verso</h3>
-        <p class="text-amber-800 italic">Pentru că stratul interior blochează lumina complet, un banner blockout poate avea grafică diferită pe fiecare față fără ca cele două imagini să „se vadă” una prin cealaltă în transparență – esențial pentru steaguri perpendiculare pe clădiri sau bannere văzute din ambele sensuri ale unei străzi.</p>
+        <p class="text-amber-800 italic">Dacă un material separă două zone ale unei încăperi și trebuie privit din ambele direcții, pregătește ambele fețe ca variante distincte. Verifică sensul textului și orientarea imaginilor înainte de aprobare. Un suport destinat unei singure fețe nu trebuie considerat echivalent doar pentru că are aceleași dimensiuni.</p>
       </div>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">Diferența de greutate, și de ce contează</h2>
-      <p>Frontlitul standard cântărește de regulă 440-510 g/mp. Structura suplimentară de trei straturi a blockout-ului îl duce la 500-600 g/mp, ceea ce înseamnă un material vizibil mai rigid și mai puțin flexibil la vânt puternic – un avantaj suplimentar pentru montaje permanente, dar și un cost de transport/montaj ușor mai mare la suprafețe foarte mari.</p>
+      <p>Greutatea și grosimea se verifică pentru varianta concretă, nu se deduc numai din numele comercial. În interior, contează și felul în care materialul poate fi susținut, depozitat sau mutat. Compară specificațiile confirmate în comandă și discută separat prinderea; un material mai greu nu dovedește prin el însuși că ansamblul este mai potrivit.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">Scenarii tipice pentru evenimente și proiecte de acasă</h2>
       <ul class="list-disc pl-6 space-y-2 my-6">
@@ -762,21 +672,22 @@ const STATIC_POSTS: BlogPost[] = [
   },
   {
     slug: "dimensiuni-hartie-a0-a1-a2-a3-a4-a5-a6",
+    modified: "2026-10-04T08:00:00.000Z",
     title: "Un secret matematic vechi de un secol, ascuns în orice foaie A4 din sertarul tău",
     description: "Foaia A4 din imprimanta de acasă ascunde un raport matematic exact – rădăcina din 2 – ales deliberat acum aproape un secol, ca să permită înjumătățirea perfectă, fără resturi. Explicăm logica din spate și cum o folosești practic la orice comandă de print, de la invitații la postere.",
     date: '2026-07-19T14:12:00.000Z',
-    author: "Expert Print HomePrint",
+    author: "HomePrint",
     tags: ["dimensiuni hartie", "standard iso 216", "format a3", "format a4", "ghid print"],
     source: "HomePrint.ro",
     contentHtml: `
       <p>Aproape toată lumea a printat vreodată o foaie A4, dar puțini s-au întrebat de ce are exact 210 x 297 mm și nu, de exemplu, 200 x 300 mm – ar fi fost un raport mult mai ușor de reținut. Răspunsul nu e întâmplător, ci o decizie matematică deliberată, veche de aproape un secol, din standardul internațional ISO 216. Odată ce înțelegi principiul, calculezi mental orice format din serie – util mai ales dacă pregătești singur o invitație, un poster sau un fișier pentru print și vrei să știi ce dimensiune să alegi.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">Secretul din spatele fiecărei coli: rădăcina din 2</h2>
-      <p>Toate formatele seriei A păstrează același raport între latura lungă și cea scurtă: aproximativ 1,414 (rădăcina pătrată din 2). Acest raport specific are o proprietate unică: dacă tai o foaie exact pe jumătate, pe latura lungă, cele două jumătăți rezultate păstrează același raport 1,414 între laturile lor – doar că sunt mai mici. Niciun alt raport de aspect nu are această proprietate. De aceea, înjumătățirea unui A3 dă exact două foi A4, fără resturi și fără deformarea proporției.</p>
+      <p>Seria A este utilă când alegi afișe și tipărituri în formate standard. Pentru decorul unei camere, folosește dimensiunile efective, nu doar numele A3 sau A4. Testează conturul pe perete și verifică dacă raportul imaginii se potrivește; un fișier pregătit pentru altă proporție poate necesita o nouă încadrare.</p>
 
       <div class="my-10 p-8 bg-amber-50 border-l-4 border-amber-500 rounded-r-2xl">
         <h3 class="text-amber-900 font-bold mb-2">Cum calculezi mental orice format din serie:</h3>
-        <p class="text-amber-800 italic">Pornești de la A0, care prin definiție are exact 1 metru pătrat suprafață (841 x 1189 mm). Fiecare format următor (A1, A2, A3...) este jumătate din suprafața celui anterior. Deci A4 are 1/16 dintr-un metru pătrat, iar A6 are 1/64.</p>
+        <p class="text-amber-800 italic">De la A0 la A1, apoi A2 și mai departe, suprafața nominală se înjumătățește. Dimensiunile uzuale sunt exprimate în milimetri și rotunjite la valori întregi. Pentru o compoziție cu mai multe piese, calculează separat spațiile dintre ele: două afișe alăturate nu ocupă doar suma lățimilor dacă lași o distanță între rame sau suporturi.</p>
       </div>
 
       <div class="overflow-x-auto my-8">
@@ -1029,7 +940,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Specialist Evenimente HomePrint",
     tags: ["cadouri personalizate", "nunta", "botez", "tablouri canvas", "idee cadou"],
     source: "HomePrint.ro",
-    hero: "/products/canvas/canvas-1.webp",
+    hero: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
     contentHtml: `
       <p>Majoritatea cadourilor primite la o nuntă sau un botez au aceeași soartă: un obiect frumos, folosit o dată sau deloc, care ajunge într-un dulap. Un tablou canvas personalizat scapă de regulă de acest destin – e agățat pe perete și rămâne acolo ani întregi, ceea ce îl face un cadou memorabil, dar și unul care ridică întrebări reale înainte de comandă. Le răspundem direct, exact cum ne sunt puse la telefon de cei care comandă pentru prima dată.</p>
 
@@ -1083,7 +994,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Inginer Producție HomePrint",
     tags: ["mesh", "banner frontlit", "publicitate outdoor", "siguranta", "noutati"],
     source: "HomePrint.ro",
-    hero: "/products/mesh/mesh_publicitar_personalizat.jpg",
+    hero: "/products/grafica-originala/banner-mesh-perforat-grafica-constructii.webp",
     contentHtml: `
       <p>Când renovezi fațada casei – termoizolație, zugrăvit sau reparații la acoperiș – schela rămasă montată săptămâni întregi arată urât din stradă și lasă praful să zboare spre curte sau vecini. Ideea de a o acoperi cu un material printat (fie doar o folie simplă, fie chiar un banner cu o imagine a casei finalizate) pare simplă, dar alegerea materialului nu e doar estetică – e o chestiune de fizică și siguranță. Iată patru întrebări care decid rapid dacă ai nevoie de mesh perforat sau de un banner plin obișnuit.</p>
 
@@ -1139,7 +1050,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Creative Director HomePrint",
     tags: ["design grafic", "bannere", "publicitate", "sfaturi", "vizibilitate"],
     source: "HomePrint.ro",
-    hero: "/products/banner/banner-1.webp",
+    hero: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
     contentHtml: `
       <p>O mașină care trece pe lângă un <a href="/configurator/banner">banner montat pe gard</a> are, în medie, 3-4 secunde de contact vizual cu el – fie că anunță o vânzare de garaj, o petrecere sau că o casă e de vânzare. Nu contează câte informații ai reușit să încapi în design, contează doar ce apucă ochiul să proceseze în acest interval scurt. Înainte să trimiți fișierul la print, parcurge acest checklist scurt; e practic lista pe care o folosim și noi la verificarea grafică înainte de aprobarea comenzii.</p>
 
@@ -1176,10 +1087,11 @@ const STATIC_POSTS: BlogPost[] = [
   },
   {
     slug: "print-uv-vs-print-solvent-diferente-tehnologie",
+    modified: "2026-10-04T08:00:00.000Z",
     title: "„Nu pune tabloul ăla proaspăt printat în camera copilului, miroase a chimicale” – mit sau adevăr?",
     description: "Circulă multă informație contradictorie despre siguranța printurilor de acasă – tablouri, autocolante decorative, bannere de petrecere. Trecem prin afirmațiile cele mai des auzite despre print UV și print solvent și explicăm ce e tehnic exact și ce e exagerare.",
     date: '2026-04-03T11:11:00.000Z',
-    author: "Expert Tehnic HomePrint",
+    author: "HomePrint",
     tags: ["tehnologie print", "print uv", "print solvent", "ecologie", "calitate", "noutati"],
     source: "HomePrint.ro",
     hero: "/products/canvas/canvas-4.webp",
@@ -1187,13 +1099,13 @@ const STATIC_POSTS: BlogPost[] = [
       <p>Când comanzi un <a href="/configurator/canvas">tablou canvas</a> pentru camera copiilor sau un <a href="/configurator/autocolante">autocolant decorativ</a> pentru living, tehnologia de print rar apare explicit în discuție – dar diferența dintre UV și solvent se vede clar în rezultatul final, mai ales dacă vrei să agăți obiectul imediat, într-o cameră unde dorm copiii. Circulă multe afirmații despre cele două tehnologii, nu toate exacte. Le trecem pe rând.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">„Printul solvent e depășit, nimeni nu-l mai folosește” — Mit</h2>
-      <p>Fals. Cerneala solvent rămâne folosită pe scară largă în industrie, inclusiv pentru materiale mari la costuri reduse. Adevărul e mai nuanțat: solventul funcționează prin pătrundere chimică ușoară în material, care se usucă prin evaporare — un proces mai lent (uneori nevoie de ore bune de uscare înainte de manipulare) și care emite compuși organici volatili (VOC) cu miros caracteristic „de chimic” resimțit la un banner proaspăt printat.</p>
+      <p>Numele tehnologiei nu decide singur dacă o imagine este potrivită pentru interior. Cere informațiile relevante despre suport, aplicație și manipulare și respectă instrucțiunile produsului. Evită concluzia că o tehnologie este depășită în orice situație; compară rezultatul cerut și specificațiile confirmate, nu etichetele generale.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">„UV-ul rezistă de câteva ori mai mult la soare” — Adevărat, cu nuanță</h2>
-      <p>Cerneala UV se polimerizează (se întărește) instant sub lămpi UV de mare putere, în loc să se usuce prin evaporare. Rezultatul e un strat de vopsea solid, aderent, mai rezistent mecanic și la radiație solară decât un strat solvent uscat clasic. Nuanța: rezistența finală a unui banner outdoor depinde și de gramajul și calitatea materialului suport, nu doar de cerneală — cerneala UV pe un material subțire de proastă calitate tot se degradează, doar mai încet decât solventul pe același material.</p>
+      <p>La printul UV, cerneala este întărită prin expunere la radiație ultravioletă. Pentru o piesă de decor, verifică însă întregul produs: suportul, finisarea și condițiile de utilizare. Nu deduce o durată de viață sau o rezistență universală doar din denumirea tehnologiei și nu considera că toate materialele imprimate astfel se comportă identic.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">„Nu contează tehnologia pentru claritatea imaginii” — Fals</h2>
-      <p>Picătura de cerneală solvent are tendința să se întindă puțin pe material înainte de uscare, ceea ce poate „rotunji” ușor detaliile fine — text mărunt sau linii subțiri. Cerneala UV se întărește instant la impact, deci picătura rămâne aproape de forma originală, cu contur mai precis. Diferența e vizibilă mai ales la fonturi mici sau grafică cu detaliu fin, nu la un banner cu text mare, unde practic nu se observă.</p>
+      <p>Detaliile unei fotografii depind și de sursa imaginii, de scara la care este folosită și de procesul concret de realizare. Dacă un text este prea mic în compoziție, schimbarea tehnologiei nu îl face automat potrivit pentru distanța de privire din cameră. Verifică întâi designul în formatul final și abia apoi cerințele de reproducere.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">„Printul UV e sigur pentru camera copiilor, solventul nu” — Adevărat</h2>
       <p>Aici mitul e de fapt fapt: mirosul de „chimic” de la un obiect proaspăt printat vine din VOC-urile emise de cerneala solvent la uscare. Printul UV, fără acest proces de evaporare, nu emite mirosuri semnificative și e potrivit pentru a fi agățat imediat în orice cameră – inclusiv dormitorul copiilor, o cameră mică fără ventilație puternică sau un birou de acasă unde petreci ore întregi. E și motivul pentru care folosim tehnologia UV la <a href="/configurator/canvas">tablourile canvas</a> destinate interiorului locuinței, nu doar la materialele outdoor.</p>
@@ -1238,7 +1150,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Account Manager HomePrint",
     tags: ["roll-up", "evenimente", "sisteme expozitionale", "comparatie", "noutati"],
     source: "HomePrint.ro",
-    hero: "/products/rollup/rollup-1.webp",
+    hero: "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp",
     contentHtml: `
       <p>Pentru cineva care vinde produse handmade la târguri locale sau piețe de weekend, un <a href="/configurator/rollup">roll-up</a> bun cu numele afacerii te scoate din anonimat printre zecile de tarabe similare. Diferența de preț dintre varianta Standard și cea Premium nu ține de calitatea imaginii printate – la HomePrint.ro folosim același material de top pe ambele variante. Diferența e strict mecanică, în caseta care întinde și retrage materialul. Ca să nu plătești în plus degeaba sau, invers, să nu subestimezi ce ai nevoie, răspunde-ți sincer la trei întrebări.</p>
 
@@ -1376,7 +1288,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Marketing Expert HomePrint",
     tags: ["flayere", "pliante", "broșuri", "marketing", "strategie", "noutati"],
     source: "HomePrint.ro",
-    hero: "/products/flayere/flayere-1.webp",
+    hero: "/products/grafica-originala/flyer-publicitar-grafica-atelier-creativ.webp",
     contentHtml: `
       <p>Flayerul și pliantul par variante ale aceluiași lucru – hârtie printată, distribuită direct oamenilor. De fapt, alegerea corectă depinde aproape exclusiv de complexitatea mesajului pe care trebuie să-l transmiți, nu de bugetul disponibil. Urmărim cum ar decide trei situații diferite, foarte comune pentru cineva care pornește o mică activitate de acasă.</p>
 
@@ -1426,10 +1338,11 @@ const STATIC_POSTS: BlogPost[] = [
   },
   {
     slug: "3-elemente-design-flayer-care-vinde",
+    modified: "2026-10-04T08:00:00.000Z",
     title: "Fluturașul pentru serviciul tău de curățenie sau meditații ajunge la gunoi în 2 secunde? Verifică aceste 3 puncte",
     description: "Majoritatea fluturașilor strecurați la cutii poștale ajung direct la gunoi. Un test scurt, cu 3 puncte de verificat pe designul tău, îți arată dacă fluturașul pentru mica ta afacere de acasă are șanse reale să fie citit sau doar aruncat.",
     date: '2026-05-23T16:36:00.000Z',
-    author: "Creative Designer HomePrint",
+    author: "HomePrint",
     tags: ["design flayer", "marketing vizual", "conversie", "sfaturi design", "noutati"],
     source: "HomePrint.ro",
     hero: "/products/flayere/flayere-2.webp",
@@ -1453,7 +1366,7 @@ const STATIC_POSTS: BlogPost[] = [
 
       <div class="my-10 p-10 bg-slate-900 text-white rounded-[2rem] shadow-2xl">
           <h3 class="text-2xl font-black mb-4 text-amber-400">Rezultatul testului de 2 secunde:</h3>
-          <p class="text-lg">3 din 3 puncte clare — designul e gata de print. Dacă persoana testată ezită la oricare punct, problema nu e cantitatea de informație, ci lipsa de claritate pe unul din cele trei elemente de mai sus. Simplifică înainte de a trimite fișierul, nu după ce ai deja stocul tipărit.</p>
+          <p class="text-lg">Un test rapid cu altă persoană poate arăta dacă mesajul este înțeles, însă nu validează singur fișierul pentru producție. Pentru un material expus într-o încăpere, testează și poziția față de mobilier și lumină. Încheie aprobarea numai după verificarea dimensiunilor, a datelor și a cerințelor produsului ales.</p>
       </div>
 
       <p>Ai nevoie de fluturași care să producă rezultate reale, nu doar hârtie colorată? Încarcă grafica în <a href="/configurator/flayere">configuratorul nostru online</a> sau contactează echipa de graficieni HomePrint.ro pentru un design ajustat după acest test.</p>
@@ -1493,10 +1406,11 @@ const STATIC_POSTS: BlogPost[] = [
   },
   {
     slug: "cum-sa-ai-grija-de-roll-up-sfaturi-intretinere",
+    modified: "2026-10-04T08:00:00.000Z",
     title: "Roll-up-ul folosit la ultimele 5 târguri a început să stea strâmb? Iată de obicei de ce",
     description: "Dacă vinzi la piețe și târguri de weekend cu regularitate, roll-up-ul devine echipamentul cel mai des manevrat din tot standul tău. Materialul franjurat, arcul care nu mai retrage sau caseta îndoită au aproape mereu aceeași cauză, ușor de evitat pe viitor.",
     date: '2026-06-12T08:10:00.000Z',
-    author: "Service Tehnic HomePrint",
+    author: "HomePrint",
     tags: ["roll-up", "intretinere", "sfaturi practice", "echipamente", "noutati"],
     source: "HomePrint.ro",
     hero: "/products/rollup/rollup-3.webp",
@@ -1504,23 +1418,23 @@ const STATIC_POSTS: BlogPost[] = [
       <p>Pentru cineva care vinde la piețe și târguri de weekend, <a href="/configurator/rollup">roll-up-ul</a> ajunge să fie montat și demontat de zeci de ori pe an – mult mai des decât la un stand corporate folosit o dată sau de două ori. Majoritatea problemelor care apar – material franjurat, mecanism care se blochează, casetă îndoită – nu vin dintr-un produs slab, ci din manevrare repetată incorectă. Iată cele mai frecvente probleme și cauza lor reală, ca să știi ce să corectezi data viitoare.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">„Materialul s-a franjurat pe margini, deși l-am folosit de puține ori”</h2>
-      <p><strong>Cauza probabilă:</strong> tragerea barei superioare dintr-o singură parte, nu de la mijloc cu ambele mâini. Tensiunea inegală creată astfel face ca marginea materialului să se frece constant de peretele interior al casetei la fiecare desfacere, iar franjurarea e efectul cumulat al acestei frecări repetate — nu al unui material slab calitativ.</p>
+      <p>Dacă materialul unui roll-up se retrage neuniform sau marginea se deteriorează, oprește manevrarea și verifică instrucțiunile mecanismului. O fotografie a problemei nu dovedește automat cauza. Într-un spațiu interior, verifică și dacă ansamblul stă drept și poate fi folosit fără contact cu mobilierul sau cu traseul persoanelor.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">„Arcul de retragere s-a blocat sau pare mai slab”</h2>
-      <p><strong>Cauza probabilă:</strong> demontajul prea brusc, cu bara lăsată să se ruleze singură în casetă cu viteză, în loc să fie însoțită manual până la oprirea completă. Impactul repetat la finalul cursei pune presiune pe pinii de fixare ai arcului intern, iar uzura se acumulează exact acolo.</p>
+      <p>La strângere, controlează mișcarea conform instrucțiunilor produsului și nu forța un mecanism care se blochează. Dacă observi o schimbare de comportament, cere evaluarea furnizorului înainte de următoarea utilizare. Nu atribui automat defectul unei singure operațiuni și nu încerca improvizații care pot deteriora sistemul.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">„Caseta de aluminiu s-a îndoit și roll-up-ul stă aplecat”</h2>
-      <p><strong>Cauza probabilă:</strong> transportul fără geantă de protecție. Caseta variantei Standard e realizată din aluminiu relativ subțire — suficient de rezistentă la utilizare normală, dar vulnerabilă la lovituri directe în portbagaj sau la depozitare printre alte obiecte. Geanta cu fermoar livrată cu sistemul nu e un accesoriu opțional, e parte din protecția reală a produsului.</p>
+      <p>Păstrează roll-up-ul protejat în timpul transportului și nu așeza obiecte grele peste casetă. La destinație, inspectează ansamblul înainte de deschidere. Un model destinat afișării în interior nu trebuie tratat ca o structură de exterior; locul de utilizare și condițiile de manipulare rămân cele din instrucțiunile sale.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">„Culorile par mai puțin vii după câteva luni de folosire”</h2>
-      <p><strong>Cauza probabilă:</strong> curățarea cu produse nepotrivite. Solvenții, alcoolul sau detergenții abrazivi pot ataca treptat stratul de cerneală UV, chiar dacă acesta e rezistent în condiții normale. Singurul produs recomandat pentru materialul din polipropilenă e o lavetă de microfibră ușor umezită cu apă simplă.</p>
+      <p>Pentru un material de interior, verifică metoda de curățare acceptată înainte să aplici un produs pe toată suprafața. Materialul suport și stratul imprimat pot avea cerințe diferite. Nu presupune că un detergent potrivit pentru mobilier este potrivit și pentru print; dacă instrucțiunea nu este clară, cere confirmarea furnizorului.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">„Materialul s-a ondulat la margini (efect de curling)”</h2>
-      <p><strong>Cauza probabilă:</strong> depozitare în temperaturi extreme — o mașină parcată la soare direct vara sau într-un spațiu neîncălzit iarna. Căldura sau frigul excesiv deformează filmul de polipropilenă anti-curl, exact materialul conceput să reziste la ondulare în condiții normale de utilizare.</p>
+      <p>Depozitează produsul după instrucțiuni, într-un loc în care nu este presat de alte obiecte și nu este expus condițiilor nepotrivite. Dacă un material s-a deformat, nu îl îndrepta prin încălzire improvizată. Verifică posibilitatea de reutilizare pentru produsul concret înainte să îl expui din nou.</p>
 
       <div class="my-10 p-10 bg-slate-900 text-white rounded-[2rem] shadow-2xl">
           <h3 class="text-2xl font-black mb-4 text-amber-400">Regula generală de reținut:</h3>
-          <p class="text-lg">Aproape toate problemele de mai sus au aceeași cauză de fond — manevrare rapidă, sub presiune de timp, în locul unei manipulări lente și controlate. Un roll-up montat și demontat cu grijă, transportat în geanta lui, rezistă la zeci de utilizări fără uzură vizibilă.</p>
+          <p class="text-lg">Pregătește un loc liber pentru montarea și strângerea roll-up-ului și alocă timp operațiunii. Pentru o piesă folosită periodic în showroom sau la prezentări, o evidență a stării și a accesoriilor ajută mai mult decât o regulă generică despre numărul de utilizări. Notează problema observată și verifică ansamblul înaintea următorului eveniment.</p>
       </div>
 
       <p>Dacă sistemul tău actual a ajuns deja uzat de la atâtea drumuri la piață, comandă un <a href="/configurator/rollup">roll-up nou de la HomePrint.ro</a> – folosim mecanisme verificate cu arcuri robuste, gândite exact pentru utilizarea repetată, weekend de weekend.</p>
@@ -1534,7 +1448,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Specialist Colantări HomePrint",
     tags: ["window graphics", "one way vision", "autocolant vitrine", "publicitate", "noutati"],
     source: "HomePrint.ro",
-    hero: "/products/window-graphics/window-graphics-1.webp",
+    hero: "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp",
     contentHtml: `
       <p>Tot mai mulți oameni transformă un garaj, o cameră de la stradă sau un colț din curte într-un mic atelier sau birou de acasă, vizibil direct din stradă prin geam. Greșeala frecventă e să tratezi întreaga fereastră ca pe o singură suprafață și să alegi un singur material pentru tot geamul. De fapt, o fereastră expusă spre stradă are de obicei 2-3 zone cu nevoi diferite, iar materialul potrivit variază de la o zonă la alta – exact ca la o vitrină de magazin.</p>
 
@@ -1580,10 +1494,11 @@ const STATIC_POSTS: BlogPost[] = [
   },
   {
     slug: "ghid-aplicare-autocolant-one-way-vision-geam-fara-bule",
+    modified: "2026-10-04T08:00:00.000Z",
     title: "Vrei să aplici singur folia One Way Vision în weekend? 5 greșeli de DIY pe care le vedem cel mai des",
     description: "Aplicarea autocolantului One Way Vision e un proiect de weekend pe care îl poate face oricine, fără experiență anterioară, dacă evită câteva greșeli repetitive. Le trecem în revistă înainte să începi montajul acasă.",
     date: '2026-07-03T10:44:00.000Z',
-    author: "Echipa de Montaj HomePrint",
+    author: "HomePrint",
     tags: ["montaj autocolant", "one way vision", "sfaturi practice", "diy", "noutati"],
     source: "HomePrint.ro",
     hero: "/products/window-graphics/window-graphics-2.webp",
@@ -1591,23 +1506,23 @@ const STATIC_POSTS: BlogPost[] = [
       <p>Aplicarea autocolantului <a href="/configurator/window-graphics">One Way Vision</a> e un proiect DIY realist pentru un weekend acasă – mai iertătoare decât la un autocolant plin, pentru că perforațiile permit aerului să iasă mai ușor din spatele materialului. Totuși, majoritatea aplicărilor eșuate de acasă au aceleași câteva cauze repetitive. Le trecem în revistă, ca să le eviți din prima încercare, fără să fie nevoie de experiență anterioară.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">Greșeala 1: Curățarea geamului o singură dată</h2>
-      <p>Orice fir de praf sau rest de grăsime rămas sub autocolant creează o proeminență vizibilă permanent, imposibil de corectat după fixare. Un geam „vizibil curat” nu înseamnă neapărat curat pentru montaj — o singură trecere cu soluție de curățat geamuri lasă adesea urme fine. Curăță geamul de minim două ori, cu lavetă fără scame, chiar dacă la prima vedere pare deja impecabil.</p>
+      <p>Înainte de aplicarea unei folii decorative pe geam, verifică instrucțiunile produsului pentru curățare și compatibilitate. Praful și reziduurile pot afecta rezultatul, dar aspectul final depinde și de material și de aplicare. Nu folosi o soluție aleasă la întâmplare și nu începe montajul până când suprafața nu este pregătită corespunzător.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">Greșeala 2: Aplicarea „uscată” fără experiență anterioară</h2>
-      <p>Metoda uscată (fără apă) e mai rapidă, dar nu permite repoziționarea odată ce autocolantul atinge geamul — orice greșeală de aliniere devine permanentă instant. Pentru cineva la prima aplicare, metoda umedă (un strat fin de apă cu puțin săpun lichid pulverizat pe geam) e mult mai sigură: apa permite „glisarea” autocolantului până ajunge exact în poziție, înainte de a-l fixa definitiv cu racleta.</p>
+      <p>Metoda de aplicare se stabilește după folia și adezivul concret. Nu alege automat aplicarea umedă sau uscată dintr-un tutorial despre alt produs. Pentru o vitrină ori un geam de interior, cere procedura recomandată și verifică dimensiunea și poziția înainte să îndepărtezi protecția adezivului.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">Greșeala 3: Raclarea de la margini spre centru</h2>
-      <p>Împinsă greșit, apa și aerul rămân prinse la mijloc, sub autocolant, formând bule greu de eliminat ulterior. Direcția corectă e din centru spre margini — practic împingi excesul de apă și aer afară prin margini, nu îl blochezi în interior.</p>
+      <p>Lucrează după direcția și procedura indicate pentru material, folosind uneltele potrivite. Dacă apar bule sau zone care nu aderă, oprește-te și verifică instrucțiunea în loc să presezi repetat fără un plan. O metodă potrivită unui tip de folie nu este automat potrivită altui produs, chiar dacă ambele sunt aplicate pe geam.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">Greșeala 4: Tăierea surplusului lipit direct de cauciucul geamului</h2>
-      <p>Pare o finisare îngrijită, dar autocolantul lipit exact pe chederul de cauciuc se dezlipește mult mai repede sub acțiunea soarelui, pentru că marginea rămâne constant expusă la mișcarea și flexibilitatea cauciucului. Lasă o distanță de 1-2 mm între marginea tăiată și cauciuc — diferența de durabilitate e semnificativă pe termen lung.</p>
+      <p>La marginea geamului, ține cont de ramă, garnituri și zona acceptată pentru aplicare. Dimensiunea graficii nu trebuie calculată presupunând că orice suprafață din jur poate fi acoperită. Clarifică retragerile și finisarea înainte de realizarea fișierului, ca un element important să nu ajungă într-o zonă care va fi tăiată.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">Greșeala 5: Folosirea mașinii/vitrinei imediat după montaj</h2>
-      <p>Autocolantul are nevoie de timp să se fixeze complet pe suprafață. Pe lunetă auto, pornirea degivrării sau folosirea ștergătorului prea devreme poate deplasa marginile încă neuscate complet. Recomandăm minim 48 de ore fără spălare la jet sub presiune și fără degivrare forțată imediat după aplicare.</p>
+      <p>După aplicare, urmează instrucțiunile pentru timpul necesar înainte de curățare sau utilizare. Nu prelua o durată dintr-un ghid pentru alt adeziv. Dacă materialul este destinat unui geam cu funcții sau tratamente speciale, compatibilitatea trebuie confirmată înainte de comandă și montaj.</p>
 
       <div class="my-10 p-10 bg-slate-900 text-white rounded-[2rem] shadow-2xl">
           <h3 class="text-2xl font-black mb-4 text-amber-400">Unelte minime necesare:</h3>
-          <p class="text-lg">Soluție de curățat geamuri, lavetă fără scame, o racletă de plastic (sau un card bancar înfășurat în cârpă moale), un cutter foarte ascuțit și, opțional, un pulverizator cu apă și puțin săpun lichid pentru metoda umedă.</p>
+          <p class="text-lg">Pregătește numai uneltele și produsele de curățare recomandate pentru folia aleasă. Protejează suprafețele din jur și verifică dacă lucrarea trebuie făcută de o persoană cu experiență. Nu folosi lama direct pe o suprafață sensibilă și nu înlocui automat o unealtă de aplicare cu un obiect improvizat.</p>
       </div>
 
       <p>Vrei un print de calitate, ușor de aplicat corect din prima încercare, fără să chemi pe cineva pentru un geam? Comandă autocolantul tău perforat din <a href="/configurator/window-graphics">configuratorul nostru online</a> – primești instrucțiuni detaliate de montaj la livrare.</p>
@@ -1615,10 +1530,11 @@ const STATIC_POSTS: BlogPost[] = [
   },
   {
     slug: "ghid-vizibilitate-obligatorie-fonduri-europene-kit",
+    modified: "2026-10-04T08:00:00.000Z",
     title: "Ai obținut fonduri europene pentru afacerea ta mică (Start-Up Nation, PNRR)? Ce panou de vizibilitate trebuie să montezi și când",
     description: "Chiar și un mic atelier sau o afacere de familie care a accesat fonduri europene are obligații de vizibilitate. Explicăm, pe fazele proiectului, ce panou sau autocolant e obligatoriu la fiecare etapă, ca să eviți o corecție financiară dintr-un detaliu simplu.",
     date: '2026-07-13T11:01:00.000Z',
-    author: "Expert Fonduri HomePrint",
+    author: "HomePrint",
     tags: ["fonduri europene", "vizibilitate ue", "panouri obligatorii", "placute permanente", "ghid", "noutati"],
     source: "HomePrint.ro",
     hero: "/products/fonduri/pnrr-1.webp",
@@ -1655,13 +1571,13 @@ const STATIC_POSTS: BlogPost[] = [
       </div>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">Faza 1: Execuția — panoul temporar nu e opțional peste un anumit prag</h2>
-      <p>Dacă proiectul implică lucrări de infrastructură sau construcții care depășesc, de regulă, 500.000 euro, panoul temporar la locația proiectului e obligatoriu pe toată durata execuției. Trebuie să conțină titlul proiectului, obiectivul principal și logourile UE și ale programului de finanțare — nu doar sigla firmei tale.</p>
+      <p>Pentru un material legat de un proiect finanțat, identifică programul și documentele aplicabile înainte să alegi panoul. Nu folosi un prag financiar preluat dintr-un articol general ca regulă pentru orice finanțare. Beneficiarul trebuie să confirme cerința pentru proiectul propriu, apoi să pregătească dimensiunea și conținutul pentru comandă.</p>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">Faza 2: Pe parcurs — echipamentele achiziționate trebuie marcate imediat</h2>
-      <p>Orice echipament cumpărat din fonduri (laptopuri, utilaje, mobilier) trebuie să poarte un autocolant vizibil și greu de îndepărtat, aplicat cât mai curând după achiziție, nu lăsat pentru „mai târziu”. Alegerea unui autocolant cu plastifiere mată previne zgârierea și decolorarea la curățarea repetată a echipamentelor de-a lungul anilor de monitorizare.</p>
+      <p>Dacă documentația proiectului cere etichete pentru echipamente, construiește un inventar al pieselor și al suprafețelor pe care vor fi aplicate. Cantitatea, conținutul și modul de folosire se verifică pentru programul respectiv. Un autocolant comandat din catalog nu confirmă singur îndeplinirea tuturor obligațiilor de comunicare.</p>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">Faza 3: La finalizare — panoul temporar e înlocuit, nu doar eliminat</h2>
-      <p>La finalul execuției, panoul temporar trebuie înlocuit cu o plăcuță permanentă, nu doar demontat. Aceasta rămâne la locație pe toată perioada de monitorizare — de aici nevoia unui material cu durabilitate reală pe termen lung: Alucobond de 3mm sau Plexiglass, cu print UV direct pe material, nu autocolant cașerat care se dezlipește la colțuri în câțiva ani.</p>
+      <p>Materialele folosite la etape diferite ale unui proiect pot avea cerințe distincte. Nu transforma automat o machetă temporară într-o placă pentru utilizare ulterioară. Verifică documentația și informațiile valabile pentru etapa respectivă și obține aprobarea conținutului înainte de realizare.</p>
 
       <div class="my-10 p-8 border-2 border-amber-300 rounded-3xl bg-amber-50">
           <h3 class="text-xl font-bold text-amber-900 mb-2">Detaliu tehnic care contează la audit:</h3>
@@ -1673,10 +1589,11 @@ const STATIC_POSTS: BlogPost[] = [
   },
   {
     slug: "placute-permanente-panouri-eu-audit-reguli",
+    modified: "2026-10-04T08:00:00.000Z",
     title: "Ai luat fonduri prin Start-Up Nation pentru mica ta afacere? Ce verifică exact monitorul la vizita de control",
     description: "Chiar și pentru o afacere mică de familie finanțată prin fonduri europene sau naționale, vizita de control a monitorului de proiect urmează aceeași secvență previzibilă de verificări. Reconstituim traseul tipic, punct cu punct, ca să știi ce să ai pregătit din timp.",
     date: '2026-07-31T12:18:00.000Z',
-    author: "Consultant Branding HomePrint",
+    author: "HomePrint",
     tags: ["audit fonduri eu", "placute permanente", "vizibilitate proiect", "sfaturi", "noutati"],
     source: "HomePrint.ro",
     hero: "/products/fonduri/placa-permanenta-infrastructura-rutiera-pnrr-1-scaled.jpg",
@@ -1684,16 +1601,16 @@ const STATIC_POSTS: BlogPost[] = [
       <p>O afacere mică finanțată prin Start-Up Nation, un program regional sau o componentă PNRR pentru IMM-uri are aceleași obligații de vizibilitate ca un proiect mare de infrastructură, doar la scară mai mică. Vizita de control a monitorului de proiect nu e o inspecție la întâmplare – urmează, de regulă, aceeași secvență de puncte de verificare, indiferent de mărimea afacerii. Reconstituim traseul tipic al unei astfel de vizite, ca să știi exact la ce să te aștepți și ce să ai pregătit dinainte.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">Primul lucru verificat: materialul e la locul lui?</h2>
-      <p>Înainte de orice detaliu tehnic, monitorul verifică pur și simplu dacă plăcuța sau panoul există fizic la locația declarată. Sună evident, dar e cea mai frecventă problemă întâlnită — materiale mutate, depozitate „temporar” într-un birou din spate, sau demontate din greșeală la o renovare. Locația trebuie să fie publică, ușor accesibilă și vizibilă fără efort — de obicei la intrarea principală în clădire, nu ascunsă pe un hol interior.</p>
+      <p>Păstrează o evidență a locului în care ajunge fiecare material și a persoanei care confirmă amplasarea. Pentru un proiect, recepția printului și verificarea cerințelor documentare sunt operațiuni diferite. Nu presupune că producătorul materialului a evaluat toate condițiile de folosire la destinație.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">Al doilea punct: informația se mai citește?</h2>
-      <p>Un panou tehnic vechi de un an, decolorat sau curbat de intemperii, ridică imediat o observație în raportul de audit — chiar dacă materialul respectă conținutul cerut. Aici diferența dintre materialele ieftine și cele profesionale devine vizibilă concret: un autocolant cașerat pe placă se dezlipește treptat la colțuri, în timp ce printul UV aplicat direct pe suport (Alucobond sau PVC) rezistă intact pe toată perioada de monitorizare, de regulă 3-5 ani.</p>
+      <p>Inspectează materialele expuse și notează dacă informația nu mai poate fi citită ori dacă suportul are deteriorări. Soluția se stabilește în raport cu produsul și cerințele proiectului. Nu există o singură durată de viață care să poată fi promisă pentru toate panourile, amplasamentele și condițiile de întreținere.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">Al treilea punct: siglele respectă proporțiile exacte?</h2>
-      <p>Steagul Uniunii Europene și siglele oficiale ale programului de finanțare au proporții și un spațiu de protecție definite strict în manualul de identitate vizuală. O siglă întinsă sau comprimată pentru a se încadra „mai frumos” în design e considerată o eroare gravă, indiferent cât de bine arată vizual rezultatul final.</p>
+      <p>Pentru sigle, pornește de la fișierele oficiale și de la documentele de identitate aplicabile. Evită capturile mici și modificarea proporțiilor. <a href='https://commission.europa.eu/funding-and-tenders/managing-your-project/communicating-and-raising-eu-visibility_en'>Resursele Comisiei Europene despre vizibilitate</a> sunt un punct de pornire; cerințele concrete ale programului trebuie verificate separat.</p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4">Al patrulea punct: echipamentele din inventar au autocolantele aplicate?</h2>
-      <p>Dacă proiectul a inclus achiziții de echipamente, monitorul verifică, de regulă prin sondaj, dacă acestea poartă autocolantul obligatoriu cu siglele oficiale. Un echipament fără marcaj, chiar dacă restul proiectului e conform, poate genera o observație separată.</p>
+      <p>Leagă etichetele de inventarul proiectului, dacă sunt prevăzute în documentație. Astfel poți verifica destinatarii și cantitățile fără să reconstruiești lista după livrare. Procedurile de verificare și eventualele consecințe nu se deduc dintr-un ghid de print; ele se clarifică în cadrul proiectului.</p>
 
       <div class="my-10 p-10 bg-blue-900 text-white rounded-[2.5rem] shadow-xl">
           <h3 class="text-2xl font-black mb-4">Traseul complet, ca listă de verificat înainte de vizită:</h3>
@@ -1716,7 +1633,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Consultant Semnalistică HomePrint",
     tags: ["semnalistica", "deschidere magazin", "firma exterioara", "window graphics", "sfaturi", "noutati"],
     source: "HomePrint.ro",
-    hero: "/products/window-graphics/window-graphics-1.webp",
+    hero: "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp",
     contentHtml: `
       <p>Transformarea unui garaj, a unei camere de la stradă sau a unui colț de curte într-un mic punct de vânzare are un termen fix – ziua în care anunți pe rețelele sociale sau vecinilor că ești „deschis”. Problema e că materialele de semnalistică au propriile termene de producție, iar dacă le comanzi în ordinea greșită, riști să deschizi cu o fereastră goală și fără niciun semn la stradă. Iată ordinea reală în care ar trebui să lucrezi, cu tot ce am văzut că merge (și ce nu merge) la zeci de mici afaceri care au pornit exact așa.</p>
 
@@ -1872,7 +1789,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Inginer Producție HomePrint",
     tags: ["mesh", "schela", "firme constructii", "santier", "siguranta", "noutati"],
     source: "HomePrint.ro",
-    hero: "/products/mesh/mesh_publicitar_personalizat.jpg",
+    hero: "/products/grafica-originala/banner-mesh-perforat-grafica-constructii.webp",
     contentHtml: `
       <p>Renovarea fațadei propriei case – termoizolație, zugrăvit, reparații la acoperiș – aduce aproape mereu aceeași bătaie de cap: schela montată rămâne acolo săptămâni întregi, arată urât spre stradă, lasă praful să zboare spre curtea vecinilor și, dacă vremea e capricioasă, expune materialele de lucru la ploaie. Ideea de a acoperi schela cu un material printat, fie doar un mesaj simplu, fie o imagine a casei finalizate, rezolvă toate aceste probleme deodată – dar materialul ales greșit nu e doar o soluție puțin arătoasă, e un risc de siguranță real pentru cei din curte și de pe trotuar.</p>
 
@@ -1911,7 +1828,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Echipa HomePrint",
     tags: ["bannere", "evenimente", "imobiliare", "frontlit", "cost", "sfaturi", "noutati"],
     source: "HomePrint.ro",
-    hero: "/products/banner/banner-1.webp",
+    hero: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
     contentHtml: `
       <p>Dacă organizezi o vânzare de garaj în fiecare toamnă, vinzi singur casa fără agenție sau ai o mică afacere sezonieră (brazi de Crăciun, flori de 1 Martie, dovleci de Halloween), probabil ai comandat deja bannere de mai multe ori pentru practic același tip de mesaj. Diferența dintre a cheltui de la zero de fiecare an și a reduce constant costul per sezon stă în două decizii luate din start: designul și materialul ales.</p>
 
@@ -2054,11 +1971,12 @@ const STATIC_POSTS: BlogPost[] = [
   },
   {
     slug: "brief-comanda-banner-urgenta-print-checklist",
+    modified: "2026-10-04T08:00:00.000Z",
     source: "HomePrint.ro",
     title: "Ai uitat de banner pentru petrecerea-surpriză de mâine? Ce informații pregătești ca să nu pierzi timp",
     description: "„Mâine e ziua ei și n-am comandat încă bannerul” e o situație pe care o auzim des vinerea seara. O comandă urgentă de banner nu întârzie din cauza printului, ci din cauza informațiilor lipsă la brief. Checklist practic cu tot ce trebuie să ai pregătit înainte să scrii la atelier.",
     date: '2026-07-01T10:40:00.000Z',
-    author: "Echipa HomePrint",
+    author: "HomePrint",
     tags: ["comanda urgenta", "print rapid", "banner", "ghid comanda", "afaceri"],
     hero: "/products/banner/banner-service-auto-1.jpg",
     contentHtml: `
@@ -2066,7 +1984,7 @@ const STATIC_POSTS: BlogPost[] = [
 
       <div class="my-10 p-8 bg-amber-50 border-l-4 border-amber-500 rounded-r-2xl">
         <h3 class="text-amber-900 font-bold mb-2">Sfat rapid:</h3>
-        <p class="text-amber-800 italic">Cel mai bun mod de a accelera o comandă urgentă nu este să suni de mai multe ori ca să grăbești răspunsul, ci să trimiți toate informațiile de mai jos într-un singur mesaj, de la prima interacțiune. O comandă completă din prima rundă intră în producție cu ore întregi mai devreme decât una clarificată treptat.</p>
+        <p class="text-amber-800 italic">Pentru o comandă cu dată fixă, pregătește dintr-o singură dată dimensiunile, cantitățile, fișierele și adresa. Spune când ai nevoie de material în spațiul tău și cere confirmarea posibilității de realizare. Un fișier neaprobat sau o măsurătoare lipsă trebuie rezolvate înainte ca planul de livrare să poată fi stabilit clar.</p>
       </div>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">1. Dimensiunea exactă, măsurată, nu din memorie</h2>
@@ -2106,11 +2024,12 @@ const STATIC_POSTS: BlogPost[] = [
   },
   {
     slug: "reguli-amplasare-banner-strada-oras-ce-verifici",
+    modified: "2026-10-04T08:00:00.000Z",
     source: "HomePrint.ro",
     title: "Vrei să pui bannerul „De vânzare” pe gardul propriei case? Ce merită verificat înainte, ca să nu-l dai jos peste o săptămână",
     description: "Vinzi singur casa sau ai o vânzare de garaj și te gândești să pui bannerul chiar pe gard sau pe stâlpul din fața curții – nu toate amplasările sunt la fel de simple legal. Ghid general despre ce merită verificat înainte de montaj, nu legislație aplicată cazului tău.",
     date: '2026-07-25T11:15:00.000Z',
-    author: "Echipa HomePrint",
+    author: "HomePrint",
     tags: ["publicitate outdoor", "amplasare banner", "reguli generale", "afaceri locale", "sfaturi"],
     hero: "/products/banner/teren-de-vanzare.jpg",
     contentHtml: `
@@ -2118,26 +2037,26 @@ const STATIC_POSTS: BlogPost[] = [
 
       <div class="my-10 p-8 bg-amber-50 border-l-4 border-amber-500 rounded-r-2xl">
         <h3 class="text-amber-900 font-bold mb-2">Important:</h3>
-        <p class="text-amber-800 italic">Regulile de amplasare a publicității outdoor diferă de la o localitate la alta și se pot schimba prin hotărâri ale consiliului local. Informațiile de mai jos sunt generale – pentru orice montaj pe termen lung sau pe suprafață mare, verifică direct la primăria/sectorul unde faci montajul, nu presupune că regula dintr-un oraș se aplică identic în altul.</p>
+        <p class="text-amber-800 italic">Dacă decorul sau mesajul va fi vizibil în exterior, verifică situația amplasamentului înainte de comandă. Cerințele nu se stabilesc numai după dimensiunea imaginii. Consultă autoritatea competentă și documentele aplicabile; <a href='https://legislatie.just.ro/Public/DetaliiDocumentAfis/197924'>Legea privind mijloacele de publicitate</a> poate fi consultată în Portalul Legislativ.</p>
       </div>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">Domeniul public vs. proprietate privată – prima întrebare, nu ultima</h2>
-      <p>Diferența fundamentală: pe proprietate privată (fațada propriei clădiri, gardul propriu, un teren pe care ai drept de folosință), decizia de amplasare îți aparține, cu respectarea eventualelor reguli de urbanism aplicabile clădirii. Pe domeniul public – stâlpi, garduri de spații verzi, poduri, trotuare, terenuri ale primăriei – amplasarea publicității outdoor este de regulă supusă unei taxe sau unui aviz local, indiferent cât de scurtă e perioada de expunere. Confuzia dintre cele două categorii este cea mai frecventă cauză pentru care un banner ajunge dat jos rapid.</p>
+      <p>Folosirea unei suprafețe private nu trebuie confundată cu lipsa oricărei cerințe pentru amplasare. Notează adresa, tipul suportului și dreptul de utilizare și cere clarificarea condițiilor aplicabile. Comanda de print trebuie făcută după această verificare, nu tratată ca un document care autorizează afișarea.</p>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">Dacă montezi pe clădire sau gard care nu e al tău, ai nevoie de acord scris</h2>
-      <p>Pentru fațade de bloc, spații comerciale închiriate sau garduri care aparțin altcuiva (proprietar, asociație de proprietari, administrator de centru comercial), acordul verbal nu e suficient dacă apare o dispută ulterioară. Un acord scris simplu, chiar și un schimb de email cu proprietarul sau administratorul, te protejează dacă cineva contestă ulterior amplasarea – mai ales în cazul asociațiilor de proprietari, unde decizia poate necesita acordul mai multor părți, nu doar al vecinului direct.</p>
+      <p>Pentru un spațiu închiriat sau administrat de altcineva, clarifică acordurile înainte să pregătești un material personalizat pentru o anumită suprafață. Păstrează confirmarea locului și a dimensiunii disponibile. O discuție despre design nu rezolvă automat dreptul de intervenție asupra fațadei ori asupra vitrinei.</p>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">Vizibilitatea semnelor de circulație rămâne prioritară față de reclamă</h2>
-      <p>Indiferent de mărimea sau poziția pe care o dorești, un banner care acoperă parțial sau total un indicator rutier, un semafor sau vizibilitatea unei intersecții este, în general, considerat un pericol de siguranță rutieră și poate fi ridicat indiferent dacă amplasarea era altfel corectă. Verifică unghiul de vizibilitate din ambele sensuri de circulație înainte de montaj – o poziție care pare liberă dintr-o direcție poate bloca vizibilitatea din cealaltă.</p>
+      <p>La un mesaj vizibil din exterior, evaluează amplasarea în raport cu circulația și cu semnalizarea din jur, împreună cu persoanele responsabile. Nu alege poziția exclusiv pentru impactul vizual. Restricțiile și aprobările se verifică pentru locul concret înainte de comandă și montaj.</p>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">Dimensiunea și înălțimea pot fi reglementate diferit față de conținutul propriu-zis</h2>
-      <p>Multe localități reglementează separat structura fizică (dimensiunea maximă admisă, distanța față de carosabil, înălțimea de montaj) de conținutul mesajului. Practic, chiar dacă mesajul bannerului tău e perfect corect, structura fizică – dimensiune, mod de fixare, distanță față de drum – poate necesita un aviz separat dacă depășește anumite praguri. Pentru montaje mari, pe termen lung, pe domeniu public, această verificare merită făcută înainte de a comanda dimensiunea finală, nu după.</p>
+      <p>Separă întrebarea despre grafică de întrebarea despre structură. Un fișier corect nu confirmă că suportul, ancorarea sau poziția sunt acceptabile. Clarifică aceste aspecte cu administratorul amplasamentului și cu persoana responsabilă de montaj, folosind documentele aplicabile situației.</p>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">Taxa locală de afișaj publicitar</h2>
-      <p>Majoritatea localităților din România percep o taxă pentru afișajul publicitar pe domeniul public, calculată de regulă în funcție de suprafață și perioadă de expunere. Valoarea și modul de calcul diferă semnificativ de la o localitate la alta, iar unele au praguri diferite pentru afișaj temporar (câteva zile) față de afișaj permanent. Verifică direct la direcția de taxe și impozite locale sau la biroul de urbanism/autorizări din primăria relevantă, înainte de montaj, mai ales dacă bannerul rămâne afară mai mult de câteva zile.</p>
+      <p>Când planifici un material publicitar, cere informații despre eventualele costuri și formalități ale afișării pentru adresa și utilizarea propuse. Nu introduce în buget o taxă universală calculată după o regulă găsită pe alt site. Costul printului și condițiile de afișare trebuie verificate separat.</p>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">Șantiere și gard de construcție – reguli suplimentare de siguranță</h2>
-      <p>Pentru mesh sau bannere montate pe garduri de șantier, pe lângă regulile generale de publicitate, se pot aplica și cerințe de protecția muncii privind informațiile obligatorii afișate (avertismente de acces, informații despre proiect). Detaliem acest scenariu specific în <a href="/blog/mesh-publicitar-schela-fatada-renovare-firme-constructii">ghidul dedicat mesh-ului pe schelă și gard de șantier</a>.</p>
+      <p>Dacă materialul urmează să fie montat într-un loc cu lucrări sau acces controlat, discută amplasarea cu responsabilul spațiului. Nu combina automat informațiile de promovare cu cele cerute pentru organizarea unui șantier. Conținutul necesar și condițiile de montaj se confirmă pentru situația reală.</p>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">O listă scurtă, de bun-simț, înainte de orice montaj la stradă</h2>
       <ul class="list-disc pl-6 space-y-2 my-6">
@@ -2153,23 +2072,24 @@ const STATIC_POSTS: BlogPost[] = [
   },
   {
     slug: "durata-viata-banner-exterior-degradare-uv-inlocuire",
+    modified: "2026-10-04T08:00:00.000Z",
     source: "HomePrint.ro",
     title: "Bannerul „De vânzare” de pe gardul casei tale stă montat de câteva luni bune? Iată cum îmbătrânește, tehnic",
     description: "Un banner „De vânzare” sau „Casă de închiriat” lăsat afară luni întregi nu cedează brusc – radiațiile UV rup pigmentul și rigidizează PVC-ul mult înainte să se vadă cu ochiul liber. Explicăm ce se întâmplă tehnic și la ce semne să fii atent, ca să știi când merită înlocuit.",
     date: '2026-08-05T08:30:00.000Z',
-    author: "Departament Producție HomePrint",
+    author: "HomePrint",
     tags: ["durata de viata banner", "degradare UV", "intretinere", "pvc frontlit", "print outdoor"],
     hero: "/products/banner/banner-spalatorie-auto.jpg",
     contentHtml: `
       <p>Un banner „De vânzare” lăsat pe gard câteva luni, cât dureaza căutarea unui cumpărător, nu se strică dintr-o dată. Nu există un moment exact în care „cedează” – în schimb, radiațiile UV, temperatura și umezeala lucrează constant asupra materialului, luni de zile înainte ca degradarea să devină vizibilă cu ochiul liber. Înțelegerea acestui proces ajută la două decizii practice: câtă durată de viață poți estima realist pentru bannerul tău montat afară și la ce semne te uiți ca să știi când a venit momentul înlocuirii, înainte ca materialul să cedeze exact atunci când ai un vizitator interesat.</p>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">Ce se întâmplă, tehnic, cu PVC-ul expus la soare</h2>
-      <p>Un banner frontlit este, structural, o țesătură de poliester acoperită cu un strat de PVC plastifiat pe ambele fețe. Plastifianții din PVC sunt cei care păstrează materialul flexibil – fără ei, PVC-ul pur ar fi rigid și casant, ca o carcasă de plastic dur. Expunerea prelungită la radiații UV și la căldură accelerează migrarea acestor plastifianți către suprafață și evaporarea lor treptată. Rezultatul practic: materialul devine, cu timpul, tot mai rigid și mai casant, în special vizibil la îndoire – un banner nou se pliază fără urme, unul îmbătrânit de soare capătă crăpături albe exact pe linia de îndoire.</p>
-      <p>În paralel, radiațiile UV rup legăturile chimice din pigmenții de culoare (fenomen numit foto-degradare), motiv pentru care culorile saturate – roșu, albastru închis, negru profund – se estompează vizibil mai devreme decât albul sau nuanțele deschise. De aceea un banner vechi pare „spălăcit”, nu doar murdar.</p>
+      <p>Pentru un material păstrat în timp, urmărește starea efectivă a suprafeței și a prinderilor. Temperaturile, lumina, depozitarea și manipularea pot influența produsul, dar nu permit deducerea unei durate exacte dintr-o descriere generală. Consultă instrucțiunile materialului înainte să îl reutilizezi.</p>
+      <p>O imagine amplasată într-o zonă cu lumină puternică trebuie verificată periodic pentru lizibilitate și aspect. Nu folosi o estimare de degradare valabilă pentru alt suport ca promisiune pentru decorul tău. Durata și condițiile de utilizare se discută pentru produsul concret.</p>
 
       <div class="my-10 p-8 bg-amber-50 border-l-4 border-amber-500 rounded-r-2xl">
         <h3 class="text-amber-900 font-bold mb-2">De ce contează cerneala folosită:</h3>
-        <p class="text-amber-800 italic">Cernelurile UV curate, folosite la print, formează un strat solid la suprafața materialului chiar din procesul de producție, spre deosebire de cernelurile solvent tradiționale care se usucă prin evaporare. Acest strat oferă o rezistență suplimentară la spălarea culorii de către radiațiile UV ulterioare, dar nu elimină complet procesul de degradare a plastifianților din PVC – doar îl încetinește parțial la nivelul stratului de culoare. Detalii despre diferența tehnică în <a href="/blog/totul-despre-printul-uv-avantajele-unei-tehnologii-ecologice">articolul dedicat printului UV</a>.</p>
+        <p class="text-amber-800 italic">Denumirea printului nu este suficientă pentru a compara rezistența a două materiale. Verifică suportul, finisarea și recomandările de folosire, apoi evaluează situația din camera sau spațiul tău. Evită o concluzie de tipul «UV rezistă întotdeauna mai mult» fără date pentru produsele efectiv comparate.</p>
       </div>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">Factori care grăbesc sau încetinesc degradarea</h2>
@@ -2181,7 +2101,7 @@ const STATIC_POSTS: BlogPost[] = [
       </ul>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">Semnele care indică sfârșitul duratei de viață utile</h2>
-      <p>Nu există un termen fix universal valabil pentru toate montajele – expunerea variază prea mult de la o locație la alta. În schimb, câteva semne fizice sunt un indicator mai fiabil decât numărul de luni de la montaj:</p>
+      <p>Stabilește o verificare vizuală înainte de fiecare reutilizare: informația se citește, materialul nu este deteriorat, iar elementele de susținere pot fi folosite conform instrucțiunilor. Dacă apare o problemă, cere evaluarea sau înlocuirea potrivită. Un termen de calendar nu înlocuiește controlul stării reale.</p>
       <ul class="list-disc pl-6 space-y-2 my-6">
         <li><b>Crăpături albe la îndoire:</b> cel mai clar semn că plastifiantul s-a evaporat semnificativ; dacă apar pe zone de tensiune (lângă capse), riscul de rupere sub sarcină crește rapid.</li>
         <li><b>Decolorare vizibilă, mai ales pe roșu și negru:</b> mesajul rămâne lizibil, dar contrastul scade, iar impactul vizual de la distanță scade proporțional.</li>
@@ -2191,11 +2111,11 @@ const STATIC_POSTS: BlogPost[] = [
 
       <div class="my-10 p-10 bg-slate-900 text-white rounded-[2rem] shadow-2xl">
         <h3 class="text-2xl font-black mb-4 text-amber-400">Regulă practică de urmărire</h3>
-        <p class="text-lg">Verifică din timp în timp un colț al bannerului, îndoindu-l ușor la 90 de grade. Dacă revine neted, materialul e încă sănătos. Dacă lasă o linie albicioasă vizibilă pe îndoitură, degradarea plastifiantului e deja avansată – bannerul mai poate fi folosit temporar, dar riscul de rupere sub vânt puternic crește semnificativ de acum înainte.</p>
+        <p class="text-lg">Nu testa rezistența prin pliere sau alte solicitări care nu sunt indicate pentru material. O inspecție trebuie să observe problemele, nu să producă altele. Dacă apar fisuri, deteriorări sau modificări de formă, documentează-le și cere o evaluare înainte de a monta din nou piesa.</p>
       </div>
 
       <h2 class="text-2xl font-bold mt-12 mb-6">Ce poți face ca să prelungești durata de viață</h2>
-      <p>Curățarea periodică (apă și detergent neutru, fără solvenți agresivi) elimină depunerile care amplifică local efectul UV. Evitarea depozitării împăturite între utilizări – detaliată în <a href="/blog/ghid-bannere-publicitare-homeprint">ghidul de comandă</a> – previne fisurile premature în zonele de pliere. Iar dacă bannerul e montat permanent într-o zonă cu expunere solară intensă, alegerea din start a gramajului 510g în locul standardului 440g reprezintă un cost suplimentar mic la comandă, dar întinde vizibil intervalul până la înlocuire.</p>
+      <p>Păstrează instrucțiunile de îngrijire lângă evidența produsului. Curățarea și depozitarea se aleg după suport și finisare, nu după un detergent folosit pentru alte obiecte din cameră. La materiale refolosite, verifică starea după transport și înainte de expunere, mai ales dacă au fost păstrate mult timp.</p>
 
       <p>Când semnele de mai sus devin evidente pe bannerul tău „De vânzare” sau „De închiriat”, cel mai eficient e să-l reînnoiești înainte să cedeze fizic, nu după – un banner spălăcit sau crăpat lasă o impresie proastă tocmai unui potențial cumpărător care trece pe stradă. Comandă rapid o versiune nouă în <a href="/configurator/banner">configuratorul de bannere</a> – dacă mesajul rămâne același, păstrăm fișierul validat de la comanda anterioară, iar procesul durează câteva minute, nu o reluare completă de la zero.</p>
     `,
@@ -2208,7 +2128,7 @@ const STATIC_POSTS: BlogPost[] = [
     date: '2026-08-12T09:00:00.000Z',
     author: "Echipa HomePrint",
     tags: ["proiecte de casa", "print personalizat", "bannere petreceri", "semnalistica curte", "diy", "homeprint"],
-    hero: "/products/canvas/canvas-1.webp",
+    hero: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
     contentHtml: `
       <p>Când te gândești la „print personalizat”, primul lucru care îți vine în minte e probabil o firmă de magazin sau un banner de reclamă. În realitate, o familie obișnuită are, de-a lungul unui an, mult mai multe ocazii să folosească print de calitate decât și-ar imagina: o zi de naștere, o vânzare de garaj, un semn nou la poartă, un tablou pentru living. Am strâns aici cele mai frecvente proiecte de casă pe care le vedem la comenzile noastre, organizate pe tipul de ocazie, cu materialul potrivit pentru fiecare.</p>
 
@@ -2488,10 +2408,11 @@ function buildCountyPost(j: Judet, index: number, siteName: string, shortName: s
 
 const COUNTY_POSTS: BlogPost[] = JUDETE_DATA.map((j, index) => buildCountyPost(j, index, "HomePrint.ro", "HomePrint"));
 
-export const POSTS: BlogPost[] = [...STATIC_POSTS, ...COUNTY_POSTS];
+export const EDITORIAL_POSTS: BlogPost[] = editorialPosts;
+export const POSTS: BlogPost[] = [...EDITORIAL_POSTS, ...STATIC_POSTS.map(post => ({ ...post, author: "HomePrint" })), ...COUNTY_POSTS.map(post => ({ ...post, indexable: false }))];
 
 export function getAllPosts() {
-  return POSTS.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  return POSTS.filter(post => post.indexable !== false).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export function getPostBySlug(slug: string) {
@@ -2505,5 +2426,5 @@ export function getAllTags() {
 }
 
 export function getAllBlogSlugs() {
-  return POSTS.map((p) => p.slug);
+  return getAllPosts().map((p) => p.slug);
 }

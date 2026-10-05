@@ -3,27 +3,7 @@ import React, { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import { useCart } from "@/components/CartContext";
 import { useToast } from "@/components/ToastProvider";
-import { 
-  Ruler, 
-  Layers, 
-  Plus, 
-  Minus, 
-  ShoppingCart, 
-  Info, 
-  ChevronDown, 
-  X, 
-  UploadCloud, 
-  Upload, 
-  TrendingUp, 
-  Percent, 
-  MessageCircle, 
-  Sparkles, 
-  ShieldCheck, 
-  Truck,
-  Monitor,
-  Check,
-  Zap
-} from "lucide-react";
+import { Ruler, Layers, Plus, Minus, ShoppingCart, Info, ChevronDown, X, UploadCloud, Upload, TrendingUp, Percent, MessageCircle, ShieldCheck, Truck, Monitor, Check, Zap } from "lucide-react";
 import DeliveryEstimation from "./DeliveryEstimation";
 import FaqAccordion from "./FaqAccordion";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
@@ -134,7 +114,7 @@ export default function WindowGraphicsConfigurator({ productSlug, initialWidth: 
             <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg border border-gray-200 dark:border-slate-800 overflow-hidden">
                <div className="aspect-square relative flex items-center justify-center overflow-hidden">
                   <Image 
-                    src={productImage || "/products/window-graphics/window-graphics-1.webp"}
+                    src={productImage || "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp"}
                     alt="Window Graphics"
                     fill
                     className="object-contain p-4"

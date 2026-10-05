@@ -1,7 +1,7 @@
 import type { Product } from "@/lib/products";
 import { siteConfig } from "@/lib/siteConfig";
 
-const MERCHANT_IMAGE_EXT = /\.(jpe?g|png|gif)(\?|#|$)/i;
+const MERCHANT_IMAGE_EXT = /\.(jpe?g|png|gif|webp)(\?|#|$)/i;
 
 /**
  * Hosts whose URLs lie about their format: verified serving `image/webp` (or a
@@ -81,16 +81,7 @@ export function merchantImageLink(
     return fallback;
   }
 
-  // WebP: swap to .jpg/.png only for our own assets, where a converted twin is
-  // guaranteed to exist (see public/**). Remote hosts rarely serve a .jpg twin —
-  // the swapped URL 404s and returns an HTML page, which Google reports as
-  // "unsupported image type" and rejects the product.
-  if (/\.webp(\?|#|$)/i.test(url) && url.startsWith(`${base}/`)) {
-    const asJpg = url.replace(/\.webp(\?|#|$)/i, ".jpg$1");
-    if (asJpg !== url && MERCHANT_IMAGE_EXT.test(asJpg)) return asJpg;
-    const asPng = url.replace(/\.webp(\?|#|$)/i, ".png$1");
-    if (asPng !== url && MERCHANT_IMAGE_EXT.test(asPng)) return asPng;
-  }
+  // Keep the real asset URL: Merchant Center supports WebP.
 
   return fallback;
 }

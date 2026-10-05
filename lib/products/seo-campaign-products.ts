@@ -1,3 +1,4 @@
+import { getBannerExampleImage } from "../originalPrintImages";
 import { Product } from "../products";
 
 export const seoCampaignProducts: any[] = [
@@ -8,7 +9,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/rollup",
         title: "Sistem Roll-Up 85x200cm",
         description: "Sistem roll-up standard 85x200cm, print inclus pe polipropilena premium. Ideal pentru evenimente, conferinte si prezentari.",
-        image: "/products/rollup/rollup-1.webp",
+        image: "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp",
         price: "De la 110 LEI",
         category: "Campanii SEO",
         tags: ["rollup", "standard", "85x200"]
@@ -19,7 +20,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/rollup",
         title: "Sistem Roll-Up 100x200cm",
         description: "Roll-up lat de 100cm pentru un impact vizual marit. Include geanta de transport si print de inalta rezolutie.",
-        image: "/products/rollup/rollup-1.webp",
+        image: "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp",
         price: "De la 150 LEI",
         category: "Campanii SEO",
         tags: ["rollup", "lat", "100x200"]
@@ -30,7 +31,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/rollup",
         title: "Mini Roll-Up (A3 / A4)",
         description: "Sistem roll-up de birou, format A3 sau A4. Perfect pentru receptii, ghisee sau prezentari de produs restranse.",
-        image: "/products/rollup/rollup-1.webp",
+        image: "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp",
         price: "De la 45 LEI",
         category: "Campanii SEO",
         tags: ["rollup", "mini", "prezentare"]
@@ -41,7 +42,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/rollup",
         title: "Roll-Up Premium (Bază Grea)",
         description: "Sistem roll-up de lux cu bază 'lacrimă' masivă. Stabilitate maximă și design minimalist pentru showroom-uri de lux.",
-        image: "/products/rollup/rollup-1.webp",
+        image: "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp",
         price: "De la 190 LEI",
         category: "Campanii SEO",
         tags: ["rollup", "premium", "heavy base"]
@@ -52,7 +53,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/rollup",
         title: "Sistem Roll-Up Dublă Față",
         description: "Sistem roll-up cu print pe ambele fețe, perfect pentru vizibilitate din orice unghi în zonele de trafic expozițional.",
-        image: "/products/rollup/rollup-1.webp",
+        image: "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp",
         price: "De la 250 LEI",
         category: "Campanii SEO",
         tags: ["rollup", "dubla fata", "expozitii", "sistem expunere"]
@@ -63,7 +64,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/rollup",
         title: "Print Roll-Up Personalizat Ieftin",
         description: "Producem sisteme de afișaj tip roll-up la cele mai bune prețuri, cu print UV rezistent la zgârieturi direct pe material fără buclare.",
-        image: "/products/rollup/rollup-1.webp",
+        image: "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp",
         price: "De la 110 LEI",
         category: "Campanii SEO",
         tags: ["rollup ieftin", "print rollup", "banner rollup", "roll up"]
@@ -74,7 +75,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/rollup",
         title: "Stand Roll-Up Comercial / Evenimente",
         description: "Pregătește-ți standul cu Roll-Up-uri publicitare ce atrag atenția. Montare în 3 minute. Husă de protecție pentru transport inclusă.",
-        image: "/products/rollup/rollup-1.webp",
+        image: "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp",
         price: "De la 120 LEI",
         category: "Campanii SEO",
         tags: ["stand rollup", "rollup comercial", "rollup evenimente"]
@@ -243,7 +244,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/afise",
         title: "Print Afișe Publicitare și Postere",
         description: "Tipar digital și offset pentru afișe publicitare de impact. Culori vibrante și rezoluție fotografică pentru promovarea afacerii tale.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 3 LEI",
         category: "Campanii SEO",
         tags: ["afise publicitare", "postere personalizate", "print afise"]
@@ -254,7 +255,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/afise",
         title: "Tipărire Afișe A3 / A4 Ieftine",
         description: "Comandă online afișe format A3 sau A4 la cele mai bune prețuri. Ideal pentru campanii de informare, evenimente și anunțuri locale.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 1 LEU",
         category: "Campanii SEO",
         tags: ["afise a3", "afise a4", "tiparire afise", "afise ieftine"]
@@ -265,7 +266,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/afise",
         title: "Print Afișe Mari (A2, A1, A0) / Postere",
         description: "Afișe format mare (A2, A1, A0) printate la rezoluție înaltă pe hârtie premium. Postere pentru vitrine, concerte sau expoziții.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 15 LEI",
         category: "Campanii SEO",
         tags: ["afise mari", "afise a2", "afise a1", "afise a0", "postere mari"]
@@ -276,7 +277,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/afise",
         title: "Afișe Evenimente, Concerte și Petreceri",
         description: "Ai un eveniment? Ieși în evidență cu afișe printate impecabil. Livrare rapidă pentru concerte, festivaluri, cluburi și spectacole.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 5 LEI",
         category: "Campanii SEO",
         tags: ["afise evenimente", "afise concerte", "afise petreceri"]
@@ -287,7 +288,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/afise",
         title: "Postere Decorative (Print Grafică Proprie)",
         description: "Transformă orice spațiu cu postere decorative personalizate. Tipărim grafica ta pe hârtie mată sau lucioasă de înaltă calitate.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 15 LEI",
         category: "Campanii SEO",
         tags: ["postere decorative", "postere perete", "print poster"]
@@ -299,7 +300,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/flyere",
         title: "Print Flyere Ieftine / Fluturași",
         description: "Tipărire flyere ieftine și de calitate pentru campanii mass-market, stradale și cutii poștale. Alege hârtia și finisajele dorite.",
-        image: "/products/pliante/pliante-1.webp",
+        image: "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp",
         price: "De la 0.15 LEI",
         category: "Campanii SEO",
         tags: ["flyere ieftine", "fluturasi", "print flyere", "flayere", "imprimare flyer"]
@@ -310,7 +311,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/pliante",
         title: "Tipărire Pliante Publicitare (Z-fold / C-fold)",
         description: "Comandă online pliante promoționale. Ideale pentru prezentări de servicii, meniuri restaurante sau oferte detaliate. Diverse tipuri de împăturire.",
-        image: "/products/pliante/pliante-1.webp",
+        image: "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp",
         price: "De la 0.35 LEI",
         category: "Campanii SEO",
         tags: ["pliante", "tiparire pliante", "print pliante", "brosuri", "trifold"]
@@ -321,7 +322,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/flyere",
         title: "Flayere Promoționale (Evenimente / Oferte)",
         description: "Anunți o lansare, o promoție sau un eveniment? Cu flayerele noastre ai atenția clienților garantată. Tipărite color impecabil.",
-        image: "/products/pliante/pliante-1.webp",
+        image: "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp",
         price: "De la 0.20 LEI",
         category: "Campanii SEO",
         tags: ["flayere promotionale", "flyere evenimente", "oferte", "flayere club"]
@@ -332,7 +333,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/pliante",
         title: "Pliante pentru Restaurante și Pizzerii (Meniuri)",
         description: "Pliante ideale pentru listarea produselor și distribuție HORECA. Prețuri de producător pentru restaurante, pizzerii și fast-food-uri.",
-        image: "/products/pliante/pliante-1.webp",
+        image: "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp",
         price: "De la 0.35 LEI",
         category: "Campanii SEO",
         tags: ["pliante restaurant", "meniuri delivery", "pliante pizzerie", "pliante fast food"]
@@ -344,7 +345,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Personalizat (Print Indoor / Outdoor)",
         description: "Bannere personalizate printate la calitate fotografică. Material rezistent la UV și intemperii. Configurator online pentru dimensiuni personalizate.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner personalizat", "print banner", "banner outdoor"]
@@ -355,7 +356,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Imobiliare (De Vânzare / De Închiriat)",
         description: "Bannere imobiliare vizibile de la distanță. Vinde sau închiriază rapid proprietatea ta. Finisaje complete (tiv, capse) incluse gratuit.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner imobiliare", "banner de vanzare", "banner de inchiriat", "banner agentie imobiliara"]
@@ -366,7 +367,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Publicitar (Preț de Producător)",
         description: "Tipar digital pentru bannere publicitare la cel mai mic preț. Ideal pentru magazine, fațade, campanii promoționale și deschideri.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner publicitar", "banere publicitare", "print banner ieftin"]
@@ -377,7 +378,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Mesh Perforat (Fațade și Construcții)",
         description: "Mesh publicitar rezistent la vânt, printat pe material perforat. Soluția optimă pentru fațade de clădiri mari, schele și expuneri în vânt puternic.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 8 EUR/mp",
         category: "Campanii SEO",
         tags: ["mesh", "banner mesh", "banner perforat", "banner fatada", "mesh publicitar"]
@@ -388,7 +389,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Evenimente (Nuntă, Botez, Zile Onomastice)",
         description: "Personalizează-ți evenimentul cu un banner foto („Bine ați venit!” / „Welcome to our Wedding”). Claritate excepțională de tipar indoor.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner nunta", "banner botez", "banner evenimente", "banner la multi ani", "banner poze"]
@@ -399,7 +400,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner / Mesh pentru Garduri și Șantier",
         description: "Delimitează și promovează pe șantier sau gardul proprietății. Bannere lungi, printate din rolă continuă, complet finisate pentru montaj.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner gard", "banner santier", "mesh gard", "banner stradal"]
@@ -410,7 +411,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Parcare \"Nu Blocați\"",
         description: "Atenționează șoferii cu un banner clar și vizibil: 'Nu blocați calea de acces'. Material rezistent la exterior, gata finisat.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner parcare", "nu blocati", "banner interzis parcarea"]
@@ -421,7 +422,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Magazin Alimentar / Market",
         description: "Atrage clienți în magazinul tău alimentar cu un banner predefinit, viu colorat. Simplu de comandat și montat la exterior.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner magazin alimentar", "banner minimarket", "reclama magazin"]
@@ -432,7 +433,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Service Auto / Vulcanizare",
         description: "Crește vizibilitatea service-ului tău auto sau a vulcanizării. Banner durabil, printat UV, creat special pentru ateliere auto din județul tău.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner service auto", "reclama service", "vulcanizare"]
@@ -443,7 +444,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Spălătorie / Curățătorie Haine",
         description: "Banner predefinit pentru spălătorii de haine sau covoare. Atrage atenția pietonilor și șoferilor cu un print clar și rezistent.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner spalatorie haine", "banner curatatorie", "reclama spalatorie"]
@@ -454,7 +455,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Închirieri Auto (Rent a Car)",
         description: "Promovează-ți flota de mașini! Banner rent-a-car (închirieri auto) la preț de producător, finisat complet pentru expunere pe gard sau fațadă.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner rent a car", "banner inchiriere auto", "reclama inchirieri auto"]
@@ -465,7 +466,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Service Auto Complet",
         description: "Grafică publicitară predefinită pentru service auto complet și piese auto. Soluție perfectă pentru a fi văzut de toți șoferii.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner piese auto", "reclama service auto"]
@@ -476,7 +477,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Mobilă la Comandă",
         description: "Sprijină producția locală de mobilier! Banner publicitar predefinit pentru ateliere de mobilă la comandă și showroom-uri.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner mobila", "mobilier la comanda", "reclama atelier mobila"]
@@ -487,7 +488,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner „La Mulți Ani” (Petreceri / Surprize)",
         description: "Fă-i o mare surpriză! Banner personalizat „La mulți ani” pentru zile de naștere, petreceri, majorate. Print indoor excepțional.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner la multi ani", "banner aniversare", "banner zi de nastere"]
@@ -498,7 +499,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Cerere în Căsătorie",
         description: "Un moment unic merită un mesaj pe măsură! Banner „Vrei să fii soția mea?” gata pregătit pentru marea întrebare.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner cerere casatorie", "banner vrei sa fii sotia mea", "banner casatorie"]
@@ -509,7 +510,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Apartament / Spațiu de Închiriat",
         description: "Închiriază rapid spațiul tău! Banner predefinit pentru imobiliare, rezistent la ploaie și soare, cu text vizibil de la distanță mare.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner apartament", "banner de inchiriat", "banner spatiu"]
@@ -520,7 +521,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner De Vânzare / De Închiriat",
         description: "Un mesaj curat și de impact. Banner standard 'De Vânzare / De închiriat', ideal pentru proprietari și agenții imobiliare.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner de vanzare", "banner imobiliare", "banner de inchiriat"]
@@ -531,7 +532,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Vânzare (Apartament / Casă / Teren)",
         description: "Oferim bannere imobiliare complete pentru vânzarea vizibilă de apartamente, case și terenuri. Vinde fără costuri cu agenția!",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner vanzare teren", "banner vanzare casa", "banner vanzare apartament"]
@@ -542,7 +543,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Servicii Medicale / Cabinet",
         description: "Informare și vizibilitate pentru clinici, cabinete medicale și dispensare locale cu un print impecabil.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 7 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner servicii medicale", "banner cabinet", "reclama clinica"]
@@ -554,7 +555,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/canvas",
         title: "Tablou Canvas Personalizat (cu Poza ta)",
         description: "Transformă-ți fotografiile preferate în tablouri canvas de înaltă calitate. Pânză bumbac 100%, șasiu lemn natural. Print la rezoluție fotografică.",
-        image: "/products/canvas/canvas-1.webp",
+        image: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
         tags: ["tablou canvas personalizat", "print canvas", "poza pe canvas", "tablou cu poza mea"]
@@ -565,7 +566,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/canvas",
         title: "Tablouri Multicanvas (Set 3 - 5 Piese)",
         description: "Decorează-ți livingul cu seturi de tablouri multicanvas moderne. Poți încărca o singură imagine care să fie împărțită pe mai multe piese.",
-        image: "/products/canvas/canvas-1.webp",
+        image: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
         price: "De la 89 LEI",
         category: "Campanii SEO",
         tags: ["multicanvas", "set tablouri canvas", "tablouri din mai multe piese", "canvas multicanvas"]
@@ -576,7 +577,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/canvas",
         title: "Tablou Canvas Dimensiuni Mari (Sufragerie / Dormitor)",
         description: "Tipărim tablouri canvas panoramice sau de mari dimensiuni pentru un impact vizual uimitor în dormitor, birou sau sufragerie.",
-        image: "/products/canvas/canvas-1.webp",
+        image: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
         price: "De la 99 LEI",
         category: "Campanii SEO",
         tags: ["canvas mare", "tablou canvas living", "tablou canvas dimensiuni mari", "poze peisaje mari"]
@@ -587,7 +588,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/canvas",
         title: "Tablou Canvas Cadou (Nuntă, Botez, Aniversare)",
         description: "Cauți cadoul perfect? Un tablou canvas personalizat cu poza de la nuntă, botez sau vacanță este o amintire pentru toată viața.",
-        image: "/products/canvas/canvas-1.webp",
+        image: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
         tags: ["cadou tablou canvas", "tablou nunta", "tablou botez", "canvas cadou personalizat"]
@@ -598,7 +599,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/canvas",
         title: "Printare Fotografii pe Pânză Bumbac",
         description: "Serviciu profesional de printare fotografii și grafică de artă direct pe pânză de bumbac 100%. Calitate de muzeu (Giclée print).",
-        image: "/products/canvas/canvas-1.webp",
+        image: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
         tags: ["print pe panza", "fotografie pe panza", "poze panza", "printare poze tablou"]
@@ -610,7 +611,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/window-graphics",
         title: "Autocolant Geamuri (Window Graphics Perforat)",
         description: "Folii perforate pentru geamuri, lăsând vizibilitatea din interior spre exterior liberă. Perfecte pentru birouri comerciale, farmacii sau bănci.",
-        image: "/products/window-graphics/window-graphics-1.webp",
+        image: "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp",
         price: "De la 14 EUR/mp",
         category: "Campanii SEO",
         tags: ["window graphics", "autocolant perforat geamuri", "folie geam"]
@@ -621,7 +622,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/window-graphics",
         title: "Colantare Vitrine Magazine (Window Graphics)",
         description: "Atrage atenția pietonilor colanțând vitrina magazinului tău cu autocolant perforat. Reclamă non-stop la costuri reduse, păstrând lumina naturală.",
-        image: "/products/window-graphics/window-graphics-1.webp",
+        image: "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp",
         price: "De la 14 EUR/mp",
         category: "Campanii SEO",
         tags: ["colantare vitrine", "window graphics vitrina", "autocolant magazin", "reclama geam"]
@@ -632,7 +633,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/window-graphics",
         title: "Autocolant Perforat (One Way Vision)",
         description: "Material de top One Way Vision, ideal pentru sticla clădirilor de birouri și suprafețe vitrate mari. Reclamă full-color la exterior, claritate din interior.",
-        image: "/products/window-graphics/window-graphics-1.webp",
+        image: "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp",
         price: "De la 14 EUR/mp",
         category: "Campanii SEO",
         tags: ["one way vision", "autocolant one way vision", "colantare one way vision"]
@@ -643,7 +644,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/window-graphics",
         title: "Print Window Graphics Premium",
         description: "Servicii de tipar pe folie Window Graphics (perforată) la rezoluție fotografică. Asigură un design captivant pe geamurile mașinilor sau clădirilor.",
-        image: "/products/window-graphics/window-graphics-1.webp",
+        image: "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp",
         price: "De la 14 EUR/mp",
         category: "Campanii SEO",
         tags: ["print window graphics", "window graphics ieftin", "tipar autocolant perforat"]
@@ -801,7 +802,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "semnalistica-product/pc-nu-parcati-garaj",
         title: "Semn Indicator Nu Parcați - Garaj / Acces",
         description: "Atenționează șoferii: 'Nu parcați, acces garaj' sau 'Loc rezervat'. Panouri rigide rezistente la soare și ploaie. Disponibile în diverse dimensiuni.",
-        image: "/r2/pc-nu-parcati-garaj.jpg",
+        image: "/r2/indicator-nu-parcati-garaj-pvc-30-x-20-cm.jpg",
         price: "De la 12 LEI",
         category: "Campanii SEO",
         tags: ["nu parcati", "panou parcare", "indicator garaj", "acces interzis parcare"]
@@ -835,7 +836,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner-verso",
         title: "Banner Stradal Față-Verso (Blockout)",
         description: "Banner publicitar cu print pe ambele fețe, material blockout care nu permite trecerea luminii. Vizibilitate maximă din ambele sensuri de mers.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 55 LEI/mp",
         category: "Campanii SEO",
         tags: ["banner verso", "banner dubla fata", "blockout", "banner stradal"]
@@ -846,7 +847,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner-verso",
         title: "Banner Premium Față-Verso pentru Evenimente",
         description: "Soluție elegantă pentru expoziții și evenimente. Print de înaltă rezoluție pe ambele fețe, finisaje premium incluse (capse, tivit).",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 60 LEI/mp",
         category: "Campanii SEO",
         tags: ["banner evenimente", "print dubla fata", "banner premium"]
@@ -858,7 +859,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Publicitar Frizerie / Barber Shop",
         description: "Atrage clienții în salonul tău cu un banner modern pentru frizerie. Rezistent la exterior, culori vii, design personalizat inclus.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["banner frizerie", "barber shop", "reclama salon", "banner coafor"]
@@ -869,7 +870,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Cafenea / Coffee Shop",
         description: "Banner pentru cafenea, ideal pentru promovarea ofertelor sau a brandului. Material durabil, rezistent la ploaie și soare.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["banner cafenea", "coffee shop", "reclama terasa", "banner cafenea pret"]
@@ -880,7 +881,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Cofetărie / Patiserie",
         description: "Banner cu design colorat și atractiv pentru cofetării și patiserii. Imprimare eco-friendly, vizibilitate sporită pentru produsele tale.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["banner cofetarie", "patiserie", "reclama dulciuri", "banner prajituri"]
@@ -891,7 +892,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Vulcanizare / Service Auto",
         description: "Promovează-ți vulcanizarea cu un banner rezistent la praf și uzură. Mesaje clare, vizibile de la distanță pentru șoferi.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["banner vulcanizare", "service auto", "reclama anvelope", "banner schimbi roti"]
@@ -902,7 +903,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner 'De Vânzare' / 'De Închiriat'",
         description: "Cea mai rapidă metodă de a vinde sau închiria un spațiu. Banner galben vizibil cu numărul tău de telefon. Capse incluse pentru montaj ușor.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["banner de vanzare", "banner inchiriere", "banner imobiliare", "anunt vanzare banner"]
@@ -913,7 +914,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Restaurant / Pizza / Fast Food",
         description: "Banner pentru promovarea meniului sau a ofertelor de tip 'Meniul Zilei'. Rezistență UV, ușor de curățat, impact vizual maxim.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["banner restaurant", "pizza", "fast food", "meniul zilei"]
@@ -926,7 +927,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Educațional pentru Școli și Grădinițe",
         description: "Bannere rezistente pentru unități de învățământ: evenimente școlare, înscrieri, festivități. Print eco-friendly, culori vii, montaj ușor.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["banner scoala", "gradinita", "educatie", "festivitate"]
@@ -937,7 +938,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Autocolante Educative pentru Școli și Grădinițe",
         description: "Decoruri autoadezive pentru săli de clasă, coridoare și biblioteci. Materiale non-toxice, ușor de aplicat pe perete sau mobilier.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 39 LEI/mp",
         category: "Campanii SEO",
         tags: ["autocolant scoala", "stickere gradinita", "decor educativ"]
@@ -949,7 +950,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Prevenire Incendii (Pompiere / IGSU)",
         description: "Bannere de avertizare și informare pentru unitățile de pompieri. Mesaje de prevenire, vizibilitate mare, rezistență la temperaturi extreme.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["banner pompiere", "igsu", "prevenire incendii", "ssm"]
@@ -960,7 +961,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Autocolante Reflectorizante pentru Pompieri",
         description: "Stickere de înaltă vizibilitate pentru autospeciale și echipamente de intervenție. Respectă normele legale de semnalizare nocturnă.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 45 LEI/mp",
         category: "Campanii SEO",
         tags: ["autocolante reflectorizante", "pompieri", "semnalizare urgenta"]
@@ -972,7 +973,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner pentru Poliție (Siguranță și Informare)",
         description: "Bannere pentru campanii de siguranță rutieră, prevenirea infracționalității sau evenimente instituționale MAI. Calitate superioară.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["banner politie", "siguranta rutiera", "mai", "informare publica"]
@@ -983,7 +984,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Inscripționări Auto Profesionale Poliție / MAI",
         description: "Autocolante cast de înaltă calitate pentru inscripționarea mașinilor de poliție. Rezistență maximă la intemperii și spălări repetate.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 50 LEI/mp",
         category: "Campanii SEO",
         tags: ["inscriptionare auto", "politie", "autocolant cast"]
@@ -995,7 +996,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner pentru Primării (Evenimente și Anunțuri)",
         description: "Soluții de afișaj pentru primării: zilele localității, anunțuri de interes public, proiecte locale. Rezistență UV sporită.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["banner primarie", "evenimente locale", "administratia publica"]
@@ -1006,7 +1007,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/pliante",
         title: "Pliante Informative pentru Primării",
         description: "Pliante pentru raportări anuale, ghiduri de proiecte sau informare cetățeni. Tipar digital rapid, calitate impecabilă.",
-        image: "/products/pliante/pliante-1.webp",
+        image: "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp",
         price: "De la 0.35 LEI/buc",
         category: "Campanii SEO",
         tags: ["pliante primarie", "informare cetateni", "brose de prezentare"]
@@ -1018,7 +1019,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner pentru Armată (Recrutare și Festivități)",
         description: "Bannere pentru unități militare: campanii de recrutare, ceremonii, puncte de informare. Materiale robuste, durată mare de viață.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["banner armata", "recrutare", "mapn", "ceremonie militara"]
@@ -1030,7 +1031,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/pliante",
         title: "Flyere și Pliante pentru Instituții Publice",
         description: "Tipărim flyere și pliante pentru toate instituțiile publice: Scoli, Poliție, Primării. Mesaje clare, distribuție rapidă.",
-        image: "/products/pliante/pliante-1.webp",
+        image: "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp",
         price: "De la 0.35 LEI/buc",
         category: "Campanii SEO",
         tags: ["flyere scoli", "pliante politie", "materiale informative"]
@@ -1042,7 +1043,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Cabinet Stomatologic / Dentist",
         description: "Promovează-ți clinica dentară cu un banner profesional. Rezistent, culori impecabile, ideal pentru fațade sau garduri.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["banner stomatologie", "dentist", "clinica dentara", "oferte stomatologie"]
@@ -1053,7 +1054,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Autocolante pentru Farmacii (Program / Branding)",
         description: "Decor vitrine farmacii: program de funcționare, semnalistică specială, cruce verde. Autocolant rezistent la soare (UV).",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 39 LEI/mp",
         category: "Campanii SEO",
         tags: ["autocolant farmacie", "program farmacie", "decor vitrina"]
@@ -1064,7 +1065,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Sală Fitness / GYM",
         description: "Atrage noi membri cu bannere de mari dimensiuni pentru săli de sport. Rezistență sporită, impact vizual garantat.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["fitness", "gym", "sala sport", "abonamente fitness"]
@@ -1087,7 +1088,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Ansamblu Rezidențial / Imobiliare Lux",
         description: "Bannere de dimensiuni gigantice pentru promovarea proiectelor imobiliare. Mesh-uri sau bannere heavy-duty.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["imobiliare", "ansamblu rezidential", "banner mesh", "de vanzare"]
@@ -1110,7 +1111,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner 'Bine ați venit!' - Nuntă / Botez",
         description: "Întâmpină-ți invitații cu un banner personalizat. Design festiv, culori calde, amintiri de neuitat.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["banner nunta", "botez", "bine ati venit", "eveniment"]
@@ -1121,7 +1122,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Panou Foto (Backdrop) Evenimente",
         description: "Banner de mari dimensiuni pentru poze la evenimente, majorate sau petreceri corporate. Mat (nu reflectă blițul).",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["backdrop", "panou foto", "majorat", "party"]
@@ -1133,7 +1134,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Stickere Auto cu Logo-ul Firmei Tale",
         description: "Transformă mașina de serviciu într-un panou publicitar mobil. Autocolant premium rezistent la spălări și intemperii.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 39 LEI/mp",
         category: "Campanii SEO",
         tags: ["stickere auto", "logo firma", "autocolante masina"]
@@ -1144,7 +1145,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner 'Oferta Specială' / Reduceri",
         description: "Banner roșu strident pentru atragerea atenției. Ideal pentru campanii de tip SALE, Lichidare stoc sau Black Friday.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["reducere", "sale", "oferta", "black friday"]
@@ -1155,7 +1156,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner 'În Curând' / Deschidere Nouă",
         description: "Anunță marea deschidere a magazinului tău cu un banner de impact. Atrage clienții încă din prima zi!",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["in curand", "deschidere", "magazin nou", "anunt"]
@@ -1168,7 +1169,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Personalizat - Pret Ieftin",
         description: "Cel mai bun pret la banner publicitar personalizat. Print UV rezistent, finisaje incluse. Comandă online banner ieftin la calitate premium.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["banner pret", "banner ieftin", "banner personalizat", "pret banner m2"]
@@ -1179,7 +1180,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Autocolant Personalizat - Pret m2",
         description: "Află pretul pentru autocolant personalizat pe metru patrat. Print digital de inalta rezolutie pentru vitrine, masini sau panouri.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 39 LEI/mp",
         category: "Campanii SEO",
         tags: ["autocolant pret", "autocolant ieftin", "pret autocolant m2", "autocolant personalizat"]
@@ -1190,7 +1191,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Stickere Personalizate - Pret mic",
         description: "Producem stickere personalizate la preturi imbatabile. Autoadeziv rezistent, taiere pe contur (die-cut). Comandă stickere ieftine online.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 0.10 LEI",
         category: "Campanii SEO",
         tags: ["stickere pret", "stickere personalizate", "stickere ieftine", "pret stickere"]
@@ -1201,7 +1202,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/canvas",
         title: "Tablou Canvas Personalizat - Pret Ieftin",
         description: "Tablouri canvas personalizate cu poza ta la preturi de producator. Canvas bumbac, sasiu lemn. Cel mai mic pret pentru cadouri memorabile.",
-        image: "/products/canvas/canvas-1.webp",
+        image: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
         tags: ["canvas pret", "canvas personalizat", "tablou canvas ieftin", "pret tablou canvas"]
@@ -1212,7 +1213,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/rollup",
         title: "Roll-up Personalizat - Pret Producator",
         description: "Comandă sistem roll-up personalizat la pret de producator. Include transport si print premium. Cel mai ieftin rollup de 85x200cm.",
-        image: "/products/rollup/rollup-1.webp",
+        image: "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp",
         price: "De la 110 LEI",
         category: "Campanii SEO",
         tags: ["rollup pret", "rollup ieftin", "rollup personalizat", "pret rollup 85x200"]
@@ -1223,7 +1224,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/canvas",
         title: "Canvas Personalizat Ieftin Online",
         description: "Vrei un tablou canvas ieftin? Comandă online si primesti un produs premium la pret de discount. Personalizare rapida cu fotografiile tale.",
-        image: "/products/canvas/canvas-1.webp",
+        image: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
         tags: ["canvas ieftin", "canvas online", "personalizat online", "tablou pret"]
@@ -1234,7 +1235,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Personalizat Online - Pret Real-Time",
         description: "Configurează si află pretul pe loc pentru bannerul tau personalizat. Interfata online simpla, livrare rapida in toata Romania.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Campanii SEO",
         tags: ["banner online", "banner personalizat", "pret banner online", "configurator banner"]
@@ -1245,7 +1246,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Mesh Personalizat - Pret Ieftin m2",
         description: "Mesh publicitar (banner perforat) personalizat la cel mai mic pret. Ideal pentru fatade cladiri si zone cu vant puternic. Pret avantajos.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 35 LEI/mp",
         category: "Campanii SEO",
         tags: ["mesh pret", "mesh ieftin", "pret mesh m2", "mesh personalizat"]
@@ -1267,7 +1268,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/pliante",
         title: "Pliante Personalizate - Pret Ieftin",
         description: "Tiparim pliante si flyere la preturi de fabrica. Personalizare completa, hartie premium, livrare urgenta. Comanda online pliante ieftine.",
-        image: "/products/pliante/pliante-1.webp",
+        image: "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp",
         price: "De la 0.35 LEI",
         category: "Campanii SEO",
         tags: ["pliante pret", "pliante ieftine", "pret pliante", "pliante personalizate"]
@@ -1359,7 +1360,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/afise",
         title: "Diplome Personalizate (Print Premium)",
         description: "Tipărim diplome personalizate pe carton special, texturat sau perlat. Ideale pentru cursuri, concursuri sau evenimente corporate. Design elegant și culori vibrante.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 2.5 LEI",
         category: "Campanii SEO",
         tags: ["diplome", "print diplome", "diplome personalizate", "diplome cursuri"]
@@ -1370,7 +1371,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/afise",
         title: "Certificate de Absolvire (Model Editabil)",
         description: "Certificate de absolvire pentru academii, școli de beauty sau cursuri de specializare. Carton premium 300g, posibilitate de personalizare cu nume și logo.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 2.5 LEI",
         category: "Campanii SEO",
         tags: ["certificate absolvire", "certificat participare", "print certificate", "diplome absolvire"]
@@ -1381,7 +1382,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/afise",
         title: "Diplome Grădiniță și Școală (Sfârșit de An)",
         description: "Diplome vesele și colorate pentru festivitățile de sfârșit de an școlar. Modele variate pentru grupa mică, mare sau clasele primare. Prețuri speciale pentru școli.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 1.5 LEI",
         category: "Campanii SEO",
         tags: ["diplome gradinita", "diplome scoala", "serbare sfarsit an", "diploma merit"]
@@ -1392,7 +1393,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/afise",
         title: "Diplome Onorifice de Lux (Perlate/Texturate)",
         description: "Diplome deosebite pe cartoane de lux (ICE Gold, Constellation Velvet). Impact vizual garantat pentru premii de excelență, gale și evenimente speciale.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 4 LEI",
         category: "Campanii SEO",
         tags: ["diplome lux", "carton perlat", "diplome onorifice", "premii excelenta"]
@@ -1403,7 +1404,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/pliante",
         title: "Mape Diplome Personalizate",
         description: "Mape și coperți pentru diplome, realizate din carton rigid, personalizate cu logo-ul instituției tale. Protecție și eleganță pentru documentele importante.",
-        image: "/products/pliante/pliante-1.webp",
+        image: "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp",
         price: "De la 5 LEI",
         category: "Campanii SEO",
         tags: ["mape diplome", "coperti diplome", "folder diplome", "personalizat"]
@@ -1414,7 +1415,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/afise",
         title: "Diplome pentru Concursuri Sportive",
         description: "Seturi de diplome pentru competiții sportive: Locul 1, 2, 3 și Mențiune. Design dinamic, gata de personalizat cu numele competiției și data.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 2 LEI",
         category: "Campanii SEO",
         tags: ["diplome sport", "premii concurs", "diploma locul 1", "competitii"]
@@ -1425,7 +1426,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/afise",
         title: "Diplome Creștine / Botez (Amintire)",
         description: "Diplome speciale pentru botez, încrustate cu motive religioase sau elegante. O amintire deosebită pentru nași și părinți, pe carton de înaltă calitate.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 3 LEI",
         category: "Campanii SEO",
         tags: ["diplome botez", "diplome crestine", "diploma nasi", "amintire botez"]
@@ -1438,7 +1439,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Publicitate și Branding HoReCa",
         description: "Soluții de promovare pentru restaurante, terase și cafenele. De la bannere outdoor la meniuri și decoruri canvas personalizate. Rezistență UV și design de impact.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
         tags: ["horeca", "publicitate restaurante", "branding cafenele", "decor terase"]
@@ -1449,7 +1450,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/signage",
         title: "Semnalistică pentru Clinici și Cabinete",
         description: "Plăcuțe de uși, panouri informative și window-graphics pentru clinici medicale și stomatologice. Materiale igienice, durabile și cu aspect profesional.",
-        image: "/products/master/placi-pvc-forex-personalizat-print-uv.png",
+        image: "/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp",
         price: "De la 45 LEI",
         category: "Campanii SEO",
         tags: ["clinici medicale", "stomatologie", "placute usi", "semnalistica interior"]
@@ -1460,7 +1461,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/afise",
         title: "Printuri pentru Școli și Grădinițe",
         description: "Realizăm panouri informative, diplome, autocolante educative și bannere pentru unități de învățământ. Design adaptat, culori vii și materiale calitative.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 2.5 LEI",
         category: "Campanii SEO",
         tags: ["gradinite", "scoli", "panouri educative", "promovare educatie"]
@@ -1471,7 +1472,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/window-graphics",
         title: "Publicitate pentru Saloane de Înfrumusețare",
         description: "Transformă-ți salonul cu window graphics de lux, tablouri canvas pentru recepție și autocolante de vitrină elegante. Design creativ pentru domeniul beauty.",
-        image: "/products/window-graphics/window-graphics-1.webp",
+        image: "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp",
         price: "De la 55 LEI",
         category: "Campanii SEO",
         tags: ["beauty salon", "coafura", "window graphics", "decor salon"]
@@ -1482,7 +1483,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Publicitate pentru Imobiliare și Site-uri",
         description: "Bannere mari pentru șantiere, panouri de vânzare/închiriere și mesh-uri publicitare pentru ansambluri rezidențiale. Vizibilitate maximă și prețuri competitive.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 35 LEI",
         category: "Campanii SEO",
         tags: ["imobiliare", "banner vanzare", "panou constructii", "dezvoltatori"]
@@ -1493,7 +1494,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Promovare pentru Service Auto și Vulcanizări",
         description: "Bannere rezistente la uleiuri și intemperii, autocolante pentru branding auto și semnalistică pentru ateliere. Rezistență mecanică ridicată.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
         tags: ["service auto", "vulcanizare", "branding auto", "semnalistica service"]
@@ -1504,7 +1505,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/signage",
         title: "Plăcuțe Profesionale pentru Avocați și Notari",
         description: "Plăcuțe gravate sau printate UV pe plexiglas, alucobond sau alamă. Eleganță și sobrietate pentru cabinete de avocatură și birouri notariale.",
-        image: "/products/master/placi-pvc-forex-personalizat-print-uv.png",
+        image: "/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp",
         price: "De la 85 LEI",
         category: "Campanii SEO",
         tags: ["avocati", "notari", "placute birou", "semnalistica eleganta"]
@@ -1517,7 +1518,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Frizerie / Barbershop",
         description: "Bannere de înaltă calitate pentru frizerii și barbershop-uri. Modele cu 'Barber Pole', prețuri servicii sau promoții. Rezistență outdoor garantată.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
         tags: ["frizerie", "barbershop", "banner frizerie", "reclama salon"]
@@ -1528,7 +1529,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Cafenea / Coffee Shop",
         description: "Atrage clienții cu un banner de cafenea cu design premium. Ideal pentru terase, coffee corners sau branding stradal. Print UV rezistent.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
         tags: ["cafenea", "coffee shop", "banner cafea", "branding terasa"]
@@ -1539,7 +1540,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Cofetărie / Patiserie",
         description: "Bannere vesele și colorate pentru cofetării și patiserii. Promovează torturile, prăjiturile sau candy-bar-ul cu un print de înaltă rezoluție.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
         tags: ["cofetarie", "patiserie", "banner torturi", "reclama dulce"]
@@ -1550,7 +1551,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Vulcanizare / Service Roți",
         description: "Bannere ultra-rezistente pentru vulcanizări. Vizibile de la distanță, cu fonturi mari și contrastante. Material heavy-duty pentru condiții de exterior.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
         tags: ["vulcanizare", "service roti", "banner service auto", "echilibrare roti"]
@@ -1561,7 +1562,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Pompieri / ISU",
         description: "Bannere informative și de avertizare pentru unități de pompieri sau campanii de prevenire ISU. Printate pe material ignifug la cerere.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
         tags: ["pompieri", "isu", "siguranta incendiu", "banner informativ"]
@@ -1572,7 +1573,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Poliție / Poliție Locală",
         description: "Materiale de semnalistică și bannere pentru unitățile de poliție. Campanii de siguranță rutieră, informare cetățeni sau branding instituțional.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
         tags: ["politie", "politie locala", "siguranta rutiera", "banner institutii"]
@@ -1583,7 +1584,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Armată / MApN",
         description: "Bannere pentru campanii de recrutare, evenimente militare sau porți deschise. Rezistență ridicată și culori conforme cu standardele instituționale.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
         tags: ["armata", "mapn", "recrutare", "evenimente militare"]
@@ -1594,7 +1595,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Primărie / Administrație Locală",
         description: "Bannere pentru festivități, zilele orașului, anunțuri de interes public sau proiecte de investiții. Livrare rapidă către orice primărie din țară.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
         tags: ["primarie", "consiliu local", "anunt public", "zilele orasului"]
@@ -1607,7 +1608,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Print Banner Ieftin (Cel mai bun preț)",
         description: "Cauți cel mai mic preț pentru print banner? Aici găsești soluții economice fără a sacrifica vizibilitatea. Producție directă, fără intermediari.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI",
         category: "Campanii SEO",
         tags: ["banner ieftin", "pret mic banner", "oferta print", "economical banner"]
@@ -1618,7 +1619,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Print Banner Urgent (Livrare în 2-4 Zile Lucrătoare)",
         description: "Ai nevoie de un banner repede? Comandă acum: bannerul ajunge la tine prin curier în 2-4 zile lucrătoare, producție inclusă.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 45 LEI",
         category: "Campanii SEO",
         tags: ["banner urgent", "print rapid", "livrare 2-4 zile", "productie rapida"]
@@ -1629,7 +1630,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/window-graphics",
         title: "Autocolant Personalizat (Preț/mp)",
         description: "Verifică oferta de preț pentru autocolant personalizat. Print UV de înaltă rezoluție, tăiere pe contur și rezistență la decolorare.",
-        image: "/products/window-graphics/window-graphics-1.webp",
+        image: "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp",
         price: "De la 49 LEI",
         category: "Campanii SEO",
         tags: ["pret autocolant", "autocolant mp", "stikere pret", "print autocolant"]
@@ -1640,7 +1641,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/tablou-canvas",
         title: "Tablou Canvas Ieftin (Personalizat)",
         description: "Cele mai ieftine tablouri canvas personalizate cu fotografia ta. Calitate de galerie, șasiu lemn și culori vii la prețuri accesibile.",
-        image: "/products/canvas/canvas-1.webp",
+        image: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
         price: "De la 45 LEI",
         category: "Campanii SEO",
         tags: ["canvas ieftin", "pret tablou canvas", "cadouri personalizate", "canvas online"]
@@ -1653,7 +1654,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/afise",
         title: "Tipografie Online (Servicii Complete)",
         description: "Partenerul tău de încredere pentru toate nevoile de tipar. De la cărți de vizită la afișe și mape, totul comandat online cu livrare națională.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 10 LEI",
         category: "Campanii SEO",
         tags: ["tipografie online", "centru print", "tipar digital", "servicii tipografice"]
@@ -1664,7 +1665,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Producție Publicitară (Branding Complet)",
         description: "Soluții integrate de producție publicitară: bannere, panouri, firme luminoase și branding auto. Tot ce ai nevoie pentru vizibilitatea afacerii tale.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "Contact",
         category: "Campanii SEO",
         tags: ["productie publicitara", "agentie reclama", "firme publicitare", "afisaj stradal"]
@@ -1745,7 +1746,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner pentru Școală / Grădiniță",
         description: "Bannere pentru festivități, 'Școala Altfel', înscrieri sau evenimente școlare. Design adaptat copiilor, culori vii și materiale profesionale.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
         tags: ["banner scoala", "banner gradinita", "decor scoala", "festivitate"]
@@ -1758,7 +1759,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Publicitar (Preț/mp)",
         description: "Află prețul pe metru pătrat pentru bannere publicitare. Folosește configuratorul nostru pentru un calcul instantaneu. Cele mai mici prețuri de producție.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 35 LEI",
         category: "Campanii SEO",
         tags: ["banner pret", "pret banner", "calcul pret banner", "banner mp"]
@@ -1769,7 +1770,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/window-graphics",
         title: "Autocolant Geam (Preț Personalizat)",
         description: "Prețuri competitive pentru autocolant de geam și window graphics. Print UV calitativ, rezistent la soare. Ideal pentru vitrine magazine și birouri.",
-        image: "/products/window-graphics/window-graphics-1.webp",
+        image: "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp",
         price: "De la 49 LEI",
         category: "Campanii SEO",
         tags: ["autocolant pret", "pret autocolant geam", "autocolant vitrina", "colantare geam"]
@@ -1780,7 +1781,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Stickere Personalizate (Preț și Modele)",
         description: "Comandă stickere personalizate la cele mai bune prețuri. Etichete autocolante tăiate pe contur, orice formă și dimensiune. Rezistență sporită.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 1 LEU",
         category: "Campanii SEO",
         tags: ["stikere pret", "pret stickere", "etichete personalizate", "stickere ieftine"]
@@ -1791,7 +1792,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/canvas",
         title: "Canvas Personalizat (Prețuri și Dimensiuni)",
         description: "Vezi oferta de prețuri pentru tablouri canvas personalizate. Transformă fotografiile tale în artă la prețuri de producător. Calitate premium garantată.",
-        image: "/products/canvas/canvas-1.webp",
+        image: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
         price: "De la 45 LEI",
         category: "Campanii SEO",
         tags: ["canvas pret", "pret tablou canvas", "canvas personalizat pret", "tablou pret"]
@@ -1802,7 +1803,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Personalizat (Creat Online)",
         description: "Creează-ți propriul banner personalizat online. Încarcă designul tău sau alege opțiunile dorite și primești produsul gata de montaj în 2-4 zile lucrătoare.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 39 LEI",
         category: "Campanii SEO",
         tags: ["banner personalizat", "personalizare banner", "creare banner", "banner online"]
@@ -1813,7 +1814,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/canvas",
         title: "Canvas Personalizat (Foto pe Pânză)",
         description: "Tablouri canvas personalizate online cu fotografiile story-ului tău. Print pe pânză bumbac 100%, șasiu lemn natural. Cadoul perfect.",
-        image: "/products/canvas/canvas-1.webp",
+        image: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
         price: "De la 45 LEI",
         category: "Campanii SEO",
         tags: ["canvas personalizat", "foto pe panza", "tablou personalizat", "canvas online"]
@@ -1826,7 +1827,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/afise",
         title: "Diplome Personalizate (Design Premium)",
         description: "Diplome personalizate pe carton de înaltă calitate sau suport rigid. Ideale pentru cursuri, workshop-uri sau evenimente corporate. Print UV rezistent.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 5 LEI",
         category: "Campanii SEO",
         tags: ["diplome personalizate", "print diplome", "modele diplome", "diplome curs"]
@@ -1837,7 +1838,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/afise",
         title: "Diplome de Absolvire (Școli/Grădinițe)",
         description: "Diplome de absolvire pentru sfârșit de an școlar. Modele vesele pentru grădinițe sau elegante pentru licee și facultăți. Livrare rapidă loturi mari.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 3 LEI",
         category: "Campanii SEO",
         tags: ["diplome absolvire", "diplome scoli", "diplome gradinite", "festivitate absolvire"]
@@ -1848,7 +1849,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/afise",
         title: "Diplome de Merit (Competiții)",
         description: "Diplome pentru premierea performanței în sport, artă sau educație. Design motivant și print de înaltă definiție pe suporturi speciale.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 3 LEI",
         category: "Campanii SEO",
         tags: ["diplome merit", "diplome concurs", "diplome sportive", "premiere"]
@@ -1959,7 +1960,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Backlit (pentru Reclame Luminoase)",
         description: "Material special care permite trecerea uniformă a luminii. Ideal pentru casete luminoase de mari dimensiuni și reclame de noapte cu impact maxim.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 14 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner backlit", "print caseta luminoasa", "material translucid"]
@@ -1970,7 +1971,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Reflectorizant (Vizibil pe timpul nopții)",
         description: "Proprietăți reflectorizante similare semnelor de circulație. Reclama ta devine vizibilă instant la contactul cu farurile mașinilor.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 18 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner reflectorizant", "vizibilitate noaptea", "siguranta rutiera"]
@@ -1981,7 +1982,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Prelată Imprimată (Bannere Heavy-Duty)",
         description: "Material ultra-rezistent tip prelată de camion (poliplan 600g+). Ideal pentru acoperiri de lungă durată, terase sau branding auto.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 15 EUR/mp",
         category: "Campanii SEO",
         tags: ["prelata imprimata", "poliplan greu", "branding camioane"]
@@ -1992,7 +1993,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Textil de Interior (Soft Concept)",
         description: "Print pe material textil premium, mat, fără reflexii. Ideal pentru showroom-uri, decoruri TV, expoziții și branding de lux.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 12 EUR/mp",
         category: "Campanii SEO",
         tags: ["banner textil", "print material textil", "decor interior"]
@@ -2003,7 +2004,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Spider Pop-Up Display (Panou Expozițional)",
         description: "Sistem profesional tip perete (backdrop) ușor de montat. Include structură extensibilă, print textil sau PVC și geantă de transport.",
-        image: "/products/rollup/rollup-1.webp",
+        image: "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp",
         price: "De la 850 LEI",
         category: "Campanii SEO",
         tags: ["spider popup", "pop up display", "panou expozitional", "backdrop evenimente"]
@@ -2014,7 +2015,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "X-Banner Stand (Sistem Economic)",
         description: "Cea mai accesibilă soluție de afișaj portabil. Structură ușoară tip X, print inclus și montaj ultra-rapid sub 1 minut.",
-        image: "/products/rollup/rollup-1.webp",
+        image: "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp",
         price: "De la 85 LEI",
         category: "Campanii SEO",
         tags: ["x-banner", "stand economic", "afisaj portabil"]
@@ -2025,7 +2026,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/afise",
         title: "People Stopper (Semn Stradal tip A-Board)",
         description: "Captează atenția trecătorilor direct de pe trotuar. Cadru metalic rezistent, fețe duble pentru afișe interschimbabile.",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 220 LEI",
         category: "Campanii SEO",
         tags: ["people stopper", "a-board", "reclama trotuar", "semn stradal"]
@@ -2036,7 +2037,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Steaguri Publicitare (Tip Lacrimă / Pană)",
         description: "Publicitate dinamică ce atrage privirea prin mișcare. Diferite forme și înălțimi (Beach Flags), print pe steag textil premium rezistent la vânt.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 190 LEI",
         category: "Campanii SEO",
         tags: ["steaguri publicitare", "beach flags", "steag lacrima", "steag pana"]
@@ -2047,7 +2048,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/canvas",
         title: "Panou Nuntă Personalizat (Welcome Board)",
         description: "Întâmpină-ți invitații cu stil! Panouri imprimate pe placă rigidă sau canvas cu design floral, vintage sau minimalist.",
-        image: "/products/canvas/canvas-1.webp",
+        image: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
         price: "De la 95 LEI",
         category: "Campanii SEO",
         tags: ["panou nunta", "welcome board", "decor nunta"]
@@ -2058,7 +2059,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Backdrop / Fundal Photo Booth Evenimente",
         description: "Fundal personalizat pentru poze reușite la nunți, botezuri sau petreceri corporate. Material mat, fără reflexii de blitz.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 250 LEI",
         category: "Campanii SEO",
         tags: ["backdrop", "photo booth", "fundal poze", "panou foto"]
@@ -2080,7 +2081,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Banner Absolvire / Banchet Personalizat",
         description: "Sărbătorește finalul de etapă cu un banner memorabil pentru promoția ta. Personalizat cu nume, ani și grafică festivă.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 75 LEI",
         category: "Campanii SEO",
         tags: ["banner absolvire", "promotia 2024", "banchet", "diploma banner"]
@@ -2091,7 +2092,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/banner",
         title: "Print Bannere Urgente (Livrare în 2-4 Zile Lucrătoare)",
         description: "Ai nevoie de un banner repede? Producem și expediem materialele publicitare rapid: comanda ajunge la tine în 2-4 zile lucrătoare.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "Supliment Urgență",
         category: "Campanii SEO",
         tags: ["print urgent", "banner rapid", "livrare rapida"]
@@ -2103,7 +2104,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Autocolant Vinil Durabil (Rezilient)",
         description: "Folie polimerică de înaltă calitate pentru aplicații de lungă durată la exterior. Rezistent la UV, ploaie și variații de temperatură.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 12 EUR/mp",
         category: "Campanii SEO",
         tags: ["vinil durabil", "autocolant exterior", "stickere rezistente"]
@@ -2114,7 +2115,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Stickere PVC Rezistente la Apă (Impermeabile)",
         description: "Ideale pentru etichetarea produselor ce intră în contact cu apa sau sunt păstrate la rece. Nu se dezlipesc și nu se degradează.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 0.50 LEI/buc",
         category: "Campanii SEO",
         tags: ["stickere pvc", "etichete impermeabile", "stickere apa"]
@@ -2125,7 +2126,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Autocolant Transparent (Clear Stickers)",
         description: "Stickere invizibile cu excepția designului. Print UV cu cerneală albă pentru un efect premium pe sticlă sau ambalaje colorate.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 15 EUR/mp",
         category: "Campanii SEO",
         tags: ["autocolant transparent", "clear stickers", "print alb"]
@@ -2136,7 +2137,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Autocolant Reflectorizant (Siguranță & Vizibilitate)",
         description: "Stickere care reflectă lumina farurilor, tipice semnelor de circulație. Perfecte pentru biciclete, mașini și semnalistică de noapte.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 25 EUR/mp",
         category: "Campanii SEO",
         tags: ["reflectorizant", "stickere siguranta", "vizibilitate noaptea"]
@@ -2147,7 +2148,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Stickere Holografice (Efect Curcubeu)",
         description: "Atrage atenția cu un efect vizual spectaculos! Material care își schimbă culoarea în funcție de lumină.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 2.50 LEI/buc",
         category: "Campanii SEO",
         tags: ["holografic", "rainbow stickers", "stickere cool"]
@@ -2158,7 +2159,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Autocolant Podea Antiderapant (Floor Graphics)",
         description: "Stickere ultra-rezistente pentru trafic intens, laminate special pentru a preveni alunecarea. Ideale pentru magazine.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 22 EUR/mp",
         category: "Campanii SEO",
         tags: ["floor graphics", "autocolant podea", "stickere antiderapante"]
@@ -2169,7 +2170,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Stickere Personalizate cu Cod QR",
         description: "Conectează-ți clienții la site-ul tău sau la meniul digital prin scanare rapidă. Print clar și durabil.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 0.80 LEI/buc",
         category: "Campanii SEO",
         tags: ["qr code", "stickere digitale", "marketing offline"]
@@ -2180,7 +2181,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Stickere Social Media (Instagram / Facebook / TikTok)",
         description: "Ajută-ți afacerea să crească în online. Stickere cu logourile social media și contul tău, gata de lipit pe vitrină.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 15 LEI/buc",
         category: "Campanii SEO",
         tags: ["social media stickers", "follow us", "branding vitrina"]
@@ -2191,7 +2192,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Stickere Die-Cut (Tăiate Individual pe Contur)",
         description: "Orice formă îți dorești! Tăiere de precizie pe conturul designului tău, oferite la bucată.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 1.20 LEI/buc",
         category: "Campanii SEO",
         tags: ["die cut", "taiere pe contur", "stickere individuale"]
@@ -2202,7 +2203,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Kit Stickere Taxi & Ridesharing (Uber/Bolt)",
         description: "Seturi complete de autocolante conform normelor Uber, Bolt și Taxi. Include buline, numere autorizație și logouri.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 45 LEI/set",
         category: "Campanii SEO",
         tags: ["taxi", "uber", "bolt", "ridesharing"]
@@ -2213,7 +2214,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Stickere Perete (Citate & Decor)",
         description: "Transformă ambianța camerei sau a biroului cu citate tăiate pe contur. Ușor de aplicat pe lavabilă.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 35 LEI",
         category: "Campanii SEO",
         tags: ["wall decals", "stickere perete", "decor interior"]
@@ -2224,7 +2225,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Stickere 'Handmade with Love'",
         description: "Etichete rotunde de 3-5 cm pentru micii artizani. Oferă produselor tale un aspect cald și personal.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 0.30 LEI/buc",
         category: "Campanii SEO",
         tags: ["handmade", "etichete produs", "sigiliu artizanat"]
@@ -2235,7 +2236,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Stickere 'Baby on Board' Personalizate",
         description: "Avertizează șoferii din trafic cu un sticker vizibil. Putem adăuga și numele copilului tău.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 15 LEI",
         category: "Campanii SEO",
         tags: ["baby on board", "bebe la bord", "stickere auto copii"]
@@ -2246,7 +2247,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Set Stickere Școală de Șoferi",
         description: "Literele 'S' și branding pentru mașini de instruire. Disponibile și în variantă magnetică.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 65 LEI/kit",
         category: "Campanii SEO",
         tags: ["scoala soferi", "instructor auto", "semne magnetice"]
@@ -2257,7 +2258,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Stickere 'SALE' / Reduceri Vitrine",
         description: "Anunță campaniile de reduceri cu stickere de mari dimensiuni pentru vitrine. Culori stridente (roșu/galben).",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 45 LEI",
         category: "Campanii SEO",
         tags: ["sale", "reducere", "stickere vitrina", "promotii"]
@@ -2268,7 +2269,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Stickere cu Logo-ul Afacerii Tale",
         description: "Cea mai rapidă metodă de branding. Stickere de înaltă calitate cu logo-ul tău, gata de aplicat oriunde.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 0.60 LEI/buc",
         category: "Campanii SEO",
         tags: ["branding logo", "stickere firma", "identitate vizuala"]
@@ -2279,7 +2280,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Etichete de Prețuri Autoadezive",
         description: "Etichete mici pentru rafturi sau produse. Pot fi printate cu coduri de bare sau date variabile.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 25 LEI/rola",
         category: "Campanii SEO",
         tags: ["etichete pret", "cod bare", "stickere magazin"]
@@ -2290,7 +2291,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Stickere Sigiliu Colete (Securitate)",
         description: "Asigură integritatea coletelor tale. Stickere care confirmă că pachetul este sigilat și original.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 0.40 LEI/buc",
         category: "Campanii SEO",
         tags: ["sigiliu colet", "packaging expert", "ecommerce branding"]
@@ -2301,7 +2302,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Seturi Stickere pe Coală (Kiss-Cut)",
         description: "Mai multe stickere pe o singură pagină A4 sau A3. Ideale pentru seturi tematice sau cadouri.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 12 LEI/coala",
         category: "Campanii SEO",
         tags: ["sticker sheets", "set stickere", "kiss cut"]
@@ -2312,7 +2313,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Etichete Autocolante la Rolă",
         description: "Soluții de etichetare de volum pentru producători. Mii de bucăți pe o rolă de calitate.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 180 LEI/1000 buc",
         category: "Campanii SEO",
         tags: ["etichete rola", "print volum", "etichetare automata"]
@@ -2323,7 +2324,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Stickere Forme Standard (Rotunde/Pătrate)",
         description: "Stickere tăiate în forme geometrice prestabilite. Aspect ordonat la costuri reduse.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 0.50 LEI/buc",
         category: "Campanii SEO",
         tags: ["stickere rotunde", "stickere patrate", "etichete standard"]
@@ -2334,7 +2335,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Stickere Tiraj Mic (Fără Minim)",
         description: "Perfect pentru evenimente punctuale sau teste de marketing. Printăm chiar și cantități mici.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 25 LEI/comanda",
         category: "Campanii SEO",
         tags: ["tiraj mic", "print digital", "fara minim"]
@@ -2345,7 +2346,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Stickere Laminate (Protecție UV)",
         description: "Protejează-ți stickerele de zgârieturi și de decolorare cu un strat extra de laminare mată sau lucioasă.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "+25% cost",
         category: "Campanii SEO",
         tags: ["laminare", "protectie uv", "stickere rezistente"]
@@ -2356,7 +2357,7 @@ export const seoCampaignProducts: any[] = [
         routeSlug: "configurator/autocolante",
         title: "Producător Etichete Adezive București",
         description: "Producție locală în București cu livrare națională. Prețuri de fabrică și termene rapide.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "Pret Fabrica",
         category: "Campanii SEO",
         tags: ["producator bucuresti", "fabrica etichete", "print local"]
@@ -2428,5 +2429,5 @@ export const seoCampaignProducts: any[] = [
         category: "Campanii SEO",
         tags: ["pod romania", "print on demand", "dropshipping haine"]
     }
-];
+].map(product => ({ ...product, image: getBannerExampleImage(`${product.title} ${product.slug}`, product.image) }));
 

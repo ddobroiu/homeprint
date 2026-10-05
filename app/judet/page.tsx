@@ -13,7 +13,7 @@ export default function JudetePage() {
     const judete = getJudete().sort((a, b) => a.name.localeCompare(b.name));
 
     return (
-        <div className="bg-white min-h-screen pb-20">
+        <div className="brand-directory bg-white min-h-screen pb-20">
             {/* Header */}
             <div className="border-b border-slate-100 mb-12">
                 <div className="container mx-auto px-6 py-16">

@@ -1,5 +1,5 @@
 import React from "react";
-import { Package, Ruler, UploadCloud, Sparkles } from "lucide-react";
+import { Package, Ruler, UploadCloud } from "lucide-react";
 
 export const Header = () => {
     return (

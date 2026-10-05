@@ -1,3 +1,6 @@
+import BrandLocalHub from "@/components/design/BrandLocalHub";
+import { brandDesign } from "@/lib/brandDesign";
+import { isIndexableLocalPage } from "@/lib/seo/localIndexPolicy";
 import { siteConfig } from "@/lib/siteConfig";
 import React from "react";
 import Link from "next/link";
@@ -37,22 +40,10 @@ function orderedProducts() {
 
 function faqFor(locName: string, judetName: string, tier: string | undefined) {
     return [
-        {
-            q: `Cât durează până primesc comanda în ${locName}?`,
-            a: `Comanda ajunge la adresa ta din ${locName} prin curier DPD în 2-4 zile lucrătoare, producție inclusă.`,
-        },
-        {
-            q: "Cum aflu prețul?",
-            a: "Alegi produsul, introduci dimensiunea și cantitatea, iar prețul apare imediat, fără cerere de ofertă. Pentru comenzi mari ne scrii pe WhatsApp.",
-        },
-        {
-            q: "Pot plăti la livrare?",
-            a: `Da. Poți plăti cu cardul online, prin transfer bancar sau ramburs, la curier, când primești coletul în ${locName}.`,
-        },
-        {
-            q: "Ce fac dacă nu am grafică?",
-            a: `O facem noi, pe baza textului și a logo-ului tău. Iar dacă ai grafica ta, vezi înainte de comandă cum se încadrează pe dimensiunea aleasă. Livrăm oriunde în județul ${judetName}.`,
-        },
+      { q: `Cum aleg produsul pentru o comandă în ${locName}?`, a: `${brandDesign.steps[0].text} Catalogul complet este disponibil pe această pagină, inclusiv pentru celelalte tipuri de print.` },
+      { q: "Unde verific prețul configurației?", a: "Deschide configuratorul produsului și selectează opțiunile disponibile. Prețurile de pornire nu înlocuiesc prețul configurației finale." },
+      { q: "Cum pregătesc grafica?", a: brandDesign.story },
+      { q: `Aveți un punct de lucru în ${locName}?`, a: `Aceasta este o pagină pentru comenzi cu livrare în ${locName}, județul ${judetName}; nu indică un punct de lucru local. Datele de contact și informațiile despre livrare se găsesc în paginile dedicate.` },
     ];
 }
 
@@ -72,7 +63,7 @@ export async function generateMetadata({ params }: Params) {
         description,
         openGraph: { title, description, url: routeUrl, siteName: "HomePrint", locale: "ro_RO", type: "website" },
         alternates: { canonical: routeUrl },
-        robots: { index: true, follow: true },
+        robots: { index: isIndexableLocalPage(siteConfig.url, judet.slug, loc.slug), follow: true },
     };
 }
 
@@ -105,9 +96,8 @@ export default async function LocalitatePage({ params }: Params) {
     const pageUrl = `${siteConfig.url}/judet/${judet.slug}/${loc.slug}`;
     const waMessage = `Bună ziua! Aș dori o ofertă pentru decor printat cu livrare în ${loc.name}, jud. ${judet.name}.`;
 
-    return (
-        <div className="bg-white">
-            <script
+    return (<>
+<script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify([
@@ -128,169 +118,7 @@ export default async function LocalitatePage({ params }: Params) {
                     ]),
                 }}
             />
-
-            {/* Primul ecran: ce oferim, in 2 randuri, si butoanele */}
-            <section className="border-b border-slate-100 bg-gradient-to-b from-amber-50/60 to-white">
-                <div className="container mx-auto grid gap-8 px-4 py-8 sm:px-6 lg:grid-cols-[1.4fr_1fr] lg:items-center lg:py-14">
-                    <div>
-                        <Breadcrumbs
-                            siteUrl={siteConfig.url}
-                            items={[
-                                { name: "Acasă", href: "/" },
-                                { name: "Județe", href: "/judet" },
-                                { name: judet.name, href: `/judet/${judet.slug}` },
-                                { name: loc.name },
-                            ]}
-                            className="mb-4 flex flex-wrap items-center gap-1.5 text-xs text-slate-500"
-                            linkClassName="hover:text-amber-700"
-                            currentClassName="text-slate-800"
-                        />
-                        <p className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-xs font-medium text-amber-700 ring-1 ring-amber-200">
-                            <Truck size={14} /> Livrăm în {loc.name}, jud. {judet.name}
-                        </p>
-                        <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
-                            Decor printat în <span className="text-amber-600">{loc.name}</span>
-                        </h1>
-                        <p className="mt-4 max-w-2xl text-base text-slate-600 sm:text-lg">{intro}</p>
-
-                        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                            <a href="#produse" className="inline-flex items-center justify-center gap-2 rounded-2xl bg-amber-600 px-7 py-4 text-base font-bold text-white shadow-lg shadow-amber-600/25 transition hover:bg-amber-500">
-                                Vezi produsele și prețurile <ArrowRight size={18} />
-                            </a>
-                            <WhatsAppButton message={waMessage} className="!rounded-2xl !px-7 !py-4 !text-base !normal-case !tracking-normal">
-                                Cere ofertă pe WhatsApp
-                            </WhatsAppButton>
-                        </div>
-                        <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-amber-700">
-                            <Phone size={15} /> sau sună la {siteConfig.phone}
-                        </a>
-
-                        <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-700">
-                            {["Preț calculat pe loc", "Gata în 2-4 zile lucrătoare", "Plată la livrare", "Livrare DPD"].map((t) => (
-                                <li key={t} className="inline-flex items-center gap-1.5"><Check size={16} className="text-amber-600" /> {t}</li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Cele mai comandate, cu pret: al doilea buton din primul ecran */}
-                    <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-xl shadow-slate-900/5">
-                        <p className="mb-3 text-sm font-semibold text-slate-900">Recomandate în {loc.name}</p>
-                        <ul className="divide-y divide-slate-100">
-                            {top.map((p) => {
-                                const from = getFromPrice([p.id]);
-                                return (
-                                    <li key={p.id}>
-                                        <Link href={`/judet/${judet.slug}/${loc.slug}/${p.slug || p.id}`} className="group flex items-center gap-3 py-3">
-                                            <span className="relative size-14 shrink-0 overflow-hidden rounded-xl bg-slate-100">
-                                                <Image src={p.image || "/placeholder.png"} alt="" fill sizes="56px" className="object-cover" />
-                                            </span>
-                                            <span className="min-w-0 flex-1">
-                                                <span className="block truncate font-semibold text-slate-900 group-hover:text-amber-700">{p.name}</span>
-                                                {from && <span className="text-sm text-slate-500">de la <b className="text-slate-900">{from.text}</b></span>}
-                                            </span>
-                                            <span className="rounded-xl bg-amber-600 px-3 py-2 text-xs font-bold text-white group-hover:bg-amber-500">Comandă</span>
-                                        </Link>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            {/* Toate produsele */}
-            <section id="produse" className="scroll-mt-20 py-12 sm:py-16">
-                <div className="container mx-auto px-4 sm:px-6">
-                    <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Produse cu livrare în {loc.name}</h2>
-                    <p className="mt-2 text-slate-600">Alegi dimensiunea și vezi prețul imediat.</p>
-                    <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:grid-cols-4">
-                        {products.map((p) => {
-                            const from = getFromPrice([p.id]);
-                            return (
-                                <Link key={p.id} href={`/judet/${judet.slug}/${loc.slug}/${p.slug || p.id}`}
-                                    className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-amber-300 hover:shadow-lg">
-                                    <span className="relative aspect-[4/3] bg-slate-100">
-                                        <Image src={p.image || "/placeholder.png"} alt={`${p.name} în ${loc.name}`} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition duration-500 group-hover:scale-105" />
-                                    </span>
-                                    <span className="flex flex-1 flex-col p-3 sm:p-4">
-                                        <h3 className="text-sm font-semibold text-slate-900 sm:text-base">{p.name}</h3>
-                                        {from && <span className="mt-0.5 text-xs text-slate-500 sm:text-sm">de la <b className="text-slate-900">{from.text}</b></span>}
-                                        <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-amber-700">
-                                            Configurează <ArrowRight size={14} className="transition group-hover:translate-x-0.5" />
-                                        </span>
-                                    </span>
-                                </Link>
-                            );
-                        })}
-                    </div>
-                </div>
-            </section>
-
-            {/* Cum comanzi: 3 pasi */}
-            <section className="bg-slate-50 py-12 sm:py-16">
-                <div className="container mx-auto px-4 sm:px-6">
-                    <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Cum comanzi din {loc.name}</h2>
-                    <ol className="mt-8 grid gap-4 sm:grid-cols-3">
-                        {[
-                            { icon: MousePointerClick, t: "Alegi produsul", d: "Dimensiune, material, cantitate. Prețul apare pe loc." },
-                            { icon: Upload, t: "Încarci grafica", d: "Vezi cum se încadrează. Sau o facem noi." },
-                            { icon: Truck, t: `Primești în ${loc.name}`, d: "Curier DPD la adresă. Plătești și la livrare." },
-                        ].map((s, i) => (
-                            <li key={s.t} className="rounded-2xl border border-slate-200 bg-white p-5">
-                                <span className="flex size-10 items-center justify-center rounded-xl bg-amber-600 text-white"><s.icon size={20} /></span>
-                                <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-amber-700">Pasul {i + 1}</p>
-                                <h3 className="mt-1 font-semibold text-slate-900">{s.t}</h3>
-                                <p className="mt-1 text-sm text-slate-600">{s.d}</p>
-                            </li>
-                        ))}
-                    </ol>
-                </div>
-            </section>
-
-            {/* Intrebari frecvente (aceleasi ca in datele structurate) */}
-            <section className="py-12 sm:py-16">
-                <div className="container mx-auto max-w-3xl px-4 sm:px-6">
-                    <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Întrebări despre comenzile din {loc.name}</h2>
-                    <div className="mt-6 divide-y divide-slate-200 rounded-2xl border border-slate-200">
-                        {faq.map((f, i) => (
-                            <details key={f.q} className="group p-5" open={i === 0}>
-                                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-slate-900">
-                                    {f.q}
-                                    <span className="text-amber-600 transition group-open:rotate-45" aria-hidden>+</span>
-                                </summary>
-                                <p className="mt-2 text-slate-600">{f.a}</p>
-                            </details>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Date reale despre localitate (doar dacă există în lib/seo/data/judete) */}
-            <LocalityFacts judetSlug={judet.slug} locSlug={loc.slug} locName={loc.name} className="border-t border-slate-100 bg-white py-12" />
-
-            {/* Localitati vecine */}
-            {neighbours.length > 0 && (
-                <section className="border-t border-slate-100 bg-slate-50 py-12 pb-28 sm:py-16 lg:pb-16">
-                    <div className="container mx-auto px-4 sm:px-6">
-                        <h2 className="text-xl font-bold text-slate-900">{nearbyHasKm ? `Localități apropiate de ${loc.name}` : `Livrăm și în alte localități din județul ${judet.name}`}</h2>
-                        <div className="mt-5 flex flex-wrap gap-2">
-                            {neighbours.map((l) => (
-                                <Link key={`${l.judetSlug}/${l.slug}`} href={`/judet/${l.judetSlug}/${l.slug}`}
-                                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-700 hover:border-amber-300 hover:text-amber-700">
-                                    {l.name}{typeof l.km === "number" ? <span className="text-slate-400"> · {l.km.toLocaleString("ro-RO")} km</span> : null}
-                                </Link>
-                            ))}
-                            <Link href={`/judet/${judet.slug}`} className="rounded-full px-4 py-2 text-sm font-semibold text-amber-700 hover:underline">
-                                Tot județul {judet.name} →
-                            </Link>
-                        </div>
-                                {nearbyHasKm && <SourceNote judetSlug={judet.slug} keys={["osm"]} prefix="Distanțe în linie dreaptă" />}
-                    </div>
-                </section>
-            )}
-
-            {/* Pe telefon: butonul ramane mereu la vedere */}
-            <WhatsAppBar message={waMessage} price={bannerFrom?.text} label="fototapet de la" />
-        </div>
-    );
+<BrandLocalHub loc={loc} judet={judet} localFact={localFact} neighbours={neighbours} faq={faq} waMessage={waMessage} />
+<WhatsAppBar message={waMessage} price={bannerFrom?.text} label="de la" />
+</>);
 }

@@ -19,7 +19,8 @@ import {
 } from "@/lib/pricing";
 
 const GALLERY_BASE = [
-    "/products/pliante/pliante-1.webp"
+    "/products/pliante/pliante-1.webp",
+    "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp",
 ] as const;
 
 const productFaqs: QA[] = [
@@ -152,7 +153,7 @@ export default function PlianteConfigurator({ productImage }: { productImage?: s
                                     <img src={activeImage} alt="Pliante" className="max-h-full max-w-full object-contain" />
                                 )}
                             </div>
-                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100">
+                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100 print-product-gallery">
                                 {GALLERY.map((src, i) => (
                                     <button
                                         key={i}

@@ -2,7 +2,7 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { useCart } from "@/components/CartContext";
 import { useToast } from "@/components/ToastProvider";
-import { ShoppingCart, Info, X, UploadCloud, MessageCircle, TrendingUp, Sparkles, Layers, Ruler } from "lucide-react";
+import { ShoppingCart, Info, X, UploadCloud, MessageCircle, TrendingUp, Layers, Ruler } from "lucide-react";
 import DeliveryEstimation from "./DeliveryEstimation";
 import FaqAccordion from "./FaqAccordion";
 import { QA } from "@/types";
@@ -274,7 +274,7 @@ export default function ConfiguratorPVCForex({ initialWidth: initW, initialHeigh
                                   </label>
                                 ) : (
                                   <div className="p-8 rounded-[2rem] bg-green-50 border border-green-100 relative group overflow-hidden">
-                                    <Sparkles className="absolute top-4 right-4 text-green-600 opacity-20" />
+                                    
                                     <p className="text-slate-900 font-black uppercase italic tracking-widest mb-2 text-sm leading-none">Vrei machetă profesională?</p>
                                     <p className="text-slate-600 font-medium italic text-xs leading-relaxed">Cost: <strong>{formatMoneyDisplay(PVC_FOREX_CONSTANTS.PRO_DESIGN_FEE)}</strong>. Designerii noștri vor pregăti layout-ul pentru panoul tău.</p>
                                   </div>
@@ -333,7 +333,7 @@ export default function ConfiguratorPVCForex({ initialWidth: initW, initialHeigh
                               ].map((item, i) => (
                                 <div key={i} className="flex gap-6 p-8 rounded-3xl bg-slate-50 border border-slate-100 group hover:border-green-500/30 transition-all">
                                    <div className="w-12 h-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center shrink-0 group-hover:bg-green-600 group-hover:text-white transition-all shadow-sm">
-                                      <Sparkles size={20} />
+                                      
                                    </div>
                                    <div>
                                       <h3 className="font-black text-slate-900 uppercase italic tracking-widest mb-1 text-sm">{item.title}</h3>

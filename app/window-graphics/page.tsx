@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description:
       "Transformă vitrina sau geamurile într-un spațiu publicitar cu folie perforată One Way Vision. Comandă online la HomePrint.ro!",
     images: [{
-      url: "/products/window-graphics/window-graphics-1.webp",
+      url: "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp",
       width: 1200,
       height: 630,
       alt: "Window Graphics Folie Perforata"

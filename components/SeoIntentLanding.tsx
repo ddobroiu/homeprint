@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Zap, MessageCircle, Sparkles, ShieldCheck, Truck, Star, Award, ChevronRight, Info, CheckCircle2, HelpCircle } from "lucide-react";
+import { Zap, MessageCircle, ShieldCheck, Truck, Star, Award, ChevronRight, Info, CheckCircle2, HelpCircle } from "lucide-react";
 import { spintax } from "@/lib/seo/spintax";
 import { useRouter } from "next/navigation";
 import MasterConfigurator from "@/components/MasterConfigurator";
@@ -31,7 +31,7 @@ export function SeoIntentLanding({ productId, productName, intent, intentLabel }
         { 
             title: "Calitate Premium", 
             desc: `Producem ${productName.toLowerCase()} folosind tehnologie de ultimă generație pentru culori vii și rezistență sporită.`,
-            icon: <Sparkles className="text-amber-500" />
+            icon: <Star className="text-amber-500" />
         },
         { 
             title: "Design Dedicat", 
@@ -56,7 +56,7 @@ export function SeoIntentLanding({ productId, productName, intent, intentLabel }
                     <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
                         <div className="flex-1 order-2 lg:order-1 text-center lg:text-left">
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-50 rounded-full text-amber-600 font-black text-xs uppercase tracking-widest mb-6 border border-amber-100 shadow-sm">
-                                <Sparkles size={14} className="animate-pulse" /> Soluții Dedicate: {intentLabel}
+                                 Soluții Dedicate: {intentLabel}
                             </div>
                             
                             <h1 className="text-4xl md:text-7xl font-black text-slate-900 leading-[0.95] tracking-tighter mb-8 uppercase">
@@ -93,7 +93,7 @@ export function SeoIntentLanding({ productId, productName, intent, intentLabel }
                                         alt={`${productName} ${intentLabel}`} 
                                         fill
                                         className="object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(0,0,0,0.12)] group-hover:scale-105 transition-transform duration-700 ease-out" 
-                                        onError={() => setImgSrc('/products/banner/banner-1.webp')}
+                                        onError={() => setImgSrc('/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp')}
                                         sizes="(max-width: 768px) 100vw, 50vw"
                                         priority
                                     />
@@ -148,7 +148,7 @@ export function SeoIntentLanding({ productId, productName, intent, intentLabel }
                             { 
                                 title: "CALITATE PREMIUM", 
                                 desc: `Producem ${productName.toLowerCase()} folosind tehnologie de ultimă generație pentru culori vii și rezistență sporită peste ani.`,
-                                icon: <Sparkles />,
+                                icon: <Star />,
                                 color: "text-amber-500",
                                 bg: "bg-amber-50",
                                 glow: "shadow-amber-500/10",
@@ -177,7 +177,7 @@ export function SeoIntentLanding({ productId, productName, intent, intentLabel }
                                 </div>
                                 
                                 <div className={`w-16 h-16 rounded-2xl ${f.bg} ${f.color} flex items-center justify-center mb-10 border border-white shadow-sm group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
-                                    {React.cloneElement(f.icon as React.ReactElement, { size: 32, strokeWidth: 2.5 })}
+                                    {React.isValidElement(f.icon) && React.cloneElement(f.icon as React.ReactElement<{ size?: number; strokeWidth?: number }>, { size: 32, strokeWidth: 2.5 })}
                                 </div>
                                 
                                 <h3 className="text-2xl font-black text-slate-900 mb-6 tracking-tight leading-none italic group-hover:text-amber-600 transition-colors uppercase">

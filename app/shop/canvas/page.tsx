@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image'; // Kept if needed by other sections, though not by grid anymore
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Palette, Sparkles, Shield, Truck } from 'lucide-react';
+import { ArrowRight, Palette, Shield, Truck } from 'lucide-react';
 import CanvasProductGrid from '@/components/CanvasProductGrid';
 
 export const dynamic = 'force-dynamic';

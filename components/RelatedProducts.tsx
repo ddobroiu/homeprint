@@ -3,7 +3,7 @@
 import React, { useMemo, useRef } from "react";
 import { PRODUCTS } from "@/lib/products";
 import ProductCard from "./ProductCard";
-import { Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface RelatedProductsProps {
   category: string; // ex: "bannere", "afise", "canvas"
@@ -99,7 +99,7 @@ export default function RelatedProducts({
             className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-white border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm hover:shadow-md text-sm"
           >
             Vezi toate
-            <Sparkles className="w-4 h-4" />
+            
           </a>
         </div>
 
@@ -146,7 +146,7 @@ export default function RelatedProducts({
             className="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm"
           >
             Vezi toate produsele
-            <Sparkles className="w-4 h-4" />
+            
           </a>
         </div>
 

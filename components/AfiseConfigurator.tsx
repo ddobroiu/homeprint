@@ -22,7 +22,7 @@ import {
   type PriceInputAfise
 } from "@/lib/pricing";
 
-const GALLERY_BASE = ["/products/afise/afise-1.webp"] as const;
+const GALLERY_BASE = ["/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp"] as const;
 
 const afiseFaqs: QA[] = [
   { question: "Ce tipuri de hârtie pot alege?", answer: "Oferim o varietate de hârtii, de la cele subțiri (150g) pentru volume mari, la cartoane de 300g pentru un aspect premium. De asemenea, avem materiale speciale precum Blueback pentru lipire pe panouri sau hârtie foto." },
@@ -243,7 +243,7 @@ export default function AfiseConfigurator({ productSlug, initialWidth, initialHe
                   priority
                 />
               </div>
-              <div className="p-2 grid grid-cols-4 gap-2">
+              <div className="p-2 grid grid-cols-4 gap-2 print-product-gallery">
                 {GALLERY.map((src, i) => (
                   <button 
                     key={src} 

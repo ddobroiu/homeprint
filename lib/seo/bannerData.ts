@@ -1,8 +1,9 @@
+import { withOriginalBannerImages } from "../originalPrintImages";
 // lib/seo/bannerData.ts
 import type { LandingInfo } from "../landingData";
 
 
-export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
+export const BANNER_SEO_DATA: Record<string, LandingInfo> = withOriginalBannerImages({
   // --- IMOBILIARE (Cuvinte cheie de top) ---
   "de-vanzare": {
     key: "de-vanzare",
@@ -10,7 +11,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Bannerul clasic 'DE VÂNZARE', cu literă mare și spațiu generos pentru numărul de telefon — gata de montat pe gard, balcon sau fațadă.",
     seoTitle: "Banner De Vânzare | Apartamente & Terenuri",
     seoDescription: "Banner De Vânzare personalizat, PVC rezistent la ploaie și soare, cu tiv și capse incluse. Comandă azi, livrare rapidă.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Vinde rapid proprietatea</h2><p>Un banner "DE VÂNZARE" bine făcut este de multe ori primul contact pe care un cumpărător îl are cu proprietatea ta, așa că merită tratat ca atare. Recomandăm PVC 440g/m² cu tiv cusut și capse din 50 în 50 cm, rezistent la vânt și ploaie indiferent dacă îl montezi pe gard, balcon sau fațadă. Cel mai important detaliu rămâne numărul de telefon: scrie-l cu cifre de minimum 15-20 cm, ca să poată fi citit dintr-o mașină aflată în mers. Dacă vinzi și un teren alăturat sau ai mai multe proprietăți, poți comanda mai multe exemplare direct din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "de-inchiriat": {
@@ -115,7 +116,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru firme de construcții, cu serviciile principale listate — case la roșu, la cheie, renovări, acoperișuri.",
     seoTitle: "Banner Firma Constructii & Renovari",
     seoDescription: "Banner de gard pentru șantiere sau sedii de firme din construcții. Rezistent la vânt și intemperii.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Arată ce poți construi</h2><p>Un banner montat pe gardul șantierului sau la sediul firmei funcționează ca o carte de vizită permanentă pentru toți cei care trec prin zonă, deci listarea clară a serviciilor — la roșu, la cheie, renovări, instalații, acoperișuri — ajută vizitatorul să înțeleagă imediat ce oferi. Pentru expunere pe termen lung pe gard de șantier, recomandăm PVC 440g/m² sau mesh perforat dacă zona e expusă la vânt puternic, ca pânza să nu se rupă din rafale. Include telefonul și, dacă ai, anul înființării firmei sau portofoliul de proiecte finalizate, pentru credibilitate suplimentară. Configurează formatul potrivit gardului tău din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "santier-in-lucru": {
@@ -133,7 +134,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru depozite de materiale — ciment, fier, lemn, cu servicii precum transport gratuit.",
     seoTitle: "Banner Depozit Materiale Constructii",
     seoDescription: "Bannere mari pentru depozite de materiale de construcții. Listează produsele principale.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Totul pentru casa ta, la un singur depozit</h2><p>Constructorii și beneficiarii care trec cu mașina pe lângă un depozit iau decizia de a opri în funcție de ce văd în câteva secunde, deci un banner cu produsele principale — ciment, fier beton, lemn, cărămidă — și un beneficiu concret, cum ar fi transportul gratuit, chiar contează. Pentru un depozit exterior, PVC 440g/m² rezistă bine la praf și la manevrarea utilajelor din apropiere, iar capsele întărite țin banner-ul fixat chiar și la vânt puternic. Actualizează periodic prețurile sau ofertele afișate, ca informația să rămână relevantă. Configurează dimensiunea potrivită gardului depozitului din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "amenajari-interioare": {
@@ -457,7 +458,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru reduceri mari — '50% Reducere', solduri, promoții cu perioadă limitată.",
     seoTitle: "Banner Discount | Reduceri & Promotii",
     seoDescription: "Atrage clienți cu oferte de reducere vizibile pe un banner clar și impactant.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Reduceri comunicate clar</h2><p>Un banner de discount funcționează cel mai bine când cifra reducerii e primul lucru pe care îl vezi, nu ultimul, deci recomandăm procentul scris mare, urmat de categoria de produse și perioada de valabilitate. Reducerile fără termen limită pierd din urgență — menționează explicit "până pe..." sau "stoc limitat" pentru a grăbi decizia clientului. Materialul PVC rezistă bine pentru campanii care durează câteva săptămâni, expus pe vitrină sau fațadă.</p><ul><li>Procentul de reducere, scris mare</li><li>Categoria de produse vizate</li><li>Perioada de valabilitate</li><li>Contact pentru detalii</li></ul>`
   },
   "promotie": {
@@ -466,7 +467,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru campanii promoționale și lansări de produse noi, cu ofertă clar comunicată.",
     seoTitle: "Banner Promotie | Campanii Marketing",
     seoDescription: "Lansează promoția cu impact vizual maxim pe un banner clar și convingător.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Ofertă comunicată direct</h2><p>O promoție funcționează doar dacă mesajul e clar din prima privire — produsul, prețul promoțional și perioada de valabilitate trebuie să fie vizibile fără efort, altfel trecătorul continuă drumul fără să se oprească. Recomandăm o singură ofertă principală pe banner, nu mai multe mesaje amestecate, pentru claritate maximă. Materialul PVC 440g/m² rezistă bine pe durata campaniei, indiferent de sezon.</p><ul><li>Produsul vedetă al promoției</li><li>Preț promoțional, scris mare</li><li>Stoc limitat, dacă e cazul</li><li>Data de expirare a ofertei</li></ul>`
   },
   "publicitate": {
@@ -475,7 +476,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner de branding exterior pentru firme, produse sau servicii — logo, mesaj cheie, contact.",
     seoTitle: "Banner Publicitate | Reclama Outdoor",
     seoDescription: "Crește vizibilitatea brandului tău cu bannere profesionale de publicitate outdoor.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Brand puternic, mesaj clar</h2><p>Publicitatea outdoor construiește recunoaștere de brand în timp, deci consistența contează: aceleași culori, același logo și un mesaj scurt, repetat pe toate materialele tale, în loc de un design diferit de fiecare dată. Alege un singur apel la acțiune clar — vizitează site-ul, sună acum, vino în magazin — pentru că prea multe mesaje pe același banner reduc impactul fiecăruia. Materialul și cernelurile UV rezistente păstrează culorile brandului fidele pe termen lung.</p><ul><li>Logo și slogan vizibile</li><li>Un singur mesaj cheie</li><li>Contact și website</li><li>Apel la acțiune clar</li></ul>`
   },
   "firma": {
@@ -484,7 +485,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner de prezentare pentru firme — logo, servicii principale și date de contact.",
     seoTitle: "Banner Firma | Prezentare Companie",
     seoDescription: "Prezintă firma ta cu un banner reprezentativ la sediu sau punct de lucru.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Compania ta, prezentată clar</h2><p>Un banner la intrarea sediului sau punctului de lucru funcționează ca primă impresie pentru orice vizitator sau client nou, deci merită să reflecte identitatea vizuală reală a firmei — logo, culori, font — nu un design generic. Listează serviciile principale pe scurt, ca vizitatorul să înțeleagă imediat ce faci, fără să caute pe telefon. Materialul PVC 440g/m² rezistă bine pentru afișare permanentă la sediu.</p><ul><li>Logo și identitate vizuală</li><li>Serviciile principale oferite</li><li>Date de contact complete</li><li>Program de lucru</li></ul>`
   },
   "startup": {
@@ -493,7 +494,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru startup-uri și afaceri noi, potrivit pentru evenimente de lansare sau prezentări.",
     seoTitle: "Banner Startup | Afaceri Inovatoare",
     seoDescription: "Anunță lansarea startup-ului tău cu un banner de prezentare clar și profesional.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Prezentare clară pentru afacerea ta nouă</h2><p>Pentru un startup la început de drum, un banner de prezentare la evenimente, târguri sau la sediu comunică rapid ce problemă rezolvi și pentru cine, fără să ai nevoie de o prezentare orală lungă. Recomandăm un mesaj scurt și concret — ce faci, pentru cine, de ce contează — în loc de sloganuri abstracte greu de reținut. Materialul ușor de transportat e util dacă participi la mai multe evenimente cu același banner.</p><ul><li>Ce problemă rezolvă produsul</li><li>Publicul țintă</li><li>Contact și website</li><li>QR code către prezentare, dacă e cazul</li></ul>`
   },
   "franciza": {
@@ -502,7 +503,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner 'Franciză Disponibilă' pentru extinderea rețelei, cu beneficiile parteneriatului evidențiate.",
     seoTitle: "Banner Franciza | Extindere Business",
     seoDescription: "Atrage francizați cu un banner atractiv care evidențiază beneficiile parteneriatului.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Extinde rețeaua cu parteneri potriviți</h2><p>Un banner "Franciză Disponibilă", montat la un punct de lucru existent care funcționează deja bine, arată potențialilor francizați dovada vie a conceptului — vizibilitate mai convingătoare decât orice broșură. Menționează pe scurt investiția de start și un contact direct pentru discuții, ca interesul să se transforme rapid în conversație. Materialul PVC rezistă bine la expunere pe termen lung, la fel ca restul semnalisticii punctului de lucru.</p><ul><li>Investiția inițială estimată</li><li>Suportul oferit francizaților</li><li>Teritorii disponibile</li><li>Contact direct pentru discuții</li></ul>`
   },
   "reparatii": {
@@ -511,7 +512,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru servicii de reparații — televizoare, electrocasnice, mobilă, cu garanție oferită.",
     seoTitle: "Banner Reparatii | Service Tehnic",
     seoDescription: "Anunță serviciile de reparații cu garanție pe un banner clar și de încredere.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Reparăm rapid, cu garanție</h2><p>Clienții care caută un service de reparații vor mai ales încredere, deci menționarea garanției oferite pe piesele sau manopera efectuată contează la fel de mult ca lista de dispozitive reparate. Listează clar tipurile de aparate — TV, electrocasnice, mobilă — pentru că specificitatea aduce clienți relevanți, nu doar trafic general. Materialul PVC rezistă bine montat la atelierul sau punctul de lucru pe termen lung.</p><ul><li>Dispozitive reparate</li><li>Garanția oferită</li><li>Prețuri orientative</li><li>Contact rapid pentru diagnoză</li></ul>`
   },
   "instalatii": {
@@ -520,7 +521,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru instalatori autorizați — electricitate, încălzire, instalații sanitare.",
     seoTitle: "Banner Instalatii | Electricitate & Sanitara",
     seoDescription: "Promovează serviciile de instalații cu certificările relevante pe un banner profesional.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Instalații sigure, executate de profesioniști</h2><p>La instalații electrice sau sanitare, autorizarea contează enorm în decizia clientului, deci menționarea explicită a certificărilor sau autorizațiilor pe banner construiește încredere înainte chiar de primul contact telefonic. Specifică domeniile de specializare — electricitate, încălzire, sanitare — pentru că mulți clienți caută exact un tip de intervenție, nu servicii generale. Materialul PVC rezistă bine expus la sediul firmei sau pe vehiculul de intervenție.</p><ul><li>Domeniile de specializare</li><li>Autorizații și certificări</li><li>Zona de intervenție</li><li>Contact pentru urgențe</li></ul>`
   },
   "curatenie": {
@@ -529,7 +530,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru servicii de curățenie — birouri, case, curățenie industrială, cu pachete detaliate.",
     seoTitle: "Banner Curatenie | Servicii Menaj",
     seoDescription: "Atrage clienți cu servicii de curățenie complete promovate pe un banner clar.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Curățenie impecabilă, la comandă</h2><p>Firmele de curățenie câștigă clienți mai ales prin claritatea ofertei, deci un banner care detaliază tipurile de servicii — birouri, case, curățenie industrială — ajută clientul să știe imediat dacă te potrivești nevoii lui. Menționează dacă folosești produse ecologice, pentru că tot mai mulți clienți corporate cer explicit acest criteriu în contracte. Materialul PVC rezistă bine montat la sediul firmei sau pe vehiculele de intervenție.</p><ul><li>Tipuri de curățenie oferite</li><li>Produse ecologice, dacă e cazul</li><li>Program flexibil</li><li>Cerere ofertă rapidă</li></ul>`
   },
   "transport": {
@@ -538,7 +539,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru firme de transport — mutări, livrări, transport internațional, cu zona acoperită.",
     seoTitle: "Banner Transport | Mutari & Livrari",
     seoDescription: "Anunță serviciile de transport cu un banner clar, la sediul firmei sau pe vehicule.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Transport sigur, de încredere</h2><p>Mutările sunt stresante pentru clienți, deci un banner care transmite profesionalism — zona acoperită, tipul de transport, asigurarea mărfii — reduce din anxietatea clientului înainte chiar de primul telefon. Specifică dacă acoperi și transport internațional, pentru că această informație filtrează rapid clienții potriviți din cei care caută doar mutări locale. Materialul PVC rezistă bine la sediu sau depozit, expus tot anul.</p><ul><li>Tipuri de transport oferite</li><li>Zona geografică acoperită</li><li>Asigurare marfă inclusă</li><li>Contact disponibil non-stop</li></ul>`
   },
   "consultanta": {
@@ -547,7 +548,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru consultanți financiari, IT sau de business, cu domeniile de specializare evidențiate.",
     seoTitle: "Banner Consultanta | Expertiza Profesionala",
     seoDescription: "Prezintă serviciile de consultanță cu credibilitate pe un banner profesional.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Expertiză prezentată cu credibilitate</h2><p>Consultanța se vinde pe încredere, deci un banner sobru, profesional, cu domeniile de specializare clar listate — financiar, management, IT — comunică mai bine decât un design încărcat sau sloganuri vagi. Pentru evenimente sau conferințe la care participi, un banner roll-up sau de sediu cu aceeași identitate vizuală întărește recunoașterea brandului. Materialul PVC rezistă bine pentru afișare permanentă la birou.</p><ul><li>Domenii de specializare</li><li>Experiență și certificări</li><li>Tip de colaborare oferit</li><li>Contact pentru consultație</li></ul>`
   },
   "avocat": {
@@ -556,7 +557,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru cabinete de avocatură, cu specializările juridice principale evidențiate.",
     seoTitle: "Banner Avocat | Servicii Juridice",
     seoDescription: "Promovează serviciile juridice ale cabinetului tău cu profesionalism.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Servicii juridice, prezentate profesional</h2><p>Un cabinet de avocatură câștigă clienți prin seriozitate, deci designul banner-ului trebuie să rămână sobru — culori discrete, tipografie clasică, fără elemente stridente. Listează specializările principale — drept civil, penal, familial, comercial — pentru că majoritatea clienților caută un avocat pe un domeniu specific, nu unul generalist. Materialul PVC rezistă bine pentru afișare permanentă la sediul cabinetului.</p><ul><li>Domenii de drept acoperite</li><li>Ani de experiență</li><li>Consultație inițială, dacă e gratuită</li><li>Contact direct</li></ul>`
   },
   "medic": {
@@ -565,7 +566,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru cabinete medicale private, cu specialitățile și programările evidențiate.",
     seoTitle: "Banner Medic | Servicii Medicale",
     seoDescription: "Atrage pacienți la cabinetul tău medical cu un banner clar și de încredere.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Sănătate, prezentată cu încredere</h2><p>Un cabinet medical privat nou sau relocat are nevoie de vizibilitate clară în zonă, deci un banner cu specialitatea medicală și modalitatea de programare ajută pacienții să te găsească rapid. Menționează dacă acceptați asigurări private sau decontare CAS, pentru că acesta e adesea criteriul principal de decizie pentru pacienți. Materialul PVC rezistă bine montat la intrarea cabinetului, expus pe termen lung.</p><ul><li>Specialitatea medicală</li><li>Modalități de programare</li><li>Asigurări acceptate</li><li>Program de consultații</li></ul>`
   },
 
@@ -577,7 +578,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru universități — facultăți, taxe de școlarizare, burse, admitere online.",
     seoTitle: "Banner Universitate | Admitere & Studii",
     seoDescription: "Promovează programele universitare cu un banner informativ pentru viitorii studenți.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Educație superioară, promovată clar</h2><p>Perioada de admitere concentrează cea mai mare parte a deciziilor viitorilor studenți, deci un banner cu facultățile disponibile și termenele de înscriere, montat vizibil la campus sau în oraș, ajunge la un public pe care campaniile online nu-l acoperă întotdeauna. Menționează bursele disponibile, pentru că acestea reprezintă un argument decisiv pentru mulți candidați. Materialul PVC rezistă bine pentru afișare pe durata sezonului de admitere.</p><ul><li>Facultăți și programe disponibile</li><li>Taxe de școlarizare</li><li>Burse oferite</li><li>Termen limită înscriere</li></ul>`
   },
   "facultate": {
@@ -586,7 +587,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru facultăți — specializări, durata studiilor, cariere posibile după absolvire.",
     seoTitle: "Banner Facultate | Studii Specializate",
     seoDescription: "Atrage studenți cu programe atractive promovate pe un banner clar.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Specializări care contează pentru viitor</h2><p>Elevii de liceu aleg de multe ori facultatea în funcție de perspectivele de carieră, deci un banner care leagă specializarea de oportunități concrete de angajare convinge mai mult decât o simplă listă de discipline. Menționează durata studiilor și dacă diploma e recunoscută internațional, informații care influențează direct decizia candidaților. Materialul PVC rezistă bine pentru afișare pe durata sesiunii de admitere.</p><ul><li>Specializări disponibile</li><li>Durata studiilor</li><li>Recunoaștere internațională a diplomei</li><li>Cariere posibile după absolvire</li></ul>`
   },
   "liceu": {
@@ -595,7 +596,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru licee — înscrieri clasele IX-XII, profiluri disponibile, rezultate la examene.",
     seoTitle: "Banner Liceu | Educatie Secundara",
     seoDescription: "Promovează liceul cu rezultatele obținute și activitățile extracurriculare pe un banner clar.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Pregătire solidă pentru viitor</h2><p>Părinții aleg liceul mai ales pe baza rezultatelor la bacalaureat și a profilurilor disponibile, deci un banner care afișează aceste cifre concret construiește încredere mai eficient decât un mesaj general despre calitate. Include perioada de înscrieri și profilurile — real, uman, tehnic — pentru a ajuta familiile să decidă rapid dacă se potrivesc. Materialul PVC rezistă bine pentru afișare pe durata sezonului de înscrieri.</p><ul><li>Profiluri disponibile</li><li>Rezultate la bacalaureat</li><li>Activități extracurriculare</li><li>Perioada de înscrieri</li></ul>`
   },
   "gimnaziu": {
@@ -604,7 +605,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru școli gimnaziale, clasele V-VIII, cu facilitățile și programele afterschool afișate.",
     seoTitle: "Banner Gimnaziu | Educatie Gimnaziala",
     seoDescription: "Atrage elevi cu un mediu educațional prietenos, promovat pe un banner clar.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Etapa de formare, susținută corect</h2><p>Pentru părinții care aleg o școală gimnazială, facilitățile concrete — cantina, sălile de sport, programele afterschool — cântăresc adesea la fel de mult ca rezultatele academice, deci merită să apară clar pe banner. Menționează și corpul profesoral, dacă are calificări sau experiență notabile. Materialul PVC rezistă bine pentru afișare la intrarea în școală, pe toată durata anului școlar.</p><ul><li>Materii și programe speciale</li><li>Facilități — cantină, săli de sport</li><li>Programe afterschool</li><li>Perioada de înscrieri</li></ul>`
   },
   "gradinita": {
@@ -613,7 +614,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner colorat pentru grădinițe private, cu vârstele acceptate și activitățile zilnice.",
     seoTitle: "Banner Gradinita | Educatie Prescolara",
     seoDescription: "Promovează grădinița cu activități creative afișate pe un banner prietenos și colorat.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Primii pași în educație, cu grijă</h2><p>Părinții unui copil mic caută mai ales siguranță și un mediu prietenos, deci un banner colorat, vesel, cu activitățile zilnice și vârstele acceptate afișate clar, transmite exact atmosfera pe care o caută pentru cel mic. Menționează mesele oferite și programul de funcționare, pentru că acestea sunt criterii practice importante pentru părinții care lucrează. Materialul PVC rezistă bine la intrarea în grădiniță, expus tot anul.</p><ul><li>Vârste acceptate</li><li>Activități zilnice</li><li>Mese incluse în program</li><li>Perioada de înscrieri</li></ul>`
   },
   "afterschool": {
@@ -622,7 +623,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru centre afterschool — meditații, arte, sport, cu program și supraveghere.",
     seoTitle: "Banner Afterschool | Meditatii & Hobby",
     seoDescription: "Atrage copii și părinți cu programe afterschool interesante, promovate clar.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Sprijin real după orele de școală</h2><p>Părinții aleg un centru afterschool mai ales în funcție de program și de disciplinele acoperite, deci un banner cu orarul și materiile principale — meditații, arte, sport — ajută la o decizie rapidă. Menționează și tipul de supraveghere oferit, pentru că liniștea că cel mic e în siguranță contează cel puțin la fel de mult ca activitățile educaționale. Materialul PVC rezistă bine la intrarea centrului, expus pe durata anului școlar.</p><ul><li>Meditații pe materii</li><li>Activități extra — arte, sport</li><li>Program orar detaliat</li><li>Supraveghere asigurată</li></ul>`
   },
   "meditatii": {
@@ -631,7 +632,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru meditații — matematică, limbi străine, pregătire pentru note mai bune.",
     seoTitle: "Banner Meditatii | Ajutor Scolar",
     seoDescription: "Oferă meditații personalizate promovate pe un banner clar, cu materiile disponibile.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Note mai bune, cu sprijin dedicat</h2><p>Elevii și părinții caută meditații mai ales pe materii specifice, deci un banner care listează clar disciplinele — matematică, limbi străine, română — aduce cereri relevante, direct pe subiectul căutat. Menționează formatul sesiunilor — individual sau grup — pentru că acesta influențează direct decizia și bugetul disponibil. Materialul PVC rezistă bine pentru afișare la centrul de meditații.</p><ul><li>Materii disponibile</li><li>Format individual sau grup</li><li>Nivel de pregătire — gimnaziu, liceu, admitere</li><li>Contact pentru programare</li></ul>`
   },
   "examene": {
@@ -640,7 +641,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru centre de pregătire examene — admitere, bacalaureat, concursuri.",
     seoTitle: "Banner Examene | Pregatire Admitere",
     seoDescription: "Ajută candidații să treacă examenele cu succes prin promovare pe un banner clar.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Pregătire structurată pentru examene</h2><p>Perioada dinaintea unui examen important e momentul în care candidații caută cel mai activ un centru de pregătire, deci un banner cu tipul de examen acoperit — admitere, bacalaureat, concursuri — și data de start a cursurilor aduce înscrieri rapide. Menționează dacă oferi simulări în condiții reale de examen, pentru că acest detaliu diferențiază o pregătire serioasă de una superficială. Materialul PVC rezistă bine pentru afișare pe durata sezonului de pregătire.</p><ul><li>Tip de examen acoperit</li><li>Data de start a cursurilor</li><li>Simulări incluse</li><li>Rezultate din promoțiile anterioare</li></ul>`
   },
 
@@ -652,7 +653,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru terenuri agricole sau de construcție, cu suprafața și utilizarea permisă afișate.",
     seoTitle: "Banner Teren | Loturi de Vanzare",
     seoDescription: "Semnalizează terenul de vânzare cu suprafața și prețul afișate clar pe banner.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Teren de vânzare, semnalizat clar</h2><p>Cumpărătorii de teren merg de obicei la fața locului înainte să decidă, deci un banner montat direct pe parcelă, cu suprafața și categoria de folosință afișate, îi ajută să evalueze rapid dacă terenul se potrivește nevoilor lor. Menționează accesul la utilități — curent, apă, drum de acces — pentru că acestea influențează semnificativ prețul și decizia de cumpărare. Pentru terenuri expuse la vânt, recomandăm mesh perforat, mai rezistent decât PVC-ul clasic pe suprafețe mari. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "birou": {
@@ -661,7 +662,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru birouri de închiriat sau spații de coworking, cu facilitățile incluse.",
     seoTitle: "Banner Birou | Spatii Office",
     seoDescription: "Promovează spațiile de birouri moderne cu un banner clar, la fațada clădirii.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Spațiu de lucru, prezentat clar</h2><p>Firmele care caută birouri noi decid adesea după o vizitare rapidă a zonei, deci un banner la fațada clădirii, cu suprafața disponibilă și facilitățile incluse, aduce solicitări directe de la companii din vecinătate care nu căutau activ online. Menționează parcarea și accesul la transport public, criterii esențiale pentru angajați. Materialul PVC rezistă bine pentru afișare pe termen lung la fațada clădirii. Configurează dimensiunea din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "spatiu-comercial-supl": {
@@ -670,7 +671,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru spații comerciale diverse — magazine, ateliere, cu zona și avantajele evidențiate.",
     seoTitle: "Banner Spatiu Comercial | Magazine & Ateliere",
     seoDescription: "Atrage afaceri în spațiul tău comercial cu un banner clar și profesional.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Spațiu comercial, gata de o afacere nouă</h2><p>Un spațiu comercial liber marcat clar, cu suprafața și tipul de activitate permis afișate, ajută potențialii chiriași să evalueze rapid dacă locația se potrivește planului lor de afaceri. Menționează parcarea disponibilă și traficul din zonă, argumente concrete pentru orice afacere care depinde de vizibilitate stradală. Materialul PVC rezistă bine montat pe vitrina sau fațada spațiului liber. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "depozit": {
@@ -679,7 +680,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru depozite și hale industriale, cu suprafața și sistemele de securitate.",
     seoTitle: "Banner Depozit | Stocare Marfa",
     seoDescription: "Oferă soluții de depozitare sigure promovate pe un banner clar la poarta depozitului.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Depozitare sigură, semnalizată clar</h2><p>Firmele care caută spațiu de depozitare vor mai ales certitudinea securității mărfii, deci menționarea sistemelor de securitate — pază, supraveghere video, împrejmuire — pe banner construiește încredere rapid. Include suprafața disponibilă și accesul pentru utilaje sau camioane de mare tonaj, criterii tehnice esențiale pentru clienți din logistică. Materialul PVC rezistă bine montat la poarta sau gardul depozitului. Configurează dimensiunea din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "garaj": {
@@ -688,7 +689,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru garaje și boxe auto de închiriat, cu dimensiunile și sistemul de închidere.",
     seoTitle: "Banner Garaj | Parcari & Boxe",
     seoDescription: "Promovează garajele disponibile în zonă cu un banner clar și practic.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Parcare acoperită, disponibilă acum</h2><p>Boxele de garaj se închiriază rapid în zonele cu deficit de parcare, deci un banner montat vizibil la locație, cu dimensiunile boxei și prețul lunar, aduce solicitări directe de la vecinii care trec zilnic prin zonă. Menționează sistemul de închidere — automat sau clasic — pentru că siguranța mașinii e principalul motiv pentru care cineva închiriază un garaj. Materialul PVC rezistă bine montat pe ușa sau gardul garajului. Configurează dimensiunea din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "schimb": {
@@ -697,7 +698,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru schimburi imobiliare — apartament contra casă, cu detaliile proprietăților.",
     seoTitle: "Banner Schimb | Imobiliare Schimb",
     seoDescription: "Facilitează schimburile imobiliare cu transparență, printr-un banner clar la locație.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Schimb imobiliar, transparent</h2><p>Schimburile de proprietăți sunt mai rare decât vânzările clasice, deci un banner montat la fața locului, cu detaliile clare ale proprietății oferite și ale celei căutate, atrage exact publicul potrivit — persoane deja interesate de acest tip de tranzacție. Menționează eventuala diferență de preț sau dorința de compensare, pentru claritate din prima. Materialul PVC rezistă bine montat pe gard sau balcon. Configurează dimensiunea din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "donatie": {
@@ -706,7 +707,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru campanii de strângere de fonduri, cu cauza și modalitatea de donare explicate.",
     seoTitle: "Banner Donatie | Ajutor Social",
     seoDescription: "Încurajează donațiile cu un banner clar, care explică cauza și impactul.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Ajută-i pe cei în nevoie</h2><p>O campanie de donații reușește mai ales când oamenii înțeleg exact pentru ce donează, deci un banner care descrie clar cauza — nu doar "ajutați-ne", ci cine anume și de ce — aduce mai multă implicare din partea trecătorilor. Include modalitatea concretă de a dona — cont bancar, cutie de donații, SMS — pentru că friction-ul din procesul de donare reduce direct participarea. Materialul PVC rezistă bine pentru afișare pe durata campaniei. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "voluntariat": {
@@ -715,7 +716,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru recrutare de voluntari, cu proiectele active și beneficiile participării.",
     seoTitle: "Banner Voluntariat | Activitati Sociale",
     seoDescription: "Atrage voluntari cu proiecte semnificative promovate pe un banner clar.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Fă diferența, alătură-te echipei</h2><p>Oamenii care iau în calcul voluntariatul vor să știe rapid ce fac concret și cât timp implică, deci un banner cu proiectele active și numărul aproximativ de ore pe săptămână ajută la o decizie rapidă de înscriere. Menționează și ce câștigă voluntarul — experiență, recomandări, comunitate — pentru că motivația personală contează la fel de mult ca cauza în sine. Materialul PVC rezistă bine pentru afișare la sediul organizației sau la evenimente. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "adoptie": {
@@ -724,7 +725,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru campanii de adopție — animale în adopție, cu descrierea și cerințele.",
     seoTitle: "Banner Adoptie | Animale & Copii",
     seoDescription: "Promovează adopția responsabilă cu un banner clar, la centrul de adopții.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Dă o casă unui suflet care așteaptă</h2><p>Un banner la centrul de adopții, cu poze reale ale animalelor disponibile și un scurt profil de caracter, ajută vizitatorii să se conecteze emoțional mult mai repede decât o listă seacă. Include cerințele minime de adopție — spațiu, timp disponibil, alte animale în casă — pentru a filtra din start solicitările nepotrivite. Materialul PVC rezistă bine pentru afișare permanentă la centru. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
 
@@ -736,7 +737,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru petreceri de Revelion, cu programul serii și rezervările afișate.",
     seoTitle: "Banner Revelion | Sarbatori An Nou",
     seoDescription: "Anunță petrecerea de Revelion cu programul complet pe un banner atractiv.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Bun venit în noul an!</h2><p>Locurile la petrecerile de Revelion se rezervă din timp, deci un banner montat la restaurant sau sala de evenimente, cu meniul festiv și prețul biletului, ajută clienții indeciși să se hotărască mai repede. Menționează dacă ai muzică live sau un DJ, detaliu care contează mult în alegerea locației pentru cea mai importantă seară a anului. Materialul PVC rezistă bine la montaj exterior pe perioada de iarnă. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "ziua-mamei": {
@@ -745,7 +746,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru evenimente și oferte dedicate Zilei Mamei, cu activitățile și cadourile.",
     seoTitle: "Banner Ziua Mamei | Sarbatori Familiale",
     seoDescription: "Promovează evenimente speciale pentru Ziua Mamei pe un banner cald și potrivit.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>O zi dedicată mamelor</h2><p>De Ziua Mamei, oferta specială care iese în evidență rapid câștigă vizite spontane, deci un banner cu produsele sau evenimentele dedicate — mese festive, buchete, pachete cadou — montat cu câteva zile înainte aduce clienți care caută o idee de ultim moment. Materialul PVC rezistă bine montat pe fațadă sau vitrină pe durata campaniei. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "ziua-tatalui": {
@@ -754,7 +755,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru evenimente și oferte dedicate Zilei Tatălui, cu activități potrivite.",
     seoTitle: "Banner Ziua Tatalui | Sarbatori Familiale",
     seoDescription: "Dedică o zi specială taților cu oferte promovate pe un banner clar.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>O zi dedicată taților</h2><p>La fel ca de Ziua Mamei, oferta clară de Ziua Tatălui — un pachet cadou, un meniu special, o reducere — comunicată pe un banner vizibil aduce clienți care caută o idee rapidă și concretă. Materialul PVC rezistă bine montat pe termen scurt, pentru campanii sezoniere. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "ziua-copiilor": {
@@ -763,7 +764,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru evenimente dedicate copiilor — jocuri, animatori, activități speciale de 1 Iunie.",
     seoTitle: "Banner Ziua Copiilor | Sarbatori pentru Copii",
     seoDescription: "Organizează sărbători pline de bucurie pentru copii, promovate pe un banner colorat.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>O zi de joacă și bucurie</h2><p>De Ziua Copiilor, părinții caută activități concrete pentru cei mici, deci un banner colorat, cu jocurile și animatorii incluși în program, atrage familii care caută unde să petreacă ziua. Menționează dacă evenimentul e gratuit sau are un cost per copil, informație care influențează direct decizia părinților. Materialul PVC rezistă bine montat afară, pe durata evenimentului. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "valentine": {
@@ -772,7 +773,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner romantic pentru oferte de Valentine's Day — cine romantice, cadouri, pachete cuplu.",
     seoTitle: "Banner Valentine | Ziua Indragostitilor",
     seoDescription: "Creează atmosferă romantică cu bannere speciale pentru Ziua Îndrăgostiților.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>O seară specială, pentru doi</h2><p>De Valentine's Day, ofertele romantice — cine cu meniu special, pachete cadou pentru cupluri — se vând mai bine când sunt afișate clar și cu câteva zile înainte de eveniment, ca oamenii să apuce să rezerve. Un design elegant, cu roșu și accente discrete, comunică imediat tematica fără cuvinte multe. Materialul PVC rezistă bine montat pe durata scurtă a campaniei. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "martisor": {
@@ -781,7 +782,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru sărbătoarea Mărțișorului, cu mărțișoare handmade și evenimente de primăvară.",
     seoTitle: "Banner Martisor | Sarbatoarea Primaverii",
     seoDescription: "Anunță evenimente tradiționale de Mărțișor pe un banner colorat și primăvăratic.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Primăvara vine cu tradiție</h2><p>De 1 și 8 Martie, standurile cu mărțișoare și florării câștigă trafic important, deci un banner colorat, montat la punctul de vânzare, ajută trecătorii să te găsească rapid în aglomerația specifică perioadei. Menționează dacă produsele sunt handmade sau realizate de meșteri locali, detaliu apreciat de cumpărători în această perioadă. Materialul PVC rezistă bine pentru campania scurtă de câteva săptămâni. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "ziua-nationala": {
@@ -790,7 +791,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru sărbători naționale, cu manifestările și evenimentele patriotice locale.",
     seoTitle: "Banner Ziua Nationala | Sarbatori Patriotice",
     seoDescription: "Creează spirit patriotic cu evenimente speciale promovate pe un banner clar.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>O zi pentru toată comunitatea</h2><p>De Ziua Națională, instituțiile publice și organizatorii de evenimente comunică programul zilei — parade, concerte, expoziții — printr-un banner vizibil la locul principal de desfășurare, ca localnicii să știe unde și când se întâmplă fiecare activitate. Materialul PVC rezistă bine expus în aer liber pe durata evenimentului. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
 
@@ -802,7 +803,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru cluburi de fotbal — meciuri, antrenamente, înscrieri jucători.",
     seoTitle: "Banner Fotbal | Cluburi & Meciuri",
     seoDescription: "Promovează echipa cu bannere vizibile la teren sau la sediul clubului.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Susține echipa locală</h2><p>Un banner montat la teren sau la intrarea clubului comunică rapid programul meciurilor și antrenamentelor pentru suporteri și părinții copiilor înscriși la academie. Menționează perioada de înscrieri pentru grupele de copii, dacă acceptați jucători noi, pentru că multe cluburi locale cresc tocmai prin astfel de anunțuri vizibile. Materialul rezistă bine montat pe gardul terenului, expus la intemperii pe tot parcursul sezonului. Configurează dimensiunea din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "baschet": {
@@ -811,7 +812,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru echipe de baschet, cu programul campionatelor și înscrierile deschise.",
     seoTitle: "Banner Baschet | Echipe & Campionate",
     seoDescription: "Atrage jucători și suporteri cu bannere dinamice pentru echipa de baschet.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Fiecare coș contează</h2><p>Un banner la sala de sport sau la intrarea clubului anunță programul campionatelor și, dacă e cazul, perioada de înscrieri pentru grupele de juniori. Recomandăm un design dinamic, cu culorile echipei, montat vizibil la intrare pentru suporteri și părinți deopotrivă. Materialul rezistă bine indiferent dacă sala e interioară sau terenul e în aer liber. Configurează dimensiunea din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "volei": {
@@ -820,7 +821,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru cluburi de volei, cu meciurile și rezultatele recente afișate.",
     seoTitle: "Banner Volei | Echipe & Meciuri",
     seoDescription: "Promovează voleiul local cu bannere energice pentru club și suporteri.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Putere de echipă, la fiecare meci</h2><p>Un banner la sala clubului sau la teren ajută suporterii să afle rapid programul meciurilor și, dacă acceptați jucători noi, perioada de selecție pentru echipă. Culorile clubului, folosite consistent pe toate materialele, ajută la recunoașterea rapidă a brandului sportiv local. Materialul rezistă bine montat afară pe gardul terenului. Configurează dimensiunea din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "handbal": {
@@ -829,7 +830,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru echipe de handbal, cu campionatele și performanțele afișate pentru suporteri.",
     seoTitle: "Banner Handbal | Campionate & Goluri",
     seoDescription: "Atrage suporteri cu bannere motivante pentru echipa de handbal.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Viteză și precizie, susținute din tribune</h2><p>Un banner montat la sala de handbal informează suporterii despre programul campionatelor, iar dacă echipa are rezultate notabile, acestea merită afișate — motivează atât jucătorii cât și publicul. Pentru cluburile de juniori, includerea perioadei de înscrieri aduce copii noi la antrenamente. Materialul rezistă bine montat la intrarea sălii sau pe gardul terenului. Configurează dimensiunea din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "atletism": {
@@ -838,7 +839,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru cluburi de atletism, cu probele acoperite și competițiile viitoare.",
     seoTitle: "Banner Atletism | Competitii & Recorduri",
     seoDescription: "Încurajează sportivii cu bannere inspiraționale pentru clubul de atletism.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Depășește propriile limite</h2><p>Un banner la baza sportivă sau la sediul clubului comunică probele acoperite — alergare, sărituri, aruncări — și programul competițiilor viitoare, util atât pentru sportivii legitimați cât și pentru cei interesați să se înscrie. Materialul rezistă bine montat afară, pe gardul stadionului, expus tot anul. Configurează dimensiunea din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "gimnastica": {
@@ -847,7 +848,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru săli de gimnastică, cu clasele pentru copii și competițiile programate.",
     seoTitle: "Banner Gimnastica | Sali & Competitii",
     seoDescription: "Promovează gimnastica locală cu bannere elegante pentru sala de sport.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Mișcare, echilibru și disciplină</h2><p>Un banner la intrarea sălii de gimnastică anunță clasele disponibile pe vârste și, dacă acceptați copii noi, perioada de înscrieri — informație căutată frecvent de părinți. Menționează calificarea antrenorilor, un criteriu important pentru părinții care își înscriu copiii la un sport cu componentă tehnică ridicată. Materialul rezistă bine montat la intrarea sălii. Configurează dimensiunea din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
 
@@ -859,7 +860,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru concerte și evenimente de jazz, cu artiștii invitați și data evenimentului.",
     seoTitle: "Banner Jazz | Concerte & Festivaluri",
     seoDescription: "Atrage melomani cu bannere sofisticate pentru evenimente de jazz.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Muzică live, atmosferă rafinată</h2><p>Un banner cu numele artiștilor invitați și data concertului, montat la locul de desfășurare cu câteva săptămâni înainte, ajută la vânzarea biletelor din timp, mai ales pentru evenimentele de jazz care atrag un public fidel dar limitat numeric. Un design elegant, cu tipografie sobră, se potrivește mai bine genului decât un banner colorat și agresiv. Materialul PVC rezistă bine pentru afișare exterioară pe durata promovării evenimentului. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "rock": {
@@ -868,7 +869,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru concerte rock, cu trupele din lineup și data evenimentului evidențiate.",
     seoTitle: "Banner Rock | Concerte & Festivaluri",
     seoDescription: "Creează hype pentru evenimentul tău cu bannere rock pline de energie.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Energie pură, pe scenă</h2><p>Un banner pentru un concert rock funcționează cel mai bine cu contrast puternic, tipografie robustă și numele trupelor din lineup afișate mare — genul de energie vizuală pe care fanii o asociază cu evenimentul. Montat din timp la locația evenimentului sau în oraș, ajută la vânzarea anticipată a biletelor. Materialul PVC rezistă bine la expunerea exterioară pe durata campaniei. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "pop": {
@@ -877,7 +878,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru evenimente și concerte pop, cu artiștii și data show-ului afișate.",
     seoTitle: "Banner Pop | Concerte & Show-uri",
     seoDescription: "Promovează muzica pop cu bannere colorate pentru evenimentul tău.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Muzică pentru toată lumea</h2><p>Un banner colorat, cu numele artiștilor și data show-ului, comunică rapid și atractiv evenimentul unui public larg, obișnuit cu genul pop. Poziționează banner-ul în zone cu trafic pietonal ridicat pentru vizibilitate maximă înainte de eveniment. Materialul PVC rezistă bine la expunere exterioară, indiferent de anotimp. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "folk": {
@@ -886,7 +887,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru evenimente de muzică folk românească, cu artiștii și tradiția evidențiate.",
     seoTitle: "Banner Folk | Muzica Traditionala",
     seoDescription: "Creează atmosferă tradițională cu bannere pentru evenimente de muzică folk.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Rădăcini și cântec autentic</h2><p>Evenimentele de folk atrag un public atașat de tradiție, deci un banner cu elemente vizuale autentice — motive populare, tipografie caldă — comunică mai bine spiritul evenimentului decât un design modern generic. Include numele artiștilor și locul concertului, informații esențiale pentru publicul care urmărește activ genul. Materialul PVC rezistă bine la expunere exterioară pe durata promovării. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "opera": {
@@ -895,7 +896,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru spectacole de operă, cu reprezentațiile și soliștii invitați afișați.",
     seoTitle: "Banner Opera | Spectacole Clasice",
     seoDescription: "Promovează opera cu bannere elegante pentru spectacolele programate.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Emoție și rafinament</h2><p>Un banner pentru un spectacol de operă trebuie să reflecte eleganța evenimentului — design sobru, tipografie clasică, fără elemente stridente — și să comunice clar reprezentația, data și soliștii invitați. Montat la teatru sau instituție cu câteva săptămâni înainte, ajută la vânzarea din timp a biletelor premium. Materialul PVC rezistă bine la afișare exterioară îndelungată. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "balet": {
@@ -904,7 +905,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru trupe de balet, cu coregrafiile și data spectacolului afișate elegant.",
     seoTitle: "Banner Balet | Spectacole de Dans",
     seoDescription: "Atrage publicul cu bannere sofisticate pentru spectacolele de balet.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Dans, grație și disciplină</h2><p>Un banner pentru un spectacol de balet funcționează bine cu o imagine expresivă a dansatorilor și un design curat, care lasă imaginea să vorbească mai mult decât textul. Include data și locul spectacolului, vizibile clar pentru publicul care planifică din timp o seară la teatru. Materialul PVC rezistă bine la afișare exterioară pe durata promovării. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "pictura": {
@@ -913,7 +914,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru expoziții de pictură și ateliere de artă plastică, cu artiștii expuși.",
     seoTitle: "Banner Pictura | Expozitii Artistice",
     seoDescription: "Promovează arta plastică cu bannere creative pentru expoziții și ateliere.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Culoare și expresie</h2><p>Un banner pentru o expoziție de pictură funcționează cel mai bine cu una dintre lucrările expuse, aleasă pentru impact vizual, plus numele artistului și perioada expoziției. Pentru atelierele creative deschise publicului, menționează dacă participarea e liberă sau necesită înscriere. Materialul PVC redă bine culorile intense ale lucrărilor de artă, fără decolorare rapidă la soare. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "sculptura": {
@@ -922,7 +923,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru sculptori și expoziții de artă tridimensională, cu materialele și tehnicile folosite.",
     seoTitle: "Banner Sculptura | Arta 3D",
     seoDescription: "Atrage vizitatori cu bannere pentru expoziții de sculptură.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Formă, textură, materie</h2><p>Un banner pentru o expoziție de sculptură câștigă din prezentarea uneia dintre lucrări, fotografiată clar, care comunică vizual tehnica și amploarea operelor expuse. Menționează materialele folosite — piatră, bronz, lemn — pentru vizitatorii interesați de tehnica artistică specifică. Materialul PVC rezistă bine la expunere exterioară pe durata expoziției. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "fotografie": {
@@ -931,7 +932,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru fotografi și expoziții foto, cu genul de fotografie și portofoliul evidențiate.",
     seoTitle: "Banner Fotografie | Expozitii & Portrete",
     seoDescription: "Promovează fotografia cu bannere vizuale pentru expoziții sau servicii foto.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Momente surprinse, expuse la vedere</h2><p>Un banner pentru un fotograf sau o expoziție foto trebuie să lase imaginea să vorbească — alege cea mai puternică fotografie din portofoliu și lasă text minim în jurul ei. Pentru fotografii care oferă servicii — portrete, evenimente, sesiuni foto — includerea unui contact vizibil transformă interesul vizual în programări reale. Materialul PVC redă fidel detaliile fotografiei, chiar și la dimensiuni mari. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "film": {
@@ -940,7 +941,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru proiecții și festivaluri de film, cu programul filmelor și locația.",
     seoTitle: "Banner Film | Festivaluri & Proiectii",
     seoDescription: "Atrage cinefili cu bannere pentru festivaluri și proiecții de film.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Povești pe ecran mare</h2><p>Un banner pentru un festival de film comunică cel mai eficient prin programul concret al proiecțiilor — titluri, ore, sală — afișat clar la locația evenimentului, ca vizitatorii să știe exact ce urmează. Pentru proiecțiile gratuite, menționează asta explicit, pentru că e un argument puternic pentru participare spontană. Materialul PVC rezistă bine la afișare exterioară pe durata festivalului. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
 
@@ -952,7 +953,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru conferințe tech, cu speakerii invitați și subiectele principale afișate.",
     seoTitle: "Banner Conferinta Tech | Tehnologie & Inovare",
     seoDescription: "Promovează conferințe tech cu bannere moderne, potrivite pentru evenimente de business.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Tehnologie, prezentată clar</h2><p>Un banner de conferință funcționează cel mai bine cu numele speakerilor invitați afișate mare, pentru că aceștia sunt de obicei principalul motiv pentru care participanții cumpără bilet. Include subiectele principale ale evenimentului, ca participanții să poată evalua rapid relevanța pentru domeniul lor. Pentru evenimentul propriu-zis, un banner roll-up sau de fundal cu identitatea vizuală a conferinței întărește impresia de profesionalism. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "hackathon": {
@@ -961,7 +962,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru competiții de programare, cu provocările tehnice și premiile afișate.",
     seoTitle: "Banner Hackathon | Competitii Coding",
     seoDescription: "Atrage dezvoltatori cu bannere tech pentru competiția de hackathon.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Cod, echipe și 48 de ore de creație</h2><p>Un banner de hackathon trebuie să comunice rapid provocarea tehnică și premiile puse în joc, pentru că acestea sunt principalele motive pentru care dezvoltatorii se înscriu. Menționează dacă participarea e în echipe formate sau individuală, informație practică pentru cei care se decid ultimul moment. Pentru evenimentul propriu-zis, un banner de fundal cu identitatea vizuală funcționează bine și pentru fotografii de social media. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "startup-pitch": {
@@ -970,7 +971,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru evenimente de prezentare startup-uri, cu formatul și investitorii prezenți.",
     seoTitle: "Banner Startup Pitch | Afaceri Inovatoare",
     seoDescription: "Promovează evenimente de startup pitch cu bannere dinamice și profesionale.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Idei prezentate, capital atras</h2><p>Un banner pentru un eveniment de startup pitch funcționează bine cu informații concrete — numărul de startup-uri participante, investitorii sau juriul prezent — pentru că acestea determină calitatea percepută a evenimentului. Pentru sala de eveniment, un banner de fundal cu sponsori și parteneri completează identitatea vizuală a zilei. Materialul PVC rezistă bine la montaj rapid și demontaj, specific evenimentelor de o zi. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
 
@@ -982,7 +983,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru campanii de vaccinare, cu informații clare despre programări și beneficii.",
     seoTitle: "Banner Vaccin | Campanii de Imunizare",
     seoDescription: "Încurajează vaccinarea cu bannere informative și pozitive pentru campanii de sănătate.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Informare clară, decizie informată</h2><p>Un banner pentru o campanie de vaccinare funcționează cel mai bine cu informații practice, verificabile — ce vaccinuri sunt disponibile, unde și cum te poți programa — mai degrabă decât cu mesaje generice. Montat la centrul de vaccinare sau la cabinetul medical, ajută persoanele din zonă să găsească rapid punctul de administrare. Materialul PVC rezistă bine la expunere exterioară pe durata campaniei. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "donare-sange": {
@@ -991,7 +992,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru centre de donare de sânge, cu condițiile și procesul de donare explicate.",
     seoTitle: "Banner Donare Sange | Acte de Binefacere",
     seoDescription: "Încurajează donarea de sânge cu bannere clare pentru centrele de recoltare.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Un gest simplu, cu impact real</h2><p>Un banner pentru o campanie de donare de sânge funcționează bine când explică practic procesul — cine poate dona, cât durează, unde se face recoltarea — pentru că multe persoane ezită din lipsă de informație, nu din reticență reală. Menționează locul și programul centrului de recoltare, ca decizia să se poată transforma imediat în acțiune. Materialul PVC rezistă bine la afișare exterioară pe durata campaniei. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "campanie-preventie": {
@@ -1000,7 +1001,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru campanii de prevenție a bolilor, cu sfaturile practice și screening-urile disponibile.",
     seoTitle: "Banner Campanie Preventie | Sanatate Publica",
     seoDescription: "Educă populația cu bannere informative pentru campanii de sănătate preventivă.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Prevenția începe cu informația</h2><p>Un banner de prevenție funcționează cel mai bine cu mesaje scurte și acționabile — un simptom de urmărit, un screening gratuit disponibil, un număr de telefon pentru programare — mai eficient decât un mesaj general despre importanța sănătății. Include locul și perioada în care sunt disponibile screening-urile gratuite, dacă acestea sunt parte din campanie. Materialul PVC rezistă bine la afișare exterioară pe durata campaniei. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "fitness": {
@@ -1009,7 +1010,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru săli de fitness, cu antrenamentele și abonamentele disponibile evidențiate.",
     seoTitle: "Banner Fitness | Sali Sport & Antrenamente",
     seoDescription: "Motivează comunitatea locală cu bannere pentru sala ta de fitness.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Antrenamente reale, rezultate reale</h2><p>O sală de fitness nouă sau relocată câștigă abonați rapid printr-un banner vizibil de la stradă, cu oferta de lansare și tipurile de abonamente afișate clar. Menționează clasele de grup sau antrenorii personali disponibili, criterii importante pentru cei care încă ezită între mai multe săli din zonă. Materialul PVC rezistă bine montat la fațada sălii, expus tot anul. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "yoga": {
@@ -1018,7 +1019,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru centre de yoga, cu stilurile predate și clasele pentru începători.",
     seoTitle: "Banner Yoga | Relaxare & Meditatie",
     seoDescription: "Promovează yoga locală cu bannere calme, potrivite atmosferei de relaxare.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Echilibru, respirație, prezență</h2><p>Un banner pentru un centru de yoga funcționează bine cu un design calm, minimalist, care reflectă chiar atmosfera pe care o promovează — culori naturale, fără agitație vizuală. Menționează clasele pentru începători, pentru că mulți oameni ezită să încerce yoga tocmai din teama că nu au experiență suficientă. Materialul PVC rezistă bine montat la intrarea centrului. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
 
@@ -1030,7 +1031,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru campanii ecologice — reciclare, plantări, energie verde, cu acțiunile concrete.",
     seoTitle: "Banner Ecologie | Mediu & Protectie",
     seoDescription: "Încurajează acțiuni eco cu bannere verzi pentru campanii de mediu.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Acțiuni concrete pentru planetă</h2><p>Un banner de campanie ecologică convinge mai mult prin acțiuni concrete — o plantare de copaci, un punct de colectare, o zi de curățenie — decât prin mesaje generale despre protejarea mediului. Include data și locul evenimentului, ca oamenii interesați să poată participa efectiv, nu doar să simpatizeze cu cauza. Materialul PVC rezistă bine la afișare exterioară pe durata campaniei. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "reciclare": {
@@ -1039,7 +1040,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru centre de reciclare, cu materialele acceptate și punctele de colectare.",
     seoTitle: "Banner Reciclare | Protectia Mediului",
     seoDescription: "Educă despre reciclare cu bannere utile pentru centre și puncte de colectare.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Reciclează inteligent, aproape de casă</h2><p>Un banner pentru un centru de reciclare funcționează cel mai bine cu o listă clară a materialelor acceptate — hârtie, plastic, sticlă, electrocasnice — pentru că mulți oameni nu știu exact ce pot preda la punctul de colectare. Include programul de funcționare, ca vizitatorii să nu ajungă degeaba în afara orelor de primire. Materialul PVC rezistă bine la afișare exterioară pe termen lung. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "protejarea-mediului": {
@@ -1048,7 +1049,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru proiecte de protejare a mediului, cu acțiunile comunității evidențiate.",
     seoTitle: "Banner Protejarea Mediului | Ecologie & Actiune",
     seoDescription: "Mobilizează comunitatea cu bannere motivaționale pentru proiecte de mediu.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Împreună, pentru un mediu mai curat</h2><p>Un banner pentru un proiect de protejare a mediului mobilizează mai eficient comunitatea când arată rezultate concrete — o zonă curățată, un număr de copaci plantați — decât un mesaj abstract despre importanța ecologiei. Include modul în care oricine se poate implica, fie ca voluntar, fie prin donații. Materialul PVC rezistă bine la afișare exterioară pe durata proiectului. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
 
@@ -1060,7 +1061,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru fundații caritabile, cu cauzele sprijinite și proiectele active.",
     seoTitle: "Banner Fundatie | Activitati Caritabile",
     seoDescription: "Promovează fundația cu bannere de impact pentru proiectele caritabile.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Ajutor real, proiecte concrete</h2><p>Un banner pentru o fundație caritabilă câștigă încredere prin transparență — cauzele sprijinite, proiectele active, modul concret în care se folosesc donațiile — mai mult decât prin mesaje emoționale generice. Include modalitatea de a dona sau de a te implica, ca interesul stârnit de banner să se poată transforma imediat în acțiune. Materialul PVC rezistă bine la afișare exterioară pe termen lung. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "ong": {
@@ -1069,7 +1070,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru ONG-uri locale, cu misiunea organizației și proiectele curente.",
     seoTitle: "Banner ONG | Activitati Sociale",
     seoDescription: "Atrage voluntari și susținători cu bannere inspiraționale pentru ONG-ul tău.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Schimbare reală, la nivel local</h2><p>Un banner pentru un ONG local funcționează bine când comunică misiunea în câteva cuvinte clare, ușor de reținut, în loc de un text lung despre viziune și valori. Menționează proiectele curente și dacă organizația caută voluntari sau susținători financiari, pentru direcție clară de acțiune. Materialul PVC rezistă bine la afișare exterioară pe termen lung, la sediul organizației. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   },
   "ajutor-umanitar": {
@@ -1078,7 +1079,7 @@ export const BANNER_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Banner pentru campanii umanitare, cu nevoile urgente și modalitățile de a ajuta.",
     seoTitle: "Banner Ajutor Umanitar | Sprijin Social",
     seoDescription: "Mobilizează ajutor rapid cu bannere pentru campanii umanitare urgente.",
-    images: ["/products/banner/banner-1.webp"],
+    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
     contentHtml: `<h2>Solidaritate, când contează cel mai mult</h2><p>Un banner de campanie umanitară trebuie să comunice urgența real și concret — ce anume se strânge (alimente, îmbrăcăminte, bani), unde se predau și până când — pentru că în situații de criză, claritatea informației determină cât de repede se mobilizează comunitatea. Menționează un punct de contact direct, ca cei care vor să ajute să nu piardă timp căutând detalii. Materialul PVC rezistă bine la montaj rapid, specific campaniilor de urgență. Configurează formatul din <a href="/configurator/banner">configuratorul de bannere</a>.</p>`
   }
-};
+});

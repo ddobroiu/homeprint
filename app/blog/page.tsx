@@ -1,45 +1,31 @@
-import { siteConfig } from "@/lib/siteConfig";
 import React from "react";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blogPosts";
 import Image from "next/image";
 export const metadata = {
-    title: "Blog - Sfaturi de Print și Publicitate",
-    description: "Ghiduri practice, noutăți din industria tiparului și sfaturi pentru materialele tale publicitare. Află cum să alegi cele mai bune soluții de print.",
+    title: "Jurnal de amenajare HomePrint",
+    description: "Măsurători, imagini și compoziții pentru decorul camerei tale.",
     keywords: ['blog print', 'sfaturi publicitate', 'ghiduri tipar', 'noutati marketing', 'homeprint'],
     alternates: {
         canonical: '/blog',
     },
     openGraph: {
-        title: "Blog - Sfaturi de Print și Publicitate",
-        description: "Ghiduri practice, noutăți din industria tiparului și sfaturi pentru materialele tale publicitare.",
+        title: "Jurnal de amenajare HomePrint",
+        description: "Măsurători, imagini și compoziții pentru decorul camerei tale.",
         type: "website",
-        images: ["/products/banner/banner-1.webp"], // Fallback safe image
+        images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"], // Fallback safe image
     }
 };
 
 export default async function BlogPage() {
-    const host = new URL(siteConfig.url).host;
-
-    let source = 'HomePrint.ro';
-    if (host.includes('prynt')) source = 'prynt.ro';
-    else if (host.includes('euprint')) source = 'euprint.ro';
-    else if (host.includes('homeprint')) source = 'homeprint.ro';
-    else if (host.includes('tablou')) source = 'tablou.net';
-
-
-    const allPosts = getAllPosts();
-    const posts = allPosts.filter(p => !p.source || p.source === source);
+    const posts = getAllPosts();
 
     return (
         <main className="min-h-screen pt-24 pb-16 bg-slate-50">
             <div className="container mx-auto px-4 md:px-8">
                 <header className="max-w-3xl mx-auto text-center mb-16">
-                    <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">Blog & Noutăți</h1>
-                    <p className="text-lg text-slate-600 leading-relaxed">
-                        Ghiduri practice, idei de promovare și noutăți.
-                        Te ajutăm să transformi fiecare proiect într-un succes.
-                    </p>
+                    <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">Jurnal de amenajare HomePrint</h1>
+                    <p className="text-lg text-slate-600 leading-relaxed">Măsurători, imagini și compoziții pentru decorul camerei tale.</p>
                 </header>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

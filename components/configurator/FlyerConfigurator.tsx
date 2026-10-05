@@ -18,7 +18,8 @@ import {
 } from "@/lib/pricing";
 
 const GALLERY_BASE = [
-    "/products/flayere/flayere-1.webp"
+    "/products/flayere/flayere-1.webp",
+    "/products/grafica-originala/flyer-publicitar-grafica-atelier-creativ.webp",
 ] as const;
 
 const productFaqs: QA[] = [
@@ -157,7 +158,7 @@ export default function FlyerConfigurator({ productImage }: { productImage?: str
                                     <img src={activeImage} alt="Flyere" className="max-h-full max-w-full object-contain" />
                                 )}
                             </div>
-                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100">
+                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100 print-product-gallery">
                                 {GALLERY.map((src, i) => (
                                     <button
                                         key={i}

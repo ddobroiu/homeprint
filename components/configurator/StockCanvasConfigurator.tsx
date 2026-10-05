@@ -1,24 +1,13 @@
 "use client";
+import { AccordionStep } from "./ui/AccordionStep";
+import { MobileConfiguratorSummary } from "./ui/MobileConfiguratorSummary";
 
 import React, { useState, useMemo, useRef, useEffect } from "react";
 import { useCart } from "@/components/CartContext";
-import {
-    ShoppingCart,
-    Info,
-    Check,
-    Truck,
-    ShieldCheck,
-    ArrowLeft,
-    MessageCircle,
-    ChevronRight,
-    Sparkles,
-    Settings2,
-    Box,
-    Image as ImageIcon,
-    PencilRuler
-} from "lucide-react";
+import { ShoppingCart, Info, Check, Truck, ShieldCheck, ArrowLeft, MessageCircle, ChevronRight, Settings2, Box, Image as ImageIcon, PencilRuler } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
+import { canvasTextureSource } from "./canvasTextureSource";
 import { useSearchParams } from "next/navigation";
 import { QRCodeSVG } from "qrcode.react";
 import { canvasProducts, type CanvasProduct } from "@/lib/products/canvas-products";
@@ -41,6 +30,12 @@ const canvasFaqs: QA[] = [
     { question: "Pot curăța tabloul?", answer: "Pânza poate fi ștearsă ușor de praf cu o lavetă uscată sau foarte puțin umezită cu apă. Nu folosiți substanțe chimice sau detergenți abrazivi." },
 ];
 
+/** Poza produsului pentru modelul 3D: pozele de pe site direct, cele externe prin proxy (same-origin, fără CORS). */
+function stockImageSrc(src: string): string {
+    if (!/^https?:\/\//i.test(src)) return src;
+    return `/api/proxy-image?url=${encodeURIComponent(src)}`;
+}
+
 interface Props {
     productSlug: string;
     renderOnlyConfigurator?: boolean;
@@ -48,6 +43,7 @@ interface Props {
 
 export default function StockCanvasConfigurator({ productSlug, renderOnlyConfigurator }: Props) {
     const { addItem } = useCart();
+    const [activeStep, setActiveStep] = useState(1);
     const searchParams = useSearchParams();
 
     const product = useMemo(() => {
@@ -62,7 +58,7 @@ export default function StockCanvasConfigurator({ productSlug, renderOnlyConfigu
                 slug: landingInfo.key,
                 title: landingInfo.title,
                 description: landingInfo.shortDescription,
-                image: landingInfo.images?.[0] || "/products/canvas/canvas-1.webp",
+                image: landingInfo.images?.[0] || "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
                 orientation: 'Landscape', // Default for landing pages
                 material: 'Standard',
                 dimensions: ["50x40 cm", "70x50 cm", "90x60 cm", "120x90 cm"],
@@ -76,7 +72,7 @@ export default function StockCanvasConfigurator({ productSlug, renderOnlyConfigu
 
     if (!product) {
         return (
-            <div className="container mx-auto px-4 py-20 text-center">
+            <div data-unified-product-configurator className="container mx-auto px-4 py-20 text-center">
                 <h2 className="text-2xl font-bold">Produsul nu a fost găsit.</h2>
                 <Link href="/configurator/canvas" className="text-amber-600 hover:underline mt-4 inline-block">
                     Înapoi la colecție
@@ -214,7 +210,7 @@ export default function StockCanvasConfigurator({ productSlug, renderOnlyConfigu
     useEffect(() => {
         const check = async () => {
             const img = new Image();
-            img.src = `/api/proxy-image?url=${encodeURIComponent(product.image)}`;
+            img.src = stockImageSrc(product.image);
             img.onload = () => {
                 setIsLandscapeImage(img.width >= img.height);
             };
@@ -309,11 +305,14 @@ export default function StockCanvasConfigurator({ productSlug, renderOnlyConfigu
         if (!viewer) return;
 
         try {
-            const proxyUrl = `/api/proxy-image?url=${encodeURIComponent(product.image)}`;
             const img = new Image();
             img.crossOrigin = "Anonymous";
-            img.src = proxyUrl;
-            await new Promise(r => img.onload = r);
+            await new Promise((resolve, reject) => {
+                img.onload = resolve;
+                // fără onerror, o poză refuzată rămânea în așteptare, iar modelul 3D arăta textura lui implicită în locul produsului
+                img.onerror = () => reject(new Error("Poza produsului nu s-a încărcat pentru vederea 3D"));
+                img.src = stockImageSrc(product.image);
+            });
 
             const canvas = document.createElement("canvas");
             const ctx = canvas.getContext("2d");
@@ -373,7 +372,7 @@ export default function StockCanvasConfigurator({ productSlug, renderOnlyConfigu
 
         } catch (e) {
             console.error("Crop error:", e);
-            setIsTextureLoaded(true); // Failsafe
+            setIsTextureLoaded(false); // Keep AR disabled when the texture failed.
         }
     }
 
@@ -397,7 +396,7 @@ export default function StockCanvasConfigurator({ productSlug, renderOnlyConfigu
     };
 
     return (
-        <div className={`bg-white w-full max-w-full overflow-x-hidden ${renderOnlyConfigurator ? '' : 'min-h-screen pb-20'}`}>
+        <div className={`bg-white w-full max-w-full overflow-x-hidden ${renderOnlyConfigurator ? '' : 'min-h-screen pb-28'}`}>
             <ProductJsonLd
                 name={product.title}
                 description={product.description}
@@ -448,7 +447,7 @@ export default function StockCanvasConfigurator({ productSlug, renderOnlyConfigu
                                         />
                                         <div className="absolute top-4 left-4">
                                             <span className="bg-white/90 backdrop-blur-md text-amber-700 px-4 py-1.5 rounded-full text-xs font-bold shadow-sm flex items-center gap-1.5 border border-amber-100">
-                                                <Sparkles size={14} />
+                                                
                                                 CALITATE PREMIUM
                                             </span>
                                         </div>
@@ -597,22 +596,8 @@ export default function StockCanvasConfigurator({ productSlug, renderOnlyConfigu
                             </header>
                         )}
 
-                        <div className="bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-gray-200 dark:border-slate-800 p-6 mb-8 space-y-8">
-                            {/* Preț */}
-                            <div className="pb-6 border-b border-gray-100 flex flex-wrap items-center justify-between gap-4">
-                                <span className="text-4xl font-black text-amber-600 tracking-tighter">
-                                    {formatMoneyDisplay(totalPrice)}
-                                </span>
-                                <Link
-                                    href="/configurator/canvas"
-                                    className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 text-amber-700 rounded-lg text-xs font-bold hover:bg-amber-100 transition-colors border border-amber-100 group"
-                                >
-                                    <Sparkles size={14} className="text-yellow-500 group-hover:scale-110 transition-transform" />
-                                    VREI CU POZA TA?
-                                </Link>
-                            </div>
-
-                            {/* Dimensiuni */}
+                        <div className="bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-gray-200 dark:border-slate-800 px-3 sm:px-4 mb-8">
+                            <AccordionStep stepNumber={1} title="Dimensiuni & Cantitate" summary={`${selectedDimension} · ${quantity} buc.`} isOpen={activeStep === 1} onClick={() => setActiveStep(1)}>{/* Dimensiuni */}
                             <div className="space-y-4">
                                 <label className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest flex justify-between">
                                     <span>Alege Dimensiunea</span>
@@ -647,7 +632,7 @@ export default function StockCanvasConfigurator({ productSlug, renderOnlyConfigu
                                 <NumberInput label="Cantitate" value={quantity} onChange={setQuantity} />
                             </div>
 
-                            {/* Butoane Acțiune */}
+                            <Link href="/configurator/canvas?mode=custom" className="mt-4 flex w-full items-center gap-3 rounded-xl border-2 border-emerald-600 bg-emerald-50 px-4 py-4 font-bold text-emerald-900 hover:bg-emerald-100"><Settings2 size={22} /> Am nevoie de altă dimensiune →</Link></AccordionStep><AccordionStep stepNumber={2} title="Material & Finisare" summary={String(product.material || "Canvas")} isOpen={activeStep === 2} onClick={() => setActiveStep(2)}><div className="rounded-xl border border-slate-200 bg-slate-50 p-4"><p className="text-sm font-bold text-slate-900">Materialul modelului</p><p className="mt-2 text-sm text-slate-600">{product.material}</p><p className="mt-2 text-sm text-slate-600">Formatele disponibile respectă orientarea acestui tablou. Materialul și modelul rămân cele din produsul ales.</p></div></AccordionStep><AccordionStep stepNumber={3} title="Imagine" summary={product.title} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}><div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4"><p className="text-sm font-bold text-emerald-900">Păstrez imaginea acestui model</p><p className="mt-2 text-sm text-slate-600">{product.title}</p></div><button type="button" onClick={() => setViewMode("3d")} className="btn-outline mt-4 w-full px-4 py-3">Vezi tabloul în 3D</button><Link href="/configurator/canvas?mode=custom" className="mt-3 flex w-full items-center gap-3 rounded-xl border-2 border-emerald-600 bg-emerald-50 px-4 py-4 text-sm font-bold text-emerald-900">Vreau un tablou cu fotografia mea →</Link></AccordionStep></div><div className="mt-8 bg-white rounded-2xl border border-gray-200 p-4 sm:p-6"><div className="mb-4 flex items-center justify-between"><span className="text-xs font-bold uppercase tracking-wider text-gray-500">Preț Total</span><span className="text-3xl font-black text-slate-900">{formatMoneyDisplay(totalPrice)}</span></div>{/* Butoane Acțiune */}
                             <div className="space-y-4 pt-4">
                                 <button
                                     onClick={handleAddToCart}
@@ -784,7 +769,8 @@ export default function StockCanvasConfigurator({ productSlug, renderOnlyConfigu
                 </div>
             )}
         </div>
-        </div>
+        <MobileConfiguratorSummary total={totalPrice} onAdd={handleAddToCart} disabled={false} />
+</div>
     );
 }
 

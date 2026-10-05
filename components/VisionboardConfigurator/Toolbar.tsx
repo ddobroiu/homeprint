@@ -1,5 +1,5 @@
 import React from 'react';
-import { Upload, Type, Image as ImageIcon, LayoutGrid, Sparkles, Download } from 'lucide-react';
+import { Upload, Type, Image as ImageIcon, LayoutGrid, Download } from 'lucide-react';
 
 interface ToolbarProps {
     activeTool: string | null;
@@ -60,7 +60,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ activeTool, setActiveTool, add
                 <span style={{ fontSize: '0.75rem', marginTop: '0.25rem' }}>Bibliotecă</span>
             </button>
             <button className={`tool-btn ${activeTool === 'elements' ? 'active' : ''}`} title="Elemente și forme" aria-label="Elemente și forme" onClick={() => setActiveTool(activeTool === 'elements' ? null : 'elements')}>
-                <Sparkles size={24} />
+                
                 <span style={{ fontSize: '0.75rem', marginTop: '0.25rem' }}>Elemente</span>
             </button>
 

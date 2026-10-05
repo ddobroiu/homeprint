@@ -80,7 +80,7 @@ export const REGLEMENTARI_DATA: RegulatoryData[] = [
             'Livrări: Disponibil cu printare date incluse'
         ],
         relatedProductId: 'banner',
-        image: '/products/banner/banner-1.webp'
+        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
     },
     {
         id: 'identificare-cladiri',

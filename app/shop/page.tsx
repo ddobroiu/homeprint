@@ -1,3 +1,4 @@
+import SearchProductShelf from "@/components/SearchProductShelf";
 import React, { Suspense } from "react";
 import ShopPageContent from "./ShopPageContent";
 import { Metadata } from 'next';
@@ -26,8 +27,9 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 
 export default function ShopPage() {
     return (
-        <div className="pt-24 max-w-7xl mx-auto px-4">
+        <div className="pt-24 w-full max-w-7xl mx-auto px-4">
             <Breadcrumbs items={[{ label: 'Magazin', href: '/shop' }]} />
+            <SearchProductShelf />
             <Suspense fallback={<div className="container py-20 text-center">Se încarcă produsele...</div>}>
                 <ShopPageContent />
             </Suspense>

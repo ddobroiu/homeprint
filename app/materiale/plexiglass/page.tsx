@@ -30,7 +30,7 @@ export default function PlexiglassPage() {
                 <ProductSchema
                     name="Plexiglas Personalizat (Sticlă Acrilică)"
                     description="Plăci de plexiglas transparente sau albe, debitate CNC la dimensiune, pentru firme indoor premium, meniuri și display-uri de showroom."
-                    image="/products/master/placi-plexiglass-transparent-personalizat-print-uv.png"
+                    image="/products/grafica-originala/placa-plexiglas-transparenta-grafica-birou-decupata.png"
                     url="/materiale/plexiglass"
                     price="50.00"
                 />

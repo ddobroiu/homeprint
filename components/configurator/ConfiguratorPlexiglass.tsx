@@ -18,9 +18,10 @@ import {
 
 const GALLERY_BASE = [
     "/products/materiale/plexiglass/plexiglass-1.webp",
+    "/products/grafica-originala/placa-plexiglas-transparenta-grafica-birou-decupata.png",
     "/products/materiale/plexiglass/plexiglass-2.webp",
     "/products/materiale/plexiglass/plexiglass-3.webp",
-    "/products/master/placi-plexiglass-transparent-personalizat-print-uv.png"
+    "/products/master/placi-plexiglass-transparent-personalizat-print-uv.png",
 ] as const;
 
 const productFaqs: QA[] = [
@@ -196,7 +197,7 @@ export default function ConfiguratorPlexiglass({ initialWidth: initW, initialHei
                                     <img src={activeImage} alt="Plexiglas" className="max-h-full max-w-full object-contain" />
                                 )}
                             </div>
-                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100">
+                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100 print-product-gallery">
                                 {GALLERY.map((src, i) => (
                                     <button
                                         key={i}

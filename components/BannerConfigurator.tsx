@@ -192,7 +192,7 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
   const [lengthText, setLengthText] = useState(input.width_cm ? String(input.width_cm) : "");
   const [heightText, setHeightText] = useState(input.height_cm ? String(input.height_cm) : "");
 
-  const galleryImages = useMemo(() => productImage ? [productImage, "/products/banner/banner-1.webp"] : ["/products/banner/banner-1.webp"], [productImage]);
+  const galleryImages = useMemo(() => productImage ? [productImage, "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"] : ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"], [productImage]);
 
   const [viewMode, setViewMode] = useState<ViewMode>(() => {
     const t = searchParams.get('tab');
@@ -458,7 +458,7 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
 
               {/* THUMBNAILS GALERIE (Visible only in gallery mode) */}
               {!productImage && viewMode === 'gallery' && (
-                <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100">
+                <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100 print-product-gallery">
                   {galleryImages.map((src, i) => (
                     <button
                       key={src}

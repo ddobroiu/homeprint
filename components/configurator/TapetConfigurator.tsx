@@ -18,7 +18,8 @@ import {
 } from "@/lib/pricing";
 
 const GALLERY_BASE = [
-    "/products/tapet/tapet-1.webp"
+    "/products/tapet/tapet-1.webp",
+    "/products/grafica-originala/fototapet-personalizat-grafica-botanica-rola.webp",
 ] as const;
 
 const productFaqs: QA[] = [
@@ -180,7 +181,7 @@ export default function TapetConfigurator({ productSlug, initialWidth: initW, in
                                 />
                                 )}
                             </div>
-                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100">
+                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100 print-product-gallery">
                                 {GALLERY.map((src, i) => (
                                     <button
                                         key={i}

@@ -2,10 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { 
-    ArrowRight, TrendingUp, ShieldCheck, Zap, Users, Search, 
-    Layers, MousePointer2, Sparkles, Filter 
-} from 'lucide-react';
+import { ArrowRight, TrendingUp, ShieldCheck, Zap, Users, Search, Layers, MousePointer2, Filter } from 'lucide-react';
 import { INDUSTRIE_DATA } from '@/lib/seo/industriiData';
 
 // Accent colors per industry for visual variety
@@ -70,7 +67,7 @@ export default function IndustriiPage() {
                     <div className="flex flex-col lg:flex-row gap-12 items-center">
                         <div className="flex-1 max-w-4xl mx-auto lg:mx-0">
                             <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-50 rounded-full text-amber-600 font-black text-[10px] uppercase tracking-[0.2em] mb-6 border border-amber-100">
-                                <Sparkles size={14} className="animate-bounce" /> EXPERTIZA CARE FACE DIFERENȚA
+                                 EXPERTIZA CARE FACE DIFERENȚA
                             </div>
                             
                             <h1 className="text-5xl md:text-8xl font-black text-slate-900 tracking-tighter leading-[0.9] mb-8 uppercase">

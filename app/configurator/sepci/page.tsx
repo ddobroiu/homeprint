@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Șepci cu Logo pentru Echipă sau Eveniment',
         description: 'Personalizezi logo-ul, alegi cantitatea, comanzi online.',
-        images: ['/placeholder.png'],
+        images: ["/products/grafica-originala/sapca-personalizata-grafica-val-ocean.webp"],
     }
 };
 
@@ -33,7 +33,7 @@ export default function SepciConfigPage() {
             <ProductSchema
                 name="Șepci cu Logo pentru Echipă sau Eveniment"
                 description="Șepci personalizate cu logo-ul firmei, print DTF rezistent, potrivite pentru echipă, promoții sau evenimente."
-                image="/placeholder.png"
+                image="/products/grafica-originala/sapca-personalizata-grafica-val-ocean.webp"
                 url="/configurator/sepci"
                 price="45.00"
             />

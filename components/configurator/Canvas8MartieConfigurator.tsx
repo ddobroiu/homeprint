@@ -2,8 +2,9 @@
 
 import React, { useMemo, useState } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
+import { uploadArtworkImage, browserImageUrl } from "@/lib/uploadArtworkImage";
 import { useCart } from "@/components/CartContext";
-import { ShoppingCart, Heart, Sparkles, Image as ImageIcon, Check, UploadCloud, MessageSquare } from "lucide-react";
+import { ShoppingCart, Heart, Image as ImageIcon, Check, UploadCloud, MessageSquare } from "lucide-react";
 import { calculateCanvas8MartiePrice, CANVAS_8_MARTIE_CONSTANTS, formatMoneyDisplay, type PriceInputCanvas8Martie } from "@/lib/pricing";
 import { OptionButton } from "./ui/OptionButton";
 import { NumberInput } from "./ui/NumberInput";
@@ -42,11 +43,7 @@ export default function Canvas8MartieConfigurator({ productImage }: Props) {
         setArtworkPx(null);
         try {
             setUploading(true);
-            const form = new FormData(); form.append("file", file);
-            const res = await fetch("/api/upload", { method: "POST", body: form });
-            if (!res.ok) throw new Error("Upload eșuat");
-            const data = await res.json();
-            setArtworkUrl(data.url);
+            setArtworkUrl(await uploadArtworkImage(file));
         } catch (e: any) {
             setUploadError(e?.message ?? "Eroare la upload");
         } finally {
@@ -102,7 +99,7 @@ export default function Canvas8MartieConfigurator({ productImage }: Props) {
                                                     <ArtworkFitEditor
                                                         widthCm={seasonDims[0]}
                                                         heightCm={seasonDims[1]}
-                                                        imageUrl={artworkUrl}
+                                                        imageUrl={browserImageUrl(artworkUrl)}
                                                         fit={artworkFit}
                                                         onChange={setArtworkFit}
                                                         onImageSize={setArtworkPx}
@@ -152,7 +149,7 @@ export default function Canvas8MartieConfigurator({ productImage }: Props) {
                             </div>
 
                             <div className="bg-rose-600 p-4 text-white text-center font-bold flex items-center justify-center gap-2">
-                                <Sparkles size={18} /> Cadoul perfect pentru Ziua Femeii
+                                 Cadoul perfect pentru Ziua Femeii
                             </div>
                         </div>
                     </div>

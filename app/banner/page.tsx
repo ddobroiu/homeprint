@@ -24,7 +24,7 @@ export const metadata = {
     title: "Bannere Publicitare - Configurează Online | Publicitate Outdoor",
     description: "Ai nevoie de un banner? Introduci dimensiunile și vezi prețul pe loc. Print policromie rezistent UV, finisaje incluse. Sistem centralizat pentru outdoor și indoor. Print de mari și mici dimensiuni cu preț de producător și rezistență UV.",
     images: [{
-      url: "/products/banner/banner-1.webp",
+      url: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
       width: 1200,
       height: 630,
       alt: "Bannere publicitare outdoor HomePrint.ro"

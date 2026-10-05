@@ -2,11 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { 
-    Zap, MessageCircle, Sparkles, ShieldCheck, Truck, 
-    Layers, Info, CheckCircle2, HelpCircle, ArrowRight,
-    MousePointer2, Settings, ClipboardList, Star, Palette
-} from "lucide-react";
+import { Zap, MessageCircle, CircleCheck, ShieldCheck, Truck, Layers, Info, CheckCircle2, HelpCircle, ArrowRight, MousePointer2, Settings, ClipboardList, Star, Palette } from "lucide-react";
 import { ServiceData } from "@/lib/seo/serviciiData";
 import { useRouter } from "next/navigation";
 import MasterConfigurator from "@/components/MasterConfigurator";
@@ -34,7 +30,7 @@ export function SeoServiceLanding({ service }: SeoServiceLandingProps) {
                     <div className="flex flex-col lg:flex-row gap-16 items-center">
                         <div className="flex-1 text-center lg:text-left">
                             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-slate-200 rounded-lg text-slate-400 text-[10px] font-black uppercase tracking-[0.2em] mb-8 shadow-sm">
-                                <Sparkles size={14} className="text-amber-500" /> SERVICII PROFESIONALE
+                                 SERVICII PROFESIONALE
                             </div>
                             
                             <h1 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight mb-6 uppercase tracking-tighter italic">
@@ -197,7 +193,7 @@ export function SeoServiceLanding({ service }: SeoServiceLandingProps) {
                             { icon: ShieldCheck, label: "Calitate Premium", desc: "Control Riguros 1:1" },
                             { icon: Truck, label: "Expediere Rapidă", desc: "Livrare prin Curier" },
                             { icon: Palette, label: "Tehnologie Latex", desc: "Culori Eco Vibrante" },
-                            { icon: Sparkles, label: "Finisaje Manuale", desc: "Atenție la Detalii" }
+                            { icon: CircleCheck, label: "Finisaje Manuale", desc: "Atenție la Detalii" }
                         ].map((item, i) => (
                             <div key={i} className="text-center group flex flex-col items-center">
                                 <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center text-amber-500 mb-4 group-hover:bg-slate-900 group-hover:text-white transition-all">

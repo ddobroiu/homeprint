@@ -19,7 +19,9 @@ import {
 import { PopularDimensions } from "./PopularDimensions";
 
 const GALLERY_BASE = [
-    "/products/rollup/rollup-1.webp"
+    "/products/modele-personalizate/rollup-rollup-personalizat-model-personalizat.webp",
+    "/products/rollup/rollup-1.webp",
+    "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp",
 ] as const;
 
 const productFaqs: QA[] = [
@@ -155,7 +157,7 @@ export default function RollupConfigurator({ productSlug, initialWidth: initW, p
                                 />
                                 )}
                             </div>
-                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100">
+                            <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100 print-product-gallery">
                                 {GALLERY.map((src, i) => (
                                     <button
                                         key={i}

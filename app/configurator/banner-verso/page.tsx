@@ -26,7 +26,7 @@ export default function BannerVersoPage() {
                 <ProductSchema
                     name="Banner Față-Verso Blockout"
                     description="Banner printat pe ambele fețe cu material blockout 100% opac, pentru bannere suspendate vizibile corect din ambele sensuri de mers."
-                    image="/products/fata-verso/banner-verso-1.webp"
+                    image="/products/grafica-originala/banner-fata-verso-blockout-grafica-eveniment.webp"
                     url="/configurator/banner-verso"
                     price="60.00"
                 />

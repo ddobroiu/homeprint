@@ -1,4 +1,5 @@
 "use client";
+import ConfiguratorModelShelf from "./ConfiguratorModelShelf";
 
 import dynamic from 'next/dynamic';
 import React from 'react';
@@ -131,6 +132,7 @@ export default function ConfiguratorDispatcher({
                 renderOnlyConfigurator={false}
             />
 
+            <ConfiguratorModelShelf category={configuratorId} />
             <SeoDimensionsLinks 
                 productId={configuratorId} 
                 productName={PRODUCT_NAMES[configuratorId] || configuratorId} 

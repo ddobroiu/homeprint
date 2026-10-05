@@ -1,3 +1,4 @@
+import SearchProductShelf from "@/components/SearchProductShelf";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -36,6 +37,7 @@ export default function CatalogIndexPage() {
             Pe lângă configuratoarele de bannere, panouri și print, găsești aici produse cu variante și prețuri fixe: sisteme de afișaj pentru târguri, steaguri, rame, papetărie, promoționale și decor.
           </p>
         </header>
+        <SearchProductShelf />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {cats.map((c) => (
             <Link

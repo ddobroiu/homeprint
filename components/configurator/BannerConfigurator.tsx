@@ -131,6 +131,7 @@ const MESH_PRESENTATION_VIDEO_ID = "1Y6osfnjqhM";
 
 const MESH_GALLERY_IMAGES = [
     "/products/mesh/mesh_publicitar_personalizat.jpg",
+    "/products/grafica-originala/banner-mesh-perforat-grafica-constructii.webp",
     "/products/mesh/mesh_publicitar_tivcapse.jpg",
 ] as const;
 
@@ -195,6 +196,11 @@ type Props = { productSlug?: string; initialWidth?: number; initialHeight?: numb
 type ViewMode = 'gallery' | 'shape';
 
 /* --- MAIN COMPONENT --- */
+const BANNER_GALLERY_IMAGES = [
+    "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
+    "/products/poze-produse-seo/banner-publicitar-personalizat.webp",
+];
+
 export default function BannerConfigurator({ productSlug, initialWidth: initW, initialHeight: initH, productImage, renderOnlyConfigurator = false, intent, productKind = "banner" }: Props) {
     const { addItem } = useCart();
     const router = useRouter();
@@ -232,9 +238,7 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
             }
             return [...MESH_GALLERY_IMAGES];
         }
-        return productImage
-            ? [productImage, "/products/banner/banner-1.webp"]
-            : ["/products/banner/banner-1.webp"];
+        return productImage ? [productImage, ...BANNER_GALLERY_IMAGES.filter(src => src !== productImage)] : [...BANNER_GALLERY_IMAGES];
     }, [productImage, productKind]);
 
     const [viewMode, setViewMode] = useState<ViewMode>(() => {
@@ -586,7 +590,7 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
 
                             {/* THUMBNAILS GALERIE (Visible only in gallery mode) */}
                             {!productImage && viewMode === 'gallery' && (
-                                <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100">
+                                <div className="p-2 grid grid-cols-4 gap-2 border-t border-gray-100 print-product-gallery">
                                     {galleryImages.map((src, i) => (
                                         <button
                                             key={src}

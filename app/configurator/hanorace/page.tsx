@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Hanorace Personalizate cu Logo pentru Echipă',
         description: 'Personalizezi logo-ul, alegi cantitatea, comanzi online.',
-        images: ['/placeholder.png'],
+        images: ["/products/grafica-originala/hanorac-personalizat-grafica-oras-noaptea.webp"],
     }
 };
 
@@ -33,7 +33,7 @@ export default function HanoracePage() {
             <ProductSchema
                 name="Hanorace Personalizate"
                 description="Hanorace personalizate premium folosing tipar DTF, foarte rezistente și călduroase. Alege culoarea și mărimea dorită."
-                image="/placeholder.png"
+                image="/products/grafica-originala/hanorac-personalizat-grafica-oras-noaptea.webp"
                 url="/configurator/hanorace"
                 price="120.00"
             />

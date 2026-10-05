@@ -18,7 +18,8 @@ import {
 
 const GALLERY_BASE = [
     "/products/materiale/carton/carton-1.webp",
-    "/products/materiale/carton/carton-2.webp"
+    "/products/grafica-originala/carton-plume-panou-grafica-expozitie.webp",
+    "/products/materiale/carton/carton-2.webp",
 ] as const;
 
 const productFaqs: QA[] = [

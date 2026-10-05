@@ -2,7 +2,7 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { useCart } from "@/components/CartContext";
 import { useToast } from "@/components/ToastProvider";
-import { ShoppingCart, Info, X, UploadCloud, MessageCircle, TrendingUp, Sparkles, Layers, Ruler } from "lucide-react";
+import { ShoppingCart, Info, X, UploadCloud, MessageCircle, TrendingUp, Layers, Ruler } from "lucide-react";
 import DeliveryEstimation from "./DeliveryEstimation";
 import FaqAccordion from "./FaqAccordion";
 import { QA } from "@/types";
@@ -16,9 +16,9 @@ import QuickNav from "@/components/QuickNav";
 import RelatedProducts from "@/components/RelatedProducts";
 
 const GALLERY_BASE = [
-    "/products/master/carti-de-vizita-premium-personalizate-online-ieftine.png",
-    "/products/master/carti-de-vizita-premium-personalizate-online-ieftine.png",
-    "/products/master/carti-de-vizita-premium-personalizate-online-ieftine.png"
+    "/products/grafica-originala/carti-vizita-personalizate-grafica-atelier.webp",
+    "/products/grafica-originala/carti-vizita-personalizate-grafica-atelier.webp",
+    "/products/grafica-originala/carti-vizita-personalizate-grafica-atelier.webp"
 ] as const;
 
 const productFaqs: QA[] = [
@@ -141,7 +141,7 @@ export default function ConfiguratorCartiVizita({ productImage }: { productImage
                                 <img src={activeImage} alt="Cărți de Vizită" className="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-1000 p-12 drop-shadow-2xl" />
                            </div>
 
-                          <div className="grid grid-cols-4 gap-3 mt-6">
+                          <div className="grid grid-cols-4 gap-3 mt-6 print-product-gallery">
                             {GALLERY.map((src, i) => (
                               <button
                                 key={i}
@@ -166,7 +166,7 @@ export default function ConfiguratorCartiVizita({ productImage }: { productImage
                           </div>
                           <div className="bg-white p-6 rounded-3xl border border-slate-200/60 flex items-center gap-4">
                             <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
-                               <Sparkles className="w-6 h-6" />
+                               
                             </div>
                             <div>
                               <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-0.5">Finisaj</p>
@@ -275,7 +275,7 @@ export default function ConfiguratorCartiVizita({ productImage }: { productImage
                                   </label>
                                 ) : (
                                   <div className="p-8 rounded-[2rem] bg-indigo-50 border border-indigo-100 relative group overflow-hidden">
-                                    <Sparkles className="absolute top-4 right-4 text-indigo-600 opacity-20" />
+                                    
                                     <p className="text-slate-900 font-black uppercase italic tracking-widest mb-2 text-sm leading-none">Vrei impact vizual?</p>
                                     <p className="text-slate-600 font-medium italic text-xs leading-relaxed">Designerii noștri vor crea o identitate memorabilă pentru business-ul tău.</p>
                                   </div>
@@ -334,7 +334,7 @@ export default function ConfiguratorCartiVizita({ productImage }: { productImage
                               ].map((item, i) => (
                                 <div key={i} className="flex gap-6 p-8 rounded-3xl bg-slate-50 border border-slate-100 group hover:border-indigo-500/30 transition-all">
                                    <div className="w-12 h-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-all shadow-sm">
-                                      <Sparkles size={20} />
+                                      
                                    </div>
                                    <div>
                                       <h3 className="font-black text-slate-900 uppercase italic tracking-widest mb-1 text-sm">{item.title}</h3>

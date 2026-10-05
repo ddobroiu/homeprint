@@ -17,7 +17,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/banner",
         title: "Print Banners",
         description: "Configurează online bannerul tău personalizat. Alege dimensiunile, materialul și încărcă grafica.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 29 LEI/mp",
         category: "Configuratoare",
         tags: ["banner", "print", "outdoor", "configurator"]
@@ -28,7 +28,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/banner-verso",
         title: "Print Banner Față-Verso",
         description: "Banner cu print pe ambele fețe (Blockout). Ideal pentru expunere stradală vizibilă din ambele sensuri.",
-        image: "/products/banner/banner-1.webp",
+        image: "/products/grafica-originala/banner-fata-verso-blockout-grafica-eveniment.webp",
         price: "De la 55 LEI/mp",
         category: "Configuratoare",
         tags: ["banner", "double sided", "blockout", "configurator"]
@@ -39,7 +39,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/banner",
         title: "Print Mesh Publicitar",
         description: "Material perforat ideal pentru suprafețe mari și zone cu vânt puternic. Permite trecerea aerului.",
-        image: "/products/mesh/mesh_publicitar_personalizat.jpg",
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
         price: "De la 35 LEI/mp",
         category: "Configuratoare",
         tags: ["mesh", "outdoor", "wind", "configurator"]
@@ -50,7 +50,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/autocolante",
         title: "Print Autocolant",
         description: "Autocolant PVC mat sau lucios pentru diverse aplicații. Decor vitrine, auto, panouri.",
-        image: "/products/autocolante/autocolante-1.webp",
+        image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
         price: "De la 39 LEI/mp",
         category: "Configuratoare",
         tags: ["autocolant", "sticker", "indoor", "outdoor", "configurator"]
@@ -61,7 +61,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/canvas",
         title: "Tablouri Canvas",
         description: "Transformă-ți fotografiile în tablouri canvas. Print de înaltă rezoluție pe pânză de bumbac.",
-        image: "/products/canvas/canvas-1.webp",
+        image: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
         price: "De la 65 LEI",
         category: "Configuratoare",
         tags: ["canvas", "tablou", "decor", "configurator"]
@@ -72,7 +72,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/afise",
         title: "Afișe & Postere",
         description: "Tipar digital rapid pentru afișe, postere și concerte. Diverse dimensiuni standard. ",
-        image: "/products/afise/afise-1.webp",
+        image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
         price: "De la 3 LEI/buc",
         category: "Configuratoare",
         tags: ["afise", "postere", "hartie", "configurator"]
@@ -83,7 +83,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/pliante",
         title: "Pliante & Flyere",
         description: "Promovează-ți afacerea cu pliante și flyere de calitate. Diverse tipuri de hârtie și plieri.",
-        image: "/products/pliante/pliante-1.webp",
+        image: "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp",
         price: "De la 0.35 LEI/buc",
         category: "Configuratoare",
         tags: ["pliante", "flyere", "marketing", "configurator"]
@@ -94,7 +94,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/rollup",
         title: "Sisteme Roll-up",
         description: "Sisteme expoziționale portabile, ușor de montat. Include structură, print și geantă de transport.",
-        image: "/products/rollup/rollup-1.webp",
+        image: "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp",
         price: "De la 120 LEI",
         category: "Configuratoare",
         tags: ["rollup", "expozitional", "stand", "configurator"]
@@ -105,7 +105,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/tapet",
         title: "Tapet Personalizat",
         description: "Tapet imprimat cu grafica ta. Ideal pentru decor interior personalizat acasă sau la birou.",
-        image: "/products/tapet/tapet-1.webp",
+        image: "/products/grafica-originala/fototapet-personalizat-grafica-botanica-rola.webp",
         price: "De la 85 LEI/mp",
         category: "Configuratoare",
         tags: ["tapet", "decor", "perete", "configurator"]
@@ -116,7 +116,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/window-graphics",
         title: "Window Graphics",
         description: "Autocolant perforat pentru geamuri. Permite vizibilitatea din interior spre exterior.",
-        image: "/products/window-graphics/window-graphics-1.webp",
+        image: "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp",
         price: "De la 55 LEI/mp",
         category: "Configuratoare",
         tags: ["window graphics", "owv", "geam", "configurator"]
@@ -138,7 +138,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/materiale/pvc-forex",
         title: "Print PVC Forex",
         description: "Plăci PVC Forex alb, grosimi 3mm, 5mm sau 10mm. Ideale pentru semnalistică economică și rigidă.",
-        image: "/products/materiale/pvc-forex/pvc-forex-1.webp",
+        image: "/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp",
         price: "De la 85 LEI/mp",
         category: "Configuratoare",
         tags: ["forex", "pvc", "rigid", "configurator"]
@@ -149,7 +149,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/fonduri-pnrr",
         title: "Panouri Fonduri Europene",
         description: "Panouri și autocolante conforme pentru proiecte finanțate prin fonduri europene (PNRR, REGIO etc).",
-        image: "/products/fonduri/pnrr-1.webp",
+        image: "/products/grafica-originala/kit-vizibilitate-proiect-panou-afis-etichete.webp",
         price: "De la 55 LEI",
         category: "Configuratoare",
         tags: ["fonduri", "pnrr", "proiecte", "configurator"]
@@ -160,7 +160,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/materiale/carton",
         title: "Display Carton (Ondulat & Fagure)",
         description: "Comandă plăci din carton ondulat sau fagure personalizate. Imprimare UV de înaltă calitate, tăiere la dimensiune. Soluții eco-friendly.",
-        image: "/products/banner/banner-1.webp", // Fallback, will ideally use their specific folder if exists
+        image: "/products/grafica-originala/carton-plume-panou-grafica-expozitie.webp", // Fallback, will ideally use their specific folder if exists
         price: "De la 25 LEI",
         category: "Configuratoare",
         tags: ["carton", "fagure", "eco", "configurator"]
@@ -171,7 +171,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/materiale/plexiglass",
         title: "Print Plexiglass",
         description: "Imprimare directă UV pe panouri din plexiglass (acril). Ideal pentru semnalistică premium și firme luminoase.",
-        image: "/products/materiale/pvc-forex/pvc-forex-1.webp",
+        image: "/products/grafica-originala/placa-plexiglas-transparenta-grafica-birou-decupata.png",
         price: "De la 95 LEI/mp",
         category: "Configuratoare",
         tags: ["plexiglass", "acril", "semnalistica", "configurator"]
@@ -182,7 +182,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/materiale/alucobond",
         title: "Panouri Alucobond (Dibond)",
         description: "Semnalistică rigidă și rezistentă pe panouri compozite din aluminiu. Recomandate pentru expunere pe termen lung.",
-        image: "/products/materiale/pvc-forex/pvc-forex-1.webp",
+        image: "/products/grafica-originala/placa-alucobond-compozit-grafica-studio.webp",
         price: "De la 120 LEI/mp",
         category: "Configuratoare",
         tags: ["alucobond", "dibond", "aluminiu", "semnalistica", "configurator"]
@@ -193,7 +193,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/materiale/polipropilena",
         title: "Plăci Polipropilenă (PP)",
         description: "Material sintetic subțire, extrem de flexibil și rezistent la rupere, ideal pentru afișaj suspendat și roll-up.",
-        image: "/products/materiale/pvc-forex/pvc-forex-1.webp",
+        image: "/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp",
         price: "De la 45 LEI/mp",
         category: "Configuratoare",
         tags: ["polipropilena", "pp", "sintetic", "configurator"]
@@ -204,7 +204,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/tricouri",
         title: "Tricouri Personalizate",
         description: "Personalizează tricouri premium din bumbac. Print DTF de înaltă rezistență. Ideal pentru firmă sau evenimente.",
-        image: "https://shop.printcenter.ro/cdn/shop/files/tricou-clasic-personalizat-tshirt-textiledivision-alb-xs-119972_800x.webp",
+        image: "/products/grafica-originala/tricou-personalizat-grafica-munte-aventura.webp",
         price: "De la 60 LEI",
         category: "Configuratoare",
         tags: ["tricou", "tricouri", "textile", "personalizat", "configurator"]
@@ -215,7 +215,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/hanorace",
         title: "Hanorace Personalizate",
         description: "Hanorace premium, groase, personalizate cu designul tău. Calitate maximă a printului DTF.",
-        image: "https://shop.printcenter.ro/cdn/shop/files/hanorac-cape-personalizat-tshirt-textiledivision-alb-s-292392_800x.jpg",
+        image: "/products/grafica-originala/hanorac-personalizat-grafica-oras-noaptea.webp",
         price: "De la 160 LEI",
         category: "Configuratoare",
         tags: ["hanorac", "hanorace", "textile", "personalizat", "configurator"]
@@ -226,7 +226,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/sepci",
         title: "Șepci Personalizate",
         description: "Șepci premium personalizate cu logo-ul sau designul tău. Print DTF de înaltă calitate.",
-        image: "https://shop.printcenter.ro/cdn/shop/files/sapca-personalizata-hats-textiledivision-neagra-777755_800x.jpg",
+        image: "/products/grafica-originala/sapca-personalizata-grafica-val-ocean.webp",
         price: "De la 45 LEI",
         category: "Configuratoare",
         tags: ["sapca", "sepci", "textile", "personalizat", "configurator"]
@@ -237,7 +237,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         routeSlug: "configurator/carti-vizita",
         title: "Cărți de Vizită",
         description: "Cărți de vizită premium tipărite pe carton mat/lucios, plastic PVC, lemn sau variante metalice.",
-        image: "/products/carti-vizita/carti-vizita-1.webp",
+        image: "/products/grafica-originala/carti-vizita-personalizate-grafica-atelier.webp",
         price: "De la 0.18 LEI",
         category: "Configuratoare",
         tags: ["carti de vizita", "print", "standard", "business", "plastic", "metal"]

@@ -2,11 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { 
-    Zap, MessageCircle, Sparkles, ShieldCheck, Truck, 
-    Layers, Info, CheckCircle2, HelpCircle, ArrowRight,
-    Scale, FileText, AlertCircle, Award
-} from "lucide-react";
+import { Zap, MessageCircle, ShieldCheck, Truck, Layers, Info, CheckCircle2, HelpCircle, ArrowRight, Scale, FileText, AlertCircle, Award } from "lucide-react";
 import { RegulatoryData } from "@/lib/seo/reglementariData";
 import { useRouter } from "next/navigation";
 import MasterConfigurator from "@/components/MasterConfigurator";

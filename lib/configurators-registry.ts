@@ -121,7 +121,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             { q: 'Pot comanda banner cu găuri pentru vânt?', a: 'La bannerul PVC (Frontlit) bifezi în configurator „găuri de vânt” — sunt perforații în folia plină. Pentru material microperforat (mesh) folosește pagina dedicată /configurator/mesh.' },
             { q: 'Ce finisaje recomandați?', a: 'Pentru montaj pe cadru: capsare. Pentru stâlpi: tub metalic. Pentru lipire: margini lipite.' }
         ],
-        image: '/products/banner/banner-1.webp'
+        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"
     },
     {
         id: 'banner-verso',
@@ -183,7 +183,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             'Necesită 2 grafici separate (față + verso)',
             'Graficile trebuie să fie oglindite dacă designul continuă'
         ],
-        image: '/products/banner/verso/banner-verso-1.webp'
+        image: "/products/banner/verso/banner-verso-1.webp"
     },
     {
         id: 'mesh',
@@ -231,7 +231,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             'Print UV',
             'CMYK full color',
         ],
-        image: '/products/mesh/mesh_publicitar_personalizat.jpg'
+        image: "/products/mesh/mesh_publicitar_personalizat.jpg"
     },
     {
         id: 'afise',
@@ -320,7 +320,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             'Rezoluție: 1440 DPI',
             'Fișiere: PDF, AI, JPG (min 300 DPI pentru A3-A2, 150 DPI pentru A1-A0)'
         ],
-        image: '/products/afise/afise-1.webp'
+        image: "/products/afise/afise-1.webp"
     },
     {
         id: 'autocolante',
@@ -403,7 +403,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             { q: 'Ce diferență e între Print+Cut și Print Only?', a: 'Print+Cut = contur personalizat tăiat la plotter. Print Only = printul este tăiat dreptunghiular, mai ieftin cu 20%.' },
             { q: 'Când recomandați laminarea?', a: 'Obligatoriu pentru exterior și autocolante supuse frecării (vitrine, podele). Crește durabilitatea cu 50%.' }
         ],
-        image: '/products/autocolante/autocolante-1.webp'
+        image: "/products/autocolante/autocolante-1.webp"
     },
     {
         id: 'canvas',
@@ -465,7 +465,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             { q: 'Ce înseamnă margine oglindită?', a: 'Imaginea se extinde automat pe lateralele șasiului (2cm), creând un efect 3D fără chenare albe.' },
             { q: 'Pot comanda mai multe canvas formând un set?', a: 'Da, specifică în observații că vrei set triptic/poliptic și vom alinia imaginile.' }
         ],
-        image: '/products/canvas/canvas-1.webp'
+        image: "/products/canvas/canvas-1.webp"
     },
     {
         id: 'tapet',
@@ -521,7 +521,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             }
         ],
         turnaroundTime: '2-4 zile lucrătoare',
-        image: '/products/tapet/tapet-1.webp'
+        image: "/products/tapet/tapet-1.webp"
     },
     {
         id: 'rollup',
@@ -578,7 +578,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             { q: 'Pot înlocui printul mai târziu?', a: 'Da, casetă rămâne reutilizabilă. Poți comanda doar reprint la nevoie.' },
             { q: 'Se poate folosi outdoor?', a: 'Doar indoor sau outdoor temporar (nu rezistă la ploaie/vânt).' }
         ],
-        image: '/products/rollup/rollup-1.webp'
+        image: "/products/rollup/rollup-1.webp"
     },
     {
         id: 'window-graphics',
@@ -643,7 +643,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             { q: 'Se vede prin folie din interior?', a: 'Da, perforațiile permit 40-50% vizibilitate din interior spre exterior.' },
             { q: 'Funcționează noaptea?', a: 'Efect one-way funcționează doar când interiorul e mai întunecos (ziua). Noaptea cu lumină înăuntru, se vede din exterior.' }
         ],
-        image: '/products/window-graphics/window-graphics-1.webp'
+        image: "/products/window-graphics/window-graphics-1.webp"
     },
     {
         id: 'pliante',
@@ -696,7 +696,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             }
         ],
         turnaroundTime: '2-4 zile lucrătoare',
-        image: '/products/pliante/pliante-1.webp'
+        image: "/products/pliante/pliante-1.webp"
     },
     {
         id: 'flayere',
@@ -756,7 +756,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             }
         ],
         turnaroundTime: '2-4 zile lucrătoare',
-        image: '/products/flayere/flayere-1.webp'
+        image: "/products/flayere/flayere-1.webp"
     },
     {
         id: 'fonduri-eu',
@@ -841,7 +841,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
         faq: [
             { q: 'Trimiteți macheta spre aprobare înainte?', a: 'Da, trimitem macheta PDF conform ghidului vizual pentru aprobare înainte de producție.' }
         ],
-        image: '/products/master/pachet-vizibilitate-fonduri-europene-pnrr.png'
+        image: "/products/fonduri/pnrr-1.webp"
     },
     {
         id: 'plexiglass',
@@ -903,7 +903,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
         ],
         turnaroundTime: '2-4 zile lucrătoare',
         shippingNotes: 'Livrat cu folie protecție, fragil - manipulare atentă',
-        image: '/products/master/placi-plexiglass-transparent-personalizat-print-uv.png'
+        image: "/products/materiale/plexiglass/plexiglass-1.webp"
     },
     {
         id: 'pvc-forex',
@@ -953,7 +953,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             }
         ],
         turnaroundTime: '2-4 zile lucrătoare',
-        image: '/products/master/placi-pvc-forex-personalizat-print-uv.png'
+        image: "/products/materiale/pvc-forex/pvc-forex-1.webp"
     },
     {
         id: 'alucobond',
@@ -1007,7 +1007,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             'Impermeabil 100%',
             'Poate fi frezat pentru litere volumetrice'
         ],
-        image: '/products/master/panouri-alucobond-dibond-compozit-aluminiu-personalizat.png'
+        image: "/products/materiale/alucobond/alucobond-1.webp"
     },
     {
         id: 'carton',
@@ -1050,7 +1050,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
         options: [],
         turnaroundTime: '2-4 zile lucrătoare',
         shippingNotes: 'Fragil - doar pentru indoor, evită umiditate',
-        image: '/products/master/panouri-carton-plume-foam-board-personalizat.png'
+        image: "/products/materiale/carton/carton-1.webp"
     },
     {
         id: 'polipropilena',
@@ -1104,7 +1104,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             'Rezistent la temperaturi -20°C / +80°C',
             'Reutilizabil, ușor de tăiat'
         ],
-        image: '/products/master/placi-polipropilena-alveolara-canalit-ieftine.png'
+        image: "/products/master/placi-polipropilena-alveolara-canalit-ieftine.png"
     },
     {
         id: 'tricouri',
@@ -1124,7 +1124,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
         pricing: { type: 'per_unit' },
         options: [],
         turnaroundTime: '2-4 zile lucrătoare',
-        image: '/products/master/tricouri-personalizate-bumbac-print-digital-online.png'
+        image: '/products/grafica-originala/tricou-personalizat-grafica-munte-aventura.webp'
     },
     {
         id: 'hanorace',
@@ -1143,7 +1143,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
         pricing: { type: 'per_unit' },
         options: [],
         turnaroundTime: '2-4 zile lucrătoare',
-        image: '/products/master/hanorace-personalizate-premium-bumbac.png'
+        image: '/products/grafica-originala/hanorac-personalizat-grafica-oras-noaptea.webp'
     },
     {
         id: 'sepci',
@@ -1162,7 +1162,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
         pricing: { type: 'per_unit' },
         options: [],
         turnaroundTime: '2-4 zile lucrătoare',
-        image: '/products/master/sepci-personalizate-logo-cozoroc-curbat.png'
+        image: '/products/grafica-originala/sapca-personalizata-grafica-val-ocean.webp'
     },
     {
         id: 'carti-vizita',
@@ -1199,7 +1199,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             { id: 'specialShape', name: 'Decupare Forma', type: 'radio', values: ['Nu', 'Da'] }
         ],
         turnaroundTime: '2-4 zile lucrătoare',
-        image: '/products/master/carti-de-vizita-premium-personalizate-online-ieftine.png'
+        image: "/products/carti-vizita/carti-vizita-1.webp"
     }
 ];
 

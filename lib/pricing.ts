@@ -414,6 +414,7 @@ export const getPolipropilenaUpsell = (input: PriceInputPolipropilena) =>
 // 4. PVC FOREX
 // ==========================================
 export const PVC_FOREX_CONSTANTS = {
+  CONTOUR_CUT_RATE: 0.20,
   LIMITS: { MAX_WIDTH: 200, MAX_HEIGHT: 300 },
   PRICES: {
     1: 120, 2: 150, 3: 180, 4: 210, 5: 240, 6: 270, 8: 300, 10: 400,
@@ -427,33 +428,33 @@ export type PriceInputPVCForex = {
   height_cm: number;
   quantity: number;
   thickness_mm: number;
+  contour_cut?: boolean;
+  stock_model?: boolean;
   designOption: "upload" | "pro" | "text_only";
 };
 
 export const calculatePVCForexPrice = (input: PriceInputPVCForex) => {
   if (input.width_cm <= 0 || input.height_cm <= 0 || input.quantity <= 0) {
-    return { finalPrice: 0, total_sqm: 0, pricePerUnit: 0 };
+    return { finalPrice: 0, total_sqm: 0, pricePerUnit: 0, basePrice: 0, contourCutPrice: 0, designFee: 0 };
   }
 
   const sqmPerUnit = (input.width_cm / 100) * (input.height_cm / 100);
-  const totalSqm = roundMoney(sqmPerUnit * input.quantity);
+  const totalSqm = input.stock_model ? sqmPerUnit * input.quantity : roundMoney(sqmPerUnit * input.quantity);
 
   let pricePerSqm = PVC_FOREX_CONSTANTS.PRICES[input.thickness_mm] ?? 0;
 
-  if (totalSqm < 0.1) pricePerSqm *= 5;
-  else if (totalSqm < 0.2) pricePerSqm *= 4;
-  else if (totalSqm < 0.3) pricePerSqm *= 3;
-  else if (totalSqm < 0.4) pricePerSqm *= 2;
-  else if (totalSqm < 0.5) pricePerSqm *= 1.5;
+  if (!input.stock_model && totalSqm < 0.1) pricePerSqm *= 5;
+  else if (!input.stock_model && totalSqm < 0.2) pricePerSqm *= 4;
+  else if (!input.stock_model && totalSqm < 0.3) pricePerSqm *= 3;
+  else if (!input.stock_model && totalSqm < 0.4) pricePerSqm *= 2;
+  else if (!input.stock_model && totalSqm < 0.5) pricePerSqm *= 1.5;
 
-  let finalPrice = roundMoney(totalSqm * pricePerSqm);
-
-  if (input.designOption === "pro") {
-    finalPrice += PVC_FOREX_CONSTANTS.PRO_DESIGN_FEE;
-  }
-
+  const basePrice = roundMoney(totalSqm * pricePerSqm);
+  const contourCutPrice = input.contour_cut ? roundMoney(basePrice * PVC_FOREX_CONSTANTS.CONTOUR_CUT_RATE) : 0;
+  const designFee = input.designOption === "pro" ? PVC_FOREX_CONSTANTS.PRO_DESIGN_FEE : 0;
+  const finalPrice = roundMoney(basePrice + contourCutPrice + designFee);
   const pricePerUnit = roundMoney(finalPrice / input.quantity);
-  return { finalPrice: roundMoney(finalPrice), total_sqm: totalSqm, pricePerUnit };
+  return { finalPrice, total_sqm: totalSqm, pricePerUnit, basePrice, contourCutPrice, designFee };
 };
 
 export const getPVCForexUpsell = (input: PriceInputPVCForex) =>

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { X, Sparkles, ArrowRight } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function PromoTopBar() {
@@ -16,7 +16,7 @@ export default function PromoTopBar() {
                 {/* Mobile / Centrat: Mesaj Principal */}
                 <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-white/90">
                     <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-200">
-                        <Sparkles size={12} className="text-yellow-400" />
+                        
                         <span className="font-bold text-white">NOU</span>
                     </span>
                     <span>

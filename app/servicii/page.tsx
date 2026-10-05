@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { ArrowRight, Settings, Zap, ClipboardCheck, Sparkles } from 'lucide-react';
+import { ArrowRight, Settings, Zap, ClipboardCheck } from 'lucide-react';
 import { SERVICII_DATA } from '@/lib/seo/serviciiData';
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default function ServiciiIndex() {
                 <div className="container mx-auto px-6 relative z-10 text-center lg:text-left">
                     <div className="max-w-4xl mx-auto lg:mx-0">
                         <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-50 text-amber-600 rounded-lg font-black text-[10px] uppercase tracking-widest mb-6 border border-amber-100 italic">
-                            <Sparkles size={14} /> STANDARD DE CALITATE
+                             STANDARD DE CALITATE
                         </div>
                         <h1 className="text-5xl md:text-8xl font-black text-slate-900 tracking-tighter leading-[0.9] mb-8 uppercase italic">
                             Finisaje de <br /> <span className="text-amber-500 not-italic uppercase">Înaltă Precizie.</span>

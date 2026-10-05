@@ -19,7 +19,8 @@ import {
 
 const GALLERY_BASE = [
     "/products/materiale/pvc-forex/pvc-forex-1.webp",
-    "/products/materiale/pvc-forex/pvc-forex-2.webp"
+    "/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp",
+    "/products/materiale/pvc-forex/pvc-forex-2.webp",
 ] as const;
 
 const productFaqs: QA[] = [
@@ -138,6 +139,9 @@ export default function ConfiguratorPVCForex({ initialWidth: initW, initialHeigh
             metadata: {
                 "Dimensiune": `${input.width_cm}x${input.height_cm} cm`,
                 "Grosime": `${input.thickness_mm} mm`,
+                "Decupare": input.contour_cut ? "Contur special (+20%)" : "Margini drepte",
+                "Taxă decupare": priceData.contourCutPrice,
+                contour_cut: !!input.contour_cut,
                 "Grafică": input.designOption === 'pro' ? 'Design Pro' : 'Grafică proprie',
                 "artworkUrl": artworkUrl,
                 ...(input.designOption === "upload" && artworkUrl
@@ -158,7 +162,7 @@ export default function ConfiguratorPVCForex({ initialWidth: initW, initialHeigh
     useEffect(() => setActiveImage(GALLERY[activeIndex]), [activeIndex, GALLERY]);
 
     const summaryStep1 = input.width_cm > 0 && input.height_cm > 0 ? `${input.width_cm}x${input.height_cm} cm` : "Alege";
-    const summaryStep2 = `${input.thickness_mm}mm`;
+    const summaryStep2 = `${input.thickness_mm}mm${input.contour_cut ? " · Contur special +20%" : ""}`;
 
     return (
         <main className="bg-slate-50 dark:bg-slate-800 min-h-screen">
@@ -218,6 +222,7 @@ export default function ConfiguratorPVCForex({ initialWidth: initW, initialHeigh
                         </header>
 
                         <div className="bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-gray-200 dark:border-slate-800 px-4 mb-8">
+                            <Link href="/produse#modele-pvc-petreceri" className="my-4 block rounded-xl border-2 border-emerald-600 bg-emerald-50 p-4 font-semibold text-emerald-900">Vezi modelele PVC decupate pentru petreceri →</Link>
                             <AccordionStep stepNumber={1} title="Dimensiuni & Cantitate" summary={summaryStep1} isOpen={activeStep === 1} onClick={() => setActiveStep(1)}>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                                     <div>
@@ -283,6 +288,10 @@ export default function ConfiguratorPVCForex({ initialWidth: initW, initialHeigh
                                         />
                                     ))}
                                 </div>
+                                <div className="mt-5 rounded-xl border-2 border-emerald-600 bg-emerald-50 p-4">
+                                    <label className="flex items-start gap-3 font-semibold text-slate-900"><input data-pvc-contour type="checkbox" checked={!!input.contour_cut} onChange={e=>updateInput("contour_cut",e.target.checked)} className="mt-1" />Decupare pe contur special · +20%</label>
+                                    <p className="mt-2 text-sm text-slate-600">Prețul PVC include materialul și imprimarea. Decuparea costă 20% din acest preț, fără grafică sau transport. Fără decupare pe contur, placa are margini drepte: este pătrată dacă lățimea și înălțimea sunt egale și dreptunghiulară dacă sunt diferite.</p>
+                                </div>
                             </AccordionStep>
 
                             <AccordionStep stepNumber={3} title="Grafică" summary={input.designOption === 'upload' ? 'Grafică proprie' : 'Design Pro'} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
@@ -328,6 +337,7 @@ export default function ConfiguratorPVCForex({ initialWidth: initW, initialHeigh
                         {/* TOTAL & ADD TO CART - Standardized Layout */}
                         <div className="static mt-8 z-40 lg:static bg-white/95 backdrop-blur-md lg:bg-white lg:backdrop-blur-none border-t lg:border border-gray-200 dark:border-slate-800 lg:rounded-2xl shadow-[0_-4px_20px_rgba(0,0,0,0.1)] lg:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] p-4 lg:p-6 transition-all mt-8">
                             <div className="flex flex-col gap-4">
+                                <dl className="space-y-2 text-sm"><div className="flex justify-between"><dt>PVC imprimat · material inclus</dt><dd data-pvc-print-price={priceData.basePrice}>{formatMoneyDisplay(priceData.basePrice)}</dd></div><div className="flex justify-between"><dt>Decupare contur · 20%</dt><dd data-pvc-cut-price={priceData.contourCutPrice}>{formatMoneyDisplay(priceData.contourCutPrice)}</dd></div><div className="flex justify-between"><dt>Grafică</dt><dd>{formatMoneyDisplay(priceData.designFee)}</dd></div></dl>
                                 <button onClick={handleAddToCart} className="w-full py-4 text-lg font-bold bg-amber-600 text-white rounded-xl shadow-xl hover:bg-amber-700 transition-all flex items-center justify-center gap-2 active:scale-95">
                                     <ShoppingCart size={24} />
                                     Adaugă în Coș
@@ -336,7 +346,7 @@ export default function ConfiguratorPVCForex({ initialWidth: initW, initialHeigh
                                 <div className="flex flex-row justify-between items-center w-full gap-2 pt-1 mt-1 border-t border-gray-100">
                                     <div className="flex flex-col items-start leading-none">
                                         <span className="text-[10px] text-gray-500 uppercase font-bold tracking-wider mb-0.5">Preț Total</span>
-                                        <span className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tighter">{formatMoneyDisplay(displayedTotal)}</span>
+                                        <span data-pvc-total={displayedTotal} className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tighter">{formatMoneyDisplay(displayedTotal)}</span>
                                     </div>
                                     <div className="flex-shrink-0">
                                         <DeliveryEstimation />

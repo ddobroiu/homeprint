@@ -1,3 +1,4 @@
+import { SEARCH_PRODUCTS, searchProductPath, searchProductsAsProducts } from "./searchProductDefinitions";
 import { generatedCanvasSeoProducts, generatedPnrrSeoProducts, generatedPublicitareSeoProducts } from "./products/seo-mass-keywords";
 import { generateSeoForProduct } from "./seoTemplates";
 import { getLandingInfo } from "./landingData";
@@ -76,14 +77,14 @@ function normalizeImagePaths(imgs?: string[]): string[] | undefined {
 
 // Mapare prima poză din fiecare configurator pentru fallback
 const CONFIGURATOR_FIRST_IMAGES: Record<string, string> = {
-  'canvas': '/products/canvas/canvas-1.webp',
-  'rollup': '/products/rollup/rollup-1.webp',
-  'window-graphics': '/products/window-graphics/window-graphics-1.webp',
-  'pliante': '/products/pliante/pliante-1.webp',
+  'canvas': '/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp',
+  'rollup': "/products/modele-personalizate/rollup-rollup-personalizat-model-personalizat.webp",
+  'window-graphics': '/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp',
+  'pliante': '/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp',
   'plexiglass': '/products/materiale/plexiglass/plexiglass-1.webp',
   'pvc-forex': '/products/materiale/pvc-forex/pvc-forex-1.webp',
   'alucobond': '/products/materiale/alucobond/alucobond-1.webp',
-  'polipropilena': '/products/master/placi-polipropilena-alveolara-canalit-ieftine.png',
+  'polipropilena': '/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp',
 };
 
 function parsePrice(price: string | number | null | undefined): number {
@@ -105,7 +106,7 @@ const bannerProductsMapped: Product[] = bannerProducts.map(p => ({
   routeSlug: `banner-product/${p.slug}`, // Assuming route structure
   title: p.title,
   description: p.description,
-  images: [p.image],
+  images: p.images || [p.image],
   priceBase: parsePrice(p.price),
   currency: "RON",
   tags: p.tags,
@@ -225,7 +226,10 @@ export const PRODUCTS: Product[] = [
   ...configuratorProductsMapped,
   ...seoCampaignProductsMapped,
   ...massSeoProductsMapped_LOCAL
-];
+].filter(product => {
+  const route = String(product.routeSlug || "").replace(/^\//, "");
+  return !SEARCH_PRODUCTS.some(model => route === searchProductPath(model).slice(1) || (model.aliases || []).some(alias => route === `shop/${model.category}/${alias}`));
+}).concat(searchProductsAsProducts());
 
 export async function getProducts(): Promise<Product[]> {
   // Catalogul /produse se încarcă dinamic: e mare și PRODUCTS e importat și în componente client (/shop).
@@ -448,7 +452,7 @@ export async function resolveProductForRequestedSlug(requestedSlug: string, cate
       routeSlug: `${w}x${h}`,
       title: `Produs ${w}x${h} cm`,
       description: `Produs personalizat ${w}x${h} cm — configurează dimensiuni și finisaje.`,
-      images: ["/products/banner/banner-1.webp"],
+      images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
       priceBase: 0,
       currency: "RON",
       tags: ["fallback", "personalizat"],
@@ -459,16 +463,16 @@ export async function resolveProductForRequestedSlug(requestedSlug: string, cate
 
   if (category) {
     const CATEGORY_FALLBACK: Record<string, { title: string; image: string; defaultSlug: string }> = {
-      pliante: { title: "Pliante personalizate", image: "/products/pliante/pliante-1.webp", defaultSlug: "pliante" },
-      canvas: { title: "Canvas personalizat", image: "/products/canvas/canvas-1.webp", defaultSlug: "canvas" },
-      autocolante: { title: "Autocolante personalizate", image: "/products/autocolante/autocolante-1.webp", defaultSlug: "autocolante" },
-      flyer: { title: "Flyere personalizate", image: "/products/pliante/pliante-1.webp", defaultSlug: "flyer" },
-      flayere: { title: "Flyere personalizate", image: "/products/pliante/pliante-1.webp", defaultSlug: "flayere" },
-      banner: { title: "Banner personalizat", image: "/products/banner/banner-1.webp", defaultSlug: "banner" },
-      bannere: { title: "Banner personalizat", image: "/products/banner/banner-1.webp", defaultSlug: "banner" },
-      afise: { title: "Afișe personalizate", image: "/products/afise/afise-1.webp", defaultSlug: "afise" },
-      tapet: { title: "Tapet personalizat", image: "/products/tapet/tapet-1.webp", defaultSlug: "tapet" },
-      carton: { title: "Carton personalizat", image: "/products/banner/banner-1.webp", defaultSlug: "carton" },
+      pliante: { title: "Pliante personalizate", image: "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp", defaultSlug: "pliante" },
+      canvas: { title: "Canvas personalizat", image: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp", defaultSlug: "canvas" },
+      autocolante: { title: "Autocolante personalizate", image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp", defaultSlug: "autocolante" },
+      flyer: { title: "Flyere personalizate", image: "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp", defaultSlug: "flyer" },
+      flayere: { title: "Flyere personalizate", image: "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp", defaultSlug: "flayere" },
+      banner: { title: "Banner personalizat", image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp", defaultSlug: "banner" },
+      bannere: { title: "Banner personalizat", image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp", defaultSlug: "banner" },
+      afise: { title: "Afișe personalizate", image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp", defaultSlug: "afise" },
+      tapet: { title: "Tapet personalizat", image: "/products/grafica-originala/fototapet-personalizat-grafica-botanica-rola.webp", defaultSlug: "tapet" },
+      carton: { title: "Carton personalizat", image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp", defaultSlug: "carton" },
     };
 
     const catKey = String(category || "").toLowerCase();

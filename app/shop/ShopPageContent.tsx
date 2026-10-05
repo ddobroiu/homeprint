@@ -96,7 +96,7 @@ export default function ShopPageContent() {
             .filter((p) => !(p.metadata?.isSeoCampaign === true || String(p.metadata?.category ?? "").toLowerCase() === "campanii-seo"))
             .map((p) => {
             const cat = String(p.metadata?.category ?? "").toLowerCase();
-            const price = STARTING_PRICES[cat] ?? p.priceBase ?? 0;
+            const price = p.metadata?.isSearchProduct ? p.priceBase ?? 0 : STARTING_PRICES[cat] ?? p.priceBase ?? 0;
             return {
                 ...p,
                 processedCategory: String(p.metadata?.category ?? ""),

@@ -34,7 +34,7 @@ export const MATERIALE_DATA: MaterialData[] = [
         ],
         idealFor: ['Fațade clădiri', 'Schele șantier', 'Garduri perimetrale', 'Evenimente outdoor'],
         relatedProductId: 'banner',
-        image: '/products/banner/banner-1.webp'
+        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
     },
     {
         id: 'sablat',
@@ -57,7 +57,7 @@ export const MATERIALE_DATA: MaterialData[] = [
         ],
         idealFor: ['Săli de ședință', 'Cabinete medicale', 'Vitrine showroom', 'Decor locuințe'],
         relatedProductId: 'autocolante',
-        image: '/products/autocolante/autocolante-1.webp'
+        image: '/products/grafica-originala/autocolant-vinil-grafica-botanica.webp'
     },
     {
         id: 'frontlit',
@@ -80,7 +80,7 @@ export const MATERIALE_DATA: MaterialData[] = [
         ],
         idealFor: ['Panouri stradale', 'Reclame gard', 'Cadru metalic', 'Backdrop eveniment'],
         relatedProductId: 'banner',
-        image: '/products/banner/banner-1.webp'
+        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
     },
     {
         id: 'blueback',
@@ -103,7 +103,7 @@ export const MATERIALE_DATA: MaterialData[] = [
         ],
         idealFor: ['Panouri Billboard (4x3m)', 'Afișaj stradal temporar', 'Postere electorale', 'Panouri șantier'],
         relatedProductId: 'afise',
-        image: '/products/afise/afise-1.webp'
+        image: '/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp'
     },
     {
         id: 'plexialb',

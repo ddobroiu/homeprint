@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Upload, Type, Image as ImageIcon, LayoutGrid, Sparkles, LayoutTemplate } from 'lucide-react';
+import { Upload, Type, Image as ImageIcon, LayoutGrid, LayoutTemplate } from 'lucide-react';
 
 interface ToolbarProps {
     activeTool: string | null;
@@ -59,7 +59,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ activeTool, setActiveTool, add
             </button>
             {/* Elements might be added later */}
             <button className={`tool-btn ${activeTool === 'elements' ? 'active' : ''}`} title="Elements" onClick={() => setActiveTool(activeTool === 'elements' ? null : 'elements')}>
-                <Sparkles size={24} />
+                
                 <span style={{ fontSize: '0.75rem', marginTop: '0.25rem' }}>Elemente</span>
             </button>
 

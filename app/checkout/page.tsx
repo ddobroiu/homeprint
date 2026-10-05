@@ -1,5 +1,6 @@
 "use client";
 
+import { isCustomerProductMeta } from "@/lib/customerProductMeta";
 import { useMemo, useState, useRef, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import ReturningCustomerLogin from "@/components/ReturningCustomerLogin";
@@ -1482,7 +1483,7 @@ function CartItems({
       "name",
     ]);
     Object.keys(meta)
-      .filter((k) => !knownKeys.includes(k) && !exclude.has(k) && typeof meta[k] !== "object" && !/^\s*[\[{]/.test(String(meta[k])))
+      .filter((k) => isCustomerProductMeta(k, meta) && !knownKeys.includes(k) && !exclude.has(k) && typeof meta[k] !== "object" && !/^\s*[\[{]/.test(String(meta[k])))
       .forEach((k) => {
         const v = meta[k];
         if (k === "proDesignFee") {
@@ -1555,15 +1556,15 @@ function CartItems({
 
                       // Mapăm slug-uri la imagini default
                       const defaultImages: Record<string, string> = {
-                        'banner': '/products/banner/banner-1.webp',
-                        'afise': '/products/afise/afise-1.webp',
-                        'autocolante': '/products/autocolante/autocolante-1.webp',
-                        'flayere': '/products/flayere/flayere-1.webp',
-                        'pliante': '/products/pliante/pliante-1.webp',
-                        'canvas': '/products/canvas/canvas-1.webp',
-                        'rollup': '/products/rollup/rollup-1.webp',
-                        'tapet': '/products/tapet/tapet-1.webp',
-                        'window-graphics': '/products/window-graphics/window-graphics-1.webp',
+                        'banner': '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
+                        'afise': '/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp',
+                        'autocolante': '/products/grafica-originala/autocolant-vinil-grafica-botanica.webp',
+                        'flayere': '/products/grafica-originala/flyer-publicitar-grafica-atelier-creativ.webp',
+                        'pliante': '/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp',
+                        'canvas': '/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp',
+                        'rollup': '/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp',
+                        'tapet': '/products/grafica-originala/fototapet-personalizat-grafica-botanica-rola.webp',
+                        'window-graphics': '/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp',
                       };
 
                       // Căutăm imaginea default bazată pe slug

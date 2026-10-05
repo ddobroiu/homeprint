@@ -12,9 +12,10 @@ import { calculateBusinessCardPrice, getBusinessCardUpsell, formatMoneyDisplay }
 
 const GALLERY_BASE = [
     "/products/carti-vizita/carti-vizita-1.webp",
+    "/products/grafica-originala/carti-vizita-personalizate-grafica-atelier.webp",
     "/products/carti-vizita/carti-vizita-2.webp",
     "/products/carti-vizita/carti-vizita-3.webp",
-    "/products/carti-vizita/carti-vizita-4.webp"
+    "/products/carti-vizita/carti-vizita-4.webp",
 ];
 
 // Map card type to the best preview image
@@ -44,7 +45,7 @@ export default function ConfiguratorCartiVizita({ productImage }: { productImage
     const MIN_QTY = 100;
 
     // Add placeholder check and map to local images if missing
-    const defaultImage = "/products/carti-vizita/carti-vizita-1.webp";
+    const defaultImage = GALLERY_BASE[0];
     const baseImage = productImage && !productImage.includes("placeholder") ? productImage : defaultImage;
     const GALLERY = useMemo(() => [baseImage, ...GALLERY_BASE.filter(img => img !== baseImage)], [baseImage]);
 

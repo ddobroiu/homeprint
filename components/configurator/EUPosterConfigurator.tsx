@@ -1,4 +1,6 @@
 "use client";
+import { AccordionStep } from "./ui/AccordionStep";
+import { MobileConfiguratorSummary } from "./ui/MobileConfiguratorSummary";
 
 import React, { useState } from "react";
 import { useCart } from "@/components/CartContext";
@@ -22,6 +24,7 @@ const SIZES = [
 
 export default function EUPosterConfigurator({ product }: Props) {
     const { addItem } = useCart();
+    const [activeStep, setActiveStep] = useState(1);
     const [selectedSize, setSelectedSize] = useState("a3");
     const [quantity, setQuantity] = useState(1);
 
@@ -44,7 +47,7 @@ export default function EUPosterConfigurator({ product }: Props) {
     };
 
     return (
-        <main className="bg-white min-h-screen pb-20">
+        <main data-unified-product-configurator className="bg-white min-h-screen pb-28">
             <div className="container mx-auto px-4 py-8 lg:py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
@@ -101,7 +104,7 @@ export default function EUPosterConfigurator({ product }: Props) {
                             </div>
                         </div>
 
-                        {/* Size Selector */}
+                        <div className="bg-white rounded-xl sm:rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-gray-200 px-3 sm:px-4"><AccordionStep stepNumber={1} title="Dimensiuni & Cantitate" summary={currentSizeOption.label} isOpen={activeStep === 1} onClick={() => setActiveStep(1)}>{/* Size Selector */}
                         <div className="mb-8">
                             <label className="block text-sm font-bold text-slate-900 dark:text-white mb-3">Dimensiune Afiș</label>
                             <div className="grid grid-cols-1 gap-3">
@@ -134,7 +137,7 @@ export default function EUPosterConfigurator({ product }: Props) {
                         </div>
 
                         {/* Footer Actions */}
-                        <div className="bg-white border-t border-gray-100 pt-6">
+                        </AccordionStep><AccordionStep stepNumber={2} title="Grafică & Detalii" summary={product.program} isOpen={activeStep === 2} onClick={() => setActiveStep(2)} isLast={true}><p className="mb-4 text-sm text-slate-600">Imaginea arată modelul de prezentare pentru {product.program}. Detaliile proiectului se stabilesc după plasarea comenzii, conform opțiunilor acestui produs.</p></AccordionStep></div><div className="bg-white border-t border-gray-100 pt-6">
                             <div className="flex justify-between items-end mb-6">
                                 <div>
                                     <div className="text-sm text-gray-500 mb-1">Preț Total</div>
@@ -194,7 +197,8 @@ export default function EUPosterConfigurator({ product }: Props) {
                     </div>
                 </div>
             </div>
-        </main>
+        <MobileConfiguratorSummary total={price} onAdd={handleAddToCart} disabled={false} />
+</main>
     );
 }
 

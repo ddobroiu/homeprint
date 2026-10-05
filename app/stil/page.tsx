@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { ArrowRight, Palette, Sparkles, Star } from 'lucide-react';
+import { ArrowRight, Palette, Star } from 'lucide-react';
 import { STILURI_DATA } from '@/lib/seo/stiluriData';
 
 export const metadata: Metadata = {
@@ -70,7 +70,7 @@ export default function StiluriIndex() {
                     {/* CUSTOM STYLE CALLOUT */}
                     <div className="bg-slate-50 rounded-[4rem] border-4 border-dashed border-slate-200 p-12 flex flex-col justify-center items-center text-center group h-[600px]">
                         <div className="w-20 h-20 rounded-3xl bg-white border border-slate-100 flex items-center justify-center text-slate-300 mb-8 group-hover:text-amber-500 group-hover:border-amber-500 group-hover:rotate-12 transition-all">
-                            <Sparkles size={40} />
+                            
                         </div>
                         <h3 className="text-3xl font-black text-slate-400 uppercase italic tracking-tighter mb-4 leading-none group-hover:text-slate-900 transition-colors">Stilul Tău <br /> Unic</h3>
                         <p className="text-slate-400 font-medium italic mb-8 group-hover:text-slate-500 transition-colors">Ai propriul design sau vrei o adaptare custom? Suntem gata de print!</p>

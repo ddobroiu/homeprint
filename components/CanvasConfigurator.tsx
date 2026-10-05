@@ -1,9 +1,10 @@
 "use client";
 import React, { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
+import { uploadArtworkImage, browserImageUrl } from "@/lib/uploadArtworkImage";
 import { useCart } from "@/components/CartContext";
 import { useToast } from "@/components/ToastProvider";
-import { ShoppingCart, Info, X, UploadCloud, MessageCircle, TrendingUp, Sparkles, Layers, Ruler, Frame, ChevronDown } from "lucide-react";
+import { ShoppingCart, Info, X, UploadCloud, MessageCircle, TrendingUp, Layers, Ruler, Frame, ChevronDown } from "lucide-react";
 import DeliveryEstimation from "./DeliveryEstimation";
 import FaqAccordion from "./FaqAccordion";
 import Reviews from "./Reviews";
@@ -23,7 +24,7 @@ import { NumberInput } from "./ui/NumberInput";
 import { OptionButton } from "./ui/OptionButton";
 import MobilePriceBar from "./MobilePriceBar";
 
-const GALLERY_BASE = ["/products/canvas/canvas-1.webp", "/products/canvas/canvas-2.webp", "/products/canvas/canvas-3.webp"] as const;
+const GALLERY_BASE = ["/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp", "/products/canvas/canvas-2.webp", "/products/canvas/canvas-3.webp"] as const;
 
 const canvasFaqs: QA[] = [
   { question: "Ce este canvasul Fine Art?", answer: "Este o pânză texturată de calitate superioară, similară celei folosite de pictori. Imprimarea se face cu cerneală eco-solvent rezistentă." },
@@ -56,11 +57,8 @@ export default function CanvasConfigurator({ productSlug, initialWidth: initW, i
     if (!file) return;
     try {
       setUploading(true);
-      const form = new FormData(); form.append("file", file);
-      const res = await fetch("/api/upload", { method: "POST", body: form });
-      const data = await res.json();
-      setArtworkUrl(data.url);
-    } catch (e) { toast.error("Eroare la upload"); } finally { setUploading(false); }
+      setArtworkUrl(await uploadArtworkImage(file));
+    } catch (e: any) { toast.error(e?.message ?? "Eroare la upload"); } finally { setUploading(false); }
   };
 
   function handleAddToCart() {
@@ -87,7 +85,7 @@ export default function CanvasConfigurator({ productSlug, initialWidth: initW, i
           <div className="lg:sticky top-24 h-max space-y-8">
             <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg border border-gray-200 dark:border-slate-800 overflow-hidden">
                <div className="aspect-square relative flex items-center justify-center overflow-hidden">
-                  <Image src={artworkUrl || activeImage} alt="Canvas" fill className="object-contain p-4" priority sizes="(max-width: 768px) 100vw, 50vw" />
+                  <Image src={artworkUrl ? browserImageUrl(artworkUrl) : activeImage} alt="Canvas" fill className="object-contain p-4" priority sizes="(max-width: 768px) 100vw, 50vw" />
                </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
