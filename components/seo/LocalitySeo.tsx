@@ -98,8 +98,9 @@ export function FromPriceNote({ productIds, className }: { productIds: Array<str
 // ------------------------------------------------------------ date structurate
 
 /**
- * Product/Offer + Service (areaServed: localitate, județ) + FAQPage pentru o
- * pagină localitate × produs. Offer apare doar dacă prețul e afișat pe pagină.
+ * Service (areaServed: localitate, județ; Offer doar dacă prețul e afișat pe pagină) + FAQPage pentru o
+ * pagină localitate × produs. FĂRĂ „Product”: altfel Google Merchant (autofeed) ia fiecare pagină
+ * localitate drept produs separat (07.10: ~10.000 de articole „... - Livrare în <localitate>” respinse).
  * Fără recenzii sau note: nu există.
  */
 export function LocalProductJsonLd({
@@ -133,33 +134,16 @@ export function LocalProductJsonLd({
     const data: Record<string, unknown>[] = [
         {
             "@context": "https://schema.org",
-            "@type": "Product",
-            name,
-            description,
-            ...(image ? { image: [image.startsWith("/") ? `${siteUrl.replace(/\/+$/, "")}${image}` : image] } : {}),
-            brand: { "@type": "Brand", name: siteName },
-            ...(from
-                ? {
-                      offers: {
-                          "@type": "Offer",
-                          url,
-                          priceCurrency: "RON",
-                          price: from.price.price.toFixed(2),
-                          availability: "https://schema.org/MadeToOrder",
-                          itemCondition: "https://schema.org/NewCondition",
-                          seller: provider,
-                      },
-                  }
-                : {}),
-        },
-        {
-            "@context": "https://schema.org",
             "@type": "Service",
             name,
             serviceType,
             provider,
             areaServed: [{ "@type": "Place", name: locName, containedInPlace: county }, county],
             url,
+            ...(image ? { image: image.startsWith("/") ? `${siteUrl.replace(/\/+$/, "")}${image}` : image } : {}),
+            ...(from
+                ? { offers: { "@type": "Offer", url, priceCurrency: "RON", price: from.price.price.toFixed(2), seller: provider } }
+                : {}),
         },
     ];
     if (faqs && faqs.length) {

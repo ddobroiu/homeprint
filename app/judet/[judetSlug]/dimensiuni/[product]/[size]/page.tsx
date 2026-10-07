@@ -70,7 +70,8 @@ export default async function JudetDimensionPage({ params }: { params: Promise<P
     const tier = profile?.tierLivrare ?? "mediu";
 
     const jsonLd = [
-        { "@context": "https://schema.org", "@type": "Product", name: `${content.productLabel} ${w}x${h} cm`, description: content.metaDescription, image: cfg.image ? `${BASE_URL}${cfg.image}` : undefined, brand: { "@type": "Brand", name: siteConfig.name }, offers: { "@type": "Offer", url, priceCurrency: "RON", price: pricing.fromPrice.toFixed(2), availability: "https://schema.org/InStock", areaServed: { "@type": "AdministrativeArea", name: `Județul ${judet.name}` } } },
+        // Service, nu Product: paginile pe județ nu sunt produse separate pentru Google Merchant (autofeed).
+        { "@context": "https://schema.org", "@type": "Service", name: `${content.productLabel} ${w}x${h} cm`, description: content.metaDescription, image: cfg.image ? `${BASE_URL}${cfg.image}` : undefined, provider: { "@type": "Organization", name: siteConfig.name, url: BASE_URL }, areaServed: { "@type": "AdministrativeArea", name: `Județul ${judet.name}` }, offers: { "@type": "Offer", url, priceCurrency: "RON", price: pricing.fromPrice.toFixed(2) } },
         { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Acasă", item: `${BASE_URL}/` }, { "@type": "ListItem", position: 2, name: "Județe", item: `${BASE_URL}/judet` }, { "@type": "ListItem", position: 3, name: judet.name, item: `${BASE_URL}/judet/${judet.slug}` }, { "@type": "ListItem", position: 4, name: `${content.productLabel} ${w}×${h} cm` }] },
     ];
 

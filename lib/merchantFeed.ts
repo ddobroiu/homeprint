@@ -17,8 +17,24 @@ function isUntrustedImageHost(url: string): boolean {
 /** Pagini SEO generate în masă — excluse din Merchant Center (limită articole + duplicate). */
 const MASS_SEO_ID = /^seo-(canvas|pnrr|pub)-gen-/i;
 
+/** Respinse / cu risc de politică Google Ads-Shopping (ca pe ShopPrint, Merchant API 07.10):
+ * „personal hardships” (kituri PNRR), „gambling” (roata norocului), „weapons” (modele army / camuflaj),
+ * „sexual interests” (clasificatorul automat pe poza modelului „produse tradiționale”, banner și mesh), drapelul Atolul Bikini.
+ * Paginile rămân pe site; doar nu se trimit în Merchant. */
+const POLICY_RISK_PATHS = new Set([
+  "/configurator/fonduri-pnrr",
+  "/banner-product/produse-traditionale-telefon-personalizat",
+  "/banner-product/mesh-produse-traditionale-telefon-personalizat",
+  "/produse/promotionale/roata-norocului",
+  "/produse/promotionale/bandana-tubulara-army",
+  "/produse/promotionale/bandana-tubulara-spots-army",
+  "/produse/promotionale/bandana-tubulara-camouflage",
+  "/produse/steaguri-si-drapele/drapel-atolul-bikini",
+]);
+
 export function includeProductInMerchantFeed(product: Product): boolean {
-  return !MASS_SEO_ID.test(String(product.id || ""));
+  if (MASS_SEO_ID.test(String(product.id || ""))) return false;
+  return !POLICY_RISK_PATHS.has(new URL(merchantProductCanonicalLink(product, "https://feed.local")).pathname);
 }
 
 function roundMoney(n: number): number {
