@@ -1,3 +1,4 @@
+import { trySaveOrderDocuments } from '@/lib/saveOrderDocuments';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 import { v2 as cloudinary } from 'cloudinary';
@@ -123,7 +124,8 @@ export async function POST(req: Request, ctx: any) {
         console.warn('[admin/upload-invoice] DB update failed:', e?.message || e);
       }
 
-      // notify client
+      // notify client (cu contractul comenzii atasat; o problema la PDF nu opreste factura)
+      const documentAttachments = await trySaveOrderDocuments(id);
       try {
         // try to get order address/billing to email
         const order = await prisma.order.findUnique({ where: { id } });
@@ -141,6 +143,7 @@ export async function POST(req: Request, ctx: any) {
         const to = (orderBilling && orderBilling.email) || orderAddress.email;
         if (to) {
           await sendEmail({
+              attachments: documentAttachments,
             from: process.env.EMAIL_FROM || 'contact@HomePrint.ro',
             to,
             subject: 'Factura pentru comanda ta - Shopprint',

@@ -1,4 +1,5 @@
 "use client";
+import OrderDocuments from '@/components/OrderDocuments';
 
 import React, { useState, useMemo } from "react";
 import {
@@ -537,6 +538,7 @@ export default function OrdersDashboard({ initialOrders = [] }: OrdersDashboardP
                    <div className="p-4 rounded-[2rem] bg-white border border-slate-100 flex flex-col items-center justify-center text-center">
                       <span className="text-[10px] font-black text-slate-400 uppercase mb-2 text-purple-600">Factură</span>
                       <AdminInvoiceControl id={selectedOrder.id} invoiceLink={selectedOrder.invoiceLink} />
+                      <OrderDocuments id={selectedOrder.id} invoiceUrl={selectedOrder.invoiceLink} items={selectedOrder.items || []} />
                    </div>
                 </div>
 

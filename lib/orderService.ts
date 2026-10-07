@@ -161,7 +161,10 @@ async function sendEmails(
       </p>
     `;
 
+    const documentOrder = orderId ? await prisma.order.findUnique({ where: { id: orderId }, select: { marketing: true } }) : null;
+    const attachments = ((documentOrder?.marketing as any)?.orderDocuments || []).map((document: any) => ({ filename: document.filename, content: Buffer.from(document.base64, 'base64') }));
     const orderMeta = {
+      attachments,
       id: orderId || 'N/A',
       orderNo: orderNo,
       source: source || 'HomePrint.ro',
@@ -314,6 +317,13 @@ export async function fulfillOrder(
       if (!ok) void alerta("error", "discount", `comanda ${saved.orderNo} are codul ${discount.code} (${discount.amount} lei), dar codul nu mai era disponibil la marcare`);
     }
 
+    try {
+      const { saveOrderDocuments } = await import('./saveOrderDocuments');
+      await saveOrderDocuments(saved.id);
+    } catch (error) {
+      console.error('[OrderService] Document generation failed for order', saved.orderNo);
+      void alerta('error', 'order', `Documentele PDF nu s-au generat pentru comanda ${saved.orderNo}`);
+    }
     await sendEmails(address, billing, cart, invoiceLink, paymentType, marketing, saved.orderNo, createdPassword, saved.id, source);
 
     try { await prisma.abandonedCart.deleteMany({ where: { email: address.email } }); } catch { }

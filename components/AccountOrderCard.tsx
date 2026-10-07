@@ -113,7 +113,7 @@ export default function AccountOrderCard({ order }: { order: Order }) {
                 )}
                 <Link href={`/account/orders/${order.id}`}
                     className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50">
-                    <Upload size={15} /> Grafica
+                    <Upload size={15} /> Grafică și documente
                 </Link>
                 <Link href={`/retragere-contract?order=${encodeURIComponent(String(order.orderNo))}`}
                     className="ml-auto text-xs text-slate-400 hover:text-slate-600 hover:underline">

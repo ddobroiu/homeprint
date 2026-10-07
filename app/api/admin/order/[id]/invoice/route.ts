@@ -1,3 +1,4 @@
+import { trySaveOrderDocuments } from '@/lib/saveOrderDocuments';
 import { alerta } from '@/lib/alerts';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
@@ -123,12 +124,14 @@ export async function POST(req: Request, ctx: any) {
           }
         });
 
-        // notify client via simple email (if key present)
+        // notify client (cu contractul comenzii atasat; o problema la PDF nu opreste factura)
+        const documentAttachments = await trySaveOrderDocuments(id);
         try {
           const billingToNotify = billing || orderBillingBase || {};
           const to = (billingToNotify && billingToNotify.email) || orderAddress?.email;
           if (to) {
             await sendEmail({
+              attachments: documentAttachments,
               from: process.env.EMAIL_FROM || 'contact@HomePrint.ro',
               to,
               subject: 'Factura comanda Shopprint',

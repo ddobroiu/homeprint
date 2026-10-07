@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import UserGraphicsManager from "@/components/UserGraphicsManager";
 import ReorderButton from "@/components/ReorderButton";
 import React from "react";
+import OrderDocuments from '@/components/OrderDocuments';
 
 export const dynamic = 'force-dynamic';
 
@@ -143,6 +144,7 @@ export default async function OrderDetailsPage({ params }: { params: Promise<{ i
                     </div>
                 </div>
 
+                <div className="mb-6"><OrderDocuments id={order.id} invoiceUrl={order.invoiceUrl} items={order.items} /></div>
                 <div className="grid lg:grid-cols-3 gap-6">
                     <div className="lg:col-span-2 space-y-6">
                         <div className="bg-white dark:bg-zinc-900 rounded-3xl shadow-2xl shadow-zinc-200/50 dark:shadow-black/50 border border-zinc-200 dark:border-zinc-800 overflow-hidden">

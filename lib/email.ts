@@ -214,6 +214,7 @@ export async function sendOrderConfirmationEmail(order: any, customContent?: str
       from: `${config.name} <${process.env.EMAIL_FROM || config.email}>`,
       to: (order.shippingAddress as any)?.email || order.userEmail || order.email,
       subject: `Confirmare comandă #${orderNo} - ${config.name}`,
+      attachments: order.attachments,
       html,
     });
 
@@ -284,6 +285,7 @@ export async function sendNewOrderAdminEmail(order: any, customContent?: string)
       from: `${siteConfig.name} System <${process.env.EMAIL_FROM || siteConfig.email}>`,
       to: adminEmail,
       subject: `[ADMIN] Comandă Nouă #${orderNo} - ${config.name}`,
+      attachments: order.attachments,
       html,
     });
 
