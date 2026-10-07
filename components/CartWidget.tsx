@@ -1,5 +1,6 @@
 // components/CartWidget.tsx
 "use client";
+import { onlyFaItems } from '@/lib/femeia-antreprenor';
 
 import React, { useState } from "react";
 import { useCart } from "./CartContext";
@@ -34,7 +35,7 @@ export default function CartWidget() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
 
-  const remainingForFreeShipping = Math.max(
+  const remainingForFreeShipping = onlyFaItems(items) ? 0 : Math.max(
     0,
     FREE_SHIPPING_THRESHOLD - cartTotal
   );

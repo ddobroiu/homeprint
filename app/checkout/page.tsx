@@ -196,6 +196,8 @@ export default function CheckoutPage() {
   );
 
   const [sameAsDelivery, setSameAsDelivery] = useState(true);
+  const importedFaCompany = useRef('');
+  const faCompany = items.find(item => item.metadata?.productType === 'placute-femeia-antreprenor' && item.metadata?.company?.cui)?.metadata?.company;
   // Livrare la adresa sau la un locker / punct DPD ales pe harta
   const [deliveryType, setDeliveryType] = useState<"address" | "dpd_point">("address");
   // Lockere DPD: produsele mici (ex. banner pliat) încap; la cele mari (canvas pe șasiu, roll-up) opțiunea nu apare
@@ -436,6 +438,14 @@ export default function CheckoutPage() {
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sameAsDelivery, address.firstName, address.lastName, address.email, address.phone, address.county, address.city, address.street, address.postalCode]);
+
+  // Plăcuțele Femeia Antreprenor: firma verificată în ANAF completează automat facturarea pe persoană juridică.
+  useEffect(() => {
+    if (!faCompany?.cui || importedFaCompany.current === faCompany.cui) return;
+    importedFaCompany.current = faCompany.cui;
+    setBilling(previous => ({ ...previous, type: 'company', companyName: faCompany.denumire, cui: faCompany.cui, regCom: faCompany.regCom, street: faCompany.adresa, city: faCompany.localitate, county: faCompany.judet, postalCode: faCompany.codPostal }));
+    setSameAsDelivery(false);
+  }, [faCompany, setBilling]);
 
   useEffect(() => {
     if (!session?.user) return;
@@ -771,7 +781,7 @@ export default function CheckoutPage() {
   const discountApplied = discountAmount > 0;
 
   const freeShippingRemaining = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
-  const hasFreeShipping = freeShippingRemaining === 0;
+  const hasFreeShipping = items.length > 0 && shippingCost === 0;
 
   // DEBUG: Log pentru a verifica dacă există probleme de render
   useEffect(() => {

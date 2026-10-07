@@ -1,3 +1,4 @@
+import { isFaItem, onlyFaItems } from './femeia-antreprenor';
 
 // Tipuri de împachetare
 export type PackingType = 'rigid' | 'foldable' | 'rolled';
@@ -249,6 +250,9 @@ const ZONES: Record<string, { base: number, kgPrice: number }> = {
 };
 
 export function getEstimatedShippingCost(countryCode: string | null | undefined, items: any[]): number {
+    // Plăcuțele Femeia Antreprenor au transport gratuit; celelalte produse din coș își păstrează transportul.
+    if (onlyFaItems(items)) return 0;
+    items = items.filter(item => !isFaItem(item));
     let code = (countryCode || 'RO').toUpperCase().trim();
     if (code === 'ROMANIA') code = 'RO';
 

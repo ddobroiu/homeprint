@@ -1,3 +1,4 @@
+import { FA_PRICE, isFaItem, FA_AGENCIES } from './femeia-antreprenor';
 // Verificarea pe server a prețurilor din coș, înainte de Stripe / ramburs (app/api/checkout/create-order).
 // Browserul trimite prețul unitar calculat de configurator; aici:
 //  1. respingem valorile imposibile (preț ≤ 0, NaN, cantități negative sau fracționare, coșuri uriașe);
@@ -101,6 +102,12 @@ export function guardCheckoutItems(items: unknown): CheckoutGuardResult {
     const unit = num(it.unitAmount ?? it.price);
     if (!Number.isFinite(unit) || unit <= 0 || unit > MAX_UNIT_PRICE) {
       return { ok: false, error: "Preț invalid în coș. Te rugăm să reîncarci pagina produsului și să îl adaugi din nou." };
+    }
+    if (isFaItem(it)) {
+      if (unit !== FA_PRICE) return { ok: false, error: `Prețul setului Femeia Antreprenor este ${FA_PRICE} lei. Te rugăm să îl adaugi din nou în coș.` };
+      if (!FA_AGENCIES.some(a => a.id === it.metadata?.agency?.id)) return { ok: false, error: 'Alege o agenție validă pentru plăcuțele Femeia Antreprenor.' };
+      const companyCui = String(it.metadata?.company?.cui || '');
+      if (companyCui && !/^\d{2,10}$/.test(companyCui)) return { ok: false, error: 'Verifică CUI-ul firmei pentru plăcuțele Femeia Antreprenor.' };
     }
     const floor = catalogFloor(it, quantity);
     if (floor !== null && unit < floor * (1 - REL_TOLERANCE) - ABS_TOLERANCE) {

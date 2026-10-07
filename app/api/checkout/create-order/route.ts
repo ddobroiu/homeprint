@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { guardCheckoutItems } from '@/lib/checkoutGuard';
+import { isFaItem, FA_AGENCIES } from '@/lib/femeia-antreprenor';
+import { searchCompanyByCUI } from '@/lib/anaf';
 import { fulfillOrder } from '@/lib/orderService';
 import { optOut } from '@/lib/mail-optout';
 import { checkDiscountCode } from '@/lib/discount-server';
@@ -25,6 +27,21 @@ export async function POST(req: NextRequest) {
         // Prețurile din coș vin din browser: le verificăm pe server (lib/checkoutGuard.ts) înainte de orice altceva
         const itemsCheck = guardCheckoutItems(orderData?.items);
         if (!itemsCheck.ok) return NextResponse.json({ error: itemsCheck.error }, { status: 400 });
+        // Plăcuțele Femeia Antreprenor: agenția din lista noastră și datele firmei din ANAF, nu cele trimise de browser.
+        for (const item of orderData.items.filter(isFaItem)) {
+            const agency = FA_AGENCIES.find(a => a.id === item.metadata?.agency?.id);
+            const cui = String(item.metadata?.company?.cui || '').replace(/\D/g, '');
+            let company: any = null;
+            if (cui) {
+                try {
+                    company = await searchCompanyByCUI(cui);
+                    if (!company) return NextResponse.json({ error: 'Firma pentru plăcuțele Femeia Antreprenor nu a fost găsită în ANAF. Verifică CUI-ul.' }, { status: 400 });
+                } catch {
+                    company = { cui }; // ANAF indisponibil: păstrăm doar CUI-ul, comanda nu se blochează
+                }
+            }
+            item.metadata = { ...item.metadata, agency, company };
+        }
         // Vizitatorul din tracking-ul propriu (www.shopprint.ro/t.js): leaga comanda de sursa vizitei
         const ptVid = req.cookies.get('_pt_vid')?.value;
         if (ptVid && /^[a-f0-9]{32}$/i.test(ptVid)) orderData.marketing = { ...(orderData.marketing || {}), vid: ptVid.toLowerCase() };

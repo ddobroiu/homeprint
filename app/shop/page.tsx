@@ -1,3 +1,4 @@
+import { FA_PRODUCT } from '@/lib/femeia-antreprenor';
 import React, { Suspense } from "react";
 import ShopPageContent from "./ShopPageContent";
 import { Metadata } from 'next';
@@ -46,7 +47,7 @@ export default function ShopPage() {
             <Breadcrumbs items={[{ label: 'Magazin', href: '/shop' }]} />
             <EditorShopBanner />
             <Suspense fallback={<div className="container py-20 text-center">Se încarcă produsele...</div>}>
-                <ShopPageContent personalProducts={personalProducts} catalogProducts={catalogAsProducts()} />
+                <ShopPageContent personalProducts={[FA_PRODUCT, ...personalProducts]} catalogProducts={catalogAsProducts()} />
             </Suspense>
         </div>
     );

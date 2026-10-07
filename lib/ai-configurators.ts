@@ -14,6 +14,7 @@
 // configurator, si se marcheaza ca alegeri de facut in pagina.
 
 import { ALL_CONFIGURATORS } from "./configurators-registry";
+import { FA_PRICE, FA_PRODUCT, FA_PRODUCT_ID, FA_ROUTE } from "./femeia-antreprenor";
 import { landingPriceFromUrl } from "./merchant/landingPrice";
 import { quickPrintQuote } from "./quickPrintQuote";
 import { QUICK_PRINT_PRODUCTS, quickPrintDefaultFormat } from "./quickPrintProducts";
@@ -116,7 +117,10 @@ function fonduriGroups() {
     return getFonduriEUGroups(false) as Record<string, { title: string; options: { id: string; label: string }[] }>;
 }
 
-export const AI_CONFIGURATOR_IDS: string[] = [...ALL_CONFIGURATORS.map((c) => c.id), ...SEASONAL.map((s) => s.id)];
+const REGISTRY_CONFIGURATOR_IDS: string[] = [...ALL_CONFIGURATORS.map((c) => c.id), ...SEASONAL.map((s) => s.id)];
+/** Configuratoarele + plăcuțele Femeia Antreprenor (preț fix pe set, fără opțiuni de preț). */
+export const AI_CONFIGURATOR_IDS: string[] = [...REGISTRY_CONFIGURATOR_IDS, FA_PRODUCT_ID];
+const FA_INDEX_LINE = `- ${FA_PRODUCT_ID} | Plăcuțe Femeia Antreprenor (set de 2 plăcuțe A3, PVC 3 mm) | ${FA_ROUTE} | Pentru programul Femeia Antreprenor; agenția (Brașov, Constanța, Ploiești) și CUI-ul firmei se aleg în pagină | preț: fix ${FA_PRICE} lei/set, transport gratuit (get_quote doar cu quantity)`;
 
 function entry(id: string) {
     const reg = ALL_CONFIGURATORS.find((c) => c.id === id);
@@ -150,14 +154,14 @@ const DEFAULT_INPUTS = "lățime×înălțime cm, cantitate";
 
 /** Indexul compact al configuratoarelor pentru promptul de sistem (stabil, fara date din cerere). */
 export function configuratorIndex(baseUrl: string): string {
-    const lines = AI_CONFIGURATOR_IDS.map((id) => {
+    const lines = REGISTRY_CONFIGURATOR_IDS.map((id) => {
         const e = entry(id)!;
         const opts = id === "plexiglass" ? PLEXI_EXTRA : id === "fonduri-eu" ? [] : OPTIONS[id] ?? [];
         const o = opts.length ? `; opțiuni: ${opts.map((x) => x.key).join(", ")}` : "";
         const q = quoteInputs(id);
         return `- ${id} | ${e.name} | ${e.url} | ${firstSentence(e.description)}${q === DEFAULT_INPUTS ? "" : ` | preț: ${q}`}${o}`;
     });
-    return `(linkuri relative la ${baseUrl}; pentru preț implicit: ${DEFAULT_INPUTS})\n` + lines.join("\n");
+    return `(linkuri relative la ${baseUrl}; pentru preț implicit: ${DEFAULT_INPUTS})\n` + [...lines, FA_INDEX_LINE].join("\n");
 }
 
 function limitsOf(id: string) {
@@ -167,6 +171,7 @@ function limitsOf(id: string) {
 }
 
 export function listConfiguratorOptions(id: string, baseUrl: string) {
+    if (String(id || "").trim() === FA_PRODUCT_ID) return { configurator: FA_PRODUCT_ID, name: FA_PRODUCT.title, url: baseUrl + FA_ROUTE, description: FA_PRODUCT.description, price_inputs: "cantitate (seturi); preț fix pe set", included_by_default: "2 plăcuțe A3 din PVC 3 mm, transport gratuit; agenția și CUI-ul se aleg în pagină" };
     const e = entry(String(id || "").trim());
     if (!e) return { error: `Configurator necunoscut. Valori valide: ${AI_CONFIGURATOR_IDS.join(", ")}` };
     const qp = QUICK_PRINT_PRODUCTS.find((p) => p.id === e.id);
@@ -228,6 +233,11 @@ const money = (n: number) => Math.round(n * 100) / 100;
 
 export function quoteConfigurator(args: QuoteArgs, baseUrl: string) {
     const id = String(args.configurator ?? "").trim();
+    if (id === FA_PRODUCT_ID) {
+        const sets = args.quantity === undefined || args.quantity === null ? 1 : Number(args.quantity);
+        if (!Number.isInteger(sets) || sets < 1 || sets > 100) return { error: "Cantitatea (seturi) trebuie să fie un număr întreg între 1 și 100.", configurator_url: baseUrl + FA_ROUTE };
+        return { configurator: id, name: FA_PRODUCT.title, quantity: sets, total_lei: FA_PRICE * sets, unit_lei: FA_PRICE, url: baseUrl + FA_ROUTE, price_note: "Preț fix pe set (2 plăcuțe A3, PVC 3 mm), transport gratuit. Agenția și CUI-ul firmei se aleg în pagină." };
+    }
     const e = entry(id);
     if (!e) return { error: `Configurator necunoscut. Valori valide: ${AI_CONFIGURATOR_IDS.join(", ")}` };
     const link = baseUrl + e.url;

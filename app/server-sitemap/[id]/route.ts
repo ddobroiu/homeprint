@@ -100,7 +100,7 @@ export async function GET(request: Request, props: any) {
             '/shop/panouri-sticla', '/shop/fonduri-europene', '/configurator/banner', '/configurator/rollup',
             '/configurator/afise', '/configurator/autocolante', '/configurator/pliante', '/configurator/flayere',
             '/configurator/window-graphics', '/configurator/canvas', '/configurator/tapet',
-            '/configurator/custom-glass', '/configurator/fonduri-eu', '/materiale/plexiglass', '/materiale/pvc-forex',
+            '/configurator/custom-glass', '/configurator/fonduri-eu', '/fonduri-nationale/placute-femeia-antreprenor', '/materiale/plexiglass', '/materiale/pvc-forex',
             '/contact', '/termeni', '/confidentialitate', '/livrare', '/politica-cookies', '/garantie-legala',
             '/anpc', '/litigii', '/judet', '/seap'
         ];

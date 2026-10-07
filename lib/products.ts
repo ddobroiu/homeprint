@@ -1,3 +1,4 @@
+import { FA_PRODUCT } from './femeia-antreprenor';
 import { SEARCH_PRODUCTS, searchProductPath, searchProductsAsProducts } from "./searchProductDefinitions";
 import { generatedCanvasSeoProducts, generatedPnrrSeoProducts, generatedPublicitareSeoProducts } from "./products/seo-mass-keywords";
 import { generateSeoForProduct } from "./seoTemplates";
@@ -222,6 +223,7 @@ export const PRODUCTS: Product[] = [
   ...bannerProductsMapped,
   ...canvasProductsMapped,
   ...euFundsProductsMapped,
+  FA_PRODUCT,
   ...printCenterProductsMapped,
   ...configuratorProductsMapped,
   ...seoCampaignProductsMapped,
