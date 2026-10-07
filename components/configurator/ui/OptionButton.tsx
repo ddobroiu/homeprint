@@ -11,6 +11,7 @@ export const OptionButton = ({ active, onClick, title, subtitle }: OptionButtonP
     <button
         type="button"
         onClick={onClick}
+        aria-pressed={active}
         className={`w-full text-left p-3 rounded-lg border-2 transition-all text-sm ${active
             ? "border-amber-600 bg-amber-50"
             : "border-gray-300 bg-white hover:border-gray-400"

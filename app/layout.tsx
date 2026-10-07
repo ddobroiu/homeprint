@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import "./brand-design.css";
+import "./studio-home.css";
 import "./brand-help.css";
 import "./editorial.css";
 import { brandKey, brandDesign } from "@/lib/brandDesign";

@@ -1,6 +1,8 @@
 "use client";
-
 import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
+import { useSearchParams as useQuickParams } from "next/navigation";
+import { configuratorInitialQuantity } from "@/lib/quickPrintPresets";
+
 import React, { useMemo, useState, useEffect } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
 import { useCart } from "@/components/CartContext";
@@ -45,6 +47,7 @@ import StickerModeSwitchInline from "./StickerModeSwitchInline";
 type Props = { productSlug?: string; initialWidth?: number; initialHeight?: number; productImage?: string, intent?: string };
 
 export default function AutocolanteConfigurator({ productSlug, initialWidth: initW, initialHeight: initH, productImage, intent }: Props) {
+    const quickParams = useQuickParams();
     const { addItem } = useCart();
     const GALLERY = useMemo(() => productImage ? [productImage, ...GALLERY_BASE] : GALLERY_BASE, [productImage]);
 
@@ -56,7 +59,7 @@ export default function AutocolanteConfigurator({ productSlug, initialWidth: ini
     const [input, setInput] = useState<PriceInputAutocolante>({
         width_cm: initW ?? 10,
         height_cm: initH ?? 10,
-        quantity: 1,
+        quantity: quickParams.get("q") ? configuratorInitialQuantity(quickParams) : 1,
         material: "oracal_3641",
         print_type: "print_cut",
         laminated: false,

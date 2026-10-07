@@ -122,7 +122,7 @@ export default function ConfiguratorDispatcher({
     }
 
     return (
-        <div className="min-h-screen bg-transparent pb-20">
+        <div className="brand-configurator min-h-screen bg-transparent pb-20">
             <Component
                 productSlug={finalSlug}
                 productImage={initialImage}

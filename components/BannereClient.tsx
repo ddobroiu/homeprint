@@ -4,12 +4,14 @@ import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { bannerProducts } from "@/lib/products/banner-products";
+import { stockBannerFormat } from "@/lib/bannerProductFormats";
 import { ArrowRight, ChevronRight, CheckCircle2, Search, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function BannereClient() {
     const [categoryFilter, setCategoryFilter] = useState("Toate");
     const [searchQuery, setSearchQuery] = useState("");
+    const [materialFilter, setMaterialFilter] = useState("Toate");
 
     // Extract categories
     const categories = useMemo(() => {
@@ -24,9 +26,10 @@ export default function BannereClient() {
             const normalize = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
             const query = normalize(searchQuery);
             const matchesSearch = normalize(product.title).includes(query) || product.tags.some(tag => normalize(tag).includes(query));
-            return matchesCategory && matchesSearch;
+            const matchesMaterial = materialFilter === "Toate" || stockBannerFormat(product.slug).material === materialFilter;
+            return matchesCategory && matchesSearch && matchesMaterial;
         });
-    }, [categoryFilter, searchQuery]);
+    }, [categoryFilter, searchQuery, materialFilter]);
 
     return (
         <div className="bg-slate-50 min-h-screen pb-20">
@@ -64,7 +67,8 @@ export default function BannereClient() {
                     </div>
 
                     {/* Search & Filter */}
-                    <div className="flex flex-col sm:flex-row gap-3">
+                    <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3">
+                        <select aria-label="Material" value={materialFilter} onChange={e => setMaterialFilter(e.target.value)} className="border border-gray-300 rounded-lg px-3 py-2 text-sm bg-white w-full sm:w-auto"><option value="Toate">Toate materialele</option><option value="frontlit_440">Banner PVC</option><option value="mesh">Mesh microperforat</option></select>
                         <div className="relative">
                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
                             <input
@@ -118,7 +122,7 @@ export default function BannereClient() {
                 {filteredProducts.length === 0 ? (
                     <div className="text-center py-20 text-gray-500">
                         <p>Nu am găsit niciun banner conform criteriilor.</p>
-                        <Button variant="link" onClick={() => { setCategoryFilter("Toate"); setSearchQuery(""); }}>Resetează filtrele</Button>
+                        <Button variant="link" onClick={() => { setCategoryFilter("Toate"); setSearchQuery(""); setMaterialFilter("Toate"); }}>Resetează filtrele</Button>
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

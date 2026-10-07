@@ -1,6 +1,8 @@
 "use client";
-
 import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
+import { useSearchParams as useQuickParams } from "next/navigation";
+import { configuratorInitialQuantity } from "@/lib/quickPrintPresets";
+
 import React, { useMemo, useState, useEffect } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
 import { useCart } from "@/components/CartContext";
@@ -37,13 +39,14 @@ import { OptionButton } from "./ui/OptionButton";
 import { TabButton } from "./ui/TabButton";
 
 export default function PlianteConfigurator({ productImage }: { productImage?: string }) {
+    const quickParams = useQuickParams();
     const { addItem } = useCart();
     const GALLERY = useMemo(() => productImage ? [productImage, ...GALLERY_BASE] : GALLERY_BASE, [productImage]);
 
     const MIN_QTY = 30;
 
     const [weight, setWeight] = useState<PlianteWeightKey>("115");
-    const [quantity, setQuantity] = useState<number>(30);
+    const [quantity, setQuantity] = useState<number>(() => quickParams.get("q") ? Math.max(30, configuratorInitialQuantity(quickParams)) : 30);
     const [fold, setFold] = useState<PlianteFoldType>("simplu");
     const [designOption, setDesignOption] = useState<"upload" | "pro">("upload");
 

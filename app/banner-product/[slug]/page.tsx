@@ -95,7 +95,7 @@ export default async function BannerProductPage({ params }: Props) {
                 image: product.image,
                 sku: product.id,
                 offers: {
-                    price: calculateBannerPrice(stockBannerDefaultInput()).finalPrice.toFixed(2),
+                    price: calculateBannerPrice(stockBannerDefaultInput(product.slug)).finalPrice.toFixed(2),
                     priceCurrency: "RON",
                     availability: "https://schema.org/InStock",
                     url: `${siteConfig.url}/banner-product/${product.slug}`

@@ -80,24 +80,21 @@ export const siteConfig = {
             ],
         },
         {
-            href: "/produse",
-            label: "Produse",
+            href: "/shop",
+            label: "Shop",
+            highlight: false,
             children: [
-                { href: "/produse/sisteme-de-afisaj", label: "Sisteme de afișaj" },
-                { href: "/produse/steaguri-si-drapele", label: "Steaguri și drapele" },
-                { href: "/produse/materiale-print", label: "Backlit, blockout, mochetă" },
-                { href: "/produse/rame-si-suporturi", label: "Rame și suporturi" },
-                { href: "/produse/papetarie-si-birou", label: "Papetărie și birou" },
-                { href: "/produse/promotionale", label: "Promoționale" },
-                { href: "/produse/decor-pentru-casa", label: "Decor pentru casă" },
-                { href: "/produse/panouri-si-semnalizare", label: "Panouri de șantier" },
+                { href: "/shop?category=sisteme-de-afisaj", label: "Sisteme de afișaj" },
+                { href: "/shop?category=steaguri-si-drapele", label: "Steaguri și drapele" },
+                { href: "/shop?category=materiale-print", label: "Backlit, blockout, mochetă" },
+                { href: "/shop?category=rame-si-suporturi", label: "Rame și suporturi" },
+                { href: "/shop?category=papetarie-si-birou", label: "Papetărie și birou" },
+                { href: "/shop?category=promotionale", label: "Promoționale" },
+                { href: "/shop?category=decor-pentru-casa", label: "Decor pentru casă" },
+                { href: "/shop?category=panouri-si-semnalizare", label: "Panouri de șantier" },
             ],
         },
-        {
-            href: "/configuratoare",
-            label: "Preț instant",
-            highlight: true,
-        },
+
     ],
     socialLinks: [
         {

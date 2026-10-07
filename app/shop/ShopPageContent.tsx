@@ -1,4 +1,5 @@
 "use client";
+import { productCategoryLabel } from "@/lib/productCategoryLabel";
 
 import React, { useMemo, useEffect, useTransition, useState } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
@@ -11,7 +12,7 @@ import {
     Search,
 } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
-import { PRODUCTS } from "@/lib/products";
+import { PRODUCTS, type Product } from "@/lib/products";
 
 // --- CONFIGURARE ---
 const PRODUCTS_PER_PAGE = 16;
@@ -39,7 +40,7 @@ const STARTING_PRICES: Record<string, number> = {
     "carti-vizita-metalice": 450,
 };
 
-export default function ShopPageContent() {
+export default function ShopPageContent({ personalProducts = [], catalogProducts = [] }: { personalProducts?: Product[]; catalogProducts?: Product[] }) {
     const searchParams = useSearchParams();
     const router = useRouter();
     const pathname = usePathname();
@@ -90,13 +91,14 @@ export default function ShopPageContent() {
 
     // 3a. Produse prelucrate (și filtrate pentru Shop)
     const allProducts = useMemo(() => {
-        return PRODUCTS
+        return [...personalProducts, ...catalogProducts, ...PRODUCTS.filter(p => !personalProducts.some(personal => personal.routeSlug === p.routeSlug))]
             // Nu vrem produsele generate pentru SEO ca "categorii" în Shop.
             // Ele trebuie să existe pentru rute/landing-uri, dar nu pentru browse în /shop.
             .filter((p) => !(p.metadata?.isSeoCampaign === true || String(p.metadata?.category ?? "").toLowerCase() === "campanii-seo"))
+            .sort((a, b) => Number(Boolean(b.metadata?.isPersonalizedDecor)) - Number(Boolean(a.metadata?.isPersonalizedDecor)) || Number(Boolean(b.metadata?.isSearchProduct)) - Number(Boolean(a.metadata?.isSearchProduct)))
             .map((p) => {
             const cat = String(p.metadata?.category ?? "").toLowerCase();
-            const price = p.metadata?.isSearchProduct ? p.priceBase ?? 0 : STARTING_PRICES[cat] ?? p.priceBase ?? 0;
+            const price = p.metadata?.isSearchProduct || p.metadata?.isPersonalizedDecor ? p.priceBase ?? 0 : STARTING_PRICES[cat] ?? p.priceBase ?? 0;
             return {
                 ...p,
                 processedCategory: String(p.metadata?.category ?? ""),
@@ -105,7 +107,7 @@ export default function ShopPageContent() {
                 price: price
             };
         });
-    }, []);
+    }, [personalProducts, catalogProducts]);
 
     // 3b. Lista Categorii
     const categories = useMemo(() => {
@@ -242,22 +244,13 @@ export default function ShopPageContent() {
 
     return (
         <main className="min-h-screen bg-slate-50 pb-20">
-            {/* --- HEADER VISUAL --- */}
-            <div className="relative bg-slate-950 border-b border-slate-900 pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden z-10 transition-colors">
-                 {/* Premium Background Effects */}
-                 <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
-                 <div className="absolute bottom-[-20%] left-10 w-[400px] h-[400px] bg-teal-500/10 rounded-full blur-[100px] pointer-events-none mix-blend-screen" />
-                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"></div>
-
-                <div className="max-w-[1400px] mx-auto relative z-10">
-                    <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight mb-4">
-                        Shop <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-teal-400">Premium</span>
-                    </h1>
-                    <p className="text-lg sm:text-xl text-slate-400 max-w-2xl font-medium">
-                        Explorează colecția noastră completă de produse printate digital la calitate de studio.
-                    </p>
+            <header className="border-b border-stone-200 bg-[var(--design-wash)] px-4 py-10 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-[1400px]">
+                    <p className="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--design-accent)]">Produse pentru ideile tale</p>
+                    <h1 className="mb-3 font-serif text-4xl text-[var(--design-ink)] sm:text-5xl">Homeprint Shop</h1>
+                    <p className="max-w-2xl text-base leading-relaxed text-slate-600">Alege un produs sau un model, personalizează-l și configurează comanda.</p>
                 </div>
-            </div>
+            </header>
 
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
                 <div className="flex flex-col lg:flex-row gap-8">
@@ -268,14 +261,14 @@ export default function ShopPageContent() {
                         {/* 1. SEARCH */}
                         <div className="bg-white p-6 rounded-3xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100/60 transition-all hover:shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)]">
                             <h3 className="font-black text-slate-900 mb-4 flex items-center gap-2 uppercase tracking-widest text-xs">
-                                <Search size={16} className="text-amber-500" /> Căutare
+                                <Search size={16} className="text-blue-500" /> Căutare
                             </h3>
                             <div className="relative">
                                 <input
                                     value={localSearch}
                                     onChange={(e) => setLocalSearch(e.target.value)}
                                     placeholder="Caută produse..."
-                                    className="w-full pl-4 pr-10 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold focus:ring-4 focus:ring-amber-500/10 focus:border-amber-500 outline-none transition-all placeholder:font-medium placeholder:text-slate-400"
+                                    className="w-full pl-4 pr-10 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all placeholder:font-medium placeholder:text-slate-400"
                                 />
                                 {localSearch && (
                                     <button
@@ -291,7 +284,7 @@ export default function ShopPageContent() {
                         {/* 2. CATEGORII (Listă Verticală & Subcategorii Nested) */}
                         <div className="bg-white p-6 rounded-3xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100/60 transition-all hover:shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)]">
                             <h3 className="font-black text-slate-900 mb-4 flex items-center gap-2 uppercase tracking-widest text-xs">
-                                <Filter size={16} className="text-amber-500" /> Categorii
+                                <Filter size={16} className="text-blue-500" /> Categorii
                             </h3>
                             <div className="flex flex-col gap-1.5">
                                 {categories.map((cat) => {
@@ -323,17 +316,17 @@ export default function ShopPageContent() {
                                                 }}
                                                 className={`w-full text-left px-4 py-3 rounded-2xl text-sm transition-all flex items-center justify-between group flex-wrap gap-2 ${isSelected
                                                     ? "bg-slate-950 text-white font-black shadow-lg shadow-slate-900/10"
-                                                    : "text-slate-600 hover:bg-slate-50 hover:text-amber-600 font-bold"
+                                                    : "text-slate-600 hover:bg-slate-50 hover:text-blue-600 font-bold"
                                                     }`}
                                             >
-                                                {cat}
+                                                {productCategoryLabel(cat)}
                                                 {isSelected && (
                                                     <ChevronDown
                                                         size={14}
-                                                        className={`text-amber-400 transition-transform duration-200 ${isExpanded ? "rotate-180" : ""}`}
+                                                        className={`text-blue-400 transition-transform duration-200 ${isExpanded ? "rotate-180" : ""}`}
                                                     />
                                                 )}
-                                                {!isSelected && <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-amber-400" />}
+                                                {!isSelected && <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-blue-400" />}
                                             </button>
 
                                             {/* RENDER SUBCATEGORIES IF CATEGORY IS SELECTED */}
@@ -342,11 +335,11 @@ export default function ShopPageContent() {
                                                     <button
                                                         onClick={() => updateFilters({ subcategory: "Toate" })}
                                                         className={`w-full text-left px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-3 transition-colors ${selectedSubcategory === "Toate"
-                                                            ? "text-amber-700 bg-amber-50"
+                                                            ? "text-blue-700 bg-blue-50"
                                                             : "text-slate-500 hover:bg-slate-50 hover:text-slate-900"
                                                             }`}
                                                     >
-                                                        <div className={`w-1.5 h-1.5 rounded-full ${selectedSubcategory === "Toate" ? "bg-amber-500" : "bg-slate-300"}`}></div>
+                                                        <div className={`w-1.5 h-1.5 rounded-full ${selectedSubcategory === "Toate" ? "bg-blue-500" : "bg-slate-300"}`}></div>
                                                         Toate
                                                     </button>
 
@@ -355,11 +348,11 @@ export default function ShopPageContent() {
                                                             key={subcat}
                                                             onClick={() => updateFilters({ subcategory: subcat })}
                                                             className={`w-full text-left px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-3 transition-colors ${selectedSubcategory === subcat
-                                                                ? "text-amber-700 bg-amber-50"
+                                                                ? "text-blue-700 bg-blue-50"
                                                                 : "text-slate-500 hover:bg-slate-50 hover:text-slate-900"
                                                                 }`}
                                                         >
-                                                            <div className={`w-1.5 h-1.5 rounded-full ${selectedSubcategory === subcat ? "bg-amber-500" : "bg-slate-300"}`}></div>
+                                                            <div className={`w-1.5 h-1.5 rounded-full ${selectedSubcategory === subcat ? "bg-blue-500" : "bg-slate-300"}`}></div>
                                                             {subcat}
                                                         </button>
                                                     ))}
@@ -405,7 +398,7 @@ export default function ShopPageContent() {
                                     placeholder="Min"
                                     value={localMin}
                                     onChange={e => setLocalMin(e.target.value)}
-                                    className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-bold text-sm outline-none focus:ring-4 focus:ring-amber-500/10 focus:border-amber-500 transition-all placeholder:font-medium placeholder:text-slate-400"
+                                    className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-bold text-sm outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all placeholder:font-medium placeholder:text-slate-400"
                                 />
                                 <span className="text-slate-300 font-bold">-</span>
                                 <input
@@ -413,7 +406,7 @@ export default function ShopPageContent() {
                                     placeholder="Max"
                                     value={localMax}
                                     onChange={e => setLocalMax(e.target.value)}
-                                    className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-bold text-sm outline-none focus:ring-4 focus:ring-amber-500/10 focus:border-amber-500 transition-all placeholder:font-medium placeholder:text-slate-400"
+                                    className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-bold text-sm outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all placeholder:font-medium placeholder:text-slate-400"
                                 />
                             </div>
                         </div>
@@ -439,7 +432,7 @@ export default function ShopPageContent() {
                         <div className="mb-8 bg-white p-5 rounded-2xl border border-slate-100/60 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] flex flex-wrap items-center justify-between gap-4">
                             <div>
                                 <h2 className="font-black text-xl text-slate-900 tracking-tight">
-                                    {selectedCategory !== "Toate" ? selectedCategory : "Toate Produsele"}
+                                    {selectedCategory !== "Toate" ? productCategoryLabel(selectedCategory) : "Toate Produsele"}
                                 </h2>
                                 <p className="text-sm font-medium text-slate-500 mt-1">
                                     <span className="font-black text-slate-900">{filteredProducts.length}</span> rezultate găsite
@@ -449,13 +442,13 @@ export default function ShopPageContent() {
                             {/* Tags for active filters */}
                             <div className="flex flex-wrap gap-2">
                                 {selectedSubcategory !== "Toate" && (
-                                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 text-amber-700 text-xs font-bold rounded-xl border border-amber-100">
-                                        {selectedSubcategory} <button onClick={() => updateFilters({ subcategory: "Toate" })} className="hover:bg-amber-200/50 rounded-full p-0.5 transition-colors"><X size={12} strokeWidth={3} /></button>
+                                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-bold rounded-xl border border-blue-100">
+                                        {selectedSubcategory} <button onClick={() => updateFilters({ subcategory: "Toate" })} className="hover:bg-blue-200/50 rounded-full p-0.5 transition-colors"><X size={12} strokeWidth={3} /></button>
                                     </span>
                                 )}
                                 {searchTerm && (
-                                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 text-amber-700 text-xs font-bold rounded-xl border border-amber-100">
-                                        "{searchTerm}" <button onClick={() => { updateFilters({ search: "" }); setLocalSearch("") }} className="hover:bg-amber-200/50 rounded-full p-0.5 transition-colors"><X size={12} strokeWidth={3} /></button>
+                                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-bold rounded-xl border border-blue-100">
+                                        "{searchTerm}" <button onClick={() => { updateFilters({ search: "" }); setLocalSearch("") }} className="hover:bg-blue-200/50 rounded-full p-0.5 transition-colors"><X size={12} strokeWidth={3} /></button>
                                     </span>
                                 )}
                             </div>
@@ -464,9 +457,9 @@ export default function ShopPageContent() {
                         {/* PRODUCTS GRID */}
                         {filteredProducts.length > 0 ? (
                             <>
-                                <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 transition-opacity duration-300 ${isPending ? 'opacity-50 blur-[2px]' : 'opacity-100'}`}>
+                                <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5 transition-opacity duration-300 ${isPending ? 'opacity-50 blur-[2px]' : 'opacity-100'}`}>
                                     {paginatedProducts.map((product, index) => (
-                                        <div key={product.id} className="transform hover:-translate-y-1 transition-transform duration-300">
+                                        <div key={`${product.id}:${product.routeSlug ?? ""}`} className="h-full">
                                             <ProductCard product={product as any} priority={index < 12} />
                                         </div>
                                     ))}
@@ -478,7 +471,7 @@ export default function ShopPageContent() {
                                         <button
                                             onClick={() => { setCurrentPage(p => Math.max(1, p - 1)); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                                             disabled={currentPage === 1}
-                                            className="w-12 h-12 flex items-center justify-center rounded-2xl border border-slate-200 bg-white hover:border-amber-500 hover:text-amber-500 disabled:opacity-50 disabled:hover:border-slate-200 disabled:hover:text-slate-900 transition-colors shadow-sm"
+                                            className="w-12 h-12 flex items-center justify-center rounded-2xl border border-slate-200 bg-white hover:border-blue-500 hover:text-blue-500 disabled:opacity-50 disabled:hover:border-slate-200 disabled:hover:text-slate-900 transition-colors shadow-sm"
                                         >
                                             <ChevronLeft size={18} />
                                         </button>
@@ -490,7 +483,7 @@ export default function ShopPageContent() {
                                         <button
                                             onClick={() => { setCurrentPage(p => Math.min(totalPages, p + 1)); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                                             disabled={currentPage === totalPages}
-                                            className="w-12 h-12 flex items-center justify-center rounded-2xl border border-slate-200 bg-white hover:border-amber-500 hover:text-amber-500 disabled:opacity-50 disabled:hover:border-slate-200 disabled:hover:text-slate-900 transition-colors shadow-sm"
+                                            className="w-12 h-12 flex items-center justify-center rounded-2xl border border-slate-200 bg-white hover:border-blue-500 hover:text-blue-500 disabled:opacity-50 disabled:hover:border-slate-200 disabled:hover:text-slate-900 transition-colors shadow-sm"
                                         >
                                             <ChevronRight size={18} />
                                         </button>

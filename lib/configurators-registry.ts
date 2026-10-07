@@ -1203,6 +1203,24 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
     }
 ];
 
+export const EXTRA_CONFIGURATORS: ConfiguratorMetadata[] = [
+    ...[
+        { id: "decor-foto-copil", name: "Decor cu fotografia copilului", category: "decor", description: "Fotografia copilului imprimată pe PVC și decupată pe contur." },
+        { id: "personaj-propriu", name: "Personajul tău decupat pe contur", category: "decor", description: "Încarcă personajul propriu și configurează decorul PVC decupat pe contur." },
+        { id: "semnalistica", name: "Semnalistică și indicatoare", category: "rigid", description: "Alege modelul de indicator și variantele de material în configurator." },
+    ].map(product => ({
+        ...product, slug: product.id, url: `/configurator/${product.id}`,
+        image: product.id === "personaj-propriu" ? "/products/decor-contur/decor-pvc-personaj-fata-3mm-contur.webp" : product.id === "decor-foto-copil" ? "/products/decor-foto-copil/decor-pvc-fotografia-copilului-silueta-decupata.webp" : "/products/poze-produse-seo/placa-pvc-forex-personalizata-vedere-sus.webp",
+        keywords: [product.name], useCases: [product.description],
+        dimensions: { type: "preset" as const }, materials: [],
+        pricing: { type: "per_unit" as const }, options: [],
+        turnaroundTime: "Vezi opțiunile în configurator",
+    })),
+];
+
+/** Registrul complet + configuratoarele suplimentare (pentru liste de prezentare, nu pentru pagini generate). */
+export const ALL_CONFIGURATORS: ConfiguratorMetadata[] = [...CONFIGURATORS_REGISTRY, ...EXTRA_CONFIGURATORS];
+
 // Helper function to find configurator by various criteria
 export function findConfigurator(criteria: {
     id?: string;

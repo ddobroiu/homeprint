@@ -1,6 +1,9 @@
 "use client";
-
 import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
+import { useToast } from "@/components/ToastProvider";
+import { useSearchParams as useQuickParams } from "next/navigation";
+import { configuratorInitialQuantity } from "@/lib/quickPrintPresets";
+
 import React, { useMemo, useState, useEffect } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
 import { useCart } from "@/components/CartContext";
@@ -37,13 +40,15 @@ import { OptionButton } from "./ui/OptionButton";
 import { TabButton } from "./ui/TabButton";
 
 export default function ConfiguratorPVCForex({ initialWidth: initW, initialHeight: initH, productImage }: { initialWidth?: number; initialHeight?: number; productImage?: string }) {
+    const quickParams = useQuickParams();
+    const { success: notifySuccess, error: notifyError } = useToast();
     const { addItem } = useCart();
     const GALLERY = useMemo(() => productImage ? [productImage, ...GALLERY_BASE] : GALLERY_BASE, [productImage]);
 
     const [input, setInput] = useState<PriceInputPVCForex>({
         width_cm: initW ?? 100,
         height_cm: initH ?? 50,
-        quantity: 1,
+        quantity: quickParams.get("q") ? configuratorInitialQuantity(quickParams) : 1,
         thickness_mm: 3,
         designOption: "upload",
     });
@@ -121,10 +126,10 @@ export default function ConfiguratorPVCForex({ initialWidth: initW, initialHeigh
 
     function handleAddToCart() {
         if (!input.width_cm || !input.height_cm) {
-            alert("Introduceți dimensiunile plăcii."); return;
+            notifyError("Introduceți dimensiunile plăcii."); return;
         }
         if (displayedTotal <= 0) {
-            alert("Prețul trebuie calculat."); return;
+            notifyError("Prețul trebuie calculat."); return;
         }
 
         const unitPrice = Math.round((displayedTotal / input.quantity) * 100) / 100;
@@ -135,6 +140,10 @@ export default function ConfiguratorPVCForex({ initialWidth: initW, initialHeigh
             id: uniqueId,
             productId: 'pvc-forex',
             title: title,
+            image: GALLERY[0],
+            routeSlug: "configurator/materiale/pvc-forex",
+            width: input.width_cm,
+            height: input.height_cm,
             price: unitPrice,
             quantity: input.quantity,
             metadata: {
@@ -151,7 +160,7 @@ export default function ConfiguratorPVCForex({ initialWidth: initW, initialHeigh
                 "height": input.height_cm,
             },
         });
-        alert("Adăugat în coș!");
+        notifySuccess("Adăugat în coș!");
     }
 
     useEffect(() => {

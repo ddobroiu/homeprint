@@ -30,6 +30,7 @@ export const AccordionStep = ({
         <div className="flex-1">
             <button
                 type="button"
+                aria-expanded={isOpen}
                 className="w-full flex items-center justify-between py-5 text-left"
                 onClick={onClick}
             >

@@ -97,6 +97,8 @@ export default function CartPage() {
                                         <div className="flex justify-between items-start mb-3 gap-4">
                                             <h3 className="text-2xl font-black text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-2 tracking-tight leading-snug">{item.title || 'Produs'}</h3>
                                             <button
+                                                type="button"
+                                                aria-label={`Elimină ${item.title || "produsul"} din coș`}
                                                 onClick={() => removeItem(item.id)}
                                                 className="w-10 h-10 shrink-0 flex items-center justify-center rounded-full bg-slate-50 text-slate-400 hover:bg-red-50 hover:text-red-500 transition-colors"
                                             >
@@ -119,6 +121,9 @@ export default function CartPage() {
                                     <div className="flex items-center justify-between mt-auto">
                                         <div className="flex items-center gap-4 bg-slate-50 rounded-2xl p-1.5 border border-slate-200">
                                             <button
+                                                type="button"
+                                                aria-label={`Scade cantitatea pentru ${item.title || "produs"}`}
+                                                disabled={item.quantity <= 1}
                                                 onClick={() => updateQuantity(item.id, item.quantity - 1)}
                                                 className="w-10 h-10 flex items-center justify-center rounded-xl bg-white text-slate-500 shadow-sm border border-slate-100 hover:text-amber-500 hover:border-amber-200 transition-colors"
                                             >
@@ -126,6 +131,8 @@ export default function CartPage() {
                                             </button>
                                             <span className="w-6 text-center font-black text-slate-900 text-lg">{item.quantity}</span>
                                             <button
+                                                type="button"
+                                                aria-label={`Crește cantitatea pentru ${item.title || "produs"}`}
                                                 onClick={() => updateQuantity(item.id, item.quantity + 1)}
                                                 className="w-10 h-10 flex items-center justify-center rounded-xl bg-white text-slate-500 shadow-sm border border-slate-100 hover:text-amber-500 hover:border-amber-200 transition-colors"
                                             >

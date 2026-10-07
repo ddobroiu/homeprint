@@ -1,9 +1,11 @@
 "use client";
+import { productCategoryLabel } from "@/lib/productCategoryLabel";
+import { productHeroImage } from "@/lib/productHeroImages";
 
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ShoppingCart } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import ProductVariantSelector from "./ProductVariantSelector";
 
 interface ProductCardProps {
@@ -105,7 +107,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
   // LOGICA IMAGINE ROBUSTĂ
   const imgs = product.images ?? [];
   const categoryPath = catRaw === "bannere" ? "banner" : catRaw;
-  const configuratorImageWebp = `/products/${categoryPath}/1.webp`;
+  const configuratorImageWebp = productHeroImage(categoryPath);
 
   let img = configuratorImageWebp;
   if (imgs.length > 0) {
@@ -122,84 +124,25 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
     }
   };
 
-    const CardContent = (
+  const cardClass = "group flex h-full flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white transition duration-200 hover:border-blue-700/30 hover:shadow-[0_8px_24px_-12px_rgba(0,50,35,0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-4";
+  const imageClass = "object-contain p-3 transition-transform duration-300 group-hover:scale-[1.025]";
+  const CardContent = (
     <>
-      {/* Etichetă categorie - deasupra imaginii, stil editorial */}
-      <div className="flex items-center gap-2 px-5 pt-5">
-        <span className="text-[10px] font-bold text-amber-700 uppercase tracking-[0.2em]">
-          {product.metadata?.category || product.category || "Produs"}
-        </span>
-        {product.metadata?.subcategory && (
-          <>
-            <span className="w-1 h-1 rounded-full bg-stone-300"></span>
-            <span className="text-[10px] text-stone-400 uppercase tracking-[0.15em] font-semibold">{product.metadata.subcategory}</span>
-          </>
-        )}
-      </div>
-
-      {/* Imagine */}
-      <div className="relative aspect-[5/4] overflow-hidden mx-5 mt-3 rounded-xl bg-stone-100 group">
+      <div className="relative aspect-[5/4] overflow-hidden bg-white">
         {finalImg.startsWith('http') ? (
-          <img
-            src={finalImg}
-            alt={`${product.title} - Tipar digital și personalizare online ${catRaw ? `din categoria ${catRaw}` : ''}`}
-            title={`${product.title} | HomePrint România`}
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-            loading={priority ? "eager" : "lazy"}
-            onError={() => setImgError(true)}
-          />
+          <img src={finalImg} alt={product.title} className={`absolute inset-0 h-full w-full ${imageClass}`} loading={priority ? "eager" : "lazy"} onError={() => setImgError(true)} />
         ) : (
-          <Image
-            src={finalImg}
-            alt={`${product.title} - Tipar digital și personalizare online ${catRaw ? `din categoria ${catRaw}` : ''}`}
-            title={`${product.title} | HomePrint România`}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-            loading={priority ? undefined : "lazy"}
-            priority={priority}
-            onError={() => setImgError(true)}
-          />
+          <Image src={finalImg} alt={product.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw" className={imageClass} priority={priority} onError={() => setImgError(true)} />
         )}
-
-        {/* Badge Multi-Variant */}
-        {isMultiVariant && (
-          <div className="absolute top-3 right-3 bg-stone-900/90 backdrop-blur text-white px-2.5 py-1 rounded-full z-10 flex items-center gap-1.5">
-            <div className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></div>
-            <span className="text-[9px] font-bold uppercase tracking-widest">4 variante</span>
-          </div>
-        )}
+        {isMultiVariant && <span className="absolute right-3 top-3 rounded-full border border-stone-200 bg-white/95 px-3 py-1 text-xs font-medium text-slate-600">{variants.length} variante</span>}
       </div>
-
-      {/* Conținut */}
-      <div className="px-5 pt-4 pb-5 flex flex-col flex-1 relative">
-        <div className="mb-auto">
-          <h3 className="text-lg leading-snug text-stone-900 group-hover:text-amber-700 transition-colors duration-300">
-            {product.title}
-          </h3>
-          {product.description && (
-            <div
-              className="mt-2 text-sm text-stone-500 line-clamp-2 leading-relaxed"
-              dangerouslySetInnerHTML={{ __html: product.description }}
-            />
-          )}
-          {!product.description && (
-            <p className="mt-2 text-sm text-stone-500 line-clamp-2 leading-relaxed">
-              Materiale publicitare de înaltă performanță pentru afacerea ta.
-            </p>
-          )}
-        </div>
-
-        {/* Footer Card */}
-        <div className="mt-4 pt-4 border-t border-stone-100 flex items-center justify-between group/btn cursor-pointer">
-          <div>
-            <span className="text-[10px] text-stone-400 uppercase tracking-widest font-semibold block">De la</span>
-            <span className="text-base font-bold text-stone-900 tracking-tight">{product.price} RON</span>
-          </div>
-          <span className="text-xs font-bold uppercase tracking-[0.15em] text-amber-700 group-hover:text-amber-800 transition-colors flex items-center gap-1.5">
-            {isMultiVariant ? "Alege" : "Configurează"}
-            <ArrowRight size={14} strokeWidth={2.5} className="transition-transform group-hover:translate-x-0.5" />
-          </span>
+      <div className="flex flex-1 flex-col px-5 pb-5 pt-3">
+        <p className="mb-2 text-xs font-medium text-slate-500">{productCategoryLabel(product.metadata?.subcategory || product.metadata?.category || product.category || "Produs personalizat")}</p>
+        <h3 className="text-lg font-semibold leading-snug text-[var(--design-ink)] transition-colors group-hover:text-blue-700">{product.title}</h3>
+        {product.description && <div className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-500" dangerouslySetInnerHTML={{ __html: product.description }} />}
+        <div className="mt-auto flex flex-wrap items-center justify-between gap-x-3 gap-y-3 pt-5">
+          <p className="whitespace-nowrap text-sm text-slate-500">de la <span className="text-lg font-semibold text-[var(--design-ink)]">{new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 2 }).format(product.price)} lei</span></p>
+          <span className="flex items-center gap-2 text-sm font-medium text-[var(--design-accent)]">{isMultiVariant ? "Alege" : "Configurează"}<ArrowRight size={17} strokeWidth={1.7} /></span>
         </div>
       </div>
     </>
@@ -210,14 +153,18 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
       {isMultiVariant ? (
         <div
           onClick={handleClick}
-          className="group flex flex-col bg-[#FBF7F1] border border-stone-200 rounded-2xl overflow-hidden hover:border-amber-300 hover:shadow-[0_12px_32px_-16px_rgba(120,53,15,0.25)] transition-all duration-500 h-full cursor-pointer"
+          role="button"
+          tabIndex={0}
+          aria-label={`Alege varianta pentru ${product.title}`}
+          onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); setShowVariantModal(true); } }}
+          className={cardClass}
         >
           {CardContent}
         </div>
       ) : (
         <Link
           href={href}
-          className="group flex flex-col bg-[#FBF7F1] border border-stone-200 rounded-2xl overflow-hidden hover:border-amber-300 hover:shadow-[0_12px_32px_-16px_rgba(120,53,15,0.25)] transition-all duration-500 h-full"
+          className={cardClass}
         >
           {CardContent}
         </Link>

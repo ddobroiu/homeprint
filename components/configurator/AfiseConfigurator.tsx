@@ -1,6 +1,8 @@
 "use client";
-
 import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
+import { useSearchParams as useQuickParams } from "next/navigation";
+import { configuratorInitialQuantity } from "@/lib/quickPrintPresets";
+
 import React, { useMemo, useState, useEffect } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
 import { getAfiseDimensionsCm } from "@/lib/ai-product-dimensions";
@@ -40,11 +42,12 @@ import { NumberInput } from "./ui/NumberInput";
 import { OptionButton } from "./ui/OptionButton";
 
 export default function AfiseConfigurator({ productSlug, initialWidth, initialHeight, productImage }: { productSlug?: string; initialWidth?: number; initialHeight?: number; productImage?: string }) {
+    const quickParams = useQuickParams();
     const { addItem } = useCart();
     const GALLERY = useMemo(() => productImage ? [productImage, ...GALLERY_BASE] : GALLERY_BASE, [productImage]);
-    const [size, setSize] = useState<string>("A2");
+    const [size, setSize] = useState<string>(() => AFISE_CONSTANTS.SIZES.find(v => v.key === quickParams.get("size"))?.key ?? "A2");
     const [material, setMaterial] = useState<string>("whiteback_150_material");
-    const [quantity, setQuantity] = useState<number>(50);
+    const [quantity, setQuantity] = useState<number>(() => quickParams.get("q") ? Math.max(50, configuratorInitialQuantity(quickParams)) : 50);
     const [activeProductTab, setActiveProductTab] = useState("descriere");
     const [designOption, setDesignOption] = useState<"upload" | "pro">("upload");
 

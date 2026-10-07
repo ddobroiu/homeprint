@@ -1,6 +1,8 @@
 "use client";
-
 import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
+import { useSearchParams as useQuickParams } from "next/navigation";
+import { configuratorInitialQuantity } from "@/lib/quickPrintPresets";
+
 import React, { useMemo, useState, useEffect, useRef } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
 import { uploadArtworkImage, browserImageUrl } from "@/lib/uploadArtworkImage";
@@ -70,6 +72,7 @@ declare global {
 type Props = { productSlug?: string; initialWidth?: number; initialHeight?: number; productImage?: string, intent?: string };
 
 export default function CanvasConfigurator({ productSlug, initialWidth: initW, initialHeight: initH, productImage, intent }: Props) {
+    const quickParams = useQuickParams();
     const { addItem } = useCart();
     const searchParams = useSearchParams();
 
@@ -112,7 +115,7 @@ export default function CanvasConfigurator({ productSlug, initialWidth: initW, i
     const [input, setInput] = useState<PriceInputCanvas>({
         width_cm: startW,
         height_cm: startH,
-        quantity: 1,
+        quantity: quickParams.get("q") ? configuratorInitialQuantity(quickParams) : 1,
         edge_type: "mirror",
         designOption: "upload",
         frameType: (paramType === 'none') ? 'none' : 'framed',

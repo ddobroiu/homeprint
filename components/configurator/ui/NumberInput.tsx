@@ -49,7 +49,7 @@ export const NumberInput = ({ label, value, onChange, step = 1, min = 1 }: Numbe
                     type="button"
                     onClick={() => inc(-step)}
                     disabled={value <= min}
-                    className="p-3 bg-gray-100 rounded-l-lg hover:bg-gray-200 disabled:opacity-50"
+                    className="p-3 text-slate-900 bg-gray-100 rounded-l-lg hover:bg-gray-200 disabled:opacity-50"
                     aria-label={`Scade ${label.toLowerCase()}`}
                 >
                     <Minus size={16} />
@@ -84,7 +84,7 @@ export const NumberInput = ({ label, value, onChange, step = 1, min = 1 }: Numbe
                 <button
                     type="button"
                     onClick={() => inc(step)}
-                    className="p-3 bg-gray-100 rounded-r-lg hover:bg-gray-200"
+                    className="p-3 text-slate-900 bg-gray-100 rounded-r-lg hover:bg-gray-200"
                     aria-label={`Crește ${label.toLowerCase()}`}
                 >
                     <Plus size={16} />

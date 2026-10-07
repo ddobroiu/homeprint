@@ -1,4 +1,6 @@
 "use client";
+import { useSearchParams } from "next/navigation";
+import { contourInitialState } from "@/lib/quickPrintPresets";
 import { useEffect, useState } from "react";
 
 import { useCart } from "@/components/CartContext";
@@ -12,7 +14,8 @@ import ContourProductGallery from "./ContourProductGallery";
 export default function ChildPhotoConfigurator(){
  const {addItem}=useCart(); const {success}=useToast();
  const [step,setStep]=useState(1);
- const [height,setHeight]=useState(100); const [width,setWidth]=useState(70); const [quantity,setQuantity]=useState(1);
+ const params=useSearchParams(); const initial=contourInitialState(params);
+ const [height,setHeight]=useState(initial.height); const [width,setWidth]=useState(initial.width); const [quantity,setQuantity]=useState(initial.quantity);
  const [notes,setNotes]=useState("");
  const [photo,setPhoto]=useState(""); const [preview,setPreview]=useState(""); const [filename,setFilename]=useState("");
  const [busy,setBusy]=useState(false); const [error,setError]=useState("");

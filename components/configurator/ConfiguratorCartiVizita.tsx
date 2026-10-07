@@ -1,6 +1,8 @@
 "use client";
-
 import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
+import { useSearchParams as useQuickParams } from "next/navigation";
+import { configuratorInitialQuantity } from "@/lib/quickPrintPresets";
+
 import React, { useMemo, useState, useEffect } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
 import { useCart } from "@/components/CartContext";
@@ -41,6 +43,7 @@ import { OptionButton } from "./ui/OptionButton";
 import { TabButton } from "./ui/TabButton";
 
 export default function ConfiguratorCartiVizita({ productImage }: { productImage?: string }) {
+    const quickParams = useQuickParams();
     const { addItem } = useCart();
 
     const MIN_QTY = 100;
@@ -59,7 +62,7 @@ export default function ConfiguratorCartiVizita({ productImage }: { productImage
         designOption: "upload" | "pro"
     }>({
         type: "standard",
-        quantity: 100,
+        quantity: quickParams.get("q") ? configuratorInitialQuantity(quickParams) : 100,
         twoSided: true,
         roundedCorners: false,
         specialShape: false,

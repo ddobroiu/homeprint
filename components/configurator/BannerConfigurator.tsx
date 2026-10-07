@@ -1,7 +1,8 @@
 "use client";
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
+import ConfiguratorContactOptions from "@/components/ConfiguratorContactOptions";
 // components/configurator/BannerConfigurator.tsx
 
-import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import { NumberInput } from "./ui/NumberInput";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
 import React, { useMemo, useState, useEffect, useCallback } from "react";
@@ -890,29 +891,7 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
                             </div>
                         </div>
 
-                        {/* BUTOANE SECUNDARE - WHATSAPP ȘI CERERE OFERTĂ */}
-                        <div className="mt-4 lg:mt-6 bg-gradient-to-br from-slate-50 to-gray-100 dark:from-slate-800 dark:to-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
-                            <p className="text-xs text-gray-600 dark:text-gray-400 mb-3 text-center font-medium">Ai nevoie de ajutor sau o ofertă personalizată?</p>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <a
-                                    href={`https://wa.me/40750473111?text=${encodeURIComponent(productKind === "mesh" ? "Mă interesează configuratorul mesh" : "Mă interesează configuratorul banner")}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-amber-600 hover:from-green-700 hover:to-amber-700 text-white font-semibold py-2.5 px-4 rounded-lg shadow-md hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] transition-all duration-200"
-                                >
-                                    <MessageCircle size={18} />
-                                    <span className="text-sm">WhatsApp</span>
-                                </a>
-                                <button
-                                    type="button"
-                                    onClick={() => window.location.href = '/contact'}
-                                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white font-semibold py-2.5 px-4 rounded-lg shadow-md hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] transition-all duration-200"
-                                >
-                                    <Info size={18} />
-                                    <span className="text-sm">Cerere Ofertă</span>
-                                </button>
-                            </div>
-                        </div>
+                        <ConfiguratorContactOptions product="banner" />
                     </div>
                 </div>
 

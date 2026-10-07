@@ -1,6 +1,8 @@
 "use client";
-
 import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
+import { useSearchParams as useQuickParams } from "next/navigation";
+import { configuratorInitialQuantity } from "@/lib/quickPrintPresets";
+
 import React, { useMemo, useState, useEffect } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
 import { getFlyerDimensionsCm } from "@/lib/ai-product-dimensions";
@@ -35,13 +37,14 @@ import { NumberInput } from "./ui/NumberInput";
 import { TabButton } from "./ui/TabButton";
 
 export default function FlyerConfigurator({ productImage }: { productImage?: string }) {
+    const quickParams = useQuickParams();
     const { addItem } = useCart();
     const GALLERY = useMemo(() => productImage ? [productImage, ...GALLERY_BASE] : GALLERY_BASE, [productImage]);
 
     const MIN_QTY = 100;
 
-    const [sizeKey, setSizeKey] = useState(FLYER_CONSTANTS.SIZES[0].key);
-    const [quantity, setQuantity] = useState<number>(100);
+    const [sizeKey, setSizeKey] = useState(() => FLYER_CONSTANTS.SIZES.find(v => v.key === quickParams.get("size"))?.key ?? FLYER_CONSTANTS.SIZES[0].key);
+    const [quantity, setQuantity] = useState<number>(() => quickParams.get("q") ? Math.max(100, configuratorInitialQuantity(quickParams)) : 100);
     const [twoSided, setTwoSided] = useState<boolean>(false);
     const [paperWeightKey, setPaperWeightKey] = useState(FLYER_CONSTANTS.PAPER_WEIGHTS[0].key);
     const [designOption, setDesignOption] = useState<"upload" | "pro">("upload");
