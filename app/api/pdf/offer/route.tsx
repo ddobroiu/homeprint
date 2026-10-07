@@ -165,7 +165,7 @@ const formatCurrency = (amount: any) => {
   }).format(amount) + " RON";
 };
 
-export const OfferDocument = ({ order, siteInfo }: any) => {
+const OfferDocument = ({ order, siteInfo }: any) => {
   const createdDate = new Date(order.createdAt).toLocaleDateString("ro-RO");
   const validUntilDate = new Date();
   validUntilDate.setDate(validUntilDate.getDate() + 30);
