@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  // Dev / build local în paralel cu alt agent: NEXT_DIST_DIR=.next-editor npm run dev
+  ...(process.env.NEXT_DIST_DIR ? { distDir: process.env.NEXT_DIST_DIR } : {}),
   // Cache-ul ISR (paginile /judet/... și /dimensiuni/..., sute de mii de URL-uri) stă doar în memorie:
   // LRU limitat aici, nu pe disc (experimental.isrFlushToDisk=false). Serverul are 7,7 GB RAM și 40 GB disc.
   cacheMaxMemorySize: 64 * 1024 * 1024,
@@ -57,7 +59,10 @@ const nextConfig: NextConfig = {
         permanent: true,
         // Designul din editorul online vine cu ?image=...: îl servim direct din
         // /configurator/... (ConfiguratorDispatcher citește w, h și image).
-        missing: [{ type: 'query', key: 'image' }],
+        // La fel linkurile de preț din chatul AI și din calculatorul rapid (au mereu ?q=cantitate):
+        // configuratorul din /configurator/... citește dimensiunile/formatul/cantitatea din adresă,
+        // deci arată exact prețul dat de chat (paginile scurte /afise, /canvas... nu citesc ?size= / ?q=).
+        missing: [{ type: 'query', key: 'image' }, { type: 'query', key: 'q' }],
       },
       {
         source: '/product/canvas/:path*',

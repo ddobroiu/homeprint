@@ -4,52 +4,21 @@ import OpenAI from "openai";
 import { CHAT_MODEL, chatOptions } from "@/lib/ai-model";
 import { trackOpenAI } from "@/lib/aiUsage";
 import { randomUUID } from "crypto";
-import { executeTool } from "@/lib/ai-tool-runner";
 import { siteConfig } from "@/lib/siteConfig";
-import { CONFIGURATORS_REGISTRY } from "@/lib/configurators-registry";
-import { calculateBusinessCardPrice, CANVAS_CONSTANTS } from "@/lib/pricing";
+import { ALL_CONFIGURATORS, CONFIGURATORS_REGISTRY } from "@/lib/configurators-registry";
+import { AI_CONFIGURATOR_IDS, configuratorIndex, listConfiguratorOptions, quoteConfigurator } from "@/lib/ai-configurators";
+import { FREE_SHIPPING_THRESHOLD, MAX_RAMBURS_LIMIT } from "@/lib/paymentRules";
 import { logConversation } from "@/lib/chat-logger";
-
-// Asistentul AI de pe site (portat din shopprint, adaptat la brandul și configuratoarele acestui site).
-// Prețurile vin DOAR din lib/pricing (prin executeTool / calculateBusinessCardPrice); uneltele expuse aici
-// sunt doar de calcul — chat-ul de pe site NU creează comenzi.
+import { brandKey, type BrandKey } from "@/lib/brandDesign";
 
 export const runtime = "nodejs";
 
 type ChatMsg = { role: "user" | "assistant" | "system"; content: string };
 
-const SITE_DOMAIN = String(siteConfig.domain || "").trim().toLowerCase().replace(/^www\./, "");
-const BRAND = siteConfig.name;
-
 function getOpenAiClient() {
   // Lazy init so `next build` (and Docker builds) don't crash
   // when OPENAI_API_KEY isn't present at build-time.
   return new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-}
-
-// ─── Limitare abuz (în memorie, per IP): endpoint public care consumă credit OpenAI ───
-const RATE_WINDOW_MS = 10 * 60 * 1000;
-const RATE_MAX = 40;
-const MAX_MESSAGES = 12;
-const MAX_CONTENT_CHARS = 2000;
-const rateHits = new Map<string, number[]>();
-
-function clientIp(req: Request) {
-  const fwd = req.headers.get("x-forwarded-for");
-  return (fwd?.split(",")[0] || req.headers.get("x-real-ip") || "local").trim();
-}
-
-function rateLimited(ip: string) {
-  const now = Date.now();
-  const hits = (rateHits.get(ip) || []).filter((t) => now - t < RATE_WINDOW_MS);
-  hits.push(now);
-  rateHits.set(ip, hits);
-  if (rateHits.size > 5000) {
-    for (const [k, v] of rateHits) {
-      if (!v.length || now - v[v.length - 1] > RATE_WINDOW_MS) rateHits.delete(k);
-    }
-  }
-  return hits.length > RATE_MAX;
 }
 
 function waPhoneE164(roPhone: string) {
@@ -64,7 +33,7 @@ function getBaseUrl() {
     process.env.NEXT_PUBLIC_SITE_URL ||
     process.env.PUBLIC_BASE_URL ||
     siteConfig.url
-  ).replace(/\/+$/, "");
+  );
 }
 
 function buildWhatsAppUrl(message: string) {
@@ -72,35 +41,24 @@ function buildWhatsAppUrl(message: string) {
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
-/** URL-ul configuratorului din registry-ul ACESTUI site (null dacă site-ul nu îl are). */
-function cfgUrl(id: string): string | null {
-  return CONFIGURATORS_REGISTRY.find((c) => c.id === id)?.url ?? null;
-}
-
 function extractBannerIntent(messages: ChatMsg[]) {
-  // IMPORTANT: only consider user messages; assistant greeting may contain "banner/autocolant/canvas"
+  // IMPORTANT: only consider user messages; assistant greeting contains "banner/autocolant/canvas"
   // and would otherwise bias routing incorrectly.
   const all = messages
     .filter((m) => m.role === "user")
     .map((m) => m.content)
     .join("\n")
     .toLowerCase();
-  return all.includes("banner");
+  if (all.includes("banner")) return true;
+  return false;
 }
 
 function normalize(s: string) {
   return (s || "")
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "");
+    .replace(/[\u0300-\u036f]/g, "");
 }
-
-// Cuvinte de umplutură care nu identifică un produs (altfel „pentru” potrivește aproape orice configurator).
-const MATCH_STOPWORDS = new Set([
-  "pentru", "nevoie", "vreau", "doresc", "avem", "aveti", "care", "este", "sunt", "unei", "unui",
-  "din", "cat", "cum", "buna", "salut", "ziua", "va", "rog", "mersi", "multumesc", "costa", "pret",
-  "pretul", "bucati", "buc", "imi", "trebuie", "the", "and",
-]);
 
 function findConfiguratorMatches(query: string, limit = 5) {
   const q = normalize(query);
@@ -111,12 +69,15 @@ function findConfiguratorMatches(query: string, limit = 5) {
       [c.name, c.slug, c.category, ...(c.keywords || []), ...(c.useCases || [])].join(" | ")
     );
     let score = 0;
+    // direct contains
     if (hay.includes(q)) score += 6;
+    // token overlap
     const tokens = q.split(/[\s,.;/|]+/).filter(Boolean);
     for (const t of tokens) {
-      if (t.length < 3 || MATCH_STOPWORDS.has(t)) continue;
+      if (t.length < 3) continue;
       if (hay.includes(t)) score += 2;
     }
+    // prefer exact slug hits
     if (q.includes(normalize(c.slug))) score += 3;
     return { c, score };
   })
@@ -154,120 +115,12 @@ function isOrderIntent(text: string) {
   );
 }
 
-function extractCanvasIntent(messages: ChatMsg[]) {
-  const all = messages
-    .filter((m) => m.role === "user")
-    .map((m) => m.content)
-    .join("\n")
-    .toLowerCase();
-  return all.includes("canvas") || all.includes("canva");
-}
-
-// HomePrint: fototapetul are calcul automat (calculateTapetPrice prin executeTool).
-function extractTapetIntent(messages: ChatMsg[]) {
-  const all = normalize(messages.filter((m) => m.role === "user").map((m) => m.content).join(" "));
-  return all.includes("tapet");
-}
-
-function extractPlexiglassIntent(messages: ChatMsg[]) {
-  const all = normalize(messages.map((m) => m.content).join("\n"));
-  return all.includes("plexiglass") || all.includes("plexiglas") || all.includes("metacrilat");
-}
-
-function extractForexIntent(messages: ChatMsg[]) {
-  const all = normalize(messages.map((m) => m.content).join("\n"));
-  // NOTE: do NOT match generic "pvc" because it causes false positives.
-  return all.includes("forex") || all.includes("pvc forex") || all.includes("pvc-forex");
-}
-
-function extractPlexiSubtype(messages: ChatMsg[]): "transparent" | "alb" {
-  const all = normalize(messages.map((m) => m.content).join("\n"));
-  if (all.includes("transparent")) return "transparent";
-  return "alb";
-}
-
-function parseThicknessMm(text: string): number | null {
-  const t = normalize(text);
-  const m = t.match(/(\d{1,2})\s*mm/);
-  if (!m) return null;
-  const v = Number(m[1]);
-  return Number.isFinite(v) && v > 0 ? v : null;
-}
-
-function extractWantsFrame(messages: ChatMsg[]) {
-  const all = messages.map((m) => m.content).join("\n").toLowerCase();
-  return (
-    all.includes("cu rama") ||
-    all.includes("cu șasiu") ||
-    all.includes("rama") ||
-    all.includes("ramă")
-  );
-}
-
-function parseDimsCm(text: string): { w: number; h: number } | null {
-  const t = text
-    .toLowerCase()
-    .replace(/×/g, "x")
-    .replace(/,/g, ".");
-
-  const m = t.match(
-    /(\d{1,4}(?:\.\d{1,2})?)\s*x\s*(\d{1,4}(?:\.\d{1,2})?)(?=\s|$|[a-zăâîșț.,;:!?])/i
-  );
-  if (!m) return null;
-  const w = Number(m[1]);
-  const h = Number(m[2]);
-  if (!Number.isFinite(w) || !Number.isFinite(h) || w <= 0 || h <= 0) return null;
-  return { w, h };
-}
-
-type ExplicitProduct =
-  | "pliante"
-  | "carti_vizita"
-  | "forex"
-  | "plexiglass"
-  | "canvas"
-  | "autocolant"
-  | "banner"
-  | "unknown";
-
-function detectExplicitProduct(text: string): ExplicitProduct {
-  const t = normalize(text);
-  if (t.includes("pliante") || t.includes("brosuri")) return "pliante";
-  if (t.includes("carti de vizita") || t.includes("carti-vizita") || t.includes("business card") || t.includes("carti vizita")) return "carti_vizita";
-  if (t.includes("forex") || t.includes("pvc-forex") || t.includes("pvc forex")) return "forex";
-  if (t.includes("plexiglass") || t.includes("plexiglas") || t.includes("metacrilat")) return "plexiglass";
-  if (t.includes("canvas") || t.includes("canva")) return "canvas";
-  if (t.includes("autocolant") || t.includes("autocolante")) return "autocolant";
-  if (t.includes("banner")) return "banner";
-  return "unknown";
-}
-
-function formatRon(amount: any) {
-  const n = Number(amount);
-  if (!Number.isFinite(n)) return String(amount);
-  const rounded = Math.round(n * 100) / 100;
-  return `${rounded.toFixed(2)} RON`;
-}
-
-function parseQty(text: string): number | null {
-  const m = text.toLowerCase().match(/(\d+)\s*(buc|bucata|bucată|bucati|bucăți)/);
-  if (m) {
-    const q = Number(m[1]);
-    return Number.isFinite(q) && q > 0 ? q : null;
-  }
-  const onlyNum = text.trim().match(/^(\d+)$/);
-  if (onlyNum) {
-    const q = Number(onlyNum[1]);
-    return Number.isFinite(q) && q > 0 ? q : null;
-  }
-  return null;
-}
-
-function isOperatorIntent(last: string) {
+function isOperatorIntent(last: string, prevAssistant = "") {
   const t = last.trim().toLowerCase();
+  // „da”/„ok” înseamnă operator doar ca răspuns la oferta de operator (altfel e răspuns la o întrebare a asistentului).
+  const offeredOperator = /operator|whatsapp/i.test(prevAssistant);
   return (
-    t === "da" ||
-    t === "ok" ||
+    ((t === "da" || t === "ok") && offeredOperator) ||
     t === "operator" ||
     t.includes("whatsapp") ||
     t.includes("operator uman") ||
@@ -275,6 +128,93 @@ function isOperatorIntent(last: string) {
     t.includes("contact") ||
     /^\+?\d[\d\s-]{7,}$/.test(t) // looks like a phone number
   );
+}
+
+// ---------------------------------------------------------------------------
+// Ce știe asistentul: doar configuratoarele (index + unelte de preț) și câteva fapte fixe.
+// Promptul NU conține date din cerere, ca să rămână identic între cereri (cache OpenAI).
+// ---------------------------------------------------------------------------
+/** Cine e site-ul, în vocea lui (același brand ca homepage-ul, lib/brandDesign.ts). */
+const SITE_VOICE: Record<BrandKey, string> = {
+  shopprint: "tipografie online din România cu producție proprie",
+  adbanner: "atelier de publicitate outdoor din România, cu producție proprie: bannere, mesh, roll-up și folii de vitrină, plus restul printului",
+  euprint: "tipografie online din România cu producție proprie, specializată în materiale pentru proiecte cu fonduri UE (afișe, plăci, panouri) și panouri rigide, plus restul printului",
+  homeprint: "atelier online de print pentru decor, cu producție proprie în România: fototapet, tablouri canvas și postere, plus restul printului",
+  prynt: "tipografie online din România cu producție proprie: textile personalizate și print mic (cărți de vizită, flyere, afișe), plus formate mari",
+  tablou: "atelier online din România care face tablouri canvas din fotografiile clienților, cu producție proprie; în același atelier se printează și fototapet, textile, afișe, bannere și panouri",
+};
+
+function buildSystemPrompt(baseUrl: string) {
+  const wa = buildWhatsAppUrl("Bună! Am o întrebare (mesaj din chat-ul de pe site).");
+  return [
+    `Ești asistentul de chat al ${siteConfig.name} (${baseUrl}), ${SITE_VOICE[brandKey]}. Răspunzi în română, scurt, prietenos, la persoana a II-a („tu”).`,
+    "Știi DOAR ce e în configuratoarele de mai jos și ce întorc uneltele. Pentru orice altceva trimite clientul la configuratorul potrivit sau la contact; nu inventa produse, materiale, termene sau politici.",
+    "",
+    "Reguli de preț:",
+    "- Prețurile vin EXCLUSIV din unealta get_quote; nu calcula, nu estima, nu rotunji alt preț. Dă totalul exact (lei) și linkul `url` întors de unealtă, neschimbat.",
+    "- Dacă lipsește ceva esențial (dimensiuni, cantitate, format), întreabă exact ce lipsește. Opțiunile nespecificate rămân implicite: dă prețul pe configurația implicită și spune ce include (default_configuration); nu întreba de opțiuni înainte de primul preț.",
+    "- Pentru opțiuni/variante valide folosește list_configurator_options. Dacă get_quote întoarce error, explică pe scurt și dă configurator_url sau contactul.",
+    "- Dacă nu vindem produsul cerut, spune clar că nu îl avem și propune, doar dacă se potrivește, un configurator din listă.",
+    "",
+    "Fapte fixe:",
+    "- Comanda: configurator → dimensiuni, cantitate, opțiuni → încarci grafica (sau ceri design) → coș → checkout. Plată cu cardul, ordin de plată sau ramburs (ramburs doar în România, comenzi de cel mult " + MAX_RAMBURS_LIMIT + " lei, fără textile).",
+    `- Livrare: curier ${siteConfig.shipping.provider} în toată România (și în unele țări din UE). De regulă 2–4 zile lucrătoare producție + livrare, de la confirmarea comenzii/plății și a fișierelor; termenul exact apare pe pagina produsului și în coș. Transportul se calculează în coș; gratuit pentru produse de cel puțin ${FREE_SHIPPING_THRESHOLD} lei. Detalii: ${baseUrl}/livrare`,
+    `- Retur: produsele personalizate (făcute după grafica clientului) nu se pot returna, dar dacă sunt neconforme (defect de material/tipar, alt produs) le refacem gratuit — reclamație la ${baseUrl}/reclamatii. Produsele standard (nepersonalizate): retragere în 14 zile pentru persoane fizice. Detalii: ${baseUrl}/politica-retur`,
+    `- Contact: telefon ${siteConfig.phone}, e-mail ${siteConfig.email}, WhatsApp ${wa}`,
+    "- Nu cere telefonul clientului și nu promite că îl contactăm noi.",
+    "",
+    `Linkuri: URL-uri complete și simple (fără markdown, fără [text](url)): cele din unelte neschimbate, cele din listă cu ${baseUrl} în față.`,
+    "",
+    "Configuratoare (id | nume | link | descriere | ce trebuie pentru preț; opțiuni):",
+    configuratorIndex(baseUrl),
+  ].join("\n");
+}
+
+const CHAT_TOOLS: OpenAI.Chat.Completions.ChatCompletionTool[] = [
+  {
+    type: "function",
+    function: {
+      name: "get_quote",
+      description:
+        "Prețul exact al unui configurator (același ca pe pagină) + linkul configuratorului precompletat. Opțiunile omise rămân implicite.",
+      parameters: {
+        type: "object",
+        additionalProperties: false,
+        properties: {
+          configurator: { type: "string", enum: AI_CONFIGURATOR_IDS },
+          width_cm: { type: "number", description: "Lățimea în cm (produse cu dimensiuni libere, canvas, roll-up)." },
+          height_cm: { type: "number", description: "Înălțimea în cm." },
+          quantity: { type: "integer", description: "Număr de bucăți." },
+          size: { type: "string", description: "Format fix: afișe (A3, A2…), flyere (A6, A5, 21x10), canvas pe șasiu (ex. 60x90), canvas sezonier." },
+          options: {
+            type: "object",
+            description: "Opțiuni cheie → valoare, ca în list_configurator_options (ex. {\"material\":\"frontlit_510\",\"gauri_vant\":\"da\"}).",
+            additionalProperties: { type: ["string", "number", "boolean"] },
+          },
+        },
+        required: ["configurator"],
+      },
+    },
+  },
+  {
+    type: "function",
+    function: {
+      name: "list_configurator_options",
+      description: "Opțiunile, formatele, limitele de dimensiuni și cantitățile minime valide ale unui configurator.",
+      parameters: {
+        type: "object",
+        additionalProperties: false,
+        properties: { configurator: { type: "string", description: "id din lista de configuratoare" } },
+        required: ["configurator"],
+      },
+    },
+  },
+];
+
+function runChatTool(name: string, args: Record<string, unknown>, baseUrl: string) {
+  if (name === "get_quote") return quoteConfigurator(args, baseUrl);
+  if (name === "list_configurator_options") return listConfiguratorOptions(String(args.configurator ?? ""), baseUrl);
+  return { error: `Unealtă necunoscută: ${name}` };
 }
 
 function getMissingKeyError() {
@@ -291,16 +231,6 @@ function getMissingKeyError() {
 export async function POST(req: Request) {
   if (!process.env.OPENAI_API_KEY) return getMissingKeyError();
 
-  if (rateLimited(clientIp(req))) {
-    return NextResponse.json(
-      {
-        error: "rate_limited",
-        reply: `Prea multe mesaje într-un timp scurt. Încearcă din nou peste câteva minute sau scrie-ne pe WhatsApp / sună la ${siteConfig.phone}.`,
-      },
-      { status: 429 }
-    );
-  }
-
   try {
     const client = getOpenAiClient();
     const body = (await req.json().catch(() => null)) as {
@@ -308,13 +238,7 @@ export async function POST(req: Request) {
       conversationId?: string;
     } | null;
 
-    const userMessages: ChatMsg[] = (Array.isArray(body?.messages) ? body!.messages : [])
-      .filter((m) => m && (m.role === "user" || m.role === "assistant"))
-      .slice(-MAX_MESSAGES)
-      .map((m) => ({
-        role: m.role,
-        content: String(m.content ?? "").slice(0, MAX_CONTENT_CHARS),
-      }));
+    const userMessages = Array.isArray(body?.messages) ? body!.messages.filter(m => (m.role === "user" || m.role === "assistant") && typeof m.content === "string") : [];
     const last = userMessages[userMessages.length - 1];
     if (!last?.content) {
       return NextResponse.json(
@@ -328,12 +252,13 @@ export async function POST(req: Request) {
       body.conversationId.trim().length > 0
         ? body.conversationId.trim().slice(0, 200)
         : `web-${randomUUID()}`;
-    // Baza e comună celor 6 site-uri și AiConversation nu are coloană de site: prefixăm identificatorul cu domeniul.
-    const logIdentifier = `${SITE_DOMAIN}:${conversationId}`;
-    const lastUserText = last.content;
+    const lastUserText =
+      typeof last.content === "string"
+        ? last.content
+        : String(last.content ?? "");
 
     const jsonReply = (reply: string) => {
-      void logConversation("web", logIdentifier, [
+      void logConversation("web", conversationId, [
         { role: "user", content: lastUserText },
         { role: "assistant", content: reply },
       ]);
@@ -341,27 +266,32 @@ export async function POST(req: Request) {
     };
 
     const baseUrl = getBaseUrl();
-    // Doar mesaje user: salutul asistentului menționează produse și ar falsifica potrivirea de configuratoare.
+    // Doar mesaje user: salutul asistentului menționează „banner/autocolant/canvas”
+    // și falsifica potrivirea de configuratoare („bună ziua” → Banner PVC).
     const convoText = userMessages
       .filter((m) => m.role === "user")
       .map((m) => m.content)
       .join("\n");
-    const explicit = detectExplicitProduct(last.content);
 
     // If user asks "all configurators", return a deterministic catalog of links.
     if (isListAllIntent(last.content)) {
       const grouped = new Map<string, { name: string; url: string }[]>();
-      for (const c of CONFIGURATORS_REGISTRY) {
+      for (const c of ALL_CONFIGURATORS) {
         const cat = c.category || "altele";
         const arr = grouped.get(cat) || [];
         arr.push({ name: c.name, url: `${baseUrl}${c.url}` });
         grouped.set(cat, arr);
       }
 
-      const lines: string[] = ["Avem aceste configuratoare/pagini (click pe link):", ""];
+      const lines: string[] = [
+        "Avem aceste configuratoare/pagini (click pe link):",
+        "",
+      ];
       for (const [cat, items] of [...grouped.entries()].sort((a, b) => a[0].localeCompare(b[0]))) {
         lines.push(`## ${cat}`);
-        for (const it of items) lines.push(`- ${it.name}: ${it.url}`);
+        for (const it of items) {
+          lines.push(`- ${it.name}: ${it.url}`);
+        }
         lines.push("");
       }
 
@@ -372,9 +302,9 @@ export async function POST(req: Request) {
     if (isOrderIntent(last.content)) {
       const matches = findConfiguratorMatches(convoText, 3);
       const primary = matches[0];
-      const primaryUrl = primary ? `${baseUrl}${primary.url}` : `${baseUrl}/`;
+      const primaryUrl = primary ? `${baseUrl}${primary.url}` : `${baseUrl}/#configurator`;
       const waUrl = buildWhatsAppUrl(
-        `Bună! Vreau ajutor pentru plasarea unei comenzi pe ${SITE_DOMAIN} (mesaj din chat-ul de pe site).`
+        "Bună! Vreau ajutor pentru plasarea unei comenzi (mesaj din chat-ul de pe site)."
       );
 
       return jsonReply(
@@ -390,221 +320,18 @@ export async function POST(req: Request) {
       );
     }
 
-    // Deterministic match for any product we offer: return direct link(s) instead of hallucinating.
-    const matches = findConfiguratorMatches(convoText, 3);
-    const wantsPricing =
-      normalize(last.content).includes("pret") ||
-      normalize(last.content).includes("cat costa") ||
-      normalize(last.content).includes("cat e") ||
-      normalize(last.content).includes("cost");
-
-    const isRollOrBanner =
-      extractBannerIntent(userMessages) ||
-      normalize(last.content).includes("autocolant") ||
-      extractCanvasIntent(userMessages) ||
-      extractTapetIntent(userMessages);
-
-    if (matches.length > 0 && !isRollOrBanner) {
-      const top = matches[0];
-      const others = matches.slice(1);
-      const replyLines = [`Da, avem: ${top.name}.`, `Poți comanda aici: ${baseUrl}${top.url}`];
-
-      if (others.length) {
-        replyLines.push("", "Alte rezultate apropiate:");
-        for (const c of others) replyLines.push(`- ${c.name}: ${baseUrl}${c.url}`);
-      }
-
-      if (wantsPricing) {
-        replyLines.push(
-          "",
-          "Dacă vrei preț instant, spune-mi dimensiunea și cantitatea (iar pentru produse fără calculator automat, te trimit direct în pagina produsului)."
-        );
-      }
-
-      return jsonReply(replyLines.join("\n"));
-    }
-
-    // Deterministic helper for PVC Forex (doar dacă site-ul are configuratorul).
-    const forexUrl = cfgUrl("pvc-forex");
-    if (forexUrl && (explicit === "forex" || (explicit === "unknown" && extractForexIntent(userMessages)))) {
-      const dims = parseDimsCm(last.content) || parseDimsCm(convoText);
-      const qty = parseQty(last.content) || parseQty(convoText) || 1;
-      const thickness_mm = parseThicknessMm(last.content) || parseThicknessMm(convoText) || 3;
-
-      if (!dims) {
-        return jsonReply(
-          `Sigur. Pentru PVC Forex am nevoie de dimensiune (lățime×înălțime, cm) și cantitate.\n` +
-            `Ex: "100x200 cm, 1 buc, 3mm".\n` +
-            `Comandă aici: ${baseUrl}${forexUrl}`
-        );
-      }
-
-      const out = await executeTool(
-        "calculate_rigid_price",
-        {
-          material_type: "forex",
-          width_cm: dims.w,
-          height_cm: dims.h,
-          quantity: qty,
-          thickness_mm,
-          print_double: false,
-          design_pro: false,
-        },
-        { source: "web", identifier: "web" }
-      );
-
-      const total = (out as any)?.pret_total;
-      if (!total || total <= 0) {
-        return jsonReply(
-          `Nu am putut calcula corect prețul pentru PVC Forex. Verifică dimensiunile (max 305×205 cm) și grosimea (ex: 3mm).\n` +
-            `Comandă aici: ${baseUrl}${forexUrl}`
-        );
-      }
-
-      return jsonReply(
-        `PVC Forex ${thickness_mm}mm, ${dims.w}×${dims.h} cm, ${qty} buc: ${formatRon(total)}.\n` +
-          `Plasează comanda aici: ${baseUrl}${forexUrl}`
-      );
-    }
-
-    // Deterministic helper for Cărți de vizită (preț instant pe cantitate + opțiuni).
-    const cardsUrl = cfgUrl("carti-vizita");
-    if (
-      cardsUrl &&
-      (explicit === "carti_vizita" ||
-        (explicit === "unknown" && normalize(convoText).includes("carti") && normalize(convoText).includes("vizita")))
-    ) {
-      const qty = parseQty(last.content) || parseQty(convoText);
-      if (!qty) {
-        return jsonReply(
-          `Sigur. Spune-mi cantitatea pentru Cărți de vizită (minim 100).\n` +
-            `Ex: "Cărți de vizită, 100 buc, față-verso".\n` +
-            `Comandă aici: ${baseUrl}${cardsUrl}`
-        );
-      }
-
-      const res = calculateBusinessCardPrice({
-        type: "standard",
-        quantity: qty,
-        twoSided: true, // default on site is față/verso
-        roundedCorners: normalize(convoText).includes("rotunj"),
-        specialShape:
-          normalize(convoText).includes("decup") || normalize(convoText).includes("stanta"),
-        designOption: normalize(convoText).includes("design pro") ? "pro" : "upload",
-      } as any);
-
-      if (!res?.finalPrice || res.finalPrice <= 0) {
-        return jsonReply(
-          `Nu am putut calcula prețul pentru Cărți de vizită. Spune-mi cantitatea (minim 100) și dacă vrei față-verso.\n` +
-            `Comandă aici: ${baseUrl}${cardsUrl}`
-        );
-      }
-
-      return jsonReply(
-        `Cărți de vizită (standard), ${qty} buc: ${formatRon(res.finalPrice)}.\n` +
-          `Plasează comanda aici: ${baseUrl}${cardsUrl}`
-      );
-    }
-
-    const plexiUrl = cfgUrl("plexiglass");
-    if (
-      plexiUrl &&
-      (explicit === "plexiglass" || (explicit === "unknown" && extractPlexiglassIntent(userMessages))) &&
-      !extractForexIntent(userMessages)
-    ) {
-      const dims = parseDimsCm(last.content) || parseDimsCm(convoText);
-      const qty = parseQty(last.content) || parseQty(convoText) || 1;
-      const subtype = extractPlexiSubtype(userMessages);
-      const thickness_mm = parseThicknessMm(last.content) || parseThicknessMm(convoText) || 3;
-
-      if (!dims) {
-        return jsonReply(
-          `Sigur. Pentru Plexiglas am nevoie de dimensiune (lățime×înălțime, cm) și cantitate.\n` +
-            `Ex: "100x200 cm, 1 buc, transparent, 3mm".\n` +
-            `Comandă aici: ${baseUrl}${plexiUrl}`
-        );
-      }
-
-      const out = await executeTool(
-        "calculate_rigid_price",
-        {
-          material_type: "plexiglass",
-          width_cm: dims.w,
-          height_cm: dims.h,
-          quantity: qty,
-          thickness_mm,
-          subtype,
-          print_double: false,
-          design_pro: false,
-        },
-        { source: "web", identifier: "web" }
-      );
-
-      const total = (out as any)?.pret_total;
-      if (!total || total <= 0) {
-        return jsonReply(
-          `Nu am putut calcula corect prețul pentru Plexiglas. Verifică dimensiunile (max 400×200 cm) și grosimea (ex: 3mm).\n` +
-            `Comandă aici: ${baseUrl}${plexiUrl}`
-        );
-      }
-
-      return jsonReply(
-        `Plexiglas ${subtype} ${thickness_mm}mm, ${dims.w}×${dims.h} cm, ${qty} buc: ${formatRon(total)}.\n` +
-          `Plasează comanda aici: ${baseUrl}${plexiUrl}`
-      );
-    }
-
-    // Deterministic helper for Canvas framed: ensure framed_size is passed so price is never 0.
-    const canvasUrl = cfgUrl("canvas");
-    if (canvasUrl && extractCanvasIntent(userMessages)) {
-      const allText = userMessages.map((m) => m.content).join("\n");
-      const dims = parseDimsCm(last.content) || parseDimsCm(allText);
-      const qty = parseQty(last.content) || parseQty(allText) || 1;
-
-      if (dims && extractWantsFrame(userMessages)) {
-        // Tabelul de rame are cheile „40x60” (latura mică prima); acceptăm și „60x40”.
-        const framedKeys = new Set([
-          ...Object.keys(CANVAS_CONSTANTS.FRAMED_PRICES_RECTANGLE),
-          ...Object.keys(CANVAS_CONSTANTS.FRAMED_PRICES_SQUARE),
-        ]);
-        const framed_size = framedKeys.has(`${dims.w}x${dims.h}`)
-          ? `${dims.w}x${dims.h}`
-          : `${dims.h}x${dims.w}`;
-        const out = await executeTool(
-          "calculate_roll_print_price",
-          {
-            product_type: "canvas",
-            width_cm: dims.w,
-            height_cm: dims.h,
-            quantity: qty,
-            framed_size,
-            design_pro: false,
-          },
-          { source: "web", identifier: "web" }
-        );
-
-        if (!(out as any)?.pret_total) {
-          return jsonReply(
-            `Pentru canvas cu șasiu avem formate fixe: ${[...framedKeys].join(", ")} cm. Alege unul dintre ele și confirmă cantitatea (ex: \`1 buc\`), sau configurează aici: ${baseUrl}${canvasUrl}`
-          );
-        }
-
-        return jsonReply(
-          `Prețul pentru canvas cu șasiu ${dims.w}×${dims.h} cm (${qty} buc) este ${formatRon(
-            (out as any).pret_total
-          )}. Poți comanda aici: ${baseUrl}${canvasUrl}`
-        );
-      }
-    }
-
     // Deterministic handoff: never "we will contact you".
-    if (isOperatorIntent(last.content)) {
-      const bannerUrl = cfgUrl("banner");
-      const configuratorUrl =
-        extractBannerIntent(userMessages) && bannerUrl ? `${baseUrl}${bannerUrl}` : `${baseUrl}/`;
+    // Always return a direct WhatsApp link + relevant configurator links.
+    const prevAssistant = [...userMessages.slice(0, -1)].reverse().find((m) => m.role === "assistant")?.content ?? "";
+    if (isOperatorIntent(last.content, prevAssistant)) {
+      const base = baseUrl;
+      const isBanner = extractBannerIntent(userMessages);
+      const configuratorUrl = isBanner
+        ? `${base}/configurator/banner`
+        : `${base}/#configurator`;
 
       const waUrl = buildWhatsAppUrl(
-        `Bună! Vreau să discut cu un operator ${BRAND} pentru o comandă. (Mesaj trimis din chat-ul de pe site)`
+        `Bună! Vreau să discut cu un operator ${siteConfig.name} pentru o comandă. (Mesaj trimis din chat-ul de pe site)`
       );
 
       return jsonReply(
@@ -620,121 +347,16 @@ export async function POST(req: Request) {
       );
     }
 
-    const catalogLines = CONFIGURATORS_REGISTRY.map((c) => `- ${c.name}: ${baseUrl}${c.url}`).join("\n");
-
-    const system: ChatMsg = {
+    const system: OpenAI.Chat.Completions.ChatCompletionMessageParam = {
       role: "system",
-      content: [
-        `Ești asistentul ${BRAND} (${SITE_DOMAIN}), magazin online de print din România. Răspunzi în română, concis și pragmatic.`,
-        "Dacă utilizatorul cere prețuri pentru fototapet, canvas, autocolante, bannere sau materiale rigide, folosește TOOLS pentru calcul (fototapet = calculate_roll_print_price cu product_type \"tapet\").",
-        "Când îți lipsesc date (dimensiuni, cantitate, material), întreabă EXACT ce lipsește.",
-        "Nu inventa prețuri: orice preț vine DOAR din rezultatul unui tool. Dacă tool-ul returnează eroare, explică pe scurt și trimite linkul configuratorului.",
-        "Nu inventa fapte, recenzii, statistici, reduceri sau termene. Termenul de livrare este 2-4 zile lucrătoare în total (producția inclusă); nu promite alte termene.",
-        "Nu afirma nimic despre unde sau de cine se produce (fără „producție proprie”, „atelier propriu” sau „partener local”).",
-        "Nu poți plasa comenzi din chat: pentru comandă trimite linkul configuratorului potrivit din lista de mai jos.",
-        "NU cere numărul de telefon și NU promite că vei contacta utilizatorul.",
-        `La cererea de operator uman, oferă DIRECT un link WhatsApp (https://wa.me/${waPhoneE164(siteConfig.phone)}) + telefonul ${siteConfig.phone} + emailul ${siteConfig.email}.`,
-        "PENTRU CANVAS CU ȘASIU: include întotdeauna `framed_size` (ex: \"60x40\") când utilizatorul vrea șasiu (sau spune „cu ramă”).",
-        "Folosește doar linkurile din lista de mai jos (nu inventa alte adrese):",
-        catalogLines,
-      ].join("\n"),
+      content: buildSystemPrompt(baseUrl),
     };
 
-    const tools: OpenAI.Chat.Completions.ChatCompletionTool[] = [
-      {
-        type: "function",
-        function: {
-          name: "calculate_banner_price",
-          description: "Calculează preț pentru banner (frontlit 440/510 sau față-verso).",
-          parameters: {
-            type: "object",
-            additionalProperties: false,
-            properties: {
-              type: { type: "string", enum: ["single", "verso"] },
-              width_cm: { type: "number" },
-              height_cm: { type: "number" },
-              quantity: { type: "number" },
-              material: { type: "string", description: 'ex: "frontlit 440" sau "frontlit 510"' },
-              want_wind_holes: { type: "boolean" },
-            },
-            required: ["type", "width_cm", "height_cm", "quantity"],
-          },
-        },
-      },
-      {
-        type: "function",
-        function: {
-          name: "calculate_rigid_price",
-          description: "Calculează preț pentru materiale rigide (ex: plexiglass, forex, alucobond).",
-          parameters: {
-            type: "object",
-            additionalProperties: false,
-            properties: {
-              material_type: {
-                type: "string",
-                enum: ["plexiglass", "forex", "alucobond", "polipropilena", "carton"],
-              },
-              width_cm: { type: "number" },
-              height_cm: { type: "number" },
-              quantity: { type: "number" },
-              thickness_mm: { type: "number" },
-              print_double: { type: "boolean" },
-              color: { type: "string" },
-              subtype: { type: "string" },
-              design_pro: { type: "boolean" },
-            },
-            required: ["material_type", "width_cm", "height_cm", "quantity"],
-          },
-        },
-      },
-      {
-        type: "function",
-        function: {
-          name: "calculate_roll_print_price",
-          description: "Calculează preț pentru fototapet, canvas sau autocolant (roll print).",
-          parameters: {
-            type: "object",
-            additionalProperties: false,
-            properties: {
-              product_type: { type: "string", enum: ["tapet", "canvas", "autocolant"] },
-              width_cm: { type: "number" },
-              height_cm: { type: "number" },
-              quantity: { type: "number" },
-              framed_size: {
-                type: "string",
-                description: 'Doar canvas cu șasiu: ex "30x40" (cm), altfel omit.',
-              },
-              material_subtype: {
-                type: "string",
-                description:
-                  'Doar autocolant: "Economic" / "Transparent" / "Removabil" / "Auto" (sau cheile interne).',
-              },
-              design_pro: { type: "boolean" },
-              options: {
-                type: "object",
-                additionalProperties: true,
-                properties: {
-                  laminated: { type: "boolean" },
-                  transfer_film: { type: "boolean" },
-                  transfer: { type: "boolean" },
-                  diecut: { type: "boolean" },
-                  adhesive: { type: "boolean", description: "Doar tapet: varianta autoadezivă." },
-                },
-              },
-            },
-            required: ["product_type", "width_cm", "height_cm", "quantity"],
-          },
-        },
-      },
-    ];
-    // Doar uneltele de calcul de mai sus pot fi executate (fără create_order / generate_offer / căutări clienți).
-    const allowedTools = new Set(tools.map((t) => (t as any).function.name as string));
-
-    const context = { source: "web" as const, identifier: "web" };
-
+    const trimmed = userMessages.slice(-12);
+    // Prefix stabil (sistem + unelte) primul: OpenAI il refoloseste din cache automat (>= 1024 tokeni).
     const convo: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
       system,
-      ...userMessages.map((m) => ({ role: m.role, content: m.content }) as OpenAI.Chat.Completions.ChatCompletionMessageParam),
+      ...trimmed.map((m) => ({ role: m.role, content: m.content })),
     ];
 
     for (let hop = 0; hop < 4; hop++) {
@@ -743,8 +365,9 @@ export async function POST(req: Request) {
           model: CHAT_MODEL,
           ...chatOptions(CHAT_MODEL, { temperature: 0.2 }),
           messages: convo,
-          tools,
+          tools: CHAT_TOOLS,
           tool_choice: "auto",
+          prompt_cache_key: `${brandKey}-chat-v2`,
         })
       );
 
@@ -757,56 +380,55 @@ export async function POST(req: Request) {
         );
       }
 
+      // Always append assistant message (may contain tool_calls).
       convo.push(msg);
 
       if (!toolCalls?.length) {
-        return jsonReply(msg.content || "Nu am putut genera un răspuns.");
+        const content = msg.content || "Nu am putut genera un răspuns.";
+        return jsonReply(content);
       }
 
       for (const tc of toolCalls) {
-        const fn = (tc as any)?.function;
-        const fnName: string | undefined = fn?.name;
-        if (!fnName) continue;
-        let args: any = {};
+        if (tc.type !== "function") continue;
+        let args: Record<string, unknown> = {};
         try {
-          const rawArgs = typeof fn?.arguments === "string" ? fn.arguments : "";
-          args = rawArgs ? JSON.parse(rawArgs) : {};
+          const parsed = tc.function.arguments ? JSON.parse(tc.function.arguments) : {};
+          if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) args = parsed;
         } catch {
           args = {};
         }
-
+        let out: unknown;
         try {
-          const out = allowedTools.has(fnName)
-            ? await executeTool(fnName, args, context)
-            : { error: true, message: "Unealtă indisponibilă." };
-          convo.push({ role: "tool", tool_call_id: tc.id, content: JSON.stringify(out) });
+          out = runChatTool(tc.function.name, args, baseUrl);
         } catch (e: any) {
-          convo.push({
-            role: "tool",
-            tool_call_id: tc.id,
-            content: JSON.stringify({ error: true, message: e?.message ?? "Eroare la calcul." }),
-          });
+          out = { error: "Nu am putut calcula. Trimite clientul în configurator.", detail: String(e?.message ?? "").slice(0, 200) };
         }
+        convo.push({ role: "tool", tool_call_id: tc.id, content: JSON.stringify(out) });
       }
     }
 
     return jsonReply(
-      "Nu am reușit să calculez automat. Spune-mi produsul (fototapet/canvas/autocolant/banner), dimensiunile și cantitatea."
+      "Nu am reușit să calculez automat. Spune-mi produsul, dimensiunile și cantitatea sau deschide configuratorul produsului."
     );
   } catch (e: any) {
     if (faraCredite(e)) {
-      // Alerta de credite o trimite lib/aiUsage.ts (trackOpenAI), ca în shopprint.
     }
     const status = Number(e?.status) || Number(e?.response?.status) || 500;
-    const code = e?.code || e?.error?.code || e?.error?.type || e?.type || "unknown_error";
+    const code =
+      e?.code ||
+      e?.error?.code ||
+      e?.error?.type ||
+      e?.type ||
+      "unknown_error";
 
     if (status === 401 || code === "invalid_api_key") {
       return NextResponse.json(
         {
           error: "invalid_api_key",
-          message: "Cheia OpenAI nu este validă (401).",
+          message:
+            "Cheia OpenAI nu este validă (401). Generează o cheie nouă în contul OpenAI și pune-o în `.env` la `OPENAI_API_KEY`, apoi repornește `npm run dev`.",
           reply:
-            "Nu pot răspunde acum. Apasă „Operator (WhatsApp)” sau sună-ne și te ajutăm imediat.",
+            "Nu pot răspunde acum: cheia OpenAI este invalidă (401). Apasă „Operator (WhatsApp)” sau actualizează `OPENAI_API_KEY` și repornește serverul.",
         },
         { status: 401 }
       );
@@ -816,9 +438,11 @@ export async function POST(req: Request) {
       {
         error: code,
         message: e?.message ?? "Eroare internă.",
-        reply: "A apărut o eroare la asistent. Încearcă din nou sau apasă „Operator (WhatsApp)”.",
+        reply:
+          "A apărut o eroare la asistent. Încearcă din nou sau apasă „Operator (WhatsApp)”.",
       },
       { status: status >= 400 && status < 600 ? status : 500 }
     );
   }
 }
+
