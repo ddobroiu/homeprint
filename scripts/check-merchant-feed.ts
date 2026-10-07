@@ -171,7 +171,9 @@ async function main() {
                     String(it.price),
                 ]);
                 const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-                const found = [...forms].some((f) => new RegExp(`(^|[^\\d.,])${esc(f)}\\s*(lei|RON)`, "i").test(html));
+                const found = [...forms].some((f) => new RegExp(`(^|[^\\d.,])${esc(f)}\\s*(lei|RON)`, "i").test(html))
+                    // datele structurate ale paginii (prețul calculat de configurator la deschidere)
+                    || [it.price.toFixed(2), String(it.price)].some((f) => new RegExp(`"price"\\s*:\\s*"?${esc(f)}"?[,}]`).test(html));
                 if (res.status !== 200 || !found) {
                     liveBad++;
                     warnings.push(`live ${g}: ${u.pathname}${u.search} HTTP ${res.status}, prețul ${it.price} lei ${found ? "găsit" : "NEGĂSIT în HTML"}`);

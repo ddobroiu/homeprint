@@ -133,7 +133,8 @@ export const STOCK_BANNER_DEFAULTS = {
 
 /** Starea de pornire a paginii /banner-product/<slug>: formatul modelului, cu ?w= preselectat (varianta din feed). */
 export function stockBannerDefaultInput(slug = "", sp?: ParamSource | null): PriceInputBanner {
-    const width = (sp ? intParam(sp, "w") : null) ?? STOCK_BANNER_DEFAULTS.width;
+    // StockBannerConfigurator pornește la formatul modelului (lățime = raport × 100 cm), nu la 200 cm
+    const width = (sp ? intParam(sp, "w") : null) ?? stockBannerFormat(slug).width;
     return {
         width_cm: width,
         height_cm: width / stockBannerFormat(slug).ratio,
