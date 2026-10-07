@@ -18,13 +18,9 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ success: false, message: 'Parola trebuie să aibă minim 8 caractere.' }, { status: 400 });
         }
 
-        const existing = await prisma.user.findUnique({
-            where: {
-                email_source: {
-                    email,
-                    source: "HomePrint.ro"
-                }
-            }
+        const normalizedEmail = email.trim().toLowerCase();
+        const existing = await prisma.user.findFirst({
+            where: { email: { equals: normalizedEmail, mode: 'insensitive' }, source: { equals: 'HomePrint.ro', mode: 'insensitive' } }
         });
         if (existing) {
             return NextResponse.json({ success: false, message: 'Există deja un cont cu acest email pe HomePrint.' }, { status: 409 });
@@ -37,7 +33,7 @@ export async function POST(req: NextRequest) {
         // Assuming passwordHash based on prynt sync.
         const user = await prisma.user.create({
             data: {
-                email,
+                email: normalizedEmail,
                 source: "HomePrint.ro",
                 name: (typeof name === 'string' && name.trim()) ? name.trim() : undefined,
                 passwordHash,
@@ -49,6 +45,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ success: true });
 
     } catch (e: any) {
+        if (e?.code === 'P2002') return NextResponse.json({ success: false, message: 'Există deja un cont cu acest email.' }, { status: 409 });
         console.error('[register] error', e?.message || e);
         return NextResponse.json({ success: false, message: 'Eroare internă.' }, { status: 500 });
     }

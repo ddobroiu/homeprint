@@ -16,13 +16,13 @@ export function siteAuthAdapter(prisma: PrismaClient, source: string): Adapter {
         ...base,
         async createUser(data: Omit<AdapterUser, "id">) {
             const user = await prisma.user.create({
-                data: { email: data.email, name: data.name ?? null, image: data.image ?? null, emailVerified: data.emailVerified ?? null, source },
+                data: { email: data.email.trim().toLowerCase(), name: data.name ?? null, image: data.image ?? null, emailVerified: data.emailVerified ?? null, source },
             });
             return user as unknown as AdapterUser;
         },
         async getUserByEmail(email: string) {
             // Site-ul apare in baza scris diferit („tablou.net” / „Tablou.net”): cautam fara majuscule
-            const user = await prisma.user.findFirst({ where: { email, source: { equals: source, mode: "insensitive" } } });
+            const user = await prisma.user.findFirst({ where: { email: { equals: email.trim().toLowerCase(), mode: "insensitive" }, source: { equals: source, mode: "insensitive" } }, orderBy: { createdAt: "asc" } });
             return (user as unknown as AdapterUser) ?? null;
         },
         async getUserByAccount({ provider, providerAccountId }) {

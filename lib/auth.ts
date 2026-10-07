@@ -91,23 +91,14 @@ export const authOptions: NextAuthOptions = {
 
                 const source = credentials.source || siteConfig.domain;
 
-                const user = await prisma.user.findUnique({
-                    where: {
-                        email_source: {
-                            email: credentials.email,
-                            source: source
-                        }
-                    }
+                const users = await prisma.user.findMany({
+                    where: { email: { equals: credentials.email.trim().toLowerCase(), mode: 'insensitive' }, source: { equals: source, mode: 'insensitive' } },
+                    orderBy: { createdAt: 'asc' },
                 });
-
-                if (!user || !user.passwordHash) {
-                    return null;
+                for (const user of users) {
+                    if (user.passwordHash && await bcrypt.compare(credentials.password, user.passwordHash)) return user;
                 }
-
-                const isValid = await bcrypt.compare(credentials.password, user.passwordHash);
-                if (!isValid) return null;
-
-                return user;
+                return null;
             }
         })
     ],
