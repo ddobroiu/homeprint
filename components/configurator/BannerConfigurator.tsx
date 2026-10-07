@@ -6,6 +6,7 @@ import ConfiguratorContactOptions from "@/components/ConfiguratorContactOptions"
 import { NumberInput } from "./ui/NumberInput";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
 import MockupButton from "@/components/mockups/MockupButton";
+import { bannerSwitchHref, loadCarriedArtwork, saveCarriedArtwork } from "./bannerArtworkCarry";
 import React, { useMemo, useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { useCart } from "@/components/CartContext";
@@ -138,8 +139,10 @@ const MESH_GALLERY_IMAGES = [
     "/products/mesh/mesh_publicitar_tivcapse.jpg",
 ] as const;
 
-function BannerModeSwitchInline() {
+function BannerModeSwitchInline({ carryArtwork = false }: { carryArtwork?: boolean }) {
     const pathname = usePathname() || "";
+    // dimensiunile (si grafica incarcata) trec si pe celelalte tipuri de banner
+    const sp = useSearchParams();
     const isVerso = pathname.includes("banner-verso");
     const isMesh = pathname.includes("/mesh");
     const isBannerFacePath =
@@ -152,19 +155,19 @@ function BannerModeSwitchInline() {
     return (
         <div className="inline-flex flex-wrap gap-1 rounded-lg border border-gray-300 bg-white p-1 shadow-sm">
             <Link
-                href="/configurator/banner"
+                href={bannerSwitchHref("/configurator/banner", sp, carryArtwork)}
                 className={`px-3 sm:px-4 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all inline-flex items-center justify-center ${isFace ? "bg-amber-600 text-white shadow-md" : "text-gray-600 dark:text-gray-400 hover:bg-slate-50 dark:hover:bg-slate-800"}`}
             >
                 O față
             </Link>
             <Link
-                href="/configurator/banner-verso"
+                href={bannerSwitchHref("/configurator/banner-verso", sp, carryArtwork)}
                 className={`px-3 sm:px-4 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all inline-flex items-center justify-center ${isVerso ? "bg-amber-600 text-white shadow-md" : "text-gray-600 dark:text-gray-400 hover:bg-slate-50 dark:hover:bg-slate-800"}`}
             >
                 Față-verso
             </Link>
             <Link
-                href="/configurator/mesh"
+                href={bannerSwitchHref("/configurator/mesh", sp, carryArtwork)}
                 className={`px-3 sm:px-4 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all inline-flex items-center justify-center ${isMesh ? "bg-amber-600 text-white shadow-md" : "text-gray-600 dark:text-gray-400 hover:bg-slate-50 dark:hover:bg-slate-800"}`}
             >
                 Mesh
@@ -261,6 +264,12 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
     // Incadrarea graficii pe banner (pozitie, zoom) si pixelii imaginii, salvate in comanda
     const [artworkFit, setArtworkFit] = useState<ArtworkFit>(DEFAULT_FIT);
     const [artworkPx, setArtworkPx] = useState<{ w: number; h: number } | null>(null);
+    // grafica proprie / AI pe care o arata editorul de incadrare (la orice pas, ca sa se vada schimbarea de dimensiune)
+    const hasFitArtwork =
+        !!artworkUrl &&
+        ["upload", "ai_generate"].includes(input.designOption as string) &&
+        input.width_cm > 0 &&
+        input.height_cm > 0;
     // zona din stanga (galerie / editorul de incadrare): dupa upload o aducem in fata
     const previewRef = useRef<HTMLDivElement>(null);
     const showFitEditor = useCallback(() => {
@@ -323,6 +332,23 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
         }
     }, [productImage, initW, initH, intent, productKind]);
 
+    // Grafica adusa de pe alt tip de banner (O față / Față-verso / Mesh), cu incadrarea ei
+    useEffect(() => {
+        if (searchParams.get("art") !== "1" || productImage) return;
+        const carried = loadCarriedArtwork();
+        if (!carried) return;
+        setArtworkUrl(carried.url);
+        setActiveImage(carried.url);
+        setArtworkFit(carried.fit);
+        setInput((prev) => (["upload", "ai_generate"].includes(prev.designOption as string) ? prev : { ...prev, designOption: "upload" }));
+        setViewMode("gallery");
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    useEffect(() => {
+        if (hasFitArtwork) saveCarriedArtwork(artworkUrl, artworkFit);
+    }, [hasFitArtwork, artworkUrl, artworkFit]);
+
     // Email marketing hooks
     const [userEmail, setUserEmail] = useState<string>("");
 
@@ -364,7 +390,7 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
         // Actualizăm prețul doar dacă e număr valid
         if (!isNaN(num)) {
             updateInput(field, num);
-            if (num > 0) setViewMode('shape');
+            if (num > 0 && !hasFitArtwork) setViewMode('shape');
         } else if (v === "") {
             updateInput(field, 0);
         }
@@ -500,11 +526,6 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
     }, [galleryImages, viewMode, artworkUrl]);
 
     const canAdd = displayedTotal > 0 && input.width_cm > 0 && input.height_cm > 0;
-    const hasFitArtwork =
-        !!artworkUrl &&
-        ["upload", "ai_generate"].includes(input.designOption as string) &&
-        input.width_cm > 0 &&
-        input.height_cm > 0;
     const summaryStep1 = input.width_cm > 0 && input.height_cm > 0 ? `${input.width_cm}×${input.height_cm} cm, ${input.quantity} buc.` : "Alege dimensiuni";
     const summaryStep2 =
         productKind === "mesh"
@@ -551,9 +572,9 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
                                 </div>
                             )}
                             {/* ZONA IMAGINE / SCHIȚĂ */}
-                            <div className={`relative bg-white flex items-center justify-center aspect-square w-full`}>
+                            <div className={`relative bg-white flex items-center justify-center w-full ${viewMode === "gallery" && hasFitArtwork ? "" : "aspect-square"}`}>
                                 {viewMode === 'gallery' && (
-                                    <div className="relative w-full h-full flex items-center justify-center p-4">
+                                    <div className={`relative w-full flex items-center justify-center ${hasFitArtwork ? "p-3 sm:p-4" : "h-full p-4"}`}>
                                         {/* Dacă avem imagine de produs (predefinită), o afișăm direct */}
                                         {productImage ? (
                                             <Image 
@@ -574,7 +595,10 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
                                                     onChange={setArtworkFit}
                                                     onImageSize={setArtworkPx}
                                                     grommets={input.want_hem_and_grommets}
+                                                    windHoles={productKind !== "mesh" && input.want_wind_holes}
+                                                    mesh={productKind === "mesh"}
                                                     safeMarginCm={3}
+                                                    autoHeight
                                                 />
                                             ) : (
                                                 <Image 
@@ -664,7 +688,7 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
                                     <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white leading-tight">
                                         {productKind === "mesh" ? "Configurator Mesh" : "Configurator Banner"}
                                     </h2>
-                                    <BannerModeSwitchInline />
+                                    <BannerModeSwitchInline carryArtwork={hasFitArtwork} />
                                 </div>
                                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0">
                                     <p className="text-xs sm:text-base text-gray-600 dark:text-gray-400">Personalizează opțiunile în 3 pași simpli.</p>

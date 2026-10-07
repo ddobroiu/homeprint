@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo } from 'react';
+import { windHoleFractions } from './ArtworkFitEditor';
 
 type Props = {
     width: number;
@@ -129,6 +130,11 @@ export default function DynamicBannerPreview({
                                 </div>
                             </div>
                         </div>
+
+                        {/* Găuri de vânt (aceeași grilă ca în editorul de încadrare) */}
+                        {hasWindHoles && windHoleFractions(bannerW, bannerH).map((p, i) => (
+                            <div key={`wh${i}`} className="absolute z-20 w-[4%] min-w-2 max-w-4 aspect-[2/1] -translate-x-1/2 -translate-y-1/2 rounded-b-full border-2 border-t-0 border-zinc-600 bg-white/70" style={{ left: `${p.x * 100}%`, top: `${p.y * 100}%` }} />
+                        ))}
 
                         {/* Capse */}
                         {hasGrommets && grommets.map((style, i) => (

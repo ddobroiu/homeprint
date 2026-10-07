@@ -2,6 +2,7 @@
 import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect, useRef, useCallback } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
+import { bannerSwitchHref, loadCarriedArtwork, saveCarriedArtwork } from "./bannerArtworkCarry";
 import MockupButton from "@/components/mockups/MockupButton";
 import { useCart } from "@/components/CartContext";
 import { Plus, Minus, ShoppingCart, Info, ChevronDown, X, UploadCloud, Image as ImageIcon, Ruler, PlayCircle, TrendingUp, Percent, MessageCircle, PencilRuler } from "lucide-react";
@@ -80,8 +81,10 @@ const ProductTabs = ({ productSlug }: { productSlug: string }) => {
     );
 };
 
-function BannerModeSwitchInline() {
+function BannerModeSwitchInline({ carryArtwork = false }: { carryArtwork?: boolean }) {
     const pathname = usePathname() || "";
+    // dimensiunile (si grafica incarcata) trec si pe celelalte tipuri de banner
+    const sp = useSearchParams();
     const isVerso = pathname.includes("banner-verso");
     const isMesh = pathname.includes("/mesh");
     const isBannerFacePath =
@@ -94,19 +97,19 @@ function BannerModeSwitchInline() {
     return (
         <div className="inline-flex flex-wrap gap-1 rounded-lg border border-gray-300 bg-white p-1 shadow-sm">
             <Link
-                href="/configurator/banner"
+                href={bannerSwitchHref("/configurator/banner", sp, carryArtwork)}
                 className={`px-3 sm:px-4 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all inline-flex items-center justify-center ${isFace ? "bg-amber-600 text-white shadow-md" : "text-gray-600 dark:text-gray-400 hover:bg-slate-50 dark:hover:bg-slate-800"}`}
             >
                 O față
             </Link>
             <Link
-                href="/configurator/banner-verso"
+                href={bannerSwitchHref("/configurator/banner-verso", sp, carryArtwork)}
                 className={`px-3 sm:px-4 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all inline-flex items-center justify-center ${isVerso ? "bg-amber-600 text-white shadow-md" : "text-gray-600 dark:text-gray-400 hover:bg-slate-50 dark:hover:bg-slate-800"}`}
             >
                 Față-verso
             </Link>
             <Link
-                href="/configurator/mesh"
+                href={bannerSwitchHref("/configurator/mesh", sp, carryArtwork)}
                 className={`px-3 sm:px-4 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all inline-flex items-center justify-center ${isMesh ? "bg-amber-600 text-white shadow-md" : "text-gray-600 dark:text-gray-400 hover:bg-slate-50 dark:hover:bg-slate-800"}`}
             >
                 Mesh
@@ -237,11 +240,12 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
         if (side === 'front') setArtworkUrl(null); else setArtworkUrlVerso(null);
 
         if (!file) return;
-        setArtworkFit(DEFAULT_FIT);
-        setArtworkPx(null);
         try {
             const previewUrl = URL.createObjectURL(file);
             if (side === 'front' || input.same_graphic) {
+                // incadrarea tine de grafica fetei; o grafica de verso diferita nu o reseteaza
+                setArtworkFit(DEFAULT_FIT);
+                setArtworkPx(null);
                 setArtworkUrl(previewUrl);
                 showFitEditor();
             } else {
@@ -352,6 +356,22 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
         ["upload", "ai_generate"].includes(input.designOption as string) &&
         input.width_cm > 0 &&
         input.height_cm > 0;
+
+    // Grafica adusa de pe alt tip de banner (O față / Mesh), cu incadrarea ei
+    useEffect(() => {
+        if (searchParams.get("art") !== "1") return;
+        const carried = loadCarriedArtwork();
+        if (!carried) return;
+        setArtworkUrl(carried.url);
+        setArtworkFit(carried.fit);
+        setInput((prev) => (["upload", "ai_generate"].includes(prev.designOption as string) ? prev : { ...prev, designOption: "upload" }));
+        setViewMode("gallery");
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    useEffect(() => {
+        if (hasFitArtwork) saveCarriedArtwork(artworkUrl, artworkFit);
+    }, [hasFitArtwork, artworkUrl, artworkFit]);
     const summaryStep1 = input.width_cm > 0 && input.height_cm > 0 ? `${input.width_cm}x${input.height_cm}cm, ${input.quantity} buc.` : "Alege";
     const summaryStep2 = `Blockout, ${input.want_wind_holes ? "cu găuri" : "fără găuri"}`;
     const summaryStep3 = input.designOption === 'upload' ? `Grafică proprie (${input.same_graphic ? 'Identică' : 'Diferită'})` : input.designOption === 'text_only' ? `Doar text (${input.same_graphic ? 'Identic' : 'Diferit'})` : `Design Pro (${input.same_graphic ? 'Identic' : 'Diferit'})`;
@@ -421,10 +441,10 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
                                     </div>
                                 </div>
                             )}
-                            <div className="aspect-square relative bg-white">
+                            <div className={`relative bg-white ${viewMode === "gallery" && hasFitArtwork ? "" : "aspect-square"}`}>
                                 {viewMode === 'gallery' && (
                                     <>
-                                        <div className="h-full w-full flex items-center justify-center p-4">
+                                        <div className={`w-full flex items-center justify-center ${hasFitArtwork ? "p-3 sm:p-4" : "h-full p-4"}`}>
                                             {input.designOption === "upload" && artworkUrl && input.width_cm > 0 && input.height_cm > 0 ? (
                                                 <ArtworkFitEditor
                                                     widthCm={input.width_cm}
@@ -434,8 +454,10 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
                                                     onChange={setArtworkFit}
                                                     onImageSize={setArtworkPx}
                                                     grommets
+                                                    windHoles={input.want_wind_holes}
                                                     safeMarginCm={3}
                                                     viewingFactor={1.5}
+                                                    autoHeight
                                                 />
                                             ) : (
                                                 <img src={activeImage} alt="Banner Față-Verso" className="max-h-full max-w-full object-contain animate-in fade-in duration-300" />
@@ -487,7 +509,7 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
                         <header className="mb-6">
                             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
                                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white leading-tight">Configurator Banner Față-Verso</h2>
-                                <BannerModeSwitchInline />
+                                <BannerModeSwitchInline carryArtwork={hasFitArtwork} />
                             </div>
                             <div className="flex justify-between items-center">
                                 <p className="text-gray-600 dark:text-gray-400">Personalizează opțiunile în 3 pași simpli.</p>

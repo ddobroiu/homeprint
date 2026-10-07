@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { CheckCircle2, Crosshair, Info, Maximize2, Minimize2, Move } from "lucide-react";
+import { CheckCircle2, Crosshair, Info, Maximize2, Minimize2, Move, RotateCcw } from "lucide-react";
 
 // Editor de incadrare: clientul vede grafica exact la proportia comandata (ex. 300×140 cm),
 // o muta cu mouse-ul/degetul, face zoom si vede tivul, capsele, zona sigura si daca rezolutia
@@ -27,11 +27,20 @@ type Props = {
     onChange?: (fit: ArtworkFit) => void;
     // tiv si capse pe margine (banner), la ~50 cm
     grommets?: boolean;
+    // distanta dintre capse (cm), ca in Schita tehnica
+    grommetSpacingCm?: number;
+    // gauri de vant (semiluni taiate in banner)
+    windHoles?: boolean;
+    // material microperforat (mesh): se vede textura peste grafica
+    mesh?: boolean;
     // distanta de la margine in care nu se pune text important (tivul se indoaie aici)
     safeMarginCm?: number;
     // cat de departe e privit produsul, fata de diagonala lui (banner ~1.5; autocolant/plexi de aproape ~0.7)
     viewingFactor?: number;
     readOnly?: boolean;
+    // inaltimea zonei se potriveste proportiei (bannere late nu mai stau intr-un patrat gol);
+    // altfel editorul umple inaltimea data de parinte
+    autoHeight?: boolean;
     // se apeleaza cand se cunosc pixelii imaginii (pentru metadate)
     onImageSize?: (size: { w: number; h: number } | null) => void;
     // Macheta produsului (ex. tricoul in culoarea aleasa): zona de print se deseneaza pe ea.
@@ -40,6 +49,25 @@ type Props = {
 };
 
 const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
+const fmtCm = (v: number) => v.toLocaleString("ro-RO", { maximumFractionDigits: 1 });
+
+// Spatiul din jurul planșei: stanga si sus pentru cote
+const PAD = { l: 30, r: 12, t: 24, b: 12 };
+
+// Capsele pe o latura: in colturi si la distante egale de cel mult ~spacing cm (fractiuni 0..1)
+export function eyeletFractions(lengthCm: number, spacingCm = 50) {
+    const n = Math.max(1, Math.round(lengthCm / spacingCm));
+    return Array.from({ length: n + 1 }, (_, i) => i / n);
+}
+
+// Gaurile de vant: o grila rara (~ la 75 cm), departe de margini (fractiuni din latime / inaltime)
+export function windHoleFractions(widthCm: number, heightCm: number) {
+    const cols = Math.max(1, Math.round(widthCm / 75));
+    const rows = Math.max(1, Math.round(heightCm / 75));
+    const pts: { x: number; y: number }[] = [];
+    for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) pts.push({ x: (i + 0.5) / cols, y: (j + 0.5) / rows });
+    return pts;
+}
 
 // Cat de mare iese grafica tiparita si ce rezolutie are, pentru o incadrare data
 // Rezolutia de care e nevoie: produsul e privit de la ~viewingFactor × diagonala, iar ochiul
@@ -60,7 +88,7 @@ export function fitGeometry(widthCm: number, heightCm: number, img: { w: number;
 
 // Limitele deplasarii: in modul „umple” grafica nu are voie sa lase margini goale
 function clampFit(fit: ArtworkFit, widthCm: number, heightCm: number, img: { w: number; h: number } | null): ArtworkFit {
-    if (!img) return fit;
+    if (!img || !widthCm || !heightCm) return fit;
     const { printW, printH } = fitGeometry(widthCm, heightCm, img, fit);
     const maxX = Math.abs(printW - widthCm) / 2 / widthCm;
     const maxY = Math.abs(printH - heightCm) / 2 / heightCm;
@@ -74,9 +102,13 @@ export default function ArtworkFitEditor({
     fit,
     onChange,
     grommets = false,
+    grommetSpacingCm = 50,
+    windHoles = false,
+    mesh = false,
     safeMarginCm = 0,
     viewingFactor = 1.5,
     readOnly = false,
+    autoHeight = false,
     onImageSize,
     mockup,
 }: Props) {
@@ -86,6 +118,9 @@ export default function ArtworkFitEditor({
     const [failed, setFailed] = useState(false);
     const drag = useRef<{ px: number; py: number; x: number; y: number } | null>(null);
     const [mockupPx, setMockupPx] = useState<{ w: number; h: number } | null>(null);
+    // nota scurta dupa schimbarea dimensiunii
+    const [resizedNote, setResizedNote] = useState<string | null>(null);
+    const prevDims = useRef<{ w: number; h: number } | null>(null);
 
     useEffect(() => {
         setMockupPx(null);
@@ -116,12 +151,15 @@ export default function ArtworkFitEditor({
     useEffect(() => {
         const el = boxRef.current;
         if (!el) return;
-        const ro = new ResizeObserver(([e]) => setBox({ w: e.contentRect.width, h: e.contentRect.height }));
+        const ro = new ResizeObserver(([e]) => {
+            const w = Math.round(e.contentRect.width);
+            const h = Math.round(e.contentRect.height);
+            setBox((b) => (b.w === w && b.h === h ? b : { w, h }));
+        });
         ro.observe(el);
         return () => ro.disconnect();
-    }, []);
+    }, [failed]);
 
-    // Suprafata tiparita, incadrata in spatiul disponibil
     // Macheta (daca exista): cat ocupa poza produsului in spatiul disponibil
     const mock = useMemo(() => {
         if (!mockup || !mockupPx || !box.w) return null;
@@ -132,6 +170,7 @@ export default function ArtworkFitEditor({
         return { w, h, left: (box.w - w) / 2, top: (maxH - h) / 2 };
     }, [mockup, mockupPx, box]);
 
+    // Suprafata tiparita, incadrata in spatiul disponibil (cu loc pentru cote), la proportia reala
     const frame = useMemo(() => {
         if (!box.w || !widthCm || !heightCm) return null;
         if (mockup) {
@@ -143,25 +182,53 @@ export default function ArtworkFitEditor({
                 w, h: heightCm * scale, pxPerCm: scale,
                 left: mock.left + mockup.area.x * mock.w - w / 2,
                 top: mock.top + mockup.area.y * mock.h,
+                boxH: null as number | null,
             };
         }
-        const maxH = Math.max(box.h, 220);
-        const scale = Math.min((box.w - 48) / widthCm, (maxH - 48) / heightCm);
-        return { w: widthCm * scale, h: heightCm * scale, pxPerCm: scale, left: null as number | null, top: null as number | null };
-    }, [box, widthCm, heightCm, mockup, mock]);
+        const availW = Math.max(40, box.w - PAD.l - PAD.r);
+        // autoHeight: cel mult un patrat (si nu mai inalt decat ~640 px); altfel inaltimea data de parinte
+        const maxH = autoHeight ? Math.min(Math.max(box.w, 240), 640) : Math.max(box.h, 220);
+        const availH = Math.max(40, maxH - PAD.t - PAD.b);
+        const scale = Math.min(availW / widthCm, availH / heightCm);
+        const w = widthCm * scale;
+        const h = heightCm * scale;
+        const boxH = autoHeight ? Math.max(180, Math.ceil(h + PAD.t + PAD.b)) : maxH;
+        return {
+            w, h, pxPerCm: scale,
+            left: PAD.l + (availW - w) / 2,
+            top: PAD.t + (boxH - PAD.t - PAD.b - h) / 2,
+            boxH: autoHeight ? boxH : null,
+        };
+    }, [box, widthCm, heightCm, mockup, mock, autoHeight]);
 
     const set = useCallback(
-        (next: ArtworkFit) => onChange?.(clampFit(next, widthCm, heightCm, img)),
+        (next: ArtworkFit) => {
+            setResizedNote(null);
+            onChange?.(clampFit(next, widthCm, heightCm, img));
+        },
         [onChange, widthCm, heightCm, img],
     );
 
-    // Daca se schimba dimensiunea, pastram incadrarea in limite
+    // Daca se schimba dimensiunea: pastram modul si zoom-ul, deplasarea ramane in limite, anuntam discret
     useEffect(() => {
-        if (!img || readOnly) return;
+        if (!img || readOnly || !widthCm || !heightCm) return;
+        const prev = prevDims.current;
+        prevDims.current = { w: widthCm, h: heightCm };
         const c = clampFit(fit, widthCm, heightCm, img);
         if (c.x !== fit.x || c.y !== fit.y) onChange?.(c);
+        if (prev && (prev.w !== widthCm || prev.h !== heightCm)) {
+            setResizedNote(
+                `Dimensiune nouă: ${fmtCm(widthCm)}×${fmtCm(heightCm)} cm. Grafica s-a reașezat (${fit.mode === "cover" ? "Umple" : "Încadrează"}${fit.zoom > 1.001 ? `, zoom ${Math.round(fit.zoom * 100)}%` : ""}); verifică poziția.`,
+            );
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [widthCm, heightCm, img]);
+
+    useEffect(() => {
+        if (!resizedNote) return;
+        const t = setTimeout(() => setResizedNote(null), 9000);
+        return () => clearTimeout(t);
+    }, [resizedNote]);
 
     const geo = img && widthCm && heightCm ? fitGeometry(widthCm, heightCm, img, fit) : null;
     const need = neededDpi(widthCm, heightCm, viewingFactor);
@@ -169,7 +236,7 @@ export default function ArtworkFitEditor({
     // Doar informam, discret: majoritatea pozelor arata bine la distanta de la care se vede produsul.
     // Nota apare doar la imaginile cu adevarat mici (sub un sfert din ce distinge ochiul).
     const quality = !geo ? null : geo.dpi >= need.dpi * 0.6 ? "good" : geo.dpi >= need.dpi * 0.25 ? "ok" : "low";
-    const dist = need.distanceM >= 1 ? `${need.distanceM.toLocaleString("ro-RO", { maximumFractionDigits: 1 })} m` : `${Math.round(need.distanceM * 100)} cm`;
+    const sizeLabel = `${fmtCm(widthCm)}×${fmtCm(heightCm)} cm`;
 
     const onPointerDown = (e: React.PointerEvent) => {
         if (readOnly || !frame) return;
@@ -185,25 +252,28 @@ export default function ArtworkFitEditor({
         drag.current = null;
     };
 
-    // Capsele: in colturi si cam la fiecare 50 cm pe fiecare latura
-    const eyelets = useMemo(() => {
-        if (!grommets || !frame) return [];
-        const inset = 2.5 * frame.pxPerCm;
-        const pts: { x: number; y: number }[] = [];
-        const along = (len: number) => {
-            const n = Math.max(1, Math.round(len / 50));
-            return Array.from({ length: n + 1 }, (_, i) => i / n);
-        };
-        for (const t of along(widthCm)) {
-            const x = inset + t * (frame.w - 2 * inset);
-            pts.push({ x, y: inset }, { x, y: frame.h - inset });
+    // Finisajele desenate pe planșă (in px): tiv, capse, gauri de vant
+    const marks = useMemo(() => {
+        if (!frame) return null;
+        const k = frame.pxPerCm;
+        const hem = grommets ? clamp(3 * k, 3, 14) : 0;
+        const r = clamp(1.2 * k, 3.5, 7);
+        const inset = Math.max(2.5 * k, r + 1.5);
+        const eyelets: { x: number; y: number }[] = [];
+        if (grommets) {
+            for (const t of eyeletFractions(widthCm, grommetSpacingCm)) {
+                const x = inset + t * (frame.w - 2 * inset);
+                eyelets.push({ x, y: inset }, { x, y: frame.h - inset });
+            }
+            for (const t of eyeletFractions(heightCm, grommetSpacingCm).slice(1, -1)) {
+                const y = inset + t * (frame.h - 2 * inset);
+                eyelets.push({ x: inset, y }, { x: frame.w - inset, y });
+            }
         }
-        for (const t of along(heightCm).slice(1, -1)) {
-            const y = inset + t * (frame.h - 2 * inset);
-            pts.push({ x: inset, y }, { x: frame.w - inset, y });
-        }
-        return pts;
-    }, [grommets, frame, widthCm, heightCm]);
+        const s = clamp(8 * k, 9, 18);
+        const holes = windHoles ? windHoleFractions(widthCm, heightCm).map((p) => ({ x: p.x * frame.w, y: p.y * frame.h })) : [];
+        return { hem, r, eyelets, holes, s };
+    }, [frame, grommets, grommetSpacingCm, windHoles, widthCm, heightCm]);
 
     if (failed) {
         return (
@@ -224,15 +294,22 @@ export default function ArtworkFitEditor({
         }
         : null;
 
+    const showLegend = !readOnly && !mockup && !!frame && (grommets || windHoles || safeMarginCm > 0);
+
     return (
-        <div className="flex h-full w-full flex-col gap-3">
-            <div ref={boxRef} className={`relative flex min-h-60 flex-1 items-center justify-center overflow-hidden rounded-xl ${mockup ? "bg-white" : "bg-[repeating-conic-gradient(#f1f5f9_0_25%,#fff_0_50%)] bg-[length:16px_16px]"}`}>
+        <div className={`flex w-full flex-col gap-3 ${autoHeight ? "" : "h-full"}`}>
+            <div
+                ref={boxRef}
+                className={`relative w-full overflow-hidden rounded-xl ${autoHeight ? "" : "min-h-60 flex-1"} ${mockup ? "bg-white" : "bg-[repeating-conic-gradient(#f1f5f9_0_25%,#fff_0_50%)] bg-[length:16px_16px]"}`}
+                style={frame?.boxH ? { height: frame.boxH } : autoHeight ? { minHeight: 180 } : undefined}
+                data-artboard-size={`${widthCm}x${heightCm}`}
+            >
                 {mockup && mock && (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={mockup.src} alt="" draggable={false} className="pointer-events-none absolute select-none" style={{ left: mock.left, top: mock.top, width: mock.w, height: mock.h }} />
                 )}
                 {frame && (
-                    <div className={frame.left === null ? "relative" : "absolute"} style={{ width: frame.w, height: frame.h, ...(frame.left !== null && { left: frame.left, top: frame.top ?? 0 }) }}>
+                    <div className="absolute" style={{ width: frame.w, height: frame.h, left: frame.left, top: frame.top }} data-artboard>
                         {/* suprafata tiparita */}
                         <div
                             className={`absolute inset-0 overflow-hidden ${mockup ? "outline-dashed outline-1 outline-offset-0 outline-emerald-500/80" : "bg-white shadow-lg ring-1 ring-slate-300"} ${readOnly ? "" : "cursor-grab active:cursor-grabbing"} touch-none select-none`}
@@ -245,44 +322,87 @@ export default function ArtworkFitEditor({
                                 // eslint-disable-next-line @next/next/no-img-element
                                 <img src={imageUrl} alt="Grafica ta" draggable={false} className="pointer-events-none absolute max-w-none" style={imgStyle} />
                             )}
+                            {mesh && (
+                                <div
+                                    className="pointer-events-none absolute inset-0 opacity-40"
+                                    style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.9) 0.9px, transparent 1.1px)", backgroundSize: "4px 4px" }}
+                                    title="Mesh microperforat"
+                                />
+                            )}
                             {/* zona sigura */}
                             {safeMarginCm > 0 && (
                                 <div
                                     className="pointer-events-none absolute border border-dashed border-sky-500/80"
-                                    style={{ inset: safeMarginCm * frame.pxPerCm }}
+                                    style={{ inset: Math.max(safeMarginCm * frame.pxPerCm, (marks?.hem ?? 0) + 2) }}
                                     title="Linia punctată: marginea până la care e bine să stea textul (tivul / tăietura)"
                                 />
                             )}
-                            {eyelets.map((p, i) => (
-                                <span
-                                    key={i}
-                                    className="pointer-events-none absolute size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-slate-500 bg-white/90"
-                                    style={{ left: p.x, top: p.y }}
-                                />
-                            ))}
+                            {marks && (marks.hem > 0 || marks.eyelets.length > 0 || marks.holes.length > 0) && (
+                                <svg className="pointer-events-none absolute inset-0" width={frame.w} height={frame.h} aria-hidden="true">
+                                    {marks.hem > 0 && (
+                                        <>
+                                            {/* tivul: banda indoita pe margine + cusatura */}
+                                            <rect x={marks.hem / 2} y={marks.hem / 2} width={frame.w - marks.hem} height={frame.h - marks.hem}
+                                                fill="none" stroke="rgba(15,23,42,0.16)" strokeWidth={marks.hem} />
+                                            <rect x={marks.hem} y={marks.hem} width={frame.w - 2 * marks.hem} height={frame.h - 2 * marks.hem}
+                                                fill="none" stroke="rgba(255,255,255,0.85)" strokeWidth={1} strokeDasharray="4 3" />
+                                            <rect x={marks.hem + 0.5} y={marks.hem + 0.5} width={frame.w - 2 * marks.hem - 1} height={frame.h - 2 * marks.hem - 1}
+                                                fill="none" stroke="rgba(15,23,42,0.45)" strokeWidth={0.75} strokeDasharray="4 3" />
+                                        </>
+                                    )}
+                                    {marks.holes.map((p, i) => (
+                                        // gaura de vant: semiluna taiata
+                                        <path key={`w${i}`} data-wind-hole
+                                            d={`M ${p.x - marks.s / 2} ${p.y - marks.s / 5} A ${marks.s / 2} ${marks.s / 2} 0 0 0 ${p.x + marks.s / 2} ${p.y - marks.s / 5}`}
+                                            fill="rgba(255,255,255,0.75)" stroke="#334155" strokeWidth={1.5} strokeLinecap="round" />
+                                    ))}
+                                    {marks.eyelets.map((p, i) => (
+                                        <g key={`e${i}`} data-eyelet>
+                                            <circle cx={p.x} cy={p.y} r={marks.r} fill="#e2e8f0" stroke="#334155" strokeWidth={1} />
+                                            <circle cx={p.x} cy={p.y} r={marks.r * 0.48} fill="#ffffff" stroke="#64748b" strokeWidth={0.75} />
+                                        </g>
+                                    ))}
+                                </svg>
+                            )}
                         </div>
                         {/* cotele */}
-                        <span className="absolute -top-5 left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] font-medium text-slate-500">{mockup?.label ? `${mockup.label}: ` : ""}{widthCm} cm</span>
-                        <span className="absolute -left-2 top-1/2 -translate-x-full -translate-y-1/2 text-[11px] font-medium text-slate-500">{heightCm} cm</span>
+                        {!mockup && (
+                            <>
+                                <span className="pointer-events-none absolute -top-3 left-0 right-0 border-x border-t border-slate-400/70" style={{ height: 6 }} />
+                                <span className="pointer-events-none absolute -left-3 top-0 bottom-0 border-y border-l border-slate-400/70" style={{ width: 6 }} />
+                            </>
+                        )}
+                        <span data-dim="w" className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-white/90 px-1 text-[11px] font-medium leading-4 text-slate-600">{mockup?.label ? `${mockup.label}: ` : ""}{fmtCm(widthCm)} cm</span>
+                        <span data-dim="h" className="absolute top-1/2 whitespace-nowrap rounded bg-white/90 px-1 text-[11px] font-medium leading-4 text-slate-600"
+                            style={{ left: mockup ? -6 : -20, transform: "translate(-50%, -50%) rotate(-90deg)" }}>
+                            {fmtCm(heightCm)} cm
+                        </span>
                     </div>
                 )}
-                {!readOnly && img && (
-                    <span className="pointer-events-none absolute bottom-2 left-2 inline-flex items-center gap-1 rounded-md bg-white/90 px-2 py-1 text-[11px] text-slate-600 shadow-sm">
-                        <Move size={12} /> Trage imaginea ca s-o poziționezi
-                    </span>
-                )}
             </div>
+
+            {resizedNote && (
+                <p className="flex items-start gap-1.5 rounded-lg bg-amber-50 px-2.5 py-1.5 text-xs text-amber-900" role="status">
+                    <Info size={14} className="mt-px shrink-0" />
+                    <span className="flex-1">{resizedNote}</span>
+                    <button type="button" onClick={() => set({ ...fit, zoom: 1, x: 0, y: 0 })} className="inline-flex shrink-0 items-center gap-1 font-semibold underline-offset-2 hover:underline">
+                        <RotateCcw size={12} /> Resetează
+                    </button>
+                </p>
+            )}
 
             {!readOnly && img && (
                 <div className="flex flex-wrap items-center gap-2">
                     <div className="flex rounded-lg border border-slate-200 bg-white p-0.5">
                         <button type="button" onClick={() => set({ ...fit, mode: "cover", zoom: 1, x: 0, y: 0 })}
-                            className={`inline-flex items-center gap-1 rounded-md px-2.5 py-1 text-xs font-medium ${fit.mode === "cover" ? "bg-slate-900 text-white" : "text-slate-600 hover:bg-slate-50"}`}
+                            aria-pressed={fit.mode === "cover"}
+                            className={`inline-flex items-center gap-1 rounded-md px-2.5 py-1 text-xs font-medium ${fit.mode === "cover" ? "bg-emerald-600 text-white shadow-sm" : "text-slate-600 hover:bg-slate-50"}`}
                             title="Grafica umple toată suprafața; ce iese în afară se taie">
                             <Maximize2 size={13} /> Umple
                         </button>
                         <button type="button" onClick={() => set({ ...fit, mode: "contain", zoom: 1, x: 0, y: 0 })}
-                            className={`inline-flex items-center gap-1 rounded-md px-2.5 py-1 text-xs font-medium ${fit.mode === "contain" ? "bg-slate-900 text-white" : "text-slate-600 hover:bg-slate-50"}`}
+                            aria-pressed={fit.mode === "contain"}
+                            className={`inline-flex items-center gap-1 rounded-md px-2.5 py-1 text-xs font-medium ${fit.mode === "contain" ? "bg-emerald-600 text-white shadow-sm" : "text-slate-600 hover:bg-slate-50"}`}
                             title="Toată grafica se vede; rămân margini albe">
                             <Minimize2 size={13} /> Încadrează
                         </button>
@@ -301,13 +421,22 @@ export default function ArtworkFitEditor({
                 </div>
             )}
 
+            {(showLegend || (!readOnly && !!img)) && (
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-slate-500">
+                    {!readOnly && img && <span className="inline-flex items-center gap-1"><Move size={12} /> Trage imaginea ca s-o poziționezi</span>}
+                    {grommets && !mockup && <span className="inline-flex items-center gap-1"><span className="inline-block size-2.5 rounded-full border-2 border-slate-600 bg-white" /> capse la ~{grommetSpacingCm} cm, tiv pe margine</span>}
+                    {windHoles && !mockup && <span className="inline-flex items-center gap-1"><span className="inline-block h-1.5 w-2.5 rounded-b-full border-2 border-t-0 border-slate-600" /> găuri de vânt</span>}
+                    {safeMarginCm > 0 && !mockup && <span className="inline-flex items-center gap-1"><span className="inline-block w-3 border-t border-dashed border-sky-500" /> zonă sigură {fmtCm(safeMarginCm)} cm</span>}
+                </div>
+            )}
+
             {geo && quality && (
-                <p className={`flex items-start gap-1.5 text-xs ${quality === "low" ? "text-slate-600" : "text-emerald-700"}`}>
+                <p className={`flex items-start gap-1.5 text-xs ${quality === "low" ? "text-slate-600" : "text-emerald-700"}`} data-dpi-note>
                     {quality === "low" ? <Info size={14} className="mt-px shrink-0 text-slate-400" /> : <CheckCircle2 size={14} className="mt-px shrink-0" />}
                     <span>
-                        {quality === "good" && <>Calitate foarte bună pentru {widthCm}×{heightCm} cm.</>}
-                        {quality === "ok" && <>Calitate bună pentru {widthCm}×{heightCm} cm, privit de la distanță.</>}
-                        {quality === "low" && <>Imaginea are rezoluție mică pentru {widthCm}×{heightCm} cm. Dacă ai o variantă mai mare, o poți încărca; altfel o verificăm noi înainte de tipar.</>}
+                        {quality === "good" && <>Calitate foarte bună pentru {sizeLabel}.</>}
+                        {quality === "ok" && <>Calitate bună pentru {sizeLabel}, privit de la distanță.</>}
+                        {quality === "low" && <>Imaginea are rezoluție mică pentru {sizeLabel}. Dacă ai o variantă mai mare, o poți încărca; altfel o verificăm noi înainte de tipar.</>}
                     </span>
                 </p>
             )}
@@ -318,13 +447,15 @@ export default function ArtworkFitEditor({
 // Ce se salveaza in comanda: descrierea pentru atelier (in cm) + datele exacte pentru admin
 export function fitMetadata(widthCm: number, heightCm: number, img: { w: number; h: number } | null, fit: ArtworkFit) {
     if (!img || !widthCm || !heightCm) return {};
-    const g = fitGeometry(widthCm, heightCm, img, fit);
-    const dx = Math.round(fit.x * widthCm);
-    const dy = Math.round(fit.y * heightCm);
+    // incadrarea se recalculeaza pentru dimensiunea finala (in limite, ca in editor)
+    const f = clampFit(fit, widthCm, heightCm, img);
+    const g = fitGeometry(widthCm, heightCm, img, f);
+    const dx = Math.round(f.x * widthCm);
+    const dy = Math.round(f.y * heightCm);
     const pos = dx === 0 && dy === 0 ? "centrată" : `mutată ${dx > 0 ? `${dx} cm la dreapta` : dx < 0 ? `${-dx} cm la stânga` : ""}${dx && dy ? ", " : ""}${dy > 0 ? `${dy} cm în jos` : dy < 0 ? `${-dy} cm în sus` : ""}`;
     return {
-        "Încadrare": `${fit.mode === "cover" ? "umple suprafața" : "încadrată cu margini albe"}, grafica ${Math.round(g.printW)}×${Math.round(g.printH)} cm, ${pos}`,
+        "Încadrare": `${f.mode === "cover" ? "umple suprafața" : "încadrată cu margini albe"}, grafica ${Math.round(g.printW)}×${Math.round(g.printH)} cm pe ${fmtCm(widthCm)}×${fmtCm(heightCm)} cm, ${pos}`,
         "Rezoluție": `${Math.round(g.dpi)} dpi (${img.w}×${img.h} px)`,
-        artworkFit: JSON.stringify({ ...fit, imgW: img.w, imgH: img.h }),
+        artworkFit: JSON.stringify({ ...f, imgW: img.w, imgH: img.h, widthCm, heightCm }),
     };
 }
