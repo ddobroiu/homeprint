@@ -5,7 +5,8 @@ import ConfiguratorContactOptions from "@/components/ConfiguratorContactOptions"
 
 import { NumberInput } from "./ui/NumberInput";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
-import React, { useMemo, useState, useEffect, useCallback } from "react";
+import MockupButton from "@/components/mockups/MockupButton";
+import React, { useMemo, useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { useCart } from "@/components/CartContext";
 import { useToast } from "@/components/ToastProvider";
@@ -223,8 +224,8 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
         const isMesh = productKind === "mesh";
 
         return {
-            width_cm: pW ? parseFloat(pW) : (initW ?? 0),
-            height_cm: pH ? parseFloat(pH) : (initH ?? 0),
+            width_cm: pW ? parseFloat(pW) : (initW || 200), // fara dimensiuni: 200 × 100 cm, ca placeholderele
+            height_cm: pH ? parseFloat(pH) : (initH || 100),
             quantity: pQ ? parseInt(pQ) : 1,
             material: isMesh ? "mesh" : pMat === "510" ? "frontlit_510" : "frontlit_440",
             want_wind_holes: isMesh ? false : pWind === "1",
@@ -260,6 +261,17 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
     // Incadrarea graficii pe banner (pozitie, zoom) si pixelii imaginii, salvate in comanda
     const [artworkFit, setArtworkFit] = useState<ArtworkFit>(DEFAULT_FIT);
     const [artworkPx, setArtworkPx] = useState<{ w: number; h: number } | null>(null);
+    // zona din stanga (galerie / editorul de incadrare): dupa upload o aducem in fata
+    const previewRef = useRef<HTMLDivElement>(null);
+    const showFitEditor = useCallback(() => {
+        setViewMode("gallery");
+        requestAnimationFrame(() => {
+            const el = previewRef.current;
+            if (!el) return;
+            const r = el.getBoundingClientRect();
+            if (r.top < 90 || r.top > window.innerHeight * 0.5) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    }, []);
     const [uploading, setUploading] = useState(false);
     const [uploadError, setUploadError] = useState<string | null>(null);
 
@@ -410,7 +422,7 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
         try {
             const previewUrl = URL.createObjectURL(file);
             setArtworkUrl(previewUrl);
-            setViewMode('gallery');
+            showFitEditor();
             setUploading(true);
             const form = new FormData();
             form.append("file", file);
@@ -488,6 +500,11 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
     }, [galleryImages, viewMode, artworkUrl]);
 
     const canAdd = displayedTotal > 0 && input.width_cm > 0 && input.height_cm > 0;
+    const hasFitArtwork =
+        !!artworkUrl &&
+        ["upload", "ai_generate"].includes(input.designOption as string) &&
+        input.width_cm > 0 &&
+        input.height_cm > 0;
     const summaryStep1 = input.width_cm > 0 && input.height_cm > 0 ? `${input.width_cm}×${input.height_cm} cm, ${input.quantity} buc.` : "Alege dimensiuni";
     const summaryStep2 =
         productKind === "mesh"
@@ -503,7 +520,7 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
 
                     {/* STÂNGA - ZONA VIZUALĂ */}
                     <div className="lg:sticky top-24 h-max space-y-6 lg:space-y-8">
-                        <div className="bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-gray-200 dark:border-slate-800 overflow-hidden">
+                        <div ref={previewRef} className="scroll-mt-28 bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-gray-200 dark:border-slate-800 overflow-hidden">
 
 
                             {/* TABS VIEW MODE */}
@@ -513,7 +530,7 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
                                     className={`flex-1 py-3 min-w-20 text-sm font-medium flex items-center justify-center gap-2 transition-colors ${viewMode === 'gallery' ? 'text-amber-600 bg-amber-50 border-b-2 border-amber-600' : 'text-gray-500 hover:bg-slate-50 dark:bg-slate-800'}`}
                                 >
                                     <ImageIcon size={16} />
-                                    <span className="hidden sm:inline">Galerie</span>
+                                    <span className="hidden sm:inline">{hasFitArtwork ? "Grafica ta" : "Galerie"}</span>
                                 </button>
                                 <button
                                     onClick={() => setViewMode('shape')}
@@ -524,6 +541,15 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
                                 </button>
                             </div>
 
+                            {viewMode === "gallery" && hasFitArtwork && (
+                                <div className="flex items-start gap-2 border-b border-emerald-100 bg-emerald-50/70 px-4 py-2.5">
+                                    <PencilRuler size={18} className="mt-0.5 shrink-0 text-emerald-700" />
+                                    <div className="min-w-0">
+                                        <p className="text-sm font-bold text-emerald-900">Ajustează grafica</p>
+                                        <p className="text-xs leading-snug text-emerald-800/80">Trage grafica pentru a o muta, mărește-o sau alege umple / încadrează. Vezi tivul, capsele și zona sigură.</p>
+                                    </div>
+                                </div>
+                            )}
                             {/* ZONA IMAGINE / SCHIȚĂ */}
                             <div className={`relative bg-white flex items-center justify-center aspect-square w-full`}>
                                 {viewMode === 'gallery' && (
@@ -619,6 +645,15 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
                                 </div>
                             )}
                         </div>
+                        {hasFitArtwork && artworkUrl && (
+                            <div className="grid grid-cols-2 gap-2">
+                                <button type="button" onClick={showFitEditor} className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm font-bold text-slate-800 shadow-sm hover:bg-slate-50">
+                                    <PencilRuler size={16} />
+                                    Ajustează grafica
+                                </button>
+                                <MockupButton product={productKind} imageUrl={artworkUrl} widthCm={input.width_cm} heightCm={input.height_cm} fit={artworkFit} />
+                            </div>
+                        )}
                     </div>
 
                     {/* DREAPTA - CONFIGURATOR */}
@@ -833,6 +868,15 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
                                                     {uploading && <p className="text-sm text-amber-600">Se încarcă...</p>}
                                                     {uploadError && <p className="text-sm text-red-600">{uploadError}</p>}
                                                     {artworkUrl && !uploadError && <p className="text-sm text-green-600 font-semibold">Grafică încărcată cu succes!</p>}
+                                                    {hasFitArtwork && artworkUrl && (
+                                                        <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                                                            <button type="button" onClick={showFitEditor} className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-emerald-700">
+                                                                <PencilRuler size={16} />
+                                                                Ajustează grafica
+                                                            </button>
+                                                            <MockupButton product={productKind} imageUrl={artworkUrl} widthCm={input.width_cm} heightCm={input.height_cm} fit={artworkFit} />
+                                                        </div>
+                                                    )}
                                                 </div>
                                             )}
 

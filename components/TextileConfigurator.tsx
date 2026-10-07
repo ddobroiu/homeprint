@@ -4,6 +4,7 @@
 import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import { NumberInput } from "@/components/ui/NumberInput";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "@/components/configurator/ArtworkFitEditor";
+import MockupButton from "@/components/mockups/MockupButton";
 import { getTextileAiPrintDimensionsCm } from "@/lib/ai-product-dimensions";
 import React, { useMemo, useState, useEffect } from "react";
 import { useCart } from "@/components/CartContext";
@@ -707,6 +708,7 @@ export default function TextileConfigurator({ type, productSlug, productImage, r
                                             {uploading && <p className="text-sm text-amber-600">Se încarcă...</p>}
                                             {uploadError && <p className="text-sm text-red-600">{uploadError}</p>}
                                             {artworkUrl && !uploadError && <p className="text-sm text-green-600 font-semibold">Grafică încărcată cu succes!</p>}
+                                            {artworkUrl && <div className="mt-3"><MockupButton product={type} imageUrl={artworkUrl} widthCm={printZone.width} heightCm={printZone.height} /></div>}
                                         </div>
                                     )}
 

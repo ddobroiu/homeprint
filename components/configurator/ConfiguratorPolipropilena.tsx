@@ -6,6 +6,7 @@ import { configuratorInitialQuantity } from "@/lib/quickPrintPresets";
 
 import React, { useMemo, useState, useEffect } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
+import MockupButton from "@/components/mockups/MockupButton";
 import { useCart } from "@/components/CartContext";
 import { Plus, Minus, ShoppingCart, Info, ChevronDown, X, UploadCloud, MessageCircle, TrendingUp, Percent, PencilRuler } from "lucide-react";
 import Link from 'next/link';
@@ -297,6 +298,7 @@ export default function ConfiguratorPolipropilena({ initialWidth: initW, initial
                                             </label>
                                             {uploading && <p className="text-sm text-amber-600 mt-2">Se încarcă...</p>}
                                             {artworkUrl && <p className="text-sm text-amber-600 font-semibold mt-2">Fișier recepționat!</p>}
+                                            {artworkUrl && <div className="mt-3"><MockupButton product="polipropilena" imageUrl={artworkUrl} widthCm={input.width_cm} heightCm={input.height_cm} fit={artworkFit} /></div>}
                                         </div>
                                     )}
 

@@ -2,6 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
+import MockupButton from "@/components/mockups/MockupButton";
 import { uploadArtworkImage, browserImageUrl } from "@/lib/uploadArtworkImage";
 import { useCart } from "@/components/CartContext";
 import { ShoppingCart, Heart, Image as ImageIcon, Check, UploadCloud, MessageSquare } from "lucide-react";
@@ -207,6 +208,12 @@ export default function CanvasMartisorConfigurator({ productImage }: Props) {
                                 </div>
                             </AccordionStep>
                         </div>
+
+                        {artworkUrl && (
+                            <div className="mt-6">
+                                <MockupButton product="canvas" imageUrl={artworkUrl} widthCm={seasonDims[0]} heightCm={seasonDims[1]} fit={artworkFit} />
+                            </div>
+                        )}
 
                         {/* SUMAR PREȚ & ADD TO CART */}
                         <div className="bg-white rounded-3xl p-6 shadow-xl border border-red-50 sticky bottom-4 z-40">

@@ -1,7 +1,8 @@
 "use client";
 import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect, useRef, useCallback } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
+import MockupButton from "@/components/mockups/MockupButton";
 import { useCart } from "@/components/CartContext";
 import { Plus, Minus, ShoppingCart, Info, ChevronDown, X, UploadCloud, Image as ImageIcon, Ruler, PlayCircle, TrendingUp, Percent, MessageCircle, PencilRuler } from "lucide-react";
 import DeliveryEstimation from "./DeliveryEstimation";
@@ -138,8 +139,8 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
         const pSame = searchParams.get("same");
 
         return {
-            width_cm: pW ? parseInt(pW) : (initW ?? 0),
-            height_cm: pH ? parseInt(pH) : (initH ?? 0),
+            width_cm: pW ? parseInt(pW) : (initW || 200), // fara dimensiuni: 200 × 100 cm, ca placeholderele
+            height_cm: pH ? parseInt(pH) : (initH || 100),
             quantity: pQ ? parseInt(pQ) : 1,
             want_wind_holes: pWind === '1',
             same_graphic: pSame !== '0',
@@ -165,6 +166,17 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
     const [artworkFit, setArtworkFit] = useState<ArtworkFit>(DEFAULT_FIT);
     const [artworkPx, setArtworkPx] = useState<{ w: number; h: number } | null>(null);
     const [artworkUrlVerso, setArtworkUrlVerso] = useState<string | null>(null);
+    // zona din stanga (galerie / editorul de incadrare): dupa upload o aducem in fata
+    const previewRef = useRef<HTMLDivElement>(null);
+    const showFitEditor = useCallback(() => {
+        setViewMode("gallery");
+        requestAnimationFrame(() => {
+            const el = previewRef.current;
+            if (!el) return;
+            const r = el.getBoundingClientRect();
+            if (r.top < 90 || r.top > window.innerHeight * 0.5) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    }, []);
     const [textDesign, setTextDesign] = useState<string | null>(null);
     const [textDesignVerso, setTextDesignVerso] = useState<string | null>(null);
     const [uploading, setUploading] = useState(false);
@@ -231,7 +243,7 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
             const previewUrl = URL.createObjectURL(file);
             if (side === 'front' || input.same_graphic) {
                 setArtworkUrl(previewUrl);
-                setViewMode('gallery');
+                showFitEditor();
             } else {
                 setArtworkUrlVerso(previewUrl);
             }
@@ -335,6 +347,11 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
     }, [activeIndex, galleryImages]);
 
     const canAdd = displayedTotal > 0 && input.width_cm > 0 && input.height_cm > 0;
+    const hasFitArtwork =
+        !!artworkUrl &&
+        ["upload", "ai_generate"].includes(input.designOption as string) &&
+        input.width_cm > 0 &&
+        input.height_cm > 0;
     const summaryStep1 = input.width_cm > 0 && input.height_cm > 0 ? `${input.width_cm}x${input.height_cm}cm, ${input.quantity} buc.` : "Alege";
     const summaryStep2 = `Blockout, ${input.want_wind_holes ? "cu găuri" : "fără găuri"}`;
     const summaryStep3 = input.designOption === 'upload' ? `Grafică proprie (${input.same_graphic ? 'Identică' : 'Diferită'})` : input.designOption === 'text_only' ? `Doar text (${input.same_graphic ? 'Identic' : 'Diferit'})` : `Design Pro (${input.same_graphic ? 'Identic' : 'Diferit'})`;
@@ -376,7 +393,7 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
 
                     {/* STÂNGA - ZONA VIZUALĂ */}
                     <div className="lg:sticky top-24 h-max space-y-8">
-                        <div className="bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-gray-200 dark:border-slate-800 overflow-hidden">
+                        <div ref={previewRef} className="scroll-mt-28 bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-gray-200 dark:border-slate-800 overflow-hidden">
 
                             <div className="flex border-b border-gray-100 overflow-x-auto">
                                 <button
@@ -384,7 +401,7 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
                                     className={`flex-1 py-3 min-w-20 text-sm font-medium flex items-center justify-center gap-2 transition-colors ${viewMode === 'gallery' ? 'text-slate-950 bg-amber-50 border-b-2 border-slate-950' : 'text-gray-500 hover:bg-slate-50 dark:bg-slate-800'}`}
                                 >
                                     <ImageIcon size={16} />
-                                    <span className="hidden sm:inline">Galerie</span>
+                                    <span className="hidden sm:inline">{hasFitArtwork ? "Grafica ta" : "Galerie"}</span>
                                 </button>
                                 <button
                                     onClick={() => setViewMode('shape')}
@@ -395,6 +412,15 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
                                 </button>
                             </div>
 
+                            {viewMode === "gallery" && hasFitArtwork && (
+                                <div className="flex items-start gap-2 border-b border-emerald-100 bg-emerald-50/70 px-4 py-2.5">
+                                    <PencilRuler size={18} className="mt-0.5 shrink-0 text-emerald-700" />
+                                    <div className="min-w-0">
+                                        <p className="text-sm font-bold text-emerald-900">Ajustează grafica{input.same_graphic ? "" : " (față)"}</p>
+                                        <p className="text-xs leading-snug text-emerald-800/80">Trage grafica pentru a o muta, mărește-o sau alege umple / încadrează. Vezi tivul, capsele și zona sigură.</p>
+                                    </div>
+                                </div>
+                            )}
                             <div className="aspect-square relative bg-white">
                                 {viewMode === 'gallery' && (
                                     <>
@@ -445,6 +471,15 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
                                 </div>
                             )}
                         </div>
+                        {hasFitArtwork && artworkUrl && (
+                            <div className="grid grid-cols-2 gap-2">
+                                <button type="button" onClick={showFitEditor} className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm font-bold text-slate-800 shadow-sm hover:bg-slate-50">
+                                    <PencilRuler size={16} />
+                                    Ajustează grafica
+                                </button>
+                                <MockupButton product="banner-verso" imageUrl={artworkUrl} widthCm={input.width_cm} heightCm={input.height_cm} fit={artworkFit} />
+                            </div>
+                        )}
                     </div>
 
                     {/* DREAPTA - CONFIGURATOR */}
@@ -560,6 +595,15 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
                                             {renderUploadSection('Față', artworkUrl, (f) => handleArtworkFileInput(f, 'front'))}
 
                                             {!input.same_graphic && renderUploadSection('Verso', artworkUrlVerso, (f) => handleArtworkFileInput(f, 'verso'))}
+                                            {hasFitArtwork && artworkUrl && (
+                                                <div className={`grid grid-cols-1 gap-2 sm:grid-cols-2 ${!input.same_graphic ? 'md:col-span-2' : ''}`}>
+                                                    <button type="button" onClick={showFitEditor} className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-emerald-700">
+                                                        <PencilRuler size={16} />
+                                                        Ajustează grafica
+                                                    </button>
+                                                    <MockupButton product="banner-verso" imageUrl={artworkUrl} widthCm={input.width_cm} heightCm={input.height_cm} fit={artworkFit} />
+                                                </div>
+                                            )}
 
                                         </div>
                                     )}

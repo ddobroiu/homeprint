@@ -22,6 +22,7 @@ import StartScreen, { FormatPicker, type FormatChoice } from "./StartScreen";
 import { useEditor, type Panel } from "./store";
 import ContextBar, { EffectsPanel } from "./ContextBar";
 import { IconBtn, Modal, Toggle, cx } from "./ui";
+import MockupButton from "@/components/mockups/MockupButton";
 import "./editor.css";
 import "./theme.css";
 import { EDITOR_BRAND } from "@/lib/editor/site";
@@ -342,6 +343,19 @@ export default function PrintEditor({ products, brand = DEFAULT_BRAND }: { produ
                         <Save className="h-4 w-4" /> <span className="hidden lg:inline">Salvează</span>
                     </button>
                 )}
+                <MockupButton
+                    product={doc.productId}
+                    widthCm={doc.wMm / 10}
+                    heightCm={doc.hMm / 10}
+                    label={isMobile ? "" : "Vezi pe produs"}
+                    className={cx("pe-btn pe-btn-secondary", isMobile ? "w-10 px-0" : "px-3")}
+                    getImageUrl={async () => {
+                        // planșa fără bleed, cât să arate bine în scenă (≈ 2,5 MP)
+                        const r = await renderDoc(doc, pickDpi(doc, 2_500_000, 150), { includeBleed: false });
+                        const blob: Blob = await new Promise((res, rej) => r.canvas.toBlob((b) => (b ? res(b) : rej(new Error("Randarea a eșuat."))), "image/png"));
+                        return URL.createObjectURL(blob);
+                    }}
+                />
                 <button type="button" onClick={() => setDialog("export")} className={cx("pe-btn pe-btn-secondary", isMobile ? "w-10 px-0" : "px-3")} title="Descarcă fișierul de tipar">
                     <Download className="h-4 w-4" /> {!isMobile && <span className="hidden sm:inline">Descarcă</span>}
                 </button>

@@ -5,6 +5,7 @@ import { configuratorInitialQuantity } from "@/lib/quickPrintPresets";
 
 import React, { useMemo, useState, useEffect } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
+import MockupButton from "@/components/mockups/MockupButton";
 import { useCart } from "@/components/CartContext";
 import { Ruler, Layers, Plus, Minus, ShoppingCart, Info, ChevronDown, X, UploadCloud, TrendingUp, Percent, MessageCircle, PencilRuler } from "lucide-react";
 import Link from 'next/link';
@@ -439,6 +440,7 @@ export default function AutocolanteConfigurator({ productSlug, initialWidth: ini
                                             {uploading && <p className="text-sm text-amber-600">Se încarcă...</p>}
                                             {uploadError && <p className="text-sm text-red-600">{uploadError}</p>}
                                             {artworkUrl && !uploadError && <p className="text-sm text-green-600 font-semibold">Grafică încărcată!</p>}
+                                            {artworkUrl && <div className="mt-3"><MockupButton product="autocolante" imageUrl={artworkUrl} widthCm={input.width_cm} heightCm={input.height_cm} fit={artworkFit} /></div>}
                                             
                                         </div>
                                     )}

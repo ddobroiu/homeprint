@@ -5,6 +5,7 @@ import { configuratorInitialQuantity } from "@/lib/quickPrintPresets";
 
 import React, { useMemo, useState, useEffect } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
+import MockupButton from "@/components/mockups/MockupButton";
 import { useCart } from "@/components/CartContext";
 import { Plus, Minus, ShoppingCart, Info, ChevronDown, X, UploadCloud, MessageCircle, TrendingUp, PencilRuler } from "lucide-react";
 import Link from 'next/link';
@@ -265,6 +266,7 @@ export default function PlianteConfigurator({ productImage }: { productImage?: s
                                             {uploading && <p className="text-sm text-amber-600 mt-2">Se încarcă...</p>}
                                             {uploadError && <p className="text-sm text-red-600 mt-2">{uploadError}</p>}
                                             {artworkUrl && !uploadError && <p className="text-sm text-green-600 font-semibold mt-2">Grafică încărcată!</p>}
+                                            {artworkUrl && <div className="mt-3"><MockupButton product="pliante" imageUrl={artworkUrl} widthCm={29.7} heightCm={21} fit={artworkFit} /></div>}
                                             
                                         </div>
                                     )}
