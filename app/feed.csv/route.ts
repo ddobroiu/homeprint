@@ -7,10 +7,10 @@ import {
     merchantDescription,
     merchantFeedTitle,
     merchantImageLink,
-    merchantPriceRON,
     merchantProductCanonicalLink,
     merchantStandardShippingOffer,
 } from '@/lib/merchantFeed';
+import { merchantFeedRows } from '@/lib/merchant/feedRows';
 import { googleProductCategoryId } from '@/lib/merchantGoogleCategory';
 
 export const dynamic = 'force-dynamic';
@@ -48,12 +48,8 @@ export async function GET() {
             return stringField;
         };
 
-        const rows = products
-            .map((product) => {
-                const priceNum = merchantPriceRON(product);
-                if (priceNum === null || priceNum <= 0) return null;
-
-                const link = merchantProductCanonicalLink(product, baseUrl);
+        const rows = merchantFeedRows(products, baseUrl, merchantProductCanonicalLink).rows
+            .map(({ product, link, price: priceNum }) => {
                 const imgs = product.images || [];
                 const imageLink = merchantImageLink(imgs[0], baseUrl);
                 const additionalImage =

@@ -8,10 +8,10 @@ import {
   merchantDescription,
   merchantFeedTitle,
   merchantImageLink,
-  merchantPriceRON,
   merchantProductCanonicalLink,
   merchantStandardShippingOffer,
 } from '@/lib/merchantFeed';
+import { merchantFeedRows, type MerchantFeedRow } from '@/lib/merchant/feedRows';
 import { googleProductCategoryId } from '@/lib/merchantGoogleCategory';
 
 export async function GET() {
@@ -21,8 +21,8 @@ export async function GET() {
         const baseUrl = (siteConfig.url || 'https://www.HomePrint.ro').replace(/\/$/, '');
         const shippingOffer = merchantStandardShippingOffer();
 
-        const feedItems = products
-            .map((product) => mapProductToXml(product, baseUrl, shippingOffer))
+        const feedItems = merchantFeedRows(products, baseUrl, merchantProductCanonicalLink).rows
+            .map((row) => mapProductToXml(row, baseUrl, shippingOffer))
             .filter((block): block is string => Boolean(block));
 
         const xml = `<?xml version="1.0" encoding="UTF-8" ?>
@@ -61,13 +61,7 @@ function escapeXml(unsafe: string | undefined): string {
     });
 }
 
-function mapProductToXml(product: Product, baseUrl: string, shippingOffer: ReturnType<typeof merchantStandardShippingOffer>): string | null {
-    const priceNum = merchantPriceRON(product);
-    if (priceNum === null || priceNum <= 0) {
-        return null;
-    }
-
-    const link = merchantProductCanonicalLink(product, baseUrl);
+function mapProductToXml({ product, link, price: priceNum }: MerchantFeedRow, baseUrl: string, shippingOffer: ReturnType<typeof merchantStandardShippingOffer>): string | null {
     const imgs = product.images || [];
     const imageLink = merchantImageLink(imgs[0], baseUrl);
     const additionalImage =
