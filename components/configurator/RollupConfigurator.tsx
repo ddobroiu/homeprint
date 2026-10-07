@@ -1,5 +1,6 @@
 "use client";
 
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
 import { useCart } from "@/components/CartContext";
@@ -240,6 +241,7 @@ export default function RollupConfigurator({ productSlug, initialWidth: initW, p
                             </AccordionStep>
 
                             <AccordionStep stepNumber={2} title="Grafică" summary={summaryStep2} isOpen={activeStep === 2} onClick={() => setActiveStep(2)} isLast={true}>
+                                <EditorOnlineEntry className="mb-4" product="rollup" widthCm={input.width_cm} heightCm={200} />
                                 <div>
                                     {/* Editor Online button removed from here, moved to tabs below */}
 

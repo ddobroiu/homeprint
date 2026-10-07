@@ -1,4 +1,5 @@
 "use client";
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
 import { useCart } from "@/components/CartContext";
@@ -201,7 +202,7 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
             const params = new URLSearchParams();
             if (input.width_cm > 0) params.set("w", input.width_cm.toString());
             if (input.height_cm > 0) params.set("h", input.height_cm.toString());
-            if (input.quantity > 1) params.set("q", input.quantity.toString());
+            params.set("q", input.quantity.toString()); // mereu: vezi redirectul /configurator/* din next.config.ts
             if (input.want_wind_holes) params.set("wind", "1");
             if (!input.same_graphic) params.set("same", "0");
 
@@ -509,6 +510,7 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
                                 <label className="flex items-center gap-3 py-2 cursor-pointer"><input type="checkbox" className="checkbox" checked={input.want_wind_holes} onChange={(e) => updateInput("want_wind_holes", e.target.checked)} /><span className="text-sm font-medium text-gray-700 dark:text-gray-300">Adaugă găuri pentru vânt</span></label>
                             </AccordionStep>
                             <AccordionStep stepNumber={3} title="Grafică" summary={summaryStep3} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
+                                <EditorOnlineEntry className="mb-4" product="banner-verso" widthCm={input.width_cm} heightCm={input.height_cm} />
                                 <div>
                                     <div className="mb-4">
                                         {/* NOU: Selector Grafică Identică / Diferită (Buton Switch) */}

@@ -1,4 +1,5 @@
 "use client";
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect } from "react";
 import { useCart } from "@/components/CartContext";
 import { useToast } from "@/components/ToastProvider";
@@ -250,6 +251,7 @@ export default function ConfiguratorCartiVizita({ productImage }: { productImage
                            </AccordionStep>
 
                            <AccordionStep stepNumber={3} title="Grafică & Design" summary={summaryStep3} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
+                               <EditorOnlineEntry className="mb-4" product="carti-vizita" />
                               <div className="py-8 space-y-6">
                                 <div className="grid grid-cols-2 gap-3">
                                   <OptionButton active={input.designOption === "upload"} onClick={() => updateInput("designOption", "upload")} title="Am Macheta" subtitle="Încarcă PDF/AI" />

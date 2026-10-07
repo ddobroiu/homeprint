@@ -1,5 +1,6 @@
 import { EDITORIAL_POSTS } from "@/lib/blogPosts";
 import Link from "next/link";
+import EditorHomeLink from "./EditorHomeLink";
 import { ArrowRight, ArrowUpRight, FileCheck2, MapPin, SlidersHorizontal } from "lucide-react";
 import { CONFIGURATORS_REGISTRY } from "@/lib/configurators-registry";
 import { getFromPrice } from "@/lib/seo/fromPrice";
@@ -25,7 +26,7 @@ export default function BrandHome() {
   return <div className={`design-page design-home design-home-${brandKey}`}>
     <section className="design-hero"><div className="design-wrap design-hero-grid">
       <div className="design-hero-copy"><p className="design-kicker"><span className="design-dot" />{design.eyebrow}</p><h1>{design.title}</h1><p className="design-intro">{design.intro}</p>
-        <div className="design-actions"><a href="#configuratoare" className="design-button">{design.action}<ArrowRight size={19} /></a><Link href="/ghid-print" className="design-text-link">Ghid de alegere <ArrowUpRight size={18} /></Link></div>
+        <div className="design-actions"><a href="#configuratoare" className="design-button">{design.action}<ArrowRight size={19} /></a><Link href="/ghid-print" className="design-text-link">Ghid de alegere <ArrowUpRight size={18} /></Link></div><EditorHomeLink />
         <div className="design-hero-note"><SlidersHorizontal size={17} /><span>Opțiuni și preț în configuratorul produsului</span></div>
         <a href="#asistent-print" className="design-text-link" style={{marginTop:16}}>Întreabă asistentul AI <ArrowUpRight size={17} /></a>
       </div>

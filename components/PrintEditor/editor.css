@@ -1,0 +1,132 @@
+/* Editorul online (/editor).
+   Tema: toate culorile / razele / fontul interfeței vin din variabilele de mai jos, ca fiecare
+   site de print să-și pună brandul (vezi lib/editor/README-THEME.md). Se suprascriu pe .pe-root
+   sau pe un părinte, de ex. `.pe-root { --pe-brand: #c2185b; }`. */
+.pe-root,
+.pe-theme {
+    --pe-brand: #075746;
+    --pe-brand-strong: #05402f;
+    --pe-brand-soft: #e3f0ea;
+    --pe-brand-muted: #9fc1b4;
+    --pe-on-brand: #ffffff;
+    --pe-accent: #d8b45a;
+    --pe-accent-soft: #f7efd9;
+
+    --pe-bg: #f6f3ed;
+    --pe-surface: #ffffff;
+    --pe-surface-2: #faf8f4;
+    --pe-canvas: #e9e6df;
+    --pe-canvas-dot: #d6d1c6;
+    --pe-hover: #f1ede5;
+    --pe-border: #e6e0d5;
+    --pe-border-strong: #d3ccbf;
+
+    --pe-text: #16221d;
+    --pe-text-2: #34413b;
+    --pe-muted: #5f6a64;
+    --pe-subtle: #8c958f;
+
+    --pe-danger: #c62828;
+    --pe-danger-soft: #fdecec;
+    --pe-ok: #17643a;
+    --pe-ok-soft: #e3f4ea;
+    --pe-warn: #8a5a00;
+    --pe-warn-soft: #fff2d9;
+
+    --pe-guide-trim: #e0475b;
+    --pe-guide-safe: #12a37f;
+    --pe-guide-nogo: #e0475b;
+
+    --pe-radius: 12px;
+    --pe-radius-sm: 8px;
+    --pe-font: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --pe-font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --pe-shadow-sm: 0 1px 2px rgba(22, 34, 29, 0.06), 0 1px 1px rgba(22, 34, 29, 0.04);
+    --pe-shadow: 0 4px 14px rgba(22, 34, 29, 0.08), 0 1px 3px rgba(22, 34, 29, 0.06);
+    --pe-shadow-lg: 0 18px 50px rgba(22, 34, 29, 0.18), 0 4px 12px rgba(22, 34, 29, 0.08);
+    --pe-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    font-family: var(--pe-font);
+    color: var(--pe-text);
+    -webkit-font-smoothing: antialiased;
+}
+
+.pe-thumb svg { display: block; width: 100%; height: 100%; }
+.pe-scroll { scrollbar-width: thin; scrollbar-color: var(--pe-border-strong) transparent; }
+.pe-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+.pe-scroll::-webkit-scrollbar-thumb { background: var(--pe-border-strong); border-radius: 8px; border: 2px solid transparent; background-clip: padding-box; }
+.pe-noscrollbar { scrollbar-width: none; }
+.pe-noscrollbar::-webkit-scrollbar { display: none; }
+
+/* glisoare */
+.pe-range { -webkit-appearance: none; appearance: none; height: 4px; border-radius: 4px; background: var(--pe-border); outline: none; }
+.pe-range::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--pe-surface); border: 2px solid var(--pe-brand); box-shadow: var(--pe-shadow-sm); cursor: pointer; transition: transform 0.15s var(--pe-ease); }
+.pe-range::-webkit-slider-thumb:hover { transform: scale(1.12); }
+.pe-range::-moz-range-thumb { width: 14px; height: 14px; border-radius: 50%; background: var(--pe-surface); border: 2px solid var(--pe-brand); cursor: pointer; }
+
+/* planșa */
+.pe-stage {
+    background-color: var(--pe-canvas);
+    background-image: radial-gradient(var(--pe-canvas-dot) 1px, transparent 1.2px), radial-gradient(120% 90% at 50% 40%, rgba(255, 255, 255, 0.55), transparent 70%);
+    background-size: 24px 24px, 100% 100%;
+}
+.pe-artboard { box-shadow: 0 1px 2px rgba(22, 34, 29, 0.08), 0 12px 40px rgba(22, 34, 29, 0.16), 0 40px 80px -30px rgba(22, 34, 29, 0.25); }
+
+.pe-root button:focus-visible,
+.pe-root a:focus-visible,
+.pe-root input:focus-visible,
+.pe-root select:focus-visible { outline: 2px solid var(--pe-brand); outline-offset: 2px; }
+
+/* butoane */
+.pe-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 38px; padding: 0 14px; border-radius: var(--pe-radius-sm); font-size: 13px; font-weight: 600; transition: background 0.15s var(--pe-ease), border-color 0.15s, box-shadow 0.15s, transform 0.1s; white-space: nowrap; }
+.pe-btn:active { transform: translateY(1px); }
+.pe-btn-primary { background: var(--pe-brand); color: var(--pe-on-brand); box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 6px 16px -6px color-mix(in srgb, var(--pe-brand) 60%, transparent); }
+.pe-btn-primary:hover { background: var(--pe-brand-strong); }
+.pe-btn-secondary { background: var(--pe-surface); color: var(--pe-text); border: 1px solid var(--pe-border-strong); box-shadow: var(--pe-shadow-sm); }
+.pe-btn-secondary:hover { border-color: var(--pe-brand); }
+.pe-btn-ghost { color: var(--pe-text-2); }
+.pe-btn-ghost:hover { background: var(--pe-hover); }
+.pe-btn:disabled { opacity: 0.4; pointer-events: none; }
+
+.pe-icon-btn { display: inline-flex; align-items: center; justify-content: center; height: 34px; min-width: 34px; padding: 0 7px; border-radius: var(--pe-radius-sm); color: var(--pe-text-2); font-size: 13px; font-weight: 600; transition: background 0.12s, color 0.12s; }
+.pe-icon-btn:hover { background: var(--pe-hover); color: var(--pe-text); }
+.pe-icon-btn[aria-pressed="true"], .pe-icon-btn.is-active { background: var(--pe-brand-soft); color: var(--pe-brand-strong); }
+.pe-icon-btn:disabled { opacity: 0.35; pointer-events: none; }
+
+.pe-chip { display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 10px 0 8px; border-radius: 999px; border: 1px solid var(--pe-border); background: var(--pe-surface-2); transition: border-color 0.15s, background 0.15s; }
+.pe-chip:hover { border-color: var(--pe-brand-muted); background: var(--pe-surface); }
+
+/* carduri (șabloane, elemente) */
+.pe-card { border-radius: var(--pe-radius); transition: transform 0.18s var(--pe-ease); }
+.pe-card-media { border-radius: calc(var(--pe-radius) * 0.75); background: var(--pe-surface); box-shadow: 0 0 0 1px var(--pe-border), var(--pe-shadow-sm); overflow: hidden; transition: box-shadow 0.18s var(--pe-ease), transform 0.18s var(--pe-ease); }
+.pe-card:hover .pe-card-media { transform: translateY(-2px); box-shadow: 0 0 0 2px var(--pe-brand), var(--pe-shadow); }
+.pe-card:active .pe-card-media { transform: translateY(0); }
+
+.pe-panel-title { font-family: var(--pe-font-display); font-size: 17px; font-weight: 700; letter-spacing: -0.01em; color: var(--pe-text); }
+.pe-section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--pe-subtle); }
+
+/* bara contextuală */
+.pe-ctx { background: var(--pe-surface); border-bottom: 1px solid var(--pe-border); }
+.pe-ctx-sep { width: 1px; height: 22px; background: var(--pe-border); margin: 0 4px; flex: none; }
+.pe-pop { background: var(--pe-surface); border: 1px solid var(--pe-border); border-radius: var(--pe-radius); box-shadow: var(--pe-shadow-lg); animation: pe-pop-in 0.16s var(--pe-ease); }
+
+/* tranziții */
+@keyframes pe-slide-in { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: none; } }
+@keyframes pe-slide-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes pe-pop-in { from { opacity: 0; transform: translateY(-4px) scale(0.98); } to { opacity: 1; transform: none; } }
+@keyframes pe-fade { from { opacity: 0; } to { opacity: 1; } }
+.pe-anim-panel { animation: pe-slide-in 0.22s var(--pe-ease); }
+.pe-anim-sheet { animation: pe-slide-up 0.26s var(--pe-ease); }
+.pe-anim-fade { animation: pe-fade 0.2s ease; }
+
+/* schelete la încărcare */
+.pe-skeleton { background: linear-gradient(90deg, var(--pe-hover) 0%, var(--pe-surface-2) 40%, var(--pe-hover) 80%); background-size: 200% 100%; animation: pe-shimmer 1.3s linear infinite; border-radius: var(--pe-radius-sm); }
+@keyframes pe-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+
+/* bara de jos pe mobil */
+.pe-glass { background: color-mix(in srgb, var(--pe-surface) 88%, transparent); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); }
+
+@media (prefers-reduced-motion: reduce) {
+    .pe-anim-panel, .pe-anim-sheet, .pe-anim-fade, .pe-pop { animation: none; }
+    .pe-card, .pe-card-media { transition: none; }
+}

@@ -1,4 +1,5 @@
 "use client";
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import { useCart } from "@/components/CartContext";
@@ -124,6 +125,7 @@ export default function RollupConfigurator({ productSlug, initialWidth: initW, p
                </AccordionStep>
 
                <AccordionStep stepNumber={2} title="Grafică & Design" summary={summaryStep2} isOpen={activeStep === 2} onClick={() => setActiveStep(2)} isLast={true}>
+                   <EditorOnlineEntry className="mb-4" product="rollup" widthCm={input.width_cm} heightCm={200} />
                   <div className="py-4 space-y-4">
                      <div className="grid grid-cols-2 gap-2">
                         <OptionButton active={input.designOption === 'upload'} onClick={() => setInput(p => ({ ...p, designOption: 'upload' }))} title="Am Grafică" subtitle="PNG / PDF / JPG" />

@@ -1,0 +1,30 @@
+/* Brandul HomePrint în editorul online: culorile vin din tokenii site-ului (app/brand-design.css,
+   [data-brand="homeprint"]). Se încarcă după editor.css; vezi lib/editor/README-THEME.md. */
+.pe-root,
+.pe-theme {
+    --pe-brand: #87573f;
+    --pe-brand-strong: #65412f;
+    --pe-brand-soft: #ede3d6;
+    --pe-brand-muted: #c9b3a9;
+    --pe-on-brand: #ffffff;
+    --pe-accent: #9f7965;
+    --pe-accent-soft: #ede3d6;
+
+    --pe-bg: #f8f5ef;
+    --pe-surface-2: #fcfaf7;
+    --pe-canvas: #ebe7e1;
+    --pe-canvas-dot: #d9d5cf;
+    --pe-hover: #f1eee8;
+    --pe-border: #e2dbd0;
+    --pe-border-strong: #cec6bc;
+
+    --pe-text: #382d26;
+    --pe-text-2: #564c47;
+    --pe-muted: #847d78;
+    --pe-subtle: #a5a09d;
+
+    --pe-radius: 6px;
+    --pe-radius-sm: 4px;
+    --pe-font: var(--font-inter), "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --pe-font-display: var(--font-outfit), Georgia, serif;
+}

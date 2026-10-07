@@ -1,4 +1,5 @@
 "use client";
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import { useCart } from "@/components/CartContext";
@@ -163,6 +164,7 @@ export default function WindowGraphicsConfigurator({ productSlug, initialWidth: 
               </AccordionStep>
 
               <AccordionStep stepNumber={2} title="Machetă Grafică" summary={summaryStep2} isOpen={activeStep === 2} onClick={() => setActiveStep(2)} isLast={true}>
+                  <EditorOnlineEntry className="mb-4" product="window-graphics" widthCm={input.width_cm} heightCm={input.height_cm} />
                 <div className="grid grid-cols-2 gap-2 pt-2">
                    <OptionButton active={input.designOption === 'upload'} onClick={() => setInput(p => ({ ...p, designOption: 'upload' }))} title="Am Grafică" subtitle="Încarcă fișier" />
                    <OptionButton active={input.designOption === 'pro'} onClick={() => setInput(p => ({ ...p, designOption: 'pro' }))} title="Vreau Design" subtitle={`+${formatMoneyDisplay(WINDOW_GRAPHICS_CONSTANTS.PRO_DESIGN_FEE)}`} />

@@ -1,4 +1,5 @@
 "use client";
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import { useCart } from "@/components/CartContext";
@@ -263,6 +264,7 @@ export default function PlianteConfigurator({ productSlug, productImage }: Props
               </AccordionStep>
 
               <AccordionStep stepNumber={3} title="Grafică" summary={summaryStep3} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
+                  <EditorOnlineEntry className="mb-4" product="pliante" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   <OptionButton active={designOption === "upload"} onClick={() => setDesignOption("upload")} title="Am Grafică" subtitle="Încarc fișierul" />
                   <OptionButton active={designOption === "pro"} onClick={() => setDesignOption("pro")} title="Vreau Grafică" subtitle={`Cost: ${formatMoneyDisplay(priceData.proFee)}`} />

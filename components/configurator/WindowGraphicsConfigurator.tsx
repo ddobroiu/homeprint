@@ -1,5 +1,6 @@
 "use client";
 
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
 import { useCart } from "@/components/CartContext";
@@ -328,6 +329,7 @@ export default function WindowGraphicsConfigurator({ initialWidth: initW, initia
                             </AccordionStep>
 
                             <AccordionStep stepNumber={3} title="Grafică" summary={summaryStep3} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
+                                <EditorOnlineEntry className="mb-4" product="window-graphics" widthCm={input.width_cm} heightCm={input.height_cm} />
                                 <div>
                                     {/* Editor Online button removed from here, moved to tabs below */}
 

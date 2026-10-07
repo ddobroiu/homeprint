@@ -1,6 +1,7 @@
 "use client";
 // components/configurator/BannerConfigurator.tsx
 
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import { NumberInput } from "./ui/NumberInput";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
 import React, { useMemo, useState, useEffect, useCallback } from "react";
@@ -201,10 +202,14 @@ const BANNER_GALLERY_IMAGES = [
     "/products/poze-produse-seo/banner-publicitar-personalizat.webp",
 ];
 
-export default function BannerConfigurator({ productSlug, initialWidth: initW, initialHeight: initH, productImage, renderOnlyConfigurator = false, intent, productKind = "banner" }: Props) {
+export default function BannerConfigurator({ productSlug, initialWidth: initW, initialHeight: initH, productImage: productImageProp, renderOnlyConfigurator = false, intent, productKind = "banner" }: Props) {
     const { addItem } = useCart();
     const router = useRouter();
     const searchParams = useSearchParams();
+    // /configurator/banner randează componenta direct (fără ConfiguratorDispatcher): grafica trimisă
+    // din editorul online vine ca ?image=...
+    const imageParam = searchParams.get("image");
+    const productImage = productImageProp ?? (imageParam && /^https:\/\//.test(imageParam) ? imageParam : undefined);
     const pathname = usePathname();
 
     const [input, setInput] = useState<PriceInputBanner>(() => {
@@ -357,7 +362,7 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
             const params = new URLSearchParams();
             if (input.width_cm > 0) params.set("w", input.width_cm.toString());
             if (input.height_cm > 0) params.set("h", input.height_cm.toString());
-            if (input.quantity > 1) params.set("q", input.quantity.toString());
+            params.set("q", input.quantity.toString()); // mereu: vezi redirectul /configurator/* din next.config.ts
             if (productKind === "mesh") {
                 params.set("mat", "mesh");
             } else if (input.material === "frontlit_510") {
@@ -730,6 +735,7 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
                                 )}
                             </AccordionStep>
                             <AccordionStep stepNumber={3} title="Grafică" summary={summaryStep3} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
+                                <EditorOnlineEntry className="mb-4" product={productKind} widthCm={input.width_cm} heightCm={input.height_cm} />
                                 <div>
                                     {/* Editor Online button removed from here, moved to tabs below */}
 

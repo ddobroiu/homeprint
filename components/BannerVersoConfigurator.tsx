@@ -1,4 +1,5 @@
 "use client";
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import { useCart } from "@/components/CartContext";
@@ -213,6 +214,7 @@ export default function BannerVersoConfigurator({ productSlug, initialWidth: ini
                </AccordionStep>
 
                <AccordionStep stepNumber={3} title="Grafică & Design" summary={summaryStep3} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
+                   <EditorOnlineEntry className="mb-4" product="banner-verso" widthCm={input.width_cm} heightCm={input.height_cm} />
                   <div className="py-4 space-y-6">
                      <div>
                         <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1 mb-2 block">Tip Grafică</label>

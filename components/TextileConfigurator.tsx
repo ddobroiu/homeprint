@@ -1,6 +1,7 @@
 "use client";
 // components/TextileConfigurator.tsx
 
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import { NumberInput } from "@/components/ui/NumberInput";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "@/components/configurator/ArtworkFitEditor";
 import { getTextileAiPrintDimensionsCm } from "@/lib/ai-product-dimensions";
@@ -665,6 +666,7 @@ export default function TextileConfigurator({ type, productSlug, productImage, r
                             )}
 
                             <AccordionStep stepNumber={type === "sepci" ? 2 : 3} title="Grafică" summary={summaryStep3} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
+                                {type !== "sepci" && <EditorOnlineEntry className="mb-4" product="tricouri" />}
                                 <div>
                                     <div className="flex flex-col gap-4 mb-6">
                                         <Link 

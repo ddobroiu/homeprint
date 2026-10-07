@@ -1,4 +1,5 @@
 "use client";
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect } from "react";
 import { useCart } from "@/components/CartContext";
 import { useToast } from "@/components/ToastProvider";
@@ -316,6 +317,7 @@ export default function AfiseConfigurator({ productSlug, initialWidth, initialHe
                 </div>
               </AccordionStep>
               <AccordionStep stepNumber={3} title="Grafică" summary={summaryStep3} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
+                  <EditorOnlineEntry className="mb-4" product="afise" size={size} />
                 {productImage ? (
                   <div className="p-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 rounded-xl">
                     <div className="flex items-center gap-4 mb-4">

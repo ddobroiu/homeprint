@@ -1,6 +1,7 @@
 "use client";
 // components/BannerConfigurator.tsx
 
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import { NumberInput } from "@/components/ui/NumberInput";
 import React, { useMemo, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
@@ -571,6 +572,7 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
                 </label>
               </AccordionStep>
               <AccordionStep stepNumber={3} title="Grafică" summary={summaryStep3} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
+                  <EditorOnlineEntry className="mb-4" product="banner" widthCm={input.width_cm} heightCm={input.height_cm} />
                 <div>
                   {productImage ? (
                     <div className="p-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 rounded-xl">

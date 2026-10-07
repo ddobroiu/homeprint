@@ -1,4 +1,5 @@
 "use client";
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import { useCart } from "@/components/CartContext";
@@ -268,6 +269,7 @@ export default function FlyerConfigurator({ productSlug, productImage }: Props) 
               </AccordionStep>
 
               <AccordionStep stepNumber={3} title="Grafică" summary={designOption === 'upload' ? 'Grafică proprie' : 'Vreau grafică'} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
+                  <EditorOnlineEntry className="mb-4" product="flayere" size={sizeKey} />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   <button onClick={() => setDesignOption('upload')} className={`p-3 rounded-lg border-2 text-sm ${designOption === 'upload' ? 'border-amber-600 bg-amber-50' : 'border-gray-300 bg-white hover:border-gray-400'}`}>Am grafică</button>
                   <button onClick={() => setDesignOption('pro')} className={`p-3 rounded-lg border-2 text-sm ${designOption === 'pro' ? 'border-amber-600 bg-amber-50' : 'border-gray-300 bg-white hover:border-gray-400'}`}>Vreau grafică ({formatMoneyDisplay(priceData.proFee || 0)})</button>

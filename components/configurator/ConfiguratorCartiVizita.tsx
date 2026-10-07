@@ -1,5 +1,6 @@
 "use client";
 
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
 import { useCart } from "@/components/CartContext";
@@ -290,6 +291,7 @@ export default function ConfiguratorCartiVizita({ productImage }: { productImage
                             </AccordionStep>
 
                             <AccordionStep stepNumber={3} title="Grafică" summary={input.designOption === 'upload' ? 'Am grafica mea' : 'Vreau Grafician'} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
+                                <EditorOnlineEntry className="mb-4" product="carti-vizita" />
                                 <div>
                                     {/* Editor Online button removed from here, moved to tabs below */}
 

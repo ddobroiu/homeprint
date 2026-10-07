@@ -24,11 +24,13 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
 }
 
 import Breadcrumbs from '@/components/Breadcrumbs';
+import EditorShopBanner from "@/components/EditorShopBanner";
 
 export default function ShopPage() {
     return (
         <div className="pt-24 w-full max-w-7xl mx-auto px-4">
             <Breadcrumbs items={[{ label: 'Magazin', href: '/shop' }]} />
+            <EditorShopBanner />
             <SearchProductShelf />
             <Suspense fallback={<div className="container py-20 text-center">Se încarcă produsele...</div>}>
                 <ShopPageContent />

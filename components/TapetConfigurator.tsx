@@ -1,4 +1,5 @@
 "use client";
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import { useCart } from "@/components/CartContext";
@@ -145,6 +146,7 @@ export default function TapetConfigurator({ productSlug, initialWidth: initW, in
                            </AccordionStep>
 
                            <AccordionStep stepNumber={3} title="Imagine & Design" summary={summaryStep3} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
+                               <EditorOnlineEntry className="mb-4" product="tapet" widthCm={input.width_cm} heightCm={input.height_cm} />
                               <div className="py-4 space-y-4">
                                 <div className="grid grid-cols-2 gap-2">
                                   <OptionButton active={input.designOption === "upload"} onClick={() => setInput(p => ({ ...p, designOption: "upload" }))} title="Am Foto" subtitle="PDF/JPG high-res" />

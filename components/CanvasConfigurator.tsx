@@ -1,4 +1,5 @@
 "use client";
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import { uploadArtworkImage, browserImageUrl } from "@/lib/uploadArtworkImage";
@@ -139,6 +140,7 @@ export default function CanvasConfigurator({ productSlug, initialWidth: initW, i
                </AccordionStep>
 
                <AccordionStep stepNumber={3} title="Grafică" summary={input.designOption} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
+                   <EditorOnlineEntry className="mb-4" product="canvas" widthCm={input.width_cm} heightCm={input.height_cm} />
                   <div className="grid grid-cols-2 gap-2 pt-2">
                     <button onClick={() => updateInput("designOption", "upload")} className={`p-3 rounded-lg border-2 text-sm ${input.designOption === 'upload' ? 'border-amber-600 bg-amber-50' : 'border-gray-300 bg-white hover:border-gray-400'}`}>Încărcă Poza</button>
                     <button onClick={() => updateInput("designOption", "pro")} className={`p-3 rounded-lg border-2 text-sm ${input.designOption === 'pro' ? 'border-amber-600 bg-amber-50' : 'border-gray-300 bg-white hover:border-gray-400'}`}>Design Pro</button>

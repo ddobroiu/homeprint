@@ -1,4 +1,5 @@
 "use client";
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect } from "react";
 import { useCart } from "@/components/CartContext";
 import { useToast } from "@/components/ToastProvider";
@@ -331,6 +332,7 @@ export default function AutocolanteConfigurator({ productSlug, initialWidth: ini
                 </label>
               </AccordionStep>
               <AccordionStep stepNumber={3} title="Grafică" summary={summaryStep3} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
+                  <EditorOnlineEntry className="mb-4" product="autocolante" widthCm={input.width_cm} heightCm={input.height_cm} />
                 <div>
                   <div className="mb-4 border-b border-gray-200 dark:border-slate-800">
                     <div className="flex -mb-px">

@@ -1,5 +1,6 @@
 "use client";
 
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
 import { useCart } from "@/components/CartContext";
@@ -374,6 +375,7 @@ export default function ConfiguratorPlexiglass({ initialWidth: initW, initialHei
                             </AccordionStep>
 
                             <AccordionStep stepNumber={4} title="Grafică" summary={summaryStep4} isOpen={activeStep === 4} onClick={() => setActiveStep(4)} isLast={true}>
+                                <EditorOnlineEntry className="mb-4" product="plexiglass" widthCm={input.width_cm} heightCm={input.height_cm} />
                                 <div>
                                     {/* Editor Online button removed from here, moved to tabs below */}
 

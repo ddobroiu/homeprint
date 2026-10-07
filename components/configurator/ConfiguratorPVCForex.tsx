@@ -1,5 +1,6 @@
 "use client";
 
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
 import { useCart } from "@/components/CartContext";
@@ -295,6 +296,7 @@ export default function ConfiguratorPVCForex({ initialWidth: initW, initialHeigh
                             </AccordionStep>
 
                             <AccordionStep stepNumber={3} title="Grafică" summary={input.designOption === 'upload' ? 'Grafică proprie' : 'Design Pro'} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
+                                <EditorOnlineEntry className="mb-4" product="pvc-forex" widthCm={input.width_cm} heightCm={input.height_cm} />
                                 <div>
                                     {/* Editor Online button removed from here, moved to tabs below */}
 

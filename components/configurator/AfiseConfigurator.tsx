@@ -1,5 +1,6 @@
 "use client";
 
+import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import React, { useMemo, useState, useEffect } from "react";
 import ArtworkFitEditor, { DEFAULT_FIT, fitMetadata, type ArtworkFit } from "./ArtworkFitEditor";
 import { getAfiseDimensionsCm } from "@/lib/ai-product-dimensions";
@@ -277,6 +278,7 @@ export default function AfiseConfigurator({ productSlug, initialWidth, initialHe
                             </AccordionStep>
 
                             <AccordionStep stepNumber={3} title="Grafică" summary={summaryStep3} isOpen={activeStep === 3} onClick={() => setActiveStep(3)} isLast={true}>
+                                <EditorOnlineEntry className="mb-4" product="afise" size={size} />
                                 <div>
                                     {/* Editor Online button removed from here, moved to options below */}
 
