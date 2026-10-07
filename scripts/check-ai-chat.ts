@@ -7,7 +7,8 @@
 //   - tokenii pe cerere (usage de la OpenAI, inclusiv cei din cache).
 // Scrierile in baza (logConversation, consumul AI) sunt oprite: DATABASE_URL e redirectionat spre un port inchis.
 //
-//   npx tsx scripts/check-ai-chat.ts            (ruta curenta)
+//   npx tsx scripts/check-ai-chat.ts --mock     (FARA OpenAI: modelul e simulat, verifica uneltele de pret + linkurile; gratuit)
+//   npx tsx scripts/check-ai-chat.ts            (ruta curenta, cu cheia reala — costa)
 //   npx tsx scripts/check-ai-chat.ts <cale.ts>  (alta versiune a rutei, ex. cea veche, pentru comparatie)
 
 import fs from "fs";
@@ -36,13 +37,57 @@ const QUESTIONS = [
     "Vindeți căni personalizate?",
 ];
 
+// --mock: raspunsurile OpenAI sunt simulate local (nicio cerere in retea). Modelul simulat cere get_quote cu
+// argumentele de mai jos, apoi raspunde cu pretul si linkul intoarse de unealta; verificarea compara pretul cu pagina.
+const MOCK = process.argv.includes("--mock");
+const MOCK_CASES: Array<{ q: string; quote?: Record<string, unknown> }> = [
+    { q: "Cât costă un banner 200x100 cm?", quote: { configurator: "banner", width_cm: 200, height_cm: 100, quantity: 1 } },
+    { q: "Preț roll-up 85x200, 1 bucată", quote: { configurator: "rollup", width_cm: 85, height_cm: 200, quantity: 1 } },
+    { q: "Autocolante 10x10 cm, 100 buc, cât costă?", quote: { configurator: "autocolante", width_cm: 10, height_cm: 10, quantity: 100 } },
+    { q: "Canvas 60x90 pe șasiu, cât costă?", quote: { configurator: "canvas", size: "60x90" } },
+    { q: "Flyere A5, 1000 buc, preț?", quote: { configurator: "flayere", size: "A5", quantity: 1000 } },
+    { q: "Afișe A3, 50 de bucăți, preț?", quote: { configurator: "afise", size: "A3", quantity: 50 } },
+    { q: "Cât durează livrarea?" },
+];
+
+function mockOpenAiFetch(): typeof fetch {
+    let n = 0;
+    const completion = (message: Record<string, unknown>) => new Response(JSON.stringify({
+        id: `mock-${++n}`, object: "chat.completion", created: Math.floor(Date.now() / 1000), model: "mock",
+        choices: [{ index: 0, message: { role: "assistant", content: null, ...message }, finish_reason: message.tool_calls ? "tool_calls" : "stop", logprobs: null }],
+        usage: { prompt_tokens: 0, completion_tokens: 0, total_tokens: 0 },
+    }), { status: 200, headers: { "content-type": "application/json" } });
+    return (async (input: any, init?: any) => {
+        const url = typeof input === "string" ? input : input?.url ?? String(input);
+        if (!url.includes("/chat/completions")) throw new Error(`--mock: cerere in retea blocata: ${url}`);
+        const body = JSON.parse(String(init?.body ?? "{}"));
+        const msgs: any[] = body.messages ?? [];
+        const last = msgs[msgs.length - 1];
+        if (last?.role === "tool") {
+            const out = JSON.parse(String(last.content));
+            const price = out.total_lei ?? out.total ?? out.price_lei;
+            return completion({ content: out.error ? `Nu pot calcula: ${out.error}` : `Prețul este ${price} lei. Comandă aici: ${out.url}` });
+        }
+        const userText = [...msgs].reverse().find((m) => m.role === "user")?.content ?? "";
+        const c = MOCK_CASES.find((x) => x.q === userText);
+        if (c?.quote) return completion({ tool_calls: [{ id: `call_${n + 1}`, type: "function", function: { name: "get_quote", arguments: JSON.stringify(c.quote) } }] });
+        return completion({ content: "Livrarea durează 2–4 zile lucrătoare." });
+    }) as typeof fetch;
+}
+
 const GREETING = "Salut! Te ajut să alegi produsul, materialul și finisajele, să găsești configuratorul și să plasezi comanda. Ce vrei să realizezi?";
 
 async function main() {
+    if (MOCK) {
+        // cheie falsa + fara e-mail: chiar daca interceptarea ar scapa ceva, nu se plateste nimic
+        process.env.OPENAI_API_KEY = "sk-mock-no-network";
+        process.env.OPENAI_BASE_URL = "http://127.0.0.1:9/v1";
+        delete process.env.RESEND_API_KEY;
+    }
     if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY lipseste din .env");
     const usage: { input: number; cached: number; output: number }[] = [];
     // usage din raspunsurile OpenAI (SDK-ul foloseste fetch global)
-    const origFetch = globalThis.fetch;
+    const origFetch = MOCK ? mockOpenAiFetch() : globalThis.fetch;
     globalThis.fetch = (async (input: any, init?: any) => {
         const res = await origFetch(input, init);
         const url = typeof input === "string" ? input : input?.url ?? String(input);
@@ -58,13 +103,14 @@ async function main() {
     console.error = () => {};
     console.warn = () => {};
 
-    const routeFile = process.argv[2] ? path.resolve(process.argv[2]) : path.join(process.cwd(), "app/api/ai/chat/route.ts");
+    const routeArg = process.argv.slice(2).find((a) => !a.startsWith("--"));
+    const routeFile = routeArg ? path.resolve(routeArg) : path.join(process.cwd(), "app/api/ai/chat/route.ts");
     const { POST } = await import(pathToFileURL(routeFile).href);
     const { landingPriceFromUrl } = await import("../lib/merchant/landingPrice");
 
     let failures = 0;
     const perQuestion: number[] = [];
-    for (const q of QUESTIONS) {
+    for (const q of MOCK ? MOCK_CASES.map((c) => c.q) : QUESTIONS) {
         const before = usage.length;
         const t0 = Date.now();
         const res: Response = await POST(new Request("http://localhost/api/ai/chat", {
@@ -100,6 +146,10 @@ async function main() {
         }
         console.log(`\n### ${q}\n${reply}\n-- ${calls.length} apeluri, input ${inTok} (cache ${cached}), output ${outTok}, ${Date.now() - t0} ms`);
         for (const c of checks) console.log("   " + c);
+        if (MOCK && MOCK_CASES.find((c) => c.q === q)?.quote && !checks.some((c) => c.startsWith("OK  pagina"))) {
+            console.log("   BAD raspunsul simulat nu are pret + link verificabil");
+            failures++;
+        }
     }
     const all = usage.map((u) => u.input);
     const avg = (a: number[]) => (a.length ? Math.round(a.reduce((s, x) => s + x, 0) / a.length) : 0);

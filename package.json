@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "node --use-system-ca ./node_modules/next/dist/bin/next dev",
     "build": "next build",
+    "check:merchant": "npx tsx scripts/check-merchant-feed.ts",
+    "check:quick-quote": "npx tsx scripts/check-quick-print-quote.ts",
+    "check:ai-chat:mock": "npx tsx scripts/check-ai-chat.ts --mock",
     "start": "node --use-system-ca ./node_modules/next/dist/bin/next start",
     "lint": "eslint",
     "generate-feed": "npx tsx scripts/generate-feed.ts"

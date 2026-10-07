@@ -27,7 +27,8 @@ for (const invalid of [
   { product: "rollup" as const, width: 85, height: 200, quantity: 1.5 },
   { product: "banner" as const, width: NaN, height: 50, quantity: 1 },
 ]) assert.ok("error" in quickPrintQuote(invalid));
-assert.equal(QUICK_PRINT_PRODUCTS.length, 24);
+// fiecare produs o singura data; lista = registrul de configuratoare (verificat mai jos), nu un numar fix
+assert.equal(new Set(QUICK_PRINT_PRODUCTS.map(p => p.id)).size, QUICK_PRINT_PRODUCTS.length, "id duplicat in calculatorul rapid");
 assert.deepEqual(QUICK_PRINT_PRODUCTS.map(p=>p.id).sort(), CONFIGURATORS_REGISTRY.map(p=>p.id).sort());
 for (const p of QUICK_PRINT_PRODUCTS) for (const format of p.formats ?? []) {
  const quote = quickPrintQuote({product:p.id,width:p.width,height:p.height,quantity:p.quantity,format:format.key});
