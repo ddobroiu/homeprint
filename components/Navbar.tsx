@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { User, Menu, X, ChevronDown, Package, Heart, MapPin, LogOut, PencilRuler } from "lucide-react";
+import { User, ChevronDown, Package, Heart, MapPin, LogOut, PencilRuler } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useSession, signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import CartWidget from "./CartWidget";
+import MobileMenu from "./MobileMenu";
 import SearchBox from "./SearchBox";
 import HeaderFreeShipping from "./HeaderFreeShipping";
 import { brandDesign } from "@/lib/brandDesign";
@@ -90,30 +91,11 @@ const DesktopNav = () => {
 export default function Navbar() {
     const pathname = usePathname();
     const [scrolled, setScrolled] = useState(false);
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
-
-    // Meniul mobil se inchide la orice schimbare de pagina: link din meniu, rezultat
-    // din cautare (router.push), butonul Inapoi/Inainte al browserului. Navbar sta in
-    // layout-ul radacina si nu se remonteaza la navigare, deci fara asta meniul ramanea
-    // deschis peste pagina noua. (Ajustare de stare la randare, nu setState in effect.)
-    const [menuPathname, setMenuPathname] = useState(pathname);
-    if (pathname !== menuPathname) {
-        setMenuPathname(pathname);
-        setMobileMenuOpen(false);
-        setOpenMobileSection(null);
-    }
-
-    const closeMobileMenu = () => setMobileMenuOpen(false);
 
     const { status, data: session } = useSession();
 
     // Account state for dropdown
     const [isAccountOpen, setIsAccountOpen] = useState(false);
-
-    const toggleMobileSection = (section: string) => {
-        setOpenMobileSection(openMobileSection === section ? null : section);
-    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -122,22 +104,6 @@ export default function Navbar() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-
-    // Cat timp meniul mobil e deschis: blocam derularea paginii si il inchidem la Escape.
-    // La inchidere refacem exact valoarea anterioara a overflow (nu fortam "auto").
-    useEffect(() => {
-        if (!mobileMenuOpen) return;
-        const previousOverflow = document.body.style.overflow;
-        document.body.style.overflow = "hidden";
-        const onKeyDown = (event: KeyboardEvent) => {
-            if (event.key === "Escape") setMobileMenuOpen(false);
-        };
-        window.addEventListener("keydown", onKeyDown);
-        return () => {
-            document.body.style.overflow = previousOverflow;
-            window.removeEventListener("keydown", onKeyDown);
-        };
-    }, [mobileMenuOpen]);
 
     // Account dropdown close on outside click
     useEffect(() => {
@@ -169,17 +135,9 @@ export default function Navbar() {
                     }`}
             >
                 {/* ROW 1: Logo, Search, and Actions */}
-                <div className="container mx-auto px-4 w-full max-w-7xl h-16 sm:h-[80px] flex items-center justify-between gap-4">
-                    {/* Mobile Menu Toggle & Logo */}
+                <div className="container mx-auto px-4 w-full max-w-7xl h-[60px] sm:h-[80px] flex items-center justify-between gap-4">
+                    {/* Logo (meniul mobil e in dreapta, langa cos) */}
                     <div className="flex items-center gap-4">
-                        <button
-                            className="xl:hidden p-2 -ml-2 text-stone-900 bg-stone-100/80 hover:bg-stone-200 rounded-lg transition-colors"
-                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            aria-label="Meniu"
-                            aria-expanded={mobileMenuOpen}
-                        >
-                            <Menu size={22} />
-                        </button>
 
                         <Link href="/" className="flex items-center group"><Image src="/logo.svg" alt={brandDesign.name} width={340} height={90} priority className="brand-logo-image" /></Link>
                     </div>
@@ -246,13 +204,15 @@ export default function Navbar() {
                                 </div>
                             </div>
                         ) : (
-                            <Link href="/login" className="flex items-center justify-center w-10 h-10 rounded-lg bg-white text-stone-700 hover:bg-stone-900 hover:text-white transition-colors border border-stone-300">
+                            <Link href="/login" aria-label="Contul meu" className="hidden sm:flex items-center justify-center w-10 h-10 rounded-lg bg-white text-stone-700 hover:bg-stone-900 hover:text-white transition-colors border border-stone-300">
                                 <User size={18} strokeWidth={2} />
                             </Link>
                         )}
 
                         {/* Cart */}
-                        <CartWidget />
+                        <MobileMenu>
+                            <CartWidget />
+                        </MobileMenu>
                     </div>
                 </div>
 
@@ -264,98 +224,6 @@ export default function Navbar() {
                 </div>
             </header>
 
-            {/* Mobile Menu Overlay */}
-            {mobileMenuOpen && (
-                <div role="dialog" aria-modal="true" aria-label="Meniu" className="fixed inset-0 z-[1000] bg-[#FBF7F1] xl:hidden flex flex-col animate-in fade-in slide-in-from-right duration-300">
-                    <div className="flex items-center justify-between p-6 border-b border-stone-200">
-                        <div className="relative w-32 h-9">
-                            <Image
-                                src="/logo.svg"
-                                alt="HomePrint.ro - fototapet, canvas și decor printat pentru casă și birou"
-                                fill
-                                className="brand-logo-image"
-                                priority
-                            />
-                        </div>
-                        <button
-                            onClick={closeMobileMenu}
-                            className="p-3 bg-white border border-stone-200 rounded-lg text-stone-900 hover:bg-stone-100 transition-colors"
-                            aria-label="Închide meniul"
-                        >
-                            <X size={22} />
-                        </button>
-                    </div>
-
-                    <div
-                        className="p-6 pb-0"
-                        onClick={(event) => {
-                            if ((event.target as Element).closest(".cursor-pointer, a")) closeMobileMenu();
-                        }}
-                        onKeyDown={(event) => {
-                            const value = (event.target as HTMLInputElement).value ?? "";
-                            if (event.key === "Enter" && value.trim().length >= 2) closeMobileMenu();
-                        }}
-                    >
-                        <SearchBox
-                            placeholder="Caută produse..."
-                            className="w-full border border-stone-300 rounded-lg bg-white"
-                        />
-                    </div>
-
-                    <div className="flex-1 overflow-y-auto px-6 py-8">
-                        <div className="flex flex-col gap-6">
-                            {siteConfig.headerNav.map((item) => (
-                                <div key={item.label} className="border-b border-stone-200 pb-4 last:border-0">
-                                    {item.children ? (
-                                        <>
-                                            <button
-                                                onClick={() => toggleMobileSection(item.label)}
-                                                className="w-full flex items-center justify-between text-lg font-bold tracking-tight text-stone-900 py-2"
-                                            >
-                                                {item.label}
-                                                <ChevronDown size={20} className={`transition-transform duration-300 ${openMobileSection === item.label ? 'rotate-180 text-amber-700' : ''}`} />
-                                            </button>
-                                            <div className={`overflow-hidden transition-all duration-300 ${openMobileSection === item.label ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                                                <div className="flex flex-col gap-2 pl-4 pt-4 border-l-2 border-stone-200 ml-2">
-                                                    {item.children.map((child) => (
-                                                        <Link
-                                                            key={child.href}
-                                                            href={child.href}
-                                                            onClick={closeMobileMenu}
-                                                            className="text-stone-500 hover:text-amber-800 py-2 text-sm font-semibold"
-                                                        >
-                                                            {child.label}
-                                                        </Link>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        </>
-                                    ) : (
-                                        <Link
-                                            href={item.href}
-                                            onClick={closeMobileMenu}
-                                            className={`block text-lg font-bold tracking-tight py-2 ${item.highlight ? 'text-amber-700' : 'text-stone-900 hover:text-amber-800'}`}
-                                        >
-                                            {item.label}
-                                        </Link>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className="p-6 border-t border-stone-200 bg-white">
-                        <Link
-                            href="/editor"
-                            onClick={closeMobileMenu}
-                            className="flex items-center justify-center gap-3 py-4 bg-amber-700 text-white rounded-lg font-bold tracking-widest uppercase text-xs hover:bg-amber-800 active:scale-[0.98] transition-all"
-                        >
-                            <PencilRuler size={18} />
-                            Editor Online
-                        </Link>
-                    </div>
-                </div>
-            )}
         </>
     );
 }
