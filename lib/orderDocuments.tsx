@@ -1,9 +1,11 @@
 /** @jsxRuntime classic */
-import { createRequire } from 'node:module';
 import { join } from 'node:path';
-// The PDF reconciler must receive elements from its installed React runtime,
-// rather than Next.js's separate React Server Components JSX runtime.
-const React = createRequire(join(process.cwd(), 'package.json'))('react') as typeof import('react');
+// The PDF reconciler must receive elements from its installed React runtime (node_modules/react),
+// rather than Next.js's bundled React. `require` vine prin eval ca bundlerul (webpack / Turbopack) să nu-l
+// analizeze: createRequire(...) cu argument dinamic pica „next build --webpack” (TypeError la colectarea paginilor).
+// eslint-disable-next-line no-eval
+const nodeRequire = eval('require') as NodeRequire;
+const React = (nodeRequire('node:module') as typeof import('node:module')).createRequire(join(process.cwd(), 'package.json'))('react') as typeof import('react');
 import { Document, Page, Text, View, StyleSheet, renderToBuffer } from '@react-pdf/renderer';
 import { COMPANY, CONTACT_EMAIL, VAT_NOTE_ASCII } from './company';
 import { siteConfig } from './siteConfig';
