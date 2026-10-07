@@ -36,7 +36,8 @@ function walkPages(dir: string, out: string[] = []): string[] {
     }
     return out;
 }
-const routes = walkPages(appDir).map((d) => {
+// app/[...slug] (pagina de rezervă pentru orice adresă) nu dovedește că pagina există: o ignorăm
+const routes = walkPages(appDir).filter((d) => !/^\[\[?\.\.\./.test(d)).map((d) => {
     const segs = d.split("/").filter((s) => s && !/^\(.*\)$/.test(s));
     const re = segs
         .map((s) => (/^\[\[?\.\.\..+\]?\]$/.test(s) ? ".+" : /^\[.+\]$/.test(s) ? "[^/]+" : s.replace(/[.*+?^${}()|\\]/g, "\\$&")))
