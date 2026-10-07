@@ -22,9 +22,7 @@ import {
 } from "@/lib/pricing";
 
 const GALLERY_BASE = [
-    "/products/master/placi-polipropilena-alveolara-canalit-ieftine.png",
-    "/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp",
-    "/products/materiale/polipropilena/polipropilena-2.webp",
+    "/products/homeprint-studio/polipropilena.webp",
 ] as const;
 
 const productFaqs: QA[] = [

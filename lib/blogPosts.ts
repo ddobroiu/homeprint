@@ -940,7 +940,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Specialist Evenimente HomePrint",
     tags: ["cadouri personalizate", "nunta", "botez", "tablouri canvas", "idee cadou"],
     source: "HomePrint.ro",
-    hero: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
+    hero: "/products/homeprint-studio/canvas.webp",
     contentHtml: `
       <p>Majoritatea cadourilor primite la o nuntă sau un botez au aceeași soartă: un obiect frumos, folosit o dată sau deloc, care ajunge într-un dulap. Un tablou canvas personalizat scapă de regulă de acest destin – e agățat pe perete și rămâne acolo ani întregi, ceea ce îl face un cadou memorabil, dar și unul care ridică întrebări reale înainte de comandă. Le răspundem direct, exact cum ne sunt puse la telefon de cei care comandă pentru prima dată.</p>
 
@@ -994,7 +994,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Inginer Producție HomePrint",
     tags: ["mesh", "banner frontlit", "publicitate outdoor", "siguranta", "noutati"],
     source: "HomePrint.ro",
-    hero: "/products/grafica-originala/banner-mesh-perforat-grafica-constructii.webp",
+    hero: "/products/homeprint-studio/mesh.webp",
     contentHtml: `
       <p>Când renovezi fațada casei – termoizolație, zugrăvit sau reparații la acoperiș – schela rămasă montată săptămâni întregi arată urât din stradă și lasă praful să zboare spre curte sau vecini. Ideea de a o acoperi cu un material printat (fie doar o folie simplă, fie chiar un banner cu o imagine a casei finalizate) pare simplă, dar alegerea materialului nu e doar estetică – e o chestiune de fizică și siguranță. Iată patru întrebări care decid rapid dacă ai nevoie de mesh perforat sau de un banner plin obișnuit.</p>
 
@@ -1050,7 +1050,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Creative Director HomePrint",
     tags: ["design grafic", "bannere", "publicitate", "sfaturi", "vizibilitate"],
     source: "HomePrint.ro",
-    hero: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
+    hero: "/products/homeprint-studio/banner.webp",
     contentHtml: `
       <p>O mașină care trece pe lângă un <a href="/configurator/banner">banner montat pe gard</a> are, în medie, 3-4 secunde de contact vizual cu el – fie că anunță o vânzare de garaj, o petrecere sau că o casă e de vânzare. Nu contează câte informații ai reușit să încapi în design, contează doar ce apucă ochiul să proceseze în acest interval scurt. Înainte să trimiți fișierul la print, parcurge acest checklist scurt; e practic lista pe care o folosim și noi la verificarea grafică înainte de aprobarea comenzii.</p>
 
@@ -1150,7 +1150,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Account Manager HomePrint",
     tags: ["roll-up", "evenimente", "sisteme expozitionale", "comparatie", "noutati"],
     source: "HomePrint.ro",
-    hero: "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp",
+    hero: "/products/homeprint-studio/rollup.webp",
     contentHtml: `
       <p>Pentru cineva care vinde produse handmade la târguri locale sau piețe de weekend, un <a href="/configurator/rollup">roll-up</a> bun cu numele afacerii te scoate din anonimat printre zecile de tarabe similare. Diferența de preț dintre varianta Standard și cea Premium nu ține de calitatea imaginii printate – la HomePrint.ro folosim același material de top pe ambele variante. Diferența e strict mecanică, în caseta care întinde și retrage materialul. Ca să nu plătești în plus degeaba sau, invers, să nu subestimezi ce ai nevoie, răspunde-ți sincer la trei întrebări.</p>
 
@@ -1183,7 +1183,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Product Manager HomePrint",
     tags: ["carti de vizita", "print digital", "materiale premium", "sfaturi branding", "noutati"],
     source: "HomePrint.ro",
-    hero: "/products/carti-vizita/carti-vizita-1.webp",
+    hero: "/products/homeprint-studio/carti-vizita.webp",
     contentHtml: `
       <p>Materialul unei <a href="/configurator/carti-vizita">cărți de vizită</a> comunică ceva înainte ca cineva să citească măcar un cuvânt de pe ea – greutatea în mână, textura la atingere, felul în care reflectă lumina. Pentru o mică afacere pornită de acasă, cartea de vizită e adesea primul lucru „profesionist” pe care îl vede un client nou, mai important decât la o companie mare cu birou și vitrină. În loc de o listă generică, cel mai practic e să pornești de la tipul afacerii tale.</p>
 
@@ -1288,7 +1288,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Marketing Expert HomePrint",
     tags: ["flayere", "pliante", "broșuri", "marketing", "strategie", "noutati"],
     source: "HomePrint.ro",
-    hero: "/products/grafica-originala/flyer-publicitar-grafica-atelier-creativ.webp",
+    hero: "/products/homeprint-studio/flayere.webp",
     contentHtml: `
       <p>Flayerul și pliantul par variante ale aceluiași lucru – hârtie printată, distribuită direct oamenilor. De fapt, alegerea corectă depinde aproape exclusiv de complexitatea mesajului pe care trebuie să-l transmiți, nu de bugetul disponibil. Urmărim cum ar decide trei situații diferite, foarte comune pentru cineva care pornește o mică activitate de acasă.</p>
 
@@ -1448,7 +1448,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Specialist Colantări HomePrint",
     tags: ["window graphics", "one way vision", "autocolant vitrine", "publicitate", "noutati"],
     source: "HomePrint.ro",
-    hero: "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp",
+    hero: "/products/homeprint-studio/window-graphics.webp",
     contentHtml: `
       <p>Tot mai mulți oameni transformă un garaj, o cameră de la stradă sau un colț din curte într-un mic atelier sau birou de acasă, vizibil direct din stradă prin geam. Greșeala frecventă e să tratezi întreaga fereastră ca pe o singură suprafață și să alegi un singur material pentru tot geamul. De fapt, o fereastră expusă spre stradă are de obicei 2-3 zone cu nevoi diferite, iar materialul potrivit variază de la o zonă la alta – exact ca la o vitrină de magazin.</p>
 
@@ -1633,7 +1633,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Consultant Semnalistică HomePrint",
     tags: ["semnalistica", "deschidere magazin", "firma exterioara", "window graphics", "sfaturi", "noutati"],
     source: "HomePrint.ro",
-    hero: "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp",
+    hero: "/products/homeprint-studio/window-graphics.webp",
     contentHtml: `
       <p>Transformarea unui garaj, a unei camere de la stradă sau a unui colț de curte într-un mic punct de vânzare are un termen fix – ziua în care anunți pe rețelele sociale sau vecinilor că ești „deschis”. Problema e că materialele de semnalistică au propriile termene de producție, iar dacă le comanzi în ordinea greșită, riști să deschizi cu o fereastră goală și fără niciun semn la stradă. Iată ordinea reală în care ar trebui să lucrezi, cu tot ce am văzut că merge (și ce nu merge) la zeci de mici afaceri care au pornit exact așa.</p>
 
@@ -1789,7 +1789,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Inginer Producție HomePrint",
     tags: ["mesh", "schela", "firme constructii", "santier", "siguranta", "noutati"],
     source: "HomePrint.ro",
-    hero: "/products/grafica-originala/banner-mesh-perforat-grafica-constructii.webp",
+    hero: "/products/homeprint-studio/mesh.webp",
     contentHtml: `
       <p>Renovarea fațadei propriei case – termoizolație, zugrăvit, reparații la acoperiș – aduce aproape mereu aceeași bătaie de cap: schela montată rămâne acolo săptămâni întregi, arată urât spre stradă, lasă praful să zboare spre curtea vecinilor și, dacă vremea e capricioasă, expune materialele de lucru la ploaie. Ideea de a acoperi schela cu un material printat, fie doar un mesaj simplu, fie o imagine a casei finalizate, rezolvă toate aceste probleme deodată – dar materialul ales greșit nu e doar o soluție puțin arătoasă, e un risc de siguranță real pentru cei din curte și de pe trotuar.</p>
 
@@ -1828,7 +1828,7 @@ const STATIC_POSTS: BlogPost[] = [
     author: "Echipa HomePrint",
     tags: ["bannere", "evenimente", "imobiliare", "frontlit", "cost", "sfaturi", "noutati"],
     source: "HomePrint.ro",
-    hero: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
+    hero: "/products/homeprint-studio/banner.webp",
     contentHtml: `
       <p>Dacă organizezi o vânzare de garaj în fiecare toamnă, vinzi singur casa fără agenție sau ai o mică afacere sezonieră (brazi de Crăciun, flori de 1 Martie, dovleci de Halloween), probabil ai comandat deja bannere de mai multe ori pentru practic același tip de mesaj. Diferența dintre a cheltui de la zero de fiecare an și a reduce constant costul per sezon stă în două decizii luate din start: designul și materialul ales.</p>
 
@@ -2128,7 +2128,7 @@ const STATIC_POSTS: BlogPost[] = [
     date: '2026-08-12T09:00:00.000Z',
     author: "Echipa HomePrint",
     tags: ["proiecte de casa", "print personalizat", "bannere petreceri", "semnalistica curte", "diy", "homeprint"],
-    hero: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
+    hero: "/products/homeprint-studio/canvas.webp",
     contentHtml: `
       <p>Când te gândești la „print personalizat”, primul lucru care îți vine în minte e probabil o firmă de magazin sau un banner de reclamă. În realitate, o familie obișnuită are, de-a lungul unui an, mult mai multe ocazii să folosească print de calitate decât și-ar imagina: o zi de naștere, o vânzare de garaj, un semn nou la poartă, un tablou pentru living. Am strâns aici cele mai frecvente proiecte de casă pe care le vedem la comenzile noastre, organizate pe tipul de ocazie, cu materialul potrivit pentru fiecare.</p>
 
@@ -2235,7 +2235,7 @@ const STATIC_POSTS: BlogPost[] = [
     date: '2026-08-26T09:00:00.000Z',
     author: "Echipa HomePrint",
     tags: ["mica afacere de acasa", "carti de vizita", "autocolante", "banner", "antreprenoriat", "homeprint"],
-    hero: "/products/carti-vizita/carti-vizita-1.webp",
+    hero: "/products/homeprint-studio/carti-vizita.webp",
     contentHtml: `
       <p>Tranziția de la „fac bijuterii/prăjituri/ceramică pentru prieteni” la „am o mică afacere” se întâmplă de regulă treptat, fără un moment clar de start. Un semn bun că a venit momentul: primești comenzi de la oameni pe care nu-i cunoști personal. În acel moment, câteva materiale printate ieftine fac diferența dintre „cineva care vinde din pasiune” și „o afacere mică, dar serioasă” – fără să fie nevoie de un buget mare de lansare.</p>
 

@@ -17,9 +17,9 @@ import QuickNav from "@/components/QuickNav";
 import RelatedProducts from "@/components/RelatedProducts";
 
 const GALLERY_BASE = [
-    "/products/grafica-originala/carti-vizita-personalizate-grafica-atelier.webp",
-    "/products/grafica-originala/carti-vizita-personalizate-grafica-atelier.webp",
-    "/products/grafica-originala/carti-vizita-personalizate-grafica-atelier.webp"
+    "/products/homeprint-studio/carti-vizita.webp",
+    "/products/homeprint-studio/carti-vizita.webp",
+    "/products/homeprint-studio/carti-vizita.webp"
 ] as const;
 
 const productFaqs: QA[] = [

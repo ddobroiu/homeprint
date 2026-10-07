@@ -48,7 +48,7 @@ export default function AboutPage() {
                     </div>
                     <div className="relative aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-slate-900 border border-slate-200">
                         <Image 
-                            src="/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp" 
+                            src="/products/homeprint-studio/banner.webp" 
                             alt="Echipa și Tehnologia HomePrint" 
                             fill 
                             priority 

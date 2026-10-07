@@ -5,7 +5,7 @@ import { Suspense } from "react"; // <--- IMPORT OBLIGATORIU
 import ProductJsonLd from "@/components/ProductJsonLd";
 import { resolveProductForRequestedSlug, getAllProductSlugsByCategory } from "@/lib/products";
 import type { Product } from "@/lib/products";
-import BannerConfigurator from "@/components/BannerConfigurator";
+import BannerConfigurator from "@/components/configurator/BannerConfigurator";
 
 import SaleRentBannerConfigurator from "@/components/SaleRentBannerConfigurator";
 import { prisma } from "@/lib/prisma";
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props) {
       openGraph: {
         title: landingSEO.seoTitle || landingSEO.title,
         description: landingSEO.shortDescription,
-        images: landingSEO.images || ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"]
+        images: landingSEO.images || ["/products/homeprint-studio/banner.webp"]
       },
     };
   }
@@ -75,7 +75,7 @@ export default async function Page({ params }: Props) {
       slug: landingSEO.key,
       title: landingSEO.title,
       description: landingSEO.shortDescription,
-      images: landingSEO.images || ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
+      images: landingSEO.images || ["/products/homeprint-studio/banner.webp"],
       contentHtml: landingSEO.contentHtml,
       metadata: { type: 'custom' }
     };
@@ -93,10 +93,10 @@ export default async function Page({ params }: Props) {
 
   // LOGICA IMAGINE ROBUSTĂ
   const slugKey = String(product.slug ?? product.id ?? "").toLowerCase();
-  const genericSet = new Set<string>(["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp", "/placeholder.png"]);
+  const genericSet = new Set<string>(["/products/homeprint-studio/banner.webp", "/placeholder.png"]);
   const imgs = product.images ?? [];
   let img = imgs.find((x: string) => !!x && slugKey && x.toLowerCase().includes(slugKey));
-  if (!img) img = imgs.find((x: string) => !!x && !genericSet.has(x.toLowerCase())) ?? imgs[0] ?? "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp";
+  if (!img) img = imgs.find((x: string) => !!x && !genericSet.has(x.toLowerCase())) ?? imgs[0] ?? "/products/homeprint-studio/banner.webp";
 
 
 

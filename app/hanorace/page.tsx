@@ -18,7 +18,7 @@ export const metadata = {
         title: "Hanorace Personalizate | Print DTF Profesional | Publicitate Outdoor",
         description: "Hanorace premium, groase, personalizate cu designul tău. Calitate maximă a printului DTF. Sistem centralizat pentru outdoor și indoor. Print de mari și mici dimensiuni cu preț de producător și rezistență UV.",
         images: [{
-            url: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
+            url: "/products/homeprint-studio/banner.webp",
             width: 1200,
             height: 630,
             alt: "Hanorace Personalizate"

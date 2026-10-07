@@ -16,7 +16,7 @@ const JUDETE: [string, string][] = [
   ["valcea", "Vâlcea"], ["vrancea", "Vrancea"],
 ];
 
-const IMAGE = '/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp';
+const IMAGE = '/products/homeprint-studio/canvas.webp';
 
 function buildCanvasJudetEntry(slug: string, name: string): LandingInfo {
   const variants: Omit<LandingInfo, 'key' | 'images'>[] = [

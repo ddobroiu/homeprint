@@ -134,9 +134,7 @@ const meshFaqs: QA[] = [
 const MESH_PRESENTATION_VIDEO_ID = "1Y6osfnjqhM";
 
 const MESH_GALLERY_IMAGES = [
-    "/products/mesh/mesh_publicitar_personalizat.jpg",
-    "/products/grafica-originala/banner-mesh-perforat-grafica-constructii.webp",
-    "/products/mesh/mesh_publicitar_tivcapse.jpg",
+    "/products/homeprint-studio/mesh.webp",
 ] as const;
 
 function BannerModeSwitchInline({ carryArtwork = false }: { carryArtwork?: boolean }) {
@@ -203,8 +201,7 @@ type ViewMode = 'gallery' | 'shape';
 
 /* --- MAIN COMPONENT --- */
 const BANNER_GALLERY_IMAGES = [
-    "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
-    "/products/poze-produse-seo/banner-publicitar-personalizat.webp",
+    "/products/homeprint-studio/banner.webp",
 ];
 
 export default function BannerConfigurator({ productSlug, initialWidth: initW, initialHeight: initH, productImage: productImageProp, renderOnlyConfigurator = false, intent, productKind = "banner" }: Props) {

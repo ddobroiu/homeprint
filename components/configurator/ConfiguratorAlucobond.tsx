@@ -22,9 +22,7 @@ import {
 } from "@/lib/pricing";
 
 const GALLERY_BASE = [
-    "/products/materiale/alucobond/alucobond-1.webp",
-    "/products/grafica-originala/placa-alucobond-compozit-grafica-studio.webp",
-    "/products/materiale/alucobond/alucobond-2.webp",
+    "/products/homeprint-studio/alucobond.webp",
 ] as const;
 
 const productFaqs: QA[] = [

@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import ConfiguratorAlucobond from "@/components/ConfiguratorAlucobond";
+import ConfiguratorAlucobond from "@/components/configurator/ConfiguratorAlucobond";
 import { getProductBySlug } from "@/lib/products";
 import ProductJsonLd from "@/components/ProductJsonLd";
 import { prisma } from "@/lib/prisma";

@@ -25,8 +25,7 @@ import ProductJsonLd from "@/components/ProductJsonLd";
 import { PopularDimensions } from "./PopularDimensions";
 
 const GALLERY_BASE = [
-    "/products/afise/afise-1.webp",
-    "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp",
+    "/products/homeprint-studio/afise.webp",
 ] as const;
 
 const afiseFaqs: QA[] = [

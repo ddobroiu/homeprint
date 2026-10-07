@@ -22,7 +22,7 @@ import { NumberInput } from "./ui/NumberInput";
 import { OptionButton } from "./ui/OptionButton";
 
 const GALLERY_BASE = [
-    "/products/materiale/alucobond/alucobond-1.webp",
+    "/products/homeprint-studio/alucobond.webp",
     "/products/materiale/alucobond/alucobond-2.webp"
 ] as const;
 

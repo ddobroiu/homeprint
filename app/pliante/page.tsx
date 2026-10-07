@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import PlianteConfigurator from "@/components/PlianteConfigurator";
+import PlianteConfigurator from "@/components/configurator/PlianteConfigurator";
 import { getProductBySlug } from "@/lib/products";
 import ProductJsonLd from "@/components/ProductJsonLd";
 import { prisma } from "@/lib/prisma";

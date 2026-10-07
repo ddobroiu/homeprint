@@ -22,7 +22,7 @@ import QuickNav from "@/components/QuickNav";
 import RelatedProducts from "@/components/RelatedProducts";
 
 const GALLERY_BASE = [
-    "/products/materiale/pvc-forex/pvc-forex-1.webp",
+    "/products/homeprint-studio/pvc-forex.webp",
     "/products/materiale/pvc-forex/pvc-forex-2.webp"
 ] as const;
 

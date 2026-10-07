@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Configurator Mesh publicitar',
     description: 'Mesh publicitar la dimensiuni tale, configurare și comandă online.',
-    images: ["/products/grafica-originala/banner-mesh-perforat-grafica-constructii.webp"],
+    images: ["/products/homeprint-studio/mesh.webp"],
   }
 };
 
@@ -34,7 +34,7 @@ export default function MeshConfiguratorPage() {
       <ProductSchema
         name="Mesh publicitar personalizat"
         description="Mesh publicitar pentru exterior. Tiv și capse incluse. Configurare online la dimensiunile tale."
-        image="/products/grafica-originala/banner-mesh-perforat-grafica-constructii.webp"
+        image="/products/homeprint-studio/mesh.webp"
         url="/configurator/mesh"
         price="45.00"
       />

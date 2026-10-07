@@ -141,7 +141,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
         <h3 className="text-lg font-semibold leading-snug text-[var(--design-ink)] transition-colors group-hover:text-blue-700">{product.title}</h3>
         {product.description && <div className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-500" dangerouslySetInnerHTML={{ __html: product.description }} />}
         <div className="mt-auto flex flex-wrap items-center justify-between gap-x-3 gap-y-3 pt-5">
-          <p className="whitespace-nowrap text-sm text-slate-500">de la <span className="text-lg font-semibold text-[var(--design-ink)]">{new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 2 }).format(product.price)} lei</span></p>
+          {product.metadata?.isGuidedConfigurator ? <p className="text-sm text-slate-500">Preț în configurator</p> : <p className="whitespace-nowrap text-sm text-slate-500">de la <span className="text-lg font-semibold text-[var(--design-ink)]">{new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 2 }).format(product.price)} lei</span></p>}
           <span className="flex items-center gap-2 text-sm font-medium text-[var(--design-accent)]">{isMultiVariant ? "Alege" : "Configurează"}<ArrowRight size={17} strokeWidth={1.7} /></span>
         </div>
       </div>

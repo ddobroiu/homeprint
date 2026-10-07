@@ -21,13 +21,7 @@ import {
     type PriceInputPlexiglass
 } from "@/lib/pricing";
 
-const GALLERY_BASE = [
-    "/products/materiale/plexiglass/plexiglass-1.webp",
-    "/products/grafica-originala/placa-plexiglas-transparenta-grafica-birou-decupata.png",
-    "/products/materiale/plexiglass/plexiglass-2.webp",
-    "/products/materiale/plexiglass/plexiglass-3.webp",
-    "/products/master/placi-plexiglass-transparent-personalizat-print-uv.png",
-] as const;
+const GALLERY_BASE = ["/products/homeprint-studio/plexiglass.webp"] as const;
 
 const productFaqs: QA[] = [
     { question: "Ce este plexiglasul?", answer: "Plexiglasul (PMMA) este un material plastic transparent sau opac, foarte rigid, cunoscut și sub numele de sticlă acrilică. Este mult mai ușor și mai rezistent la impact decât sticla clasică." },

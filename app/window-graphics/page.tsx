@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import WindowGraphicsConfigurator from "@/components/WindowGraphicsConfigurator";
+import WindowGraphicsConfigurator from "@/components/configurator/WindowGraphicsConfigurator";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getProductBySlug } from "@/lib/products";
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description:
       "Transformă vitrina sau geamurile într-un spațiu publicitar cu folie perforată One Way Vision. Comandă online la HomePrint.ro!",
     images: [{
-      url: "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp",
+      url: "/products/homeprint-studio/window-graphics.webp",
       width: 1200,
       height: 630,
       alt: "Window Graphics Folie Perforata"

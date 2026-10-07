@@ -10,7 +10,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Stickere auto rezistente la spălare și UV. De la logo-uri mici la colantare parțială.",
     seoTitle: "Autocolante Auto | Branding Masini & Flote",
     seoDescription: "Comandă autocolante auto personalizate. Folie polimerică premium, rezistentă la exterior. Livrare rapidă.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Transformă mașina în reclamă mobilă</h2><p>Cel mai ieftin spațiu publicitar este propria ta mașină. Aplică logo-ul, telefonul și site-ul pe portiere sau lunetă.</p>`
   },
   "taxi": {
@@ -19,7 +19,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Set complet autocolante taxi: tarife, buline, șah, numere autorizație.",
     seoTitle: "Autocolante Taxi | Tarife & Ecusoane",
     seoDescription: "Seturi complete de colantare pentru taxi conform legislației locale.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Kit complet pentru Taxi</h2><p>Tot ce ai nevoie pentru a intra în legalitate: tarife portiere, numere, indicativ.</p>`
   },
   "uber-bolt": {
@@ -28,7 +28,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Ecusoane magnetice sau autocolante 'Conform', 'Copie Conformă' pentru ridesharing.",
     seoTitle: "Autocolante Uber & Bolt | Ridesharing",
     seoDescription: "Semnalistică obligatorie pentru mașini de ridesharing. Ecusoane vizibile.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Fii vizibil pentru pasageri</h2><p>Ecusoane standardizate pentru platformele de ridesharing.</p>`
   },
   "baby-on-board": {
@@ -37,7 +37,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Sticker 'Bebe la Bord' cu numele copilului sau grafică simpatică.",
     seoTitle: "Sticker Baby on Board Personalizat",
     seoDescription: "Alege un model unic de Baby on Board. Protejează-ți familia în trafic.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Siguranță cu personalitate</h2><p>Nu folosi un sticker banal. Personalizează-l cu numele micuțului tău.</p>`
   },
   "scoala-soferi": {
@@ -46,7 +46,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Branding complet pentru mașini de școală. 'ȘCOALA', telefon, logo.",
     seoTitle: "Autocolante Scoala de Soferi | Casete Taxi",
     seoDescription: "Echipează mașinile școlii cu autocolante vizibile și rezistente.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Atrage cursanți din trafic</h2><p>O mașină de școală vizibilă este cea mai bună reclamă pentru instructor.</p>`
   },
   "moto": {
@@ -55,7 +55,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Kit-uri de stickere pentru motociclete, căști și ATV-uri. Rezistente la noroi și spălare.",
     seoTitle: "Stickere Moto & ATV | Grafica Personalizata",
     seoDescription: "Personalizează-ți motocicleta sau ATV-ul cu stickere de calitate.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Stil unic pe 2 sau 4 roți</h2><p>Stickere rezistente la condiții extreme (apă, noroi, soare).</p>`
   },
 
@@ -67,7 +67,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Colantare integrală sau parțială pentru vitrine. 'Window Graphics' sau decupaj.",
     seoTitle: "Autocolant Vitrina Magazin | Window Graphics",
     seoDescription: "Decorează vitrina magazinului. Atrage clienții cu oferte vizibile de la distanță.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Vitrina ta, vânzătorul tău tăcut</h2><p>Folosește vitrina pentru a comunica ofertele și identitatea brandului.</p>`
   },
   "program": {
@@ -76,7 +76,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Sticker obligatoriu cu orarul de funcționare pentru ușa de la intrare.",
     seoTitle: "Sticker Program Functionare | Orar Magazin",
     seoDescription: "Comandă sticker cu programul tău. Litere decupate (cut-out) sau print pe fundal alb/transparent.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Informează clienții clar</h2><p>Un program lizibil pe ușa de la intrare este esențial și obligatoriu.</p>`
   },
   "reduceri": {
@@ -85,7 +85,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Stickere temporare: '-50%', 'Lichidare Stoc', 'Black Friday'.",
     seoTitle: "Stickere Reduceri & Soldari | Decor Vitrina",
     seoDescription: "Semnalizează campaniile de reduceri. Stickere ușor de aplicat și de dat jos.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Crește traficul în magazin</h2><p>Nimic nu atrage mai bine decât un sticker mare cu '% REDUCERE'.</p>`
   },
   "sarbatori": {
@@ -94,7 +94,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Decor vitrină sezonier: brazi, fulgi, iepurași, ouă.",
     seoTitle: "Stickere Craciun & Paste | Decor Vitrine",
     seoDescription: "Pregătește magazinul de sărbătoare cu stickere tematice.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Atmosferă festivă</h2><p>Decorează vitrina pentru a intra în spiritul sărbătorilor și a atrage cumpărătorii de cadouri.</p>`
   },
   "floor-graphics": {
@@ -103,7 +103,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Stickere antiderapante pentru podea. Săgeți, distanțare, reclame.",
     seoTitle: "Autocolant Podea | Floor Graphics Antiderapant",
     seoDescription: "Ghidează clienții prin magazin cu stickere de podea rezistente la trafic.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Ghidează pașii clienților</h2><p>Ideal pentru direcționare în supermarketuri, farmacii sau clinici.</p>`
   },
 
@@ -115,7 +115,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Etichete personalizate pentru ambalaje. Orice formă și dimensiune.",
     seoTitle: "Etichete Produse Personalizate | Rola & Coala",
     seoDescription: "Etichete autoadezive pentru producători. Print de calitate, decupaj pe contur.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Ambalajul vinde produsul</h2><p>O etichetă profesională crește valoarea percepută a produsului tău artizanal.</p>`
   },
   "etichete-borcane": {
@@ -124,7 +124,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Etichete rezistente pentru borcane. Design rustic sau modern.",
     seoTitle: "Etichete Borcane Miere & Dulceata | Autocolante",
     seoDescription: "Etichete pentru apicultori și producători locali. Rezistente la frigider și manipulare.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Pentru bunătăți din cămară</h2><p>Etichete care spun povestea produsului tău natural.</p>`
   },
   "etichete-sticle": {
@@ -133,7 +133,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Etichete pentru sticle de vin, nuntă, sucuri naturale.",
     seoTitle: "Etichete Sticle Vin & Bauturi | Personalizate",
     seoDescription: "Personalizează sticlele pentru evenimente sau vânzare. Autocolant rezistent la condens.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Etichete premium pentru băuturi</h2><p>Fie că e vorba de un vin de colecție sau un suc fresh, eticheta contează.</p>`
   },
   "delivery": {
@@ -142,7 +142,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Etichete 'Sigiliu de Siguranță' pentru pungi delivery, cutii pizza.",
     seoTitle: "Etichete Delivery & Sigiliu Mancare",
     seoDescription: "Asigură clienții că mâncarea a ajuns intactă. Etichete sigiliu personalizate.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Siguranța alimentară contează</h2><p>Sigilează pungile de livrare cu un sticker personalizat cu brandul tău.</p>`
   },
   "marturii": {
@@ -151,7 +151,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Stickere mici rotunde/pătrate cu numele mirilor și data.",
     seoTitle: "Etichete Marturii Nunta & Botez | Sticker Rotund",
     seoDescription: "Personalizează mărturiile dulci sau cadourile pentru invitați.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Un detaliu mic, o amintire plăcută</h2><p>Etichetează borcănelele cu miere sau cutiile de prăjituri.</p>`
   },
 
@@ -163,7 +163,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Semne obligatorii: 'Stingător', 'Ieșire Urgență', 'Pericol Electrocutare'.",
     seoTitle: "Autocolante SSM & Protectia Muncii | Semne Obligatorii",
     seoDescription: "Intră în legalitate cu setul complet de etichete SSM. Rezistente și vizibile.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Semnalizare obligatorie conform legii</h2><p>Nu risca amenzi. Marchează corect stingătoarele, ieșirile și pericolele.</p>`
   },
   "supraveghere-video": {
@@ -172,7 +172,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Sticker 'Atenție! Obiectiv supravegheat video' conform GDPR.",
     seoTitle: "Sticker Supraveghere Video & CCTV | GDPR",
     seoDescription: "Obligatoriu pentru spațiile monitorizate. Sticker rezistent exterior.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Respectă normele GDPR</h2><p>Semnalizează camerele de supraveghere la intrarea în incintă.</p>`
   },
   "interzis-fumatul": {
@@ -181,7 +181,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Semn internațional 'Fumatul Interzis' sau loc pentru fumat.",
     seoTitle: "Sticker Interzis Fumatul | Semnalistica",
     seoDescription: "Semnalizează zonele non-smoking din instituții și restaurante.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Reguli clare</h2><p>Evită neînțelegerile cu un semn clar de interzicere.</p>`
   },
   "toaleta": {
@@ -190,7 +190,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Semnalizare uși toaletă. Pictograme clasice sau amuzante.",
     seoTitle: "Stickere Toaleta & WC | Semnalistica Usi",
     seoDescription: "Ghidează clienții către grupurile sanitare.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Semnalizare esențială</h2><p>Pentru restaurante, birouri și spații publice.</p>`
   },
   "reciclare": {
@@ -199,7 +199,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Stickere pentru coșuri de gunoi: Hârtie, Plastic, Sticlă, Menajer.",
     seoTitle: "Etichete Reciclare & Colectare Selectiva",
     seoDescription: "Organizează reciclarea la birou sau acasă cu etichete colorate.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Protejează mediul</h2><p>Etichetează clar recipientele pentru o colectare eficientă.</p>`
   },
 
@@ -211,7 +211,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante decorative pentru living, dormitor sau birou. Citate, forme, modele.",
     seoTitle: "Stickere Perete Decorative | Wall Art",
     seoDescription: "Schimbă aspectul camerei rapid cu stickere de perete. Ușor de aplicat.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Design interior DIY</h2><p>Adaugă un accent de culoare sau un mesaj motivațional pe perete.</p>`
   },
   "mobila": {
@@ -220,7 +220,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Folie autocolantă pentru uși, dulapuri, bucătărie. Imitație lemn, marmură, uni.",
     seoTitle: "Autocolant Mobila & Usi | Reconditionare",
     seoDescription: "Dă o viață nouă mobilei vechi. Autocolant gros, lavabil.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Renovare fără praf</h2><p>Colantează fronturile de la bucătărie sau ușile vechi pentru un look modern.</p>`
   },
   "camera-copii": {
@@ -229,7 +229,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Decor vesel pentru cei mici. Animăluțe, stele, metru de perete.",
     seoTitle: "Stickere Camera Copii & Bebe | Decor",
     seoDescription: "Transformă camera copilului într-o lume de poveste.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>O lume de basm</h2><p>Stickere sigure, non-toxice, care nu strică peretele.</p>`
   },
   "laptop": {
@@ -238,7 +238,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Stickere mici, cool, pentru laptopuri, telefoane, căști. Skin-uri complete.",
     seoTitle: "Stickere Laptop & Skinuri | Personalizate",
     seoDescription: "Personalizează-ți gadgeturile. Stickere rezistente la uzură.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Tech cu stil</h2><p>Arată-ți personalitatea prin stickerele de pe laptop.</p>`
   },
 
@@ -250,7 +250,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante oficiale sau personalizate pentru BMW. Rezistente la spălare.",
     seoTitle: "Stickere BMW | Logo Masina",
     seoDescription: "Arată-ți pasiunea pentru BMW cu stickere de calitate.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>BMW-ul tău strălucește</h2><p>Stickere pentru iubitorii de BMW.</p><p>Culori oficiale. Print de înaltă rezoluție.</p><ul><li>Rezistente la vreme</li><li>Design premium</li><li>Livrare rapidă</li></ul>`
   },
   "audi": {
@@ -259,7 +259,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Stickere pentru Audi: logo, numere, grafică custom.",
     seoTitle: "Stickere Audi | Embleme Masina",
     seoDescription: "Personalizează Audi-ul tău cu stickere elegante.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Eleganță pe 4 roți</h2><p>Stickere pentru Audi.</p><p>Culori argintii. Rezistente la spălare.</p><ul><li>Design elegant</li><li>Hârtie premium</li><li>Print profesional</li></ul>`
   },
   "mercedes": {
@@ -268,7 +268,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante cu steaua Mercedes pentru portiere sau lunetă.",
     seoTitle: "Stickere Mercedes | Stea Masina",
     seoDescription: "Arată clasa Mercedes cu stickere de lux.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Lux pe șosea</h2><p>Stickere pentru Mercedes.</p><p>Culori clasice. Rezistente la UV.</p><ul><li>Design luxos</li><li>Hârtie rezistentă</li><li>Livrare premium</li></ul>`
   },
   "volkswagen": {
@@ -277,7 +277,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Stickere pentru VW: gândac, logo, personalizare.",
     seoTitle: "Stickere Volkswagen | Logo VW",
     seoDescription: "Personalizează VW-ul tău cu stickere distractive.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Spirit VW</h2><p>Stickere pentru Volkswagen.</p><p>Culori vii. Print de calitate.</p><ul><li>Design distractiv</li><li>Hârtie rezistentă</li><li>Livrare rapidă</li></ul>`
   },
   "ford": {
@@ -286,7 +286,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante cu ovalul Ford pentru mașini.",
     seoTitle: "Stickere Ford | Oval Masina",
     seoDescription: "Arată puterea Ford cu stickere robuste.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Putere americană</h2><p>Stickere pentru Ford.</p><p>Culori albastre. Rezistente la vreme.</p><ul><li>Design puternic</li><li>Hârtie durabilă</li><li>Print de calitate</li></ul>`
   },
   "renault": {
@@ -295,7 +295,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Stickere cu diamantul Renault pentru portiere.",
     seoTitle: "Stickere Renault | Diamant Masina",
     seoDescription: "Personalizează Renault-ul tău cu stickere moderne.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Modernitate franceză</h2><p>Stickere pentru Renault.</p><p>Culori moderne. Rezistente la spălare.</p><ul><li>Design modern</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
   "dacia": {
@@ -304,7 +304,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru Dacia: logo, personalizare românească.",
     seoTitle: "Stickere Dacia | Logo Romanesc",
     seoDescription: "Arată mândria românească cu stickere Dacia.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Mândrie românească</h2><p>Stickere pentru Dacia.</p><p>Culori naționale. Rezistente la vreme.</p><ul><li>Design patriotic</li><li>Hârtie rezistentă</li><li>Print de calitate</li></ul>`
   },
   "opel": {
@@ -313,7 +313,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Stickere cu fulgerul Opel pentru mașini.",
     seoTitle: "Stickere Opel | Fulger Masina",
     seoDescription: "Personalizează Opel-ul tău cu stickere dinamice.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Dinamic pe șosea</h2><p>Stickere pentru Opel.</p><p>Culori dinamice. Rezistente la UV.</p><ul><li>Design energetic</li><li>Hârtie durabilă</li><li>Livrare rapidă</li></ul>`
   },
   "peugeot": {
@@ -322,7 +322,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante cu leul Peugeot pentru portiere.",
     seoTitle: "Stickere Peugeot | Leu Masina",
     seoDescription: "Arată forța Peugeot cu stickere elegante.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Forță franceză</h2><p>Stickere pentru Peugeot.</p><p>Culori elegante. Rezistente la spălare.</p><ul><li>Design puternic</li><li>Hârtie premium</li><li>Print profesional</li></ul>`
   },
   "citroen": {
@@ -331,7 +331,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Stickere cu chevronul Citroën pentru mașini.",
     seoTitle: "Stickere Citroen | Chevron Masina",
     seoDescription: "Personalizează Citroën-ul tău cu stickere inovative.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Inovație pe roți</h2><p>Stickere pentru Citroën.</p><p>Culori inovative. Rezistente la vreme.</p><ul><li>Design creativ</li><li>Hârtie rezistentă</li><li>Livrare rapidă</li></ul>`
   },
   "fiat": {
@@ -340,7 +340,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru Fiat: logo, personalizare italiană.",
     seoTitle: "Stickere Fiat | Logo Italian",
     seoDescription: "Arată stilul italian cu stickere Fiat.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Stil italian</h2><p>Stickere pentru Fiat.</p><p>Culori vii. Rezistente la spălare.</p><ul><li>Design italian</li><li>Hârtie premium</li><li>Print de calitate</li></ul>`
   },
   "skoda": {
@@ -349,7 +349,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Stickere cu săgeata Škoda pentru portiere.",
     seoTitle: "Stickere Skoda | Sageata Masina",
     seoDescription: "Personalizează Škoda-ul tău cu stickere precise.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Precizie cehă</h2><p>Stickere pentru Škoda.</p><p>Culori precise. Rezistente la UV.</p><ul><li>Design precis</li><li>Hârtie durabilă</li><li>Livrare rapidă</li></ul>`
   },
   "toyota": {
@@ -358,7 +358,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru Toyota: logo, personalizare japoneză.",
     seoTitle: "Stickere Toyota | Logo Japonez",
     seoDescription: "Arată fiabilitatea Toyota cu stickere de calitate.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Fiabilitate japoneză</h2><p>Stickere pentru Toyota.</p><p>Culori fiabile. Rezistente la vreme.</p><ul><li>Design fiabil</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
   "honda": {
@@ -367,7 +367,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Stickere cu H-ul Honda pentru mașini.",
     seoTitle: "Stickere Honda | H Masina",
     seoDescription: "Personalizează Honda-ul tău cu stickere atletice.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Atletism japonez</h2><p>Stickere pentru Honda.</p><p>Culori atletice. Rezistente la spălare.</p><ul><li>Design sportiv</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
   "nissan": {
@@ -376,7 +376,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru Nissan: logo, personalizare inovativă.",
     seoTitle: "Stickere Nissan | Logo Japonez",
     seoDescription: "Arată inovația Nissan cu stickere moderne.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Inovație japoneză</h2><p>Stickere pentru Nissan.</p><p>Culori moderne. Rezistente la UV.</p><ul><li>Design inovativ</li><li>Hârtie durabilă</li><li>Print de calitate</li></ul>`
   },
   "hyundai": {
@@ -385,7 +385,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Stickere cu H-ul Hyundai pentru portiere.",
     seoTitle: "Stickere Hyundai | H Masina",
     seoDescription: "Personalizează Hyundai-ul tău cu stickere coreene.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Spirit coreean</h2><p>Stickere pentru Hyundai.</p><p>Culori coreene. Rezistente la vreme.</p><ul><li>Design modern</li><li>Hârtie rezistentă</li><li>Livrare rapidă</li></ul>`
   },
   "kia": {
@@ -394,7 +394,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru Kia: logo, personalizare coreeană.",
     seoTitle: "Stickere Kia | Logo Coreean",
     seoDescription: "Arată designul Kia cu stickere elegante.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Design coreean</h2><p>Stickere pentru Kia.</p><p>Culori elegante. Rezistente la spălare.</p><ul><li>Design elegant</li><li>Hârtie premium</li><li>Print profesional</li></ul>`
   },
   "volvo": {
@@ -403,7 +403,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Stickere cu grila Volvo pentru mașini sigure.",
     seoTitle: "Stickere Volvo | Grila Masina",
     seoDescription: "Arată siguranța Volvo cu stickere robuste.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Siguranță suedeză</h2><p>Stickere pentru Volvo.</p><p>Culori sigure. Rezistente la UV.</p><ul><li>Design sigur</li><li>Hârtie durabilă</li><li>Livrare premium</li></ul>`
   },
   "tesla": {
@@ -412,7 +412,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru Tesla: logo, personalizare electrică.",
     seoTitle: "Stickere Tesla | Logo Electric",
     seoDescription: "Arată viitorul cu stickere Tesla inovative.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Viitor electric</h2><p>Stickere pentru Tesla.</p><p>Culori futuriste. Rezistente la vreme.</p><ul><li>Design inovativ</li><li>Hârtie premium</li><li>Print de calitate</li></ul>`
   },
   "custom-auto": {
@@ -421,7 +421,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante custom pentru mașini: nume, grafică, logo personal.",
     seoTitle: "Stickere Auto Personalizate | Design Unic",
     seoDescription: "Creează stickere unice pentru mașina ta.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Unic pe șosea</h2><p>Stickere personalizate pentru auto.</p><p>Design unic. Rezistente la spălare.</p><ul><li>Personalizare completă</li><li>Hârtie rezistentă</li><li>Livrare rapidă</li></ul>`
   },
   "numere-auto": {
@@ -430,7 +430,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante cu numere personalizate pentru mașini.",
     seoTitle: "Stickere Numere Auto | Placute Personalizate",
     seoDescription: "Adaugă numere cool pe mașina ta.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Numere cool</h2><p>Stickere pentru numere auto.</p><p>Culori vii. Rezistente la vreme.</p><ul><li>Design distractiv</li><li>Hârtie durabilă</li><li>Print profesional</li></ul>`
   },
   "parcare": {
@@ -439,7 +439,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru locuri de parcare: rezervat, handicap.",
     seoTitle: "Stickere Parcare | Rezervat Handicap",
     seoDescription: "Semnalizează parcarea cu stickere oficiale.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Parcare sigură</h2><p>Stickere pentru locuri rezervate.</p><p>Culori vizibile. Rezistente la vreme.</p><ul><li>Design oficial</li><li>Hârtie rezistentă</li><li>Livrare rapidă</li></ul>`
   },
   "ecusoane-politie": {
@@ -448,7 +448,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Stickere pentru mașini de poliție: logo, numere.",
     seoTitle: "Ecusoane Politie | Autocolante Oficiale",
     seoDescription: "Echipează mașinile de poliție cu ecusoane vizibile.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Autoritate vizibilă</h2><p>Ecusoane pentru poliție.</p><p>Culori oficiale. Rezistente la vreme.</p><ul><li>Design oficial</li><li>Hârtie durabilă</li><li>Print profesional</li></ul>`
   },
   "ambulanta": {
@@ -457,7 +457,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru ambulanțe: cruci roșii, logo.",
     seoTitle: "Stickere Ambulanta | Semnalizare Medicala",
     seoDescription: "Semnalizează ambulanțele cu stickere vizibile.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Urgență medicală</h2><p>Stickere pentru ambulanțe.</p><p>Culori roșii. Rezistente la vreme.</p><ul><li>Design urgent</li><li>Hârtie rezistentă</li><li>Livrare rapidă</li></ul>`
   },
   "pompieri": {
@@ -466,7 +466,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Stickere pentru mașini de pompieri: logo, numere.",
     seoTitle: "Autocolante Pompieri | Logo Masina",
     seoDescription: "Echipează mașinile de pompieri cu stickere vizibile.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Eroi vizibili</h2><p>Stickere pentru pompieri.</p><p>Culori roșii. Rezistente la vreme.</p><ul><li>Design eroic</li><li>Hârtie durabilă</li><li>Print profesional</li></ul>`
   },
 
@@ -478,7 +478,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante cu logo-ul firmei pentru mașini, uși, produse.",
     seoTitle: "Stickere Logo Firma | Branding Corporate",
     seoDescription: "Promovează firma cu stickere de logo vizibile.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Logo vizibil</h2><p>Stickere pentru branding firmă.</p><p>Culori corporate. Rezistente la vreme.</p><ul><li>Design profesional</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
   "qr-code": {
@@ -487,7 +487,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante cu coduri QR pentru site, meniu, contact.",
     seoTitle: "Stickere QR Code | Marketing Digital",
     seoDescription: "Conectează offline cu online prin QR codes.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Conectare digitală</h2><p>Stickere cu QR codes.</p><p>Culori contrastante. Rezistente la uzură.</p><ul><li>Design scanabil</li><li>Hârtie durabilă</li><li>Print de calitate</li></ul>`
   },
   "slogan": {
@@ -496,7 +496,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante cu slogane pentru mașini sau birouri.",
     seoTitle: "Stickere Slogan | Mesaje Motivante",
     seoDescription: "Transmite mesaje cu stickere catchy.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Mesaje puternice</h2><p>Stickere cu slogane.</p><p>Culori vii. Rezistente la vreme.</p><ul><li>Design motivant</li><li>Hârtie rezistentă</li><li>Livrare rapidă</li></ul>`
   },
   "nume-firma": {
@@ -505,7 +505,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante cu numele firmei pentru branding.",
     seoTitle: "Stickere Nume Firma | Identitate Vizuala",
     seoDescription: "Arată numele firmei cu stickere clare.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Nume vizibil</h2><p>Stickere pentru nume firmă.</p><p>Culori corporate. Rezistente la uzură.</p><ul><li>Design clar</li><li>Hârtie premium</li><li>Print profesional</li></ul>`
   },
   "contact": {
@@ -514,7 +514,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante cu date de contact pentru mașini sau produse.",
     seoTitle: "Stickere Contact | Telefon Email",
     seoDescription: "Facilitează contactul cu stickere informative.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Contact ușor</h2><p>Stickere cu date de contact.</p><p>Culori vizibile. Rezistente la vreme.</p><ul><li>Design informativ</li><li>Hârtie durabilă</li><li>Livrare rapidă</li></ul>`
   },
   "preturi": {
@@ -523,7 +523,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante cu prețuri pentru rafturi sau vitrine.",
     seoTitle: "Stickere Preturi | Etichete Promotionale",
     seoDescription: "Afișează prețuri cu stickere clare.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Prețuri vizibile</h2><p>Stickere pentru prețuri.</p><p>Culori contrastante. Rezistente la manipulare.</p><ul><li>Design clar</li><li>Hârtie rezistentă</li><li>Print economic</li></ul>`
   },
   "reclama": {
@@ -532,7 +532,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru promovarea produselor sau serviciilor.",
     seoTitle: "Stickere Reclama | Promovare Produse",
     seoDescription: "Promovează cu stickere atractive.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Reclamă vizibilă</h2><p>Stickere pentru promovare.</p><p>Culori vii. Rezistente la vreme.</p><ul><li>Design atractiv</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
 
@@ -544,7 +544,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru petreceri: invitații, decor mese.",
     seoTitle: "Stickere Petrecere | Invitatii Decor",
     seoDescription: "Decorează petrecerea cu stickere distractive.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Petrecere distractivă</h2><p>Stickere pentru evenimente.</p><p>Culori festive. Rezistente la apă.</p><ul><li>Design vesel</li><li>Hârtie rezistentă</li><li>Livrare rapidă</li></ul>`
   },
   "nunta": {
@@ -553,7 +553,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru nunți: mese, cadouri, invitații.",
     seoTitle: "Stickere Nunta | Decor Personalizare",
     seoDescription: "Personalizează nunta cu stickere romantice.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Nuntă romantică</h2><p>Stickere pentru evenimente speciale.</p><p>Culori pastel. Rezistente la uzură.</p><ul><li>Design romantic</li><li>Hârtie premium</li><li>Print profesional</li></ul>`
   },
   "botez": {
@@ -562,7 +562,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru botezuri: mese, cadouri.",
     seoTitle: "Stickere Botez | Decor Religios",
     seoDescription: "Decorează botezul cu stickere spirituale.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Botez spiritual</h2><p>Stickere pentru evenimente religioase.</p><p>Culori calde. Rezistente la apă.</p><ul><li>Design spiritual</li><li>Hârtie rezistentă</li><li>Livrare rapidă</li></ul>`
   },
   "aniversare": {
@@ -571,7 +571,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru aniversări: mese, torturi.",
     seoTitle: "Stickere Aniversare | Decor Cadouri",
     seoDescription: "Sărbătorește aniversarea cu stickere colorate.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Aniversare fericită</h2><p>Stickere pentru sărbători personale.</p><p>Culori vii. Rezistente la manipulare.</p><ul><li>Design vesel</li><li>Hârtie premium</li><li>Print rapid</li></ul>`
   },
   "ziua-copiilor": {
@@ -580,7 +580,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru evenimente dedicate copiilor.",
     seoTitle: "Stickere Ziua Copiilor | Decor Activitati",
     seoDescription: "Distrați copiii cu stickere colorate.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Copii fericiți</h2><p>Stickere pentru evenimente familiale.</p><p>Culori primare. Rezistente la apă.</p><ul><li>Design distractiv</li><li>Hârtie rezistentă</li><li>Livrare rapidă</li></ul>`
   },
   "halloween": {
@@ -589,7 +589,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru Halloween: fantome, dovleci.",
     seoTitle: "Stickere Halloween | Decor Infricosator",
     seoDescription: "Sperie cu stickere de Halloween.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Halloween înfricoșător</h2><p>Stickere pentru sărbători de groază.</p><p>Culori întunecate. Rezistente la vreme.</p><ul><li>Design horror</li><li>Hârtie premium</li><li>Print profesional</li></ul>`
   },
   "craciun": {
@@ -598,7 +598,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru Crăciun: brazi, fulgi.",
     seoTitle: "Stickere Craciun | Decor Festiv",
     seoDescription: "Decorează Crăciunul cu stickere festive.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Crăciun magic</h2><p>Stickere pentru sărbători de iarnă.</p><p>Culori festive. Rezistente la frig.</p><ul><li>Design magic</li><li>Hârtie rezistentă</li><li>Livrare sezonieră</li></ul>`
   },
   "paste": {
@@ -607,7 +607,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru Paște: ouă, iepurași.",
     seoTitle: "Stickere Paste | Decor Traditional",
     seoDescription: "Sărbătorește Paștele cu stickere tradiționale.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Paște tradițional</h2><p>Stickere pentru sărbători religioase.</p><p>Culori pastel. Rezistente la apă.</p><ul><li>Design tradițional</li><li>Hârtie premium</li><li>Print rapid</li></ul>`
   },
   "revelion": {
@@ -616,7 +616,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru Revelion: confetti, stele.",
     seoTitle: "Stickere Revelion | Decor An Nou",
     seoDescription: "Bucură-te de Anul Nou cu stickere festive.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Revelion strălucitor</h2><p>Stickere pentru sărbători de sfârșit de an.</p><p>Culori aurii. Rezistente la frig.</p><ul><li>Design strălucitor</li><li>Hârtie rezistentă</li><li>Livrare rapidă</li></ul>`
   },
   "valentine": {
@@ -625,7 +625,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru Ziua Îndrăgostiților: inimi, trandafiri.",
     seoTitle: "Stickere Valentine | Decor Romantic",
     seoDescription: "Exprimă iubirea cu stickere romantice.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Iubire eternă</h2><p>Stickere pentru sărbători romantice.</p><p>Culori roșii. Rezistente la uzură.</p><ul><li>Design romantic</li><li>Hârtie premium</li><li>Print profesional</li></ul>`
   },
   "martisor": {
@@ -634,7 +634,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru Mărțișor: alb și roșu.",
     seoTitle: "Stickere Martisor | Decor Traditional",
     seoDescription: "Sărbătorește tradiția cu stickere colorate.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Mărțișor tradițional</h2><p>Stickere pentru sărbători populare.</p><p>Culori tradiționale. Rezistente la vreme.</p><ul><li>Design cultural</li><li>Hârtie rezistentă</li><li>Livrare rapidă</li></ul>`
   },
   "ziua-mamei": {
@@ -643,7 +643,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru Ziua Mamei: flori, inimi.",
     seoTitle: "Stickere Ziua Mamei | Decor Afectuos",
     seoDescription: "Cinstește mamele cu stickere afectuoase.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Mamă iubită</h2><p>Stickere pentru sărbători familiale.</p><p>Culori pastel. Rezistente la apă.</p><ul><li>Design afectuos</li><li>Hârtie premium</li><li>Print rapid</li></ul>`
   },
   "ziua-tatalui": {
@@ -652,7 +652,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru Ziua Tatălui: unelte, mașini.",
     seoTitle: "Stickere Ziua Tatalui | Decor Puternic",
     seoDescription: "Sărbătorește tații cu stickere puternice.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Tată puternic</h2><p>Stickere pentru sărbători masculine.</p><p>Culori închise. Rezistente la uzură.</p><ul><li>Design puternic</li><li>Hârtie durabilă</li><li>Livrare rapidă</li></ul>`
   },
   "ziua-nationala": {
@@ -661,7 +661,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru Ziua Națională: tricolor, simboluri.",
     seoTitle: "Stickere Ziua Nationala | Decor Patriotic",
     seoDescription: "Cinstește țara cu stickere naționale.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Ziua națională</h2><p>Stickere pentru sărbători oficiale.</p><p>Culori naționale. Rezistente la vreme.</p><ul><li>Design patriotic</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
 
@@ -673,7 +673,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru școli: nume, clase, decor.",
     seoTitle: "Stickere Scoala | Etichete Decor",
     seoDescription: "Organizează școala cu stickere utile.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Școală organizată</h2><p>Stickere pentru educație.</p><p>Culori vii. Rezistente la manipulare.</p><ul><li>Design educativ</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
   "universitate": {
@@ -682,7 +682,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru universități: logo, facultăți.",
     seoTitle: "Stickere Universitate | Branding Academic",
     seoDescription: "Promovează universitatea cu stickere prestigioase.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Universitate prestigioasă</h2><p>Stickere pentru instituții academice.</p><p>Culori instituționale. Rezistente la uzură.</p><ul><li>Design academic</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
   "meditatii": {
@@ -691,7 +691,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru centre de meditații: materii, prețuri.",
     seoTitle: "Stickere Meditatii | Etichete Materii",
     seoDescription: "Atrage elevi cu stickere informative.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Meditații eficiente</h2><p>Stickere pentru ajutor școlar.</p><p>Culori motivate. Rezistente la apă.</p><ul><li>Design motivant</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
   "cursuri": {
@@ -700,7 +700,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru cursuri: nume, date, logo.",
     seoTitle: "Stickere Cursuri | Branding Educational",
     seoDescription: "Promovează cursurile cu stickere atractive.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Cursuri populare</h2><p>Stickere pentru educație continuă.</p><p>Culori vii. Rezistente la uzură.</p><ul><li>Design atractiv</li><li>Hârtie rezistentă</li><li>Print rapid</li></ul>`
   },
   "examene": {
@@ -709,7 +709,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru pregătire examene: citate, planuri.",
     seoTitle: "Stickere Examene | Etichete Motivante",
     seoDescription: "Motivați studenții cu stickere pozitive.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Examene de succes</h2><p>Stickere pentru studiu.</p><p>Culori motivate. Rezistente la manipulare.</p><ul><li>Design pozitiv</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
 
@@ -721,7 +721,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru cabinete medicale: logo, specializări.",
     seoTitle: "Stickere Medic | Etichete Medicale",
     seoDescription: "Promovează serviciile medicale cu stickere de încredere.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Sănătate de încredere</h2><p>Stickere pentru medici.</p><p>Culori calmante. Rezistente la igienă.</p><ul><li>Design medical</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
   "vaccin": {
@@ -730,7 +730,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru campanii de vaccinare.",
     seoTitle: "Stickere Vaccin | Etichete Preventie",
     seoDescription: "Informare despre vaccinare cu stickere clare.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Vaccinare protectoare</h2><p>Stickere pentru sănătate publică.</p><p>Culori pozitive. Rezistente la vreme.</p><ul><li>Design informativ</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
   "donare-sange": {
@@ -739,7 +739,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru centre de donare sânge.",
     seoTitle: "Stickere Donare Sange | Campanii Umanitare",
     seoDescription: "Încurajează donarea cu stickere motivate.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Donare vitală</h2><p>Stickere pentru salvare vieți.</p><p>Culori roșii. Rezistente la uzură.</p><ul><li>Design emoțional</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
   "fitness": {
@@ -748,7 +748,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru săli de fitness: logo, oferte.",
     seoTitle: "Stickere Fitness | Branding Sala",
     seoDescription: "Promovează fitness-ul cu stickere atletice.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Fitness energic</h2><p>Stickere pentru sănătate fizică.</p><p>Culori vii. Rezistente la transpirație.</p><ul><li>Design sportiv</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
   "yoga": {
@@ -757,7 +757,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru centre de yoga: poziții, citate.",
     seoTitle: "Stickere Yoga | Etichete Calmante",
     seoDescription: "Relaxare cu stickere zen.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Yoga liniștit</h2><p>Stickere pentru wellness.</p><p>Culori calmante. Rezistente la apă.</p><ul><li>Design zen</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
 
@@ -769,7 +769,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru fani de fotbal: logo, jucători.",
     seoTitle: "Stickere Fotbal | Logo Echipa",
     seoDescription: "Arată pasiunea pentru fotbal cu stickere.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Fotbal pasiune</h2><p>Stickere pentru suporteri.</p><p>Culori echipă. Rezistente la vreme.</p><ul><li>Design sportiv</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
   "baschet": {
@@ -778,7 +778,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru baschet: logo, coșuri.",
     seoTitle: "Stickere Baschet | Branding Sportiv",
     seoDescription: "Promovează baschetul cu stickere dinamice.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Baschet dinamic</h2><p>Stickere pentru sporturi de echipă.</p><p>Culori vii. Rezistente la uzură.</p><ul><li>Design energetic</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
   "tenis": {
@@ -787,7 +787,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru tenis: rachete, mingi.",
     seoTitle: "Stickere Tenis | Logo Branding",
     seoDescription: "Arată eleganța tenisului cu stickere.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Tenis elegant</h2><p>Stickere pentru sporturi individuale.</p><p>Culori albe. Rezistente la vreme.</p><ul><li>Design elegant</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
   "atletism": {
@@ -796,7 +796,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru atletism: torțe, medalii.",
     seoTitle: "Stickere Atletism | Simboluri Olimpice",
     seoDescription: "Motivați sportivi cu stickere inspirate.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Atletism motivant</h2><p>Stickere pentru performanță.</p><p>Culori aurii. Rezistente la transpirație.</p><ul><li>Design inspirat</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
 
@@ -808,7 +808,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru rock: chitare, steaguri.",
     seoTitle: "Stickere Rock | Chitari Logo",
     seoDescription: "Arată spiritul rock cu stickere rebeli.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Rock rebel</h2><p>Stickere pentru muzică puternică.</p><p>Culori întunecate. Rezistente la vreme.</p><ul><li>Design rebel</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
   "pop": {
@@ -817,7 +817,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru pop: stele, inimi.",
     seoTitle: "Stickere Pop | Stele Culori",
     seoDescription: "Distrați cu stickere pop colorate.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Pop distractiv</h2><p>Stickere pentru muzică populară.</p><p>Culori vii. Rezistente la uzură.</p><ul><li>Design catchy</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
   "jazz": {
@@ -826,7 +826,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru jazz: instrumente, note.",
     seoTitle: "Stickere Jazz | Note Muzicale",
     seoDescription: "Relaxare cu stickere jazz sofisticate.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Jazz sofisticat</h2><p>Stickere pentru muzică instrumentală.</p><p>Culori calde. Rezistente la vreme.</p><ul><li>Design muzical</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
   "folk": {
@@ -835,7 +835,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru folk: cobze, fluierașe.",
     seoTitle: "Stickere Folk | Instrumente Traditionale",
     seoDescription: "Cinstește tradiția cu stickere folclorice.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Folk autentic</h2><p>Stickere pentru muzică tradițională.</p><p>Culori naturale. Rezistente la uzură.</p><ul><li>Design tradițional</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
 
@@ -847,7 +847,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru Apple: măr mușcat, logo.",
     seoTitle: "Stickere Apple | Logo Branding",
     seoDescription: "Arată iubirea pentru Apple cu stickere.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Apple inovativ</h2><p>Stickere pentru tech lovers.</p><p>Culori argintii. Rezistente la uzură.</p><ul><li>Design minimalist</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
   "samsung": {
@@ -856,7 +856,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru Samsung: logo, personalizare.",
     seoTitle: "Stickere Samsung | Logo Coreean",
     seoDescription: "Promovează Samsung cu stickere moderne.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Samsung modern</h2><p>Stickere pentru gadgeturi.</p><p>Culori vii. Rezistente la vreme.</p><ul><li>Design modern</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
   "gaming": {
@@ -865,7 +865,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru gaming: console, personaje.",
     seoTitle: "Stickere Gaming | Logo Jocuri",
     seoDescription: "Arată pasiunea pentru gaming cu stickere.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Gaming distractiv</h2><p>Stickere pentru jucători.</p><p>Culori vii. Rezistente la uzură.</p><ul><li>Design gamer</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
   "programare": {
@@ -874,7 +874,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru programatori: cod, logo limbaje.",
     seoTitle: "Stickere Programare | Cod Logo",
     seoDescription: "Arată skill-urile cu stickere tech.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Programare cool</h2><p>Stickere pentru developeri.</p><p>Culori digitale. Rezistente la vreme.</p><ul><li>Design tech</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
 
@@ -886,7 +886,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante cu citate pentru perete sau laptop.",
     seoTitle: "Stickere Citate | Motivante Inspirante",
     seoDescription: "Inspiră cu stickere cu mesaje pozitive.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Citate inspirate</h2><p>Stickere pentru motivație.</p><p>Culori calde. Rezistente la apă.</p><ul><li>Design pozitiv</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
   "animale": {
@@ -895,7 +895,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante cu animale pentru copii sau decor.",
     seoTitle: "Stickere Animale | Personaje Dragute",
     seoDescription: "Adaugă drăgălășenie cu stickere animale.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Animale drăguțe</h2><p>Stickere pentru decor.</p><p>Culori vii. Rezistente la uzură.</p><ul><li>Design cute</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
   "flori": {
@@ -904,7 +904,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante cu flori pentru perete sau mobilă.",
     seoTitle: "Stickere Flori | Decor Natural",
     seoDescription: "Înfrumusețează cu stickere florale.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Flori frumoase</h2><p>Stickere pentru natură.</p><p>Culori naturale. Rezistente la apă.</p><ul><li>Design floral</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
   "stelute": {
@@ -913,7 +913,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante cu stele pentru tavan sau perete.",
     seoTitle: "Stickere Stelute | Decor Astral",
     seoDescription: "Creează magie cu stickere stelate.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Stele magice</h2><p>Stickere pentru decor.</p><p>Culori aurii. Rezistente la lumină.</p><ul><li>Design astral</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
 
@@ -925,7 +925,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru pericole: electricitate, chimicale.",
     seoTitle: "Stickere Pericol | Semnalizare SSM",
     seoDescription: "Semnalizează pericole cu stickere oficiale.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Pericol semnalizat</h2><p>Stickere pentru siguranță.</p><p>Culori avertizoare. Rezistente la vreme.</p><ul><li>Design avertizor</li><li>Hârtie durabilă</li><li>Livrare rapidă</li></ul>`
   },
   "iesire": {
@@ -934,7 +934,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru ieșiri de urgență.",
     seoTitle: "Stickere Iesire Urgenta | Semnalizare",
     seoDescription: "Ghidează evacuarea cu stickere vizibile.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Ieșire sigură</h2><p>Stickere pentru urgențe.</p><p>Culori verzi. Rezistente la fum.</p><ul><li>Design clar</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
   "prim-ajutor": {
@@ -943,7 +943,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru truse de prim ajutor.",
     seoTitle: "Stickere Prim Ajutor | Truse Medicale",
     seoDescription: "Semnalizează ajutorul medical cu stickere.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Ajutor rapid</h2><p>Stickere pentru sănătate.</p><p>Culori roșii. Rezistente la uzură.</p><ul><li>Design medical</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
 
@@ -955,7 +955,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru produse organice: logo, certificări.",
     seoTitle: "Stickere Organic | Etichete Produse",
     seoDescription: "Promovează organic cu stickere verzi.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Organic sănătos</h2><p>Stickere pentru alimente naturale.</p><p>Culori verzi. Rezistente la frig.</p><ul><li>Design natural</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
   "vegan": {
@@ -964,7 +964,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru produse vegane.",
     seoTitle: "Stickere Vegan | Etichete Alimentare",
     seoDescription: "Semnalizează vegan cu stickere clare.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Vegan prietenos</h2><p>Stickere pentru alimentație sănătoasă.</p><p>Culori verzi. Rezistente la apă.</p><ul><li>Design eco</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
   "fara-gluten": {
@@ -973,7 +973,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante pentru produse fără gluten.",
     seoTitle: "Stickere Fara Gluten | Etichete Speciale",
     seoDescription: "Informare pentru intoleranțe cu stickere.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Fără gluten sigur</h2><p>Stickere pentru dietă specială.</p><p>Culori distinctive. Rezistente la umiditate.</p><ul><li>Design clar</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
 
@@ -985,7 +985,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante cu nume pentru mașini sau obiecte.",
     seoTitle: "Stickere Nume Personalizate | Branding",
     seoDescription: "Personalizează cu numele tău.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Nume unic</h2><p>Stickere personalizate.</p><p>Culori alese. Rezistente la vreme.</p><ul><li>Design personal</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   },
   "initiale": {
@@ -994,7 +994,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante cu inițiale pentru stil.",
     seoTitle: "Stickere Initiale | Monograme",
     seoDescription: "Arată inițialele cu stickere elegante.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Inițiale elegante</h2><p>Stickere pentru monograme.</p><p>Culori aurii. Rezistente la uzură.</p><ul><li>Design sofisticat</li><li>Hârtie rezistentă</li><li>Print profesional</li></ul>`
   },
   "emoji": {
@@ -1003,7 +1003,7 @@ export const AUTOCOLANTE_SEO_DATA: Record<string, LandingInfo> = {
     shortDescription: "Autocolante cu emoji pentru decor.",
     seoTitle: "Stickere Emoji | Expresii Veselé",
     seoDescription: "Adaugă veselie cu emoji stickere.",
-    images: ["/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"],
+    images: ["/products/homeprint-studio/autocolante.webp"],
     contentHtml: `<h2>Emoji distractive</h2><p>Stickere pentru expresii.</p><p>Culori vii. Rezistente la apă.</p><ul><li>Design funny</li><li>Hârtie premium</li><li>Livrare rapidă</li></ul>`
   }
 };

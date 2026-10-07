@@ -10,7 +10,7 @@ export const PVC_FOREX_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri rigide din PVC expandat (3mm, 5mm). Cea mai populară soluție pentru semnalistică.",
     seoTitle: "Panouri Publicitare PVC Forex | Print UV Direct",
     seoDescription: "Printăm panouri publicitare pe Forex la orice dimensiune. Rezistente indoor/outdoor, culori vii.",
-    images: ["/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp"],
+    images: ["/products/homeprint-studio/pvc-forex.webp"],
     contentHtml: `<h2>Reclama ta pe suport rigid</h2><p>Forex-ul este materialul ideal pentru panouri publicitare: este ușor, are o suprafață perfect netedă și preia culorile excelent.</p>`
   },
   "tablou": {
@@ -19,7 +19,7 @@ export const PVC_FOREX_DATA: Record<string, LandingInfo> = {
     shortDescription: "Fotografii printate pe placă rigidă. Aspect minimalist, fără ramă.",
     seoTitle: "Tablouri Forex & Multicanvas Rigid | Decor",
     seoDescription: "Decorează pereții cu tablouri pe Forex. O alternativă modernă și economică la canvas.",
-    images: ["/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp"],
+    images: ["/products/homeprint-studio/pvc-forex.webp"],
     contentHtml: `<h2>Decor minimalist</h2><p>Tablourile pe Forex sunt subțiri, elegante și se montează ușor cu bandă dublu adezivă.</p>`
   },
   "semnalistica": {
@@ -28,7 +28,7 @@ export const PVC_FOREX_DATA: Record<string, LandingInfo> = {
     shortDescription: "Plăcuțe pentru uși, săgeți direcționale, indicatoare etaj.",
     seoTitle: "Semnalistica Interioara PVC | Placute Usi",
     seoDescription: "Ghidează vizitatorii cu semnalistică clară printată pe PVC rigid.",
-    images: ["/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp"],
+    images: ["/products/homeprint-studio/pvc-forex.webp"],
     contentHtml: `<h2>Organizare și claritate</h2><p>Esențial pentru clădiri de birouri, spitale sau școli.</p>`
   },
   "meniu-rigid": {
@@ -37,7 +37,7 @@ export const PVC_FOREX_DATA: Record<string, LandingInfo> = {
     shortDescription: "Meniuri tip placă, rezistente la apă și murdărie.",
     seoTitle: "Meniu Restaurant Rigid | Placa PVC",
     seoDescription: "Meniuri care nu se rup și se curăță ușor. Print direct pe plastic.",
-    images: ["/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp"],
+    images: ["/products/homeprint-studio/pvc-forex.webp"],
     contentHtml: `<h2>Meniuri durabile</h2><p>Perfecte pentru terase sau baruri aglomerate unde meniurile de hârtie se deteriorează rapid.</p>`
   },
 
@@ -49,7 +49,7 @@ export const PVC_FOREX_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri pentru afișaje interne și externe.",
     seoTitle: "Panou Afisaj PVC Forex | Print UV",
     seoDescription: "Afișează informații importante pe suport rigid și rezistent.",
-    images: ["/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp"],
+    images: ["/products/homeprint-studio/pvc-forex.webp"],
     contentHtml: `<h2>Vizibilitate maximă</h2><p>Panourile din Forex sunt ideale pentru afișaje care trebuie să reziste în timp.</p><ul><li>Rezistente la umiditate</li><li>Culori vii</li><li>Ușor de montat</li></ul>`
   },
   "tablou-decorativ": {
@@ -58,7 +58,7 @@ export const PVC_FOREX_DATA: Record<string, LandingInfo> = {
     shortDescription: "Decorațiuni interioare pe placă rigidă.",
     seoTitle: "Tablou Decorativ PVC | Artă Modernă",
     seoDescription: "Adaugă un strop de culoare pereților cu tablouri pe Forex.",
-    images: ["/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp"],
+    images: ["/products/homeprint-studio/pvc-forex.webp"],
     contentHtml: `<h2>Decor simplu și elegant</h2><p>Tablourile pe Forex sunt o alternativă economică la picturi.</p><ul><li>Aspect minimalist</li><li>Fără ramă necesară</li><li>Print de calitate</li></ul>`
   },
   "semnalistica-exterior": {
@@ -67,7 +67,7 @@ export const PVC_FOREX_DATA: Record<string, LandingInfo> = {
     shortDescription: "Indicatoare pentru exterior, rezistente la vreme.",
     seoTitle: "Semnalistica Exterior PVC | Indicatoare",
     seoDescription: "Ghidează vizitatorii cu plăcuțe rezistente la intemperii.",
-    images: ["/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp"],
+    images: ["/products/homeprint-studio/pvc-forex.webp"],
     contentHtml: `<h2>Rezistență la exterior</h2><p>Perfecte pentru parcări, străzi sau zone expuse.</p><ul><li>Rezistente la UV</li><li>Citibile de la distanță</li><li>Montaj ușor</li></ul>`
   },
   "meniu-bar": {
@@ -76,7 +76,7 @@ export const PVC_FOREX_DATA: Record<string, LandingInfo> = {
     shortDescription: "Meniuri pentru baruri și cafenele.",
     seoTitle: "Meniu Bar PVC Rigid | Print Profesional",
     seoDescription: "Meniuri care rezistă la băuturi vărsate și murdărie.",
-    images: ["/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp"],
+    images: ["/products/homeprint-studio/pvc-forex.webp"],
     contentHtml: `<h2>Durabilitate în baruri</h2><p>Nu se rup și se curăță ușor cu apă și săpun.</p><ul><li>Rezistente la lichide</li><li>Print clar</li><li>Aspect profesional</li></ul>`
   },
   "panou-eveniment": {
@@ -85,7 +85,7 @@ export const PVC_FOREX_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri pentru evenimente, conferințe.",
     seoTitle: "Panou Eveniment PVC | Afișaj Rigid",
     seoDescription: "Atrage atenția participanților cu panouri vizibile.",
-    images: ["/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp"],
+    images: ["/products/homeprint-studio/pvc-forex.webp"],
     contentHtml: `<h2>Impact vizual</h2><p>Panourile rigide sunt ideale pentru evenimente mari.</p><ul><li>Stabile și vizibile</li><li>Print de calitate</li><li>Ușor de transportat</li></ul>`
   },
   "tablou-personalizat": {
@@ -94,7 +94,7 @@ export const PVC_FOREX_DATA: Record<string, LandingInfo> = {
     shortDescription: "Fotografii personalizate pe placă rigidă.",
     seoTitle: "Tablou Personalizat PVC | Foto Rigid",
     seoDescription: "Transformă amintirile în decor permanent.",
-    images: ["/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp"],
+    images: ["/products/homeprint-studio/pvc-forex.webp"],
     contentHtml: `<h2>Amintiri eterne</h2><p>Tablourile pe Forex păstrează culorile vii ani de zile.</p><ul><li>Rezistente la decolorare</li><li>Aspect elegant</li><li>Montaj simplu</li></ul>`
   },
   "semnalistica-birou": {
@@ -103,7 +103,7 @@ export const PVC_FOREX_DATA: Record<string, LandingInfo> = {
     shortDescription: "Indicatoare pentru birouri și clădiri de afaceri.",
     seoTitle: "Semnalistica Birou PVC | Placute Profesionale",
     seoDescription: "Organizează spațiul cu plăcuțe clare și elegante.",
-    images: ["/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp"],
+    images: ["/products/homeprint-studio/pvc-forex.webp"],
     contentHtml: `<h2>Profesionalism</h2><p>Esențiale pentru navigarea în clădiri mari.</p><ul><li>Design corporate</li><li>Rezistente</li><li>Citibile</li></ul>`
   },
   "meniu-cafenea": {
@@ -112,7 +112,7 @@ export const PVC_FOREX_DATA: Record<string, LandingInfo> = {
     shortDescription: "Meniuri pentru cafenele și restaurante mici.",
     seoTitle: "Meniu Cafenea PVC | Print Ieftin",
     seoDescription: "Meniuri care nu se murdăresc ușor și sunt ușor de înlocuit.",
-    images: ["/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp"],
+    images: ["/products/homeprint-studio/pvc-forex.webp"],
     contentHtml: `<h2>Practic și ieftin</h2><p>Perfecte pentru mese mici sau baruri.</p><ul><li>Rezistente la cafea</li><li>Print rapid</li><li>Aspect curat</li></ul>`
   },
   "panou-promotional": {
@@ -121,7 +121,7 @@ export const PVC_FOREX_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri pentru promoții și campanii.",
     seoTitle: "Panou Promotional PVC | Reclama Rigid",
     seoDescription: "Atrage clienții cu oferte vizibile pe suport rigid.",
-    images: ["/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp"],
+    images: ["/products/homeprint-studio/pvc-forex.webp"],
     contentHtml: `<h2>Vânzări mai mari</h2><p>Panourile rigide sunt mai vizibile decât hârtia.</p><ul><li>Impact puternic</li><li>Rezistente la vreme</li><li>Print color</li></ul>`
   },
   "tablou-arta": {
@@ -130,7 +130,7 @@ export const PVC_FOREX_DATA: Record<string, LandingInfo> = {
     shortDescription: "Reproduceri de artă pe placă rigidă.",
     seoTitle: "Tablou Arta PVC | Reproduceri",
     seoDescription: "Decorează cu opere de artă pe suport modern.",
-    images: ["/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp"],
+    images: ["/products/homeprint-studio/pvc-forex.webp"],
     contentHtml: `<h2>Artă accesibilă</h2><p>Reproduceri de calitate pe Forex.</p><ul><li>Aspect artistic</li><li>Rezistente</li><li>Ușor de curățat</li></ul>`
   }
 };
@@ -269,7 +269,7 @@ export const ALUCOBOND_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri compozit aluminiu pentru placări exterioare și firme luminoase.",
     seoTitle: "Print Alucobond & Dibond | Panouri Fatada",
     seoDescription: "Materialul suprem pentru exterior. Rezistă la ploaie, soare și îngheț ani la rând.",
-    images: ["/products/grafica-originala/placa-alucobond-compozit-grafica-studio.webp"],
+    images: ["/products/homeprint-studio/alucobond.webp"],
     contentHtml: `<h2>Durabilitate extremă</h2><p>Panourile bond (sandwich aluminiu) nu se ondulează și nu ruginesc. Perfecte pentru firme stradale permanente.</p>`
   },
   "panou-santier": {
@@ -278,7 +278,7 @@ export const ALUCOBOND_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panou de identificare investiție rezistent pentru șantiere de lungă durată.",
     seoTitle: "Panou Santier Rezistent | Alucobond",
     seoDescription: "Dacă proiectul durează ani de zile, alege un panou care nu se decolorează.",
-    images: ["/products/grafica-originala/placa-alucobond-compozit-grafica-studio.webp"],
+    images: ["/products/homeprint-studio/alucobond.webp"],
     contentHtml: `<h2>Rezistă cât construcția</h2><p>Spre deosebire de banner sau forex, bondul rămâne perfect plan indiferent de vreme.</p>`
   },
   "tablou-bond": {
@@ -287,7 +287,7 @@ export const ALUCOBOND_DATA: Record<string, LandingInfo> = {
     shortDescription: "Fotografii printate pe metal periat (brushed) sau alb. Aspect industrial chic.",
     seoTitle: "Print Pe Metal & Aluminiu | Tablouri Bond",
     seoDescription: "Artă fotografică pe suport metalic. Detalii incredibile și aspect modern.",
-    images: ["/products/grafica-originala/placa-alucobond-compozit-grafica-studio.webp"],
+    images: ["/products/homeprint-studio/alucobond.webp"],
     contentHtml: `<h2>Artă modernă pe metal</h2><p>Suprafața metalică oferă o luminozitate specială fotografiilor, în special celor alb-negru.</p>`
   },
 
@@ -299,7 +299,7 @@ export const ALUCOBOND_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri cu iluminare pentru vizibilitate nocturnă.",
     seoTitle: "Fatada Luminoasa Alucobond | LED",
     seoDescription: "Firme care luminează noaptea pentru impact maxim.",
-    images: ["/products/grafica-originala/placa-alucobond-compozit-grafica-studio.webp"],
+    images: ["/products/homeprint-studio/alucobond.webp"],
     contentHtml: `<h2>Vizibilitate 24/7</h2><p>Perfecte pentru afaceri stradale.</p><ul><li>Iluminare LED</li><li>Rezistente la vreme</li><li>Aspect premium</li></ul>`
   },
   "panou-reclama": {
@@ -308,7 +308,7 @@ export const ALUCOBOND_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri publicitare mari pentru exterior.",
     seoTitle: "Panou Reclama Alucobond | Exterior",
     seoDescription: "Rezistă ani de zile fără deteriorare.",
-    images: ["/products/grafica-originala/placa-alucobond-compozit-grafica-studio.webp"],
+    images: ["/products/homeprint-studio/alucobond.webp"],
     contentHtml: `<h2>Durabilitate extremă</h2><p>Nu se decolorează și nu ruginește.</p><ul><li>Rezistent la UV</li><li>Print de calitate</li><li>Montaj stabil</li></ul>`
   },
   "tablou-metalic": {
@@ -317,7 +317,7 @@ export const ALUCOBOND_DATA: Record<string, LandingInfo> = {
     shortDescription: "Artă pe metal pentru decor industrial.",
     seoTitle: "Tablou Metalic Alucobond | Decor Modern",
     seoDescription: "Aspect unic cu reflexii metalice.",
-    images: ["/products/grafica-originala/placa-alucobond-compozit-grafica-studio.webp"],
+    images: ["/products/homeprint-studio/alucobond.webp"],
     contentHtml: `<h2>Estetică industrială</h2><p>Perfecte pentru birouri moderne.</p><ul><li>Aspect metalic</li><li>Rezistente</li><li>Print detaliat</li></ul>`
   },
   "fatada-corporate": {
@@ -326,7 +326,7 @@ export const ALUCOBOND_DATA: Record<string, LandingInfo> = {
     shortDescription: "Placări pentru sedii de firme.",
     seoTitle: "Fatada Corporate Alucobond | Branding",
     seoDescription: "Creează o imagine puternică a brandului.",
-    images: ["/products/grafica-originala/placa-alucobond-compozit-grafica-studio.webp"],
+    images: ["/products/homeprint-studio/alucobond.webp"],
     contentHtml: `<h2>Identitate vizuală</h2><p>Vizibile de la distanță mare.</p><ul><li>Rezistente</li><li>Print mare</li><li>Aspect profesional</li></ul>`
   },
   "panou-eveniment-exterior": {
@@ -335,7 +335,7 @@ export const ALUCOBOND_DATA: Record<string, LandingInfo> = {
     shortDescription: "Afișaje pentru evenimente în aer liber.",
     seoTitle: "Panou Eveniment Exterior | Alucobond",
     seoDescription: "Rezistă la vânt și ploaie.",
-    images: ["/products/grafica-originala/placa-alucobond-compozit-grafica-studio.webp"],
+    images: ["/products/homeprint-studio/alucobond.webp"],
     contentHtml: `<h2>Evenimente outdoor</h2><p>Perfecte pentru festivaluri sau târguri.</p><ul><li>Rezistente la vreme</li><li>Stabile</li><li>Vizibile</li></ul>`
   },
   "tablou-architectural": {
@@ -344,7 +344,7 @@ export const ALUCOBOND_DATA: Record<string, LandingInfo> = {
     shortDescription: "Printuri pentru decor arhitectural.",
     seoTitle: "Tablou Architectural Alucobond | Arta",
     seoDescription: "Adaugă valoare estetică spațiilor.",
-    images: ["/products/grafica-originala/placa-alucobond-compozit-grafica-studio.webp"],
+    images: ["/products/homeprint-studio/alucobond.webp"],
     contentHtml: `<h2>Arhitectură modernă</h2><p>Complementează designul interior.</p><ul><li>Aspect premium</li><li>Rezistente</li><li>Print de calitate</li></ul>`
   },
   "fatada-magazin": {
@@ -353,7 +353,7 @@ export const ALUCOBOND_DATA: Record<string, LandingInfo> = {
     shortDescription: "Afișaje pentru magazine și retail.",
     seoTitle: "Fatada Magazin Alucobond | Reclama",
     seoDescription: "Atrage clienții cu design atractiv.",
-    images: ["/products/grafica-originala/placa-alucobond-compozit-grafica-studio.webp"],
+    images: ["/products/homeprint-studio/alucobond.webp"],
     contentHtml: `<h2>Vânzări crescute</h2><p>Vizibilitate maximă pentru afaceri.</p><ul><li>Rezistente</li><li>Atractive</li><li>Print color</li></ul>`
   },
   "panou-informativ": {
@@ -362,7 +362,7 @@ export const ALUCOBOND_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri cu informații pentru public.",
     seoTitle: "Panou Informativ Alucobond | Ghidare",
     seoDescription: "Oferă informații utile vizitatorilor.",
-    images: ["/products/grafica-originala/placa-alucobond-compozit-grafica-studio.webp"],
+    images: ["/products/homeprint-studio/alucobond.webp"],
     contentHtml: `<h2>Comunicație eficientă</h2><p>Esențiale pentru muzee sau centre turistice.</p><ul><li>Citibile</li><li>Rezistente</li><li>Informative</li></ul>`
   },
   "tablou-industrial": {
@@ -371,7 +371,7 @@ export const ALUCOBOND_DATA: Record<string, LandingInfo> = {
     shortDescription: "Decor pentru spații industriale.",
     seoTitle: "Tablou Industrial Alucobond | Decor",
     seoDescription: "Adaugă personalitate spațiilor de lucru.",
-    images: ["/products/grafica-originala/placa-alucobond-compozit-grafica-studio.webp"],
+    images: ["/products/homeprint-studio/alucobond.webp"],
     contentHtml: `<h2>Estetică industrială</h2><p>Perfecte pentru showroom-uri.</p><ul><li>Aspect metalic</li><li>Rezistente</li><li>Print durabil</li></ul>`
   },
   "fatada-restaurant": {
@@ -380,7 +380,7 @@ export const ALUCOBOND_DATA: Record<string, LandingInfo> = {
     shortDescription: "Afișaje pentru restaurante și baruri.",
     seoTitle: "Fatada Restaurant Alucobond | Branding",
     seoDescription: "Creează o atmosferă apetisantă.",
-    images: ["/products/grafica-originala/placa-alucobond-compozit-grafica-studio.webp"],
+    images: ["/products/homeprint-studio/alucobond.webp"],
     contentHtml: `<h2>Apetit vizual</h2><p>Atrage clienții cu imagini delicioase.</p><ul><li>Rezistente</li><li>Atractive</li><li>Print de calitate</li></ul>`
   }
 };
@@ -394,7 +394,7 @@ export const POLIPROPILENA_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri 'VÂND' / 'ÎNCHIRIEZ' tip fagure. Foarte ușoare, se prind cu soricei.",
     seoTitle: "Panouri Imobiliare Polipropilena | VAND / INCHIRIEZ",
     seoDescription: "Cele mai folosite panouri de agenții. Ieftine, ușoare, rezistente la apă.",
-    images: ["/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp"],
+    images: ["/products/homeprint-studio/polipropilena.webp"],
     contentHtml: `<h2>Campionul panourilor imobiliare</h2><p>Materialul este atât de ușor încât poate fi lipit cu bandă adezivă sau prins cu coliere de plastic (soricei) pe orice gard.</p>`
   },
   "saget": {
@@ -403,7 +403,7 @@ export const POLIPROPILENA_DATA: Record<string, LandingInfo> = {
     shortDescription: "Săgeți pentru evenimente, open house sau direcționare șantier.",
     seoTitle: "Sageti directionale Polipropilena | Semne Usoare",
     seoDescription: "Ghidează traficul către locația ta. Panouri ieftine pentru campanii scurte.",
-    images: ["/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp"],
+    images: ["/products/homeprint-studio/polipropilena.webp"],
     contentHtml: `<h2>Direcționare eficientă</h2><p>Fiind ieftine, poți monta mai multe săgeți în cartier pentru a crea un traseu către locație.</p>`
   },
 
@@ -415,7 +415,7 @@ export const POLIPROPILENA_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri pentru vânzarea proprietăților.",
     seoTitle: "Panouri Vand Imobiliare | Polipropilena",
     seoDescription: "Atrage cumpărătorii cu panouri vizibile.",
-    images: ["/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp"],
+    images: ["/products/homeprint-studio/polipropilena.webp"],
     contentHtml: `<h2>Vânzări rapide</h2><p>Panourile ușoare sunt ideale pentru imobiliare.</p><ul><li>Ușoare</li><li>Vizibile</li><li>Ieftine</li></ul>`
   },
   "saget-eveniment": {
@@ -424,7 +424,7 @@ export const POLIPROPILENA_DATA: Record<string, LandingInfo> = {
     shortDescription: "Direcționare pentru evenimente mari.",
     seoTitle: "Sageti Eveniment Polipropilena | Ghidare",
     seoDescription: "Ajută participanții să găsească locația.",
-    images: ["/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp"],
+    images: ["/products/homeprint-studio/polipropilena.webp"],
     contentHtml: `<h2>Organizare perfectă</h2><p>Evită confuziile cu săgeți clare.</p><ul><li>Ușoare</li><li>Print rapid</li><li>Montaj simplu</li></ul>`
   },
   "imobiliare-inchiriez": {
@@ -433,7 +433,7 @@ export const POLIPROPILENA_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri pentru închirieri imobiliare.",
     seoTitle: "Panouri Inchiriez Polipropilena | Imobiliare",
     seoDescription: "Atrage chiriași cu anunțuri vizibile.",
-    images: ["/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp"],
+    images: ["/products/homeprint-studio/polipropilena.webp"],
     contentHtml: `<h2>Închirieri rapide</h2><p>Panourile rezistente la vreme sunt esențiale.</p><ul><li>Rezistente</li><li>Vizibile</li><li>Ieftine</li></ul>`
   },
   "saget-parcare": {
@@ -442,7 +442,7 @@ export const POLIPROPILENA_DATA: Record<string, LandingInfo> = {
     shortDescription: "Indicatoare pentru parcări temporare.",
     seoTitle: "Sageti Parcare Polipropilena | Directie",
     seoDescription: "Ghidează șoferii către locuri de parcare.",
-    images: ["/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp"],
+    images: ["/products/homeprint-studio/polipropilena.webp"],
     contentHtml: `<h2>Parcare ușoară</h2><p>Evită aglomerația cu indicații clare.</p><ul><li>Ușoare</li><li>Rezistente</li><li>Vizibile</li></ul>`
   },
   "imobiliare-teren": {
@@ -451,7 +451,7 @@ export const POLIPROPILENA_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri pentru vânzarea terenurilor.",
     seoTitle: "Panouri Teren Polipropilena | Vand Teren",
     seoDescription: "Afișează detalii despre terenuri disponibile.",
-    images: ["/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp"],
+    images: ["/products/homeprint-studio/polipropilena.webp"],
     contentHtml: `<h2>Vânzări de terenuri</h2><p>Panourile mari sunt vizibile de la distanță.</p><ul><li>Mari</li><li>Rezistente</li><li>Print clar</li></ul>`
   },
   "saget-construcție": {
@@ -460,7 +460,7 @@ export const POLIPROPILENA_DATA: Record<string, LandingInfo> = {
     shortDescription: "Direcționare pentru șantiere.",
     seoTitle: "Sageti Constructie Polipropilena | Santier",
     seoDescription: "Ghidează către zonele de construcție.",
-    images: ["/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp"],
+    images: ["/products/homeprint-studio/polipropilena.webp"],
     contentHtml: `<h2>Siguranță pe șantier</h2><p>Indică zonele periculoase.</p><ul><li>Rezistente</li><li>Vizibile</li><li>Ușoare</li></ul>`
   },
   "imobiliare-apartament": {
@@ -469,7 +469,7 @@ export const POLIPROPILENA_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri pentru vânzarea apartamentelor.",
     seoTitle: "Panouri Apartament Polipropilena | Vand",
     seoDescription: "Atrage cumpărători cu detalii atractive.",
-    images: ["/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp"],
+    images: ["/products/homeprint-studio/polipropilena.webp"],
     contentHtml: `<h2>Vânzări de apartamente</h2><p>Panourile compacte sunt ideale pentru blocuri.</p><ul><li>Compacte</li><li>Vizibile</li><li>Ieftine</li></ul>`
   },
   "saget-eveniment-sportiv": {
@@ -478,7 +478,7 @@ export const POLIPROPILENA_DATA: Record<string, LandingInfo> = {
     shortDescription: "Direcționare pentru evenimente sportive.",
     seoTitle: "Sageti Sport Polipropilena | Eveniment",
     seoDescription: "Ghidează spectatorii către stadioane.",
-    images: ["/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp"],
+    images: ["/products/homeprint-studio/polipropilena.webp"],
     contentHtml: `<h2>Evenimente sportive</h2><p>Panourile ușoare sunt ușor de montat.</p><ul><li>Ușoare</li><li>Print color</li><li>Rezistente</li></ul>`
   },
   "imobiliare-casa": {
@@ -487,7 +487,7 @@ export const POLIPROPILENA_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri pentru vânzarea caselor.",
     seoTitle: "Panouri Casa Polipropilena | Vand Casa",
     seoDescription: "Prezintă casele într-un mod atractiv.",
-    images: ["/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp"],
+    images: ["/products/homeprint-studio/polipropilena.webp"],
     contentHtml: `<h2>Vânzări de case</h2><p>Panourile mari arată fotografii frumoase.</p><ul><li>Mari</li><li>Atractive</li><li>Rezistente</li></ul>`
   },
   "saget-targ": {
@@ -496,7 +496,7 @@ export const POLIPROPILENA_DATA: Record<string, LandingInfo> = {
     shortDescription: "Direcționare pentru târguri și expoziții.",
     seoTitle: "Sageti Targ Polipropilena | Expo",
     seoDescription: "Ghidează vizitatorii către standuri.",
-    images: ["/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp"],
+    images: ["/products/homeprint-studio/polipropilena.webp"],
     contentHtml: `<h2>Târguri reușite</h2><p>Evită pierderile de timp cu săgeți clare.</p><ul><li>Vizibile</li><li>Ușoare</li><li>Print rapid</li></ul>`
   }
 };
@@ -510,7 +510,7 @@ export const CARTON_DATA: Record<string, LandingInfo> = {
     shortDescription: "Decupaj pe contur (oameni, personaje) cu picior de susținere spate.",
     seoTitle: "Figurine Carton & Standee | Cutout Personaje",
     seoDescription: "Atrage atenția în magazin sau la evenimente cu figurine în mărime naturală.",
-    images: ["/products/grafica-originala/carton-plume-panou-grafica-expozitie.webp"],
+    images: ["/products/homeprint-studio/carton.webp"],
     contentHtml: `<h2>Prezență scenică</h2><p>Folosește o figurină cu o vedetă sau mascota brandului pentru poze și impact vizual.</p>`
   },
   "panou-nunta": {
@@ -519,7 +519,7 @@ export const CARTON_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panou de bun venit pentru nuntă sau botez, rigidizat pe carton.",
     seoTitle: "Panou Welcome Nunta | Carton rigid",
     seoDescription: "Un detaliu elegant la intrarea în sala de evenimente. Ieftin și de efect.",
-    images: ["/products/grafica-originala/carton-plume-panou-grafica-expozitie.webp"],
+    images: ["/products/homeprint-studio/carton.webp"],
     contentHtml: `<h2>Primire călduroasă</h2><p>Un panou personalizat așezat pe un șevalet dă tonul evenimentului încă de la intrare.</p>`
   },
 
@@ -531,7 +531,7 @@ export const CARTON_DATA: Record<string, LandingInfo> = {
     shortDescription: "Figurine decupate cu personaje animate.",
     seoTitle: "Standee Personaj Carton | Cutout",
     seoDescription: "Atrage copiii cu figurine din desene animate.",
-    images: ["/products/grafica-originala/carton-plume-panou-grafica-expozitie.webp"],
+    images: ["/products/homeprint-studio/carton.webp"],
     contentHtml: `<h2>Încântare pentru copii</h2><p>Perfecte pentru evenimente familiale.</p><ul><li>Colorate</li><li>Ușoare</li><li>Stabile</li></ul>`
   },
   "panou-botez": {
@@ -540,7 +540,7 @@ export const CARTON_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri pentru evenimente de botez.",
     seoTitle: "Panou Botez Carton | Welcome",
     seoDescription: "Primire caldă pentru invitați la botez.",
-    images: ["/products/grafica-originala/carton-plume-panou-grafica-expozitie.webp"],
+    images: ["/products/homeprint-studio/carton.webp"],
     contentHtml: `<h2>Evenimente fericite</h2><p>Panourile personalize dau un aer festiv.</p><ul><li>Personalizate</li><li>Elegante</li><li>Ieftine</li></ul>`
   },
   "standee-mascota": {
@@ -549,7 +549,7 @@ export const CARTON_DATA: Record<string, LandingInfo> = {
     shortDescription: "Figurine cu mascotele brandurilor.",
     seoTitle: "Standee Mascota Carton | Branding",
     seoDescription: "Creează conexiune emoțională cu clienții.",
-    images: ["/products/grafica-originala/carton-plume-panou-grafica-expozitie.webp"],
+    images: ["/products/homeprint-studio/carton.webp"],
     contentHtml: `<h2>Branding distractiv</h2><p>Mascotele fac brandul mai accesibil.</p><ul><li>Atractive</li><li>Print color</li><li>Stabile</li></ul>`
   },
   "panou-aniversare": {
@@ -558,7 +558,7 @@ export const CARTON_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri pentru sărbătorirea zilelor de naștere.",
     seoTitle: "Panou Aniversare Carton | Sărbătoare",
     seoDescription: "Adaugă bucurie evenimentelor de aniversare.",
-    images: ["/products/grafica-originala/carton-plume-panou-grafica-expozitie.webp"],
+    images: ["/products/homeprint-studio/carton.webp"],
     contentHtml: `<h2>Sărbători memorabile</h2><p>Panourile colorate creează atmosferă.</p><ul><li>Colorate</li><li>Personalizate</li><li>Ușoare</li></ul>`
   },
   "standee-superstar": {
@@ -567,7 +567,7 @@ export const CARTON_DATA: Record<string, LandingInfo> = {
     shortDescription: "Figurine cu vedete pentru evenimente.",
     seoTitle: "Standee Superstar Carton | Celebritate",
     seoDescription: "Atrage atenția cu imagini celebre.",
-    images: ["/products/grafica-originala/carton-plume-panou-grafica-expozitie.webp"],
+    images: ["/products/homeprint-studio/carton.webp"],
     contentHtml: `<h2>Impact celebru</h2><p>Perfecte pentru lansări de produse.</p><ul><li>Celebrități</li><li>Vizibile</li><li>Stabile</li></ul>`
   },
   "panou-graduation": {
@@ -576,7 +576,7 @@ export const CARTON_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri pentru ceremonii de absolvire.",
     seoTitle: "Panou Absolvire Carton | Diplomă",
     seoDescription: "Sărbătorește reușitele cu panouri festive.",
-    images: ["/products/grafica-originala/carton-plume-panou-grafica-expozitie.webp"],
+    images: ["/products/homeprint-studio/carton.webp"],
     contentHtml: `<h2>Reușite academice</h2><p>Panourile motivate dau tonul sărbătorii.</p><ul><li>Motivaționale</li><li>Elegante</li><li>Personalizate</li></ul>`
   },
   "standee-eroi": {
@@ -585,7 +585,7 @@ export const CARTON_DATA: Record<string, LandingInfo> = {
     shortDescription: "Figurine cu eroi pentru evenimente patriotice.",
     seoTitle: "Standee Eroi Carton | Patriotism",
     seoDescription: "Inspirează cu imagini ale eroilor naționali.",
-    images: ["/products/grafica-originala/carton-plume-panou-grafica-expozitie.webp"],
+    images: ["/products/homeprint-studio/carton.webp"],
     contentHtml: `<h2>Spirit patriotic</h2><p>Perfecte pentru evenimente culturale.</p><ul><li>Inspiratoare</li><li>Rezistente</li><li>Vizibile</li></ul>`
   },
   "panou-promovare": {
@@ -594,7 +594,7 @@ export const CARTON_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri pentru campanii promoționale.",
     seoTitle: "Panou Promovare Carton | Reclama",
     seoDescription: "Atrage clienții cu oferte speciale.",
-    images: ["/products/grafica-originala/carton-plume-panou-grafica-expozitie.webp"],
+    images: ["/products/homeprint-studio/carton.webp"],
     contentHtml: `<h2>Vânzări crescute</h2><p>Panourile ieftine sunt ideale pentru promoții.</p><ul><li>Ieftine</li><li>Atractive</li><li>Print rapid</li></ul>`
   },
   "standee-animale": {
@@ -603,7 +603,7 @@ export const CARTON_DATA: Record<string, LandingInfo> = {
     shortDescription: "Figurine cu animale pentru evenimente.",
     seoTitle: "Standee Animale Carton | Natură",
     seoDescription: "Adaugă un strop de natură evenimentelor.",
-    images: ["/products/grafica-originala/carton-plume-panou-grafica-expozitie.webp"],
+    images: ["/products/homeprint-studio/carton.webp"],
     contentHtml: `<h2>Încântare naturală</h2><p>Perfecte pentru evenimente ecologice.</p><ul><li>Colorate</li><li>Ușoare</li><li>Atractive</li></ul>`
   },
   "panou-festival": {
@@ -612,7 +612,7 @@ export const CARTON_DATA: Record<string, LandingInfo> = {
     shortDescription: "Panouri pentru festivaluri și concerte.",
     seoTitle: "Panou Festival Carton | Eveniment",
     seoDescription: "Creează atmosferă festivă la intrare.",
-    images: ["/products/grafica-originala/carton-plume-panou-grafica-expozitie.webp"],
+    images: ["/products/homeprint-studio/carton.webp"],
     contentHtml: `<h2>Festivaluri distractive</h2><p>Panourile mari anunță evenimente mari.</p><ul><li>Mari</li><li>Vizibile</li><li>Personalizate</li></ul>`
   }
 };

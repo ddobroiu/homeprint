@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Tricouri cu Logo pentru Echipă sau Eveniment',
         description: 'Personalizezi logo-ul, alegi cantitatea, comanzi online.',
-        images: ["/products/grafica-originala/tricou-personalizat-grafica-munte-aventura.webp"],
+        images: ["/products/homeprint-studio/tricouri.webp"],
     }
 };
 
@@ -33,7 +33,7 @@ export default function TricouriPage() {
             <ProductSchema
                 name="Tricouri cu Logo pentru Echipă sau Eveniment"
                 description="Tricouri din bumbac 100%, personalizate cu logo-ul firmei, print DTF rezistent, potrivite pentru echipă sau evenimente."
-                image="/products/grafica-originala/tricou-personalizat-grafica-munte-aventura.webp"
+                image="/products/homeprint-studio/tricouri.webp"
                 url="/configurator/tricouri"
                 price="50.00"
             />

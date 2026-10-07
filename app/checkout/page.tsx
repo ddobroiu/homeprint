@@ -1566,15 +1566,15 @@ function CartItems({
 
                       // Mapăm slug-uri la imagini default
                       const defaultImages: Record<string, string> = {
-                        'banner': '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
-                        'afise': '/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp',
-                        'autocolante': '/products/grafica-originala/autocolant-vinil-grafica-botanica.webp',
-                        'flayere': '/products/grafica-originala/flyer-publicitar-grafica-atelier-creativ.webp',
-                        'pliante': '/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp',
-                        'canvas': '/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp',
-                        'rollup': '/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp',
-                        'tapet': '/products/grafica-originala/fototapet-personalizat-grafica-botanica-rola.webp',
-                        'window-graphics': '/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp',
+                        'banner': '/products/homeprint-studio/banner.webp',
+                        'afise': '/products/homeprint-studio/afise.webp',
+                        'autocolante': '/products/homeprint-studio/autocolante.webp',
+                        'flayere': '/products/homeprint-studio/flayere.webp',
+                        'pliante': '/products/homeprint-studio/pliante.webp',
+                        'canvas': '/products/homeprint-studio/canvas.webp',
+                        'rollup': '/products/homeprint-studio/rollup.webp',
+                        'tapet': '/products/homeprint-studio/tapet.webp',
+                        'window-graphics': '/products/homeprint-studio/window-graphics.webp',
                       };
 
                       // Căutăm imaginea default bazată pe slug

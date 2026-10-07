@@ -78,14 +78,14 @@ function normalizeImagePaths(imgs?: string[]): string[] | undefined {
 
 // Mapare prima poză din fiecare configurator pentru fallback
 const CONFIGURATOR_FIRST_IMAGES: Record<string, string> = {
-  'canvas': '/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp',
+  'canvas': '/products/homeprint-studio/canvas.webp',
   'rollup': "/products/modele-personalizate/rollup-rollup-personalizat-model-personalizat.webp",
-  'window-graphics': '/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp',
-  'pliante': '/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp',
+  'window-graphics': '/products/homeprint-studio/window-graphics.webp',
+  'pliante': '/products/homeprint-studio/pliante.webp',
   'plexiglass': '/products/materiale/plexiglass/plexiglass-1.webp',
-  'pvc-forex': '/products/materiale/pvc-forex/pvc-forex-1.webp',
-  'alucobond': '/products/materiale/alucobond/alucobond-1.webp',
-  'polipropilena': '/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp',
+  'pvc-forex': '/products/homeprint-studio/pvc-forex.webp',
+  'alucobond': '/products/homeprint-studio/alucobond.webp',
+  'polipropilena': '/products/homeprint-studio/polipropilena.webp',
 };
 
 function parsePrice(price: string | number | null | undefined): number {
@@ -454,7 +454,7 @@ export async function resolveProductForRequestedSlug(requestedSlug: string, cate
       routeSlug: `${w}x${h}`,
       title: `Produs ${w}x${h} cm`,
       description: `Produs personalizat ${w}x${h} cm — configurează dimensiuni și finisaje.`,
-      images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
+      images: ["/products/homeprint-studio/banner.webp"],
       priceBase: 0,
       currency: "RON",
       tags: ["fallback", "personalizat"],
@@ -465,16 +465,16 @@ export async function resolveProductForRequestedSlug(requestedSlug: string, cate
 
   if (category) {
     const CATEGORY_FALLBACK: Record<string, { title: string; image: string; defaultSlug: string }> = {
-      pliante: { title: "Pliante personalizate", image: "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp", defaultSlug: "pliante" },
-      canvas: { title: "Canvas personalizat", image: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp", defaultSlug: "canvas" },
-      autocolante: { title: "Autocolante personalizate", image: "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp", defaultSlug: "autocolante" },
-      flyer: { title: "Flyere personalizate", image: "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp", defaultSlug: "flyer" },
-      flayere: { title: "Flyere personalizate", image: "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp", defaultSlug: "flayere" },
-      banner: { title: "Banner personalizat", image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp", defaultSlug: "banner" },
-      bannere: { title: "Banner personalizat", image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp", defaultSlug: "banner" },
-      afise: { title: "Afișe personalizate", image: "/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp", defaultSlug: "afise" },
-      tapet: { title: "Tapet personalizat", image: "/products/grafica-originala/fototapet-personalizat-grafica-botanica-rola.webp", defaultSlug: "tapet" },
-      carton: { title: "Carton personalizat", image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp", defaultSlug: "carton" },
+      pliante: { title: "Pliante personalizate", image: "/products/homeprint-studio/pliante.webp", defaultSlug: "pliante" },
+      canvas: { title: "Canvas personalizat", image: "/products/homeprint-studio/canvas.webp", defaultSlug: "canvas" },
+      autocolante: { title: "Autocolante personalizate", image: "/products/homeprint-studio/autocolante.webp", defaultSlug: "autocolante" },
+      flyer: { title: "Flyere personalizate", image: "/products/homeprint-studio/pliante.webp", defaultSlug: "flyer" },
+      flayere: { title: "Flyere personalizate", image: "/products/homeprint-studio/pliante.webp", defaultSlug: "flayere" },
+      banner: { title: "Banner personalizat", image: "/products/homeprint-studio/banner.webp", defaultSlug: "banner" },
+      bannere: { title: "Banner personalizat", image: "/products/homeprint-studio/banner.webp", defaultSlug: "banner" },
+      afise: { title: "Afișe personalizate", image: "/products/homeprint-studio/afise.webp", defaultSlug: "afise" },
+      tapet: { title: "Tapet personalizat", image: "/products/homeprint-studio/tapet.webp", defaultSlug: "tapet" },
+      carton: { title: "Carton personalizat", image: "/products/homeprint-studio/banner.webp", defaultSlug: "carton" },
     };
 
     const catKey = String(category || "").toLowerCase();

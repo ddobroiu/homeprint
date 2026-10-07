@@ -29,7 +29,7 @@ export default function CartiVizitaPage() {
                 <ProductSchema
                     name="Cărți de Vizită Personalizate"
                     description="Comandă online cărți de vizită premium din carton, plastic, lemn sau metal. Diverse opțiuni de finisare disponibile."
-                    image="/products/grafica-originala/carti-vizita-personalizate-grafica-atelier.webp"
+                    image="/products/homeprint-studio/carti-vizita.webp"
                     url="/configurator/carti-vizita"
                     price="0.50"
                 />

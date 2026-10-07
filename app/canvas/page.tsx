@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import CanvasConfigurator from "@/components/CanvasConfigurator";
+import CanvasConfigurator from "@/components/configurator/CanvasConfigurator";
 import { getProductBySlug } from "@/lib/products";
 import ProductJsonLd from "@/components/ProductJsonLd";
 import { prisma } from "@/lib/prisma";

@@ -1,4 +1,5 @@
 "use client";
+import ConfiguratorContactOptions from "@/components/ConfiguratorContactOptions";
 import { EditorOnlineEntry } from "@/components/configurator/ui/EditorOnlineEntry";
 import { useSearchParams as useQuickParams } from "next/navigation";
 import { configuratorInitialQuantity } from "@/lib/quickPrintPresets";
@@ -15,20 +16,20 @@ import { QA } from "@/types/configurator";
 import { calculateBusinessCardPrice, getBusinessCardUpsell, formatMoneyDisplay } from "@/lib/pricing";
 
 const GALLERY_BASE = [
-    "/products/carti-vizita/carti-vizita-1.webp",
-    "/products/grafica-originala/carti-vizita-personalizate-grafica-atelier.webp",
-    "/products/carti-vizita/carti-vizita-2.webp",
-    "/products/carti-vizita/carti-vizita-3.webp",
-    "/products/carti-vizita/carti-vizita-4.webp",
+    "/products/homeprint-studio/carti-vizita.webp",
+    "/products/homeprint-studio/carti-vizita-plastic.webp",
+    "/products/homeprint-studio/carti-vizita-transparente.webp",
+    "/products/homeprint-studio/carti-vizita-lemn.webp",
+    "/products/homeprint-studio/carti-vizita-metalice.webp"
 ];
 
 // Map card type to the best preview image
 const TYPE_IMAGE_MAP: Record<string, string> = {
-    "standard":      "/products/carti-vizita/carti-vizita-1.webp",
-    "plastic":       "/products/carti-vizita/carti-vizita-2.webp",
-    "transparente":  "/products/carti-vizita/carti-vizita-3.webp",
-    "lemn":          "/products/carti-vizita/carti-vizita-4.webp",
-    "metalice":      "/products/carti-vizita/carti-vizita-2.webp",
+    "standard":      "/products/homeprint-studio/carti-vizita.webp",
+    "plastic":       "/products/homeprint-studio/carti-vizita-plastic.webp",
+    "transparente":  "/products/homeprint-studio/carti-vizita-transparente.webp",
+    "lemn":          "/products/homeprint-studio/carti-vizita-lemn.webp",
+    "metalice":      "/products/homeprint-studio/carti-vizita-metalice.webp",
 };
 
 const productFaqs: QA[] = [
@@ -146,10 +147,6 @@ export default function ConfiguratorCartiVizita({ productImage }: { productImage
         alert("Adăugat în coș!");
     }
 
-    useEffect(() => {
-        const id = setInterval(() => setActiveIndex((i) => (i + 1) % GALLERY.length), 5000);
-        return () => clearInterval(id);
-    }, [GALLERY.length]);
 
     useEffect(() => setActiveImage(GALLERY[activeIndex]), [activeIndex, GALLERY]);
 
@@ -196,7 +193,7 @@ export default function ConfiguratorCartiVizita({ productImage }: { productImage
                                 {GALLERY.map((src, i) => (
                                     <button
                                         key={i}
-                                        onClick={() => setActiveIndex(i)}
+                                        onClick={() => { setActiveIndex(i); const selectedType = Object.keys(TYPE_IMAGE_MAP).find(type => TYPE_IMAGE_MAP[type] === src); if (selectedType) updateInput("type", selectedType as typeof input.type); }}
                                         className={`relative rounded-lg aspect-square overflow-hidden border-2 transition-all ${activeIndex === i ? "border-amber-600 shadow-md scale-105" : "border-transparent opacity-70 hover:opacity-100"}`}
                                     >
                                         <img src={src} alt="Miniatura" loading="lazy" className="w-full h-full object-cover" />
@@ -210,7 +207,7 @@ export default function ConfiguratorCartiVizita({ productImage }: { productImage
                     <div>
                         <header className="mb-6">
                             <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white mb-2">Configurează Cărți de Vizită</h2>
-                            <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Prima impresie contează. Creează cărți de vizită memorabile pe suport de carton premium, plastic, lemn sau metal.</p>
+                            <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Alege materialul, tirajul și finisajele. Prețul se actualizează pe măsură ce configurezi.</p>
                         </header>
 
                         <div className="bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-gray-200 dark:border-slate-800 px-4 mb-8">
@@ -344,7 +341,7 @@ export default function ConfiguratorCartiVizita({ productImage }: { productImage
                                     Adaugă în Coș
                                 </button>
 
-                                <div className="flex flex-row justify-between items-center w-full gap-2 pt-1 mt-1 border-t border-gray-100">
+                                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full gap-4 pt-1 mt-1 border-t border-gray-100">
                                     <div className="flex flex-col items-start leading-none">
                                         <span className="text-[10px] text-gray-500 uppercase font-bold tracking-wider mb-0.5">Total comandă</span>
                                         <span className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tighter">{formatMoneyDisplay(displayedTotal)}</span>
@@ -357,29 +354,7 @@ export default function ConfiguratorCartiVizita({ productImage }: { productImage
                             </div>
                         </div>
 
-                        {/* BUTOANE SECUNDARE */}
-                        <div className="mt-4 lg:mt-6 bg-gradient-to-br from-slate-50 to-gray-100 rounded-xl border border-slate-200 p-4">
-                            <p className="text-xs text-gray-600 dark:text-gray-400 mb-3 text-center font-medium">Cantități uriașe sau efecte speciale (Folio)?</p>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <a
-                                    href="https://wa.me/40750473111?text=Buna%20ziua,%20ma%20intereseaza%20o%20oferta%20pentru%20carti%20de%20vizita."
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-amber-600 hover:from-green-700 hover:to-amber-700 text-white font-semibold py-2.5 px-4 rounded-lg shadow-md hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] transition-all duration-200"
-                                >
-                                    <MessageCircle size={18} />
-                                    <span className="text-sm">Vorbim pe WhatsApp</span>
-                                </a>
-                                <button
-                                    type="button"
-                                    onClick={() => window.location.href = '/contact'}
-                                    className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white font-semibold py-2.5 px-4 rounded-lg shadow-md hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] transition-all duration-200"
-                                >
-                                    <Info size={18} />
-                                    <span className="text-sm">Cerere Ofertă</span>
-                                </button>
-                            </div>
-                        </div>
+                        <ConfiguratorContactOptions product="Cărți de vizită" />
                     </div>
                 </div>
 

@@ -22,7 +22,7 @@ import QuickNav from "@/components/QuickNav";
 import RelatedProducts from "@/components/RelatedProducts";
 
 const GALLERY_BASE = [
-    "/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp",
+    "/products/homeprint-studio/polipropilena.webp",
     "/products/materiale/polipropilena/polipropilena-2.webp"
 ] as const;
 

@@ -23,6 +23,9 @@ export const QUICK_PRINT_PRODUCTS: QuickPrintProduct[] = [
  {id:"sepci",name:"Șepci",width:1,height:1,quantity:1,mode:"quantity",note:"Model standard, print față; alte opțiuni în configurator"},
  {id:"decor-foto-copil",name:"Decor cu fotografia copilului",width:70,height:100,quantity:1,note:"PVC 3 mm, decupare pe contur și pregătire foto"},
  {id:"personaj-propriu",name:"Personajul tău decupat pe contur",width:70,height:100,quantity:1,note:"PVC 3 mm, decupare pe contur și pregătire personaj"},
+ {id:"fonduri-pnrr",name:"Kit vizibilitate PNRR",width:1,height:1,quantity:1,mode:"guided",note:"Alege materialele proiectului în configurator"},
+ {id:"fonduri-regio",name:"Kit vizibilitate Regio",width:1,height:1,quantity:1,mode:"guided",note:"Alege materialele proiectului în configurator"},
+ {id:"fonduri-nationale",name:"Programe naționale",width:1,height:1,quantity:1,mode:"guided",note:"Alege materialele proiectului în configurator"},
  {id:"semnalistica",name:"Semnalistică și indicatoare",width:1,height:1,quantity:1,mode:"guided",note:"Alege întâi un model și materialul; prețul se calculează în configurator"},
 ];
 export type QuickPrintId = string;

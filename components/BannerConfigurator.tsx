@@ -193,7 +193,7 @@ export default function BannerConfigurator({ productSlug, initialWidth: initW, i
   const [lengthText, setLengthText] = useState(input.width_cm ? String(input.width_cm) : "");
   const [heightText, setHeightText] = useState(input.height_cm ? String(input.height_cm) : "");
 
-  const galleryImages = useMemo(() => productImage ? [productImage, "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"] : ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"], [productImage]);
+  const galleryImages = useMemo(() => productImage ? [productImage, "/products/homeprint-studio/banner.webp"] : ["/products/homeprint-studio/banner.webp"], [productImage]);
 
   const [viewMode, setViewMode] = useState<ViewMode>(() => {
     const t = searchParams.get('tab');

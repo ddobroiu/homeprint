@@ -28,9 +28,7 @@ import {
 import { PopularDimensions } from "./PopularDimensions";
 
 const GALLERY_BASE = [
-    "/products/canvas/canvas-1.webp",
-    "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
-    "/products/canvas/canvas-2.webp",
+    "/products/homeprint-studio/canvas.webp",
 ] as const;
 
 const productFaqs: QA[] = [

@@ -22,8 +22,7 @@ import {
 } from "@/lib/pricing";
 
 const GALLERY_BASE = [
-    "/products/flayere/flayere-1.webp",
-    "/products/grafica-originala/flyer-publicitar-grafica-atelier-creativ.webp",
+    "/products/homeprint-studio/flayere.webp",
 ] as const;
 
 const productFaqs: QA[] = [

@@ -13,7 +13,7 @@ export const metadata = {
         title: "Jurnal de amenajare HomePrint",
         description: "Măsurători, imagini și compoziții pentru decorul camerei tale.",
         type: "website",
-        images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"], // Fallback safe image
+        images: ["/products/homeprint-studio/banner.webp"], // Fallback safe image
     }
 };
 

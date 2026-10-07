@@ -96,7 +96,7 @@ export default function TapetConfigurator({ productSlug, initialWidth: initW, in
                    <div className="lg:sticky top-24 h-max space-y-8 text-slate-900 dark:text-white">
                         <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg border border-gray-200 dark:border-slate-800 overflow-hidden">
                            <div className="aspect-square relative flex items-center justify-center overflow-hidden">
-                                <Image src={productImage || "/products/grafica-originala/fototapet-personalizat-grafica-botanica-rola.webp"} alt="Tapet Personalizat" fill className="object-contain p-8" priority />
+                                <Image src={productImage || "/products/homeprint-studio/tapet.webp"} alt="Tapet Personalizat" fill className="object-contain p-8" priority />
                            </div>
                         </div>
 

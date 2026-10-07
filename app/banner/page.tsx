@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import BannerConfigurator from "@/components/BannerConfigurator";
+import BannerConfigurator from "@/components/configurator/BannerConfigurator";
 import { getProductBySlug } from "@/lib/products";
 import ProductJsonLd from "@/components/ProductJsonLd";
 import { prisma } from "@/lib/prisma";
@@ -24,7 +24,7 @@ export const metadata = {
     title: "Bannere Publicitare - Configurează Online | Publicitate Outdoor",
     description: "Ai nevoie de un banner? Introduci dimensiunile și vezi prețul pe loc. Print policromie rezistent UV, finisaje incluse. Sistem centralizat pentru outdoor și indoor. Print de mari și mici dimensiuni cu preț de producător și rezistență UV.",
     images: [{
-      url: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
+      url: "/products/homeprint-studio/banner.webp",
       width: 1200,
       height: 630,
       alt: "Bannere publicitare outdoor HomePrint.ro"

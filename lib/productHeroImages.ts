@@ -23,7 +23,7 @@ export const PRODUCT_HERO_IMAGES: Record<string, string> = {
     alucobond: `${P}placa-alucobond-personalizata.webp`,
     carton: `${P}carton-plume-personalizat.webp`,
     polipropilena: `${P}placa-polipropilena-celulara-personalizata.webp`,
-    canvas: "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
+    canvas: "/products/homeprint-studio/canvas.webp",
 };
 
 export const productHeroImage = (id: string) => PRODUCT_HERO_IMAGES[id] ?? `${P}banner-publicitar-personalizat.webp`;

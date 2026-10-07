@@ -18,7 +18,7 @@ import {
 } from "@/lib/pricing";
 
 const GALLERY = [
-  "/products/materiale/carton/carton-1.webp",
+  "/products/homeprint-studio/carton.webp",
   "/products/materiale/carton/carton-2.webp",
   "/products/materiale/carton/carton-3.webp",
   "/products/materiale/carton/carton-4.webp"

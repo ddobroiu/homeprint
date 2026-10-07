@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import ProductJsonLd from "@/components/ProductJsonLd";
 import { resolveProductForRequestedSlug, getAllProductSlugsByCategory } from "@/lib/products";
 import type { Product } from "@/lib/products";
-import BannerVersoConfigurator from "@/components/BannerVersoConfigurator";
+import BannerVersoConfigurator from "@/components/configurator/BannerVersoConfigurator";
 import { prisma } from "@/lib/prisma";
 
 type Props = { params: Promise<{ slug?: string[] }> };
@@ -45,10 +45,10 @@ export default async function Page({ params }: Props) {
 
   // LOGICA IMAGINE ROBUSTĂ
   const slugKey = String(product.slug ?? product.id ?? "").toLowerCase();
-  const genericSet = new Set<string>(["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp", "/placeholder.png"]);
+  const genericSet = new Set<string>(["/products/homeprint-studio/banner.webp", "/placeholder.png"]);
   const imgs = product.images ?? [];
   let img = imgs.find((x) => !!x && slugKey && x.toLowerCase().includes(slugKey));
-  if (!img) img = imgs.find((x) => !!x && !genericSet.has(x.toLowerCase())) ?? imgs[0] ?? "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp";
+  if (!img) img = imgs.find((x) => !!x && !genericSet.has(x.toLowerCase())) ?? imgs[0] ?? "/products/homeprint-studio/banner.webp";
 
   // Fetch review stats
   let ratingValue: number | undefined;

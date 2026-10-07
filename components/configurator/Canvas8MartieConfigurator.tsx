@@ -127,11 +127,11 @@ export default function Canvas8MartieConfigurator({ productImage }: Props) {
                                             onClick={() => document.getElementById('photo-upload-input')?.click()}
                                             className="w-full aspect-square flex flex-col items-center justify-center p-12 border-4 border-dashed border-rose-100 rounded-xl hover:bg-rose-50 hover:border-rose-300 transition-all duration-300"
                                         >
-                                            <div className="w-20 h-20 bg-rose-100 rounded-full flex items-center justify-center mb-6 text-rose-500">
+                                            <div className="w-full h-64 bg-white rounded-xl flex items-center justify-center mb-6">
                                                 {uploading ? (
                                                     <div className="animate-spin rounded-full h-10 w-10 border-4 border-rose-500 border-t-transparent"></div>
                                                 ) : (
-                                                    <UploadCloud size={40} />
+                                                    <img src="/products/homeprint-studio/canvas-8-martie.webp" alt="Exemplu canvas 8 Martie, fără ramă" className="w-full h-full object-contain" />
                                                 )}
                                             </div>
                                             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Încarcă Fotografia</h3>
@@ -247,4 +247,3 @@ export default function Canvas8MartieConfigurator({ productImage }: Props) {
         </main>
     );
 }
-

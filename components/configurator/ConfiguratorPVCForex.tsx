@@ -23,9 +23,7 @@ import {
 } from "@/lib/pricing";
 
 const GALLERY_BASE = [
-    "/products/materiale/pvc-forex/pvc-forex-1.webp",
-    "/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp",
-    "/products/materiale/pvc-forex/pvc-forex-2.webp",
+    "/products/homeprint-studio/pvc-forex.webp",
 ] as const;
 
 const productFaqs: QA[] = [

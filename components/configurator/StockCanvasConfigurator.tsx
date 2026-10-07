@@ -58,7 +58,7 @@ export default function StockCanvasConfigurator({ productSlug, renderOnlyConfigu
                 slug: landingInfo.key,
                 title: landingInfo.title,
                 description: landingInfo.shortDescription,
-                image: landingInfo.images?.[0] || "/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp",
+                image: landingInfo.images?.[0] || "/products/homeprint-studio/canvas.webp",
                 orientation: 'Landscape', // Default for landing pages
                 material: 'Standard',
                 dimensions: ["50x40 cm", "70x50 cm", "90x60 cm", "120x90 cm"],

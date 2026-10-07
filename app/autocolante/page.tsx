@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import AutocolanteConfigurator from "@/components/AutocolanteConfigurator";
+import AutocolanteConfigurator from "@/components/configurator/AutocolanteConfigurator";
 import { getProductBySlug } from "@/lib/products";
 import ProductJsonLd from "@/components/ProductJsonLd";
 import { prisma } from "@/lib/prisma";

@@ -25,7 +25,7 @@ import { NumberInput } from "./ui/NumberInput";
 import { OptionButton } from "./ui/OptionButton";
 import MobilePriceBar from "./MobilePriceBar";
 
-const GALLERY_BASE = ["/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp", "/products/canvas/canvas-2.webp", "/products/canvas/canvas-3.webp"] as const;
+const GALLERY_BASE = ["/products/homeprint-studio/canvas.webp", "/products/canvas/canvas-2.webp", "/products/canvas/canvas-3.webp"] as const;
 
 const canvasFaqs: QA[] = [
   { question: "Ce este canvasul Fine Art?", answer: "Este o pânză texturată de calitate superioară, similară celei folosite de pictori. Imprimarea se face cu cerneală eco-solvent rezistentă." },

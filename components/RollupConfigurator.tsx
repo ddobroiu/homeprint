@@ -25,7 +25,7 @@ import { NumberInput } from "./ui/NumberInput";
 import { OptionButton } from "./ui/OptionButton";
 
 const GALLERY = [
-  "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp"
+  "/products/homeprint-studio/rollup.webp"
 ] as const;
 
 const productFaqs: QA[] = [

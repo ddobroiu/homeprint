@@ -121,8 +121,8 @@ export default function CanvasMartisorConfigurator({ productImage }: Props) {
                                     </div>
                                 ) : (
                                     <div className="flex flex-col items-center justify-center text-center p-12">
-                                        <div className="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mb-6 text-red-500 animate-pulse">
-                                            <ImageIcon size={40} />
+                                        <div className="w-full h-64 bg-white rounded-xl flex items-center justify-center mb-6">
+                                            <img src="/products/homeprint-studio/canvas-martisor.webp" alt="Exemplu canvas Mărțișor, fără ramă" className="w-full h-full object-contain" />
                                         </div>
                                         <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Încarcă Fotografia Ta</h3>
                                         <p className="text-gray-500 max-w-xs">Alege o imagine clară pentru un print de excepție pe canvas.</p>
@@ -242,4 +242,3 @@ export default function CanvasMartisorConfigurator({ productImage }: Props) {
         </main>
     );
 }
-

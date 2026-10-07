@@ -31,6 +31,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import EditorShopBanner from "@/components/EditorShopBanner";
 
 export default function ShopPage() {
+    const programProducts: Product[] = EXTRA_CONFIGURATORS.filter(product => product.id.startsWith("fonduri-")).map(product => ({id: `configurator-${product.id}`, slug: product.slug, routeSlug: product.url.slice(1), title: product.name, description: product.description, images: product.image ? [product.image] : [], priceBase: 0, currency: "RON", tags: product.keywords, metadata: {category: "fonduri-eu", subcategory: "Kituri de vizibilitate", isGuidedConfigurator: true, isSearchProduct: true}}));
     const personalProducts: Product[] = EXTRA_CONFIGURATORS
         .filter(product => ["decor-foto-copil", "personaj-propriu"].includes(product.id))
         .map(product => ({
@@ -47,7 +48,7 @@ export default function ShopPage() {
             <Breadcrumbs items={[{ label: 'Magazin', href: '/shop' }]} />
             <EditorShopBanner />
             <Suspense fallback={<div className="container py-20 text-center">Se încarcă produsele...</div>}>
-                <ShopPageContent personalProducts={[FA_PRODUCT, ...personalProducts]} catalogProducts={catalogAsProducts()} />
+                <ShopPageContent personalProducts={[...programProducts, FA_PRODUCT, ...personalProducts]} catalogProducts={catalogAsProducts()} />
             </Suspense>
         </div>
     );

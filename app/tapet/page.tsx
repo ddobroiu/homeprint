@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import TapetConfigurator from "@/components/TapetConfigurator";
+import TapetConfigurator from "@/components/configurator/TapetConfigurator";
 import { getProductBySlug } from "@/lib/products";
 import ProductJsonLd from "@/components/ProductJsonLd";
 import { prisma } from "@/lib/prisma";

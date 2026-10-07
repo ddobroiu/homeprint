@@ -115,7 +115,7 @@ export default function WindowGraphicsConfigurator({ productSlug, initialWidth: 
             <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg border border-gray-200 dark:border-slate-800 overflow-hidden">
                <div className="aspect-square relative flex items-center justify-center overflow-hidden">
                   <Image 
-                    src={productImage || "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp"}
+                    src={productImage || "/products/homeprint-studio/window-graphics.webp"}
                     alt="Window Graphics"
                     fill
                     className="object-contain p-4"

@@ -1,0 +1,54 @@
+/* HomePrint: warm colors match the interior-design identity. */
+[data-brand="homeprint"] { --design-ink:#382d26; --design-muted:#6d6259; --design-accent:#87573f; --design-soft:#ede3d6; --design-wash:#f8f5ef; --design-line:#e2dbd0; --design-radius:16px; --design-display:var(--font-outfit),Georgia,serif; }
+[data-brand="homeprint"] .brand-logo-image { height:38px; max-width:160px; }
+.sp-home h1,.sp-home h2,.sp-featured .design-product h3 { font-family:var(--design-display); }
+.sp-hero { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:32px; padding:48px max(24px,calc((100vw - 1280px)/2)) 30px; background:var(--design-wash); }
+.sp-home .design-wrap { width:min(1280px,calc(100% - 48px)); }
+.sp-hero .sp-hero-inner { display:contents; }
+.sp-hero-copy { grid-column:1; grid-row:1; width:100%; max-width:none; align-self:center; padding:0; }
+.sp-hero-copy h1 { font-size:clamp(40px,4.8vw,66px); line-height:1.06; letter-spacing:-.045em; max-width:600px; }
+.sp-hero-copy .design-intro { max-width:500px; font-size:16px; }
+.sp-hero-copy .design-kicker { letter-spacing:.14em; }
+.sp-hero-media.homeprint-showcase { position:relative; grid-column:2; grid-row:1; inset:auto; width:100%; height:450px; display:grid; grid-template-columns:1.35fr 1fr; grid-template-rows:1fr 1fr; gap:12px; overflow:visible; }
+.homeprint-showcase-product { position:relative; background:#fff; border:1px solid var(--design-line); border-radius:20px; overflow:hidden; transition:transform .2s; }
+.homeprint-showcase-product:hover { transform:translateY(-3px); }
+.homeprint-showcase-product img { object-fit:contain; object-position:center; padding:12px 10px 46px; mix-blend-mode:normal; }
+.homeprint-showcase-product span { position:absolute; bottom:16px; left:16px; right:16px; display:flex; align-items:center; justify-content:space-between; gap:6px; font-size:12px; font-weight:600; }
+.homeprint-showcase-0 { grid-row:1 / 3; }
+.homeprint-showcase-3 { display:none; }
+.sp-quick { grid-column:1 / -1; max-width:none; margin-top:6px; }
+.sp-calculator { padding:22px; border-radius:16px; box-shadow:0 12px 32px -24px #382d2655; }
+.sp-featured { padding-block:44px; }
+.sp-section-heading h2 { font-size:34px; font-weight:600; }
+.sp-home .design-product-grid { gap:22px; }
+.sp-home .design-product-grid .design-product { border-radius:16px; border:1px solid var(--design-line); box-shadow:0 5px 20px -16px #382d2645; }
+.sp-home .design-product-grid .design-product-image { aspect-ratio:1 / 1; background:#fff; }
+.sp-home .design-product-grid .design-product-image img { padding:10px; }
+.sp-home .design-product-content { padding:20px; }
+.sp-home .design-product h3 { font-size:17px; }
+.sp-home .design-product-action { padding-top:18px; }
+.sp-help-strip { background:var(--design-soft); }
+.sp-assistant h2 { font-weight:600; }
+[data-brand="homeprint"] .brand-navbar nav a[class*="bg-slate-950"] { background:var(--design-accent); color:#fff; }
+[data-brand="homeprint"] .brand-configurator :is(button,a)[class~="bg-slate-950"] { background:var(--design-accent); color:#fff; }
+[data-brand="homeprint"] .brand-configurator :is(button,a)[class~="bg-blue-600"] { background:var(--design-accent); color:#fff; }
+[data-brand="homeprint"] .brand-configurator :is(.text-blue-600,.text-blue-700) { color:var(--design-accent); }
+[data-brand="homeprint"] .brand-configurator :is(.bg-blue-50,.bg-blue-100) { background:var(--design-soft); }
+[data-brand="homeprint"] .site-content > .brand-configurator { padding-top:0; }
+[data-brand="homeprint"] .site-content.brand-configurator > .pt-20 { padding-top:24px; }
+[data-brand="homeprint"] .brand-configurator main > .container:first-child { padding-top:28px; }
+@media(max-width:1000px) { .sp-hero { gap:24px; padding-top:32px; } .sp-hero-copy h1 { font-size:44px; } .sp-hero-media.homeprint-showcase { height:380px; } }
+@media(max-width:760px) {
+ .sp-hero { grid-template-columns:1fr; padding:28px 18px; gap:24px; }
+ .sp-hero-copy { margin:0; width:100%; padding:0; }
+ .sp-hero-copy h1 { font-size:clamp(36px,8.5vw,48px); }
+ .sp-hero-media.homeprint-showcase { grid-column:1; grid-row:2; height:350px; }
+ .sp-quick { grid-column:1; grid-row:3; width:100%; margin:0; }
+ .sp-home .design-wrap { width:calc(100% - 36px); }
+ .sp-section-heading { align-items:flex-start; flex-direction:column; gap:8px; }
+ .sp-section-heading h2 { font-size:29px; }
+ .sp-home .design-product-grid { gap:12px; }
+ .sp-home .design-product-content { padding:14px; }
+ .sp-home .design-product h3 { font-size:15px; }
+ [data-brand="homeprint"] .brand-logo-image { height:30px; max-width:128px; }
+}

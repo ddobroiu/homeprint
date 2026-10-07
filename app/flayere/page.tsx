@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import FlyerConfigurator from "@/components/FlyerConfigurator";
+import FlyerConfigurator from "@/components/configurator/FlyerConfigurator";
 import { getProductBySlug } from "@/lib/products";
 import ProductJsonLd from "@/components/ProductJsonLd";
 import { prisma } from "@/lib/prisma";

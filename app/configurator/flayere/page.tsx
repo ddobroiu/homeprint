@@ -29,7 +29,7 @@ export default function FlyerePage() {
                 <ProductSchema
                     name="Flyere Publicitare Personalizate"
                     description="Flyere publicitare ieftine pe hârtie premium, formate A6, A5 și DL, pentru marketing local și distribuție de volum."
-                    image="/products/grafica-originala/flyer-publicitar-grafica-atelier-creativ.webp"
+                    image="/products/homeprint-studio/flayere.webp"
                     url="/configurator/flayere"
                     price="15.00"
                 />

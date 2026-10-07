@@ -22,8 +22,7 @@ import {
 } from "@/lib/pricing";
 
 const GALLERY_BASE = [
-    "/products/window-graphics/window-graphics-1.webp",
-    "/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp",
+    "/products/homeprint-studio/window-graphics.webp",
 ] as const;
 
 const productFaqs: QA[] = [
@@ -38,7 +37,7 @@ import { NumberInput } from "./ui/NumberInput";
 import { TabButton } from "./ui/TabButton";
 import StickerModeSwitchInline from "./StickerModeSwitchInline";
 
-export default function WindowGraphicsConfigurator({ initialWidth: initW, initialHeight: initH, productImage }: { initialWidth?: number; initialHeight?: number; productImage?: string }) {
+export default function WindowGraphicsConfigurator({ initialWidth: initW, initialHeight: initH, productImage }: { initialWidth?: number; initialHeight?: number; productImage?: string; productSlug?: string }) {
     const quickParams = useQuickParams();
     const { addItem } = useCart();
     const GALLERY = useMemo(() => productImage ? [productImage, ...GALLERY_BASE] : GALLERY_BASE, [productImage]);

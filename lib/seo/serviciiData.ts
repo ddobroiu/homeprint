@@ -34,7 +34,7 @@ export const SERVICII_DATA: ServiceData[] = [
         ],
         idealFor: ['Stickere Logo', 'Etichete produs', 'Grafică pentru mașină', 'Decor vitrine'],
         relatedProductId: 'autocolante',
-        image: '/products/grafica-originala/autocolant-vinil-grafica-botanica.webp'
+        image: '/products/homeprint-studio/autocolante.webp'
     },
     {
         id: 'tiv-capse',
@@ -57,7 +57,7 @@ export const SERVICII_DATA: ServiceData[] = [
         ],
         idealFor: ['Bannere stradale', 'Mesh-uri clădiri', 'Panouri gard', 'Backdrops evenimente'],
         relatedProductId: 'banner',
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'laminare',
@@ -80,7 +80,7 @@ export const SERVICII_DATA: ServiceData[] = [
         ],
         idealFor: ['Stickere auto', 'Meniuri restaurant', 'Semnalistică de mână', 'Vitrine comerciale'],
         relatedProductId: 'autocolante',
-        image: '/products/grafica-originala/autocolant-vinil-grafica-botanica.webp'
+        image: '/products/homeprint-studio/autocolante.webp'
     },
     {
         id: 'sisteme-prindere',

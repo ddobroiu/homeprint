@@ -28,7 +28,7 @@ export default function FonduriEUPage() {
             <ProductSchema
                 name="Panou de Vizibilitate Fonduri Europene"
                 description="Panou temporar de șantier sau placă permanentă pentru proiecte finanțate din Fonduri Europene, conform Manualului de Identitate Vizuală al programului de finanțare."
-                image="/products/grafica-originala/kit-vizibilitate-proiect-panou-afis-etichete.webp"
+                image="/products/homeprint-studio/fonduri-eu.webp"
                 url="/configurator/fonduri-eu"
                 price="35.00"
             />

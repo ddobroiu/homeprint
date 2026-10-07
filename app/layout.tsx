@@ -5,6 +5,8 @@ import "./brand-design.css";
 import "./studio-home.css";
 import "./brand-help.css";
 import "./editorial.css";
+import "./homeprint-presentation.css";
+import "./configurator-studio.css";
 import { brandKey, brandDesign } from "@/lib/brandDesign";
 import { Providers } from "../components/Providers";
 import GlobalStructuredData from "../components/GlobalStructuredData";

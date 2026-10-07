@@ -25,7 +25,7 @@ export default function CanvasPage() {
             <ProductSchema
                 name="Tablou Canvas pentru Decor Business"
                 description="Tablou canvas pe pânză 100% bumbac și șasiu din lemn natural — potrivit pentru decor de birou, showroom sau recepție, editabil online."
-                image="/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp"
+                image="/products/homeprint-studio/canvas.webp"
                 url="/configurator/canvas"
                 price="55.00"
             />

@@ -26,7 +26,7 @@ export const metadata = {
         title: "Tricouri Personalizate pentru Familie și Cadouri | Print DTF",
         description: "De la 8 tricouri pentru o revedere de familie la primul stoc al unei mici afaceri de acasă — bumbac 100%, print DTF rezistent, mărimi de la copii la adulți, fără comandă minimă.",
         images: [{
-            url: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp",
+            url: "/products/homeprint-studio/banner.webp",
             width: 1200,
             height: 630,
             alt: "Tricouri Personalizate pentru familie"

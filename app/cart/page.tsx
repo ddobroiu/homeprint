@@ -9,22 +9,22 @@ import { useEffect, useState } from "react";
 import { getEstimatedShippingCost } from "@/lib/shippingUtils";
 
 const DEFAULT_IMAGES: Record<string, string> = {
-    'canvas': '/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp',
-    'banner': '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
-    'banner-verso': '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
-    'mesh': '/products/grafica-originala/banner-mesh-perforat-grafica-constructii.webp',
-    'autocolante': '/products/grafica-originala/autocolant-vinil-grafica-botanica.webp',
-    'afise': '/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp',
-    'tapet': '/products/grafica-originala/fototapet-personalizat-grafica-botanica-rola.webp',
-    'rollup': '/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp',
-    'window-graphics': '/products/grafica-originala/folie-microperforata-geam-grafica-cafenea.webp',
-    'pliante': '/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp',
-    'flayere': '/products/grafica-originala/flyer-publicitar-grafica-atelier-creativ.webp',
-    'fonduri-eu': '/products/grafica-originala/kit-vizibilitate-proiect-panou-afis-etichete.webp',
+    'canvas': '/products/homeprint-studio/canvas.webp',
+    'banner': '/products/homeprint-studio/banner.webp',
+    'banner-verso': '/products/homeprint-studio/banner.webp',
+    'mesh': '/products/homeprint-studio/mesh.webp',
+    'autocolante': '/products/homeprint-studio/autocolante.webp',
+    'afise': '/products/homeprint-studio/afise.webp',
+    'tapet': '/products/homeprint-studio/tapet.webp',
+    'rollup': '/products/homeprint-studio/rollup.webp',
+    'window-graphics': '/products/homeprint-studio/window-graphics.webp',
+    'pliante': '/products/homeprint-studio/pliante.webp',
+    'flayere': '/products/homeprint-studio/flayere.webp',
+    'fonduri-eu': '/products/homeprint-studio/fonduri-eu.webp',
     'plexiglass': '/products/materiale/plexiglass/plexiglass-1.webp',
-    'pvc-forex': '/products/materiale/pvc-forex/pvc-forex-1.webp',
-    'alucobond': '/products/materiale/alucobond/alucobond-1.webp',
-    'polipropilena': '/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp',
+    'pvc-forex': '/products/homeprint-studio/pvc-forex.webp',
+    'alucobond': '/products/homeprint-studio/alucobond.webp',
+    'polipropilena': '/products/homeprint-studio/polipropilena.webp',
 };
 
 export default function CartPage() {

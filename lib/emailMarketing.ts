@@ -15,7 +15,7 @@ export const MAIN_CONFIGURATORS = [
     title: 'Bannere Outdoor',
     description: 'Rezistente UV, tiv & capse incluse',
     url: '/banner',
-    image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
+    image: '/products/homeprint-studio/banner.webp',
     category: 'outdoor',
     startingPrice: 50,
     benefits: ['Rezistent la UV', 'Tiv inclus', 'Capse metalice', 'Livrare rapidă']
@@ -25,7 +25,7 @@ export const MAIN_CONFIGURATORS = [
     title: 'Bannere Față-Verso',
     description: 'Vizibilitate maximă din ambele părți',
     url: '/banner-verso',
-    image: '/products/grafica-originala/banner-fata-verso-blockout-grafica-eveniment.webp',
+    image: '/products/homeprint-studio/banner-verso.webp',
     category: 'outdoor',
     startingPrice: 85,
     benefits: ['Print dublu', 'Material blockout', 'Impact vizual maxim', 'ROI superior']
@@ -35,7 +35,7 @@ export const MAIN_CONFIGURATORS = [
     title: 'Mesh publicitar',
     description: 'Microperforat, același preț/mp ca bannerul standard',
     url: '/configurator/mesh',
-    image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
+    image: '/products/homeprint-studio/banner.webp',
     category: 'outdoor',
     startingPrice: 50,
     benefits: ['Fațade & garduri', 'Tiv și capse incluse', 'Grid preț ca Frontlit 440', 'Livrare rapidă']
@@ -45,7 +45,7 @@ export const MAIN_CONFIGURATORS = [
     title: 'Autocolante & Stickere',
     description: 'Print & Cut pe contur, orice formă',
     url: '/autocolante',
-    image: '/products/grafica-originala/autocolant-vinil-grafica-botanica.webp',
+    image: '/products/homeprint-studio/autocolante.webp',
     category: 'indoor',
     startingPrice: 25,
     benefits: ['Decupaj pe contur', 'Vinyl premium', 'Adeziv puternic', 'Orice formă']
@@ -55,7 +55,7 @@ export const MAIN_CONFIGURATORS = [
     title: 'Afișe & Postere',
     description: 'A4, A3, A2, A1, A0 - toate formatele',
     url: '/afise',
-    image: '/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp',
+    image: '/products/homeprint-studio/afise.webp',
     category: 'indoor',
     startingPrice: 3,
     benefits: ['Toate formatele', 'Hârtie premium', 'Rezoluție înaltă', 'Prețuri mici']
@@ -65,7 +65,7 @@ export const MAIN_CONFIGURATORS = [
     title: 'Tablouri Canvas',
     description: 'Print pe pânză întinsă pe șasiu',
     url: '/canvas',
-    image: '/products/grafica-originala/tablou-canvas-peisaj-montan-sasiu.webp',
+    image: '/products/homeprint-studio/canvas.webp',
     category: 'decor',
     startingPrice: 79,
     benefits: ['Pânză premium', 'Șasiu lemn', 'Gata de agățat', 'Cadou perfect']
@@ -75,7 +75,7 @@ export const MAIN_CONFIGURATORS = [
     title: 'Tapet Personalizat',
     description: 'Fototapet la dimensiuni custom',
     url: '/tapet',
-    image: '/products/grafica-originala/fototapet-personalizat-grafica-botanica-rola.webp',
+    image: '/products/homeprint-studio/tapet.webp',
     category: 'decor',
     startingPrice: 45,
     benefits: ['Orice dimensiune', 'Rezoluție 4K', 'Adeziv inclus', 'Instalare ușoară']
@@ -85,7 +85,7 @@ export const MAIN_CONFIGURATORS = [
     title: 'Flyere Promoționale',
     description: 'A6, A5, DL - promovare stradală',
     url: '/flayere',
-    image: '/products/grafica-originala/flyer-publicitar-grafica-atelier-creativ.webp',
+    image: '/products/homeprint-studio/flayere.webp',
     category: 'promo',
     startingPrice: 50,
     benefits: ['Hârtie 250g', 'Tiraje mari', 'Livrare rapidă', 'Cost per bucată mic']
@@ -95,7 +95,7 @@ export const MAIN_CONFIGURATORS = [
     title: 'Pliante Marketing',
     description: 'Brosuri pliabile pentru prezentare',
     url: '/pliante',
-    image: '/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp',
+    image: '/products/homeprint-studio/pliante.webp',
     category: 'promo',
     startingPrice: 120,
     benefits: ['Multiple pliuri', 'Hârtie lucioasă', 'Design profesional', 'Impact mare']
@@ -105,7 +105,7 @@ export const MAIN_CONFIGURATORS = [
     title: 'PVC Forex',
     description: 'Panouri rigide pentru interior/exterior',
     url: '/materiale/pvc-forex',
-    image: '/products/grafica-originala/placa-pvc-forex-grafica-receptie.webp',
+    image: '/products/homeprint-studio/pvc-forex.webp',
     category: 'rigide',
     startingPrice: 85,
     benefits: ['Rezistent UV', 'Ușor de montat', 'Suprafață netedă', 'Durabilitate mare']
@@ -125,7 +125,7 @@ export const MAIN_CONFIGURATORS = [
     title: 'Alucobond Composite',
     description: 'Material premium pentru exterior',
     url: '/materiale/alucobond',
-    image: '/products/grafica-originala/placa-alucobond-compozit-grafica-studio.webp',
+    image: '/products/homeprint-studio/alucobond.webp',
     category: 'rigide',
     startingPrice: 200,
     benefits: ['Durabilitate extremă', 'Aspect metalic', 'Rezistent intemperii', 'Profesional']
@@ -135,7 +135,7 @@ export const MAIN_CONFIGURATORS = [
     title: 'Carton Plast',
     description: 'Soluția economică pentru indoor',
     url: '/materiale/carton',
-    image: '/products/grafica-originala/carton-plume-panou-grafica-expozitie.webp',
+    image: '/products/homeprint-studio/carton.webp',
     category: 'rigide',
     startingPrice: 35,
     benefits: ['Economic', 'Ușor', 'Ideal evenimente', 'Livrare rapidă']
@@ -145,7 +145,7 @@ export const MAIN_CONFIGURATORS = [
     title: 'Polipropilenă',
     description: 'Flexibilă și rezistentă',
     url: '/materiale/polipropilena',
-    image: '/products/grafica-originala/placa-polipropilena-celulara-grafica-directie.webp',
+    image: '/products/homeprint-studio/polipropilena.webp',
     category: 'rigide',
     startingPrice: 45,
     benefits: ['Flexibilă', 'Rezistentă apă', 'Ușor de curățat', 'Versatilă']
@@ -155,7 +155,7 @@ export const MAIN_CONFIGURATORS = [
     title: 'Pachete Fonduri UE',
     description: 'Set complet pentru proiecte europene',
     url: '/fonduri-pnrr',
-    image: '/products/grafica-originala/kit-vizibilitate-proiect-panou-afis-etichete.webp',
+    image: '/products/homeprint-studio/fonduri-eu.webp',
     category: 'pachete',
     startingPrice: 850,
     benefits: ['Pachet complet', 'Conforme cerințe UE', 'Consultanță inclusă', 'Aprobare garantată']
@@ -444,15 +444,15 @@ export async function sendPostPurchaseFollowUp(email: string, name: string, orde
     <h3 style="color:#0F172A; text-align:center; margin-top:32px;">Alte idei care te-ar putea inspira:</h3>
     <div style="display:flex; gap:12px; justify-content:center; margin-top:16px; flex-wrap:wrap;">
       <a href="${baseUrl}/canvas" style="text-decoration:none; color:#475569; width:140px; text-align:center;">
-        <img src="${baseUrl}/products/canvas/canvas-1.webp" style="width:100%; border-radius:8px; margin-bottom:6px;"/>
+        <img src="${baseUrl}/products/homeprint-studio/canvas.webp" style="width:100%; border-radius:8px; margin-bottom:6px;"/>
         <span style="font-size:12px; font-weight:600;">Tablouri Canvas</span>
       </a>
       <a href="${baseUrl}/tapet" style="text-decoration:none; color:#475569; width:140px; text-align:center;">
-        <img src="${baseUrl}/products/tapet/tapet-1.webp" style="width:100%; border-radius:8px; margin-bottom:6px;"/>
+        <img src="${baseUrl}/products/homeprint-studio/tapet.webp" style="width:100%; border-radius:8px; margin-bottom:6px;"/>
         <span style="font-size:12px; font-weight:600;">Tapet Custom</span>
       </a>
       <a href="${baseUrl}/autocolante" style="text-decoration:none; color:#475569; width:140px; text-align:center;">
-        <img src="${baseUrl}/products/autocolante/autocolante-1.webp" style="width:100%; border-radius:8px; margin-bottom:6px;"/>
+        <img src="${baseUrl}/products/homeprint-studio/autocolante.webp" style="width:100%; border-radius:8px; margin-bottom:6px;"/>
         <span style="font-size:12px; font-weight:600;">Autocolante</span>
       </a>
     </div>`

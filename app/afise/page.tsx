@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import AfiseConfigurator from "@/components/AfiseConfigurator";
+import AfiseConfigurator from "@/components/configurator/AfiseConfigurator";
 import { getProductBySlug } from "@/lib/products";
 import ProductJsonLd from "@/components/ProductJsonLd";
 import { prisma } from "@/lib/prisma";

@@ -22,9 +22,7 @@ import {
 } from "@/lib/pricing";
 
 const GALLERY_BASE = [
-    "/products/materiale/carton/carton-1.webp",
-    "/products/grafica-originala/carton-plume-panou-grafica-expozitie.webp",
-    "/products/materiale/carton/carton-2.webp",
+    "/products/homeprint-studio/carton.webp",
 ] as const;
 
 const productFaqs: QA[] = [
@@ -39,7 +37,7 @@ import { NumberInput } from "./ui/NumberInput";
 import { OptionButton } from "./ui/OptionButton";
 import { TabButton } from "./ui/TabButton";
 
-export default function ConfiguratorCarton({ initialWidth: initW, initialHeight: initH, productImage }: { initialWidth?: number; initialHeight?: number; productImage?: string }) {
+export default function ConfiguratorCarton({ initialWidth: initW, initialHeight: initH, productImage }: { initialWidth?: number; initialHeight?: number; productImage?: string; productSlug?: string }) {
     const quickParams = useQuickParams();
     const { success: notifySuccess, error: notifyError } = useToast();
     const { addItem } = useCart();

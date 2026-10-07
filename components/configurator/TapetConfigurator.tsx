@@ -22,8 +22,7 @@ import {
 } from "@/lib/pricing";
 
 const GALLERY_BASE = [
-    "/products/tapet/tapet-1.webp",
-    "/products/grafica-originala/fototapet-personalizat-grafica-botanica-rola.webp",
+    "/products/homeprint-studio/tapet.webp",
 ] as const;
 
 const productFaqs: QA[] = [

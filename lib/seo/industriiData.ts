@@ -25,7 +25,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Design grafic profesional la cerere'
         ],
         recommendedProducts: ['banner', 'pliante', 'tapet', 'autocolante'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'real-estate',
@@ -41,7 +41,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Mape de prezentare cu buzunar pentru contracte'
         ],
         recommendedProducts: ['banner', 'banner-verso', 'afise', 'rollup'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'medical',
@@ -57,7 +57,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Sisteme de afișaj elegante pentru recepții'
         ],
         recommendedProducts: ['plexiglass', 'window-graphics', 'autocolante', 'pvc-forex'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'events',
@@ -73,7 +73,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Personalizare 100% pe orice dimensiune'
         ],
         recommendedProducts: ['rollup', 'banner', 'canvas', 'afise'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'retail',
@@ -89,7 +89,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Laminare UV pentru protecție împotriva zgârieturilor'
         ],
         recommendedProducts: ['autocolante', 'window-graphics', 'carton', 'pvc-forex'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'educatie',
@@ -105,7 +105,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Livrare coordonată conform calendarului școlar'
         ],
         recommendedProducts: ['afise', 'banner', 'pliante', 'carti-vizita'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'auto',
@@ -121,7 +121,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Decorare flotă cu logo și date de contact'
         ],
         recommendedProducts: ['autocolante', 'banner', 'window-graphics', 'afise'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'sport',
@@ -137,7 +137,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Print pe mesh pentru ventilație la bannere de tribune'
         ],
         recommendedProducts: ['banner', 'autocolante', 'rollup', 'afise'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'constructii',
@@ -153,7 +153,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Vizualizări 3D imprimate pentru prezentarea proiectelor'
         ],
         recommendedProducts: ['banner', 'banner-verso', 'autocolante', 'afise'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'beauty',
@@ -169,7 +169,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Rollup-uri portabile pentru participarea la târguri de beauty'
         ],
         recommendedProducts: ['rollup', 'pliante', 'carti-vizita', 'afise'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'alimentar',
@@ -185,7 +185,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Decoruri de interior cu tablouri canvas apetisante'
         ],
         recommendedProducts: ['autocolante', 'pliante', 'banner', 'canvas'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'ong',
@@ -201,7 +201,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Kituri complete de comunicare pentru proiecte europene'
         ],
         recommendedProducts: ['banner', 'afise', 'rollup', 'pliante'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'turism',
@@ -217,7 +217,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Hărți și ghiduri turistice tipărite în tiraje mari'
         ],
         recommendedProducts: ['pliante', 'flayere', 'rollup', 'canvas'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'it-startup',
@@ -233,7 +233,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Rollup-uri și standuri pentru conferințe și hackathoane'
         ],
         recommendedProducts: ['rollup', 'carti-vizita', 'afise', 'banner'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'fonduri-europene',
@@ -249,7 +249,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Livrat cu documentația de conformitate pentru dosarul tehnic'
         ],
         recommendedProducts: ['banner', 'autocolante', 'afise', 'pliante'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'agricultura',
@@ -265,7 +265,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Sisteme de afișaj pentru puncte de vânzare la poarta fermei'
         ],
         recommendedProducts: ['banner', 'pvc-forex', 'autocolante', 'afise'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'logistica',
@@ -281,7 +281,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Sisteme de numerotare rafturi și zone logistice'
         ],
         recommendedProducts: ['autocolante', 'pvc-forex', 'banner', 'afise'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'pet-shop',
@@ -297,7 +297,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Bannere promoționale pentru oferte sezoniere'
         ],
         recommendedProducts: ['window-graphics', 'canvas', 'carti-vizita', 'pliante'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'servicii-profesionale',
@@ -313,7 +313,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Sisteme de afișaj indoor minimaliste și sobre'
         ],
         recommendedProducts: ['plexiglass', 'carti-vizita', 'pliante', 'rollup'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'entertainment',
@@ -329,7 +329,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Stickere personalizate pentru promoții și giveaway-uri'
         ],
         recommendedProducts: ['afise', 'banner', 'autocolante', 'window-graphics'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'home-garden',
@@ -345,7 +345,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Panouri informative pentru pepiniere și centre garden'
         ],
         recommendedProducts: ['autocolante', 'pliante', 'banner', 'pvc-forex'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'fashion',
@@ -361,7 +361,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Autocolante pentru vitrine cu tăiere computerizată'
         ],
         recommendedProducts: ['afise', 'window-graphics', 'carti-vizita', 'pliante'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'industrial',
@@ -377,7 +377,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Print pe suporturi rigide (Alucobond, PVC)'
         ],
         recommendedProducts: ['pvc-forex', 'autocolante', 'banner', 'afise'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'banking',
@@ -393,7 +393,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Stickere de securitate și informare reglementate'
         ],
         recommendedProducts: ['plexiglass', 'window-graphics', 'pliante', 'rollup'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'religious',
@@ -409,7 +409,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Pliante și broșuri cu grafică sobră'
         ],
         recommendedProducts: ['banner', 'afise', 'pliante', 'canvas'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'public-admin',
@@ -425,7 +425,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Hărți de mari dimensiuni pe suporturi durabile'
         ],
         recommendedProducts: ['pvc-forex', 'banner', 'afise', 'autocolante'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'interior-design',
@@ -441,7 +441,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Mostre de material gratuite pentru testarea culorilor'
         ],
         recommendedProducts: ['tapet', 'canvas', 'plexiglass', 'pvc-forex'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'ecommerce',
@@ -457,7 +457,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Termene de livrare foarte scurte pentru campanii fulger'
         ],
         recommendedProducts: ['autocolante', 'flayere', 'pliante', 'carti-vizita'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'wedding',
@@ -473,7 +473,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Mărturii și etichete personalizate pentru sticle'
         ],
         recommendedProducts: ['banner', 'autocolante', 'canvas', 'afise'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'reseller',
@@ -489,7 +489,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Prioritate în fluxul de producție pentru termene strânse'
         ],
         recommendedProducts: ['banner', 'rollup', 'autocolante', 'afise'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'political',
@@ -505,7 +505,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Transparență totală în facturare pentru rapoartele AEP'
         ],
         recommendedProducts: ['pliante', 'banner', 'afise', 'flayere'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'cleaning',
@@ -521,7 +521,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Ecusoane și branding pentru echipamentul de lucru'
         ],
         recommendedProducts: ['autocolante', 'pliante', 'carti-vizita', 'flayere'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'security',
@@ -537,7 +537,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Materiale conforme cu legea pazei și protecției'
         ],
         recommendedProducts: ['autocolante', 'pvc-forex', 'afise', 'banner'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'tattoo',
@@ -553,7 +553,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Stickere cu tăiere pe contur pentru branding echipamente'
         ],
         recommendedProducts: ['canvas', 'window-graphics', 'rollup', 'autocolante'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'recrutare',
@@ -569,7 +569,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Sisteme de orientare (Wayfinding) în interiorul clădirilor de birouri'
         ],
         recommendedProducts: ['rollup', 'banner', 'pliante', 'afise'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'florarii',
@@ -585,7 +585,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Tablouri canvas cu decoruri florale pentru ambient'
         ],
         recommendedProducts: ['autocolante', 'carti-vizita', 'canvas', 'pliante'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'cofetarii',
@@ -601,7 +601,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Tablouri de decor interior cu specific dulce'
         ],
         recommendedProducts: ['window-graphics', 'autocolante', 'canvas', 'pliante'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'veterinar',
@@ -617,7 +617,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Stickere cu recomandări post-operatorii'
         ],
         recommendedProducts: ['plexiglass', 'autocolante', 'window-graphics', 'carti-vizita'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'gaming',
@@ -633,7 +633,7 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Mesh-uri fațadă cu impact vizual deosebit'
         ],
         recommendedProducts: ['tapet', 'autocolante', 'rollup', 'afise'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'arhitectura',
@@ -649,6 +649,6 @@ export const INDUSTRIE_DATA: IndustryData[] = [
             'Mapă de prezentare premium cu logo embosat'
         ],
         recommendedProducts: ['pvc-forex', 'pliante', 'rollup', 'carti-vizita'],
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     }
 ];

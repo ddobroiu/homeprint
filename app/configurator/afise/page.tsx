@@ -30,7 +30,7 @@ export default function AfisePage() {
                 <ProductSchema
                     name="Afișe și Postere Personalizate"
                     description="Comandă afișe și postere personalizate în formate standard (A3, A2, A1, A0) sau dimensiuni custom."
-                    image="/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp"
+                    image="/products/homeprint-studio/afise.webp"
                     url="/configurator/afise"
                     price="15.00"
                 />

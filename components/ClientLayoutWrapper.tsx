@@ -16,6 +16,7 @@ export default function ClientLayoutWrapper({
     const isConfiguratorAlias = /^\/(banner|banner-verso|mesh|afise|autocolante|canvas|tapet|rollup|window-graphics|pliante|flayere|plexiglass|plexiglass-transparent|pvc-forex|alucobond|polipropilena|carton|tricouri|hanorace|sepci|carti-vizita)$/.test(pathname || "");
     const isFunctional = /^\/(configurator|cart|checkout|account|login|editor|admin)(\/|$)/.test(pathname || "");
     const isAdmin = pathname?.startsWith("/admin");
+    const isProductConfigurator = isConfiguratorAlias || /^\/(configurator|materiale|fonduri-eu|fonduri-pnrr|fonduri-regio|fonduri-nationale|banner-product|canvas-product|semnalistica-product)(\/|$)/.test(pathname || "");
 
     if (isAdmin) {
         return <>{children}</>;
@@ -23,7 +24,7 @@ export default function ClientLayoutWrapper({
 
     return (
         <>
-            <div className={`site-content ${isConfiguratorAlias ? "site-functional brand-configurator" : isFunctional ? "site-functional" : "site-editorial"} min-h-screen flex flex-col w-full max-w-full [&>*]:w-full`}>{children}{isConfiguratorAlias && <BrandPageNote />}</div>
+            <div className={`site-content ${isProductConfigurator ? "hp-configurator-view " : ""}${pathname?.startsWith("/editor") ? "site-functional" : "brand-configurator " + (isFunctional || isConfiguratorAlias ? "site-functional" : "site-editorial")} min-h-screen flex flex-col w-full max-w-full [&>*]:w-full`}>{children}{isConfiguratorAlias && <BrandPageNote />}</div>
         </>
     );
 }

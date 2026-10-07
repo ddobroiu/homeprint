@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import ConfiguratorCarton from "@/components/ConfiguratorCarton";
+import ConfiguratorCarton from "@/components/configurator/ConfiguratorCarton";
 import { getProductBySlug } from "@/lib/products";
 import ProductJsonLd from "@/components/ProductJsonLd";
 import { prisma } from "@/lib/prisma";

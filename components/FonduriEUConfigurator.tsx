@@ -25,7 +25,7 @@ import { euFundsProducts } from "@/lib/products/eu-funds-products";
 const GALLERY_BASE = [
     "/products/fonduri/pnrr-1.webp",
     "/products/fonduri/pnrr-2.webp",
-    "/products/fonduri/pnrr-3.jpg",
+    "/products/homeprint-studio/fonduri-eu.webp",
     "/products/fonduri/pnrr-4.jpg"
 ] as const;
 

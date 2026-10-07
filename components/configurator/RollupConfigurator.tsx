@@ -23,9 +23,7 @@ import {
 import { PopularDimensions } from "./PopularDimensions";
 
 const GALLERY_BASE = [
-    "/products/modele-personalizate/rollup-rollup-personalizat-model-personalizat.webp",
-    "/products/rollup/rollup-1.webp",
-    "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp",
+    "/products/homeprint-studio/rollup.webp",
 ] as const;
 
 const productFaqs: QA[] = [

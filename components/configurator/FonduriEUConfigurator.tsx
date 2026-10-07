@@ -68,11 +68,7 @@ function FonduriTypeSwitch() {
 }
 
 const GALLERY_BASE = [
-    "/products/fonduri/pnrr-1.webp",
-    "/products/grafica-originala/kit-vizibilitate-proiect-panou-afis-etichete.webp",
-    "/products/fonduri/pnrr-2.webp",
-    "/products/fonduri/pnrr-3.jpg",
-    "/products/fonduri/pnrr-4.jpg",
+    "/products/homeprint-studio/fonduri-eu.webp",
 ] as const;
 
 const fonduriFaqs: QA[] = [
@@ -90,12 +86,14 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
         return euFundsProducts.find(p => p.slug === productSlug);
     }, [productSlug]);
 
+    const pathname = usePathname();
+    const programImage = pathname?.includes("regio") ? "/products/homeprint-studio/fonduri-regio.webp" : pathname?.includes("nationale") ? "/products/homeprint-studio/fonduri-nationale.webp" : "/products/homeprint-studio/fonduri-pnrr.webp";
     const GALLERY = useMemo(() => {
         if (currentProduct?.image && !GALLERY_BASE.includes(currentProduct.image as any)) {
-            return [currentProduct.image, ...GALLERY_BASE];
+            return [programImage, currentProduct.image, ...GALLERY_BASE];
         }
-        return GALLERY_BASE;
-    }, [currentProduct]);
+        return [programImage, ...GALLERY_BASE];
+    }, [currentProduct, programImage]);
 
     // State
     const [selections, setSelections] = useState<Record<string, string>>({

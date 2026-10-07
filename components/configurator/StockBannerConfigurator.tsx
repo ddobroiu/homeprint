@@ -39,7 +39,7 @@ export default function StockBannerConfigurator({ productSlug, renderOnlyConfigu
         const found = bannerProducts.find(p => p.slug === productSlug);
         if (found) return found;
         const landing = getLandingInfo("bannere", productSlug);
-        return landing ? { id: landing.key, slug: landing.key, title: landing.title, description: landing.shortDescription, image: landing.images?.[0] || "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp", category: "Bannere", longDescription: undefined } : undefined;
+        return landing ? { id: landing.key, slug: landing.key, title: landing.title, description: landing.shortDescription, image: landing.images?.[0] || "/products/homeprint-studio/banner.webp", category: "Bannere", longDescription: undefined } : undefined;
     }, [productSlug]);
     const format = stockBannerFormat(productSlug);
     const SIZES = format.sizes;

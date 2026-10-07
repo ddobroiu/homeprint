@@ -357,11 +357,9 @@ export default function TextileConfigurator({ type, productSlug, productImage, r
     const galleryImages = useMemo(() => {
         let currentImgUrl = selectedModelConfig?.images?.[input.color];
         if (!currentImgUrl) {
-            currentImgUrl = type === "tricouri" ? "/products/banner/banner-1.webp" : "/products/banner/banner-1.webp";
+            currentImgUrl = type === "tricouri" ? "/products/homeprint-studio/banner.webp" : "/products/homeprint-studio/banner.webp";
         }
-        const originalFront = type === "hanorace" ? "/products/poze-produse-seo/hanorac-personalizat-fata.webp" : type === "sepci" ? "/products/poze-produse-seo/sapca-personalizata-fata.webp" : "/products/poze-produse-seo/tricou-alb-personalizat-fata.webp";
-        const originalBack = type === "hanorace" ? "/products/poze-produse-seo/hanorac-personalizat-spate.webp" : type === "sepci" ? "/products/poze-produse-seo/sapca-personalizata-lateral.webp" : "/products/poze-produse-seo/tricou-alb-personalizat-spate.webp";
-        const examples = [originalFront, originalBack, ORIGINAL_PRINT_IMAGES[type]];
+        const originalFront = type === "hanorace" ? "/products/homeprint-studio/hanorace.webp" : type === "sepci" ? "/products/homeprint-studio/sepci.webp" : "/products/homeprint-studio/tricouri.webp";        const examples = [ORIGINAL_PRINT_IMAGES[type], originalFront];
         const others = [...new Set([...(productImage ? [productImage] : []), ...examples].filter(src => src !== currentImgUrl))];
         // Dupa ce clientul alege o culoare, haina in culoarea aleasa trece in prim-plan; pana atunci exemplul de grafica.
         return colorPicked ? [currentImgUrl, ...others] : [...others, currentImgUrl];

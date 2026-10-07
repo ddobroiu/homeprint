@@ -148,8 +148,8 @@ export default async function OrderDetailsPage({ params }: { params: Promise<{ i
                 <div className="grid lg:grid-cols-3 gap-6">
                     <div className="lg:col-span-2 space-y-6">
                         <div className="bg-white dark:bg-zinc-900 rounded-3xl shadow-2xl shadow-zinc-200/50 dark:shadow-black/50 border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-                            <div className="bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-4">
-                                <h2 className="text-xl font-semibold text-white flex items-center gap-2">
+                            <div className="bg-slate-50 border-b border-slate-200 px-6 py-4">
+                                <h2 className="text-xl font-semibold text-slate-900 flex items-center gap-2">
                                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                                     </svg>
@@ -164,8 +164,8 @@ export default async function OrderDetailsPage({ params }: { params: Promise<{ i
 
                         {shippingAddress && (
                             <div className="bg-white dark:bg-zinc-900 rounded-3xl shadow-2xl shadow-zinc-200/50 dark:shadow-black/50 border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-                                <div className="bg-gradient-to-r from-blue-600 to-cyan-600 px-6 py-4">
-                                    <h2 className="text-xl font-semibold text-white flex items-center gap-2">
+                                <div className="bg-slate-50 border-b border-slate-200 px-6 py-4">
+                                    <h2 className="text-xl font-semibold text-slate-900 flex items-center gap-2">
                                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />

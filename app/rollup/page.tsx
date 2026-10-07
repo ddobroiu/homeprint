@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import RollupConfigurator from "@/components/RollupConfigurator";
+import RollupConfigurator from "@/components/configurator/RollupConfigurator";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getProductBySlug } from "@/lib/products";
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description:
       "Atrage atenția la evenimente cu un Rollup Banner profesional. Include print, mecanism aluminiu și geantă de transport.",
     images: [{
-      url: "/products/grafica-originala/roll-up-personalizat-grafica-expozitie.webp",
+      url: "/products/homeprint-studio/rollup.webp",
       width: 1200,
       height: 630,
       alt: "Rollup banner retractabil HomePrint.ro"

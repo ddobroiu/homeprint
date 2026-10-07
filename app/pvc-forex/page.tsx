@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import ConfiguratorPVCForex from "@/components/ConfiguratorPVCForex";
+import ConfiguratorPVCForex from "@/components/configurator/ConfiguratorPVCForex";
 import { getProductBySlug } from "@/lib/products";
 import ProductJsonLd from "@/components/ProductJsonLd";
 import { prisma } from "@/lib/prisma";

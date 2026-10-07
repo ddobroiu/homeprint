@@ -33,7 +33,7 @@ async function getProduct(slug: string) {
             slug: cleanSlug,
             title: landing.title,
             description: landing.seoDescription || landing.shortDescription,
-            image: landing.images?.[0] || '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp',
+            image: landing.images?.[0] || '/products/homeprint-studio/banner.webp',
             price: '49 LEI/mp',
             type: 'seo',
             longDescription: landing.contentHtml,

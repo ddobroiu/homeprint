@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Configurator Banner Personalizat',
     description: 'Personalizează propriul banner online. Preț instant, calitate premium.',
-    images: ["/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"],
+    images: ["/products/homeprint-studio/banner.webp"],
   }
 };
 
@@ -34,7 +34,7 @@ export default function BannerPage() {
       <ProductSchema
         name="Banner Publicitar Personalizat"
         description="Bannere publicitare premium (frontlit), tiv și capse incluse. Durabilitate ridicată la exterior (UV și intemperii)."
-        image="/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"
+        image="/products/homeprint-studio/banner.webp"
         url="/configurator/banner"
         price="45.00"
       />

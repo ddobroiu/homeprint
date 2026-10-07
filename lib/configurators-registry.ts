@@ -121,7 +121,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             { q: 'Pot comanda banner cu găuri pentru vânt?', a: 'La bannerul PVC (Frontlit) bifezi în configurator „găuri de vânt” — sunt perforații în folia plină. Pentru material microperforat (mesh) folosește pagina dedicată /configurator/mesh.' },
             { q: 'Ce finisaje recomandați?', a: 'Pentru montaj pe cadru: capsare. Pentru stâlpi: tub metalic. Pentru lipire: margini lipite.' }
         ],
-        image: "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp"
+        image: "/products/homeprint-studio/banner.webp"
     },
     {
         id: 'banner-verso',
@@ -231,7 +231,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             'Print UV',
             'CMYK full color',
         ],
-        image: "/products/mesh/mesh_publicitar_personalizat.jpg"
+        image: "/products/homeprint-studio/mesh.webp"
     },
     {
         id: 'afise',
@@ -320,7 +320,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             'Rezoluție: 1440 DPI',
             'Fișiere: PDF, AI, JPG (min 300 DPI pentru A3-A2, 150 DPI pentru A1-A0)'
         ],
-        image: "/products/afise/afise-1.webp"
+        image: "/products/homeprint-studio/afise.webp"
     },
     {
         id: 'autocolante',
@@ -403,7 +403,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             { q: 'Ce diferență e între Print+Cut și Print Only?', a: 'Print+Cut = contur personalizat tăiat la plotter. Print Only = printul este tăiat dreptunghiular, mai ieftin cu 20%.' },
             { q: 'Când recomandați laminarea?', a: 'Obligatoriu pentru exterior și autocolante supuse frecării (vitrine, podele). Crește durabilitatea cu 50%.' }
         ],
-        image: "/products/autocolante/autocolante-1.webp"
+        image: "/products/homeprint-studio/autocolante.webp"
     },
     {
         id: 'canvas',
@@ -465,7 +465,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             { q: 'Ce înseamnă margine oglindită?', a: 'Imaginea se extinde automat pe lateralele șasiului (2cm), creând un efect 3D fără chenare albe.' },
             { q: 'Pot comanda mai multe canvas formând un set?', a: 'Da, specifică în observații că vrei set triptic/poliptic și vom alinia imaginile.' }
         ],
-        image: "/products/canvas/canvas-1.webp"
+        image: "/products/homeprint-studio/canvas.webp"
     },
     {
         id: 'tapet',
@@ -521,7 +521,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             }
         ],
         turnaroundTime: '2-4 zile lucrătoare',
-        image: "/products/tapet/tapet-1.webp"
+        image: "/products/homeprint-studio/tapet.webp"
     },
     {
         id: 'rollup',
@@ -578,7 +578,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             { q: 'Pot înlocui printul mai târziu?', a: 'Da, casetă rămâne reutilizabilă. Poți comanda doar reprint la nevoie.' },
             { q: 'Se poate folosi outdoor?', a: 'Doar indoor sau outdoor temporar (nu rezistă la ploaie/vânt).' }
         ],
-        image: "/products/rollup/rollup-1.webp"
+        image: "/products/homeprint-studio/rollup.webp"
     },
     {
         id: 'window-graphics',
@@ -643,7 +643,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             { q: 'Se vede prin folie din interior?', a: 'Da, perforațiile permit 40-50% vizibilitate din interior spre exterior.' },
             { q: 'Funcționează noaptea?', a: 'Efect one-way funcționează doar când interiorul e mai întunecos (ziua). Noaptea cu lumină înăuntru, se vede din exterior.' }
         ],
-        image: "/products/window-graphics/window-graphics-1.webp"
+        image: "/products/homeprint-studio/window-graphics.webp"
     },
     {
         id: 'pliante',
@@ -696,7 +696,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             }
         ],
         turnaroundTime: '2-4 zile lucrătoare',
-        image: "/products/pliante/pliante-1.webp"
+        image: "/products/homeprint-studio/pliante.webp"
     },
     {
         id: 'flayere',
@@ -756,7 +756,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             }
         ],
         turnaroundTime: '2-4 zile lucrătoare',
-        image: "/products/flayere/flayere-1.webp"
+        image: "/products/homeprint-studio/flayere.webp"
     },
     {
         id: 'fonduri-eu',
@@ -953,7 +953,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             }
         ],
         turnaroundTime: '2-4 zile lucrătoare',
-        image: "/products/materiale/pvc-forex/pvc-forex-1.webp"
+        image: "/products/homeprint-studio/pvc-forex.webp"
     },
     {
         id: 'alucobond',
@@ -1007,7 +1007,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             'Impermeabil 100%',
             'Poate fi frezat pentru litere volumetrice'
         ],
-        image: "/products/materiale/alucobond/alucobond-1.webp"
+        image: "/products/homeprint-studio/alucobond.webp"
     },
     {
         id: 'carton',
@@ -1050,7 +1050,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
         options: [],
         turnaroundTime: '2-4 zile lucrătoare',
         shippingNotes: 'Fragil - doar pentru indoor, evită umiditate',
-        image: "/products/materiale/carton/carton-1.webp"
+        image: "/products/homeprint-studio/carton.webp"
     },
     {
         id: 'polipropilena',
@@ -1104,7 +1104,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             'Rezistent la temperaturi -20°C / +80°C',
             'Reutilizabil, ușor de tăiat'
         ],
-        image: "/products/master/placi-polipropilena-alveolara-canalit-ieftine.png"
+        image: "/products/homeprint-studio/polipropilena.webp"
     },
     {
         id: 'tricouri',
@@ -1124,7 +1124,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
         pricing: { type: 'per_unit' },
         options: [],
         turnaroundTime: '2-4 zile lucrătoare',
-        image: '/products/grafica-originala/tricou-personalizat-grafica-munte-aventura.webp'
+        image: '/products/homeprint-studio/tricouri.webp'
     },
     {
         id: 'hanorace',
@@ -1143,7 +1143,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
         pricing: { type: 'per_unit' },
         options: [],
         turnaroundTime: '2-4 zile lucrătoare',
-        image: '/products/grafica-originala/hanorac-personalizat-grafica-oras-noaptea.webp'
+        image: '/products/homeprint-studio/hanorace.webp'
     },
     {
         id: 'sepci',
@@ -1162,7 +1162,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
         pricing: { type: 'per_unit' },
         options: [],
         turnaroundTime: '2-4 zile lucrătoare',
-        image: '/products/grafica-originala/sapca-personalizata-grafica-val-ocean.webp'
+        image: '/products/homeprint-studio/sepci.webp'
     },
     {
         id: 'carti-vizita',
@@ -1199,7 +1199,7 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
             { id: 'specialShape', name: 'Decupare Forma', type: 'radio', values: ['Nu', 'Da'] }
         ],
         turnaroundTime: '2-4 zile lucrătoare',
-        image: "/products/carti-vizita/carti-vizita-1.webp"
+        image: "/products/homeprint-studio/carti-vizita.webp"
     }
 ];
 
@@ -1207,10 +1207,13 @@ export const EXTRA_CONFIGURATORS: ConfiguratorMetadata[] = [
     ...[
         { id: "decor-foto-copil", name: "Decor cu fotografia copilului", category: "decor", description: "Fotografia copilului imprimată pe PVC și decupată pe contur." },
         { id: "personaj-propriu", name: "Personajul tău decupat pe contur", category: "decor", description: "Încarcă personajul propriu și configurează decorul PVC decupat pe contur." },
+        { id: "fonduri-pnrr", name: "Kit vizibilitate PNRR", category: "institutional", description: "Configurează materialele pentru proiectul PNRR." },
+        { id: "fonduri-regio", name: "Kit vizibilitate Regio", category: "institutional", description: "Configurează materialele pentru proiectul Regio." },
+        { id: "fonduri-nationale", name: "Programe naționale", category: "institutional", description: "Configurează materialele pentru programe naționale." },
         { id: "semnalistica", name: "Semnalistică și indicatoare", category: "rigid", description: "Alege modelul de indicator și variantele de material în configurator." },
     ].map(product => ({
         ...product, slug: product.id, url: `/configurator/${product.id}`,
-        image: product.id === "personaj-propriu" ? "/products/decor-contur/decor-pvc-personaj-fata-3mm-contur.webp" : product.id === "decor-foto-copil" ? "/products/decor-foto-copil/decor-pvc-fotografia-copilului-silueta-decupata.webp" : "/products/poze-produse-seo/placa-pvc-forex-personalizata-vedere-sus.webp",
+        image: product.id.startsWith("fonduri-") ? `/products/homeprint-studio/${product.id}.webp` : product.id === "personaj-propriu" ? "/products/homeprint-studio/personaj-propriu.webp" : product.id === "decor-foto-copil" ? "/products/homeprint-studio/decor-foto-copil.webp" : "/products/homeprint-studio/semnalistica.webp",
         keywords: [product.name], useCases: [product.description],
         dimensions: { type: "preset" as const }, materials: [],
         pricing: { type: "per_unit" as const }, options: [],

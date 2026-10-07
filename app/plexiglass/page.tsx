@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import ConfiguratorPlexiglass from "@/components/ConfiguratorPlexiglass";
+import ConfiguratorPlexiglass from "@/components/configurator/ConfiguratorPlexiglass";
 import { getProductBySlug } from "@/lib/products";
 import ProductJsonLd from "@/components/ProductJsonLd";
 import { prisma } from "@/lib/prisma";

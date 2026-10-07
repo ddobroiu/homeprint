@@ -1,3 +1,4 @@
+import { homeprintPresentationPhotos } from "@/lib/homeprintPresentationPhotos";
 import { EDITORIAL_POSTS } from "@/lib/blogPosts";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, FileCheck2, MapPin, SlidersHorizontal } from "lucide-react";
@@ -11,7 +12,7 @@ import AiChatWidget from "@/components/AiChatWidget";
 export function designProducts(localBase?: string): DesignProduct[] {
   return (localBase ? CONFIGURATORS_REGISTRY : ALL_CONFIGURATORS).map(product => {
     const from = getFromPrice([product.id]);
-    return { id: product.id, name: product.name, image: product.image || "/placeholder.png", href: localBase ? `${localBase}/${product.slug || product.id}` : product.url, category: product.category, price: from?.text, basis: from?.basis };
+    return { id: product.id, name: product.name, image: homeprintPresentationPhotos[product.id] || product.image || "/placeholder.png", href: localBase ? `${localBase}/${product.slug || product.id}` : product.url, category: product.category, price: from?.text, basis: from?.basis };
   });
 }
 

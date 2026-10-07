@@ -30,7 +30,7 @@ export default function CartonPage() {
                 <ProductSchema
                     name="Panou din Carton Personalizat"
                     description="Panou din carton ondulat sau fagure (honeycomb), soluția economică pentru semnalistică temporară de interior, display-uri și evenimente."
-                    image="/products/grafica-originala/carton-plume-panou-grafica-expozitie.webp"
+                    image="/products/homeprint-studio/carton.webp"
                     url="/materiale/carton"
                     price="18.00"
                 />

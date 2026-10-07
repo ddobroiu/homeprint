@@ -25,8 +25,7 @@ import {
 import ProductJsonLd from "@/components/ProductJsonLd";
 
 const GALLERY_BASE = [
-    "/products/autocolante/autocolante-1.webp",
-    "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp",
+    "/products/homeprint-studio/autocolante.webp",
 ] as const;
 
 /* --- FAQs SPECIFIC PRODUSULUI --- */

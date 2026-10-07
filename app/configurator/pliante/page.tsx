@@ -29,7 +29,7 @@ export default function PliantePage() {
                 <ProductSchema
                     name="Pliante Publicitare Personalizate"
                     description="Pliante publicitare pe hârtie premium, cu pliere Z-fold, C-fold sau în două, pentru broșuri de prezentare și cataloage de business."
-                    image="/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp"
+                    image="/products/homeprint-studio/pliante.webp"
                     url="/configurator/pliante"
                     price="20.00"
                 />

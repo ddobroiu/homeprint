@@ -123,8 +123,7 @@ type ViewMode = 'gallery' | 'shape';
 
 /* --- MAIN COMPONENT --- */
 const VERSO_GALLERY = [
-    "/products/banner/verso/banner-verso-1.webp",
-    "/products/grafica-originala/banner-fata-verso-blockout-grafica-eveniment.webp",
+    "/products/homeprint-studio/banner-verso.webp",
 ];
 
 export default function BannerVersoConfigurator({ productSlug, initialWidth: initW, initialHeight: initH, productImage, renderOnlyConfigurator = false }: Props) {

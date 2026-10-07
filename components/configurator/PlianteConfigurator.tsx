@@ -23,8 +23,7 @@ import {
 } from "@/lib/pricing";
 
 const GALLERY_BASE = [
-    "/products/pliante/pliante-1.webp",
-    "/products/grafica-originala/pliant-triptic-grafica-meniu-restaurant.webp",
+    "/products/homeprint-studio/pliante.webp",
 ] as const;
 
 const productFaqs: QA[] = [

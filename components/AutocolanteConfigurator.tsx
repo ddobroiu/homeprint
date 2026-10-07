@@ -24,7 +24,7 @@ import {
 } from "@/lib/pricing";
 
 const GALLERY_BASE = [
-  "/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"
+  "/products/homeprint-studio/autocolante.webp"
 ] as const;
 
 /* --- FAQs SPECIFIC PRODUSULUI --- */

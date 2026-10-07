@@ -183,7 +183,7 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
     const productBaseName = getProductDisplayName([baseSlug, product.id, (product as any).routeSlug], product.title);
     const productTitle = targetInfo ? `${productBaseName} ${targetInfo.label}` : productBaseName;
 
-    const productImage = (product as any).image || ((product as any).images?.[0]) || "/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp";
+    const productImage = (product as any).image || ((product as any).images?.[0]) || "/products/homeprint-studio/banner.webp";
     const canonicalProductUrl = localProductCanonical(siteConfig.url, judet.slug, loc.slug, productSlug).url;
     
     let shopUrl = (product as any).routeSlug || (product as any).slug || product.id;

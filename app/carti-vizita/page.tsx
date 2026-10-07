@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import ConfiguratorCartiVizita from "@/components/ConfiguratorCartiVizita";
+import ConfiguratorCartiVizita from "@/components/configurator/ConfiguratorCartiVizita";
 import { getProductBySlug } from "@/lib/products";
 import ProductJsonLd from "@/components/ProductJsonLd";
 import { prisma } from "@/lib/prisma";
@@ -48,7 +48,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ [
       </Suspense>
 
       {/* MASSIVE SEO CONTENT SECTION */}
-      <section className="bg-background py-24 mt-24 border-t border-white/5 relative overflow-hidden">
+      <details className="configurator-product-details"><summary>Detalii despre produs și pregătirea fișierului</summary><section className="bg-background py-6 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.03)_0%,transparent_70%)] pointer-events-none"></div>
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <div className="text-center mb-16 lg:mb-20">
@@ -124,7 +124,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ [
             </div>
           </div>
         </div>
-      </section>
+      </section></details>
     </main>
   );
 }

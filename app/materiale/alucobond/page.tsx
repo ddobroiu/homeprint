@@ -30,7 +30,7 @@ export default function AlucobondPage() {
                 <ProductSchema
                     name="Panou Alucobond (Dibond) Personalizat"
                     description="Panou compozit din aluminiu, cel mai durabil material rigid din gama HomePrint, pentru firme de fațadă și semnalistică permanentă de exterior."
-                    image="/products/grafica-originala/placa-alucobond-compozit-grafica-studio.webp"
+                    image="/products/homeprint-studio/alucobond.webp"
                     url="/materiale/alucobond"
                     price="70.00"
                 />

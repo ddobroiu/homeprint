@@ -29,7 +29,7 @@ export default function TapetPage() {
                 <ProductSchema
                     name="Fototapet Personalizat pentru Business"
                     description="Fototapet vinilic lavabil, print HD, personalizat pentru amenajarea birourilor, showroom-urilor și spațiilor comerciale."
-                    image="/products/grafica-originala/fototapet-personalizat-grafica-botanica-rola.webp"
+                    image="/products/homeprint-studio/tapet.webp"
                     url="/configurator/tapet"
                     price="40.00"
                 />

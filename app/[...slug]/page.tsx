@@ -10,21 +10,21 @@ import { parseIntentSlug, getIntentSpec, MARKETING_CONTENT } from "@/lib/seo/int
 import { IntentLanding } from "@/components/seo/IntentLanding";
 import { siteConfig } from "@/lib/siteConfig";
 
-import AfiseConfigurator from "@/components/AfiseConfigurator";
-import AutocolanteConfigurator from "@/components/AutocolanteConfigurator";
-import CanvasConfigurator from "@/components/CanvasConfigurator";
-import TapetConfigurator from "@/components/TapetConfigurator";
-import RollupConfigurator from "@/components/RollupConfigurator";
-import WindowGraphicsConfigurator from "@/components/WindowGraphicsConfigurator";
-import PlianteConfigurator from "@/components/PlianteConfigurator";
-import FlyerConfigurator from "@/components/FlyerConfigurator";
-import FonduriEUConfigurator from "@/components/FonduriEUConfigurator";
-import ConfiguratorPlexiglass from "@/components/ConfiguratorPlexiglass";
-import ConfiguratorPVCForex from "@/components/ConfiguratorPVCForex";
-import ConfiguratorPolipropilena from "@/components/ConfiguratorPolipropilena";
-import ConfiguratorAlucobond from "@/components/ConfiguratorAlucobond";
-import ConfiguratorCarton from "@/components/ConfiguratorCarton";
-import ConfiguratorCartiVizita from "@/components/ConfiguratorCartiVizita";
+import AfiseConfigurator from "@/components/configurator/AfiseConfigurator";
+import AutocolanteConfigurator from "@/components/configurator/AutocolanteConfigurator";
+import CanvasConfigurator from "@/components/configurator/CanvasConfigurator";
+import TapetConfigurator from "@/components/configurator/TapetConfigurator";
+import RollupConfigurator from "@/components/configurator/RollupConfigurator";
+import WindowGraphicsConfigurator from "@/components/configurator/WindowGraphicsConfigurator";
+import PlianteConfigurator from "@/components/configurator/PlianteConfigurator";
+import FlyerConfigurator from "@/components/configurator/FlyerConfigurator";
+import FonduriEUConfigurator from "@/components/configurator/FonduriEUConfigurator";
+import ConfiguratorPlexiglass from "@/components/configurator/ConfiguratorPlexiglass";
+import ConfiguratorPVCForex from "@/components/configurator/ConfiguratorPVCForex";
+import ConfiguratorPolipropilena from "@/components/configurator/ConfiguratorPolipropilena";
+import ConfiguratorAlucobond from "@/components/configurator/ConfiguratorAlucobond";
+import ConfiguratorCarton from "@/components/configurator/ConfiguratorCarton";
+import ConfiguratorCartiVizita from "@/components/configurator/ConfiguratorCartiVizita";
 import TextileConfigurator from "@/components/TextileConfigurator";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }) {

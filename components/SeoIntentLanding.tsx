@@ -93,7 +93,7 @@ export function SeoIntentLanding({ productId, productName, intent, intentLabel }
                                         alt={`${productName} ${intentLabel}`} 
                                         fill
                                         className="object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(0,0,0,0.12)] group-hover:scale-105 transition-transform duration-700 ease-out" 
-                                        onError={() => setImgSrc('/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp')}
+                                        onError={() => setImgSrc('/products/homeprint-studio/banner.webp')}
                                         sizes="(max-width: 768px) 100vw, 50vw"
                                         priority
                                     />

@@ -29,7 +29,7 @@ export default function AutocolantePage() {
                 <ProductSchema
                     name="Autocolante Personalizate Oracal"
                     description="Autocolante și stickere personalizate pe vinyl Oracal premium. Tăiere pe contur digitală și laminare opțională."
-                    image="/products/grafica-originala/autocolant-vinil-grafica-botanica.webp"
+                    image="/products/homeprint-studio/autocolante.webp"
                     url="/configurator/autocolante"
                     price="35.00"
                 />

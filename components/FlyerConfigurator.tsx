@@ -22,7 +22,7 @@ import {
 } from "@/lib/pricing";
 
 const GALLERY = [
-  "/products/grafica-originala/flyer-publicitar-grafica-atelier-creativ.webp",
+  "/products/homeprint-studio/flayere.webp",
 ] as const;
 
 const AccordionStep = ({ stepNumber, title, summary, isOpen, onClick, children, isLast = false }: { stepNumber: number; title: string; summary: string; isOpen: boolean; onClick: () => void; children: React.ReactNode; isLast?: boolean; }) => (
@@ -59,7 +59,7 @@ type Props = { productSlug?: string; initialWidth?: number; initialHeight?: numb
 
 export default function FlyerConfigurator({ productSlug, productImage }: Props) {
   const { addItem } = useCart();
-  const GALLERY = useMemo(() => productImage ? [productImage, "/products/grafica-originala/flyer-publicitar-grafica-atelier-creativ.webp"] : ["/products/grafica-originala/flyer-publicitar-grafica-atelier-creativ.webp"], [productImage]);
+  const GALLERY = useMemo(() => productImage ? [productImage, "/products/homeprint-studio/flayere.webp"] : ["/products/homeprint-studio/flayere.webp"], [productImage]);
   const MIN_QTY = 100;
   const [sizeKey, setSizeKey] = useState(FLYER_CONSTANTS.SIZES[0].key);
   const [quantity, setQuantity] = useState<number>(100);

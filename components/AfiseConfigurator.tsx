@@ -23,7 +23,7 @@ import {
   type PriceInputAfise
 } from "@/lib/pricing";
 
-const GALLERY_BASE = ["/products/grafica-originala/afis-publicitar-grafica-festival-cultural.webp"] as const;
+const GALLERY_BASE = ["/products/homeprint-studio/afise.webp"] as const;
 
 const afiseFaqs: QA[] = [
   { question: "Ce tipuri de hârtie pot alege?", answer: "Oferim o varietate de hârtii, de la cele subțiri (150g) pentru volume mari, la cartoane de 300g pentru un aspect premium. De asemenea, avem materiale speciale precum Blueback pentru lipire pe panouri sau hârtie foto." },

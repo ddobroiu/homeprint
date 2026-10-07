@@ -34,7 +34,7 @@ export const REGLEMENTARI_DATA: RegulatoryData[] = [
             'Montaj: Bandă dublu-adezivă inclusă'
         ],
         relatedProductId: 'pvc-forex',
-        image: '/products/materiale/pvc-forex/pvc-forex-1.webp'
+        image: '/products/homeprint-studio/pvc-forex.webp'
     },
     {
         id: 'isu-urgenta',
@@ -57,7 +57,7 @@ export const REGLEMENTARI_DATA: RegulatoryData[] = [
             'Vizibilitate: Minim 10 metri'
         ],
         relatedProductId: 'pvc-forex',
-        image: '/products/materiale/pvc-forex/pvc-forex-1.webp'
+        image: '/products/homeprint-studio/pvc-forex.webp'
     },
     {
         id: 'panou-santier',
@@ -80,7 +80,7 @@ export const REGLEMENTARI_DATA: RegulatoryData[] = [
             'Livrări: Disponibil cu printare date incluse'
         ],
         relatedProductId: 'banner',
-        image: '/products/grafica-originala/banner-publicitar-pvc-grafica-magazin.webp'
+        image: '/products/homeprint-studio/banner.webp'
     },
     {
         id: 'identificare-cladiri',
@@ -103,6 +103,6 @@ export const REGLEMENTARI_DATA: RegulatoryData[] = [
             'Accesorii: Distanțieri metalici opționali'
         ],
         relatedProductId: 'alucobond',
-        image: '/products/materiale/alucobond/alucobond-1.webp'
+        image: '/products/homeprint-studio/alucobond.webp'
     }
 ];
