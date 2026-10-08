@@ -553,3 +553,66 @@ model MailSetting {
   value     Json
   updatedAt DateTime @updatedAt
 }
+
+
+// --- WhatsApp inbox (copiat din shopprint, aceeasi baza de date) ---
+model WhatsAppContact {
+  id            String                 @id @default(cuid())
+  waId          String                 @unique // numărul în format WhatsApp, ex. 40750473111
+  phone         String? // 07xxxxxxxx
+  name          String? // din agenda telefonului (smb_app_state_sync) sau pus din admin
+  profileName   String? // numele de profil WhatsApp
+  email         String?
+  userId        String?
+  createdAt     DateTime               @default(now())
+  updatedAt     DateTime               @updatedAt
+  conversations WhatsAppConversation[]
+}
+
+model WhatsAppConversation {
+  id                 String            @id @default(cuid())
+  contactId          String            @unique
+  lastMessageAt      DateTime?
+  lastMessagePreview String?
+  lastDirection      String? // in | out
+  lastInboundAt      DateTime? // ultimul mesaj al clientului: fereastra de 24h
+  unreadCount        Int               @default(0)
+  hasMedia           Boolean           @default(false)
+  orderId            String?
+  orderNo            Int?
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  contact            WhatsAppContact   @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  messages           WhatsAppMessage[]
+
+  @@index([lastMessageAt])
+}
+
+model WhatsAppMessage {
+  id             String               @id @default(cuid())
+  conversationId String
+  waMessageId    String?              @unique
+  direction      String // in | out
+  source         String // customer | phone | admin
+  type           String // text | image | document | audio | video | sticker | location | contacts | interactive | button | reaction | unsupported
+  text           String?
+  mediaId        String?
+  mediaUrl       String?
+  mediaMime      String?
+  mediaFilename  String?
+  mediaSize      Int?
+  mediaStatus    String? // pending | stored | too_large | failed
+  replyToWaId    String?
+  status         String? // received | sent | delivered | read | failed
+  error          String?
+  orderId        String?
+  fromHistory    Boolean              @default(false)
+  raw            Json?
+  timestamp      DateTime
+  createdAt      DateTime             @default(now())
+  updatedAt      DateTime             @updatedAt
+  conversation   WhatsAppConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId, timestamp])
+  @@index([mediaStatus])
+}
