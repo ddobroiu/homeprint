@@ -134,3 +134,12 @@ jobs:
           delete-only-untagged-versions: 'true'
           min-versions-to-keep: 2
         continue-on-error: true
+
+  # IndexNow (OPȚIONAL, dezactivat): după deploy, anunță Bing / ChatGPT adresele schimbate în ultimele 2 zile.
+  # Ca să-l pornești, scoate „# ” de la începutul liniilor de mai jos (vezi README, secțiunea IndexNow).
+  # indexnow:
+  #   needs: deploy
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - run: node scripts/indexnow-submit.mjs --send --days 2
