@@ -30,6 +30,7 @@ import { localProductCanonical, resolveLocalProductKey } from "@/lib/seo/siteSpe
 import { withDisplayName, nearbyLocalities } from "@/lib/seo/localityData";
 import { Breadcrumbs, LocalProductJsonLd, FromPriceNote, LocalityFacts } from "@/components/seo/LocalitySeo";
 import { JUDET_LOCALITY_SLUGS } from "@/lib/seo/mainTowns";
+import { LocalTownSections, localOrConfigHref } from "@/components/seo/LocalTownBlocks";
 
 // Randare la prima cerere, apoi din cache (ISR, 7 zile): Googlebot nu mai randează pagina la fiecare vizită.
 // Cache-ul ISR stă doar în memorie (next.config: experimental.isrFlushToDisk=false), nu pe disc.
@@ -233,12 +234,6 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
     const heroText = brandProductIntro(productTitle, [baseSlug, productCategoryKey], loc.name);
     const localKey = resolveLocalProductKey(productSlug);
     const productPath = localKey ?? productSlug.join('/');
-    // Același produs în orașele principale ale județului (lib/seo/mainTowns.ts).
-    const siblingLocalities = (JUDET_LOCALITY_SLUGS[judet.slug] ?? [])
-        .filter((s) => s !== loc.slug)
-        .slice(0, 8)
-        .map((s) => withDisplayName(judet.slug, getLocalitateBySlug(judet.slug, s)))
-        .filter((l): l is NonNullable<typeof l> => Boolean(l));
 
     return (
         <div className="brand-local-product bg-[#fafafc] min-h-screen font-sans overflow-x-hidden w-full max-w-full box-border">
@@ -253,7 +248,7 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
                 locName={loc.name}
                 judetName={judet.name}
                 productIds={[baseSlug, productCategoryKey]}
-                faqs={getLocalFaqs({ productTitle, locName: loc.name, judetName: judet.name })}
+                faqs={getLocalFaqs({ productTitle, locName: loc.name, judetName: judet.name, judetSlug: judet.slug, locSlug: loc.slug, productKey: resolveLocalProductKey(productSlug) ?? baseSlug })}
             />
 
             {/* Premium Header Space */}
@@ -379,7 +374,7 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
                         return (
                             <Link
                                 key={config.id}
-                                href={`/judet/${judet.slug}/${loc.slug}/${rpSlug}`}
+                                href={localOrConfigHref(judet.slug, loc.slug, rpSlug)}
                                 className="group relative flex flex-col items-center text-center rounded-[2rem] border border-slate-200/60 transition-all duration-500 overflow-hidden hover:border-amber-400 hover:shadow-[0_20px_40px_-15px_rgba(16,185,129,0.15)] hover:-translate-y-2 bg-white h-full"
                             >
                                 <div className="w-full aspect-square relative bg-slate-50 border-b border-slate-100 flex items-center justify-center overflow-hidden">
@@ -422,7 +417,7 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
                     </div>
                     
                     <div className="bg-slate-50/50 rounded-[3rem] p-8 md:p-12 border border-slate-100">
-                        <LocalFaq 
+                        <LocalFaq judetSlug={judet.slug} locSlug={loc.slug} productKey={resolveLocalProductKey(productSlug) ?? baseSlug}
                             productTitle={productTitle} 
                             locName={loc.name} 
                             judetName={judet.name}
@@ -434,64 +429,12 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
             {/* Ce primești: fapte despre produs, utilizări, pașii comenzii */}
             <LocalProductFacts productIds={[baseSlug, productCategoryKey, product.id]} productTitle={productTitle} locName={loc.name} judetSlug={judet.slug} locSlug={loc.slug} configUrl={shopUrl} />
 
-            {/* Sibling Curated Localities - internal cross-links within the same judet, same product */}
-            {siblingLocalities.length > 0 && (
-                <div className="bg-white py-24 border-t border-slate-100">
-                    <div className="max-w-7xl mx-auto px-4">
-                        <div className="text-center mb-16">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-500 text-[10px] font-black uppercase tracking-widest mb-4">
-                                <MapPin size={14} className="text-amber-500" /> ACOPERIRE JUDEȚEANĂ
-                            </div>
-                            <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase leading-none">
-                                Comandă {productTitle} și în alte orașe din județul {judet.name}
-                            </h2>
-                            <p className="text-slate-500 mt-4 font-medium italic">Livrăm în toate orașele importante din județ, cu aceleași standarde de calitate.</p>
-                        </div>
-
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {siblingLocalities.map((sibling) => (
-                                <Link
-                                    key={sibling.slug}
-                                    href={`/judet/${judet.slug}/${sibling.slug}/${productPath}`}
-                                    className="px-4 py-3 bg-slate-50 border border-slate-100 rounded-xl text-slate-600 hover:text-amber-600 hover:bg-amber-50 hover:border-amber-200 transition-all text-xs font-bold truncate text-center"
-                                >
-                                    {productTitle} {sibling.name}
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            )}
 
             {/* Date reale despre localitate (doar dacă există în lib/seo/data/judete) */}
             <LocalityFacts judetSlug={judet.slug} locSlug={loc.slug} locName={loc.name} />
 
-            {/* Proximity Network */}
-            <div className="bg-slate-900 py-24">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
-                        <div>
-                            <p className="text-amber-400 font-bold uppercase tracking-[0.2em] text-[10px] mb-3">Rețeaua Națională</p>
-                            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase leading-[1]">Alte locații din județul {judet.name}</h2>
-                        </div>
-                        <Link href={`/judet/${judet.slug}`} className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl text-sm font-bold transition-all backdrop-blur-md">
-                            Vezi tot județul
-                        </Link>
-                    </div>
-
-                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                        {nearbyLocalities(judet.slug, judet.localitati, loc.slug, 18, (j, s) => getLocalitateBySlug(j, s)?.name).map((l, i) => (
-                            <Link
-                                key={`${l.judetSlug}/${l.slug}`}
-                                href={`/judet/${l.judetSlug}/${l.slug}/${productPath}`}
-                                className="px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white/60 hover:text-white hover:bg-white/10 hover:border-amber-500/50 transition-all text-xs font-bold truncate text-center"
-                            >
-                                {product.title.split(' ')[0]} {l.name}
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            </div>
+            {/* Blocuri unice din date reale: editorial, livrare, prețuri, utilizări, orașe apropiate (components/seo/LocalTownBlocks.tsx) */}
+            <LocalTownSections judetSlug={judet.slug} locSlug={loc.slug} locName={loc.name} judetName={judet.name} productKey={localKey ?? baseSlug} productName={productBaseName} />
 
             {/* Mobile Sticky CTA */}
             <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-md border-t border-slate-100 flex gap-3 md:hidden z-50">

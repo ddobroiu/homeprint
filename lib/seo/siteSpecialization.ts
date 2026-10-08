@@ -225,3 +225,59 @@ export function sizeCanonical(currentOrigin: string, productId: string, path: st
     const url = `${homeOrigin}${path}`;
     return { url, self: url === `${origin}${path}` };
 }
+
+// ------------------------------------------------------------------------------------------
+// Specializarea paginilor locale (08.10.2026)
+//
+// Paginile /judet/{judet}/{oras}/{produs} indexabile sunt DOAR cele ale produselor de
+// specialitate ale site-ului, în orașe (municipii, orașe, București + sectoare; vezi
+// lib/seo/localTowns.ts). Celelalte combinații rămân live (200), cu noindex,follow, în afară
+// de URL-urile care au avut afișări în Search Console (lib/seo/searchTrafficPaths.json),
+// care rămân indexabile. Fără canonical între site-uri (CROSS_SITE_CANONICAL rămâne false).
+// ------------------------------------------------------------------------------------------
+
+export type LocalSpecialty = {
+    /** Chei de configurator (slug scurt) cu pagini oraș × produs indexabile. Prima = produsul principal (titluri, preț „de la”). */
+    products: string[];
+    /** Familii din catalogul /produse (lib/catalog/families.ts) cu pagini oraș × familie indexabile. */
+    families: string[];
+    /** Ce face site-ul, pentru titlurile paginilor de oraș / județ („Bannere publicitare în Cluj-Napoca”). */
+    label: string;
+    /** Aceeași idee, în interiorul frazei („bannere publicitare”). */
+    noun: string;
+};
+
+export const LOCAL_SPECIALTY: Record<SiteKey, LocalSpecialty> = {
+    adbanner: { products: ["banner", "mesh", "banner-verso", "rollup", "window-graphics"], families: ["steaguri-beachflag"], label: "Bannere publicitare", noun: "bannere, mesh și roll-up-uri" },
+    tablou: { products: ["canvas", "afise"], families: ["perne-decorative"], label: "Tablouri canvas", noun: "tablouri canvas și postere foto" },
+    homeprint: { products: ["tapet", "canvas", "autocolante"], families: [], label: "Tapet și decor personalizat", noun: "tapet, tablouri și autocolante decorative" },
+    prynt: { products: ["flayere", "pliante", "carti-vizita", "afise", "autocolante"], families: [], label: "Flyere, pliante și cărți de vizită", noun: "flyere, pliante, cărți de vizită și afișe" },
+    euprint: { products: ["fonduri-eu", "pvc-forex", "alucobond", "semnalistica"], families: ["panouri-de-santier"], label: "Plăcuțe și panouri pentru proiecte", noun: "plăcuțe, panouri și materiale pentru proiecte finanțate" },
+    shopprint: { products: ["banner", "autocolante", "afise", "rollup", "canvas", "pvc-forex"], families: [], label: "Tipar și publicitate", noun: "bannere, autocolante, afișe și roll-up-uri" },
+};
+
+/** Specializarea site-ului curent (după origine); necunoscut → shopprint (catalogul complet). */
+export function localSpecialty(currentOrigin: string): LocalSpecialty {
+    return LOCAL_SPECIALTY[siteKeyFromOrigin(currentOrigin) ?? "shopprint"];
+}
+
+/** True când cheia (produs sau familie din catalog) are pagini oraș × produs indexabile pe site-ul curent. */
+export function isLocalSpecialty(currentOrigin: string, key: string | undefined): boolean {
+    if (!key) return false;
+    const s = localSpecialty(currentOrigin);
+    return s.products.includes(key) || s.families.includes(key);
+}
+
+/**
+ * Adresa configuratorului unui produs pe site-ul curent. Pe adbanner și homeprint
+ * /configurator/:path redirecționează permanent la /:path (next.config), așa că legăm direct.
+ */
+export function configuratorPath(currentOrigin: string, registryUrl: string): string {
+    const site = siteKeyFromOrigin(currentOrigin);
+    const url = registryUrl.startsWith("/") ? registryUrl : `/${registryUrl}`;
+    if ((site === "adbanner" || site === "homeprint") && url.startsWith("/configurator/")
+        && !/^\/configurator\/(decor-foto-copil|personaj-propriu|canvas-8-martie|canvas-martisor)(\/|$)/.test(url)) {
+        return url.replace(/^\/configurator\//, "/");
+    }
+    return url;
+}

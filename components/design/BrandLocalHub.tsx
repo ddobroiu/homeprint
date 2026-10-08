@@ -7,13 +7,15 @@ import { Breadcrumbs, LocalityFacts, SourceNote } from "@/components/seo/Localit
 import { WhatsAppButton } from "@/components/seo/WhatsAppBar";
 import ProductCollection, { ProductCard } from "./ProductCollection";
 import { designProducts, DesignSteps } from "./BrandHome";
+import { localOrConfigHref } from "@/components/seo/LocalTownBlocks";
 
 type Neighbour = { name: string; slug: string; judetSlug: string; km?: number };
 type Props = { loc: { name: string; slug: string }; judet: { name: string; slug: string }; localFact: string; neighbours: Neighbour[]; faq: { q: string; a: string }[]; waMessage: string };
 
 export default function BrandLocalHub({ loc, judet, localFact, neighbours, faq, waMessage }: Props) {
   const base = `/judet/${judet.slug}/${loc.slug}`;
-  const products = designProducts(base);
+  // Produsele de specialitate leagă pagina locală (indexabilă); restul, direct configuratorul.
+  const products = designProducts(base).map(p => ({ ...p, href: localOrConfigHref(judet.slug, loc.slug, p.id) }));
   const focus = design.focus.flatMap(id => products.filter(p => p.id === id)).slice(0, 3);
   const hasKm = neighbours.some(p => typeof p.km === "number");
   return <div className={`design-page design-local design-local-${brandKey}`}>

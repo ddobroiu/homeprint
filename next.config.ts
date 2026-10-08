@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
   cacheMaxMemorySize: 64 * 1024 * 1024,
   // Datele pe județ citite cu fs de lib/seo/localityData.ts trebuie copiate în build-ul standalone.
   outputFileTracingIncludes: {
-    '/**': ['./lib/seo/data/judete/*.json'],
+    '/**': ['./lib/seo/data/judete/*.json', './lib/seo/data/villageTowns.json', './data/local-content/**/*.json'],
   },
   // Server packages that should not be bundled
   serverExternalPackages: ['@react-pdf/renderer', 'puppeteer'],

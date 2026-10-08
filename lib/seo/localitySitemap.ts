@@ -5,13 +5,16 @@ import { isHomeSite } from "@/lib/seo/siteSpecialization";
 import { standardSizesFor } from "@/lib/seo/standardSizes";
 import { DIMENSION_PRODUCT_IDS, getSize, dimensionUrl } from "@/lib/seo/dimensionPages";
 import { countyLastmod } from "@/lib/seo/localityData";
+import { LOCAL_TEMPLATE_VERSION } from "@/lib/seo/priorityLocalities";
+import { LOCALITY_TIERS_VERSION } from "@/lib/seo/localTowns";
+import { editorialUpdatedAt } from "@/lib/seo/localEditorial";
 
 /**
  * Sitemap-uri pe județ + sitemap-ul dimensiunilor standard.
  *
  * FIȘIER IDENTIC ÎN TOATE CELE 6 REPO-URI.
  *
- *   /server-sitemap/judet-{judet}[-{n}]   pagina județului, localitățile prioritare
+ *   /server-sitemap/judet-{judet}[-{n}]   pagina județului, orașele lui, oraș × produs de specialitate
  *                                         și paginile localitate × produs pentru
  *                                         produsele al căror site ACASĂ e acesta
  *                                         (vezi siteSpecialization.ts); ≤ 45.000 URL-uri
@@ -99,10 +102,17 @@ function countySitemap(slug: string, part: number, opts?: Opts): Response | null
     const paths = priorityCountyPaths(j.slug, base, opts?.extraLocalProductSlugs);
     const perPart = MAX_URLS_PER_SITEMAP - 1;
     const slice = paths.slice((part - 1) * perPart, part * perPart);
-    const lastmod = countyLastmod(j.slug);
+    // lastmod = data reală a conținutului: datele județului, nivelurile localităților, șablonul
+    // paginilor locale și, pentru orașele cu bloc editorial, `updatedAt` din data/local-content.
+    const lastmod = [countyLastmod(j.slug), LOCAL_TEMPLATE_VERSION, LOCALITY_TIERS_VERSION].sort().pop() as string;
+    const editorial = editorialUpdatedAt(base, j.slug);
+    const pathLastmod = (path: string) => {
+        const e = editorial.get(path.split("/")[3] ?? "");
+        return e && e > lastmod ? e : lastmod;
+    };
     let body = "";
     if (part === 1) body += node(`${base}/judet/${j.slug}`, lastmod, "monthly", "0.6");
-    for (const path of slice) body += node(`${base}${path}`, lastmod, "monthly", "0.5");
+    for (const path of slice) body += node(`${base}${path}`, pathLastmod(path), "monthly", "0.5");
     return urlset(body);
 }
 

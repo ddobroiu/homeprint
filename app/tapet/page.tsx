@@ -5,6 +5,7 @@ import TapetConfigurator from "@/components/configurator/TapetConfigurator";
 import { getProductBySlug } from "@/lib/products";
 import ProductJsonLd from "@/components/ProductJsonLd";
 import { prisma } from "@/lib/prisma";
+import { TopTownsForProduct } from "@/components/seo/LocalTownBlocks";
 
 export const metadata = {
   title: "Tapet Personalizat Pe Dimensiune | Publicitate Outdoor",
@@ -57,6 +58,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ [
       <Suspense fallback={<div className="h-screen flex justify-center items-center bg-slate-950"><div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-green-500"></div></div>}>
         <TapetConfigurator productSlug="tapet" productImage={image} />
       </Suspense>
+      <TopTownsForProduct productKey="tapet" />
 
       {/* MASSIVE SEO CONTENT SECTION */}
       <section className="bg-background py-24 mt-24 border-t border-white/5 relative overflow-hidden">

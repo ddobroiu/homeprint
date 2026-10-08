@@ -1,3 +1,6 @@
+import { localSpecialty, siteKeyFromOrigin } from "./siteSpecialization";
+import { getFromPrice } from "./fromPrice";
+import { deliveryDaysText, deliveryFacts } from "./localDelivery";
 import { CONFIGURATORS_REGISTRY } from "@/lib/configurators-registry";
 
 /** Numele produsului așa cum apare în configurator ("Banner PVC (Frontlit)" -> "Banner PVC"). */
@@ -32,4 +35,44 @@ export function localProductTitle(brand: string, productTitle: string, locName: 
         default:
             return `${productTitle} în ${locName} – de la ${fromText}, gata în 2-4 zile`;
     }
+}
+
+// ---------------------------------------------------------------- pagini de oraș / județ (08.10)
+// Titlul variază cu specializarea site-ului, orașul și prețul „de la” al produsului principal
+// (același calcul ca pe pagină), fără înșiruiri de cuvinte-cheie.
+
+
+function shortDays(): string {
+    const f = deliveryFacts();
+    return f.minDays === f.maxDays ? `${f.maxDays} zile` : `${f.minDays}–${f.maxDays} zile`;
+}
+
+/** „Bannere publicitare în Cluj-Napoca – de la 60 lei, livrare 2–4 zile” */
+export function localTownTitle(origin: string, locName: string): string {
+    const s = localSpecialty(origin);
+    const from = getFromPrice([s.products[0]]);
+    const price = from ? ` de la ${from.text}` : "";
+    switch (siteKeyFromOrigin(origin)) {
+        case "tablou":
+            return `${s.label} cu livrare în ${locName}${price ? ` –${price}` : ""}`;
+        case "prynt":
+            return `${s.label} ${locName}${price ? ` –${price}` : ""}, gata în ${shortDays()}`;
+        case "euprint":
+            return `${s.label} în ${locName}${price ? ` –${price}` : ""}`;
+        default:
+            return `${s.label} în ${locName}${price ? ` –${price}` : ""}, livrare ${shortDays()}`;
+    }
+}
+
+export function localTownDescription(origin: string, locName: string, judetName: string): string {
+    const s = localSpecialty(origin);
+    const from = getFromPrice([s.products[0]]);
+    const noun = s.noun.charAt(0).toUpperCase() + s.noun.slice(1);
+    return `${noun} cu livrare în ${locName}, jud. ${judetName}${from ? `, de la ${from.text}` : ""}. ${deliveryDaysText()} cu producție inclusă, curier DPD sau locker, prețul calculat pe loc.`.slice(0, 160);
+}
+
+export function localCountyTitle(origin: string, judetName: string): string {
+    const s = localSpecialty(origin);
+    const from = getFromPrice([s.products[0]]);
+    return `${s.label} în județul ${judetName}${from ? ` – de la ${from.text}` : ""}`;
 }

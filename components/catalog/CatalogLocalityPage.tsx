@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MessageCircle, Truck, MapPin } from "lucide-react";
-import { nearbyLocalities } from "@/lib/seo/localProductFacts";
+import { MessageCircle, Truck } from "lucide-react";
+import { isIndexableLocalPage } from "@/lib/seo/localIndexPolicy";
+import { LocalDeliveryBlock, LocalEditorialBlock, NearestTownsBlock } from "@/components/seo/LocalTownBlocks";
 import type { Judet, Localitate } from "@/lib/localitati";
 import { catalogProductUrl, getCatalogCategory } from "@/lib/catalog";
 import { familyLocalContent, familyLocalUrl, otherFamilies } from "@/lib/catalog/localSeo";
@@ -18,8 +19,6 @@ export default function CatalogLocalityPage({ family, loc, judet }: { family: Ca
   const category = getCatalogCategory(family.category);
   const pageUrl = `${siteConfig.url}${familyLocalUrl(family, place)}`;
   const shown = list.slice(0, 12);
-
-  const siblings = nearbyLocalities(judet.slug, judet.localitati, loc.slug, 12);
 
   const jsonLd = [
     {
@@ -175,32 +174,13 @@ export default function CatalogLocalityPage({ family, loc, judet }: { family: Ca
           </div>
         </section>
 
-        {siblings.length > 0 && (
-          <section className="mt-14">
-            <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-              <MapPin size={20} /> {family.name} și în alte localități din județul {judet.name}
-            </h2>
-            <div className="flex flex-wrap gap-2">
-              {siblings.map((s) => (
-                <Link
-                  key={s.slug}
-                  href={familyLocalUrl(family, { judetSlug: judet.slug, locSlug: s.slug })}
-                  className="px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm text-slate-700 hover:border-slate-500"
-                >
-                  {family.name} {s.name}
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
         <section className="mt-14">
           <h2 className="text-xl font-bold text-slate-900 mb-4">Alte produse cu livrare în {loc.name}</h2>
           <div className="flex flex-wrap gap-2">
             {otherFamilies(family).map((f) => (
               <Link
                 key={f.slug}
-                href={familyLocalUrl(f, place)}
+                href={isIndexableLocalPage(siteConfig.url, judet.slug, loc.slug, [f.slug]) ? familyLocalUrl(f, place) : `/produse/${f.category}`}
                 className="px-4 py-2 rounded-xl bg-white border border-slate-200 text-sm text-slate-700 hover:border-slate-500"
               >
                 {f.name}
@@ -208,6 +188,12 @@ export default function CatalogLocalityPage({ family, loc, judet }: { family: Ca
             ))}
           </div>
         </section>
+      </div>
+      {/* Blocurile din date reale: editorial (dacă există), livrare, orașe apropiate (components/seo/LocalTownBlocks.tsx) */}
+      <div className="mt-14">
+        <LocalEditorialBlock judetSlug={judet.slug} locSlug={loc.slug} locName={loc.name} />
+        <LocalDeliveryBlock judetSlug={judet.slug} locSlug={loc.slug} locName={loc.name} judetName={judet.name} />
+        <NearestTownsBlock judetSlug={judet.slug} locSlug={loc.slug} locName={loc.name} productKey={family.slug} productName={family.name} />
       </div>
     </div>
   );

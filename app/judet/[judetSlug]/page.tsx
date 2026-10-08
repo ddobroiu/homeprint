@@ -12,6 +12,10 @@ import { JUDET_LOCALITY_SLUGS } from "@/lib/seo/mainTowns";
 import { WhatsAppBar, WhatsAppButton } from "@/components/seo/WhatsAppBar";
 import { withDisplayName } from "@/lib/seo/localityData";
 import { Breadcrumbs, CountyFacts } from "@/components/seo/LocalitySeo";
+import { CountyLocalitiesByTown } from "@/components/seo/LocalTownBlocks";
+import { townsOfCounty } from "@/lib/seo/localTowns";
+import { specialtyLocalSlugs } from "@/lib/seo/priorityLocalities";
+import { localCountyTitle } from "@/lib/seo/localTitle";
 
 // ISR 7 zile (cache doar în memorie, vezi next.config).
 export const revalidate = 604800;
@@ -29,7 +33,7 @@ export async function generateMetadata({ params }: Params) {
     const judet = getJudetBySlug(judetSlug);
     if (!judet) return {};
     const from = getFromPrice(["tapet"]);
-    const title = `Decor printat în județul ${judet.name}${from ? ` – fototapet de la ${from.text}` : ""}`;
+    const title = localCountyTitle(siteConfig.url, judet.name);
     const description = `Fototapet, tablouri canvas, postere și autocolante decorative, cu livrare în toate cele ${judet.localitati.length} localități din județul ${judet.name}. Preț calculat pe loc, plată la livrare.`;
     return { title, description, alternates: { canonical: `${siteConfig.url}/judet/${judetSlug}` } };
 }
@@ -40,13 +44,15 @@ export default async function JudetPage({ params }: Params) {
     if (!judet) notFound();
 
     const profile = getJudetProfile(judet.slug);
-    const mainSlugs = JUDET_LOCALITY_SLUGS[judet.slug] ?? [];
+    // Toate orașele județului (municipii, orașe), după populație (lib/seo/localTowns.ts).
+    const mainSlugs = townsOfCounty(judet.slug).map((t) => t.slug);
     const mainTowns = mainSlugs
         .map((s) => withDisplayName(judet.slug, judet.localitati.find((l) => l.slug === s)))
         .filter((l): l is NonNullable<typeof l> => Boolean(l));
     // Produsele trimit la pagina produsului din resedinta judetului (primul oras principal)
     const seat = mainTowns[0] ?? judet.localitati[0];
-    const products = TOP.map((id) => CONFIGURATORS_REGISTRY.find((p) => p.id === id)).filter((p): p is NonNullable<typeof p> => Boolean(p));
+    // Produsele de specialitate ale site-ului (au pagină oraș × produs indexabilă).
+    const products = specialtyLocalSlugs(siteConfig.url).map((id) => CONFIGURATORS_REGISTRY.find((p) => p.id === id)).filter((p): p is NonNullable<typeof p> => Boolean(p));
     const byLetter = new Map<string, typeof judet.localitati>();
     // Toate localitățile, alfabetic (ordinea românească), grupate pe inițială; denumirile cu diacritice din date.
     const allLocs = judet.localitati
@@ -160,27 +166,7 @@ export default async function JudetPage({ params }: Params) {
                             ))}
                         </div>
                     )}
-                    <details className="group mt-6 rounded-2xl border border-slate-200 bg-white">
-                        <summary className="flex cursor-pointer list-none items-center justify-between p-5 font-semibold text-slate-900">
-                            Toate cele {judet.localitati.length} de localități din județul {judet.name}
-                            <span className="text-amber-600 transition group-open:rotate-45" aria-hidden>+</span>
-                        </summary>
-                        <div className="space-y-4 border-t border-slate-100 p-5">
-                            {[...byLetter.entries()].map(([letter, list]) => (
-                                <div key={letter} className="flex gap-4">
-                                    <span className="w-6 shrink-0 font-bold text-amber-600">{letter}</span>
-                                    <p className="text-sm leading-7 text-slate-600">
-                                        {list.map((l, i) => (
-                                            <React.Fragment key={l.slug}>
-                                                {i > 0 && <span className="text-slate-300"> · </span>}
-                                                <Link href={`/judet/${judet.slug}/${l.slug}`} className="hover:text-amber-700">{l.name}</Link>
-                                            </React.Fragment>
-                                        ))}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
-                    </details>
+                    <CountyLocalitiesByTown judetSlug={judet.slug} judetName={judet.name} localitati={judet.localitati} />
                 </div>
             </section>
 

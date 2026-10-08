@@ -15,6 +15,11 @@ import { getFromPrice } from "@/lib/seo/fromPrice";
 import { WhatsAppBar, WhatsAppButton } from "@/components/seo/WhatsAppBar";
 import { withDisplayName, nearbyLocalities } from "@/lib/seo/localityData";
 import { Breadcrumbs, LocalityFacts, SourceNote } from "@/components/seo/LocalitySeo";
+import { LocalTownSections } from "@/components/seo/LocalTownBlocks";
+import { localDataFaqs } from "@/lib/seo/localFaqData";
+import { getLocalEditorial } from "@/lib/seo/localEditorial";
+import { nearestTownsFor } from "@/lib/seo/villageTowns";
+import { localTownTitle, localTownDescription } from "@/lib/seo/localTitle";
 
 // Pagina unei localitati: scurta si clara, cu butoanele la vedere din primul ecran.
 // Textul unic vine din faptele reale ale judetului (lib/seo/localContent.ts), nu din umplutura.
@@ -54,8 +59,8 @@ export async function generateMetadata({ params }: Params) {
     if (!loc || !judet) return {};
 
     const from = getFromPrice(["tapet"]);
-    const title = `Decor printat în ${loc.name}${from ? ` – fototapet de la ${from.text}` : ""}`;
-    const description = `Fototapet, tablouri canvas, postere și autocolante decorative, cu livrare în ${loc.name}, jud. ${judet.name}. Preț calculat pe loc, livrare în 2-4 zile lucrătoare, plată la livrare.`;
+    const title = localTownTitle(siteConfig.url, loc.name);
+    const description = localTownDescription(siteConfig.url, loc.name, judet.name);
     const routeUrl = `${siteConfig.url}/judet/${judet.slug}/${loc.slug}`;
 
     return {
@@ -88,9 +93,11 @@ export default async function LocalitatePage({ params }: Params) {
     const intro = `Fototapet, tablouri canvas, postere și autocolante decorative, livrate la adresa ta din ${loc.name}. ${localFact}`.trim();
     const products = orderedProducts();
     const top = products.filter((p) => TOP.slice(0, 3).includes(p.id));
-    const faq = faqFor(loc.name, judet.name, profile?.tierLivrare);
+    // Întrebările din date reale (livrare, transport, ridicare, plată, urgențe) + cele editoriale ale orașului.
+    const faq = localDataFaqs({ locName: loc.name, judetName: judet.name, editorial: getLocalEditorial(siteConfig.url, judet.slug, loc.slug)?.faq }).map((f) => ({ q: f.question, a: f.answer }));
     // Vecinii reali din date (cu distanța), altfel cei din aceeași comună / vecinii alfabetici din județ.
-    const neighbours = nearbyLocalities(judet.slug, judet.localitati, loc.slug, 12, (j, s) => getLocalitateBySlug(j, s)?.name);
+    // Cele mai apropiate 6 orașe (distanță în linie dreaptă, OSM); satele nu mai sunt legate de aici (noindex).
+    const neighbours = nearestTownsFor(judet.slug, loc.slug, 6).map((t) => ({ name: t.name, slug: t.slug, judetSlug: t.judetSlug, km: t.km }));
     const nearbyHasKm = neighbours.some((l) => typeof l.km === "number");
     const bannerFrom = getFromPrice(["tapet"]);
     const pageUrl = `${siteConfig.url}/judet/${judet.slug}/${loc.slug}`;
@@ -119,6 +126,7 @@ export default async function LocalitatePage({ params }: Params) {
                 }}
             />
 <BrandLocalHub loc={loc} judet={judet} localFact={localFact} neighbours={neighbours} faq={faq} waMessage={waMessage} />
+<LocalTownSections judetSlug={judet.slug} locSlug={loc.slug} locName={loc.name} judetName={judet.name} hideNearest />
 <WhatsAppBar message={waMessage} price={bannerFrom?.text} label="de la" />
 </>);
 }

@@ -1,11 +1,10 @@
 import { priorityCountyPaths } from "./priorityLocalities";
 import { resolveLocalProductKey } from "./siteSpecialization";
 
-/** Acoperirea comerciala ramane nationala. Indexam doar selectia publicata
- * in sitemap: orase principale, produse de specialitate in orasul principal
- * al judetului si URL-uri valide cu vizibilitate istorica in Search Console.
- * Nu depinde de user-agent, nu blocheaza cumpararea si nu schimba canonicalul.
- * Extinderile se fac dupa verificarea continutului util si a rezultatelor GSC. */
+/** Indexabile = exact lista din sitemap (priorityLocalities.ts): orașele, oraș × produs de
+ * specialitate al site-ului și URL-urile cu afișări în Search Console. Restul paginilor
+ * /judet/... rămân accesibile (200) cu noindex,follow: nu blocăm cumpărarea, nu schimbăm
+ * canonicalul și nu depindem de user-agent. */
 const countySets = new Map<string, Set<string>>();
 export function isIndexableLocalPage(origin: string, county: string, locality: string, product: string[] = []): boolean {
   const cacheKey = `${origin}|${county}`;
