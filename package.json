@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "local:images": "node scripts/local-county-images.mjs",
     "dev": "node --use-system-ca ./node_modules/next/dist/bin/next dev",
     "build": "next build",
     "check:merchant": "npx tsx scripts/check-merchant-feed.ts",

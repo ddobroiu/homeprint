@@ -16,6 +16,8 @@ import { CountyLocalitiesByTown } from "@/components/seo/LocalTownBlocks";
 import { townsOfCounty } from "@/lib/seo/localTowns";
 import { specialtyLocalSlugs } from "@/lib/seo/priorityLocalities";
 import { localCountyTitle } from "@/lib/seo/localTitle";
+import CountyIllustration from "@/components/seo/CountyIllustration";
+import { countyImageCaption, countyImageUrl, countyOgImages, getCountyImage } from "@/lib/seo/countyImages";
 
 // ISR 7 zile (cache doar în memorie, vezi next.config).
 export const revalidate = 604800;
@@ -35,7 +37,10 @@ export async function generateMetadata({ params }: Params) {
     const from = getFromPrice(["tapet"]);
     const title = localCountyTitle(siteConfig.url, judet.name);
     const description = `Fototapet, tablouri canvas, postere și autocolante decorative, cu livrare în toate cele ${judet.localitati.length} localități din județul ${judet.name}. Preț calculat pe loc, plată la livrare.`;
-    return { title, description, alternates: { canonical: `${siteConfig.url}/judet/${judetSlug}` } };
+    const url = `${siteConfig.url}/judet/${judetSlug}`;
+    // Ilustrația județului ca imagine de partajare (doar dacă există pentru site; lib/seo/countyImages.ts).
+    const images = countyOgImages(judet.slug, siteConfig.url);
+    return { title, description, alternates: { canonical: url }, ...(images ? { openGraph: { title, description, url, siteName: "HomePrint", locale: "ro_RO", type: "website", images }, twitter: { card: "summary_large_image" as const, title, description, images: images.map((i) => i.url) } } : {}) };
 }
 
 export default async function JudetPage({ params }: Params) {
@@ -68,6 +73,7 @@ export default async function JudetPage({ params }: Params) {
         { q: "În cât timp primesc comanda?", a: "Comanda ajunge la tine prin curier DPD în 2-4 zile lucrătoare, producție inclusă." },
     ];
     const waMessage = `Bună ziua! Aș dori o ofertă pentru decor printat cu livrare în județul ${judet.name}.`;
+    const countyImg = getCountyImage(judet.slug);
     const bannerFrom = getFromPrice(["tapet"]);
 
     return (
@@ -76,6 +82,14 @@ export default async function JudetPage({ params }: Params) {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify([
+                        ...(countyImg
+                            ? [{
+                                "@context": "https://schema.org",
+                                "@type": "WebPage",
+                                url: `${siteConfig.url}/judet/${judet.slug}`,
+                                primaryImageOfPage: { "@type": "ImageObject", contentUrl: countyImageUrl(countyImg, siteConfig.url), width: countyImg.width, height: countyImg.height, caption: countyImageCaption(countyImg, judet.slug, judet.name), description: countyImg.alt },
+                            }]
+                            : []),
                         {
                             "@context": "https://schema.org",
                             "@type": "FAQPage",
@@ -98,6 +112,8 @@ export default async function JudetPage({ params }: Params) {
                         linkClassName="hover:text-amber-700"
                         currentClassName="text-slate-800"
                     />
+                    <div className={countyImg ? "lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,460px)] lg:items-center lg:gap-10" : undefined}>
+                    <div>
                     <p className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-xs font-medium text-amber-700 ring-1 ring-amber-200">
                         <Truck size={14} /> Livrare în {judet.localitati.length} de localități
                     </p>
@@ -124,6 +140,9 @@ export default async function JudetPage({ params }: Params) {
                             <li key={t} className="inline-flex items-center gap-1.5"><Check size={16} className="text-amber-600" /> {t}</li>
                         ))}
                     </ul>
+                    </div>
+                    <CountyIllustration judetSlug={judet.slug} judetName={judet.name} preload sizes="(max-width: 1024px) calc(100vw - 32px), 460px" className="mx-auto mt-8 max-w-xl lg:mt-0 lg:max-w-none" />
+                    </div>
                 </div>
             </section>
 

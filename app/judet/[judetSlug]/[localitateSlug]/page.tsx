@@ -20,6 +20,8 @@ import { localDataFaqs } from "@/lib/seo/localFaqData";
 import { getLocalEditorial } from "@/lib/seo/localEditorial";
 import { nearestTownsFor } from "@/lib/seo/villageTowns";
 import { localTownTitle, localTownDescription } from "@/lib/seo/localTitle";
+import CountyIllustration from "@/components/seo/CountyIllustration";
+import { countyImageAltForLocality, countyOgImages, getCountyImage } from "@/lib/seo/countyImages";
 
 // Pagina unei localitati: scurta si clara, cu butoanele la vedere din primul ecran.
 // Textul unic vine din faptele reale ale judetului (lib/seo/localContent.ts), nu din umplutura.
@@ -62,11 +64,15 @@ export async function generateMetadata({ params }: Params) {
     const title = localTownTitle(siteConfig.url, loc.name);
     const description = localTownDescription(siteConfig.url, loc.name, judet.name);
     const routeUrl = `${siteConfig.url}/judet/${judet.slug}/${loc.slug}`;
+    // Ilustrația județului (reperul reședinței) ca imagine de partajare, dacă există pentru site.
+    const countyImg = getCountyImage(judet.slug);
+    const images = countyImg ? countyOgImages(judet.slug, siteConfig.url, countyImageAltForLocality(countyImg, judet.slug, judet.name, loc.name)) : undefined;
 
     return {
         title,
         description,
-        openGraph: { title, description, url: routeUrl, siteName: "HomePrint", locale: "ro_RO", type: "website" },
+        openGraph: { title, description, url: routeUrl, siteName: "HomePrint", locale: "ro_RO", type: "website", ...(images ? { images } : {}) },
+        ...(images ? { twitter: { card: "summary_large_image" as const, title, description, images: images.map((i) => i.url) } } : {}),
         alternates: { canonical: routeUrl },
         robots: { index: isIndexableLocalPage(siteConfig.url, judet.slug, loc.slug), follow: true },
     };
@@ -125,7 +131,7 @@ export default async function LocalitatePage({ params }: Params) {
                     ]),
                 }}
             />
-<BrandLocalHub loc={loc} judet={judet} localFact={localFact} neighbours={neighbours} faq={faq} waMessage={waMessage} />
+<BrandLocalHub loc={loc} judet={judet} localFact={localFact} neighbours={neighbours} faq={faq} waMessage={waMessage} countyIllustration={<CountyIllustration judetSlug={judet.slug} judetName={judet.name} locName={loc.name} sizes="(max-width: 768px) calc(100vw - 80px), 576px" />} />
 <LocalTownSections judetSlug={judet.slug} locSlug={loc.slug} locName={loc.name} judetName={judet.name} hideNearest />
 <WhatsAppBar message={waMessage} price={bannerFrom?.text} label="de la" />
 </>);

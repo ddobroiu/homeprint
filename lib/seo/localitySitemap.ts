@@ -1,4 +1,5 @@
 import { priorityCountyPaths } from "./priorityLocalities";
+import { getCountyImage } from "./countyImages";
 import { JUDETE_FULL_DATA } from "@/lib/localitati";
 import { siteConfig } from "@/lib/siteConfig";
 import { isHomeSite } from "@/lib/seo/siteSpecialization";
@@ -70,7 +71,7 @@ function node(loc: string, lastmod: string, changefreq: string, priority: string
 }
 
 function urlset(body: string): Response {
-    return new Response(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}</urlset>`, {
+    return new Response(`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${body}</urlset>`, {
         headers: {
             "Content-Type": "application/xml",
             "Cache-Control": "public, max-age=86400, s-maxage=86400, stale-while-revalidate",
@@ -111,7 +112,12 @@ function countySitemap(slug: string, part: number, opts?: Opts): Response | null
         return e && e > lastmod ? e : lastmod;
     };
     let body = "";
-    if (part === 1) body += node(`${base}/judet/${j.slug}`, lastmod, "monthly", "0.6");
+    if (part === 1) {
+        // Ilustrația județului (doar dacă există pentru site) în sitemap-ul de imagini.
+        const img = getCountyImage(j.slug);
+        const imageXml = img ? `    <image:image>\n      <image:loc>${base}${img.src}</image:loc>\n    </image:image>\n` : "";
+        body += node(`${base}/judet/${j.slug}`, lastmod, "monthly", "0.6").replace("  </url>\n", `${imageXml}  </url>\n`);
+    }
     for (const path of slice) body += node(`${base}${path}`, pathLastmod(path), "monthly", "0.5");
     return urlset(body);
 }
