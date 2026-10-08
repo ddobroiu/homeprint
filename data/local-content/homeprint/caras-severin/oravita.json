@@ -1,0 +1,24 @@
+{
+  "intro": "Ai măsurat peretele din sufragerie și locuiești în Oravița, un oraș în care se păstrează cel mai vechi teatru de pe teritoriul României? Din acele cifre iese un tapet făcut pe comandă. Pentru cei plecați din Oravița, un canvas cu Teatrul Vechi din Oravița pus în casa nouă păstrează legătura cu locul de acasă. Pensiunile și cabanele își pot face camere tematice, fiecare cu un tapet cu alt peisaj din zonă, care rămâne în memoria oaspeților. Dacă nu ai o grafică pregătită, echipa de design poate potrivi imaginea pe dimensiunile peretelui, contra unei taxe afișate în configurator. Nu e nevoie să cauți tapet în magazinele din Reșița, la circa 32 km: rola personalizată vine direct acasă, în Oravița. Poți pune în același coș tapetul, canvasurile și autocolantele și le primești împreună. Iar dacă îți place rezultatul, poți continua cu holul sau cu camera copiilor.",
+  "useCases": [
+    "Tapet cu harta zonei la recepție",
+    "Tapet cu peisaj local pentru cabană",
+    "Perete decorat pentru restaurant",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Oravița?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Oravița."
+    },
+    {
+      "q": "Livrați tapetul și în Răchitova?",
+      "a": "Da. Răchitova e la circa 3 km de Oravița, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Oravița?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

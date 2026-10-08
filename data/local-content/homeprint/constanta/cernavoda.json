@@ -1,0 +1,24 @@
+{
+  "intro": "Cine își amenajează locuința în Cernavodă, un oraș de pe Dunăre, cu centrala nucleară și podurile peste fluviu, poate comanda online tapet făcut exact pe dimensiunea peretelui. Autocolantele decorative pe ușile interioare sau pe mobila veche dau un aer nou unei locuințe fără să schimbi nimic din structură. Varianta autoadezivă se aplică pe pereți netezi, curați și uscați, fără adeziv separat. Fâșiile de tapet vin numerotate, gata de îmbinat, așa că imaginea se reface corect pe perete. Dacă pregătești o surpriză pentru cineva drag, treci la livrare adresa casei unde va fi montat tapetul. Livrarea merge oriunde în Cernavodă și în împrejurimi, inclusiv în Seimenii Mici, direct la casa sau apartamentul în renovare. Un decor nou nu cere neapărat meseriași, ci o idee bună și măsurile corecte.",
+  "useCases": [
+    "Tapet panoramic pentru cameră mică",
+    "Autocolante pentru uși interioare",
+    "Living renovat cu tapet și canvas",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Cernavodă?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Seimenii Mici?",
+      "a": "Da. Adresa poate fi în Cernavodă sau în Seimenii Mici; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Cernavodă?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

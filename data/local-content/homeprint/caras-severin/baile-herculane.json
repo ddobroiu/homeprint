@@ -1,0 +1,23 @@
+{
+  "intro": "Pe lângă faptul că este una dintre cele mai vechi stațiuni balneare din Europa, pe valea Cernei, Băile Herculane are mii de camere care așteaptă un decor mai personal decât un perete alb. Pensiunile și cabanele își pot face camere tematice, fiecare cu un tapet cu alt peisaj din zonă, care rămâne în memoria oaspeților. Magazinele mici și cabinetele din zonă își pot decora și ele peretele principal cu un tapet personalizat cu numele firmei. Imaginea pentru tapet poate fi o fotografie proprie sau orice imagine pentru care ai drept de folosire, la rezoluție cât mai mare. Tapetul vine rulat, protejat pentru transport, iar coletele mici, cum sunt autocolantele, pot merge și la un locker DPD. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână.",
+  "useCases": [
+    "Tapet cu peisaj local pentru cabană",
+    "Camere tematice pentru pensiune",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Băile Herculane?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Băile Herculane în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Pecinișca?",
+      "a": "Sigur. Pecinișca, aflat la aproximativ 2 km de Băile Herculane, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Băile Herculane?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

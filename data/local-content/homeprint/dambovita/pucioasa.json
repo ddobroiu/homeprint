@@ -1,0 +1,25 @@
+{
+  "intro": "Ai măsurat peretele din sufragerie și locuiești în Pucioasa, un oraș-stațiune cu ape sulfuroase pe valea Ialomiței? Din acele cifre iese un tapet făcut pe comandă. Restaurantele și barurile din zonele turistice folosesc un tapet mare pe peretele principal ca decor care se vede în fotografiile clienților. Tapetul cu o imagine mare arată cel mai bine pe peretele fără mobilă înaltă în față, unde se vede de la un capăt la altul. Plata se face cu cardul, prin ordin de plată sau ramburs la curier, pentru comenzile de până la 300 lei. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire.",
+  "useCases": [
+    "Tapet cu harta zonei la recepție",
+    "Tapet cu peisaj local pentru cabană",
+    "Perete decorat pentru restaurant",
+    "Autocolante cu numerele camerelor",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Pucioasa?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Pucioasa."
+    },
+    {
+      "q": "Renovez o casă în Pucioasa-Sat, lângă Pucioasa. Ajunge comanda acolo?",
+      "a": "Sigur. Pucioasa-Sat, aflat la aproximativ 2 km de Pucioasa, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Pucioasa?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

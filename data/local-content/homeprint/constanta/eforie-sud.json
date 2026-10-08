@@ -1,0 +1,23 @@
+{
+  "intro": "Pentru cine stă în Eforie Sud, o stațiune de pe litoral, între mare și lacul Techirghiol, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. Proprietarii de apartamente de vacanță din Eforie Sud pot comanda tapet pentru mai multe camere deodată, fiecare pe dimensiunea ei. La recensământul din 2021, Eforie Sud avea aproximativ 3.700 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Fâșiile de tapet vin numerotate, gata de îmbinat, așa că imaginea se reface corect pe perete. Plata se face cu cardul, prin ordin de plată sau ramburs la curier, pentru comenzile de până la 300 lei. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână.",
+  "useCases": [
+    "Autocolante cu numerele camerelor",
+    "Tapet cu harta zonei la recepție",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Eforie Sud?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Eforie Sud."
+    },
+    {
+      "q": "Renovez o casă în Tuzla, lângă Eforie Sud. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Tuzla și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Eforie Sud?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

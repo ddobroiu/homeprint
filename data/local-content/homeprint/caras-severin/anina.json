@@ -1,0 +1,25 @@
+{
+  "intro": "Pentru familiile din Anina, un oraș cu trecut minier în Munții Aninei, legat de calea ferată Oravița–Anina, decorul casei nu mai înseamnă doar zugrăveală: tapetul personalizat și autocolantele fac diferența. Autocolantele decorative pe ușile interioare sau pe mobila veche dau un aer nou unei locuințe fără să schimbi nimic din structură. Pentru un perete cu ușă sau fereastră, măsori întreaga suprafață, iar decupajul se face la montaj, ca la orice tapet. Poți alege tapet autoadeziv, care se aplică direct, sau varianta clasică, lipită cu adeziv separat. Livrarea merge oriunde în Anina și în împrejurimi, inclusiv în Steierdorf, direct la casa sau apartamentul în renovare. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână. Rămâne doar să alegi imaginea; dimensiunile le ai deja de pe ruletă.",
+  "useCases": [
+    "Autocolante pentru uși interioare",
+    "Tapet floral pentru casă la curte",
+    "Perete nou în apartament de bloc",
+    "Autocolante pentru mobilă veche",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Anina?",
+      "a": "Pentru Anina, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Livrați tapetul și în Steierdorf?",
+      "a": "Da, trece adresa completă din Steierdorf și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Anina?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

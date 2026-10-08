@@ -1,0 +1,23 @@
+{
+  "intro": "În Titu, un oraș și nod feroviar din sud-estul județului, un dormitor sau un living se poate schimba complet cu un singur perete tapetat cu o imagine aleasă de tine. La recensământul din 2021, Titu avea aproximativ 6.900 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Familiile care își refac apartamentul pe bucăți pot începe cu un perete și continua cu restul când permite bugetul. Pentru un perete cu prize sau întrerupătoare, tapetul se decupează în jurul lor la montaj, cu un cutter, ca la orice tapet obișnuit. Dacă ai doi pereți de decorat, adaugă în coș câte un tapet pentru fiecare, cu dimensiunile lui. AWB-ul vine pe e-mail și prin SMS, ca să știi când să fii acasă pentru tapet sau tablouri. Un singur perete schimbat face adesea mai mult decât o cameră întreagă de mobilă nouă.",
+  "useCases": [
+    "Tapet pentru camera copiilor",
+    "Living renovat cu tapet și canvas",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Titu?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Titu."
+    },
+    {
+      "q": "Livrați tapetul și în Braniștea?",
+      "a": "Da, trece adresa completă din Braniștea și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Titu?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

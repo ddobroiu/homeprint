@@ -1,0 +1,25 @@
+{
+  "intro": "Te muți într-o locuință nouă în Ovidiu, un oraș de lângă Constanța, pe malul lacului Siutghiol, sau doar vrei să schimbi atmosfera unei camere? Familiile care s-au mutat recent pot comanda tapetul, tablourile și autocolantele în aceeași comandă, ca decorul să fie gata deodată. Un perete de accent e de obicei cel din spatele patului, al canapelei sau al biroului, pe care privirea se oprește prima. Previzualizarea arată unde cad marginile imaginii, ca un detaliu important să nu ajungă după un dulap sau o ușă. Tapetul, tablourile și autocolantele ajung în Ovidiu și în restul localităților din județul Constanța în 2-4 zile lucrătoare, cu producția inclusă. Casa începe să semene cu tine din momentul în care pereții nu mai sunt toți la fel.",
+  "useCases": [
+    "Primul perete tapetat în casa nouă",
+    "Autocolante cu stele pentru copii",
+    "Tapet discret pentru dormitor",
+    "Decor complet pentru casă nouă",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Ovidiu?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Ovidiu, de exemplu în Lumina?",
+      "a": "Da, trece adresa completă din Lumina și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Ovidiu?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

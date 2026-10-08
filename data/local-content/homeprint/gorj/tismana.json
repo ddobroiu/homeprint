@@ -1,0 +1,23 @@
+{
+  "intro": "Cine își amenajează locuința în Tismana, un oraș cunoscut pentru Mănăstirea Tismana, la poalele Munților Vâlcan, poate comanda online tapet făcut exact pe dimensiunea peretelui. Restaurantele și barurile din zonele turistice folosesc un tapet mare pe peretele principal ca decor care se vede în fotografiile clienților. O fotografie cu Mănăstirea Tismana, mărită pe un perete întreg, poate fi decorul unui living care spune imediat de unde ești. Un perete de accent e de obicei cel din spatele patului, al canapelei sau al biroului, pe care privirea se oprește prima. Canvasul și tapetul pot porni de la aceeași fotografie: una mare pe perete, una mică pe pânză, în altă cameră. Comanda ajunge prin DPD în 2-4 zile lucrătoare, așa că poți pregăti peretele, curățat și uscat, până vine tapetul. Fotografiile din telefon merg bine pe pereți mici, iar pentru pereți mari e bine să cauți imaginea la rezoluția maximă.",
+  "useCases": [
+    "Tapet cu peisaj local pentru cabană",
+    "Decor pentru bucătăria de vară",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Tismana?",
+      "a": "Pentru Tismana, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Renovez o casă în Pocruia, lângă Tismana. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Tismana sau în Pocruia; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Tismana?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

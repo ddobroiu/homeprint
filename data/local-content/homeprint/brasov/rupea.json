@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru cine stă în Rupea, un oraș mic cu o cetate pe dealul Cohalmului, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. Pentru cei plecați din Rupea, un canvas cu Cetatea Rupea pus în casa nouă păstrează legătura cu locul de acasă. Pentru un apartament de închiriat într-o clădire istorică, un tapet cu un detaliu de arhitectură local îi dă oaspetelui senzația locului. Canvasul și tapetul pot porni de la aceeași fotografie: una mare pe perete, una mică pe pânză, în altă cameră. Nu ai nevoie de cunoștințe de grafică: alegi imaginea, o încadrezi pe perete și vezi rezultatul înainte să plătești. Livrăm în toată țara, deci și în Rupea și în celelalte localități din județul Brașov, în 2-4 zile lucrătoare de la comandă.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Tapet floral pentru casă la curte",
+    "Model clasic pentru casă veche",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Rupea?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Livrați tapetul și în Homorod?",
+      "a": "Da. Homorod e la circa 4 km de Rupea, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Rupea?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

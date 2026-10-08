@@ -1,0 +1,24 @@
+{
+  "intro": "Amenajările interioare din Baraolt, un oraș din Depresiunea Baraolt, cu tradiție minieră, pot porni de la o fotografie, de la un model floral sau de la un peisaj întins pe tot peretele. Apartamentele de bloc din anii '70 și '80 au camere mici, iar un tapet cu un peisaj larg pe un singur perete deschide vizual spațiul. Recensământul din 2021 a numărat în Baraolt în jur de 4.700 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. Canvasul se face pe șasiu de lemn, gata de agățat, sau doar ca pânză printată, livrată rulată. Rambursul la curier e disponibil pentru comenzile de până la 300 lei, iar pentru un perete mare plătești cu cardul sau prin ordin de plată. Termenul curge de la confirmarea comenzii și a graficii, deci o imagine bună încărcată de la început scurtează așteptarea. Decorul ales de tine e cel care rămâne cel mai mult timp pe pereți.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Decor pentru bucătăria de vară",
+    "Autocolante pentru uși interioare",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Baraolt?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Tălișoara?",
+      "a": "Da. Tălișoara e la circa 3 km de Baraolt, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Baraolt?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,25 @@
+{
+  "intro": "Dăbuleni este un oraș cunoscut pentru pepenii crescuți pe nisipurile din sudul Doljului, iar în casele și apartamentele de aici renovările încep tot mai des cu un perete de accent. Camera de oaspeți, cea în care dorm nepoții vara, poate primi un perete tapetat cu ceva vesel, fără renovare completă. La recensământul din 2021, Dăbuleni avea aproximativ 10.000 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Autocolantele decorative pot fi și mici, pentru întrerupătoare sau uși de dulap, și mari, pentru o compoziție pe un perete întreg. Casele din Dăbuleni, Călărași sau Chiașu primesc comanda în același termen, așa că poți programa montajul încă de la plată. Măsoară peretele în câteva puncte și folosește cea mai mare valoare, ca tapetul să acopere complet suprafața.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Autocolante pentru mobilă veche",
+    "Camera nepoților decorată",
+    "Fotografie de familie pe un perete întreg",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Dăbuleni?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Dăbuleni în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Călărași?",
+      "a": "Da. Adresa poate fi în Dăbuleni sau în Călărași; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Dăbuleni?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

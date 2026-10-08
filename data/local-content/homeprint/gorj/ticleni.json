@@ -1,0 +1,25 @@
+{
+  "intro": "Te muți într-o locuință nouă în Țicleni, un oraș petrolier din estul Gorjului, sau doar vrei să schimbi atmosfera unei camere? Cu circa 3.900 de locuitori numărați în 2021, Țicleni are destule case și apartamente în care un decor nou s-ar vedea imediat. Renovările de apartamente vechi încep des cu bucătăria și dormitorul, iar un perete tapetat e o schimbare vizibilă la un cost controlat. Tapetul este lavabil și se șterge cu o lavetă umedă, util mai ales în camerele copiilor sau pe hol. Nu avem showroom în Țicleni; totul se comandă online și vine prin curier, la adresă sau la un punct DPD în care încape coletul. Nu ai nevoie de cunoștințe de grafică: alegi imaginea, o încadrezi pe perete și vezi rezultatul înainte să plătești.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Autocolante pentru uși interioare",
+    "Perete nou în apartament de bloc",
+    "Tapet pentru camera copiilor",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Țicleni?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Țicleni."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Țârculești?",
+      "a": "Sigur. Țârculești, aflat la aproximativ 6 km de Țicleni, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Țicleni?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,23 @@
+{
+  "intro": "Târgu Bujor — un oraș din zona viticolă a Colinelor Covurluiului — are case vechi, blocuri și locuințe noi, iar fiecare are măcar un perete care cere un decor nou. Recensământul din 2021 a numărat în Târgu Bujor în jur de 3.800 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. Bucătăriile de vară și camerele refăcute în casele bătrânești primesc bine autocolantele decorative pe mobila veche. Autocolantele decorative pot fi și mici, pentru întrerupătoare sau uși de dulap, și mari, pentru o compoziție pe un perete întreg. Dacă renovezi o casă în Moscu sau în alt sat din apropiere, livrarea se face la fel, la adresa completă trecută în comandă. Dacă ai doi pereți de decorat, adaugă în coș câte un tapet pentru fiecare, cu dimensiunile lui.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Camera nepoților decorată",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Târgu Bujor?",
+      "a": "Pentru Târgu Bujor, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Moscu?",
+      "a": "Sigur. Moscu, aflat la aproximativ 4 km de Târgu Bujor, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Târgu Bujor?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,24 @@
+{
+  "intro": "Dacă renovezi o cameră în Berești, un oraș mic din nordul județului Galați, tapetul tipărit după măsurile tale e o alternativă la modelele standard din magazin. Pentru cei care lucrează în străinătate și își refac casa de acasă, comanda se poate face online, cu livrare la adresa părinților. Varianta autoadezivă se aplică pe pereți netezi, curați și uscați, fără adeziv separat. Livrarea merge oriunde în Berești și în împrejurimi, inclusiv în Berești-Meria, direct la casa sau apartamentul în renovare. Dacă ai doi pereți de decorat, adaugă în coș câte un tapet pentru fiecare, cu dimensiunile lui. Casa începe să semene cu tine din momentul în care pereții nu mai sunt toți la fel.",
+  "useCases": [
+    "Tapet floral pentru casă la curte",
+    "Decor pentru bucătăria de vară",
+    "Autocolante pentru mobilă veche",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Berești?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Berești în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Berești, de exemplu în Berești-Meria?",
+      "a": "Sigur. Berești-Meria, aflat la aproximativ 2 km de Berești, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Berești?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

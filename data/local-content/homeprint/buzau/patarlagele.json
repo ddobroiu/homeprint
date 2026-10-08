@@ -1,0 +1,24 @@
+{
+  "intro": "Locuitorii din Pătârlagele, un oraș mic de pe valea Buzăului, în zona subcarpatică, pot comanda de acasă tapet, tablouri pe pânză și autocolante pentru mobilă sau pereți. Bucătăriile de vară și camerele refăcute în casele bătrânești primesc bine autocolantele decorative pe mobila veche. Tapetul cu o imagine mare arată cel mai bine pe peretele fără mobilă înaltă în față, unde se vede de la un capăt la altul. Prețul tapetului se calculează pe metru pătrat și scade pe măsură ce crește suprafața comandată. Poți pune în același coș tapetul, canvasurile și autocolantele și le primești împreună. Livrăm în toată țara, deci și în Pătârlagele și în celelalte localități din județul Buzău, în 2-4 zile lucrătoare de la comandă. Camera rămâne aceeași, dar se simte complet altfel.",
+  "useCases": [
+    "Autocolante pentru mobilă veche",
+    "Camera nepoților decorată",
+    "Tapet floral pentru casă la curte",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Pătârlagele?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Pătârlagele în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Pătârlagele, de exemplu în Crâng?",
+      "a": "Da, trece adresa completă din Crâng și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Pătârlagele?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,24 @@
+{
+  "intro": "Un interior cald în Murfatlar, un oraș cunoscut pentru podgoriile și vinurile sale, se construiește din detalii: un perete tapetat, un tablou pe pânză, câteva autocolante bine alese. La recensământul din 2021, Murfatlar avea aproximativ 7.900 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Camera de oaspeți, cea în care dorm nepoții vara, poate primi un perete tapetat cu ceva vesel, fără renovare completă. Tapetul este lavabil și se șterge cu o lavetă umedă, util mai ales în camerele copiilor sau pe hol. Ai nevoie de un sfat despre imagine sau dimensiuni? Pagina de contact a site-ului are datele echipei. Chiar dacă Murfatlar se află la aproximativ 19 km de Constanța, comanda ajunge în același termen, 2-4 zile lucrătoare.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Autocolante pentru mobilă veche",
+    "Tapet floral pentru casă la curte",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Murfatlar?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Murfatlar în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Poarta Albă, lângă Murfatlar. Ajunge comanda acolo?",
+      "a": "Sigur. Poarta Albă, aflat la aproximativ 3 km de Murfatlar, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Murfatlar?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru apartamentele și casele din Găești, un oraș industrial din sudul județului Dâmbovița, HomePrint face decor tipărit la comandă, pe măsura fiecărei camere. Autocolantele decorative pe ușile interioare sau pe mobila veche dau un aer nou unei locuințe fără să schimbi nimic din structură. Pentru un perete cu prize sau întrerupătoare, tapetul se decupează în jurul lor la montaj, cu un cutter, ca la orice tapet obișnuit. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat. Chiar dacă Găești se află la aproximativ 26 km de Târgoviște, comanda ajunge în același termen, 2-4 zile lucrătoare.",
+  "useCases": [
+    "Tapet panoramic pentru cameră mică",
+    "Living renovat cu tapet și canvas",
+    "Autocolante pentru uși interioare",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Găești?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Găești în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Găești, de exemplu în Străoști?",
+      "a": "Sigur. Străoști, aflat la aproximativ 3 km de Găești, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Găești?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

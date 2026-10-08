@@ -1,0 +1,25 @@
+{
+  "intro": "Locuitorii din Filiași, un oraș de pe Jiu și nod feroviar spre Târgu Jiu, pot comanda de acasă tapet, tablouri pe pânză și autocolante pentru mobilă sau pereți. Pentru camerele copiilor, un tapet cu personajele lor preferate sau cu harta lumii transformă o cameră banală într-una de poveste. Canvasul se face pe șasiu de lemn, gata de agățat, sau doar ca pânză printată, livrată rulată. La imaginile panoramice merită lăsați câțiva centimetri în plus la fiecare margine, pentru tăierea finală pe perete. Coletul pleacă prin DPD spre Filiași, dar și spre Răcarii de Sus, Bâlta și celelalte localități din jur, în 2-4 zile lucrătoare cu tot cu producția. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat. Un singur perete schimbat face adesea mai mult decât o cameră întreagă de mobilă nouă.",
+  "useCases": [
+    "Perete nou în apartament de bloc",
+    "Living renovat cu tapet și canvas",
+    "Tapet panoramic pentru cameră mică",
+    "Autocolante pentru uși interioare",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Filiași?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Filiași în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Filiași, de exemplu în Răcarii de Sus?",
+      "a": "Da. Răcarii de Sus e la circa 4 km de Filiași, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Filiași?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

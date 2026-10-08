@@ -1,0 +1,23 @@
+{
+  "intro": "Pentru familiile din Mihăilești, un oraș de pe Argeș, lângă lacul de acumulare Mihăilești, decorul casei nu mai înseamnă doar zugrăveală: tapetul personalizat și autocolantele fac diferența. Pentru un birou acasă sau un dormitor matrimonial, un tapet cu textură discretă e o alegere mai calmă decât culorile tari. Canvasul se face pe șasiu de lemn, gata de agățat, sau doar ca pânză printată, livrată rulată. Dacă ai doi pereți de decorat, adaugă în coș câte un tapet pentru fiecare, cu dimensiunile lui. De la comandă până la livrare trec 2-4 zile lucrătoare, cu producția inclusă, iar transportul îl face curierul DPD.",
+  "useCases": [
+    "Primul perete tapetat în casa nouă",
+    "Tapet vertical pentru scara interioară",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Mihăilești?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Mihăilești în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Mihăilești, de exemplu în Drăgănescu?",
+      "a": "Sigur. Drăgănescu, aflat la aproximativ 3 km de Mihăilești, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Mihăilești?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru familiile din Bumbești-Jiu, un oraș aflat la intrarea în Defileul Jiului, decorul casei nu mai înseamnă doar zugrăveală: tapetul personalizat și autocolantele fac diferența. La recensământul din 2021, Bumbești-Jiu avea aproximativ 5.400 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Un perete tapetat e o schimbare de decor care nu cere meseriași speciali: fâșiile vin numerotate și se pun în ordine. Un tablou canvas asortat cu tapetul, pe peretele opus, leagă culorile camerei între ele. Chiar dacă Bumbești-Jiu se află la aproximativ 17 km de Târgu Jiu, comanda ajunge în același termen, 2-4 zile lucrătoare. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână. Un singur perete schimbat face adesea mai mult decât o cameră întreagă de mobilă nouă.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Camera nepoților decorată",
+    "Autocolante pentru mobilă veche",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Bumbești-Jiu?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Bumbești-Jiu."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Bumbești-Jiu, de exemplu în Pleșa?",
+      "a": "Da, trece adresa completă din Pleșa și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Bumbești-Jiu?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

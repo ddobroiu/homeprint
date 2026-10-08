@@ -1,0 +1,24 @@
+{
+  "intro": "Pogoanele, un oraș agricol din câmpia Buzăului, e una dintre localitățile în care HomePrint livrează tapet la comandă, canvasuri și autocolante decorative. Bucătăriile de vară și camerele refăcute în casele bătrânești primesc bine autocolantele decorative pe mobila veche. Varianta autoadezivă se aplică pe pereți netezi, curați și uscați, fără adeziv separat. Nu ai nevoie de cunoștințe de grafică: alegi imaginea, o încadrezi pe perete și vezi rezultatul înainte să plătești. Tapetul, tablourile și autocolantele ajung în Pogoanele și în restul localităților din județul Buzău în 2-4 zile lucrătoare, cu producția inclusă.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Fotografie de familie pe un perete întreg",
+    "Decor pentru bucătăria de vară",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Pogoanele?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Pogoanele."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Căldărăști?",
+      "a": "Sigur. Căldărăști, aflat la aproximativ 4 km de Pogoanele, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Pogoanele?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

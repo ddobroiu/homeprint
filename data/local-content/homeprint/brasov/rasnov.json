@@ -1,0 +1,25 @@
+{
+  "intro": "Cine își amenajează locuința în Râșnov, un oraș turistic dominat de o cetate țărănească, poate comanda online tapet făcut exact pe dimensiunea peretelui. Pensiunile și cabanele își pot face camere tematice, fiecare cu un tapet cu alt peisaj din zonă, care rămâne în memoria oaspeților. O fotografie cu Cetatea Râșnov, mărită pe un perete întreg, poate fi decorul unui living care spune imediat de unde ești. Autocolantele cu citate, siluete sau forme geometrice se pot comanda în mai multe bucăți, pentru o compoziție pe tot peretele. Plata se face cu cardul, prin ordin de plată sau ramburs la curier, pentru comenzile de până la 300 lei. Poți salva ideea, măsura încă o dată peretele și reveni la comandă când ești sigur pe cifre.",
+  "useCases": [
+    "Perete decorat pentru restaurant",
+    "Tapet pentru apartament în clădire veche",
+    "Tapet cu peisaj local pentru cabană",
+    "Model clasic pentru casă veche",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Râșnov?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Râșnov în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Cristian, lângă Râșnov. Ajunge comanda acolo?",
+      "a": "Da. Cristian e la circa 4 km de Râșnov, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Râșnov?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

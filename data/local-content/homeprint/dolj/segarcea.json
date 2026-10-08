@@ -1,0 +1,24 @@
+{
+  "intro": "Un interior cald în Segarcea, un oraș cu podgorii vechi, în sudul Doljului, se construiește din detalii: un perete tapetat, un tablou pe pânză, câteva autocolante bine alese. Cu circa 7.300 de locuitori numărați în 2021, Segarcea are destule case și apartamente în care un decor nou s-ar vedea imediat. O fotografie de familie mărită pe un canvas mare sau chiar pe un perete întreg poate fi piesa centrală a unei case renovate. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Termenul curge de la confirmarea comenzii și a graficii, deci o imagine bună încărcată de la început scurtează așteptarea. Chiar dacă Segarcea se află la aproximativ 25 km de Craiova, comanda ajunge în același termen, 2-4 zile lucrătoare.",
+  "useCases": [
+    "Autocolante pentru mobilă veche",
+    "Fotografie de familie pe un perete întreg",
+    "Camera nepoților decorată",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Segarcea?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Segarcea în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Belcinu?",
+      "a": "Sigur. Belcinu, aflat la aproximativ 6 km de Segarcea, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Segarcea?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,23 @@
+{
+  "intro": "Fundulea — un oraș cunoscut pentru institutul de cercetări agricole — are case vechi, blocuri și locuințe noi, iar fiecare are măcar un perete care cere un decor nou. Un perete tapetat e o schimbare de decor care nu cere meseriași speciali: fâșiile vin numerotate și se pun în ordine. La recensământul din 2021, Fundulea avea aproximativ 5.900 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Livrarea merge oriunde în Fundulea și în împrejurimi, inclusiv în Dârvari, direct la casa sau apartamentul în renovare. Fotografiile din telefon merg bine pe pereți mici, iar pentru pereți mari e bine să cauți imaginea la rezoluția maximă.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Fotografie de familie pe un perete întreg",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Fundulea?",
+      "a": "Pentru Fundulea, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Fundulea, de exemplu în Dârvari?",
+      "a": "Da, trece adresa completă din Dârvari și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Fundulea?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

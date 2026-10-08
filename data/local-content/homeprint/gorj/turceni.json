@@ -1,0 +1,25 @@
+{
+  "intro": "Turceni — un oraș cu termocentrală pe Jiu — are case vechi, blocuri și locuințe noi, iar fiecare are măcar un perete care cere un decor nou. Autocolantele decorative pe ușile interioare sau pe mobila veche dau un aer nou unei locuințe fără să schimbi nimic din structură. La recensământul din 2021, Turceni avea aproximativ 3.900 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Pentru un perete cu ușă sau fereastră, măsori întreaga suprafață, iar decupajul se face la montaj, ca la orice tapet. Tapetul este lavabil și se șterge cu o lavetă umedă, util mai ales în camerele copiilor sau pe hol. Pentru o casă în Jilțu sau în alt sat din jurul orașului Turceni, livrarea are același termen și același curier. Previzualizarea arată unde cad marginile imaginii, ca un detaliu important să nu ajungă după un dulap sau o ușă.",
+  "useCases": [
+    "Autocolante pentru uși interioare",
+    "Autocolante pentru mobilă veche",
+    "Perete nou în apartament de bloc",
+    "Tapet pentru camera copiilor",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Turceni?",
+      "a": "Pentru Turceni, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Jilțu?",
+      "a": "Da, trece adresa completă din Jilțu și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Turceni?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

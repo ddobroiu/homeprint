@@ -1,0 +1,24 @@
+{
+  "intro": "Amenajările interioare din Nehoiu, un oraș de munte de pe valea Buzăului, pot porni de la o fotografie, de la un model floral sau de la un peisaj întins pe tot peretele. O fotografie de familie mărită pe un canvas mare sau chiar pe un perete întreg poate fi piesa centrală a unei case renovate. La recensământul din 2021, Nehoiu avea aproximativ 4.300 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Prețul tapetului se calculează pe metru pătrat și scade pe măsură ce crește suprafața comandată. Nu e nevoie să cauți tapet în magazinele din Buzău, la circa 51 km: rola personalizată vine direct acasă, în Nehoiu. Ai nevoie de un sfat despre imagine sau dimensiuni? Pagina de contact a site-ului are datele echipei.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Camera nepoților decorată",
+    "Decor pentru bucătăria de vară",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Nehoiu?",
+      "a": "Pentru Nehoiu, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Renovez o casă în Nehoiașu, lângă Nehoiu. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Nehoiu sau în Nehoiașu; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Nehoiu?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

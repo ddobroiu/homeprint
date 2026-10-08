@@ -1,0 +1,23 @@
+{
+  "intro": "Ai măsurat peretele din sufragerie și locuiești în Bălan, un oraș de munte de la izvoarele Oltului, fost centru minier? Din acele cifre iese un tapet făcut pe comandă. Cu circa 5.400 de locuitori numărați în 2021, Bălan are destule case și apartamente în care un decor nou s-ar vedea imediat. Pentru camerele copiilor, un tapet cu personajele lor preferate sau cu harta lumii transformă o cameră banală într-una de poveste. Poți alege tapet autoadeziv, care se aplică direct, sau varianta clasică, lipită cu adeziv separat. Poți pune în același coș tapetul, canvasurile și autocolantele și le primești împreună. De la comandă până la livrare trec 2-4 zile lucrătoare, cu producția inclusă, iar transportul îl face curierul DPD.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Autocolante pentru mobilă veche",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Bălan?",
+      "a": "Pentru Bălan, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Renovez o casă în Sândominic, lângă Bălan. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Sândominic și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Bălan?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

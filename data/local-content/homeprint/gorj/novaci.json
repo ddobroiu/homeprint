@@ -1,0 +1,25 @@
+{
+  "intro": "Novaci este un oraș de munte aflat la capătul sudic al Transalpinei, iar în casele și apartamentele de aici renovările încep tot mai des cu un perete de accent. Recepția unei pensiuni poate avea pe perete un tapet cu harta zonei, util și ca decor, și ca informație pentru turiști. În casele la curte din Novaci și din satele din jur, un tapet cu un model floral sau cu un peisaj de câmp aduce afară înăuntru. Folia transparentă e bună pentru autocolantele de pe geamuri și oglinzi, unde fundalul trebuie să se vadă. Livrarea merge oriunde în Novaci și în împrejurimi, inclusiv în Hirișești, direct la casa sau apartamentul în renovare. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat.",
+  "useCases": [
+    "Camere tematice pentru pensiune",
+    "Camera nepoților decorată",
+    "Fotografie de familie pe un perete întreg",
+    "Tapet cu harta zonei la recepție",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Novaci?",
+      "a": "Pentru Novaci, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Renovez o casă în Hirișești, lângă Novaci. Ajunge comanda acolo?",
+      "a": "Sigur. Hirișești, aflat la aproximativ 2 km de Novaci, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Novaci?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

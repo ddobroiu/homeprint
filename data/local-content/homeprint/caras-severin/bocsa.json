@@ -1,0 +1,25 @@
+{
+  "intro": "În Bocșa, un oraș cu tradiție metalurgică, pe Bârzava, un dormitor sau un living se poate schimba complet cu un singur perete tapetat cu o imagine aleasă de tine. Apartamentele de bloc din anii '70 și '80 au camere mici, iar un tapet cu un peisaj larg pe un singur perete deschide vizual spațiul. Canvasul și tapetul pot porni de la aceeași fotografie: una mare pe perete, una mică pe pânză, în altă cameră. Nu e nevoie să cauți tapet în magazinele din Reșița, la circa 16 km: rola personalizată vine direct acasă, în Bocșa. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire.",
+  "useCases": [
+    "Autocolante pentru uși interioare",
+    "Living renovat cu tapet și canvas",
+    "Tapet pentru camera copiilor",
+    "Perete nou în apartament de bloc",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Bocșa?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Livrați tapetul și în Ocna de Fier?",
+      "a": "Da, trece adresa completă din Ocna de Fier și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Bocșa?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

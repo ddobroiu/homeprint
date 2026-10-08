@@ -1,0 +1,24 @@
+{
+  "intro": "Locuitorii din Zărnești, un oraș aflat la poarta Parcului Național Piatra Craiului, pot comanda de acasă tapet, tablouri pe pânză și autocolante pentru mobilă sau pereți. Recepția unei pensiuni poate avea pe perete un tapet cu harta zonei, util și ca decor, și ca informație pentru turiști. Autocolantele decorative se taie la forma dorită și se lipesc pe pereți netezi, pe sticlă sau pe mobilă. Nu e nevoie să cauți tapet în magazinele din Brașov, la circa 25 km: rola personalizată vine direct acasă, în Zărnești. Poți pune în același coș tapetul, canvasurile și autocolantele și le primești împreună. Peretele măsurat azi poate fi tapetat săptămâna aceasta.",
+  "useCases": [
+    "Tapet floral pentru casă la curte",
+    "Autocolante cu numerele camerelor",
+    "Camera nepoților decorată",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Zărnești?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Zărnești."
+    },
+    {
+      "q": "Livrați tapetul și în Măgura?",
+      "a": "Da. Măgura e la circa 4 km de Zărnești, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Zărnești?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

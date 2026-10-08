@@ -1,0 +1,24 @@
+{
+  "intro": "Știm despre Techirghiol că este o stațiune cunoscută pentru nămolul lacului Techirghiol; cum arată pereții casei tale de acolo poți decide chiar tu, de la imagine la dimensiune. Un perete tapetat cu muntele, lacul sau pădurea din apropiere aduce priveliștea în cameră chiar și în zilele cu vreme proastă. Cu circa 8.000 de locuitori numărați în 2021, Techirghiol are destule case și apartamente în care un decor nou s-ar vedea imediat. Fâșiile de tapet vin numerotate, gata de îmbinat, așa că imaginea se reface corect pe perete. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat. Nu e nevoie să cauți tapet în magazinele din Constanța, la circa 14 km: rola personalizată vine direct acasă, în Techirghiol. Un singur perete schimbat face adesea mai mult decât o cameră întreagă de mobilă nouă.",
+  "useCases": [
+    "Tapet cu harta zonei la recepție",
+    "Autocolante cu numerele camerelor",
+    "Tapet cu peisaj local pentru cabană",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Techirghiol?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Techirghiol în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Techirghiol, de exemplu în Eforie Nord?",
+      "a": "Da. Eforie Nord e la circa 3 km de Techirghiol, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Techirghiol?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

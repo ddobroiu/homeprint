@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru cine stă în Bolintin-Vale, un oraș de pe Argeș, aproape de București, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. Recensământul din 2021 a numărat în Bolintin-Vale în jur de 8.400 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. Familiile care s-au mutat recent pot comanda tapetul, tablourile și autocolantele în aceeași comandă, ca decorul să fie gata deodată. Fâșiile de tapet vin numerotate, gata de îmbinat, așa că imaginea se reface corect pe perete. Imaginea se încarcă direct din telefon sau din calculator, iar previzualizarea arată cum se întinde pe perete. Chiar dacă Bolintin-Vale se află la aproximativ 64 km de Giurgiu, comanda ajunge în același termen, 2-4 zile lucrătoare.",
+  "useCases": [
+    "Tapet vertical pentru scara interioară",
+    "Primul perete tapetat în casa nouă",
+    "Tapet discret pentru dormitor",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Bolintin-Vale?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Bolintin-Vale."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Moșteni?",
+      "a": "Da. Moșteni e la circa 2 km de Bolintin-Vale, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Bolintin-Vale?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

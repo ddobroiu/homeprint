@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru apartamentele și casele din Negru Vodă, un oraș din sudul Dobrogei, la granița cu Bulgaria, HomePrint face decor tipărit la comandă, pe măsura fiecărei camere. Bucătăriile de vară și camerele refăcute în casele bătrânești primesc bine autocolantele decorative pe mobila veche. Un tablou canvas asortat cu tapetul, pe peretele opus, leagă culorile camerei între ele. Chiar dacă Negru Vodă se află la aproximativ 53 km de Constanța, comanda ajunge în același termen, 2-4 zile lucrătoare. Poți salva ideea, măsura încă o dată peretele și reveni la comandă când ești sigur pe cifre.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Camera nepoților decorată",
+    "Decor pentru bucătăria de vară",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Negru Vodă?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Grăniceru?",
+      "a": "Da. Adresa poate fi în Negru Vodă sau în Grăniceru; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Negru Vodă?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

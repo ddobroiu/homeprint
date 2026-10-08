@@ -1,0 +1,24 @@
+{
+  "intro": "Știm despre Răcari că este un oraș mic din sud-estul județului Dâmbovița; cum arată pereții casei tale de acolo poți decide chiar tu, de la imagine la dimensiune. O fotografie de familie mărită pe un canvas mare sau chiar pe un perete întreg poate fi piesa centrală a unei case renovate. Canvasul se face pe șasiu de lemn, gata de agățat, sau doar ca pânză printată, livrată rulată. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână. Casele din Răcari, Ghergani sau Slobozia Moară primesc comanda în același termen, așa că poți programa montajul încă de la plată.",
+  "useCases": [
+    "Autocolante pentru mobilă veche",
+    "Decor pentru bucătăria de vară",
+    "Fotografie de familie pe un perete întreg",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Răcari?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Livrați tapetul și în Ghergani?",
+      "a": "Da. Adresa poate fi în Răcari sau în Ghergani; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Răcari?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,25 @@
+{
+  "intro": "Casele din Moldova Nouă, un oraș pe malul Dunării, la intrarea în Clisura Dunării, au pereți pe care o zugrăveală nouă îi schimbă puțin, iar un tapet cu imagine îi schimbă de tot. Proprietarii de apartamente de vacanță din Moldova Nouă pot comanda tapet pentru mai multe camere deodată, fiecare pe dimensiunea ei. Pentru cei care lucrează în străinătate și își refac casa de acasă, comanda se poate face online, cu livrare la adresa părinților. Autocolantele decorative pot fi și mici, pentru întrerupătoare sau uși de dulap, și mari, pentru o compoziție pe un perete întreg. Livrarea merge oriunde în Moldova Nouă și în împrejurimi, inclusiv în Moldova Veche, direct la casa sau apartamentul în renovare. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire.",
+  "useCases": [
+    "Tapet floral pentru casă la curte",
+    "Camera nepoților decorată",
+    "Camere tematice pentru pensiune",
+    "Tapet cu peisaj local pentru cabană",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Moldova Nouă?",
+      "a": "Pentru Moldova Nouă, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Moldova Nouă, de exemplu în Moldova Veche?",
+      "a": "Da, trece adresa completă din Moldova Veche și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Moldova Nouă?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}
