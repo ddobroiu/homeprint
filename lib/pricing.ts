@@ -1737,7 +1737,7 @@ export const FONDURI_EU_CONSTANTS = {
         { id: "A2", label: "Format A2", price: 200 },
         { id: "80x50", label: "80×50 cm", price: 290 },
         { id: "200x150", label: "200×150 cm", price: 700 },
-        { id: "300x200", label: "300×200 cm", price: 1190 },
+        { id: "300x200", label: "300×200 cm", price: 1390 },
       ],
     },
     placaPermanenta: {
@@ -2357,7 +2357,7 @@ export const PANOURI_CONSTANTS = {
     { id: "70x50", label: "70x50 cm", width: 70, height: 50, pricePVC: 290 },
     { id: "150x100", label: "150x100 cm", width: 150, height: 100, pricePVC: 550 },
     { id: "200x150", label: "200x150 cm", width: 200, height: 150, pricePVC: 700 },
-    { id: "300x200", label: "300x200 cm", width: 300, height: 200, pricePVC: 1190 },
+    { id: "300x200", label: "300x200 cm", width: 300, height: 200, pricePVC: 1390 },
   ],
   ALUCOBOND_MULTIPLIER: 1.5,
 };

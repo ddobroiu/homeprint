@@ -17,6 +17,15 @@ import { AccordionStep } from "./ui/AccordionStep";
 import { TabButtonSEO } from "./ui/TabButtonSEO";
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { FonduriPackagePicker, FonduriProjectFields } from "./FonduriPackagePicker";
+import {
+    matchFonduriPackage,
+    fonduriSelectionsFromParams,
+    fonduriProjectFromParams,
+    fonduriProjectSummary,
+    fonduriUtmFromParams,
+    type FonduriProjectData,
+} from "@/lib/fonduriPackages";
 
 const SelectGroup = ({ label, options, value, onChange }: { label: string, options: { id: string, label: string, price: number }[], value: string, onChange: (val: string) => void }) => (
     <div className="mb-4">
@@ -114,6 +123,9 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
     const [activeImage, setActiveImage] = useState<string>(GALLERY[0]);
     const [detailsOpen, setDetailsOpen] = useState(false);
     const [activeStep, setActiveStep] = useState(1);
+    // Datele proiectului (titlu, cod SMIS, beneficiar...) pentru machetă; pot veni din /proiect/[cod]
+    const [projectData, setProjectData] = useState<FonduriProjectData>({});
+    const [utm, setUtm] = useState("");
 
     useEffect(() => {
         if (currentProduct) {
@@ -138,6 +150,16 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
         }
     }, [currentProduct]);
 
+    // Pachet și date de proiect din adresă (?pachet=complet&proiectCod=...&proiectTitlu=...),
+    // de ex. din pagina /proiect/[cod]. Rulează după preselecția din produs, deci adresa are prioritate.
+    useEffect(() => {
+        const sp = new URLSearchParams(window.location.search);
+        const fromUrl = fonduriSelectionsFromParams(sp);
+        if (fromUrl) setSelections(fromUrl);
+        setProjectData(fonduriProjectFromParams(sp));
+        setUtm(fonduriUtmFromParams(sp));
+    }, []);
+
     useEffect(() => {
         setActiveImage(GALLERY[activeIndex]);
     }, [activeIndex]);
@@ -156,7 +178,11 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
 
     // Pricing
     const priceData = useMemo(() => calculateFonduriEUPrice({ selections, isRegio: isRegio || false }), [selections, isRegio]);
-    const displayedTotal = priceData.finalPrice;
+    // Pachet (Start / Complet / Construcții): dacă selecțiile conțin tot pachetul, se aplică prețul pachetului
+    // (elementele în plus rămân la prețul de listă). Prețul ajunge așa și în coș.
+    const packageOffer = useMemo(() => matchFonduriPackage(selections, isRegio || false), [selections, isRegio]);
+    const listTotal = priceData.finalPrice;
+    const displayedTotal = Math.round((listTotal - (packageOffer?.savings ?? 0)) * 100) / 100;
 
     // Summaries
     const summaryStep1 = useMemo(() => {
@@ -214,13 +240,16 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
         addItem({
             id: `fonduri-eu-${Date.now()}`,
             productId: 'fonduri-eu',
-            title: "Kit Vizibilitate Fonduri EU",
+            title: packageOffer ? `${packageOffer.pkg.name} – Kit Vizibilitate Fonduri EU` : "Kit Vizibilitate Fonduri EU",
             price: displayedTotal,
             quantity: 1,
             metadata: {
+                ...(packageOffer ? { "Pachet": `${packageOffer.pkg.name}${isRegio ? " (Regio)" : ""}: ${listTotal} lei separat, ${displayedTotal} lei pachet` } : {}),
                 "Configurație": selectedItems.join(" | "),
                 "Note": orderNotes,
                 artworkUrl: artworkUrl,
+                ...(fonduriProjectSummary(projectData) ? { "Date proiect": fonduriProjectSummary(projectData) } : {}),
+                ...(utm ? { "Sursă": utm } : {}),
             },
         });
     }
@@ -278,6 +307,14 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
                                 </button>
                             </div>
                         </header>
+
+                        <FonduriPackagePicker
+                            isRegio={isRegio || false}
+                            activeId={packageOffer?.pkg.id}
+                            onPick={(pkg) => setSelections({ ...pkg.selections })}
+                            theme="light"
+                            accent="amber"
+                        />
 
                         <div className="bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-gray-200 dark:border-slate-800 px-4 mb-8">
                             <AccordionStep stepNumber={1} title="Publicitate & Online" summary={summaryStep1} isOpen={activeStep === 1} onClick={() => setActiveStep(1)}>
@@ -338,6 +375,8 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
                             </AccordionStep>
                         </div>
 
+                        <FonduriProjectFields value={projectData} onChange={setProjectData} theme="light" accent="amber" />
+
                         <div className="static mt-8 z-40 lg:static bg-white/95 backdrop-blur-md lg:bg-white lg:backdrop-blur-none border-t lg:border border-gray-200 dark:border-slate-800 lg:rounded-2xl shadow-[0_-4px_20px_rgba(0,0,0,0.1)] lg:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] p-4 lg:p-6 transition-all">
                             <div className="flex flex-col gap-4">
                                 <button onClick={handleAddToCart} className="w-full py-4 text-lg font-bold bg-amber-600 text-white rounded-xl shadow-xl hover:bg-amber-700 transition-all flex items-center justify-center gap-2 active:scale-95 animate-pulse-slow">
@@ -349,6 +388,9 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
                                     <div className="flex flex-col items-start leading-none">
                                         <span className="text-[10px] text-gray-500 uppercase font-bold tracking-wider mb-0.5">Preț Total</span>
                                         <span className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tighter">{formatMoneyDisplay(displayedTotal)}</span>
+                                        {packageOffer && packageOffer.savings > 0 && (
+                                            <span className="text-xs mt-1 text-gray-500"><s>{formatMoneyDisplay(listTotal)}</s> · {packageOffer.pkg.name}: <strong className="text-amber-600">economisești {formatMoneyDisplay(packageOffer.savings)}</strong></span>
+                                        )}
                                     </div>
                                     <div className="flex-shrink-0">
                                         <DeliveryEstimation />

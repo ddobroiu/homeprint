@@ -21,7 +21,7 @@ const SIZES = [
     { id: "50x70", label: "Placă 50x70cm / 80x50cm", price: 290, desc: "Format Mediu. Conform manualelor." },
     { id: "150x100", label: "Panou 150x100cm", price: 550, desc: "Format Mare. Pentru proiecte de infrastructură." },
     { id: "200x150", label: "Panou 200x150cm (Temporar)", price: 700, desc: "Panou Șantier Temporar." },
-    { id: "300x200", label: "Panou 300x200cm (Temporar)", price: 1190, desc: "Panou Șantier Gigant." },
+    { id: "300x200", label: "Panou 300x200cm (Temporar)", price: 1390, desc: "Panou Șantier Gigant." },
 ];
 
 export default function EUPlaqueConfigurator({ product }: Props) {

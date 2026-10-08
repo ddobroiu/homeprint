@@ -1456,7 +1456,7 @@ export const euFundsProducts: EUFundProduct[] = [
         title: "Comunicat de Presă PR Nord-Est 2021-2027",
         description: "Redactare și publicare comunicat de presă pentru proiecte PR Nord-Est 2021-2027. Include dovadă publicare.",
         image: "/products/fonduri/regio-1.png",
-        price: 490,
+        price: 690, // Regio: comunicat 690 lei (ca în configurator)
         category: "Programe Regionale",
         tags: ["prnordest", "comunicat", "presa", "eu"],
         program: "PR Nord-Est 2021-2027"
@@ -1467,7 +1467,7 @@ export const euFundsProducts: EUFundProduct[] = [
         title: "Comunicat de Presă PR Sud-Est 2021-2027",
         description: "Redactare și publicare comunicat de presă pentru proiecte PR Sud-Est 2021-2027. Include dovadă publicare.",
         image: "/products/fonduri/regio-1.png",
-        price: 490,
+        price: 690, // Regio: comunicat 690 lei (ca în configurator)
         category: "Programe Regionale",
         tags: ["prsudest", "comunicat", "presa", "eu"],
         program: "PR Sud-Est 2021-2027"
@@ -1478,7 +1478,7 @@ export const euFundsProducts: EUFundProduct[] = [
         title: "Comunicat de Presă PR Sud-Muntenia 2021-2027",
         description: "Redactare și publicare comunicat de presă pentru proiecte PR Sud-Muntenia 2021-2027. Include dovadă publicare.",
         image: "/products/fonduri/regio-1.png",
-        price: 490,
+        price: 690, // Regio: comunicat 690 lei (ca în configurator)
         category: "Programe Regionale",
         tags: ["prsudmuntenia", "comunicat", "presa", "eu"],
         program: "PR Sud-Muntenia 2021-2027"
@@ -1489,7 +1489,7 @@ export const euFundsProducts: EUFundProduct[] = [
         title: "Comunicat de Presă PR Sud-Vest Oltenia 2021-2027",
         description: "Redactare și publicare comunicat de presă pentru proiecte PR Sud-Vest Oltenia 2021-2027. Include dovadă publicare.",
         image: "/products/fonduri/regio-1.png",
-        price: 490,
+        price: 690, // Regio: comunicat 690 lei (ca în configurator)
         category: "Programe Regionale",
         tags: ["prsudvestoltenia", "comunicat", "presa", "eu"],
         program: "PR Sud-Vest Oltenia 2021-2027"
@@ -1500,7 +1500,7 @@ export const euFundsProducts: EUFundProduct[] = [
         title: "Comunicat de Presă PR Vest 2021-2027",
         description: "Redactare și publicare comunicat de presă pentru proiecte PR Vest 2021-2027. Include dovadă publicare.",
         image: "/products/fonduri/regio-1.png",
-        price: 490,
+        price: 690, // Regio: comunicat 690 lei (ca în configurator)
         category: "Programe Regionale",
         tags: ["prvest", "comunicat", "presa", "eu"],
         program: "PR Vest 2021-2027"
@@ -1511,7 +1511,7 @@ export const euFundsProducts: EUFundProduct[] = [
         title: "Comunicat de Presă PR Nord-Vest 2021-2027",
         description: "Redactare și publicare comunicat de presă pentru proiecte PR Nord-Vest 2021-2027. Include dovadă publicare.",
         image: "/products/fonduri/regio-1.png",
-        price: 490,
+        price: 690, // Regio: comunicat 690 lei (ca în configurator)
         category: "Programe Regionale",
         tags: ["prnordvest", "comunicat", "presa", "eu"],
         program: "PR Nord-Vest 2021-2027"
@@ -1522,7 +1522,7 @@ export const euFundsProducts: EUFundProduct[] = [
         title: "Comunicat de Presă PR Centru 2021-2027",
         description: "Redactare și publicare comunicat de presă pentru proiecte PR Centru 2021-2027. Include dovadă publicare.",
         image: "/products/fonduri/regio-1.png",
-        price: 490,
+        price: 690, // Regio: comunicat 690 lei (ca în configurator)
         category: "Programe Regionale",
         tags: ["prcentru", "comunicat", "presa", "eu"],
         program: "PR Centru 2021-2027"
@@ -1533,7 +1533,7 @@ export const euFundsProducts: EUFundProduct[] = [
         title: "Comunicat de Presă PR București-Ilfov 2021-2027",
         description: "Redactare și publicare comunicat de presă pentru proiecte PR București-Ilfov 2021-2027. Include dovadă publicare.",
         image: "/products/fonduri/regio-1.png",
-        price: 490,
+        price: 690, // Regio: comunicat 690 lei (ca în configurator)
         category: "Programe Regionale",
         tags: ["prbucurestiilfov", "comunicat", "presa", "eu"],
         program: "PR București-Ilfov 2021-2027"
