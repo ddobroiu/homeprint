@@ -154,8 +154,14 @@ const calendare: ProdusNouDef = {
         return { w: f.wCm, h: f.hCm };
     },
     gallery(s) {
-        const main = `/products/produse-noi/calendar-${s.tip}.jpg`;
-        return [main, "/products/produse-noi/calendare-personalizate.jpg", ...["perete", "birou", "buzunar"].filter((t) => t !== s.tip).map((t) => `/products/produse-noi/calendar-${t}.jpg`)];
+        // Fotografia (generată, fără text/mărci) e prima; desenul vechi rămâne ca poză secundară.
+        const foto = (t: string) => `/products/produse-noi/foto/calendar-${t}.webp`;
+        return [
+            foto(String(s.tip)),
+            `/products/produse-noi/calendar-${s.tip}.jpg`,
+            "/products/produse-noi/calendare-personalizate.jpg",
+            ...["perete", "birou", "buzunar"].filter((t) => t !== s.tip).map(foto),
+        ];
     },
     summary(s) {
         const f = calendarFormat(s.tip as CalendarTip, String(s.format));
@@ -250,6 +256,10 @@ const FLAG_PHOTOS: Partial<Record<string, string[]>> = {
 const FLAG_SVG: Record<BeachflagForma, string> = {
     lacrima: "/products/produse-noi/beachflag-lacrima.jpg",
     pana: "/products/produse-noi/beachflag-pana.jpg",
+    drept: "/products/produse-noi/foto/beachflag-dreptunghiular.webp",
+};
+/** Desenele vechi rămân în galerie ca poze secundare când forma are deja fotografie. */
+const FLAG_DESEN: Partial<Record<BeachflagForma, string>> = {
     drept: "/products/produse-noi/beachflag-dreptunghiular.jpg",
 };
 
@@ -313,7 +323,13 @@ const beachflag: ProdusNouDef = {
     gallery(s) {
         const forma = s.forma as BeachflagForma;
         const photos = FLAG_PHOTOS[`${forma}-${s.marime}`] ?? [];
-        return [...(photos.length ? photos : [FLAG_SVG[forma]]), "/products/produse-noi/steaguri-beachflag-forme.jpg", "/products/produse-noi/beachflag-baze.jpg"];
+        const desen = FLAG_DESEN[forma];
+        return [
+            ...(photos.length ? photos : [FLAG_SVG[forma]]),
+            ...(desen ? [desen] : []),
+            "/products/produse-noi/steaguri-beachflag-forme.jpg",
+            "/products/produse-noi/beachflag-baze.jpg",
+        ];
     },
     summary(s) {
         const f = BEACHFLAG_CONSTANTS.FORME.find((x) => x.value === s.forma)?.label;

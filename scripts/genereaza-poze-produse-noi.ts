@@ -2,7 +2,8 @@
  * Ilustrațiile (vectoriale, desenate aici în SVG) pentru produsele noi care nu au poze reale în public/produse-img:
  * calendarele (perete, birou, buzunar), formele de steag beachflag și bazele lor.
  * Fără prețuri, fără text promoțional, fără logo-uri; „Grafica ta aici" pe suprafața de print. 1200×1200, JPEG.
- * De înlocuit cu fotografii reale când le avem.
+ * Calendarele și steagul dreptunghiular au acum fotografii (public/products/produse-noi/foto/*.webp, 08.10.2026);
+ * desenele de aici rămân poze secundare în galerie.
  *
  * Rulare: npx tsx scripts/genereaza-poze-produse-noi.ts   → public/products/produse-noi/*.jpg
  */
