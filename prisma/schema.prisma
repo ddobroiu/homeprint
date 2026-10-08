@@ -790,3 +790,36 @@ model Expense {
   @@index([category])
   @@index([status])
 }
+
+// --- Comenzile la PrintCenter (copiat din shopprint, aceeasi baza de date; altfel db push la deploy le-ar sterge) ---
+// Numărul PrintCenter NU e numărul nostru; o comandă PrintCenter conține de obicei produsele mai multor
+// comenzi de-ale noastre (orderIds). Costul real pe comandă = Σ preț/buc × bucăți pe produsele asociate ei.
+// Nu modifică tabelul "Order" (fără chei străine), doar îl citește.
+model PrintCenterOrder {
+  id                  String    @id @default(cuid())
+  pcNumber            Int       @unique
+  status              String    @default("registered") // registered | ready | shipped (factura: invoiceNumber / invoicedAt)
+  registeredAt        DateTime?
+  readyAt             DateTime?
+  shippedAt           DateTime?
+  invoicedAt          DateTime?
+  orderedAt           DateTime? // „Data comenzii” la PrintCenter
+  items               Json // [{ title, format, widthCm, heightCm, material, print, finishing, qty, unitPrice, orderId?, orderItemId? }]
+  totalExVat          Decimal?  @db.Decimal(12, 2)
+  vat                 Decimal?  @db.Decimal(12, 2)
+  totalIncVat         Decimal?  @db.Decimal(12, 2)
+  deliveryMethod      String?
+  awb                 String?
+  invoiceNumber       String?
+  invoiceAttachmentId String? // EmailAttachment (PDF-ul facturii, descărcabil din inbox)
+  orderIds            String[]  @default([])
+  orderNos            Int[]     @default([])
+  linkStatus          String    @default("unlinked") // unlinked | suggested | auto | manual
+  suggestions         Json? // [{ orderId, orderNo, score, matched, total, auto, pairs }]
+  emailThreadIds      String[]  @default([])
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  @@index([status])
+  @@index([linkStatus])
+}
