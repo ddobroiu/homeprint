@@ -616,3 +616,119 @@ model WhatsAppMessage {
   @@index([conversationId, timestamp])
   @@index([mediaStatus])
 }
+
+// --- Inbox E-mail (copiat din shopprint, aceeasi baza de date; altfel db push la deploy le-ar sterge) ---
+// Pe server nu se șterge / mută / marchează nimic (EXAMINE + BODY.PEEK). Starea (citit, rezolvat,
+// arhivat) e doar aici. Baza e comună celor 6 site-uri de print: modelele sunt copiate și în schemele lor.
+
+model EmailMailbox {
+  id          String    @id @default(cuid())
+  address     String // contact@shopprint.ro
+  folder      String    @default("INBOX") // INBOX | INBOX.Sent
+  label       String?
+  uidValidity BigInt?
+  lastUid     Int       @default(0)
+  lastSyncAt  DateTime?
+  lastError   String?
+  lastErrorAt DateTime?
+  lockedUntil DateTime? // o singură sincronizare odată
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@unique([address, folder])
+}
+
+model EmailThread {
+  id              String         @id @default(cuid())
+  mailboxAddress  String
+  subject         String
+  normSubject     String // fără Re:/Fwd:, litere mici: legarea răspunsurilor fără In-Reply-To
+  site            String? // shopprint | prynt | euprint | homeprint | adbanner | tablou
+  category        String         @default("inbox") // inbox | production | spam | bulk | system
+  customerEmail   String? // adresa clientului (Reply-To / From), litere mici
+  customerName    String?
+  customerPhone   String?
+  lastMessageAt   DateTime
+  lastPreview     String?
+  lastDirection   String? // in | out
+  unreadCount     Int            @default(0)
+  messageCount    Int            @default(0)
+  hasAttachments  Boolean        @default(false)
+  possibleOrder   Boolean        @default(false)
+  orderScore      Int            @default(0)
+  orderSignals    String[]       @default([])
+  productionRefs  Int[]          @default([]) // numerele de comandă din mesajele cu PrintCenter
+  productionReady Int[]          @default([]) // „Comanda N este gata de livrare”
+  status          String         @default("open") // open | done | archived
+  orderId         String?
+  orderNo         Int?
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  messages        EmailMessage[]
+
+  @@index([lastMessageAt])
+  @@index([customerEmail])
+  @@index([normSubject])
+  @@index([category, status])
+}
+
+model EmailMessage {
+  id              String            @id @default(cuid())
+  threadId        String
+  mailboxAddress  String
+  folder          String?
+  uid             Int?
+  uidValidity     BigInt?
+  direction       String // in | out
+  messageId       String            @unique // Message-ID fără <> (dedublare: același mesaj venit de două ori)
+  inReplyTo       String?
+  references      String[]          @default([])
+  fromEmail       String?
+  fromName        String?
+  replyTo         String?
+  to              Json? // [{ address, name }]
+  cc              Json?
+  subject         String?
+  site            String?
+  category        String            @default("inbox")
+  text            String?
+  html            String? // curățat (fără scripturi; imaginile externe blocate până la „Încarcă imaginile”)
+  hasRemoteImages Boolean           @default(false)
+  orderScore      Int               @default(0)
+  orderSignals    String[]          @default([])
+  productionRefs  Int[]             @default([])
+  productionReady Int[]             @default([])
+  sentAt          DateTime // antetul Date
+  receivedAt      DateTime? // INTERNALDATE
+  source          String? // imap | admin
+  sendVia         String? // resend | smtp
+  sendStatus      String? // sent | failed
+  error           String?
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  thread          EmailThread       @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  attachments     EmailAttachment[]
+
+  @@index([threadId, sentAt])
+  @@index([fromEmail])
+}
+
+model EmailAttachment {
+  id        String       @id @default(cuid())
+  messageId String
+  idx       Int? // poziția în mesaj (mailparser) → descărcare la cerere din IMAP
+  partId    String? // partea IMAP (mesajele prea mari, descărcate fără conținut)
+  filename  String
+  mime      String
+  size      Int          @default(0)
+  contentId String?
+  inline    Boolean      @default(false)
+  url       String? // Cloudinary, după salvare
+  status    String       @default("imap") // imap (la cerere) | stored | failed
+  error     String?
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  message   EmailMessage @relation(fields: [messageId], references: [id], onDelete: Cascade)
+
+  @@index([messageId])
+}
