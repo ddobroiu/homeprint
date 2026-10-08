@@ -1,0 +1,23 @@
+{
+  "intro": "Țăndărei, un oraș din estul Ialomiței, pe drumul spre litoral, e una dintre localitățile în care HomePrint livrează tapet la comandă, canvasuri și autocolante decorative. Magazinele mici și cabinetele din zonă își pot decora și ele peretele principal cu un tapet personalizat cu numele firmei. La recensământul din 2021, Țăndărei avea aproximativ 12.000 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Termenul curge de la confirmarea comenzii și a graficii, deci o imagine bună încărcată de la început scurtează așteptarea. Tapetul vine rulat, protejat pentru transport, iar coletele mici, cum sunt autocolantele, pot merge și la un locker DPD.",
+  "useCases": [
+    "Autocolante pentru mobilă veche",
+    "Fotografie de familie pe un perete întreg",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Țăndărei?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Țăndărei."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Lăcusteni?",
+      "a": "Da. Lăcusteni e la circa 4 km de Țăndărei, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Țăndărei?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

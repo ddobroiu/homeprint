@@ -1,0 +1,25 @@
+{
+  "intro": "Casele din Roznov, un oraș de pe Bistrița, la sud-est de Piatra Neamț, au pereți pe care o zugrăveală nouă îi schimbă puțin, iar un tapet cu imagine îi schimbă de tot. Pentru cei care lucrează în străinătate și își refac casa de acasă, comanda se poate face online, cu livrare la adresa părinților. Cu circa 5.100 de locuitori numărați în 2021, Roznov are destule case și apartamente în care un decor nou s-ar vedea imediat. Un perete de accent e de obicei cel din spatele patului, al canapelei sau al biroului, pe care privirea se oprește prima. Imaginea se încarcă direct din telefon sau din calculator, iar previzualizarea arată cum se întinde pe perete. Plata se face cu cardul, prin ordin de plată sau ramburs la curier, pentru comenzile de până la 300 lei.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Decor pentru bucătăria de vară",
+    "Autocolante pentru mobilă veche",
+    "Tapet floral pentru casă la curte",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Roznov?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Roznov."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Chintinici?",
+      "a": "Da, trece adresa completă din Chintinici și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Roznov?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

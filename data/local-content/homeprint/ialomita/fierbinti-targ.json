@@ -1,0 +1,24 @@
+{
+  "intro": "Te muți într-o locuință nouă în Fierbinți-Târg, un oraș mic din vestul județului Ialomița, sau doar vrei să schimbi atmosfera unei camere? Cu circa 1.200 de locuitori numărați în 2021, Fierbinți-Târg are destule case și apartamente în care un decor nou s-ar vedea imediat. Bucătăriile de vară și camerele refăcute în casele bătrânești primesc bine autocolantele decorative pe mobila veche. Autocolantele decorative se taie la forma dorită și se lipesc pe pereți netezi, pe sticlă sau pe mobilă. Ai nevoie de un sfat despre imagine sau dimensiuni? Pagina de contact a site-ului are datele echipei. De la comandă până la livrare trec 2-4 zile lucrătoare, cu producția inclusă, iar transportul îl face curierul DPD. Peretele potrivit, cu imaginea potrivită, face o casă să pară nouă.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Autocolante pentru mobilă veche",
+    "Fotografie de familie pe un perete întreg",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Fierbinți-Târg?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Fierbinți-Târg."
+    },
+    {
+      "q": "Renovez o casă în Fierbinții de Sus, lângă Fierbinți-Târg. Ajunge comanda acolo?",
+      "a": "Sigur. Fierbinții de Sus, aflat la aproximativ 2 km de Fierbinți-Târg, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Fierbinți-Târg?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

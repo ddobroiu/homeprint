@@ -1,0 +1,24 @@
+{
+  "intro": "Un interior cald în Aninoasa, un oraș mic din Valea Jiului, cu tradiție minieră, se construiește din detalii: un perete tapetat, un tablou pe pânză, câteva autocolante bine alese. Renovările de apartamente vechi încep des cu bucătăria și dormitorul, iar un perete tapetat e o schimbare vizibilă la un cost controlat. Autocolantele cu citate, siluete sau forme geometrice se pot comanda în mai multe bucăți, pentru o compoziție pe tot peretele. Nu e nevoie să cauți tapet în magazinele din Deva, la circa 62 km: rola personalizată vine direct acasă, în Aninoasa. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat. Așa, renovarea începe cu decorul pe care îl vezi zilnic, nu cu cel care se termină ultimul.",
+  "useCases": [
+    "Perete nou în apartament de bloc",
+    "Camera nepoților decorată",
+    "Tapet panoramic pentru cameră mică",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Aninoasa?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Aninoasa, de exemplu în Dâlja Mare?",
+      "a": "Da. Dâlja Mare e la circa 2 km de Aninoasa, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Aninoasa?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

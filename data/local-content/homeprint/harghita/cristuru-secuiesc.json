@@ -1,0 +1,23 @@
+{
+  "intro": "Amenajările interioare din Cristuru Secuiesc, un oraș de pe Târnava Mare, în sud-vestul Harghitei, pot porni de la o fotografie, de la un model floral sau de la un peisaj întins pe tot peretele. Camera de oaspeți, cea în care dorm nepoții vara, poate primi un perete tapetat cu ceva vesel, fără renovare completă. Poți alege tapet autoadeziv, care se aplică direct, sau varianta clasică, lipită cu adeziv separat. Tapetul cu o imagine mare arată cel mai bine pe peretele fără mobilă înaltă în față, unde se vede de la un capăt la altul. Dacă renovezi o casă în Filiaș sau în alt sat din apropiere, livrarea se face la fel, la adresa completă trecută în comandă. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat. Peretele potrivit, cu imaginea potrivită, face o casă să pară nouă.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Camera nepoților decorată",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Cristuru Secuiesc?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Cristuru Secuiesc în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Filiaș, lângă Cristuru Secuiesc. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Cristuru Secuiesc sau în Filiaș; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Cristuru Secuiesc?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

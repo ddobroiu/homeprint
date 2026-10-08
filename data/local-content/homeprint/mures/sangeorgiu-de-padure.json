@@ -1,0 +1,24 @@
+{
+  "intro": "Locuitorii din Sângeorgiu de Pădure, un oraș mic de pe Târnava Mică, pot comanda de acasă tapet, tablouri pe pânză și autocolante pentru mobilă sau pereți. Pentru cei care lucrează în străinătate și își refac casa de acasă, comanda se poate face online, cu livrare la adresa părinților. La recensământul din 2021, Sângeorgiu de Pădure avea aproximativ 4.200 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Folia transparentă e bună pentru autocolantele de pe geamuri și oglinzi, unde fundalul trebuie să se vadă. Dacă renovezi o casă în Viforoasa sau în alt sat din apropiere, livrarea se face la fel, la adresa completă trecută în comandă. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Tapet floral pentru casă la curte",
+    "Decor pentru bucătăria de vară",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Sângeorgiu de Pădure?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Sângeorgiu de Pădure în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Viforoasa?",
+      "a": "Da. Adresa poate fi în Sângeorgiu de Pădure sau în Viforoasa; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Sângeorgiu de Pădure?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

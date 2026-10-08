@@ -1,0 +1,24 @@
+{
+  "intro": "În Podu Iloaiei, un oraș mic la vest de Iași, camerele copiilor, holurile și dormitoarele pot primi un decor nou fără mobilă nouă. Scările interioare și holurile duble din case oferă pereți înalți pe care un tapet cu un peisaj vertical arată foarte bine. Varianta autoadezivă se aplică pe pereți netezi, curați și uscați, fără adeziv separat. Pentru o casă în Scobâlțeni sau în alt sat din jurul orașului Podu Iloaiei, livrarea are același termen și același curier. Termenul curge de la confirmarea comenzii și a graficii, deci o imagine bună încărcată de la început scurtează așteptarea.",
+  "useCases": [
+    "Tapet vertical pentru scara interioară",
+    "Tapet discret pentru dormitor",
+    "Decor complet pentru casă nouă",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Podu Iloaiei?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Podu Iloaiei în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Scobâlțeni, lângă Podu Iloaiei. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Podu Iloaiei sau în Scobâlțeni; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Podu Iloaiei?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

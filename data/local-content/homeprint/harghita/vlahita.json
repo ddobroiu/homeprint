@@ -1,0 +1,24 @@
+{
+  "intro": "Locuitorii din Vlăhița, un oraș aflat la altitudine mare, în Munții Harghitei, pot comanda de acasă tapet, tablouri pe pânză și autocolante pentru mobilă sau pereți. Camera de oaspeți, cea în care dorm nepoții vara, poate primi un perete tapetat cu ceva vesel, fără renovare completă. La recensământul din 2021, Vlăhița avea aproximativ 6.300 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Prețul tapetului se calculează pe metru pătrat și scade pe măsură ce crește suprafața comandată. Tapetul, tablourile și autocolantele ajung în Vlăhița și în restul localităților din județul Harghita în 2-4 zile lucrătoare, cu producția inclusă. Dacă pregătești o surpriză pentru cineva drag, treci la livrare adresa casei unde va fi montat tapetul. Rămâne doar să alegi imaginea; dimensiunile le ai deja de pe ruletă.",
+  "useCases": [
+    "Tapet floral pentru casă la curte",
+    "Fotografie de familie pe un perete întreg",
+    "Autocolante pentru mobilă veche",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Vlăhița?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Vlăhița."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Căpâlnița?",
+      "a": "Da. Căpâlnița e la circa 2 km de Vlăhița, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Vlăhița?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

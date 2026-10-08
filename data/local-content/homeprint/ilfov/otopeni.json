@@ -1,0 +1,25 @@
+{
+  "intro": "Dacă renovezi o cameră în Otopeni, un oraș din nordul Bucureștiului, unde se află Aeroportul Henri Coandă, tapetul tipărit după măsurile tale e o alternativă la modelele standard din magazin. Scările interioare și holurile duble din case oferă pereți înalți pe care un tapet cu un peisaj vertical arată foarte bine. Apartamentele de bloc din anii '70 și '80 au camere mici, iar un tapet cu un peisaj larg pe un singur perete deschide vizual spațiul. Autocolantele cu citate, siluete sau forme geometrice se pot comanda în mai multe bucăți, pentru o compoziție pe tot peretele. Dacă pregătești o surpriză pentru cineva drag, treci la livrare adresa casei unde va fi montat tapetul. Nu avem showroom în Otopeni; totul se comandă online și vine prin curier, la adresă sau la un punct DPD în care încape coletul. Camera rămâne aceeași, dar se simte complet altfel.",
+  "useCases": [
+    "Primul perete tapetat în casa nouă",
+    "Tapet pentru camera copiilor",
+    "Living renovat cu tapet și canvas",
+    "Tapet panoramic pentru cameră mică",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Otopeni?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Otopeni în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Odăile?",
+      "a": "Da. Adresa poate fi în Otopeni sau în Odăile; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Otopeni?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

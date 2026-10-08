@@ -1,0 +1,24 @@
+{
+  "intro": "Cine își amenajează locuința în Borsec, o stațiune cunoscută pentru apa minerală care îi poartă numele, poate comanda online tapet făcut exact pe dimensiunea peretelui. Casele de vacanță au adesea pereți de lemn sau de gips-carton pe care un tapet ales cu grijă schimbă tot interiorul. Un tablou canvas asortat cu tapetul, pe peretele opus, leagă culorile camerei între ele. Canvasurile pe șasiu vin la adresă, pentru că nu încap în lockere, iar autocolantele și pânza rulată pot merge la un punct DPD. Dacă ai doi pereți de decorat, adaugă în coș câte un tapet pentru fiecare, cu dimensiunile lui.",
+  "useCases": [
+    "Tapet cu peisaj local pentru cabană",
+    "Autocolante pentru mobilă veche",
+    "Camera nepoților decorată",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Borsec?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Borsec în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Secu, lângă Borsec. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Borsec sau în Secu; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Borsec?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,23 @@
+{
+  "intro": "Un interior cald în Sovata, o stațiune cunoscută pentru Lacul Ursu, un lac sărat heliotermic, se construiește din detalii: un perete tapetat, un tablou pe pânză, câteva autocolante bine alese. La recensământul din 2021, Sovata avea aproximativ 8.200 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Dacă ai o poză reușită cu Lacul Ursu, ea poate deveni tapet pentru un perete de accent sau canvas pentru hol. Proprietarii de apartamente de vacanță din Sovata pot comanda tapet pentru mai multe camere deodată, fiecare pe dimensiunea ei. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Tapetul, tablourile și autocolantele ajung în Sovata și în restul localităților din județul Mureș în 2-4 zile lucrătoare, cu producția inclusă. Imaginea se încarcă direct din telefon sau din calculator, iar previzualizarea arată cum se întinde pe perete.",
+  "useCases": [
+    "Camere tematice pentru pensiune",
+    "Perete decorat pentru restaurant",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Sovata?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Sovata în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Căpeți?",
+      "a": "Da. Adresa poate fi în Sovata sau în Căpeți; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Sovata?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,25 @@
+{
+  "intro": "Buftea, un oraș de lângă lacul Buftea, cunoscut pentru studiourile de film, e una dintre localitățile în care HomePrint livrează tapet la comandă, canvasuri și autocolante decorative. În ansamblurile rezidențiale noi, apartamentele seamănă între ele; un tapet ales de tine face ca al tău să arate altfel. Pentru un perete cu ușă sau fereastră, măsori întreaga suprafață, iar decupajul se face la montaj, ca la orice tapet. Poți salva ideea, măsura încă o dată peretele și reveni la comandă când ești sigur pe cifre. Rambursul la curier e disponibil pentru comenzile de până la 300 lei, iar pentru un perete mare plătești cu cardul sau prin ordin de plată.",
+  "useCases": [
+    "Tapet vertical pentru scara interioară",
+    "Primul perete tapetat în casa nouă",
+    "Autocolante cu stele pentru copii",
+    "Tapet discret pentru dormitor",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Buftea?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Buciumeni?",
+      "a": "Da. Adresa poate fi în Buftea sau în Buciumeni; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Buftea?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

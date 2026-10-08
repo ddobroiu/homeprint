@@ -1,0 +1,24 @@
+{
+  "intro": "Amenajările interioare din Târgu Frumos, un oraș aflat pe drumul dintre Iași și Roman, pot porni de la o fotografie, de la un model floral sau de la un peisaj întins pe tot peretele. Pentru cei care lucrează în străinătate și își refac casa de acasă, comanda se poate face online, cu livrare la adresa părinților. Un tablou canvas asortat cu tapetul, pe peretele opus, leagă culorile camerei între ele. Nu ai nevoie de cunoștințe de grafică: alegi imaginea, o încadrezi pe perete și vezi rezultatul înainte să plătești. Livrarea merge oriunde în Târgu Frumos și în împrejurimi, inclusiv în Buznea, direct la casa sau apartamentul în renovare. Rămâne doar să alegi imaginea; dimensiunile le ai deja de pe ruletă.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Autocolante pentru mobilă veche",
+    "Tapet floral pentru casă la curte",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Târgu Frumos?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Târgu Frumos."
+    },
+    {
+      "q": "Renovez o casă în Buznea, lângă Târgu Frumos. Ajunge comanda acolo?",
+      "a": "Sigur. Buznea, aflat la aproximativ 2 km de Târgu Frumos, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Târgu Frumos?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

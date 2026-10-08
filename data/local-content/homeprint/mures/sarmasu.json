@@ -1,0 +1,24 @@
+{
+  "intro": "Renovarea unei camere în Sărmașu, un oraș din Câmpia Transilvaniei, poate începe cu ruleta și cu o imagine care îți place, nu neapărat cu un meseriaș. La recensământul din 2021, Sărmașu avea aproximativ 3.100 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Magazinele mici și cabinetele din zonă își pot decora și ele peretele principal cu un tapet personalizat cu numele firmei. Pentru un perete cu ușă sau fereastră, măsori întreaga suprafață, iar decupajul se face la montaj, ca la orice tapet. Autocolantele decorative se taie la forma dorită și se lipesc pe pereți netezi, pe sticlă sau pe mobilă. Chiar dacă Sărmașu se află la aproximativ 38 km de Târgu Mureș, comanda ajunge în același termen, 2-4 zile lucrătoare. Măsoară peretele în câteva puncte și folosește cea mai mare valoare, ca tapetul să acopere complet suprafața. Un decor nou nu cere neapărat meseriași, ci o idee bună și măsurile corecte.",
+  "useCases": [
+    "Autocolante pentru mobilă veche",
+    "Tapet floral pentru casă la curte",
+    "Decor pentru bucătăria de vară",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Sărmașu?",
+      "a": "Pentru Sărmașu, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Sărmașu, de exemplu în Sărmășel?",
+      "a": "Sigur. Sărmășel, aflat la aproximativ 2 km de Sărmașu, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Sărmașu?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,25 @@
+{
+  "intro": "Locuitorii din Amara, un oraș-stațiune de pe malul lacului Amara, pot comanda de acasă tapet, tablouri pe pânză și autocolante pentru mobilă sau pereți. Proprietarii de apartamente de vacanță din Amara pot comanda tapet pentru mai multe camere deodată, fiecare pe dimensiunea ei. La imaginile panoramice merită lăsați câțiva centimetri în plus la fiecare margine, pentru tăierea finală pe perete. Dacă ai doi pereți de decorat, adaugă în coș câte un tapet pentru fiecare, cu dimensiunile lui. Nu e nevoie să cauți tapet în magazinele din Slobozia, la circa 7 km: rola personalizată vine direct acasă, în Amara. Rămâne doar să alegi imaginea; dimensiunile le ai deja de pe ruletă.",
+  "useCases": [
+    "Camere tematice pentru pensiune",
+    "Decor pentru bucătăria de vară",
+    "Autocolante pentru mobilă veche",
+    "Camera nepoților decorată",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Amara?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Amara în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Amara Nouă, lângă Amara. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Amara sau în Amara Nouă; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Amara?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

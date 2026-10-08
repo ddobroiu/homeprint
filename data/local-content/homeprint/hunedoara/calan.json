@@ -1,0 +1,23 @@
+{
+  "intro": "Dacă renovezi o cameră în Călan, un oraș cu tradiție siderurgică, pe valea Streiului, tapetul tipărit după măsurile tale e o alternativă la modelele standard din magazin. La recensământul din 2021, Călan avea aproximativ 7.000 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Familiile care își refac apartamentul pe bucăți pot începe cu un perete și continua cu restul când permite bugetul. Tapetul cu o imagine mare arată cel mai bine pe peretele fără mobilă înaltă în față, unde se vede de la un capăt la altul. Coletul pleacă prin DPD spre Călan, dar și spre Streisângeorgiu, Strei și celelalte localități din jur, în 2-4 zile lucrătoare cu tot cu producția. Termenul curge de la confirmarea comenzii și a graficii, deci o imagine bună încărcată de la început scurtează așteptarea.",
+  "useCases": [
+    "Tapet pentru camera copiilor",
+    "Autocolante pentru uși interioare",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Călan?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Călan."
+    },
+    {
+      "q": "Livrați tapetul și în Streisângeorgiu?",
+      "a": "Da. Adresa poate fi în Călan sau în Streisângeorgiu; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Călan?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

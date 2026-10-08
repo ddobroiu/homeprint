@@ -1,0 +1,23 @@
+{
+  "intro": "Renovarea unei camere în Popești-Leordeni, un oraș din sudul Bucureștiului, cu multe ansambluri rezidențiale noi, poate începe cu ruleta și cu o imagine care îți place, nu neapărat cu un meseriaș. În ansamblurile rezidențiale noi, apartamentele seamănă între ele; un tapet ales de tine face ca al tău să arate altfel. Imaginea pentru tapet poate fi o fotografie proprie sau orice imagine pentru care ai drept de folosire, la rezoluție cât mai mare. Ai nevoie de un sfat despre imagine sau dimensiuni? Pagina de contact a site-ului are datele echipei. Dacă renovezi o casă în Cățelu sau în alt sat din apropiere, livrarea se face la fel, la adresa completă trecută în comandă. Așa, renovarea începe cu decorul pe care îl vezi zilnic, nu cu cel care se termină ultimul.",
+  "useCases": [
+    "Autocolante cu stele pentru copii",
+    "Tapet vertical pentru scara interioară",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Popești-Leordeni?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Popești-Leordeni în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Cățelu?",
+      "a": "Da. Adresa poate fi în Popești-Leordeni sau în Cățelu; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Popești-Leordeni?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

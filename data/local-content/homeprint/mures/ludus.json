@@ -1,0 +1,24 @@
+{
+  "intro": "Luduș, un oraș de pe Mureș, în vestul județului, e una dintre localitățile în care HomePrint livrează tapet la comandă, canvasuri și autocolante decorative. Magazinele mici și cabinetele din zonă își pot decora și ele peretele principal cu un tapet personalizat cu numele firmei. Autocolantele cu citate, siluete sau forme geometrice se pot comanda în mai multe bucăți, pentru o compoziție pe tot peretele. La imaginile panoramice merită lăsați câțiva centimetri în plus la fiecare margine, pentru tăierea finală pe perete. Chiar dacă Luduș se află la aproximativ 36 km de Târgu Mureș, comanda ajunge în același termen, 2-4 zile lucrătoare. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat.",
+  "useCases": [
+    "Tapet floral pentru casă la curte",
+    "Fotografie de familie pe un perete întreg",
+    "Camera nepoților decorată",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Luduș?",
+      "a": "Pentru Luduș, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Renovez o casă în Cioarga, lângă Luduș. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Cioarga și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Luduș?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

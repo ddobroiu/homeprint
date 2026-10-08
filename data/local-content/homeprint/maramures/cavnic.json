@@ -1,0 +1,24 @@
+{
+  "intro": "Cine își amenajează locuința în Cavnic, un oraș minier din Munții Gutâi, cu pârtii de schi, poate comanda online tapet făcut exact pe dimensiunea peretelui. Proprietarii de apartamente de vacanță din Cavnic pot comanda tapet pentru mai multe camere deodată, fiecare pe dimensiunea ei. La recensământul din 2021, Cavnic avea aproximativ 4.200 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Prețul tapetului se calculează pe metru pătrat și scade pe măsură ce crește suprafața comandată. Varianta autoadezivă se aplică pe pereți netezi, curați și uscați, fără adeziv separat. Poți pune în același coș tapetul, canvasurile și autocolantele și le primești împreună. De la comandă până la livrare trec 2-4 zile lucrătoare, cu producția inclusă, iar transportul îl face curierul DPD.",
+  "useCases": [
+    "Perete nou în apartament de bloc",
+    "Autocolante cu numerele camerelor",
+    "Camere tematice pentru pensiune",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Cavnic?",
+      "a": "Pentru Cavnic, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Negreia?",
+      "a": "Da. Adresa poate fi în Cavnic sau în Negreia; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Cavnic?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

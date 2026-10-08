@@ -1,0 +1,24 @@
+{
+  "intro": "În Târgu Neamț, un oraș cu Cetatea Neamțului și cu Humuleștii lui Ion Creangă, camerele copiilor, holurile și dormitoarele pot primi un decor nou fără mobilă nouă. Autocolantele cu numerele camerelor, cu săgeți spre sala de mic dejun sau cu mesaje de bun venit completează decorul unei pensiuni. În locuințele din clădiri vechi, tapetul poate acoperi un perete cu imperfecțiuni fără să mai fie nevoie de o tencuială nouă perfectă. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Ai nevoie de un sfat despre imagine sau dimensiuni? Pagina de contact a site-ului are datele echipei. Nu avem showroom în Târgu Neamț; totul se comandă online și vine prin curier, la adresă sau la un punct DPD în care încape coletul. Un decor nou nu cere neapărat meseriași, ci o idee bună și măsurile corecte.",
+  "useCases": [
+    "Tapet cu fotografie de arhivă a orașului",
+    "Autocolante cu numerele camerelor",
+    "Model clasic pentru casă veche",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Târgu Neamț?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Târgu Neamț."
+    },
+    {
+      "q": "Livrați tapetul și în Humulești?",
+      "a": "Da. Humulești e la circa 1 km de Târgu Neamț, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Târgu Neamț?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

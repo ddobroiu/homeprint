@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru cine stă în Voluntari, un oraș lipit de nordul Capitalei, de care ține o parte din zona Pipera, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. Cu circa 47.000 de locuitori numărați în 2021, Voluntari are destule case și apartamente în care un decor nou s-ar vedea imediat. Holurile înguste din blocuri par mai largi cu un tapet cu perspectivă, de pildă o alee de copaci sau un orizont deschis. Varianta autoadezivă se aplică pe pereți netezi, curați și uscați, fără adeziv separat. Casele din Voluntari, Fundeni sau Dobroești primesc comanda în același termen, așa că poți programa montajul încă de la plată. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire.",
+  "useCases": [
+    "Tapet discret pentru dormitor",
+    "Perete de accent în living",
+    "Tapet cu perspectivă pentru hol îngust",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Voluntari?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Voluntari."
+    },
+    {
+      "q": "Livrați tapetul și în Fundeni?",
+      "a": "Da. Fundeni e la circa 4 km de Voluntari, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Voluntari?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

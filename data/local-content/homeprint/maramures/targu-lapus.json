@@ -1,0 +1,25 @@
+{
+  "intro": "Cine își amenajează locuința în Târgu Lăpuș, centrul Țării Lăpușului, poate comanda online tapet făcut exact pe dimensiunea peretelui. Recensământul din 2021 a numărat în Târgu Lăpuș în jur de 5.400 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. În casele la curte din Târgu Lăpuș și din satele din jur, un tapet cu un model floral sau cu un peisaj de câmp aduce afară înăuntru. Canvasul și tapetul pot porni de la aceeași fotografie: una mare pe perete, una mică pe pânză, în altă cameră. Dacă nu ai o grafică pregătită, echipa de design poate potrivi imaginea pe dimensiunile peretelui, contra unei taxe afișate în configurator. Tapetul vine rulat, protejat pentru transport, iar coletele mici, cum sunt autocolantele, pot merge și la un locker DPD. Poți salva ideea, măsura încă o dată peretele și reveni la comandă când ești sigur pe cifre.",
+  "useCases": [
+    "Tapet floral pentru casă la curte",
+    "Decor pentru bucătăria de vară",
+    "Camera nepoților decorată",
+    "Autocolante pentru mobilă veche",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Târgu Lăpuș?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Târgu Lăpuș, de exemplu în Dămăcușeni?",
+      "a": "Da. Adresa poate fi în Târgu Lăpuș sau în Dămăcușeni; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Târgu Lăpuș?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

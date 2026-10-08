@@ -1,0 +1,23 @@
+{
+  "intro": "Simeria este un oraș și nod feroviar, cunoscut pentru arboretumul de pe malul Mureșului, iar în casele și apartamentele de aici renovările încep tot mai des cu un perete de accent. Un canvas mare deasupra canapelei și un perete tapetat în aceeași gamă de culori fac livingul să pară proaspăt renovat. Dacă ai o poză reușită cu Arboretumul Simeria, ea poate deveni tapet pentru un perete de accent sau canvas pentru hol. La imaginile panoramice merită lăsați câțiva centimetri în plus la fiecare margine, pentru tăierea finală pe perete. Prețul se actualizează la fiecare schimbare de dimensiune, așa că poți compara un perete întreg cu o porțiune mai mică. Coletul pleacă prin DPD spre Simeria, dar și spre Uroi, Șăulești și celelalte localități din jur, în 2-4 zile lucrătoare cu tot cu producția.",
+  "useCases": [
+    "Perete nou în apartament de bloc",
+    "Living renovat cu tapet și canvas",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Simeria?",
+      "a": "Pentru Simeria, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Simeria, de exemplu în Uroi?",
+      "a": "Da. Uroi e la circa 2 km de Simeria, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Simeria?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

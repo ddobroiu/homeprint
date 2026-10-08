@@ -1,0 +1,23 @@
+{
+  "intro": "Pentru apartamentele și casele din Seini, un oraș de pe Someș, în vestul județului, HomePrint face decor tipărit la comandă, pe măsura fiecărei camere. La recensământul din 2021, Seini avea aproximativ 6.800 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Pentru cei care lucrează în străinătate și își refac casa de acasă, comanda se poate face online, cu livrare la adresa părinților. Autocolantele decorative se taie la forma dorită și se lipesc pe pereți netezi, pe sticlă sau pe mobilă. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână. De la comandă până la livrare trec 2-4 zile lucrătoare, cu producția inclusă, iar transportul îl face curierul DPD. Așa, renovarea începe cu decorul pe care îl vezi zilnic, nu cu cel care se termină ultimul.",
+  "useCases": [
+    "Autocolante pentru mobilă veche",
+    "Fotografie de familie pe un perete întreg",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Seini?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Seini în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Viile Apei, lângă Seini. Ajunge comanda acolo?",
+      "a": "Sigur. Viile Apei, aflat la aproximativ 4 km de Seini, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Seini?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

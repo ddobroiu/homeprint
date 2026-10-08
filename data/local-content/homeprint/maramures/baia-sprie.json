@@ -1,0 +1,24 @@
+{
+  "intro": "Baia Sprie, un oraș minier vechi de lângă Baia Mare, e una dintre localitățile în care HomePrint livrează tapet la comandă, canvasuri și autocolante decorative. Un canvas mare deasupra canapelei și un perete tapetat în aceeași gamă de culori fac livingul să pară proaspăt renovat. La recensământul din 2021, Baia Sprie avea aproximativ 9.900 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Canvasul se face pe șasiu de lemn, gata de agățat, sau doar ca pânză printată, livrată rulată. Poți pune în același coș tapetul, canvasurile și autocolantele și le primești împreună. Coletul pleacă prin DPD spre Baia Sprie, dar și spre Tăuții de Sus, Șișești și celelalte localități din jur, în 2-4 zile lucrătoare cu tot cu producția. Casa începe să semene cu tine din momentul în care pereții nu mai sunt toți la fel.",
+  "useCases": [
+    "Tapet pentru camera copiilor",
+    "Autocolante pentru uși interioare",
+    "Tapet panoramic pentru cameră mică",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Baia Sprie?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Baia Sprie în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Tăuții de Sus?",
+      "a": "Da, trece adresa completă din Tăuții de Sus și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Baia Sprie?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

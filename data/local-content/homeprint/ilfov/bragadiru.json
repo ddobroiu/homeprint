@@ -1,0 +1,25 @@
+{
+  "intro": "Pentru cine stă în Bragadiru, un oraș din sud-vestul Bucureștiului, crescut rapid prin cartiere noi, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. Scările interioare și holurile duble din case oferă pereți înalți pe care un tapet cu un peisaj vertical arată foarte bine. Un tablou canvas asortat cu tapetul, pe peretele opus, leagă culorile camerei între ele. Poți pune în același coș tapetul, canvasurile și autocolantele și le primești împreună. Pentru Bragadiru, aflat la circa 12 km de București, tapetul și tablourile ajung tot în 2-4 zile lucrătoare.",
+  "useCases": [
+    "Decor complet pentru casă nouă",
+    "Tapet vertical pentru scara interioară",
+    "Autocolante cu stele pentru copii",
+    "Tapet discret pentru dormitor",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Bragadiru?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Bragadiru în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Vârteju, lângă Bragadiru. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Bragadiru sau în Vârteju; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Bragadiru?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

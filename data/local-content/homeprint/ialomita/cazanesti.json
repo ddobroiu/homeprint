@@ -1,0 +1,23 @@
+{
+  "intro": "În Căzănești, un oraș mic de pe Ialomița, camerele copiilor, holurile și dormitoarele pot primi un decor nou fără mobilă nouă. Magazinele mici și cabinetele din zonă își pot decora și ele peretele principal cu un tapet personalizat cu numele firmei. Varianta autoadezivă se aplică pe pereți netezi, curați și uscați, fără adeziv separat. Previzualizarea arată unde cad marginile imaginii, ca un detaliu important să nu ajungă după un dulap sau o ușă. Rambursul la curier e disponibil pentru comenzile de până la 300 lei, iar pentru un perete mare plătești cu cardul sau prin ordin de plată.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Tapet floral pentru casă la curte",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Căzănești?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Căzănești."
+    },
+    {
+      "q": "Renovez o casă în Munteni-Buzău, lângă Căzănești. Ajunge comanda acolo?",
+      "a": "Sigur. Munteni-Buzău, aflat la aproximativ 3 km de Căzănești, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Căzănești?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

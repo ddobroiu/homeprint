@@ -1,0 +1,23 @@
+{
+  "intro": "Pe lângă faptul că este un oraș de pe Someș, în sud-vestul județului, Ulmeni are mii de camere care așteaptă un decor mai personal decât un perete alb. Un perete tapetat e o schimbare de decor care nu cere meseriași speciali: fâșiile vin numerotate și se pun în ordine. Fâșiile de tapet vin numerotate, gata de îmbinat, așa că imaginea se reface corect pe perete. Imaginea pentru tapet poate fi o fotografie proprie sau orice imagine pentru care ai drept de folosire, la rezoluție cât mai mare. Dacă renovezi o casă în Chelința sau în alt sat din apropiere, livrarea se face la fel, la adresa completă trecută în comandă. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat. Camera rămâne aceeași, dar se simte complet altfel.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Autocolante pentru mobilă veche",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Ulmeni?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Ulmeni în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Chelința?",
+      "a": "Da, trece adresa completă din Chelința și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Ulmeni?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

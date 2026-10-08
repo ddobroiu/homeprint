@@ -1,0 +1,24 @@
+{
+  "intro": "Locuitorii din Hațeg, centrul Țării Hațegului, zona geoparcului cunoscut pentru dinozaurii pitici, pot comanda de acasă tapet, tablouri pe pânză și autocolante pentru mobilă sau pereți. Pensiunile și cabanele își pot face camere tematice, fiecare cu un tapet cu alt peisaj din zonă, care rămâne în memoria oaspeților. Casele vechi renovate au tavane înalte și pereți mari, pe care un tapet cu un model clasic sau cu o fotografie veche a orașului arată spectaculos. Poți alege tapet autoadeziv, care se aplică direct, sau varianta clasică, lipită cu adeziv separat. Imaginea se încarcă direct din telefon sau din calculator, iar previzualizarea arată cum se întinde pe perete. Canvasurile pe șasiu vin la adresă, pentru că nu încap în lockere, iar autocolantele și pânza rulată pot merge la un punct DPD.",
+  "useCases": [
+    "Tapet pentru apartament în clădire veche",
+    "Model clasic pentru casă veche",
+    "Autocolante cu numerele camerelor",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Hațeg?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Hațeg."
+    },
+    {
+      "q": "Renovez o casă în Nălațvad, lângă Hațeg. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Hațeg sau în Nălațvad; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Hațeg?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,24 @@
+{
+  "intro": "Hârlău — un oraș istoric din nordul județului Iași, cu o curte domnească — are case vechi, blocuri și locuințe noi, iar fiecare are măcar un perete care cere un decor nou. Modelele florale sau cu ornamente se potrivesc cu mobila veche de familie și cu ușile de lemn ale caselor de altădată. Canvasul se face pe șasiu de lemn, gata de agățat, sau doar ca pânză printată, livrată rulată. Ai nevoie de un sfat despre imagine sau dimensiuni? Pagina de contact a site-ului are datele echipei. Nu e nevoie să cauți tapet în magazinele din Iași, la circa 59 km: rola personalizată vine direct acasă, în Hârlău. Iar dacă îți place rezultatul, poți continua cu holul sau cu camera copiilor.",
+  "useCases": [
+    "Model clasic pentru casă veche",
+    "Canvas cu hartă istorică",
+    "Decor floral asortat cu mobila de familie",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Hârlău?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Zagavia?",
+      "a": "Da, trece adresa completă din Zagavia și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Hârlău?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

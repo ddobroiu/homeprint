@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru apartamentele și casele din Uricani, un oraș din vestul Văii Jiului, HomePrint face decor tipărit la comandă, pe măsura fiecărei camere. Cu circa 5.800 de locuitori numărați în 2021, Uricani are destule case și apartamente în care un decor nou s-ar vedea imediat. Apartamentele de bloc din anii '70 și '80 au camere mici, iar un tapet cu un peisaj larg pe un singur perete deschide vizual spațiul. Folia transparentă e bună pentru autocolantele de pe geamuri și oglinzi, unde fundalul trebuie să se vadă. Livrăm în toată țara, deci și în Uricani și în celelalte localități din județul Hunedoara, în 2-4 zile lucrătoare de la comandă. Dacă ai doi pereți de decorat, adaugă în coș câte un tapet pentru fiecare, cu dimensiunile lui. Peretele măsurat azi poate fi tapetat săptămâna aceasta.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Living renovat cu tapet și canvas",
+    "Camera nepoților decorată",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Uricani?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Uricani."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Valea de Brazi?",
+      "a": "Da. Valea de Brazi e la circa 3 km de Uricani, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Uricani?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

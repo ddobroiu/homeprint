@@ -1,0 +1,24 @@
+{
+  "intro": "Casele din Strehaia, un oraș de pe Motru, în estul județului, au pereți pe care o zugrăveală nouă îi schimbă puțin, iar un tapet cu imagine îi schimbă de tot. Un perete tapetat e o schimbare de decor care nu cere meseriași speciali: fâșiile vin numerotate și se pun în ordine. Recensământul din 2021 a numărat în Strehaia în jur de 6.300 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. Prețul tapetului se calculează pe metru pătrat și scade pe măsură ce crește suprafața comandată. Poți salva ideea, măsura încă o dată peretele și reveni la comandă când ești sigur pe cifre. Livrarea merge oriunde în Strehaia și în împrejurimi, inclusiv în Slătinicu Mare, direct la casa sau apartamentul în renovare.",
+  "useCases": [
+    "Autocolante pentru mobilă veche",
+    "Fotografie de familie pe un perete întreg",
+    "Decor pentru bucătăria de vară",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Strehaia?",
+      "a": "Pentru Strehaia, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Strehaia, de exemplu în Slătinicu Mare?",
+      "a": "Sigur. Slătinicu Mare, aflat la aproximativ 3 km de Strehaia, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Strehaia?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

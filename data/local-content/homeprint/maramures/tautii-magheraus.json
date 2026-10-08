@@ -1,0 +1,24 @@
+{
+  "intro": "În Tăuții-Măgherăuș, un oraș alipit de Baia Mare, un dormitor sau un living se poate schimba complet cu un singur perete tapetat cu o imagine aleasă de tine. Pentru un birou acasă sau un dormitor matrimonial, un tapet cu textură discretă e o alegere mai calmă decât culorile tari. Autocolantele cu citate, siluete sau forme geometrice se pot comanda în mai multe bucăți, pentru o compoziție pe tot peretele. Imaginea se încarcă direct din telefon sau din calculator, iar previzualizarea arată cum se întinde pe perete. Chiar dacă Tăuții-Măgherăuș se află la aproximativ 8 km de Baia Mare, comanda ajunge în același termen, 2-4 zile lucrătoare. Rămâne doar să alegi imaginea; dimensiunile le ai deja de pe ruletă.",
+  "useCases": [
+    "Tapet discret pentru dormitor",
+    "Primul perete tapetat în casa nouă",
+    "Tapet vertical pentru scara interioară",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Tăuții-Măgherăuș?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Renovez o casă în Bușag, lângă Tăuții-Măgherăuș. Ajunge comanda acolo?",
+      "a": "Sigur. Bușag, aflat la aproximativ 3 km de Tăuții-Măgherăuș, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Tăuții-Măgherăuș?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

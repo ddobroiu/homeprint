@@ -1,0 +1,23 @@
+{
+  "intro": "Pantelimon — un oraș de la marginea de est a Capitalei — are case vechi, blocuri și locuințe noi, iar fiecare are măcar un perete care cere un decor nou. Casele noi au pereți mari, albi, iar un tapet personalizat pe un perete din living e primul pas spre un interior cu personalitate. La recensământul din 2021, Pantelimon avea aproximativ 32.000 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Pentru un perete cu prize sau întrerupătoare, tapetul se decupează în jurul lor la montaj, cu un cutter, ca la orice tapet obișnuit. Tapetul, tablourile și autocolantele ajung în Pantelimon și în restul localităților din județul Ilfov în 2-4 zile lucrătoare, cu producția inclusă. Ai nevoie de un sfat despre imagine sau dimensiuni? Pagina de contact a site-ului are datele echipei.",
+  "useCases": [
+    "Primul perete tapetat în casa nouă",
+    "Decor complet pentru casă nouă",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Pantelimon?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Pantelimon, de exemplu în Dobroești?",
+      "a": "Da, trece adresa completă din Dobroești și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Pantelimon?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

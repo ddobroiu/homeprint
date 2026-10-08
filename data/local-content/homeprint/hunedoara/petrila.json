@@ -1,0 +1,25 @@
+{
+  "intro": "În Petrila, un oraș minier din Valea Jiului, camerele copiilor, holurile și dormitoarele pot primi un decor nou fără mobilă nouă. Renovările de apartamente vechi încep des cu bucătăria și dormitorul, iar un perete tapetat e o schimbare vizibilă la un cost controlat. Recensământul din 2021 a numărat în Petrila în jur de 17.000 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. Un tablou canvas asortat cu tapetul, pe peretele opus, leagă culorile camerei între ele. Livrăm în toată țara, deci și în Petrila și în celelalte localități din județul Hunedoara, în 2-4 zile lucrătoare de la comandă. Ai nevoie de un sfat despre imagine sau dimensiuni? Pagina de contact a site-ului are datele echipei.",
+  "useCases": [
+    "Living renovat cu tapet și canvas",
+    "Autocolante pentru uși interioare",
+    "Tapet panoramic pentru cameră mică",
+    "Perete nou în apartament de bloc",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Petrila?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Petrila."
+    },
+    {
+      "q": "Renovez o casă în Petroșani, lângă Petrila. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Petroșani și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Petrila?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

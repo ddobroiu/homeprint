@@ -1,0 +1,24 @@
+{
+  "intro": "Un interior cald în Măgurele, un oraș cu platforma de cercetare în fizică unde funcționează laserul ELI-NP, se construiește din detalii: un perete tapetat, un tablou pe pânză, câteva autocolante bine alese. În ansamblurile rezidențiale noi, apartamentele seamănă între ele; un tapet ales de tine face ca al tău să arate altfel. Recensământul din 2021 a numărat în Măgurele în jur de 8.100 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. Prețul tapetului se calculează pe metru pătrat și scade pe măsură ce crește suprafața comandată. Pentru Măgurele, aflat la circa 11 km de București, tapetul și tablourile ajung tot în 2-4 zile lucrătoare. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Primul perete tapetat în casa nouă",
+    "Tapet vertical pentru scara interioară",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Măgurele?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Măgurele în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Alunișu, lângă Măgurele. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Măgurele sau în Alunișu; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Măgurele?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

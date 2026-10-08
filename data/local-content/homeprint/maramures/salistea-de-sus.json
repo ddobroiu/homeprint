@@ -1,0 +1,24 @@
+{
+  "intro": "Cine își amenajează locuința în Săliștea de Sus, un oraș de pe valea Izei, în Maramureșul istoric, poate comanda online tapet făcut exact pe dimensiunea peretelui. Camera de oaspeți, cea în care dorm nepoții vara, poate primi un perete tapetat cu ceva vesel, fără renovare completă. Cu circa 4.800 de locuitori numărați în 2021, Săliștea de Sus are destule case și apartamente în care un decor nou s-ar vedea imediat. Folia transparentă e bună pentru autocolantele de pe geamuri și oglinzi, unde fundalul trebuie să se vadă. Termenul de 2-4 zile lucrătoare e același în Săliștea de Sus și în orice altă localitate din județul Maramureș. Poți salva ideea, măsura încă o dată peretele și reveni la comandă când ești sigur pe cifre. Peretele potrivit, cu imaginea potrivită, face o casă să pară nouă.",
+  "useCases": [
+    "Autocolante pentru mobilă veche",
+    "Decor pentru bucătăria de vară",
+    "Camera nepoților decorată",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Săliștea de Sus?",
+      "a": "Pentru Săliștea de Sus, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Dragomirești?",
+      "a": "Da, trece adresa completă din Dragomirești și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Săliștea de Sus?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,25 @@
+{
+  "intro": "Te muți într-o locuință nouă în Șomcuta Mare, centrul Țării Chioarului, sau doar vrei să schimbi atmosfera unei camere? Magazinele mici și cabinetele din zonă își pot decora și ele peretele principal cu un tapet personalizat cu numele firmei. Pe același site se găsesc și perne decorative gata imprimate, afișe și preșuri, utile pentru un decor complet. Poți salva ideea, măsura încă o dată peretele și reveni la comandă când ești sigur pe cifre. Canvasurile pe șasiu vin la adresă, pentru că nu încap în lockere, iar autocolantele și pânza rulată pot merge la un punct DPD.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Camera nepoților decorată",
+    "Autocolante pentru mobilă veche",
+    "Tapet floral pentru casă la curte",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Șomcuta Mare?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Șomcuta Mare."
+    },
+    {
+      "q": "Renovez o casă în Berchez, lângă Șomcuta Mare. Ajunge comanda acolo?",
+      "a": "Da. Berchez e la circa 3 km de Șomcuta Mare, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Șomcuta Mare?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

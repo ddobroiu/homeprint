@@ -1,0 +1,23 @@
+{
+  "intro": "Locuitorii din Dragomirești, un oraș mic de pe valea Izei, pot comanda de acasă tapet, tablouri pe pânză și autocolante pentru mobilă sau pereți. Cu circa 3.100 de locuitori numărați în 2021, Dragomirești are destule case și apartamente în care un decor nou s-ar vedea imediat. Magazinele mici și cabinetele din zonă își pot decora și ele peretele principal cu un tapet personalizat cu numele firmei. Autocolantele decorative pot fi și mici, pentru întrerupătoare sau uși de dulap, și mari, pentru o compoziție pe un perete întreg. Comanda ajunge prin DPD în 2-4 zile lucrătoare, așa că poți pregăti peretele, curățat și uscat, până vine tapetul. Dacă ai doi pereți de decorat, adaugă în coș câte un tapet pentru fiecare, cu dimensiunile lui. Iar dacă îți place rezultatul, poți continua cu holul sau cu camera copiilor.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Tapet floral pentru casă la curte",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Dragomirești?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Dragomirești."
+    },
+    {
+      "q": "Renovez o casă în Bogdan Vodă, lângă Dragomirești. Ajunge comanda acolo?",
+      "a": "Sigur. Bogdan Vodă, aflat la aproximativ 3 km de Dragomirești, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Dragomirești?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

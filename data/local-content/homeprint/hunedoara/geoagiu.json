@@ -1,0 +1,24 @@
+{
+  "intro": "Amenajările interioare din Geoagiu, un oraș cunoscut pentru stațiunea Geoagiu-Băi, pot porni de la o fotografie, de la un model floral sau de la un peisaj întins pe tot peretele. La recensământul din 2021, Geoagiu avea aproximativ 2.800 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Casele de vacanță au adesea pereți de lemn sau de gips-carton pe care un tapet ales cu grijă schimbă tot interiorul. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Chiar dacă Geoagiu se află la aproximativ 24 km de Deva, comanda ajunge în același termen, 2-4 zile lucrătoare. Poți pune în același coș tapetul, canvasurile și autocolantele și le primești împreună. Așa, renovarea începe cu decorul pe care îl vezi zilnic, nu cu cel care se termină ultimul.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Camera nepoților decorată",
+    "Fotografie de familie pe un perete întreg",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Geoagiu?",
+      "a": "Pentru Geoagiu, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Livrați tapetul și în Gelmar?",
+      "a": "Sigur. Gelmar, aflat la aproximativ 3 km de Geoagiu, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Geoagiu?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}
