@@ -100,17 +100,6 @@ export const euFundsProducts: EUFundProduct[] = [
         program: "POIM"
     },
     {
-        id: "eu-digitalizare-ong",
-        slug: "kit-vizibilitate-digitalizare-ong",
-        title: "Kit Vizibilitate Digitalizare ONG",
-        description: "Pachet special pentru ONG-uri care accesează fonduri de digitalizare.",
-        image: "/products/fonduri/pachet-complet-pnrr-comununicate-de-presa-plus-pachet-print-identitate-vizuala.png", // Placeholder
-        price: "De la 200 LEI",
-        category: "PNRR",
-        tags: ["ong", "digitalizare", "pnrr"],
-        program: "PNRR"
-    },
-    {
         id: "eu-acvacultura",
         slug: "kit-vizibilitate-pop-acvacultura",
         title: "Kit Vizibilitate POP (Pescuit)",
@@ -462,65 +451,10 @@ export const euFundsProducts: EUFundProduct[] = [
         program: "POIM - Viziune 2020"
     },
     // --- PACHETE COMPLETE PNRR (image: pachet-complet-pnrr-comununicate-de-presa-plus-pachet-print-identitate-vizuala.png) ---
-    {
-        id: "pachet-complet-pnrr-identitate",
-        slug: "pachet-complet-pnrr-comunicat-print-vizibilitate",
-        title: "Pachet Complet PNRR - Identitate Vizuală + Print",
-        description: "Soluție completă pentru proiecte PNRR: comunicat de presă (start/final) + set materiale printate (placă permanentă, autocolante, afișe). Asigură conformitatea 100%.",
-        image: "/products/fonduri/pachet-complet-pnrr-comununicate-de-presa-plus-pachet-print-identitate-vizuala.png",
-        price: "De la 490 LEI",
-        category: "PNRR",
-        tags: ["pnrr", "pachet", "complet", "comunicat"],
-        program: "PNRR - Pachet Complet"
-    },
     // --- PACHET PAT (image: PACHET-PAT-–-Programul-Asistenta-Tehnica-pachet-complet-identitate-vizuala.png) ---
-    {
-        id: "pachet-pat-asistenta-tehnica",
-        slug: "pachet-pat-programul-asistenta-tehnica-identitate",
-        title: "Pachet PAT - Programul Asistență Tehnică",
-        description: "Kit complet identitate vizuală pentru Programul Asistență Tehnică (PAT). Include materiale obligatorii de vizibilitate și publicitate.",
-        image: "/products/fonduri/PACHET-PAT-–-Programul-Asistenta-Tehnica-pachet-complet-identitate-vizuala.png",
-        price: "De la 450 LEI",
-        category: "Asistență Tehnică",
-        tags: ["pat", "asistenta", "tehnica", "pachet"],
-        program: "PAT - Asistență Tehnică"
-    },
     // --- PACHET PEO (image: PACHET-PEO-–-Programul-Educatie-si-Ocupare-pachet-identitate-vizauala.png) ---
-    {
-        id: "pachet-peo-educatie-ocupare",
-        slug: "pachet-peo-programul-educatie-si-ocupare",
-        title: "Pachet PEO - Programul Educație și Ocupare",
-        description: "Kit complet identitate vizuală pentru Programul Educație și Ocupare (PEO). Asigură vizibilitatea proiectelor de formare și ocupare.",
-        image: "/products/fonduri/PACHET-PEO-–-Programul-Educatie-si-Ocupare-pachet-identitate-vizauala.png",
-        price: "De la 450 LEI",
-        category: "Educație & Ocupare",
-        tags: ["peo", "educatie", "ocupare", "pachet"],
-        program: "PEO"
-    },
     // --- PACHET PDD (image: PDD-–-Programul-Dezvoltare-Durabila-pachet-identitate-vizuala-1.png) ---
-    {
-        id: "pachet-pdd-dezvoltare-durabila",
-        slug: "pachet-pdd-programul-dezvoltare-durabila",
-        title: "Pachet PDD - Programul Dezvoltare Durabilă",
-        description: "Kit complet materiale vizibilitate pentru Programul Dezvoltare Durabilă (PDD).",
-        image: "/products/fonduri/PDD-–-Programul-Dezvoltare-Durabila-pachet-identitate-vizuala-1.png",
-        price: "De la 450 LEI",
-        category: "Dezvoltare Durabilă",
-        tags: ["pdd", "dezvoltare", "durabila", "pachet"],
-        program: "PDD"
-    },
     // --- PACHET PIDS (image: PIDS-–-Programul-Incluziune-si-Demnitate-Sociala-identirtate-vizuala-comunicate-si-print.png) ---
-    {
-        id: "pachet-pids-incluziune-sociala",
-        slug: "pachet-pids-programul-incluziune-si-demnitate-sociala",
-        title: "Pachet PIDS - Programul Incluziune și Demnitate Socială",
-        description: "Kit complet materiale vizibilitate pentru Programul Incluziune și Demnitate Socială (PIDS).",
-        image: "/products/fonduri/PIDS-–-Programul-Incluziune-si-Demnitate-Sociala-identirtate-vizuala-comunicate-si-print.png",
-        price: "De la 450 LEI",
-        category: "Incluziune Socială",
-        tags: ["pids", "incluziune", "sociala", "pachet"],
-        program: "PIDS"
-    },
     // --- PLĂCI PNRR INFRASTRUCTURĂ (image: placa-permanenta-infrastructura-rutiera-pnrr-1-scaled.jpg) ---
     {
         id: "placa-permanenta-pnrr-infrastructura-rutiera",
@@ -534,29 +468,7 @@ export const euFundsProducts: EUFundProduct[] = [
         program: "PNRR - Infrastructură"
     },
     // --- PACHET PCIDIF (image: Programul-Crestere-Inteligenta-Digitalizare-si-Instrumente-Financiare-program-identitate-vizuala.png) ---
-    {
-        id: "pachet-pcidif-crestere-inteligenta",
-        slug: "pachet-pcidif-programul-crestere-inteligenta-digitalizare",
-        title: "Pachet PCIDIF - Creștere Inteligentă și Digitalizare",
-        description: "Kit complet materiale vizibilitate pentru Programul Creștere Inteligentă, Digitalizare și Instrumente Financiare (PCIDIF).",
-        image: "/products/fonduri/Programul-Crestere-Inteligenta-Digitalizare-si-Instrumente-Financiare-program-identitate-vizuala.png",
-        price: "De la 450 LEI",
-        category: "Digitalizare & Creștere",
-        tags: ["pcidif", "digitalizare", "crestere", "inteligenta", "pachet"],
-        program: "PCIDIF"
-    },
     // --- PACHET PT (image: PT-–-Programul-Transport-pachet-identitate-vizuala-print.png) ---
-    {
-        id: "pachet-pt-transport",
-        slug: "pachet-pt-programul-transport-identitate",
-        title: "Pachet PT - Programul Transport",
-        description: "Kit complet identitate vizuală pentru Programul Transport (PT). Asigură vizibilitatea proiectelor de infrastructură de transport.",
-        image: "/products/fonduri/PT-–-Programul-Transport-pachet-identitate-vizuala-print.png",
-        price: "De la 450 LEI",
-        category: "Transport",
-        tags: ["pt", "programul", "transport", "pachet", "infrastructura"],
-        program: "PT - Transport"
-    },
     // --- PRODUSE NOI (Extindere Catalog) ---
     // PEO
     {

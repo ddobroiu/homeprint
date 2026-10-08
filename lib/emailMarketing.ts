@@ -152,13 +152,13 @@ export const MAIN_CONFIGURATORS = [
   },
   {
     id: 'fonduri-eu',
-    title: 'Pachete Fonduri UE',
-    description: 'Set complet pentru proiecte europene',
+    title: 'Materiale vizibilitate fonduri UE',
+    description: 'Panouri, plăci, afișe și autocolante pentru proiecte europene — alegi doar ce îți trebuie',
     url: '/fonduri-pnrr',
     image: '/products/homeprint-studio/fonduri-eu.webp',
-    category: 'pachete',
-    startingPrice: 850,
-    benefits: ['Pachet complet', 'Conforme cerințe UE', 'Consultanță inclusă', 'Aprobare garantată']
+    category: 'fonduri',
+    startingPrice: 200,
+    benefits: ['Conforme cerințelor programului', 'Machetă gratuită cu datele proiectului', 'Alegi doar ce îți trebuie', 'Livrare 3–5 zile']
   }
 ] as const;
 

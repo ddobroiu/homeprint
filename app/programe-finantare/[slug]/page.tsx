@@ -1,9 +1,21 @@
 import React from "react";
 import { Metadata, ResolvingMetadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { euFundsProducts } from "@/lib/products/eu-funds-products";
 import ProductStructuredData from "@/components/ProductStructuredData";
 import EUProductDispatcher from "@/components/configurator/EUProductDispatcher";
+
+// Pachetele vechi de fonduri (scoase 08.10.2026: clientul alege produsele separat)
+const RETIRED_PACKAGES: Record<string, string> = {
+    "kit-vizibilitate-digitalizare-ong": "/fonduri-pnrr",
+    "pachet-complet-pnrr-comunicat-print-vizibilitate": "/fonduri-pnrr",
+    "pachet-pat-programul-asistenta-tehnica-identitate": "/configurator/fonduri-eu",
+    "pachet-peo-programul-educatie-si-ocupare": "/configurator/fonduri-eu",
+    "pachet-pdd-programul-dezvoltare-durabila": "/configurator/fonduri-eu",
+    "pachet-pids-programul-incluziune-si-demnitate-sociala": "/configurator/fonduri-eu",
+    "pachet-pcidif-programul-crestere-inteligenta-digitalizare": "/configurator/fonduri-eu",
+    "pachet-pt-programul-transport-identitate": "/configurator/fonduri-eu",
+};
 
 interface Props {
     params: Promise<{ slug: string }>;
@@ -44,6 +56,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 
 export default async function ProgramFinantarePage({ params }: Props) {
     const { slug } = await params;
+    if (RETIRED_PACKAGES[slug]) permanentRedirect(RETIRED_PACKAGES[slug]);
     const product = euFundsProducts.find(p => p.slug === slug);
 
     if (!product) {
