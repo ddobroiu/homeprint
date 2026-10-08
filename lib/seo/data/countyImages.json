@@ -1,4 +1,257 @@
 {
   "mode": "tracked",
-  "images": {}
+  "images": {
+    "alba": {
+      "src": "/local/judete/alba.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Fototapet cu ilustrația reperului Cetatea Alba Carolina, într-un living luminos."
+    },
+    "arad": {
+      "src": "/local/judete/arad.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Tablou canvas cu ilustrația reperului Palatul Administrativ, într-un dormitor luminos."
+    },
+    "arges": {
+      "src": "/local/judete/arges.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Decor de perete cu ilustrația reperului Biserica Domnească Sfântul Gheorghe, într-o bucătărie modernă."
+    },
+    "bacau": {
+      "src": "/local/judete/bacau.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Fototapet cu ilustrația reperului Biserica Precista, într-un hol în tonuri teracotă."
+    },
+    "bihor": {
+      "src": "/local/judete/bihor.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Tablou canvas cu ilustrația reperului Palatul Vulturul Negru, într-un living în tonuri verzi."
+    },
+    "bistrita-nasaud": {
+      "src": "/local/judete/bistrita-nasaud.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Decor de perete cu ilustrația reperului Biserica Evanghelică, într-un dormitor cu mobilier din lemn."
+    },
+    "botosani": {
+      "src": "/local/judete/botosani.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Fototapet cu ilustrația reperului Centrul Vechi, într-un living luminos."
+    },
+    "braila": {
+      "src": "/local/judete/braila.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Tablou canvas cu ilustrația reperului Ceasul din Piața Traian, într-un dormitor luminos."
+    },
+    "brasov": {
+      "src": "/local/judete/brasov.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Decor de perete cu ilustrația reperului Biserica Neagră și Tâmpa, într-o bucătărie modernă."
+    },
+    "bucuresti": {
+      "src": "/local/judete/bucuresti.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Fototapet cu ilustrația reperului Ateneul Român, într-un hol în tonuri teracotă."
+    },
+    "buzau": {
+      "src": "/local/judete/buzau.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Tablou canvas cu ilustrația reperului Palatul Comunal, într-un living în tonuri verzi."
+    },
+    "calarasi": {
+      "src": "/local/judete/calarasi.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Decor de perete cu ilustrația reperului Muzeul Municipal, într-un dormitor cu mobilier din lemn."
+    },
+    "caras-severin": {
+      "src": "/local/judete/caras-severin.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Fototapet cu ilustrația reperului Muzeul Locomotivelor cu Abur, într-un living luminos."
+    },
+    "cluj": {
+      "src": "/local/judete/cluj.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Tablou canvas cu ilustrația reperului Catedrala Ortodoxă și centrul Clujului, într-un dormitor luminos."
+    },
+    "constanta": {
+      "src": "/local/judete/constanta.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Decor de perete cu ilustrația reperului Cazinoul, într-o bucătărie modernă."
+    },
+    "covasna": {
+      "src": "/local/judete/covasna.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Fototapet cu ilustrația reperului Muzeul Național Secuiesc, într-un hol în tonuri teracotă."
+    },
+    "dambovita": {
+      "src": "/local/judete/dambovita.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Tablou canvas cu ilustrația reperului Turnul Chindiei, într-un living în tonuri verzi."
+    },
+    "dolj": {
+      "src": "/local/judete/dolj.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Decor de perete cu ilustrația reperului Palatul Jean Mihail, într-un dormitor cu mobilier din lemn."
+    },
+    "galati": {
+      "src": "/local/judete/galati.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Fototapet cu ilustrația reperului Biserica Fortificată Precista, într-un living luminos."
+    },
+    "giurgiu": {
+      "src": "/local/judete/giurgiu.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Tablou canvas cu ilustrația reperului Turnul Ceasornicului, într-un dormitor luminos."
+    },
+    "gorj": {
+      "src": "/local/judete/gorj.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Decor de perete cu ilustrația reperului Coloana fără Sfârșit, într-o bucătărie modernă."
+    },
+    "harghita": {
+      "src": "/local/judete/harghita.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Fototapet cu ilustrația reperului Castelul Mikó, într-un hol în tonuri teracotă."
+    },
+    "hunedoara": {
+      "src": "/local/judete/hunedoara.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Tablou canvas cu ilustrația reperului Cetatea Devei, într-un living în tonuri verzi."
+    },
+    "ialomita": {
+      "src": "/local/judete/ialomita.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Decor de perete cu ilustrația reperului Mănăstirea Sfinții Voievozi, într-un dormitor cu mobilier din lemn."
+    },
+    "iasi": {
+      "src": "/local/judete/iasi.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Fototapet cu ilustrația reperului Palatul Culturii, într-un living luminos."
+    },
+    "ilfov": {
+      "src": "/local/judete/ilfov.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Tablou canvas cu ilustrația reperului Palatul Știrbey din Buftea, într-un dormitor luminos."
+    },
+    "maramures": {
+      "src": "/local/judete/maramures.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Decor de perete cu ilustrația reperului Turnul Ștefan, într-o bucătărie modernă."
+    },
+    "mehedinti": {
+      "src": "/local/judete/mehedinti.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Fototapet cu ilustrația reperului Castelul de Apă, într-un hol în tonuri teracotă."
+    },
+    "mures": {
+      "src": "/local/judete/mures.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Tablou canvas cu ilustrația reperului Palatul Culturii, într-un living în tonuri verzi."
+    },
+    "neamt": {
+      "src": "/local/judete/neamt.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Decor de perete cu ilustrația reperului Turnul lui Ștefan cel Mare, într-un dormitor cu mobilier din lemn."
+    },
+    "olt": {
+      "src": "/local/judete/olt.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Fototapet cu ilustrația reperului Centrul Vechi, într-un living luminos."
+    },
+    "prahova": {
+      "src": "/local/judete/prahova.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Tablou canvas cu ilustrația reperului Palatul Culturii, într-un dormitor luminos."
+    },
+    "salaj": {
+      "src": "/local/judete/salaj.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Decor de perete cu ilustrația reperului Clădirea Transilvania, într-o bucătărie modernă."
+    },
+    "satu-mare": {
+      "src": "/local/judete/satu-mare.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Fototapet cu ilustrația reperului Turnul Pompierilor, într-un hol în tonuri teracotă."
+    },
+    "sibiu": {
+      "src": "/local/judete/sibiu.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Tablou canvas cu ilustrația reperului Piața Mare, într-un living în tonuri verzi."
+    },
+    "suceava": {
+      "src": "/local/judete/suceava.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Decor de perete cu ilustrația reperului Cetatea de Scaun, într-un dormitor cu mobilier din lemn."
+    },
+    "teleorman": {
+      "src": "/local/judete/teleorman.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Fototapet cu ilustrația reperului Catedrala Sfântul Alexandru, într-un living luminos."
+    },
+    "timis": {
+      "src": "/local/judete/timis.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Tablou canvas cu ilustrația reperului Catedrala Mitropolitană, într-un dormitor luminos."
+    },
+    "tulcea": {
+      "src": "/local/judete/tulcea.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Decor de perete cu ilustrația reperului Monumentul Independenței, într-o bucătărie modernă."
+    },
+    "valcea": {
+      "src": "/local/judete/valcea.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Fototapet cu ilustrația reperului Muzeul de Artă Casa Simian, într-un hol în tonuri teracotă."
+    },
+    "vaslui": {
+      "src": "/local/judete/vaslui.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Tablou canvas cu ilustrația reperului Biserica Domnească Sfântul Ioan Botezătorul, într-un living în tonuri verzi."
+    },
+    "vrancea": {
+      "src": "/local/judete/vrancea.webp",
+      "width": 1600,
+      "height": 1000,
+      "alt": "Decor de perete cu ilustrația reperului Teatrul Maior Gheorghe Pastia, într-un dormitor cu mobilier din lemn."
+    }
+  }
 }
