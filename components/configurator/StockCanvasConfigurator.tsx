@@ -754,7 +754,7 @@ export default function StockCanvasConfigurator({ productSlug, renderOnlyConfigu
                         )}
 
                         {activeProductTab === 'reviews' && (
-                            <Reviews productSlug={product.slug} />
+                            <Reviews productSlug={product.legacySlug || product.slug} />
                         )}
 
                         {activeProductTab === 'faq' && (

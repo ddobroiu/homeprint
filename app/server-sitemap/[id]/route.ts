@@ -47,7 +47,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.homeprint.ro';
 const ALL_PRODUCTS = [
     ...bannerProducts,
     ...signageProducts,
-    ...(canvasProductsRaw as any[]),
+    // Colecția canvas (/canvas-product) e indexabilă doar pe tablou.net: aici paginile sunt noindex, deci nu intră în sitemap.
     ...euFundsProducts,
     ...configuratorProducts,
     ...seoCampaignProducts

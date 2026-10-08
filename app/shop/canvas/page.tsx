@@ -1,60 +1,55 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image'; // Kept if needed by other sections, though not by grid anymore
-import { Button } from '@/components/ui/button';
-import { ArrowRight, Palette, Shield, Truck } from 'lucide-react';
 import CanvasProductGrid from '@/components/CanvasProductGrid';
+import { canvasProducts } from '@/lib/products/canvas-products';
+import { CANVAS_CATEGORIES } from '@/lib/products/canvas-categories';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-    title: 'Tablouri Canvas Premium',
-    description: 'Explorează colecția noastră de tablouri canvas premium. Sute de modele predefinite pentru decorul casei tale. Print de înaltă calitate pe pânză textilă,...',
-    keywords: ['tablouri canvas', 'modele tablouri', 'decor perete canvas', 'artă murală', 'panza foto', 'tablouri sufragerie'],
+    title: 'Tablouri canvas gata făcute – colecție de modele',
+    description: 'Peste 2.000 de tablouri canvas gata făcute: abstracte, peisaje, animale, pop art, motivaționale și multe altele. Pânză pe șasiu din lemn, livrare 2–4 zile.',
+    keywords: ['tablouri canvas', 'modele tablouri', 'decor perete canvas', 'tablouri living', 'tablouri pe pânză', 'tablouri sufragerie'],
     alternates: {
         canonical: '/shop/canvas',
     },
 };
 
-// Vom încărca produsele din JSON după ce rulăm scraperul
-const getCanvasProducts = async () => {
-    try {
-        const fs = require('fs');
-        const path = require('path');
-        const filePath = path.join(process.cwd(), 'lib', 'products', 'canvas-products.json');
-
-        if (fs.existsSync(filePath)) {
-            const data = fs.readFileSync(filePath, 'utf-8');
-            return JSON.parse(data);
-        }
-    } catch (error) {
-        console.error('Error loading canvas products:', error);
-    }
-    return [];
-};
+// Doar câmpurile de care are nevoie grila (descrierile lungi nu se trimit în pagină).
+const getCanvasProducts = () =>
+    canvasProducts.map((p) => ({
+        id: p.id, slug: p.slug, title: p.title, image: p.image, price: p.price, dimensions: p.dimensions,
+        categories: p.categories, tags: p.tags, category: p.category, orientation: p.orientation,
+    }));
 
 export default async function CanvasPage() {
-    const products = await getCanvasProducts();
+    const products = getCanvasProducts();
 
     return (
         <div className="min-h-screen bg-slate-50 pt-24 pb-20">
             {/* Products Grid */}
             <section id="products" className="container mx-auto px-4">
-                <div className="mb-12">
+                <div className="mb-8">
                     <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
-                        Colecția de Tablouri
+                        Colecția de tablouri canvas
                     </h1>
                     <p className="text-gray-500 mt-2 font-medium">
-                        {products.length > 0
-                            ? `Descoperă ${products.length} tablouri canvas unice, pregătite special pentru spațiul tău.`
-                            : 'Colecția se încarcă...'
-                        }
+                        {`Descoperă ${products.length} tablouri canvas gata făcute, imprimate la comandă pe pânză întinsă pe șasiu din lemn.`}
                     </p>
                 </div>
+
+                <nav className="mb-10" aria-label="Categorii de tablouri canvas">
+                    <ul className="flex flex-wrap gap-2">
+                        {CANVAS_CATEGORIES.map((c) => (
+                            <li key={c.key}>
+                                <Link href={`/shop/canvas/${c.slug}`} className="inline-block rounded-full border border-slate-300 bg-white px-3 py-1 text-sm text-slate-700 hover:border-emerald-600 hover:text-emerald-700">{c.heading}</Link>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
 
                 <CanvasProductGrid products={products} />
             </section>
         </div>
     );
 }
-
