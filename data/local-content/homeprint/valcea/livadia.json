@@ -1,0 +1,24 @@
+{
+  "intro": "Știm despre Livadia că este localitatea de reședință a orașului Băile Olănești, stațiune balneară; cum arată pereții casei tale de acolo poți decide chiar tu, de la imagine la dimensiune. Proprietarii de apartamente de vacanță din Livadia pot comanda tapet pentru mai multe camere deodată, fiecare pe dimensiunea ei. Recensământul din 2021 a numărat în Livadia în jur de 1.500 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. Dacă nu ai o grafică pregătită, echipa de design poate potrivi imaginea pe dimensiunile peretelui, contra unei taxe afișate în configurator. AWB-ul vine pe e-mail și prin SMS, ca să știi când să fii acasă pentru tapet sau tablouri. Ai nevoie de un sfat despre imagine sau dimensiuni? Pagina de contact a site-ului are datele echipei.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Camera nepoților decorată",
+    "Camere tematice pentru pensiune",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Livadia?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Livadia."
+    },
+    {
+      "q": "Renovez o casă în Șuta, lângă Livadia. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Livadia sau în Șuta; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Livadia?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

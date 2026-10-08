@@ -1,0 +1,25 @@
+{
+  "intro": "Te muți într-o locuință nouă în Sulina, un oraș de la vărsarea brațului Sulina în Marea Neagră, accesibil pe apă, sau doar vrei să schimbi atmosfera unei camere? Proprietarii de apartamente de vacanță din Sulina pot comanda tapet pentru mai multe camere deodată, fiecare pe dimensiunea ei. Pentru un perete cu prize sau întrerupătoare, tapetul se decupează în jurul lor la montaj, cu un cutter, ca la orice tapet obișnuit. Tapetul vine rulat, protejat pentru transport, iar coletele mici, cum sunt autocolantele, pot merge și la un locker DPD. Nu ai nevoie de cunoștințe de grafică: alegi imaginea, o încadrezi pe perete și vezi rezultatul înainte să plătești. Decorul ales de tine e cel care rămâne cel mai mult timp pe pereți.",
+  "useCases": [
+    "Camere tematice pentru pensiune",
+    "Tapet cu peisaj local pentru cabană",
+    "Perete decorat pentru restaurant",
+    "Tapet cu harta zonei la recepție",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Sulina?",
+      "a": "Pentru Sulina, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Renovez o casă în Cardon, lângă Sulina. Ajunge comanda acolo?",
+      "a": "Sigur. Cardon, aflat la aproximativ 9 km de Sulina, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Sulina?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

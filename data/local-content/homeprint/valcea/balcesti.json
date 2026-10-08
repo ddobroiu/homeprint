@@ -1,0 +1,24 @@
+{
+  "intro": "Cine își amenajează locuința în Bălcești, un oraș mic din sudul Vâlcii, poate comanda online tapet făcut exact pe dimensiunea peretelui. Pentru cei care lucrează în străinătate și își refac casa de acasă, comanda se poate face online, cu livrare la adresa părinților. Cu circa 1.700 de locuitori numărați în 2021, Bălcești are destule case și apartamente în care un decor nou s-ar vedea imediat. Tapetul este lavabil și se șterge cu o lavetă umedă, util mai ales în camerele copiilor sau pe hol. Autocolantele decorative se taie la forma dorită și se lipesc pe pereți netezi, pe sticlă sau pe mobilă. Termenul de 2-4 zile lucrătoare e același în Bălcești și în orice altă localitate din județul Vâlcea. Previzualizarea arată unde cad marginile imaginii, ca un detaliu important să nu ajungă după un dulap sau o ușă.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Autocolante pentru mobilă veche",
+    "Decor pentru bucătăria de vară",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Bălcești?",
+      "a": "Pentru Bălcești, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Bălcești, de exemplu în Satu Poieni?",
+      "a": "Sigur. Satu Poieni, aflat la aproximativ 2 km de Bălcești, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Bălcești?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

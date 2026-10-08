@@ -1,0 +1,25 @@
+{
+  "intro": "Te muți într-o locuință nouă în Gura Suhașului, localitatea de reședință a orașului Ocnele Mari, zonă cunoscută pentru sare, sau doar vrei să schimbi atmosfera unei camere? La recensământul din 2021, Gura Suhașului avea aproximativ 1.500 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Un perete tapetat cu muntele, lacul sau pădurea din apropiere aduce priveliștea în cameră chiar și în zilele cu vreme proastă. Bucătăriile de vară și camerele refăcute în casele bătrânești primesc bine autocolantele decorative pe mobila veche. Pe același site se găsesc și perne decorative gata imprimate, afișe și preșuri, utile pentru un decor complet. Termenul de 2-4 zile lucrătoare e același în Gura Suhașului și în orice altă localitate din județul Vâlcea. Poți pune în același coș tapetul, canvasurile și autocolantele și le primești împreună.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Fotografie de familie pe un perete întreg",
+    "Perete decorat pentru restaurant",
+    "Camera nepoților decorată",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Gura Suhașului?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Gura Suhașului în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Copăcelu?",
+      "a": "Da, trece adresa completă din Copăcelu și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Gura Suhașului?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru apartamentele și casele din Horezu, un oraș renumit pentru ceramica de Horezu, HomePrint face decor tipărit la comandă, pe măsura fiecărei camere. Restaurantele și barurile din zonele turistice folosesc un tapet mare pe peretele principal ca decor care se vede în fotografiile clienților. Imaginea cu Mănăstirea Hurezi poate fi tipărită și ca autocolant decorativ, mai mic, pentru o ușă sau un dulap. Varianta autoadezivă se aplică pe pereți netezi, curați și uscați, fără adeziv separat. Nu e nevoie să cauți tapet în magazinele din Râmnicu Vâlcea, la circa 29 km: rola personalizată vine direct acasă, în Horezu. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână. Decorul ales de tine e cel care rămâne cel mai mult timp pe pereți.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Camere tematice pentru pensiune",
+    "Tapet floral pentru casă la curte",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Horezu?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Horezu în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Romanii de Jos, lângă Horezu. Ajunge comanda acolo?",
+      "a": "Da. Romanii de Jos e la circa 2 km de Horezu, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Horezu?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

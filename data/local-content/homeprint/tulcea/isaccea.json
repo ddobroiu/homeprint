@@ -1,0 +1,25 @@
+{
+  "intro": "Renovarea unei camere în Isaccea, un oraș de pe Dunăre, în nordul Dobrogei, poate începe cu ruleta și cu o imagine care îți place, nu neapărat cu un meseriaș. Camera de oaspeți, cea în care dorm nepoții vara, poate primi un perete tapetat cu ceva vesel, fără renovare completă. Cu circa 3.900 de locuitori numărați în 2021, Isaccea are destule case și apartamente în care un decor nou s-ar vedea imediat. Autocolantele decorative se taie la forma dorită și se lipesc pe pereți netezi, pe sticlă sau pe mobilă. Comanda ajunge prin DPD în 2-4 zile lucrătoare, așa că poți pregăti peretele, curățat și uscat, până vine tapetul. Termenul curge de la confirmarea comenzii și a graficii, deci o imagine bună încărcată de la început scurtează așteptarea.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Camera nepoților decorată",
+    "Autocolante pentru mobilă veche",
+    "Tapet floral pentru casă la curte",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Isaccea?",
+      "a": "Pentru Isaccea, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Renovez o casă în Revărsarea, lângă Isaccea. Ajunge comanda acolo?",
+      "a": "Sigur. Revărsarea, aflat la aproximativ 6 km de Isaccea, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Isaccea?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

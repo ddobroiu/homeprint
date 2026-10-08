@@ -1,0 +1,23 @@
+{
+  "intro": "Ai măsurat peretele din sufragerie și locuiești în Odobești, un oraș din podgoria Odobești? Din acele cifre iese un tapet făcut pe comandă. La recensământul din 2021, Odobești avea aproximativ 7.600 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Magazinele mici și cabinetele din zonă își pot decora și ele peretele principal cu un tapet personalizat cu numele firmei. Tapetul este lavabil și se șterge cu o lavetă umedă, util mai ales în camerele copiilor sau pe hol. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat. AWB-ul vine pe e-mail și prin SMS, ca să știi când să fii acasă pentru tapet sau tablouri. Iar dacă îți place rezultatul, poți continua cu holul sau cu camera copiilor.",
+  "useCases": [
+    "Autocolante pentru mobilă veche",
+    "Fotografie de familie pe un perete întreg",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Odobești?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Odobești în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Beciu?",
+      "a": "Da, trece adresa completă din Beciu și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Odobești?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

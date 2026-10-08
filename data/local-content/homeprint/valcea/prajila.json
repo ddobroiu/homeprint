@@ -1,0 +1,24 @@
+{
+  "intro": "Pe lângă faptul că este localitatea de reședință a orașului Băile Govora, stațiune balneară, Prajila are mii de camere care așteaptă un decor mai personal decât un perete alb. Proprietarii de apartamente de vacanță din Prajila pot comanda tapet pentru mai multe camere deodată, fiecare pe dimensiunea ei. Magazinele mici și cabinetele din zonă își pot decora și ele peretele principal cu un tapet personalizat cu numele firmei. Poți alege tapet autoadeziv, care se aplică direct, sau varianta clasică, lipită cu adeziv separat. Livrarea merge oriunde în Prajila și în împrejurimi, inclusiv în Cernelele, direct la casa sau apartamentul în renovare. Nu ai nevoie de cunoștințe de grafică: alegi imaginea, o încadrezi pe perete și vezi rezultatul înainte să plătești. Camera rămâne aceeași, dar se simte complet altfel.",
+  "useCases": [
+    "Tapet floral pentru casă la curte",
+    "Autocolante pentru mobilă veche",
+    "Autocolante cu numerele camerelor",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Prajila?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Prajila în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Cernelele, lângă Prajila. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Prajila sau în Cernelele; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Prajila?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

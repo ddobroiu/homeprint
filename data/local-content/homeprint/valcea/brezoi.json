@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru familiile din Brezoi, un oraș de pe valea Lotrului, aproape de Defileul Oltului, decorul casei nu mai înseamnă doar zugrăveală: tapetul personalizat și autocolantele fac diferența. Magazinele mici și cabinetele din zonă își pot decora și ele peretele principal cu un tapet personalizat cu numele firmei. Folia transparentă e bună pentru autocolantele de pe geamuri și oglinzi, unde fundalul trebuie să se vadă. Autocolantele cu citate, siluete sau forme geometrice se pot comanda în mai multe bucăți, pentru o compoziție pe tot peretele. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână. Termenul de 2-4 zile lucrătoare e același în Brezoi și în orice altă localitate din județul Vâlcea. Rămâne doar să alegi imaginea; dimensiunile le ai deja de pe ruletă.",
+  "useCases": [
+    "Tapet floral pentru casă la curte",
+    "Decor pentru bucătăria de vară",
+    "Fotografie de familie pe un perete întreg",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Brezoi?",
+      "a": "Pentru Brezoi, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Renovez o casă în Corbu, lângă Brezoi. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Corbu și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Brezoi?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

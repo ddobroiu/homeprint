@@ -1,0 +1,24 @@
+{
+  "intro": "Un interior cald în Panciu, un oraș cunoscut pentru vinurile spumante de Panciu, se construiește din detalii: un perete tapetat, un tablou pe pânză, câteva autocolante bine alese. Cu circa 4.100 de locuitori numărați în 2021, Panciu are destule case și apartamente în care un decor nou s-ar vedea imediat. Un perete tapetat e o schimbare de decor care nu cere meseriași speciali: fâșiile vin numerotate și se pun în ordine. La imaginile panoramice merită lăsați câțiva centimetri în plus la fiecare margine, pentru tăierea finală pe perete. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână. Livrarea merge oriunde în Panciu și în împrejurimi, inclusiv în Crucea de Sus, direct la casa sau apartamentul în renovare. Peretele potrivit, cu imaginea potrivită, face o casă să pară nouă.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Tapet floral pentru casă la curte",
+    "Autocolante pentru mobilă veche",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Panciu?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Panciu în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Crucea de Sus?",
+      "a": "Da. Crucea de Sus e la circa 1 km de Panciu, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Panciu?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}
