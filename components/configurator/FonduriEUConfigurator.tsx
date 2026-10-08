@@ -17,15 +17,14 @@ import { AccordionStep } from "./ui/AccordionStep";
 import { TabButtonSEO } from "./ui/TabButtonSEO";
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { FonduriPackagePicker, FonduriProjectFields } from "./FonduriPackagePicker";
+import { FonduriProjectFields } from "./FonduriProjectFields";
 import {
-    matchFonduriPackage,
     fonduriSelectionsFromParams,
     fonduriProjectFromParams,
     fonduriProjectSummary,
     fonduriUtmFromParams,
     type FonduriProjectData,
-} from "@/lib/fonduriPackages";
+} from "@/lib/fonduriProject";
 
 const SelectGroup = ({ label, options, value, onChange }: { label: string, options: { id: string, label: string, price: number }[], value: string, onChange: (val: string) => void }) => (
     <div className="mb-4">
@@ -150,7 +149,7 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
         }
     }, [currentProduct]);
 
-    // Pachet și date de proiect din adresă (?pachet=complet&proiectCod=...&proiectTitlu=...),
+    // Produse preselectate și date de proiect din adresă (?panouTemporar=80x50&proiectCod=...&proiectTitlu=...),
     // de ex. din pagina /proiect/[cod]. Rulează după preselecția din produs, deci adresa are prioritate.
     useEffect(() => {
         const sp = new URLSearchParams(window.location.search);
@@ -178,11 +177,7 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
 
     // Pricing
     const priceData = useMemo(() => calculateFonduriEUPrice({ selections, isRegio: isRegio || false }), [selections, isRegio]);
-    // Pachet (Start / Complet / Construcții): dacă selecțiile conțin tot pachetul, se aplică prețul pachetului
-    // (elementele în plus rămân la prețul de listă). Prețul ajunge așa și în coș.
-    const packageOffer = useMemo(() => matchFonduriPackage(selections, isRegio || false), [selections, isRegio]);
-    const listTotal = priceData.finalPrice;
-    const displayedTotal = Math.round((listTotal - (packageOffer?.savings ?? 0)) * 100) / 100;
+    const displayedTotal = priceData.finalPrice;
 
     // Summaries
     const summaryStep1 = useMemo(() => {
@@ -240,11 +235,10 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
         addItem({
             id: `fonduri-eu-${Date.now()}`,
             productId: 'fonduri-eu',
-            title: packageOffer ? `${packageOffer.pkg.name} – Kit Vizibilitate Fonduri EU` : "Kit Vizibilitate Fonduri EU",
+            title: "Kit Vizibilitate Fonduri EU",
             price: displayedTotal,
             quantity: 1,
             metadata: {
-                ...(packageOffer ? { "Pachet": `${packageOffer.pkg.name}${isRegio ? " (Regio)" : ""}: ${listTotal} lei separat, ${displayedTotal} lei pachet` } : {}),
                 "Configurație": selectedItems.join(" | "),
                 "Note": orderNotes,
                 artworkUrl: artworkUrl,
@@ -307,14 +301,6 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
                                 </button>
                             </div>
                         </header>
-
-                        <FonduriPackagePicker
-                            isRegio={isRegio || false}
-                            activeId={packageOffer?.pkg.id}
-                            onPick={(pkg) => setSelections({ ...pkg.selections })}
-                            theme="light"
-                            accent="amber"
-                        />
 
                         <div className="bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-gray-200 dark:border-slate-800 px-4 mb-8">
                             <AccordionStep stepNumber={1} title="Publicitate & Online" summary={summaryStep1} isOpen={activeStep === 1} onClick={() => setActiveStep(1)}>
@@ -388,9 +374,6 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
                                     <div className="flex flex-col items-start leading-none">
                                         <span className="text-[10px] text-gray-500 uppercase font-bold tracking-wider mb-0.5">Preț Total</span>
                                         <span className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tighter">{formatMoneyDisplay(displayedTotal)}</span>
-                                        {packageOffer && packageOffer.savings > 0 && (
-                                            <span className="text-xs mt-1 text-gray-500"><s>{formatMoneyDisplay(listTotal)}</s> · {packageOffer.pkg.name}: <strong className="text-amber-600">economisești {formatMoneyDisplay(packageOffer.savings)}</strong></span>
-                                        )}
                                     </div>
                                     <div className="flex-shrink-0">
                                         <DeliveryEstimation />
