@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru cine stă în Lupeni, un municipiu minier din Valea Jiului, aproape de stațiunea Straja, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. Familiile care își refac apartamentul pe bucăți pot începe cu un perete și continua cu restul când permite bugetul. Bucătăriile de vară și camerele refăcute în casele bătrânești primesc bine autocolantele decorative pe mobila veche. Pe același site se găsesc și perne decorative gata imprimate, afișe și preșuri, utile pentru un decor complet. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat. Nu avem showroom în Lupeni; totul se comandă online și vine prin curier, la adresă sau la un punct DPD în care încape coletul. Peretele potrivit, cu imaginea potrivită, face o casă să pară nouă.",
+  "useCases": [
+    "Autocolante pentru uși interioare",
+    "Tapet pentru camera copiilor",
+    "Camera nepoților decorată",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Lupeni?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Lupeni în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Jiu-Paroșeni?",
+      "a": "Da. Adresa poate fi în Lupeni sau în Jiu-Paroșeni; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Lupeni?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

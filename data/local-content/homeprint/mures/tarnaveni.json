@@ -1,0 +1,24 @@
+{
+  "intro": "Casele din Târnăveni, un municipiu de pe Târnava Mică, cu industrie chimică, au pereți pe care o zugrăveală nouă îi schimbă puțin, iar un tapet cu imagine îi schimbă de tot. Renovările de apartamente vechi încep des cu bucătăria și dormitorul, iar un perete tapetat e o schimbare vizibilă la un cost controlat. Pe același site se găsesc și perne decorative gata imprimate, afișe și preșuri, utile pentru un decor complet. Folia transparentă e bună pentru autocolantele de pe geamuri și oglinzi, unde fundalul trebuie să se vadă. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână. Rambursul la curier e disponibil pentru comenzile de până la 300 lei, iar pentru un perete mare plătești cu cardul sau prin ordin de plată.",
+  "useCases": [
+    "Tapet pentru camera copiilor",
+    "Autocolante pentru uși interioare",
+    "Living renovat cu tapet și canvas",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Târnăveni?",
+      "a": "Pentru Târnăveni, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Cuștelnic?",
+      "a": "Da, trece adresa completă din Cuștelnic și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Târnăveni?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

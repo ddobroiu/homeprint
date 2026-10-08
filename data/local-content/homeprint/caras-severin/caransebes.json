@@ -1,0 +1,24 @@
+{
+  "intro": "Locuitorii din Caransebeș, un municipiu de la confluența Timișului cu Sebeșul, pot comanda de acasă tapet, tablouri pe pânză și autocolante pentru mobilă sau pereți. Pentru un apartament de închiriat într-o clădire istorică, un tapet cu un detaliu de arhitectură local îi dă oaspetelui senzația locului. Familiile care își refac apartamentul pe bucăți pot începe cu un perete și continua cu restul când permite bugetul. Varianta autoadezivă se aplică pe pereți netezi, curați și uscați, fără adeziv separat. Dacă renovezi o casă în Păltiniș sau în alt sat din apropiere, livrarea se face la fel, la adresa completă trecută în comandă. Fotografiile din telefon merg bine pe pereți mici, iar pentru pereți mari e bine să cauți imaginea la rezoluția maximă. Iar dacă îți place rezultatul, poți continua cu holul sau cu camera copiilor.",
+  "useCases": [
+    "Tapet pentru camera copiilor",
+    "Model clasic pentru casă veche",
+    "Tapet cu fotografie de arhivă a orașului",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Caransebeș?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Caransebeș în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Păltiniș, lângă Caransebeș. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Păltiniș și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Caransebeș?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

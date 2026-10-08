@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru cine stă în Moinești, un municipiu cu tradiție în extracția petrolului, pe valea Tazlăului, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. Renovările de apartamente vechi încep des cu bucătăria și dormitorul, iar un perete tapetat e o schimbare vizibilă la un cost controlat. Pentru un perete cu ușă sau fereastră, măsori întreaga suprafață, iar decupajul se face la montaj, ca la orice tapet. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Casele din Moinești, Găzărie sau Valea Arinilor primesc comanda în același termen, așa că poți programa montajul încă de la plată. Măsoară peretele în câteva puncte și folosește cea mai mare valoare, ca tapetul să acopere complet suprafața.",
+  "useCases": [
+    "Tapet pentru camera copiilor",
+    "Living renovat cu tapet și canvas",
+    "Tapet panoramic pentru cameră mică",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Moinești?",
+      "a": "Pentru Moinești, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Renovez o casă în Găzărie, lângă Moinești. Ajunge comanda acolo?",
+      "a": "Da. Găzărie e la circa 3 km de Moinești, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Moinești?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

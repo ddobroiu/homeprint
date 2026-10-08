@@ -1,0 +1,24 @@
+{
+  "intro": "Știm despre Băilești că este un municipiu agricol din Câmpia Băileștilor; cum arată pereții casei tale de acolo poți decide chiar tu, de la imagine la dimensiune. Bucătăriile de vară și camerele refăcute în casele bătrânești primesc bine autocolantele decorative pe mobila veche. La recensământul din 2021, Băilești avea aproximativ 15.000 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Folia transparentă e bună pentru autocolantele de pe geamuri și oglinzi, unde fundalul trebuie să se vadă. Comanda ajunge prin DPD în 2-4 zile lucrătoare, așa că poți pregăti peretele, curățat și uscat, până vine tapetul. Imaginea se încarcă direct din telefon sau din calculator, iar previzualizarea arată cum se întinde pe perete.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Tapet floral pentru casă la curte",
+    "Camera nepoților decorată",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Băilești?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Livrați tapetul și în Balasan?",
+      "a": "Da. Adresa poate fi în Băilești sau în Balasan; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Băilești?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,25 @@
+{
+  "intro": "În Săcele, un municipiu alipit de Brașov, la intrarea spre munții din sud-est, camerele copiilor, holurile și dormitoarele pot primi un decor nou fără mobilă nouă. Camerele copiilor din casele noi pot primi un perete tapetat cu desene, iar autocolantele cu animale sau stele completează decorul. Autocolantele decorative se taie la forma dorită și se lipesc pe pereți netezi, pe sticlă sau pe mobilă. Canvasul și tapetul pot porni de la aceeași fotografie: una mare pe perete, una mică pe pânză, în altă cameră. AWB-ul vine pe e-mail și prin SMS, ca să știi când să fii acasă pentru tapet sau tablouri. Măsoară peretele în câteva puncte și folosește cea mai mare valoare, ca tapetul să acopere complet suprafața.",
+  "useCases": [
+    "Decor complet pentru casă nouă",
+    "Tapet vertical pentru scara interioară",
+    "Primul perete tapetat în casa nouă",
+    "Tapet discret pentru dormitor",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Săcele?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Săcele, de exemplu în Timișu de Jos?",
+      "a": "Da. Timișu de Jos e la circa 5 km de Săcele, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Săcele?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

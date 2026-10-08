@@ -1,0 +1,23 @@
+{
+  "intro": "Amenajările interioare din Marghita, un municipiu din nordul Bihorului, pe valea Barcăului, pot porni de la o fotografie, de la un model floral sau de la un peisaj întins pe tot peretele. Cu circa 11.000 de locuitori numărați în 2021, Marghita are destule case și apartamente în care un decor nou s-ar vedea imediat. Bucătăriile de vară și camerele refăcute în casele bătrânești primesc bine autocolantele decorative pe mobila veche. Poți alege tapet autoadeziv, care se aplică direct, sau varianta clasică, lipită cu adeziv separat. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână. Chiar dacă Marghita se află la aproximativ 45 km de Oradea, comanda ajunge în același termen, 2-4 zile lucrătoare. Un singur perete schimbat face adesea mai mult decât o cameră întreagă de mobilă nouă.",
+  "useCases": [
+    "Autocolante pentru mobilă veche",
+    "Camera nepoților decorată",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Marghita?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Marghita în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Marghita, de exemplu în Petreu?",
+      "a": "Sigur. Petreu, aflat la aproximativ 4 km de Marghita, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Marghita?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

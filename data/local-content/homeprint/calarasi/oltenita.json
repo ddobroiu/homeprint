@@ -1,0 +1,25 @@
+{
+  "intro": "Casele din Oltenița, un municipiu port la vărsarea Argeșului în Dunăre, au pereți pe care o zugrăveală nouă îi schimbă puțin, iar un tapet cu imagine îi schimbă de tot. Magazinele mici și cabinetele din zonă își pot decora și ele peretele principal cu un tapet personalizat cu numele firmei. Fâșiile de tapet vin numerotate, gata de îmbinat, așa că imaginea se reface corect pe perete. Livrăm în toată țara, deci și în Oltenița și în celelalte localități din județul Călărași, în 2-4 zile lucrătoare de la comandă. Termenul curge de la confirmarea comenzii și a graficii, deci o imagine bună încărcată de la început scurtează așteptarea. Așa, renovarea începe cu decorul pe care îl vezi zilnic, nu cu cel care se termină ultimul.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Fotografie de familie pe un perete întreg",
+    "Decor pentru bucătăria de vară",
+    "Autocolante pentru mobilă veche",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Oltenița?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Oltenița."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Oltenița, de exemplu în Clătești?",
+      "a": "Da. Adresa poate fi în Oltenița sau în Clătești; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Oltenița?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

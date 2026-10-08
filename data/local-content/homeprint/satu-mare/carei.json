@@ -1,0 +1,25 @@
+{
+  "intro": "Carei, un municipiu cunoscut pentru Castelul Károlyi, e una dintre localitățile în care HomePrint livrează tapet la comandă, canvasuri și autocolante decorative. Un canvas cu o gravură veche sau cu o hartă istorică se asortează bine cu un perete tapetat în tonuri calde. Un restaurant sau o cafenea din Carei poate folosi o imagine cu Castelul Károlyi pe un perete întreg, ca decor pe care localnicii îl recunosc imediat. Tapetul cu o imagine mare arată cel mai bine pe peretele fără mobilă înaltă în față, unde se vede de la un capăt la altul. Poți salva ideea, măsura încă o dată peretele și reveni la comandă când ești sigur pe cifre. Nu avem showroom în Carei; totul se comandă online și vine prin curier, la adresă sau la un punct DPD în care încape coletul.",
+  "useCases": [
+    "Model clasic pentru casă veche",
+    "Canvas cu hartă istorică",
+    "Decor floral asortat cu mobila de familie",
+    "Tapet cu fotografie de arhivă a orașului",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Carei?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Carei."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Carei, de exemplu în Căpleni?",
+      "a": "Da, trece adresa completă din Căpleni și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Carei?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

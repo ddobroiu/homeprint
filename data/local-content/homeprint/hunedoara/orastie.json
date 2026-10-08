@@ -1,0 +1,25 @@
+{
+  "intro": "Dacă renovezi o cameră în Orăștie, un municipiu aflat aproape de cetățile dacice din Munții Orăștiei, tapetul tipărit după măsurile tale e o alternativă la modelele standard din magazin. La recensământul din 2021, Orăștie avea aproximativ 16.000 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. În locuințele din clădiri vechi, tapetul poate acoperi un perete cu imperfecțiuni fără să mai fie nevoie de o tencuială nouă perfectă. Un perete de accent e de obicei cel din spatele patului, al canapelei sau al biroului, pe care privirea se oprește prima. Poți alege tapet autoadeziv, care se aplică direct, sau varianta clasică, lipită cu adeziv separat. Casele din Orăștie, Căstău sau Pricaz primesc comanda în același termen, așa că poți programa montajul încă de la plată. Poți pune în același coș tapetul, canvasurile și autocolantele și le primești împreună.",
+  "useCases": [
+    "Canvas cu hartă istorică",
+    "Tapet pentru apartament în clădire veche",
+    "Tapet cu fotografie de arhivă a orașului",
+    "Model clasic pentru casă veche",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Orăștie?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Renovez o casă în Căstău, lângă Orăștie. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Orăștie sau în Căstău; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Orăștie?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

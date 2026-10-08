@@ -1,0 +1,23 @@
+{
+  "intro": "Te muți într-o locuință nouă în Dorohoi, al doilea municipiu ca mărime din județul Botoșani, sau doar vrei să schimbi atmosfera unei camere? Cu circa 21.000 de locuitori numărați în 2021, Dorohoi are destule case și apartamente în care un decor nou s-ar vedea imediat. În casele la curte din Dorohoi și din satele din jur, un tapet cu un model floral sau cu un peisaj de câmp aduce afară înăuntru. Varianta autoadezivă se aplică pe pereți netezi, curați și uscați, fără adeziv separat. Fâșiile de tapet vin numerotate, gata de îmbinat, așa că imaginea se reface corect pe perete. Coletul pleacă prin DPD spre Dorohoi, dar și spre Dealu Mare, Loturi Enescu și celelalte localități din jur, în 2-4 zile lucrătoare cu tot cu producția. Poți pune în același coș tapetul, canvasurile și autocolantele și le primești împreună.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Camera nepoților decorată",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Dorohoi?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Dorohoi în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Dealu Mare, lângă Dorohoi. Ajunge comanda acolo?",
+      "a": "Da. Dealu Mare e la circa 4 km de Dorohoi, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Dorohoi?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,25 @@
+{
+  "intro": "Un interior cald în Salonta, un municipiu din Câmpia de Vest, orașul natal al poetului Arany János, se construiește din detalii: un perete tapetat, un tablou pe pânză, câteva autocolante bine alese. Pentru un apartament de închiriat într-o clădire istorică, un tapet cu un detaliu de arhitectură local îi dă oaspetelui senzația locului. Recensământul din 2021 a numărat în Salonta în jur de 15.000 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. Imaginea pentru tapet poate fi o fotografie proprie sau orice imagine pentru care ai drept de folosire, la rezoluție cât mai mare. Dacă ai doi pereți de decorat, adaugă în coș câte un tapet pentru fiecare, cu dimensiunile lui. Coletul pleacă prin DPD spre Salonta, dar și spre Mădăras, Homorog și celelalte localități din jur, în 2-4 zile lucrătoare cu tot cu producția. Decorul ales de tine e cel care rămâne cel mai mult timp pe pereți.",
+  "useCases": [
+    "Tapet pentru apartament în clădire veche",
+    "Decor pentru bucătăria de vară",
+    "Autocolante pentru mobilă veche",
+    "Canvas cu hartă istorică",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Salonta?",
+      "a": "Pentru Salonta, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Renovez o casă în Mădăras, lângă Salonta. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Salonta sau în Mădăras; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Salonta?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

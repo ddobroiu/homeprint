@@ -1,0 +1,25 @@
+{
+  "intro": "Renovarea unei camere în Roman, un municipiu aflat aproape de confluența Moldovei cu Siretul, poate începe cu ruleta și cu o imagine care îți place, nu neapărat cu un meseriaș. Apartamentele de bloc din anii '70 și '80 au camere mici, iar un tapet cu un peisaj larg pe un singur perete deschide vizual spațiul. Pentru un perete cu prize sau întrerupătoare, tapetul se decupează în jurul lor la montaj, cu un cutter, ca la orice tapet obișnuit. Canvasul se face pe șasiu de lemn, gata de agățat, sau doar ca pânză printată, livrată rulată. Poți pune în același coș tapetul, canvasurile și autocolantele și le primești împreună. Termenul de 2-4 zile lucrătoare e același în Roman și în orice altă localitate din județul Neamț. Peretele potrivit, cu imaginea potrivită, face o casă să pară nouă.",
+  "useCases": [
+    "Autocolante pentru uși interioare",
+    "Tapet panoramic pentru cameră mică",
+    "Tapet pentru camera copiilor",
+    "Living renovat cu tapet și canvas",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Roman?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Roman."
+    },
+    {
+      "q": "Livrați tapetul și în Horia?",
+      "a": "Da. Adresa poate fi în Roman sau în Horia; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Roman?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

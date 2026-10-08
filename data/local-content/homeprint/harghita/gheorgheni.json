@@ -1,0 +1,23 @@
+{
+  "intro": "Locuitorii din Gheorgheni, un municipiu din Depresiunea Giurgeului, aproape de Lacul Roșu, pot comanda de acasă tapet, tablouri pe pânză și autocolante pentru mobilă sau pereți. Autocolantele cu numerele camerelor, cu săgeți spre sala de mic dejun sau cu mesaje de bun venit completează decorul unei pensiuni. O fotografie cu Lacul Roșu, mărită pe un perete întreg, poate fi decorul unui living care spune imediat de unde ești. Autocolantele decorative pot fi și mici, pentru întrerupătoare sau uși de dulap, și mari, pentru o compoziție pe un perete întreg. Nu ai nevoie de cunoștințe de grafică: alegi imaginea, o încadrezi pe perete și vezi rezultatul înainte să plătești. De la comandă până la livrare trec 2-4 zile lucrătoare, cu producția inclusă, iar transportul îl face curierul DPD. Un singur perete schimbat face adesea mai mult decât o cameră întreagă de mobilă nouă.",
+  "useCases": [
+    "Tapet floral pentru casă la curte",
+    "Autocolante cu numerele camerelor",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Gheorgheni?",
+      "a": "Pentru Gheorgheni, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Renovez o casă în Visafolio, lângă Gheorgheni. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Visafolio și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Gheorgheni?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

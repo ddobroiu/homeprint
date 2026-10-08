@@ -1,0 +1,23 @@
+{
+  "intro": "Casele din Odorheiu Secuiesc, un municipiu istoric din Ținutul Secuiesc, au pereți pe care o zugrăveală nouă îi schimbă puțin, iar un tapet cu imagine îi schimbă de tot. Un canvas cu o gravură veche sau cu o hartă istorică se asortează bine cu un perete tapetat în tonuri calde. Tapetul este lavabil și se șterge cu o lavetă umedă, util mai ales în camerele copiilor sau pe hol. Imaginea se încarcă direct din telefon sau din calculator, iar previzualizarea arată cum se întinde pe perete. Casele din Odorheiu Secuiesc, Feliceni sau Arvățeni primesc comanda în același termen, așa că poți programa montajul încă de la plată. Peretele potrivit, cu imaginea potrivită, face o casă să pară nouă.",
+  "useCases": [
+    "Canvas cu hartă istorică",
+    "Tapet cu fotografie de arhivă a orașului",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Odorheiu Secuiesc?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Odorheiu Secuiesc."
+    },
+    {
+      "q": "Renovez o casă în Feliceni, lângă Odorheiu Secuiesc. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Feliceni și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Odorheiu Secuiesc?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

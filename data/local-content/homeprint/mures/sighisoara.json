@@ -1,0 +1,24 @@
+{
+  "intro": "Casele din Sighișoara, un municipiu cu o cetate medievală locuită, inclusă în patrimoniul UNESCO, au pereți pe care o zugrăveală nouă îi schimbă puțin, iar un tapet cu imagine îi schimbă de tot. Restaurantele și barurile din zonele turistice folosesc un tapet mare pe peretele principal ca decor care se vede în fotografiile clienților. Un tapet cu Turnul cu Ceas e o idee bună pentru un apartament de închiriat, pentru că le arată oaspeților un loc pe care îl pot vizita. Poți alege tapet autoadeziv, care se aplică direct, sau varianta clasică, lipită cu adeziv separat. Nu avem showroom în Sighișoara; totul se comandă online și vine prin curier, la adresă sau la un punct DPD în care încape coletul. Prețul se actualizează la fiecare schimbare de dimensiune, așa că poți compara un perete întreg cu o porțiune mai mică.",
+  "useCases": [
+    "Perete decorat pentru restaurant",
+    "Model clasic pentru casă veche",
+    "Tapet pentru apartament în clădire veche",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Sighișoara?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Livrați tapetul și în Viilor?",
+      "a": "Da, trece adresa completă din Viilor și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Sighișoara?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

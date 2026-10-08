@@ -1,0 +1,23 @@
+{
+  "intro": "Știm despre Codlea că este un municipiu de lângă Brașov, cunoscut pentru serele și cultura florilor; cum arată pereții casei tale de acolo poți decide chiar tu, de la imagine la dimensiune. Scările interioare și holurile duble din case oferă pereți înalți pe care un tapet cu un peisaj vertical arată foarte bine. Dacă nu ai o grafică pregătită, echipa de design poate potrivi imaginea pe dimensiunile peretelui, contra unei taxe afișate în configurator. Chiar dacă Codlea se află la aproximativ 13 km de Brașov, comanda ajunge în același termen, 2-4 zile lucrătoare. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat. Casa începe să semene cu tine din momentul în care pereții nu mai sunt toți la fel.",
+  "useCases": [
+    "Primul perete tapetat în casa nouă",
+    "Decor complet pentru casă nouă",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Codlea?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Codlea."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Colonia 1 Mai?",
+      "a": "Da. Colonia 1 Mai e la circa 4 km de Codlea, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Codlea?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,25 @@
+{
+  "intro": "Pe lângă faptul că este un municipiu industrial de pe Trotuș, orașul în care a crescut Nadia Comăneci, Onești are mii de camere care așteaptă un decor mai personal decât un perete alb. Apartamentele de bloc din anii '70 și '80 au camere mici, iar un tapet cu un peisaj larg pe un singur perete deschide vizual spațiul. Tapetul este lavabil și se șterge cu o lavetă umedă, util mai ales în camerele copiilor sau pe hol. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat. De la comandă până la livrare trec 2-4 zile lucrătoare, cu producția inclusă, iar transportul îl face curierul DPD. Un decor nou nu cere neapărat meseriași, ci o idee bună și măsurile corecte.",
+  "useCases": [
+    "Living renovat cu tapet și canvas",
+    "Perete nou în apartament de bloc",
+    "Tapet pentru camera copiilor",
+    "Tapet panoramic pentru cameră mică",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Onești?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Onești, de exemplu în Răcăuți?",
+      "a": "Da, trece adresa completă din Răcăuți și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Onești?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

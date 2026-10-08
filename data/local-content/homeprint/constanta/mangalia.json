@@ -1,0 +1,25 @@
+{
+  "intro": "Pentru apartamentele și casele din Mangalia, un municipiu port și stațiune în sudul litoralului românesc, HomePrint face decor tipărit la comandă, pe măsura fiecărei camere. Casele de vacanță au adesea pereți de lemn sau de gips-carton pe care un tapet ales cu grijă schimbă tot interiorul. O fotografie de familie mărită pe un canvas mare sau chiar pe un perete întreg poate fi piesa centrală a unei case renovate. La imaginile panoramice merită lăsați câțiva centimetri în plus la fiecare margine, pentru tăierea finală pe perete. Fotografiile din telefon merg bine pe pereți mici, iar pentru pereți mari e bine să cauți imaginea la rezoluția maximă. Chiar dacă Mangalia se află la aproximativ 41 km de Constanța, comanda ajunge în același termen, 2-4 zile lucrătoare. Camera rămâne aceeași, dar se simte complet altfel.",
+  "useCases": [
+    "Camere tematice pentru pensiune",
+    "Decor pentru bucătăria de vară",
+    "Autocolante pentru mobilă veche",
+    "Autocolante cu numerele camerelor",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Mangalia?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Mangalia în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Saturn?",
+      "a": "Sigur. Saturn, aflat la aproximativ 2 km de Mangalia, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Mangalia?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

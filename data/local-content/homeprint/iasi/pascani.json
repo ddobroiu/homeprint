@@ -1,0 +1,23 @@
+{
+  "intro": "Cine își amenajează locuința în Pașcani, un municipiu și nod feroviar important pe valea Siretului, poate comanda online tapet făcut exact pe dimensiunea peretelui. Familiile care își refac apartamentul pe bucăți pot începe cu un perete și continua cu restul când permite bugetul. Un tablou canvas asortat cu tapetul, pe peretele opus, leagă culorile camerei între ele. Imaginea se încarcă direct din telefon sau din calculator, iar previzualizarea arată cum se întinde pe perete. Livrarea merge oriunde în Pașcani și în împrejurimi, inclusiv în Blăgești, direct la casa sau apartamentul în renovare. Așa, renovarea începe cu decorul pe care îl vezi zilnic, nu cu cel care se termină ultimul.",
+  "useCases": [
+    "Autocolante pentru uși interioare",
+    "Tapet pentru camera copiilor",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Pașcani?",
+      "a": "Pentru Pașcani, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Pașcani, de exemplu în Blăgești?",
+      "a": "Da. Adresa poate fi în Pașcani sau în Blăgești; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Pașcani?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

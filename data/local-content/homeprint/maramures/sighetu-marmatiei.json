@@ -1,0 +1,25 @@
+{
+  "intro": "Pentru cine stă în Sighetu Marmației, un municipiu de pe Tisa, centrul Maramureșului istoric, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. Un tapet cu Memorialul Sighet e o idee bună pentru un apartament de închiriat, pentru că le arată oaspeților un loc pe care îl pot vizita. Casele de vacanță au adesea pereți de lemn sau de gips-carton pe care un tapet ales cu grijă schimbă tot interiorul. Fâșiile de tapet vin numerotate, gata de îmbinat, așa că imaginea se reface corect pe perete. Nu e nevoie să cauți tapet în magazinele din Baia Mare, la circa 39 km: rola personalizată vine direct acasă, în Sighetu Marmației. Dacă pregătești o surpriză pentru cineva drag, treci la livrare adresa casei unde va fi montat tapetul. Rămâne doar să alegi imaginea; dimensiunile le ai deja de pe ruletă.",
+  "useCases": [
+    "Tapet cu harta zonei la recepție",
+    "Perete decorat pentru restaurant",
+    "Tapet pentru apartament în clădire veche",
+    "Camere tematice pentru pensiune",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Sighetu Marmației?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Sighetu Marmației în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Lazu Baciului, lângă Sighetu Marmației. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Sighetu Marmației sau în Lazu Baciului; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Sighetu Marmației?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

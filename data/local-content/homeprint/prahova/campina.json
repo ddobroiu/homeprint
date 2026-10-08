@@ -1,0 +1,25 @@
+{
+  "intro": "Cine își amenajează locuința în Câmpina, un municipiu de pe Valea Prahovei, cu Castelul Iulia Hasdeu, poate comanda online tapet făcut exact pe dimensiunea peretelui. Un tapet cu Castelul Iulia Hasdeu e o idee bună pentru un apartament de închiriat, pentru că le arată oaspeților un loc pe care îl pot vizita. Casele vechi renovate au tavane înalte și pereți mari, pe care un tapet cu un model clasic sau cu o fotografie veche a orașului arată spectaculos. Pentru camerele copiilor, un tapet cu personajele lor preferate sau cu harta lumii transformă o cameră banală într-una de poveste. Canvasul și tapetul pot porni de la aceeași fotografie: una mare pe perete, una mică pe pânză, în altă cameră. Termenul de 2-4 zile lucrătoare e același în Câmpina și în orice altă localitate din județul Prahova. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână.",
+  "useCases": [
+    "Tapet pentru camera copiilor",
+    "Autocolante pentru uși interioare",
+    "Living renovat cu tapet și canvas",
+    "Perete nou în apartament de bloc",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Câmpina?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Câmpina."
+    },
+    {
+      "q": "Livrați tapetul și în Pietrișu?",
+      "a": "Da. Pietrișu e la circa 1 km de Câmpina, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Câmpina?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

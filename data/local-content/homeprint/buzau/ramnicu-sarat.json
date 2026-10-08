@@ -1,0 +1,23 @@
+{
+  "intro": "Pentru cine stă în Râmnicu Sărat, un municipiu din nord-estul Munteniei, pe râul cu același nume, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. Casele vechi renovate au tavane înalte și pereți mari, pe care un tapet cu un model clasic sau cu o fotografie veche a orașului arată spectaculos. Pentru cei care lucrează în străinătate și își refac casa de acasă, comanda se poate face online, cu livrare la adresa părinților. Tapetul este lavabil și se șterge cu o lavetă umedă, util mai ales în camerele copiilor sau pe hol. Poți salva ideea, măsura încă o dată peretele și reveni la comandă când ești sigur pe cifre. Coletul pleacă prin DPD spre Râmnicu Sărat, dar și spre Plevna, Oreavul și celelalte localități din jur, în 2-4 zile lucrătoare cu tot cu producția.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Tapet cu fotografie de arhivă a orașului",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Râmnicu Sărat?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Râmnicu Sărat în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Râmnicu Sărat, de exemplu în Plevna?",
+      "a": "Da. Adresa poate fi în Râmnicu Sărat sau în Plevna; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Râmnicu Sărat?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

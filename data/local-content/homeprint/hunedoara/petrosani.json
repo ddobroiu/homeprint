@@ -1,0 +1,24 @@
+{
+  "intro": "Petroșani este centrul Văii Jiului, municipiu minier și universitar, iar în casele și apartamentele de aici renovările încep tot mai des cu un perete de accent. Ușile de dulap, frigiderele vechi sau mobila de bucătărie pot primi o față nouă cu autocolante decorative, fără să cumperi mobilier. Apartamentele de bloc din anii '70 și '80 au camere mici, iar un tapet cu un peisaj larg pe un singur perete deschide vizual spațiul. Un perete de accent e de obicei cel din spatele patului, al canapelei sau al biroului, pe care privirea se oprește prima. Măsoară peretele în câteva puncte și folosește cea mai mare valoare, ca tapetul să acopere complet suprafața. Pentru o casă în Dâlja Mică sau în alt sat din jurul orașului Petroșani, livrarea are același termen și același curier.",
+  "useCases": [
+    "Tapet panoramic pentru cameră mică",
+    "Autocolante pentru uși interioare",
+    "Tapet pentru apartament de închiriat",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Petroșani?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Petroșani în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Dâlja Mică?",
+      "a": "Sigur. Dâlja Mică, aflat la aproximativ 2 km de Petroșani, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Petroșani?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

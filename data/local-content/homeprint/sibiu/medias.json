@@ -1,0 +1,25 @@
+{
+  "intro": "Pentru cine stă în Mediaș, un municipiu cu centru istoric săsesc și tradiție în industria gazelor, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. Un canvas cu o gravură veche sau cu o hartă istorică se asortează bine cu un perete tapetat în tonuri calde. Pentru camerele copiilor, un tapet cu personajele lor preferate sau cu harta lumii transformă o cameră banală într-una de poveste. Imaginea pentru tapet poate fi o fotografie proprie sau orice imagine pentru care ai drept de folosire, la rezoluție cât mai mare. Prețul se actualizează la fiecare schimbare de dimensiune, așa că poți compara un perete întreg cu o porțiune mai mică. Livrarea merge oriunde în Mediaș și în împrejurimi, inclusiv în Valea Lungă, direct la casa sau apartamentul în renovare.",
+  "useCases": [
+    "Decor floral asortat cu mobila de familie",
+    "Tapet pentru apartament în clădire veche",
+    "Tapet cu fotografie de arhivă a orașului",
+    "Model clasic pentru casă veche",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Mediaș?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Livrați tapetul și în Valea Lungă?",
+      "a": "Da, trece adresa completă din Valea Lungă și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Mediaș?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

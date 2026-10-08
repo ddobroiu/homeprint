@@ -1,0 +1,24 @@
+{
+  "intro": "Dacă renovezi o cameră în Vulcan, un municipiu din Valea Jiului, la poalele Munților Vâlcan, tapetul tipărit după măsurile tale e o alternativă la modelele standard din magazin. Un canvas mare deasupra canapelei și un perete tapetat în aceeași gamă de culori fac livingul să pară proaspăt renovat. Un perete tapetat e o schimbare de decor care nu cere meseriași speciali: fâșiile vin numerotate și se pun în ordine. Pentru un perete cu prize sau întrerupătoare, tapetul se decupează în jurul lor la montaj, cu un cutter, ca la orice tapet obișnuit. De la comandă până la livrare trec 2-4 zile lucrătoare, cu producția inclusă, iar transportul îl face curierul DPD. Poți salva ideea, măsura încă o dată peretele și reveni la comandă când ești sigur pe cifre.",
+  "useCases": [
+    "Autocolante pentru uși interioare",
+    "Perete nou în apartament de bloc",
+    "Decor pentru bucătăria de vară",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Vulcan?",
+      "a": "Pentru Vulcan, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Livrați tapetul și în Jiu-Paroșeni?",
+      "a": "Da. Adresa poate fi în Vulcan sau în Jiu-Paroșeni; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Vulcan?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,24 @@
+{
+  "intro": "Casele din Brad, un municipiu din Țara Zarandului, cu un muzeu dedicat aurului, au pereți pe care o zugrăveală nouă îi schimbă puțin, iar un tapet cu imagine îi schimbă de tot. Casele vechi renovate au tavane înalte și pereți mari, pe care un tapet cu un model clasic sau cu o fotografie veche a orașului arată spectaculos. Un canvas mare deasupra canapelei și un perete tapetat în aceeași gamă de culori fac livingul să pară proaspăt renovat. Canvasul se face pe șasiu de lemn, gata de agățat, sau doar ca pânză printată, livrată rulată. Plata se face cu cardul, prin ordin de plată sau ramburs la curier, pentru comenzile de până la 300 lei. Dacă pregătești o surpriză pentru cineva drag, treci la livrare adresa casei unde va fi montat tapetul. Un singur perete schimbat face adesea mai mult decât o cameră întreagă de mobilă nouă.",
+  "useCases": [
+    "Tapet pentru camera copiilor",
+    "Tapet panoramic pentru cameră mică",
+    "Tapet cu fotografie de arhivă a orașului",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Brad?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Brad, de exemplu în Țărățel?",
+      "a": "Da. Adresa poate fi în Brad sau în Țărățel; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Brad?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

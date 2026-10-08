@@ -1,0 +1,24 @@
+{
+  "intro": "În Toplița, un municipiu de pe Mureș, între Munții Călimani și Munții Gurghiu, un dormitor sau un living se poate schimba complet cu un singur perete tapetat cu o imagine aleasă de tine. Un perete tapetat e o schimbare de decor care nu cere meseriași speciali: fâșiile vin numerotate și se pun în ordine. Poți alege tapet autoadeziv, care se aplică direct, sau varianta clasică, lipită cu adeziv separat. Dacă nu ai o grafică pregătită, echipa de design poate potrivi imaginea pe dimensiunile peretelui, contra unei taxe afișate în configurator. Plata se face cu cardul, prin ordin de plată sau ramburs la curier, pentru comenzile de până la 300 lei. Nu ai nevoie de cunoștințe de grafică: alegi imaginea, o încadrezi pe perete și vezi rezultatul înainte să plătești.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Autocolante pentru mobilă veche",
+    "Decor pentru bucătăria de vară",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Toplița?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Toplița în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Măgheruș?",
+      "a": "Da. Măgheruș e la circa 1 km de Toplița, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Toplița?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

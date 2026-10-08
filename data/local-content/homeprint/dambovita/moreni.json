@@ -1,0 +1,24 @@
+{
+  "intro": "În Moreni, un municipiu cu tradiție în extracția petrolului, camerele copiilor, holurile și dormitoarele pot primi un decor nou fără mobilă nouă. Familiile care își refac apartamentul pe bucăți pot începe cu un perete și continua cu restul când permite bugetul. Folia transparentă e bună pentru autocolantele de pe geamuri și oglinzi, unde fundalul trebuie să se vadă. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Chiar dacă Moreni se află la aproximativ 16 km de Târgoviște, comanda ajunge în același termen, 2-4 zile lucrătoare. Nu ai nevoie de cunoștințe de grafică: alegi imaginea, o încadrezi pe perete și vezi rezultatul înainte să plătești.",
+  "useCases": [
+    "Perete nou în apartament de bloc",
+    "Living renovat cu tapet și canvas",
+    "Tapet panoramic pentru cameră mică",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Moreni?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Renovez o casă în Cricovu Dulce, lângă Moreni. Ajunge comanda acolo?",
+      "a": "Da. Cricovu Dulce e la circa 4 km de Moreni, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Moreni?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

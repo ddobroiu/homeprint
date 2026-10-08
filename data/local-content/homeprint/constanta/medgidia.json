@@ -1,0 +1,23 @@
+{
+  "intro": "În Medgidia, un municipiu și nod feroviar din centrul Dobrogei, pe Canalul Dunăre–Marea Neagră, camerele copiilor, holurile și dormitoarele pot primi un decor nou fără mobilă nouă. Recensământul din 2021 a numărat în Medgidia în jur de 32.000 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. Pentru camerele copiilor, un tapet cu personajele lor preferate sau cu harta lumii transformă o cameră banală într-una de poveste. Prețul tapetului se calculează pe metru pătrat și scade pe măsură ce crește suprafața comandată. Nu avem showroom în Medgidia; totul se comandă online și vine prin curier, la adresă sau la un punct DPD în care încape coletul. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire.",
+  "useCases": [
+    "Living renovat cu tapet și canvas",
+    "Tapet panoramic pentru cameră mică",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Medgidia?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Livrați tapetul și în Remus Opreanu?",
+      "a": "Da. Remus Opreanu e la circa 5 km de Medgidia, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Medgidia?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}
