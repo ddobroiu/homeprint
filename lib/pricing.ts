@@ -1904,32 +1904,32 @@ export const ROLLUP_CONSTANTS = {
     { width_cm: 120, label: "Mare" },
     { width_cm: 150, label: "Premium" },
   ],
-  // Cost real PrintCenter (roll-up standard cu print, fără TVA): 100×200 = 240 lei → min 580,8; 150×200 = 370 lei →
-  // min 895,4. 85 și 120 cm: fără comenzi încă — estimat 230 lei (min 556,6) și 292 lei (interpolat, min 706,7).
+  // Roll-up-urile vin de la un furnizor alternativ (nu PrintCenter), deci regula 2 × cost PrintCenter nu se aplică
+  // (decizia proprietarului, 08.10.2026). Tabelul vechi × 1,12 (100×200: 250 → 280 lei), aceleași proporții de reducere.
   PRICE_TABLE: {
     85: [
-      { min: 1, max: 5, price: 579 },
-      { min: 6, max: 10, price: 575 },
-      { min: 11, max: 20, price: 569 },
-      { min: 21, max: Infinity, price: 565 },
+      { min: 1, max: 5, price: 249 },
+      { min: 6, max: 10, price: 225 },
+      { min: 11, max: 20, price: 215 },
+      { min: 21, max: Infinity, price: 199 },
     ],
     100: [
-      { min: 1, max: 5, price: 599 },
-      { min: 6, max: 10, price: 595 },
-      { min: 11, max: 20, price: 589 },
-      { min: 21, max: Infinity, price: 585 },
+      { min: 1, max: 5, price: 280 },
+      { min: 6, max: 10, price: 269 },
+      { min: 11, max: 20, price: 259 },
+      { min: 21, max: Infinity, price: 225 },
     ],
     120: [
-      { min: 1, max: 5, price: 739 },
-      { min: 6, max: 10, price: 729 },
-      { min: 11, max: 20, price: 719 },
-      { min: 21, max: Infinity, price: 709 },
+      { min: 1, max: 5, price: 329 },
+      { min: 6, max: 10, price: 305 },
+      { min: 11, max: 20, price: 285 },
+      { min: 21, max: Infinity, price: 259 },
     ],
     150: [
-      { min: 1, max: 5, price: 929 },
-      { min: 6, max: 10, price: 919 },
-      { min: 11, max: 20, price: 909 },
-      { min: 21, max: Infinity, price: 899 },
+      { min: 1, max: 5, price: 439 },
+      { min: 6, max: 10, price: 415 },
+      { min: 11, max: 20, price: 405 },
+      { min: 21, max: Infinity, price: 369 },
     ],
   },
   PRO_DESIGN_FEE: 100,
@@ -2056,6 +2056,15 @@ export const calculateCanvas8MartiePrice = (input: PriceInputCanvas8Martie) => {
 // ==========================================
 // 9. TEXTILE (TRICOURI / HANORACE)
 // ==========================================
+type TextilePriceDef = {
+  base: number;
+  fata_si_spate: number;
+  cost: { fata: number; fata_si_spate: number };
+  /** preț stabilit de proprietar: fără pragul 2 × cost */
+  ownerPrice?: boolean;
+  volumeDiscounts?: { min: number; factor: number }[];
+};
+
 export const TEXTILE_CONSTANTS = {
   // Prețul pe bucată (produs + tipar față); fata_si_spate = adaosul pentru tipar și pe spate.
   // cost = costul real PrintCenter fără TVA (produs + personalizare, din comenzi), pentru minimul 2 × cost × 1,21.
@@ -2063,9 +2072,14 @@ export const TEXTILE_CONSTANTS = {
     tricouri: { base: 79, fata_si_spate: 25, cost: { fata: 30.15, fata_si_spate: 40.15 } }, // tricou basic
     v_neck: { base: 99, fata_si_spate: 25, cost: { fata: 39, fata_si_spate: 49 } },
     polo: { base: 139, fata_si_spate: 25, cost: { fata: 54.14, fata_si_spate: 61.14 } }, // polo pique (adulți / copii)
-    hanorace: { base: 299, fata_si_spate: 30, cost: { fata: 117.38, fata_si_spate: 124.38 } }, // hanorac cu glugă
+    // Hanorac: preț stabilit de proprietar (08.10.2026), sub regula 2 × cost (cost real 117,38 lei fără TVA = 142 cu TVA,
+    // marjă ~35% la 220 lei); reduceri mici proprii, minim ~200 lei la 50 buc, fără pragul de cost.
+    hanorace: {
+      base: 220, fata_si_spate: 30, cost: { fata: 117.38, fata_si_spate: 124.38 }, ownerPrice: true,
+      volumeDiscounts: [{ min: 50, factor: 0.91 }, { min: 30, factor: 0.94 }, { min: 10, factor: 0.97 }],
+    },
     sepci: { base: 65, fata_si_spate: 0, cost: { fata: 24.94, fata_si_spate: 24.94 } },
-  },
+  } as Record<"tricouri" | "v_neck" | "polo" | "hanorace" | "sepci", TextilePriceDef>,
   /** Reduceri de volum; prețul pe bucată nu coboară sub 2 × cost × 1,21 (PrintCenter nu ne dă reducere de volum). */
   VOLUME_DISCOUNTS: [
     { min: 50, factor: 0.8 },
@@ -2103,9 +2117,11 @@ export const calculateTextilePrice = (input: PriceInputTextile) => {
   let unitPrice = baseData.base + (bothSides ? baseData.fata_si_spate : 0);
 
   // Reducere de volum, dar nu sub minimul regulii (2 × cost real)
-  const discount = TEXTILE_CONSTANTS.VOLUME_DISCOUNTS.find((d) => input.quantity >= d.min);
+  const discount = (baseData.volumeDiscounts ?? TEXTILE_CONSTANTS.VOLUME_DISCOUNTS).find((d) => input.quantity >= d.min);
   if (discount) unitPrice *= discount.factor;
-  unitPrice = Math.max(unitPrice, minPriceForCost(bothSides ? baseData.cost.fata_si_spate : baseData.cost.fata));
+  if (!baseData.ownerPrice) {
+    unitPrice = Math.max(unitPrice, minPriceForCost(bothSides ? baseData.cost.fata_si_spate : baseData.cost.fata));
+  }
 
   let finalPrice = roundMoney(unitPrice * input.quantity);
 

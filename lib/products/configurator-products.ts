@@ -97,7 +97,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         title: "Sisteme Roll-up",
         description: "Sisteme expoziționale portabile, ușor de montat. Include structură, print și geantă de transport.",
         image: "/products/homeprint-studio/rollup.webp",
-        price: "De la 565 LEI",
+        price: "De la 199 LEI",
         category: "Configuratoare",
         tags: ["rollup", "expozitional", "stand", "configurator"]
     },
@@ -218,7 +218,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         title: "Hanorace Personalizate",
         description: "Hanorace premium, groase, personalizate cu designul tău. Calitate maximă a printului DTF.",
         image: "/products/homeprint-studio/hanorace.webp",
-        price: "De la 285 LEI",
+        price: "De la 200 LEI",
         category: "Configuratoare",
         tags: ["hanorac", "hanorace", "textile", "personalizat", "configurator"]
     },

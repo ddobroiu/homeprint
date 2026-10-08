@@ -39,7 +39,7 @@ export default async function HanoracePage({ searchParams }: Props) {
 
     return (
         <main className="min-h-screen bg-slate-50 pt-20">
-            {product && <ProductJsonLd name={product.title} description={product.description} image={product.images?.[0]} price={299} url={url} />}
+            {product && <ProductJsonLd name={product.title} description={product.description} image={product.images?.[0]} price={220} url={url} />}
 
             <Suspense fallback={<div className="h-screen flex justify-center items-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600"></div></div>}>
                 <h1 className="sr-only">Hanorace Personalizate</h1>
