@@ -617,6 +617,32 @@ model WhatsAppMessage {
   @@index([mediaStatus])
 }
 
+// ---------- Costuri și profit pe comandă (/admin/profit) ----------
+// Costul real de producție (PrintCenter), transportul și comisioanele plătite de noi, pe comandă.
+// Fără relație Prisma spre "Order" (doar orderId), ca tabelul să fie strict aditiv. Baza e comună
+// celor 6 site-uri de print: modelele sunt copiate identic și în schemele lor.
+
+model OrderCost {
+  id                 String   @id @default(cuid())
+  orderId            String   @unique
+  printcenterOrderNo String? // nr. comenzii la PrintCenter (ex. 115337)
+  productionCost     Decimal? @db.Decimal(12, 2) // cost real producție, lei FĂRĂ TVA (gol = estimat)
+  shippingCost       Decimal? @db.Decimal(12, 2) // transport plătit de noi, lei FĂRĂ TVA (gol = implicit)
+  paymentFee         Decimal? @db.Decimal(12, 2) // comision plată (Stripe / ramburs), lei (gol = calculat)
+  otherCost          Decimal? @db.Decimal(12, 2) // alte costuri (grafică externă, ambalaj), lei fără TVA
+  note               String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@index([printcenterOrderNo])
+}
+
+model ProfitSetting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+}
+
 // --- Inbox E-mail (copiat din shopprint, aceeasi baza de date; altfel db push la deploy le-ar sterge) ---
 // Pe server nu se șterge / mută / marchează nimic (EXAMINE + BODY.PEEK). Starea (citit, rezolvat,
 // arhivat) e doar aici. Baza e comună celor 6 site-uri de print: modelele sunt copiate și în schemele lor.
@@ -731,4 +757,36 @@ model EmailAttachment {
   message   EmailMessage @relation(fields: [messageId], references: [id], onDelete: Cascade)
 
   @@index([messageId])
+}
+
+// Cheltuieli (/admin/cheltuieli): facturi de la furnizori (PrintCenter, DPD, reclame, găzduire...), plătite sau nu.
+// Unic pe (furnizor, număr factură), ca importurile (e-mail PrintCenter, SPV) să poată face upsert.
+// Sumele sunt în lei. Fără chei străine spre "Order" (orderIds = id-urile comenzilor noastre legate).
+model Expense {
+  id             String    @id @default(cuid())
+  supplier       String // „PrintCenter”, „DPD”, „Meta Ads”...
+  category       String    @default("altele") // productie | transport | reclame | it | abonamente | comisioane | altele
+  number         String? // nr. facturii furnizorului
+  issueDate      DateTime
+  dueDate        DateTime?
+  amountExVat    Decimal?  @db.Decimal(12, 2)
+  vatAmount      Decimal?  @db.Decimal(12, 2)
+  total          Decimal   @db.Decimal(12, 2) // de plată, cu TVA
+  status         String    @default("unpaid") // unpaid | paid
+  paidAt         DateTime?
+  paymentMethod  String? // card | transfer | numerar | compensare
+  site           String    @default("comun") // shopprint.ro / prynt.ro / ... / comun
+  note           String?
+  pdfRef         String? // URL sau cheia fișierului (Cloudinary authenticated / R2)
+  pdfName        String?
+  orderIds       String[]  @default([])
+  pcOrderNumbers String[]  @default([]) // comenzile PrintCenter facturate
+  source         String    @default("manual") // manual | email | import | spv
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@unique([supplier, number])
+  @@index([issueDate])
+  @@index([category])
+  @@index([status])
 }
