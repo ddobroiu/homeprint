@@ -1,0 +1,25 @@
+{
+  "intro": "Te muți într-o locuință nouă în Chișineu-Criș, un oraș din Câmpia Crișurilor, aproape de granița cu Ungaria, sau doar vrei să schimbi atmosfera unei camere? Un perete tapetat e o schimbare de decor care nu cere meseriași speciali: fâșiile vin numerotate și se pun în ordine. Folia transparentă e bună pentru autocolantele de pe geamuri și oglinzi, unde fundalul trebuie să se vadă. Pentru o casă în Nădab sau în alt sat din jurul orașului Chișineu-Criș, livrarea are același termen și același curier. Poți pune în același coș tapetul, canvasurile și autocolantele și le primești împreună.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Tapet floral pentru casă la curte",
+    "Decor pentru bucătăria de vară",
+    "Fotografie de familie pe un perete întreg",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Chișineu-Criș?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Renovez o casă în Nădab, lângă Chișineu-Criș. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Nădab și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Chișineu-Criș?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

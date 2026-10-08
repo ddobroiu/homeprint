@@ -1,0 +1,23 @@
+{
+  "intro": "Huși — un municipiu cunoscut pentru podgoriile Hușilor — are case vechi, blocuri și locuințe noi, iar fiecare are măcar un perete care cere un decor nou. Magazinele mici și cabinetele din zonă își pot decora și ele peretele principal cu un tapet personalizat cu numele firmei. Un perete de accent e de obicei cel din spatele patului, al canapelei sau al biroului, pe care privirea se oprește prima. Chiar dacă Huși se află la aproximativ 26 km de Vaslui, comanda ajunge în același termen, 2-4 zile lucrătoare. Prețul se actualizează la fiecare schimbare de dimensiune, așa că poți compara un perete întreg cu o porțiune mai mică. Peretele măsurat azi poate fi tapetat săptămâna aceasta.",
+  "useCases": [
+    "Tapet floral pentru casă la curte",
+    "Decor pentru bucătăria de vară",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Huși?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Huși."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Rusca?",
+      "a": "Sigur. Rusca, aflat la aproximativ 3 km de Huși, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Huși?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,23 @@
+{
+  "intro": "Darabani — un oraș din nordul extrem al județului, aproape de granița cu Ucraina — are case vechi, blocuri și locuințe noi, iar fiecare are măcar un perete care cere un decor nou. În casele la curte din Darabani și din satele din jur, un tapet cu un model floral sau cu un peisaj de câmp aduce afară înăuntru. Canvasul se face pe șasiu de lemn, gata de agățat, sau doar ca pânză printată, livrată rulată. Previzualizarea arată unde cad marginile imaginii, ca un detaliu important să nu ajungă după un dulap sau o ușă. Nu avem showroom în Darabani; totul se comandă online și vine prin curier, la adresă sau la un punct DPD în care încape coletul.",
+  "useCases": [
+    "Autocolante pentru mobilă veche",
+    "Camera nepoților decorată",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Darabani?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Concești?",
+      "a": "Da. Concești e la circa 4 km de Darabani, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Darabani?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

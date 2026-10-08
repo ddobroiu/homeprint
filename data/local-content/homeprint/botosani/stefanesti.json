@@ -1,0 +1,24 @@
+{
+  "intro": "Ștefănești, un oraș așezat pe Prut, la granița cu Republica Moldova, e una dintre localitățile în care HomePrint livrează tapet la comandă, canvasuri și autocolante decorative. Camera de oaspeți, cea în care dorm nepoții vara, poate primi un perete tapetat cu ceva vesel, fără renovare completă. Recensământul din 2021 a numărat în Ștefănești în jur de 1.100 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. Pe același site se găsesc și perne decorative gata imprimate, afișe și preșuri, utile pentru un decor complet. Poți pune în același coș tapetul, canvasurile și autocolantele și le primești împreună. Chiar dacă Ștefănești se află la aproximativ 41 km de Botoșani, comanda ajunge în același termen, 2-4 zile lucrătoare. Decorul ales de tine e cel care rămâne cel mai mult timp pe pereți.",
+  "useCases": [
+    "Autocolante pentru mobilă veche",
+    "Camera nepoților decorată",
+    "Fotografie de familie pe un perete întreg",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Ștefănești?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Ștefănești în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Ștefănești, de exemplu în Ștefănești-Sat?",
+      "a": "Da. Ștefănești-Sat e la circa 1 km de Ștefănești, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Ștefănești?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

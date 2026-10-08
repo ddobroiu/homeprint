@@ -1,0 +1,23 @@
+{
+  "intro": "Renovarea unei camere în Bârlad, al doilea municipiu ca mărime din județul Vaslui, pe râul Bârlad, poate începe cu ruleta și cu o imagine care îți place, nu neapărat cu un meseriaș. Pentru un apartament de închiriat într-o clădire istorică, un tapet cu un detaliu de arhitectură local îi dă oaspetelui senzația locului. Autocolantele decorative pot fi și mici, pentru întrerupătoare sau uși de dulap, și mari, pentru o compoziție pe un perete întreg. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână. Nu e nevoie să cauți tapet în magazinele din Vaslui, la circa 46 km: rola personalizată vine direct acasă, în Bârlad.",
+  "useCases": [
+    "Canvas cu hartă istorică",
+    "Tapet cu fotografie de arhivă a orașului",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Bârlad?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Bârlad."
+    },
+    {
+      "q": "Renovez o casă în Trestiana, lângă Bârlad. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Bârlad sau în Trestiana; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Bârlad?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

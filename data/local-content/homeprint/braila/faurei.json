@@ -1,0 +1,24 @@
+{
+  "intro": "Făurei — un oraș și nod feroviar în Câmpia Bărăganului — are case vechi, blocuri și locuințe noi, iar fiecare are măcar un perete care cere un decor nou. Pentru camerele copiilor, un tapet cu personajele lor preferate sau cu harta lumii transformă o cameră banală într-una de poveste. Fâșiile de tapet vin numerotate, gata de îmbinat, așa că imaginea se reface corect pe perete. Casele din Făurei, Horia sau Brateșu Vechi primesc comanda în același termen, așa că poți programa montajul încă de la plată. Poți salva ideea, măsura încă o dată peretele și reveni la comandă când ești sigur pe cifre.",
+  "useCases": [
+    "Tapet panoramic pentru cameră mică",
+    "Camera nepoților decorată",
+    "Tapet pentru camera copiilor",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Făurei?",
+      "a": "Pentru Făurei, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Renovez o casă în Horia, lângă Făurei. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Făurei sau în Horia; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Făurei?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru apartamentele și casele din Aleșd, un oraș de pe valea Crișului Repede, cu o fabrică de ciment cunoscută în zonă, HomePrint face decor tipărit la comandă, pe măsura fiecărei camere. Un canvas mare deasupra canapelei și un perete tapetat în aceeași gamă de culori fac livingul să pară proaspăt renovat. Tapetul este lavabil și se șterge cu o lavetă umedă, util mai ales în camerele copiilor sau pe hol. Prețul tapetului se calculează pe metru pătrat și scade pe măsură ce crește suprafața comandată. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână. Dacă renovezi o casă în Peștiș sau în alt sat din apropiere, livrarea se face la fel, la adresa completă trecută în comandă.",
+  "useCases": [
+    "Living renovat cu tapet și canvas",
+    "Autocolante pentru uși interioare",
+    "Tapet panoramic pentru cameră mică",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Aleșd?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Aleșd."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Peștiș?",
+      "a": "Da. Peștiș e la circa 2 km de Aleșd, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Aleșd?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

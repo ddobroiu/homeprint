@@ -1,0 +1,23 @@
+{
+  "intro": "Un interior cald în Teiuș, un oraș și nod de cale ferată pe valea Mureșului, se construiește din detalii: un perete tapetat, un tablou pe pânză, câteva autocolante bine alese. Apartamentele de bloc din anii '70 și '80 au camere mici, iar un tapet cu un peisaj larg pe un singur perete deschide vizual spațiul. Magazinele mici și cabinetele din zonă își pot decora și ele peretele principal cu un tapet personalizat cu numele firmei. Dacă nu ai o grafică pregătită, echipa de design poate potrivi imaginea pe dimensiunile peretelui, contra unei taxe afișate în configurator. Imaginea se încarcă direct din telefon sau din calculator, iar previzualizarea arată cum se întinde pe perete. Dacă renovezi o casă în Stremț sau în alt sat din apropiere, livrarea se face la fel, la adresa completă trecută în comandă.",
+  "useCases": [
+    "Tapet floral pentru casă la curte",
+    "Perete nou în apartament de bloc",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Teiuș?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Teiuș."
+    },
+    {
+      "q": "Renovez o casă în Stremț, lângă Teiuș. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Stremț și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Teiuș?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

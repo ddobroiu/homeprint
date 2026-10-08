@@ -1,0 +1,24 @@
+{
+  "intro": "Renovarea unei camere în Săcueni, un oraș din nordul Bihorului, aproape de granița cu Ungaria, poate începe cu ruleta și cu o imagine care îți place, nu neapărat cu un meseriaș. Pentru cei care lucrează în străinătate și își refac casa de acasă, comanda se poate face online, cu livrare la adresa părinților. Pe același site se găsesc și perne decorative gata imprimate, afișe și preșuri, utile pentru un decor complet. AWB-ul vine pe e-mail și prin SMS, ca să știi când să fii acasă pentru tapet sau tablouri. Prețul se actualizează la fiecare schimbare de dimensiune, așa că poți compara un perete întreg cu o porțiune mai mică.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Decor pentru bucătăria de vară",
+    "Autocolante pentru mobilă veche",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Săcueni?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Săcueni."
+    },
+    {
+      "q": "Renovez o casă în Ciocaia, lângă Săcueni. Ajunge comanda acolo?",
+      "a": "Da. Ciocaia e la circa 4 km de Săcueni, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Săcueni?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

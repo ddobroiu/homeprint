@@ -1,0 +1,24 @@
+{
+  "intro": "Un interior cald în Cugir, un oraș industrial, cu tradiție în construcția de mașini, la poalele Munților Șureanu, se construiește din detalii: un perete tapetat, un tablou pe pânză, câteva autocolante bine alese. Un canvas mare deasupra canapelei și un perete tapetat în aceeași gamă de culori fac livingul să pară proaspăt renovat. În casele la curte din Cugir și din satele din jur, un tapet cu un model floral sau cu un peisaj de câmp aduce afară înăuntru. Un perete de accent e de obicei cel din spatele patului, al canapelei sau al biroului, pe care privirea se oprește prima. Termenul curge de la confirmarea comenzii și a graficii, deci o imagine bună încărcată de la început scurtează așteptarea. AWB-ul vine pe e-mail și prin SMS, ca să știi când să fii acasă pentru tapet sau tablouri.",
+  "useCases": [
+    "Living renovat cu tapet și canvas",
+    "Tapet panoramic pentru cameră mică",
+    "Decor pentru bucătăria de vară",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Cugir?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Cugir."
+    },
+    {
+      "q": "Renovez o casă în Fețeni, lângă Cugir. Ajunge comanda acolo?",
+      "a": "Sigur. Fețeni, aflat la aproximativ 4 km de Cugir, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Cugir?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

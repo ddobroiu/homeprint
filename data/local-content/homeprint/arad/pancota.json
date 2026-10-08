@@ -1,0 +1,24 @@
+{
+  "intro": "Locuitorii din Pâncota, un oraș așezat la poalele Munților Zărandului, pot comanda de acasă tapet, tablouri pe pânză și autocolante pentru mobilă sau pereți. Un perete tapetat e o schimbare de decor care nu cere meseriași speciali: fâșiile vin numerotate și se pun în ordine. Tapetul este lavabil și se șterge cu o lavetă umedă, util mai ales în camerele copiilor sau pe hol. Tapetul vine rulat, protejat pentru transport, iar coletele mici, cum sunt autocolantele, pot merge și la un locker DPD. Măsoară peretele în câteva puncte și folosește cea mai mare valoare, ca tapetul să acopere complet suprafața.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Fotografie de familie pe un perete întreg",
+    "Camera nepoților decorată",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Pâncota?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Pâncota în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Măderat?",
+      "a": "Da, trece adresa completă din Măderat și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Pâncota?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

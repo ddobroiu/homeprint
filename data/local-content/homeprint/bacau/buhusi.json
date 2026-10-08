@@ -1,0 +1,24 @@
+{
+  "intro": "Un interior cald în Buhuși, un oraș de pe Bistrița, cu tradiție în industria textilă, se construiește din detalii: un perete tapetat, un tablou pe pânză, câteva autocolante bine alese. Familiile care își refac apartamentul pe bucăți pot începe cu un perete și continua cu restul când permite bugetul. Pentru un perete cu ușă sau fereastră, măsori întreaga suprafață, iar decupajul se face la montaj, ca la orice tapet. Plata se face cu cardul, prin ordin de plată sau ramburs la curier, pentru comenzile de până la 300 lei. Poți pune în același coș tapetul, canvasurile și autocolantele și le primești împreună.",
+  "useCases": [
+    "Autocolante pentru uși interioare",
+    "Tapet pentru camera copiilor",
+    "Tapet panoramic pentru cameră mică",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Buhuși?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Buhuși."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Racova?",
+      "a": "Da. Adresa poate fi în Buhuși sau în Racova; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Buhuși?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,24 @@
+{
+  "intro": "Ai măsurat peretele din sufragerie și locuiești în Sântana, un oraș agricol din Câmpia Aradului? Din acele cifre iese un tapet făcut pe comandă. Camera de oaspeți, cea în care dorm nepoții vara, poate primi un perete tapetat cu ceva vesel, fără renovare completă. Un perete de accent e de obicei cel din spatele patului, al canapelei sau al biroului, pe care privirea se oprește prima. Canvasurile pe șasiu vin la adresă, pentru că nu încap în lockere, iar autocolantele și pânza rulată pot merge la un punct DPD. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână.",
+  "useCases": [
+    "Tapet floral pentru casă la curte",
+    "Camera nepoților decorată",
+    "Decor pentru bucătăria de vară",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Sântana?",
+      "a": "Pentru Sântana, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Livrați tapetul și în Olari?",
+      "a": "Da. Adresa poate fi în Sântana sau în Olari; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Sântana?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

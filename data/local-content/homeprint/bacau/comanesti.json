@@ -1,0 +1,24 @@
+{
+  "intro": "Locuitorii din Comănești, un oraș de pe valea Trotușului, la poalele Carpaților Orientali, pot comanda de acasă tapet, tablouri pe pânză și autocolante pentru mobilă sau pereți. Apartamentele de bloc din anii '70 și '80 au camere mici, iar un tapet cu un peisaj larg pe un singur perete deschide vizual spațiul. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână. Comanda ajunge prin DPD în 2-4 zile lucrătoare, așa că poți pregăti peretele, curățat și uscat, până vine tapetul. Casa începe să semene cu tine din momentul în care pereții nu mai sunt toți la fel.",
+  "useCases": [
+    "Autocolante pentru mobilă veche",
+    "Tapet panoramic pentru cameră mică",
+    "Tapet floral pentru casă la curte",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Comănești?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Comănești în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Podei?",
+      "a": "Da. Adresa poate fi în Comănești sau în Podei; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Comănești?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

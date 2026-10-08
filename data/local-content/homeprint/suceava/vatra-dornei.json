@@ -1,0 +1,24 @@
+{
+  "intro": "Cine își amenajează locuința în Vatra Dornei, o stațiune balneoclimaterică de pe Bistrița, cu pârtie de schi, poate comanda online tapet făcut exact pe dimensiunea peretelui. Pensiunile și cabanele își pot face camere tematice, fiecare cu un tapet cu alt peisaj din zonă, care rămâne în memoria oaspeților. Fâșiile de tapet vin numerotate, gata de îmbinat, așa că imaginea se reface corect pe perete. La imaginile panoramice merită lăsați câțiva centimetri în plus la fiecare margine, pentru tăierea finală pe perete. Previzualizarea arată unde cad marginile imaginii, ca un detaliu important să nu ajungă după un dulap sau o ușă. AWB-ul vine pe e-mail și prin SMS, ca să știi când să fii acasă pentru tapet sau tablouri. Decorul ales de tine e cel care rămâne cel mai mult timp pe pereți.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Decor pentru bucătăria de vară",
+    "Camere tematice pentru pensiune",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Vatra Dornei?",
+      "a": "Pentru Vatra Dornei, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Roșu?",
+      "a": "Sigur. Roșu, aflat la aproximativ 3 km de Vatra Dornei, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Vatra Dornei?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

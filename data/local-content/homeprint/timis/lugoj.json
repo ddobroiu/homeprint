@@ -1,0 +1,25 @@
+{
+  "intro": "Locuitorii din Lugoj, un municipiu de pe Timiș, al doilea oraș ca mărime al județului, pot comanda de acasă tapet, tablouri pe pânză și autocolante pentru mobilă sau pereți. În locuințele din clădiri vechi, tapetul poate acoperi un perete cu imperfecțiuni fără să mai fie nevoie de o tencuială nouă perfectă. Prețul tapetului se calculează pe metru pătrat și scade pe măsură ce crește suprafața comandată. Plata se face cu cardul, prin ordin de plată sau ramburs la curier, pentru comenzile de până la 300 lei. Dacă ai doi pereți de decorat, adaugă în coș câte un tapet pentru fiecare, cu dimensiunile lui.",
+  "useCases": [
+    "Autocolante pentru uși interioare",
+    "Model clasic pentru casă veche",
+    "Tapet panoramic pentru cameră mică",
+    "Living renovat cu tapet și canvas",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Lugoj?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Lugoj."
+    },
+    {
+      "q": "Livrați tapetul și în Hezeriș?",
+      "a": "Da. Hezeriș e la circa 5 km de Lugoj, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Lugoj?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

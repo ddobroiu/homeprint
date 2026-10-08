@@ -1,0 +1,23 @@
+{
+  "intro": "Casele din Flămânzi, un oraș din sudul județului, cunoscut din istoria răscoalei din 1907, au pereți pe care o zugrăveală nouă îi schimbă puțin, iar un tapet cu imagine îi schimbă de tot. O fotografie de arhivă cu centrul vechi, mărită pe tot peretele, leagă casa de istoria locului în care stai. Un tablou canvas asortat cu tapetul, pe peretele opus, leagă culorile camerei între ele. Fotografiile din telefon merg bine pe pereți mici, iar pentru pereți mari e bine să cauți imaginea la rezoluția maximă. Termenul de 2-4 zile lucrătoare e același în Flămânzi și în orice altă localitate din județul Botoșani.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Decor floral asortat cu mobila de familie",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Flămânzi?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Flămânzi."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Storești?",
+      "a": "Da. Adresa poate fi în Flămânzi sau în Storești; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Flămânzi?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

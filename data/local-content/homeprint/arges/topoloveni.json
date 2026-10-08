@@ -1,0 +1,24 @@
+{
+  "intro": "Te muți într-o locuință nouă în Topoloveni, un oraș cunoscut pentru magiunul de prune, sau doar vrei să schimbi atmosfera unei camere? O fotografie de familie mărită pe un canvas mare sau chiar pe un perete întreg poate fi piesa centrală a unei case renovate. Imaginea pentru tapet poate fi o fotografie proprie sau orice imagine pentru care ai drept de folosire, la rezoluție cât mai mare. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire. Termenul de 2-4 zile lucrătoare e același în Topoloveni și în orice altă localitate din județul Argeș. Casa începe să semene cu tine din momentul în care pereții nu mai sunt toți la fel.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Tapet floral pentru casă la curte",
+    "Camera nepoților decorată",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Topoloveni?",
+      "a": "Pentru Topoloveni, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Cârciumărești?",
+      "a": "Sigur. Cârciumărești, aflat la aproximativ 2 km de Topoloveni, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Topoloveni?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

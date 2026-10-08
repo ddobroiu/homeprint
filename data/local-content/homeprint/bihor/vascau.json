@@ -1,0 +1,23 @@
+{
+  "intro": "Pentru apartamentele și casele din Vașcău, un oraș mic la poalele Munților Codru-Moma, HomePrint face decor tipărit la comandă, pe măsura fiecărei camere. În casele la curte din Vașcău și din satele din jur, un tapet cu un model floral sau cu un peisaj de câmp aduce afară înăuntru. Tapetul este lavabil și se șterge cu o lavetă umedă, util mai ales în camerele copiilor sau pe hol. Canvasurile pe șasiu vin la adresă, pentru că nu încap în lockere, iar autocolantele și pânza rulată pot merge la un punct DPD. Prețul se actualizează la fiecare schimbare de dimensiune, așa că poți compara un perete întreg cu o porțiune mai mică. Rămâne doar să alegi imaginea; dimensiunile le ai deja de pe ruletă.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Tapet floral pentru casă la curte",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Vașcău?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Vașcău."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Vașcău, de exemplu în Cărpinet?",
+      "a": "Da. Cărpinet e la circa 2 km de Vașcău, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Vașcău?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

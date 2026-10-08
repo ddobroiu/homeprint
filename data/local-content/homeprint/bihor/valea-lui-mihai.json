@@ -1,0 +1,25 @@
+{
+  "intro": "Ai măsurat peretele din sufragerie și locuiești în Valea lui Mihai, un oraș de graniță din nordul Bihorului? Din acele cifre iese un tapet făcut pe comandă. Pentru cei care lucrează în străinătate și își refac casa de acasă, comanda se poate face online, cu livrare la adresa părinților. Recensământul din 2021 a numărat în Valea lui Mihai în jur de 8.900 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. Autocolantele cu citate, siluete sau forme geometrice se pot comanda în mai multe bucăți, pentru o compoziție pe tot peretele. Previzualizarea arată unde cad marginile imaginii, ca un detaliu important să nu ajungă după un dulap sau o ușă. Chiar dacă Valea lui Mihai se află la aproximativ 54 km de Oradea, comanda ajunge în același termen, 2-4 zile lucrătoare.",
+  "useCases": [
+    "Tapet floral pentru casă la curte",
+    "Decor pentru bucătăria de vară",
+    "Autocolante pentru mobilă veche",
+    "Camera nepoților decorată",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Valea lui Mihai?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Valea lui Mihai."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Șimian?",
+      "a": "Da. Șimian e la circa 5 km de Valea lui Mihai, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Valea lui Mihai?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

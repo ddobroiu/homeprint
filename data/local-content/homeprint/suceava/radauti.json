@@ -1,0 +1,25 @@
+{
+  "intro": "Rădăuți, un municipiu din nordul Bucovinei, cu Biserica Bogdana, e una dintre localitățile în care HomePrint livrează tapet la comandă, canvasuri și autocolante decorative. Modelele florale sau cu ornamente se potrivesc cu mobila veche de familie și cu ușile de lemn ale caselor de altădată. Autocolantele decorative pot fi și mici, pentru întrerupătoare sau uși de dulap, și mari, pentru o compoziție pe un perete întreg. Plata se face cu cardul, prin ordin de plată sau ramburs la curier, pentru comenzile de până la 300 lei. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Autocolante pentru mobilă veche",
+    "Decor floral asortat cu mobila de familie",
+    "Model clasic pentru casă veche",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Rădăuți?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Rădăuți."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Volovăț?",
+      "a": "Sigur. Volovăț, aflat la aproximativ 5 km de Rădăuți, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Rădăuți?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

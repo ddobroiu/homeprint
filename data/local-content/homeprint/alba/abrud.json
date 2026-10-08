@@ -1,0 +1,23 @@
+{
+  "intro": "În Abrud, un oraș vechi din Țara Moților, în Munții Apuseni, camerele copiilor, holurile și dormitoarele pot primi un decor nou fără mobilă nouă. Casele vechi renovate au tavane înalte și pereți mari, pe care un tapet cu un model clasic sau cu o fotografie veche a orașului arată spectaculos. La recensământul din 2021, Abrud avea aproximativ 3.100 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Magazinele mici și cabinetele din zonă își pot decora și ele peretele principal cu un tapet personalizat cu numele firmei. La imaginile panoramice merită lăsați câțiva centimetri în plus la fiecare margine, pentru tăierea finală pe perete. Livrarea merge oriunde în Abrud și în împrejurimi, inclusiv în Abrud-Sat, direct la casa sau apartamentul în renovare. Poți pune în același coș tapetul, canvasurile și autocolantele și le primești împreună.",
+  "useCases": [
+    "Tapet cu fotografie de arhivă a orașului",
+    "Tapet pentru apartament în clădire veche",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Abrud?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Abrud."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Abrud, de exemplu în Abrud-Sat?",
+      "a": "Sigur. Abrud-Sat, aflat la aproximativ 1 km de Abrud, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Abrud?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

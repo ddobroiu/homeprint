@@ -1,0 +1,25 @@
+{
+  "intro": "Baia de Arieș, un oraș cu tradiție minieră pe valea Arieșului, e una dintre localitățile în care HomePrint livrează tapet la comandă, canvasuri și autocolante decorative. Renovările de apartamente vechi încep des cu bucătăria și dormitorul, iar un perete tapetat e o schimbare vizibilă la un cost controlat. Prețul tapetului se calculează pe metru pătrat și scade pe măsură ce crește suprafața comandată. Coletul pleacă prin DPD spre Baia de Arieș, dar și spre Sartăș, Muncelu și celelalte localități din jur, în 2-4 zile lucrătoare cu tot cu producția. Fotografiile din telefon merg bine pe pereți mici, iar pentru pereți mari e bine să cauți imaginea la rezoluția maximă.",
+  "useCases": [
+    "Perete nou în apartament de bloc",
+    "Living renovat cu tapet și canvas",
+    "Tapet panoramic pentru cameră mică",
+    "Fotografie de familie pe un perete întreg",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Baia de Arieș?",
+      "a": "Pentru Baia de Arieș, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Baia de Arieș, de exemplu în Sartăș?",
+      "a": "Da. Adresa poate fi în Baia de Arieș sau în Sartăș; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Baia de Arieș?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

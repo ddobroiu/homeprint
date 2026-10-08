@@ -1,0 +1,23 @@
+{
+  "intro": "Pentru cine stă în Beclean, un oraș de pe Someșul Mare și nod de cale ferată, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. Apartamentele de bloc din anii '70 și '80 au camere mici, iar un tapet cu un peisaj larg pe un singur perete deschide vizual spațiul. Prețul tapetului se calculează pe metru pătrat și scade pe măsură ce crește suprafața comandată. Previzualizarea arată unde cad marginile imaginii, ca un detaliu important să nu ajungă după un dulap sau o ușă. Livrarea merge oriunde în Beclean și în împrejurimi, inclusiv în Rusu de Jos, direct la casa sau apartamentul în renovare.",
+  "useCases": [
+    "Living renovat cu tapet și canvas",
+    "Perete nou în apartament de bloc",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Beclean?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Beclean în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Rusu de Jos, lângă Beclean. Ajunge comanda acolo?",
+      "a": "Sigur. Rusu de Jos, aflat la aproximativ 4 km de Beclean, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Beclean?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru familiile din Pecica, un oraș din vestul județului, aproape de Mureș și de granița cu Ungaria, decorul casei nu mai înseamnă doar zugrăveală: tapetul personalizat și autocolantele fac diferența. Bucătăriile de vară și camerele refăcute în casele bătrânești primesc bine autocolantele decorative pe mobila veche. Autocolantele cu citate, siluete sau forme geometrice se pot comanda în mai multe bucăți, pentru o compoziție pe tot peretele. Tapetul vine rulat, protejat pentru transport, iar coletele mici, cum sunt autocolantele, pot merge și la un locker DPD. Prețul se actualizează la fiecare schimbare de dimensiune, așa că poți compara un perete întreg cu o porțiune mai mică.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Autocolante pentru mobilă veche",
+    "Camera nepoților decorată",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Pecica?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Pecica."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Sânpetru German?",
+      "a": "Da, trece adresa completă din Sânpetru German și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Pecica?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

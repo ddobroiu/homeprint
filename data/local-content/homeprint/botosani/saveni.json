@@ -1,0 +1,23 @@
+{
+  "intro": "În Săveni, un oraș agricol de pe valea Bașeului, camerele copiilor, holurile și dormitoarele pot primi un decor nou fără mobilă nouă. Bucătăriile de vară și camerele refăcute în casele bătrânești primesc bine autocolantele decorative pe mobila veche. Fâșiile de tapet vin numerotate, gata de îmbinat, așa că imaginea se reface corect pe perete. Tapetul este lavabil și se șterge cu o lavetă umedă, util mai ales în camerele copiilor sau pe hol. Nu e nevoie să cauți tapet în magazinele din Botoșani, la circa 28 km: rola personalizată vine direct acasă, în Săveni. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Autocolante pentru mobilă veche",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Săveni?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Săveni în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Petricani?",
+      "a": "Da. Petricani e la circa 1 km de Săveni, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Săveni?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

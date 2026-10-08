@@ -1,0 +1,24 @@
+{
+  "intro": "Știm despre Ianca că este un oraș agricol din Bărăgan; cum arată pereții casei tale de acolo poți decide chiar tu, de la imagine la dimensiune. Pentru cei care lucrează în străinătate și își refac casa de acasă, comanda se poate face online, cu livrare la adresa părinților. La imaginile panoramice merită lăsați câțiva centimetri în plus la fiecare margine, pentru tăierea finală pe perete. Prețul tapetului se calculează pe metru pătrat și scade pe măsură ce crește suprafața comandată. Nu e nevoie să cauți tapet în magazinele din Brăila, la circa 42 km: rola personalizată vine direct acasă, în Ianca. Termenul curge de la confirmarea comenzii și a graficii, deci o imagine bună încărcată de la început scurtează așteptarea.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Decor pentru bucătăria de vară",
+    "Tapet floral pentru casă la curte",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Ianca?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Ianca."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Ianca, de exemplu în Perișoru?",
+      "a": "Sigur. Perișoru, aflat la aproximativ 3 km de Ianca, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Ianca?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

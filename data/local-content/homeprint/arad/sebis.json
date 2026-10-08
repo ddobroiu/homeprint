@@ -1,0 +1,24 @@
+{
+  "intro": "Renovarea unei camere în Sebiș, un oraș de pe valea Crișului Alb, spre Munții Codru-Moma, poate începe cu ruleta și cu o imagine care îți place, nu neapărat cu un meseriaș. Bucătăriile de vară și camerele refăcute în casele bătrânești primesc bine autocolantele decorative pe mobila veche. Dacă nu ai o grafică pregătită, echipa de design poate potrivi imaginea pe dimensiunile peretelui, contra unei taxe afișate în configurator. Canvasurile pe șasiu vin la adresă, pentru că nu încap în lockere, iar autocolantele și pânza rulată pot merge la un punct DPD. Măsoară peretele în câteva puncte și folosește cea mai mare valoare, ca tapetul să acopere complet suprafața.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Decor pentru bucătăria de vară",
+    "Autocolante pentru mobilă veche",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Sebiș?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Sebiș în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Donceni, lângă Sebiș. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Sebiș sau în Donceni; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Sebiș?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

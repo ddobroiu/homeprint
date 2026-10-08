@@ -1,0 +1,24 @@
+{
+  "intro": "Cine își amenajează locuința în Dărmănești, un oraș de pe valea Trotușului, aproape de confluența cu Uzul, poate comanda online tapet făcut exact pe dimensiunea peretelui. În casele la curte din Dărmănești și din satele din jur, un tapet cu un model floral sau cu un peisaj de câmp aduce afară înăuntru. Poți alege tapet autoadeziv, care se aplică direct, sau varianta clasică, lipită cu adeziv separat. Rambursul la curier e disponibil pentru comenzile de până la 300 lei, iar pentru un perete mare plătești cu cardul sau prin ordin de plată. Fotografiile din telefon merg bine pe pereți mici, iar pentru pereți mari e bine să cauți imaginea la rezoluția maximă. Peretele măsurat azi poate fi tapetat săptămâna aceasta.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Decor pentru bucătăria de vară",
+    "Tapet floral pentru casă la curte",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Dărmănești?",
+      "a": "Pentru Dărmănești, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Livrați tapetul și în Dărmăneasca?",
+      "a": "Da. Adresa poate fi în Dărmănești sau în Dărmăneasca; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Dărmănești?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

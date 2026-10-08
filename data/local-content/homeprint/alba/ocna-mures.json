@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru apartamentele și casele din Ocna Mureș, un oraș de pe Mureș cunoscut pentru sare și pentru lacurile sărate din jur, HomePrint face decor tipărit la comandă, pe măsura fiecărei camere. Pensiunile și cabanele își pot face camere tematice, fiecare cu un tapet cu alt peisaj din zonă, care rămâne în memoria oaspeților. Pe același site se găsesc și perne decorative gata imprimate, afișe și preșuri, utile pentru un decor complet. Prețul tapetului se calculează pe metru pătrat și scade pe măsură ce crește suprafața comandată. Chiar dacă Ocna Mureș se află la aproximativ 41 km de Alba Iulia, comanda ajunge în același termen, 2-4 zile lucrătoare. Măsoară peretele în câteva puncte și folosește cea mai mare valoare, ca tapetul să acopere complet suprafața.",
+  "useCases": [
+    "Autocolante cu numerele camerelor",
+    "Perete decorat pentru restaurant",
+    "Autocolante pentru uși interioare",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Ocna Mureș?",
+      "a": "Pentru Ocna Mureș, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Livrați tapetul și în Uioara de Sus?",
+      "a": "Da, trece adresa completă din Uioara de Sus și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Ocna Mureș?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

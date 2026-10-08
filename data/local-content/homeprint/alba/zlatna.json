@@ -1,0 +1,24 @@
+{
+  "intro": "În Zlatna, un oraș cu trecut minier în Munții Metaliferi, un dormitor sau un living se poate schimba complet cu un singur perete tapetat cu o imagine aleasă de tine. Autocolantele decorative pe ușile interioare sau pe mobila veche dau un aer nou unei locuințe fără să schimbi nimic din structură. Folia transparentă e bună pentru autocolantele de pe geamuri și oglinzi, unde fundalul trebuie să se vadă. Termenul curge de la confirmarea comenzii și a graficii, deci o imagine bună încărcată de la început scurtează așteptarea. De la comandă până la livrare trec 2-4 zile lucrătoare, cu producția inclusă, iar transportul îl face curierul DPD.",
+  "useCases": [
+    "Tapet pentru camera copiilor",
+    "Autocolante pentru uși interioare",
+    "Tapet floral pentru casă la curte",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Zlatna?",
+      "a": "Pentru Zlatna, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Livrați tapetul și în Suseni?",
+      "a": "Da, trece adresa completă din Suseni și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Zlatna?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

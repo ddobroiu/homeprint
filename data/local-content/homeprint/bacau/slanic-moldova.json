@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru cine stă în Slănic-Moldova, o stațiune balneoclimaterică cu izvoare minerale, numită „Perla Moldovei”, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. Un perete tapetat cu muntele, lacul sau pădurea din apropiere aduce priveliștea în cameră chiar și în zilele cu vreme proastă. Magazinele mici și cabinetele din zonă își pot decora și ele peretele principal cu un tapet personalizat cu numele firmei. Canvasul se face pe șasiu de lemn, gata de agățat, sau doar ca pânză printată, livrată rulată. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire. AWB-ul vine pe e-mail și prin SMS, ca să știi când să fii acasă pentru tapet sau tablouri.",
+  "useCases": [
+    "Tapet cu harta zonei la recepție",
+    "Fotografie de familie pe un perete întreg",
+    "Decor pentru bucătăria de vară",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Slănic-Moldova?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Renovez o casă în Hârja, lângă Slănic-Moldova. Ajunge comanda acolo?",
+      "a": "Sigur. Hârja, aflat la aproximativ 5 km de Slănic-Moldova, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Slănic-Moldova?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

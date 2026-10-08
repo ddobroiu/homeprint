@@ -1,0 +1,24 @@
+{
+  "intro": "Lipova este un oraș de pe Mureș, vecin cu stațiunea Lipova Băi, iar în casele și apartamentele de aici renovările încep tot mai des cu un perete de accent. Casele de vacanță au adesea pereți de lemn sau de gips-carton pe care un tapet ales cu grijă schimbă tot interiorul. O fotografie de arhivă cu centrul vechi, mărită pe tot peretele, leagă casa de istoria locului în care stai. Dacă nu ai o grafică pregătită, echipa de design poate potrivi imaginea pe dimensiunile peretelui, contra unei taxe afișate în configurator. Tapetul, tablourile și autocolantele ajung în Lipova și în restul localităților din județul Arad în 2-4 zile lucrătoare, cu producția inclusă. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână.",
+  "useCases": [
+    "Tapet cu harta zonei la recepție",
+    "Tapet cu peisaj local pentru cabană",
+    "Perete decorat pentru restaurant",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Lipova?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Lipova în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Lipova, de exemplu în Radna?",
+      "a": "Da. Adresa poate fi în Lipova sau în Radna; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Lipova?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

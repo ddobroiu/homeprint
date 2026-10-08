@@ -1,0 +1,25 @@
+{
+  "intro": "Un interior cald în Drăgășani, un municipiu cunoscut pentru podgoria Drăgășani, se construiește din detalii: un perete tapetat, un tablou pe pânză, câteva autocolante bine alese. Camera de oaspeți, cea în care dorm nepoții vara, poate primi un perete tapetat cu ceva vesel, fără renovare completă. Autocolantele cu citate, siluete sau forme geometrice se pot comanda în mai multe bucăți, pentru o compoziție pe tot peretele. Fâșiile de tapet vin numerotate, gata de îmbinat, așa că imaginea se reface corect pe perete. Fotografiile din telefon merg bine pe pereți mici, iar pentru pereți mari e bine să cauți imaginea la rezoluția maximă. De la comandă până la livrare trec 2-4 zile lucrătoare, cu producția inclusă, iar transportul îl face curierul DPD.",
+  "useCases": [
+    "Autocolante pentru mobilă veche",
+    "Fotografie de familie pe un perete întreg",
+    "Decor pentru bucătăria de vară",
+    "Tapet floral pentru casă la curte",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Drăgășani?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Livrați tapetul și în Măzili?",
+      "a": "Da. Adresa poate fi în Drăgășani sau în Măzili; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Drăgășani?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

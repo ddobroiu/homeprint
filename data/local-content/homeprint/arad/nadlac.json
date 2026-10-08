@@ -1,0 +1,24 @@
+{
+  "intro": "Un interior cald în Nădlac, un oraș de graniță, cu punct de trecere spre Ungaria și o comunitate slovacă veche, se construiește din detalii: un perete tapetat, un tablou pe pânză, câteva autocolante bine alese. Bucătăriile de vară și camerele refăcute în casele bătrânești primesc bine autocolantele decorative pe mobila veche. Pentru un perete cu prize sau întrerupătoare, tapetul se decupează în jurul lor la montaj, cu un cutter, ca la orice tapet obișnuit. Casele din Nădlac, Șeitin sau Peregu Mare primesc comanda în același termen, așa că poți programa montajul încă de la plată. Dacă pregătești o surpriză pentru cineva drag, treci la livrare adresa casei unde va fi montat tapetul.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Tapet floral pentru casă la curte",
+    "Autocolante pentru mobilă veche",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Nădlac?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Nădlac."
+    },
+    {
+      "q": "Renovez o casă în Șeitin, lângă Nădlac. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Nădlac sau în Șeitin; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Nădlac?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

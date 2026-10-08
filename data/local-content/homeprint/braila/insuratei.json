@@ -1,0 +1,23 @@
+{
+  "intro": "Știm despre Însurăței că este un oraș de pe Călmățui, în Bărăganul brăilean; cum arată pereții casei tale de acolo poți decide chiar tu, de la imagine la dimensiune. Recensământul din 2021 a numărat în Însurăței în jur de 5.500 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. Magazinele mici și cabinetele din zonă își pot decora și ele peretele principal cu un tapet personalizat cu numele firmei. Autocolantele decorative pot fi și mici, pentru întrerupătoare sau uși de dulap, și mari, pentru o compoziție pe un perete întreg. Tapetul, tablourile și autocolantele ajung în Însurăței și în restul localităților din județul Brăila în 2-4 zile lucrătoare, cu producția inclusă. Fotografiile din telefon merg bine pe pereți mici, iar pentru pereți mari e bine să cauți imaginea la rezoluția maximă.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Tapet floral pentru casă la curte",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Însurăței?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Însurăței."
+    },
+    {
+      "q": "Livrați tapetul și în Măru Roșu?",
+      "a": "Sigur. Măru Roșu, aflat la aproximativ 4 km de Însurăței, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Însurăței?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}
