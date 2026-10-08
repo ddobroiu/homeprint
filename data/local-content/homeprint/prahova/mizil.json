@@ -1,0 +1,23 @@
+{
+  "intro": "Mizil este un oraș așezat la limita dintre câmpie și podgoria Dealu Mare, iar în casele și apartamentele de aici renovările încep tot mai des cu un perete de accent. La recensământul din 2021, Mizil avea aproximativ 12.000 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Un perete tapetat e o schimbare de decor care nu cere meseriași speciali: fâșiile vin numerotate și se pun în ordine. Tapetul cu o imagine mare arată cel mai bine pe peretele fără mobilă înaltă în față, unde se vede de la un capăt la altul. Imaginea se încarcă direct din telefon sau din calculator, iar previzualizarea arată cum se întinde pe perete. AWB-ul vine pe e-mail și prin SMS, ca să știi când să fii acasă pentru tapet sau tablouri. Decorul ales de tine e cel care rămâne cel mai mult timp pe pereți.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Tapet floral pentru casă la curte",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Mizil?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Mizil în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Fefelei?",
+      "a": "Sigur. Fefelei, aflat la aproximativ 1 km de Mizil, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Mizil?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

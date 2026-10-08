@@ -1,0 +1,25 @@
+{
+  "intro": "Renovarea unei camere în Breaza, un oraș-stațiune climatică de pe Valea Prahovei, poate începe cu ruleta și cu o imagine care îți place, nu neapărat cu un meseriaș. La recensământul din 2021, Breaza avea aproximativ 14.000 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Recepția unei pensiuni poate avea pe perete un tapet cu harta zonei, util și ca decor, și ca informație pentru turiști. Tapetul cu o imagine mare arată cel mai bine pe peretele fără mobilă înaltă în față, unde se vede de la un capăt la altul. Ai nevoie de un sfat despre imagine sau dimensiuni? Pagina de contact a site-ului are datele echipei. Livrarea merge oriunde în Breaza și în împrejurimi, inclusiv în Breaza de Jos, direct la casa sau apartamentul în renovare.",
+  "useCases": [
+    "Perete decorat pentru restaurant",
+    "Tapet cu harta zonei la recepție",
+    "Camere tematice pentru pensiune",
+    "Tapet cu peisaj local pentru cabană",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Breaza?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Breaza."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Breaza de Jos?",
+      "a": "Sigur. Breaza de Jos, aflat la aproximativ 1 km de Breaza, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Breaza?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

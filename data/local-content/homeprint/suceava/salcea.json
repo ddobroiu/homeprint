@@ -1,0 +1,23 @@
+{
+  "intro": "Salcea, un oraș de lângă Suceava, unde se află aeroportul Ștefan cel Mare, e una dintre localitățile în care HomePrint livrează tapet la comandă, canvasuri și autocolante decorative. Casele noi au pereți mari, albi, iar un tapet personalizat pe un perete din living e primul pas spre un interior cu personalitate. Pentru un perete cu ușă sau fereastră, măsori întreaga suprafață, iar decupajul se face la montaj, ca la orice tapet. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat. Canvasurile pe șasiu vin la adresă, pentru că nu încap în lockere, iar autocolantele și pânza rulată pot merge la un punct DPD.",
+  "useCases": [
+    "Tapet discret pentru dormitor",
+    "Perete nou în apartament de bloc",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Salcea?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Salcea în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Salcea, de exemplu în Plopeni?",
+      "a": "Sigur. Plopeni, aflat la aproximativ 2 km de Salcea, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Salcea?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

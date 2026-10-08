@@ -1,0 +1,25 @@
+{
+  "intro": "Pentru apartamentele și casele din Dolhasca, un oraș mic de pe Siret, în sudul județului, HomePrint face decor tipărit la comandă, pe măsura fiecărei camere. Recensământul din 2021 a numărat în Dolhasca în jur de 3.200 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. Magazinele mici și cabinetele din zonă își pot decora și ele peretele principal cu un tapet personalizat cu numele firmei. Pentru un perete cu prize sau întrerupătoare, tapetul se decupează în jurul lor la montaj, cu un cutter, ca la orice tapet obișnuit. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Poți pune în același coș tapetul, canvasurile și autocolantele și le primești împreună. Comanda ajunge prin DPD în 2-4 zile lucrătoare, așa că poți pregăti peretele, curățat și uscat, până vine tapetul.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Autocolante pentru mobilă veche",
+    "Decor pentru bucătăria de vară",
+    "Fotografie de familie pe un perete întreg",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Dolhasca?",
+      "a": "Pentru Dolhasca, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Dolhasca, de exemplu în Gulia?",
+      "a": "Sigur. Gulia, aflat la aproximativ 2 km de Dolhasca, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Dolhasca?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

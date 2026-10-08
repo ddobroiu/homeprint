@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru cine stă în Jibou, un oraș de pe Someș, cu o grădină botanică cunoscută, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. Un restaurant sau o cafenea din Jibou poate folosi o imagine cu Grădina Botanică Jibou pe un perete întreg, ca decor pe care localnicii îl recunosc imediat. Bucătăriile de vară și camerele refăcute în casele bătrânești primesc bine autocolantele decorative pe mobila veche. Imaginea pentru tapet poate fi o fotografie proprie sau orice imagine pentru care ai drept de folosire, la rezoluție cât mai mare. Termenul curge de la confirmarea comenzii și a graficii, deci o imagine bună încărcată de la început scurtează așteptarea. Coletul pleacă prin DPD spre Jibou, dar și spre Rona, Husia și celelalte localități din jur, în 2-4 zile lucrătoare cu tot cu producția.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Fotografie de familie pe un perete întreg",
+    "Decor pentru bucătăria de vară",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Jibou?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Jibou."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Jibou, de exemplu în Rona?",
+      "a": "Da, trece adresa completă din Rona și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Jibou?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

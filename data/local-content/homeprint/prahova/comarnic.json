@@ -1,0 +1,23 @@
+{
+  "intro": "Pentru cine stă în Comarnic, un oraș de pe Valea Prahovei, între Câmpina și Sinaia, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. Un perete tapetat e o schimbare de decor care nu cere meseriași speciali: fâșiile vin numerotate și se pun în ordine. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Autocolantele decorative se taie la forma dorită și se lipesc pe pereți netezi, pe sticlă sau pe mobilă. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire. Tapetul, tablourile și autocolantele ajung în Comarnic și în restul localităților din județul Prahova în 2-4 zile lucrătoare, cu producția inclusă.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Decor pentru bucătăria de vară",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Comarnic?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Comarnic."
+    },
+    {
+      "q": "Livrați tapetul și în Ghioșești?",
+      "a": "Sigur. Ghioșești, aflat la aproximativ 1 km de Comarnic, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Comarnic?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

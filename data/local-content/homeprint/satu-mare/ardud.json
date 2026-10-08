@@ -1,0 +1,23 @@
+{
+  "intro": "Pentru cine stă în Ardud, un oraș cu ruinele unei cetăți medievale, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. La recensământul din 2021, Ardud avea aproximativ 3.800 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Un canvas cu o gravură veche sau cu o hartă istorică se asortează bine cu un perete tapetat în tonuri calde. Un tablou canvas asortat cu tapetul, pe peretele opus, leagă culorile camerei între ele. Dacă pregătești o surpriză pentru cineva drag, treci la livrare adresa casei unde va fi montat tapetul. Rambursul la curier e disponibil pentru comenzile de până la 300 lei, iar pentru un perete mare plătești cu cardul sau prin ordin de plată. Iar dacă îți place rezultatul, poți continua cu holul sau cu camera copiilor.",
+  "useCases": [
+    "Tapet floral pentru casă la curte",
+    "Camera nepoților decorată",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Ardud?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Ardud."
+    },
+    {
+      "q": "Livrați tapetul și în Ardud-Vii?",
+      "a": "Da, trece adresa completă din Ardud-Vii și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Ardud?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

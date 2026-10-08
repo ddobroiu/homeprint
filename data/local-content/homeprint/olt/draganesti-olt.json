@@ -1,0 +1,23 @@
+{
+  "intro": "Drăgănești-Olt, un oraș de pe Olt, în Câmpia Romanaților, e una dintre localitățile în care HomePrint livrează tapet la comandă, canvasuri și autocolante decorative. Recensământul din 2021 a numărat în Drăgănești-Olt în jur de 7.100 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. O fotografie de familie mărită pe un canvas mare sau chiar pe un perete întreg poate fi piesa centrală a unei case renovate. Pentru un perete cu ușă sau fereastră, măsori întreaga suprafață, iar decupajul se face la montaj, ca la orice tapet. Dacă pregătești o surpriză pentru cineva drag, treci la livrare adresa casei unde va fi montat tapetul. Comanda ajunge prin DPD în 2-4 zile lucrătoare, așa că poți pregăti peretele, curățat și uscat, până vine tapetul. Peretele măsurat azi poate fi tapetat săptămâna aceasta.",
+  "useCases": [
+    "Autocolante pentru mobilă veche",
+    "Fotografie de familie pe un perete întreg",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Drăgănești-Olt?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Drăgănești-Olt."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Comani?",
+      "a": "Sigur. Comani, aflat la aproximativ 4 km de Drăgănești-Olt, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Drăgănești-Olt?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

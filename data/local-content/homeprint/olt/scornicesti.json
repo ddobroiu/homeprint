@@ -1,0 +1,23 @@
+{
+  "intro": "Ai măsurat peretele din sufragerie și locuiești în Scornicești, un oraș mic de la nord de Slatina? Din acele cifre iese un tapet făcut pe comandă. În casele la curte din Scornicești și din satele din jur, un tapet cu un model floral sau cu un peisaj de câmp aduce afară înăuntru. Autocolantele cu citate, siluete sau forme geometrice se pot comanda în mai multe bucăți, pentru o compoziție pe tot peretele. Imaginea pentru tapet poate fi o fotografie proprie sau orice imagine pentru care ai drept de folosire, la rezoluție cât mai mare. Pentru o casă în Șuica sau în alt sat din jurul orașului Scornicești, livrarea are același termen și același curier. Dacă pregătești o surpriză pentru cineva drag, treci la livrare adresa casei unde va fi montat tapetul. Un singur perete schimbat face adesea mai mult decât o cameră întreagă de mobilă nouă.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Autocolante pentru mobilă veche",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Scornicești?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Renovez o casă în Șuica, lângă Scornicești. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Șuica și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Scornicești?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

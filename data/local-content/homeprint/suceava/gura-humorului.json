@@ -1,0 +1,24 @@
+{
+  "intro": "Gura Humorului, un oraș turistic aflat aproape de mănăstirile Voroneț și Humor, e una dintre localitățile în care HomePrint livrează tapet la comandă, canvasuri și autocolante decorative. Un tapet cu Mănăstirea Voroneț e o idee bună pentru un apartament de închiriat, pentru că le arată oaspeților un loc pe care îl pot vizita. Un perete tapetat cu muntele, lacul sau pădurea din apropiere aduce priveliștea în cameră chiar și în zilele cu vreme proastă. Pe același site se găsesc și perne decorative gata imprimate, afișe și preșuri, utile pentru un decor complet. Ai nevoie de un sfat despre imagine sau dimensiuni? Pagina de contact a site-ului are datele echipei. Livrăm în toată țara, deci și în Gura Humorului și în celelalte localități din județul Suceava, în 2-4 zile lucrătoare de la comandă. Rămâne doar să alegi imaginea; dimensiunile le ai deja de pe ruletă.",
+  "useCases": [
+    "Autocolante cu numerele camerelor",
+    "Camere tematice pentru pensiune",
+    "Tapet cu peisaj local pentru cabană",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Gura Humorului?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Gura Humorului în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Voroneț, lângă Gura Humorului. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Gura Humorului sau în Voroneț; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Gura Humorului?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,24 @@
+{
+  "intro": "Azuga — o stațiune de pe Valea Prahovei, cu pârtii de schi — are case vechi, blocuri și locuințe noi, iar fiecare are măcar un perete care cere un decor nou. Restaurantele și barurile din zonele turistice folosesc un tapet mare pe peretele principal ca decor care se vede în fotografiile clienților. Cu circa 3.900 de locuitori numărați în 2021, Azuga are destule case și apartamente în care un decor nou s-ar vedea imediat. Canvasul și tapetul pot porni de la aceeași fotografie: una mare pe perete, una mică pe pânză, în altă cameră. Chiar dacă Azuga se află la aproximativ 66 km de Ploiești, comanda ajunge în același termen, 2-4 zile lucrătoare. Ai nevoie de un sfat despre imagine sau dimensiuni? Pagina de contact a site-ului are datele echipei. Camera rămâne aceeași, dar se simte complet altfel.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Tapet floral pentru casă la curte",
+    "Tapet cu harta zonei la recepție",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Azuga?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Azuga în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Bușteni, lângă Azuga. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Bușteni și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Azuga?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

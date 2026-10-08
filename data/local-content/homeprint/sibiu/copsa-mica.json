@@ -1,0 +1,24 @@
+{
+  "intro": "Știm despre Copșa Mică că este un oraș de pe Târnava Mare, cu o fostă platformă industrială; cum arată pereții casei tale de acolo poți decide chiar tu, de la imagine la dimensiune. La recensământul din 2021, Copșa Mică avea aproximativ 4.500 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Un canvas mare deasupra canapelei și un perete tapetat în aceeași gamă de culori fac livingul să pară proaspăt renovat. Fâșiile de tapet vin numerotate, gata de îmbinat, așa că imaginea se reface corect pe perete. Dacă ai doi pereți de decorat, adaugă în coș câte un tapet pentru fiecare, cu dimensiunile lui. Livrăm în toată țara, deci și în Copșa Mică și în celelalte localități din județul Sibiu, în 2-4 zile lucrătoare de la comandă.",
+  "useCases": [
+    "Autocolante pentru uși interioare",
+    "Tapet floral pentru casă la curte",
+    "Tapet pentru camera copiilor",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Copșa Mică?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Copșa Mică în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Copșa Mică, de exemplu în Axente Sever?",
+      "a": "Sigur. Axente Sever, aflat la aproximativ 2 km de Copșa Mică, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Copșa Mică?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

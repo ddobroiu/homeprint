@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru cine stă în Zimnicea, un oraș port la Dunăre și cel mai sudic oraș al României, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. O fotografie de familie mărită pe un canvas mare sau chiar pe un perete întreg poate fi piesa centrală a unei case renovate. Canvasul și tapetul pot porni de la aceeași fotografie: una mare pe perete, una mică pe pânză, în altă cameră. Măsoară peretele în câteva puncte și folosește cea mai mare valoare, ca tapetul să acopere complet suprafața. Tapetul, tablourile și autocolantele ajung în Zimnicea și în restul localităților din județul Teleorman în 2-4 zile lucrătoare, cu producția inclusă. Așa, renovarea începe cu decorul pe care îl vezi zilnic, nu cu cel care se termină ultimul.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Autocolante pentru mobilă veche",
+    "Fotografie de familie pe un perete întreg",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Zimnicea?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Zimnicea."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Zimnicea, de exemplu în Zimnicele?",
+      "a": "Da, trece adresa completă din Zimnicele și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Zimnicea?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,23 @@
+{
+  "intro": "Renovarea unei camere în Potcoava, un oraș mic din nordul județului Olt, poate începe cu ruleta și cu o imagine care îți place, nu neapărat cu un meseriaș. În casele la curte din Potcoava și din satele din jur, un tapet cu un model floral sau cu un peisaj de câmp aduce afară înăuntru. Cu circa 2.500 de locuitori numărați în 2021, Potcoava are destule case și apartamente în care un decor nou s-ar vedea imediat. Pe același site se găsesc și perne decorative gata imprimate, afișe și preșuri, utile pentru un decor complet. Nu ai nevoie de cunoștințe de grafică: alegi imaginea, o încadrezi pe perete și vezi rezultatul înainte să plătești. Chiar dacă Potcoava se află la aproximativ 22 km de Slatina, comanda ajunge în același termen, 2-4 zile lucrătoare. Peretele potrivit, cu imaginea potrivită, face o casă să pară nouă.",
+  "useCases": [
+    "Tapet floral pentru casă la curte",
+    "Fotografie de familie pe un perete întreg",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Potcoava?",
+      "a": "Pentru Potcoava, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Livrați tapetul și în Trufinești?",
+      "a": "Da, trece adresa completă din Trufinești și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Potcoava?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

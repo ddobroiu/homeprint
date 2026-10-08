@@ -1,0 +1,23 @@
+{
+  "intro": "Pentru cine stă în Corabia, un oraș port la Dunăre, în sudul județului Olt, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. Pentru cei care lucrează în străinătate și își refac casa de acasă, comanda se poate face online, cu livrare la adresa părinților. Cu circa 12.000 de locuitori numărați în 2021, Corabia are destule case și apartamente în care un decor nou s-ar vedea imediat. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Autocolantele cu citate, siluete sau forme geometrice se pot comanda în mai multe bucăți, pentru o compoziție pe tot peretele. Dacă pregătești o surpriză pentru cineva drag, treci la livrare adresa casei unde va fi montat tapetul. Livrarea merge oriunde în Corabia și în împrejurimi, inclusiv în Tudor Vladimirescu, direct la casa sau apartamentul în renovare.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Decor pentru bucătăria de vară",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Corabia?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Corabia în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Tudor Vladimirescu?",
+      "a": "Da. Adresa poate fi în Corabia sau în Tudor Vladimirescu; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Corabia?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

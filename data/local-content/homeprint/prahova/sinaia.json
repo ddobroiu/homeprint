@@ -1,0 +1,24 @@
+{
+  "intro": "Sinaia, o stațiune montană numită „Perla Carpaților”, cu Castelul Peleș, e una dintre localitățile în care HomePrint livrează tapet la comandă, canvasuri și autocolante decorative. Dacă ai o poză reușită cu Castelul Peleș, ea poate deveni tapet pentru un perete de accent sau canvas pentru hol. Recensământul din 2021 a numărat în Sinaia în jur de 9.000 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. Autocolantele cu numerele camerelor, cu săgeți spre sala de mic dejun sau cu mesaje de bun venit completează decorul unei pensiuni. Un tablou canvas asortat cu tapetul, pe peretele opus, leagă culorile camerei între ele. Casele din Sinaia, Poiana Țapului sau Bușteni primesc comanda în același termen, așa că poți programa montajul încă de la plată. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire.",
+  "useCases": [
+    "Canvas cu hartă istorică",
+    "Tapet cu harta zonei la recepție",
+    "Autocolante cu numerele camerelor",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Sinaia?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Sinaia."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Sinaia, de exemplu în Poiana Țapului?",
+      "a": "Da. Poiana Țapului e la circa 6 km de Sinaia, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Sinaia?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

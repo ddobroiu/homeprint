@@ -1,0 +1,23 @@
+{
+  "intro": "Cine își amenajează locuința în Vălenii de Munte, un oraș de pe valea Teleajenului, legat de numele lui Nicolae Iorga, poate comanda online tapet făcut exact pe dimensiunea peretelui. O fotografie de arhivă cu centrul vechi, mărită pe tot peretele, leagă casa de istoria locului în care stai. Cu circa 12.000 de locuitori numărați în 2021, Vălenii de Munte are destule case și apartamente în care un decor nou s-ar vedea imediat. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Casele din Vălenii de Munte, Bughea de Jos sau Poiana Copăceni primesc comanda în același termen, așa că poți programa montajul încă de la plată. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat. Decorul ales de tine e cel care rămâne cel mai mult timp pe pereți.",
+  "useCases": [
+    "Canvas cu hartă istorică",
+    "Tapet pentru apartament în clădire veche",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Vălenii de Munte?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Vălenii de Munte în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Vălenii de Munte, de exemplu în Bughea de Jos?",
+      "a": "Da. Adresa poate fi în Vălenii de Munte sau în Bughea de Jos; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Vălenii de Munte?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

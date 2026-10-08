@@ -1,0 +1,24 @@
+{
+  "intro": "Un interior cald în Jimbolia, un oraș de graniță spre Serbia, cu un muzeu al presei, se construiește din detalii: un perete tapetat, un tablou pe pânză, câteva autocolante bine alese. Cu circa 10.000 de locuitori numărați în 2021, Jimbolia are destule case și apartamente în care un decor nou s-ar vedea imediat. Bucătăriile de vară și camerele refăcute în casele bătrânești primesc bine autocolantele decorative pe mobila veche. Fâșiile de tapet vin numerotate, gata de îmbinat, așa că imaginea se reface corect pe perete. Dacă ai doi pereți de decorat, adaugă în coș câte un tapet pentru fiecare, cu dimensiunile lui. Pentru o casă în Comloșu Mic sau în alt sat din jurul orașului Jimbolia, livrarea are același termen și același curier.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Tapet floral pentru casă la curte",
+    "Camera nepoților decorată",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Jimbolia?",
+      "a": "Pentru Jimbolia, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Livrați tapetul și în Comloșu Mic?",
+      "a": "Sigur. Comloșu Mic, aflat la aproximativ 8 km de Jimbolia, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Jimbolia?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

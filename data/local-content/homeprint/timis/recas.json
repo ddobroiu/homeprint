@@ -1,0 +1,23 @@
+{
+  "intro": "Ai măsurat peretele din sufragerie și locuiești în Recaș, un oraș cunoscut pentru podgoria Recaș? Din acele cifre iese un tapet făcut pe comandă. Bucătăriile de vară și camerele refăcute în casele bătrânești primesc bine autocolantele decorative pe mobila veche. Canvasul se face pe șasiu de lemn, gata de agățat, sau doar ca pânză printată, livrată rulată. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire. Chiar dacă Recaș se află la aproximativ 23 km de Timișoara, comanda ajunge în același termen, 2-4 zile lucrătoare. Iar dacă îți place rezultatul, poți continua cu holul sau cu camera copiilor.",
+  "useCases": [
+    "Camera nepoților decorată",
+    "Fotografie de familie pe un perete întreg",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Recaș?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Recaș."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Recaș, de exemplu în Izvin?",
+      "a": "Sigur. Izvin, aflat la aproximativ 4 km de Recaș, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Recaș?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

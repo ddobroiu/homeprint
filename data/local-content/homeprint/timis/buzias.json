@@ -1,0 +1,24 @@
+{
+  "intro": "Locuitorii din Buziaș, o stațiune balneară cu ape minerale carbogazoase și un parc cu colonadă lungă, pot comanda de acasă tapet, tablouri pe pânză și autocolante pentru mobilă sau pereți. Proprietarii de apartamente de vacanță din Buziaș pot comanda tapet pentru mai multe camere deodată, fiecare pe dimensiunea ei. Autocolantele decorative pot fi și mici, pentru întrerupătoare sau uși de dulap, și mari, pentru o compoziție pe un perete întreg. Canvasul și tapetul pot porni de la aceeași fotografie: una mare pe perete, una mică pe pânză, în altă cameră. Chiar dacă Buziaș se află la aproximativ 32 km de Timișoara, comanda ajunge în același termen, 2-4 zile lucrătoare. Previzualizarea arată unde cad marginile imaginii, ca un detaliu important să nu ajungă după un dulap sau o ușă. Un decor nou nu cere neapărat meseriași, ci o idee bună și măsurile corecte.",
+  "useCases": [
+    "Perete decorat pentru restaurant",
+    "Tapet cu harta zonei la recepție",
+    "Tapet cu peisaj local pentru cabană",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Buziaș?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Buziaș în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Silagiu, lângă Buziaș. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Buziaș sau în Silagiu; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Buziaș?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

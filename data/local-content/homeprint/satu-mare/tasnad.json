@@ -1,0 +1,25 @@
+{
+  "intro": "Cine își amenajează locuința în Tășnad, un oraș cunoscut pentru ștrandul cu ape termale, poate comanda online tapet făcut exact pe dimensiunea peretelui. Un perete tapetat cu muntele, lacul sau pădurea din apropiere aduce priveliștea în cameră chiar și în zilele cu vreme proastă. Bucătăriile de vară și camerele refăcute în casele bătrânești primesc bine autocolantele decorative pe mobila veche. Recensământul din 2021 a numărat în Tășnad în jur de 6.200 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. La imaginile panoramice merită lăsați câțiva centimetri în plus la fiecare margine, pentru tăierea finală pe perete. Casele din Tășnad, Sărăuad sau Blaja primesc comanda în același termen, așa că poți programa montajul încă de la plată. Fotografiile din telefon merg bine pe pereți mici, iar pentru pereți mari e bine să cauți imaginea la rezoluția maximă.",
+  "useCases": [
+    "Camere tematice pentru pensiune",
+    "Decor pentru bucătăria de vară",
+    "Perete decorat pentru restaurant",
+    "Fotografie de familie pe un perete întreg",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Tășnad?",
+      "a": "Pentru Tășnad, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Renovez o casă în Sărăuad, lângă Tășnad. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Sărăuad și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Tășnad?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

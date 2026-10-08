@@ -1,0 +1,23 @@
+{
+  "intro": "În Boldești-Scăeni, un oraș de lângă Ploiești, în zona de extracție petrolieră, camerele copiilor, holurile și dormitoarele pot primi un decor nou fără mobilă nouă. Familiile care s-au mutat recent pot comanda tapetul, tablourile și autocolantele în aceeași comandă, ca decorul să fie gata deodată. Canvasul se face pe șasiu de lemn, gata de agățat, sau doar ca pânză printată, livrată rulată. Un tablou canvas asortat cu tapetul, pe peretele opus, leagă culorile camerei între ele. Măsoară peretele în câteva puncte și folosește cea mai mare valoare, ca tapetul să acopere complet suprafața. Dacă renovezi o casă în Șipotu sau în alt sat din apropiere, livrarea se face la fel, la adresa completă trecută în comandă. Peretele măsurat azi poate fi tapetat săptămâna aceasta.",
+  "useCases": [
+    "Perete nou în apartament de bloc",
+    "Tapet panoramic pentru cameră mică",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Boldești-Scăeni?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Boldești-Scăeni."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Boldești-Scăeni, de exemplu în Șipotu?",
+      "a": "Da. Șipotu e la circa 2 km de Boldești-Scăeni, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Boldești-Scăeni?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,24 @@
+{
+  "intro": "Pe lângă faptul că este un oraș de pe Târnava Mare, cu o biserică armenească, Dumbrăveni are mii de camere care așteaptă un decor mai personal decât un perete alb. Un canvas cu o gravură veche sau cu o hartă istorică se asortează bine cu un perete tapetat în tonuri calde. Canvasul se face pe șasiu de lemn, gata de agățat, sau doar ca pânză printată, livrată rulată. Pentru o casă în Șaroș pe Târnave sau în alt sat din jurul orașului Dumbrăveni, livrarea are același termen și același curier. Fotografiile din telefon merg bine pe pereți mici, iar pentru pereți mari e bine să cauți imaginea la rezoluția maximă.",
+  "useCases": [
+    "Tapet cu fotografie de arhivă a orașului",
+    "Autocolante pentru mobilă veche",
+    "Decor pentru bucătăria de vară",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Dumbrăveni?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Livrați tapetul și în Șaroș pe Târnave?",
+      "a": "Da, trece adresa completă din Șaroș pe Târnave și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Dumbrăveni?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

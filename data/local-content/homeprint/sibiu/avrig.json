@@ -1,0 +1,23 @@
+{
+  "intro": "În Avrig, un oraș de la poalele Munților Făgăraș, cu palatul de vară Brukenthal, camerele copiilor, holurile și dormitoarele pot primi un decor nou fără mobilă nouă. Modelele florale sau cu ornamente se potrivesc cu mobila veche de familie și cu ușile de lemn ale caselor de altădată. Un tablou canvas asortat cu tapetul, pe peretele opus, leagă culorile camerei între ele. Prețul se actualizează la fiecare schimbare de dimensiune, așa că poți compara un perete întreg cu o porțiune mai mică. Chiar dacă Avrig se află la aproximativ 19 km de Sibiu, comanda ajunge în același termen, 2-4 zile lucrătoare.",
+  "useCases": [
+    "Decor floral asortat cu mobila de familie",
+    "Autocolante pentru mobilă veche",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Avrig?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Mârșa?",
+      "a": "Sigur. Mârșa, aflat la aproximativ 3 km de Avrig, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Avrig?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

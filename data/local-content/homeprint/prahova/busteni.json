@@ -1,0 +1,25 @@
+{
+  "intro": "În Bușteni, o stațiune de la poalele Bucegilor, cu Crucea Caraiman deasupra orașului, un dormitor sau un living se poate schimba complet cu un singur perete tapetat cu o imagine aleasă de tine. Restaurantele și barurile din zonele turistice folosesc un tapet mare pe peretele principal ca decor care se vede în fotografiile clienților. Dacă ai o poză reușită cu Crucea Caraiman, ea poate deveni tapet pentru un perete de accent sau canvas pentru hol. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Previzualizarea arată unde cad marginile imaginii, ca un detaliu important să nu ajungă după un dulap sau o ușă. Chiar dacă Bușteni se află la aproximativ 65 km de Ploiești, comanda ajunge în același termen, 2-4 zile lucrătoare. Camera rămâne aceeași, dar se simte complet altfel.",
+  "useCases": [
+    "Autocolante pentru mobilă veche",
+    "Camera nepoților decorată",
+    "Fotografie de familie pe un perete întreg",
+    "Decor pentru bucătăria de vară",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Bușteni?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Bușteni."
+    },
+    {
+      "q": "Livrați tapetul și în Poiana Țapului?",
+      "a": "Da, trece adresa completă din Poiana Țapului și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Bușteni?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

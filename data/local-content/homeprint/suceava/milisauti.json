@@ -1,0 +1,25 @@
+{
+  "intro": "Milișăuți, un oraș mic din nordul județului Suceava, e una dintre localitățile în care HomePrint livrează tapet la comandă, canvasuri și autocolante decorative. O fotografie de familie mărită pe un canvas mare sau chiar pe un perete întreg poate fi piesa centrală a unei case renovate. Pe același site se găsesc și perne decorative gata imprimate, afișe și preșuri, utile pentru un decor complet. Pentru un perete cu prize sau întrerupătoare, tapetul se decupează în jurul lor la montaj, cu un cutter, ca la orice tapet obișnuit. Nu avem showroom în Milișăuți; totul se comandă online și vine prin curier, la adresă sau la un punct DPD în care încape coletul. Imaginea se încarcă direct din telefon sau din calculator, iar previzualizarea arată cum se întinde pe perete.",
+  "useCases": [
+    "Tapet floral pentru casă la curte",
+    "Camera nepoților decorată",
+    "Decor pentru bucătăria de vară",
+    "Fotografie de familie pe un perete întreg",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Milișăuți?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Livrați tapetul și în Bădeuți?",
+      "a": "Sigur. Bădeuți, aflat la aproximativ 2 km de Milișăuți, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Milișăuți?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,24 @@
+{
+  "intro": "Știm despre Breaza de Jos că este localitatea de reședință a orașului Breaza, pe Valea Prahovei; cum arată pereții casei tale de acolo poți decide chiar tu, de la imagine la dimensiune. Casele de vacanță au adesea pereți de lemn sau de gips-carton pe care un tapet ales cu grijă schimbă tot interiorul. Un perete tapetat e o schimbare de decor care nu cere meseriași speciali: fâșiile vin numerotate și se pun în ordine. Un perete de accent e de obicei cel din spatele patului, al canapelei sau al biroului, pe care privirea se oprește prima. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire. Casele din Breaza de Jos, Breaza sau Irimești primesc comanda în același termen, așa că poți programa montajul încă de la plată. Peretele potrivit, cu imaginea potrivită, face o casă să pară nouă.",
+  "useCases": [
+    "Decor pentru bucătăria de vară",
+    "Tapet cu peisaj local pentru cabană",
+    "Camere tematice pentru pensiune",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Breaza de Jos?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Breaza de Jos."
+    },
+    {
+      "q": "Renovez o casă în Breaza, lângă Breaza de Jos. Ajunge comanda acolo?",
+      "a": "Sigur. Breaza, aflat la aproximativ 1 km de Breaza de Jos, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Breaza de Jos?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

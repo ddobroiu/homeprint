@@ -1,0 +1,23 @@
+{
+  "intro": "În Livada, un oraș din nordul județului Satu Mare, camerele copiilor, holurile și dormitoarele pot primi un decor nou fără mobilă nouă. Un perete tapetat e o schimbare de decor care nu cere meseriași speciali: fâșiile vin numerotate și se pun în ordine. Varianta autoadezivă se aplică pe pereți netezi, curați și uscați, fără adeziv separat. Coletul pleacă prin DPD spre Livada, dar și spre Livada Mică, Dumbrava și celelalte localități din jur, în 2-4 zile lucrătoare cu tot cu producția. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire. Casa începe să semene cu tine din momentul în care pereții nu mai sunt toți la fel.",
+  "useCases": [
+    "Autocolante pentru mobilă veche",
+    "Fotografie de familie pe un perete întreg",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Livada?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Livada în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Livada Mică?",
+      "a": "Da. Adresa poate fi în Livada sau în Livada Mică; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Livada?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}
