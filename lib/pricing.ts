@@ -2288,3 +2288,9 @@ export const calculatePanouPrice = (input: PriceInputPanou) => {
     finalPrice,
   };
 };
+
+// ==========================================
+// PRODUSE NOI: calendare, steaguri beachflag, X-banner, panou stradal (people stopper)
+// Prețul = dublul costului PrintCenter; costurile în data/productie/costuri-produse-noi.json.
+// ==========================================
+export * from "./produseNoi/pricing";

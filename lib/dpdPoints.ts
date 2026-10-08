@@ -2,6 +2,7 @@
 // Lista vine de la DPD (POST /location/office) si se tine 12 ore in memorie.
 // Un punct apare doar daca incape coletul comenzii (dimensiuni si greutate).
 import { calculateShippingParams, determinePackingType, extractDimensions } from "./shippingUtils";
+import { declaredPackage } from "./packageInfo";
 
 export type DpdPoint = {
     id: number;
@@ -62,7 +63,12 @@ export function estimateParcel(items: any[]) {
         const { w, h } = extractDimensions(item);
         let box: [number, number, number];
         let weight: number;
-        if (w > 0 && h > 0) {
+        const pkg = declaredPackage(item);
+        if (pkg) {
+            // coletul declarat de produs (steaguri cu tije, X-banner, panouri stradale, calendare)
+            box = pkg.box;
+            weight = pkg.kg;
+        } else if (w > 0 && h > 0) {
             const type = determinePackingType(item.slug || item.productId || item.name || item.title || "", item);
             const r = calculateShippingParams({ width: w, height: h, quantity: q, type });
             box = [r.packageDimensions.length, r.packageDimensions.width, r.packageDimensions.height].sort((a, b) => a - b) as [number, number, number];

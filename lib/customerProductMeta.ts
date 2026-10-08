@@ -3,6 +3,8 @@ const INTERNAL_PRODUCT_KEYS = new Set([
     "Imagine", "image", "imageUrl", "productImage", "previewUrl", "thumbnail", "src",
     "Model slug", "bannerMode", "contour_cut", "Fisier", "Fișier", "artworkUrl", "artworkUrlVerso",
     "artworkFit", "artworkFitVerso", "routeSlug", "productId", "slug",
+    // produsele noi (lib/produseNoi): codurile variantei pentru tipografie și coletul pentru curier
+    "variantId", "accessoryId", "materialId", "posters", "packageCm", "packageKg", "packageLarge",
 ]);
 export function isCustomerProductMeta(key: string, metadata?: Record<string, unknown>): boolean {
     if (INTERNAL_PRODUCT_KEYS.has(key)) return false;

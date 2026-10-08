@@ -135,7 +135,7 @@ export const EXTRA_SEO_CAMPAIGN_DATA: Record<string, LandingInfo> = {
         shortDescription: "Structură ușoară tip X, montaj ultra-rapid și preț imbatabil.",
         seoTitle: "X-Banner Stand | Sistem Afisaj Economic",
         seoDescription: "Alege un X-Banner pentru campanii temporare sau expoziții. Ieftin, ușor și rapid de instalat.",
-        images: ["/products/homeprint-studio/rollup.webp"],
+        images: ["/produse-img/x-banner-compact.jpg"],
         contentHtml: `
       <h2>Promovare Eficientă cu Costuri Minime</h2>
       <p>X-Bannerul este soluția ideală atunci când aveți nevoie de un afișaj portabil la un preț foarte mic. Structura în formă de X oferă stabilitate și permite schimbarea printului în câteva secunde.</p>
@@ -153,7 +153,7 @@ export const EXTRA_SEO_CAMPAIGN_DATA: Record<string, LandingInfo> = {
         shortDescription: "Beach Flags (Lacrimă sau Pană) pentru evenimente indoor și outdoor.",
         seoTitle: "Steaguri Publicitare Lacrima & Pana | Beach Flags",
         seoDescription: "Atrage atenția prin mișcare cu steaguri publicitare personalizate. Diferite forme și înălțimi (2m - 5m).",
-        images: ["/images/generic-banner.jpg"],
+        images: ["/products/produse-noi/steaguri-beachflag-forme.jpg"],
         contentHtml: `
       <h2>Publicitate în Mișcare</h2>
       <p>Steagurile publicitare sunt ideale pentru a atrage atenția de la distanță. Datorită formei dinamice și a materialului care fâlfâie în vânt, acestea creează un impact vizual superior oricărui panou fix.</p>

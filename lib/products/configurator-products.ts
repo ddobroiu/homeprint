@@ -1,3 +1,5 @@
+import { PRODUSE_NOI_LIST, produsNouFromPrice } from "@/lib/produseNoi/definitions";
+
 export interface ConfiguratorProduct {
     id: string;
     slug: string;
@@ -241,5 +243,17 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         price: "De la 0.18 LEI",
         category: "Configuratoare",
         tags: ["carti de vizita", "print", "standard", "business", "plastic", "metal"]
-    }
+    },
+    // Calendare, steaguri beachflag, X-banner, panou stradal (lib/produseNoi/definitions.ts)
+    ...PRODUSE_NOI_LIST.map((d): ConfiguratorProduct => ({
+        id: `configurator-${d.id}`,
+        slug: `configurator-${d.id}`,
+        routeSlug: d.path.slice(1),
+        title: d.name,
+        description: d.seoDescription,
+        image: d.gallery(d.initial())[0],
+        price: `De la ${String(Math.round(produsNouFromPrice(d.id) * 100) / 100)} LEI`,
+        category: "Configuratoare",
+        tags: [...d.keywords.slice(0, 5), "configurator"],
+    })),
 ];

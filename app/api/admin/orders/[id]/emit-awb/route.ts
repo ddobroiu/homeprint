@@ -5,6 +5,7 @@ import { verifyAdminSession } from '@/lib/adminSession';
 import { createShipment, getPickupPoints, printExtended, trackingUrlForAwb } from '@/lib/dpdService';
 import { sendEmail } from '@/lib/email';
 import { calculateShippingParams, determinePackingType } from '@/lib/shippingUtils';
+import { declaredPackage } from '@/lib/packageInfo';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -90,8 +91,11 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
 
         const width = parseFloat(meta.width || '0') || 0;
         const height = parseFloat(meta.height || '0') || 0;
+        const pkg = declaredPackage(item);
 
-        if (width > 0 && height > 0) {
+        if (pkg) {
+          totalW += pkg.kg;
+        } else if (width > 0 && height > 0) {
           const slug = (item as any).slug || (item as any).name || '';
           const packingType = determinePackingType(slug, item);
           const params = calculateShippingParams({

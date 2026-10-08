@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { calculateShippingParams, determinePackingType } from '@/lib/shippingUtils';
+import { declaredPackage } from '@/lib/packageInfo';
 import { createShipment, printExtended, decodeBase64PdfToBuffer, trackingUrlForAwb, type CreateShipmentRequest, type ShipmentSender } from '../../../../lib/dpdService';
 import { requireAdmin } from '@/lib/apiAuth';
 
@@ -55,7 +56,10 @@ export async function POST(req: NextRequest) {
             let h = parseFloat(meta.height || '0');
 
             // Fallback pentru produse standard care nu au width/height în metadata dar au tip știut
-            if (w === 0 && h === 0) {
+            const pkg = declaredPackage(item);
+            if (pkg) {
+              totalW += pkg.kg;
+            } else if (w === 0 && h === 0) {
               // Putem pune dimensiuni medii implicite sau greutate fixă
               // Aici punem o greutate fixă default de 0.5kg per item dacă nu știm dimensiunile
               totalW += (0.5 * quantity);

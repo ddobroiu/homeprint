@@ -5,6 +5,15 @@ import { Suspense } from 'react';
 import ProductStructuredData from '@/components/ProductStructuredData';
 import { getLandingInfo, listAllLandingRoutes } from '@/lib/landingData';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import ProdusNouConfigurator from "@/components/configurator/ProdusNouConfigurator";
+import { produsNouLandingPrice, type ProdusNouId } from "@/lib/produseNoi/definitions";
+
+/** Paginile de campanie care au acum configuratorul lor (aceeași adresă, alt configurator decât bannerul). */
+const LANDING_PRODUS_NOU: Record<string, ProdusNouId> = {
+    "steaguri-publicitare-lacrima-pana-evenimente": "beachflag",
+    "x-banner-stand-economic-expozitii": "x-banner",
+    "people-stopper-semn-stradal-board": "panou-stradal",
+};
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -53,6 +62,8 @@ export default async function BannereLandingPage({ params }: Props) {
         notFound();
     }
 
+    const produsNou = LANDING_PRODUS_NOU[slug];
+
     const breadcrumbItems = [
         { label: 'Produse', href: '/shop' },
         { label: 'Bannere', href: '/shop/bannere' },
@@ -80,7 +91,7 @@ export default async function BannereLandingPage({ params }: Props) {
                 image: landingSEO.images?.[0] || "",
                 sku: landingSEO.key,
                 offers: {
-                    price: "49",
+                    price: produsNou ? produsNouLandingPrice(produsNou).toFixed(2) : "49",
                     priceCurrency: "RON",
                     availability: "https://schema.org/InStock",
                     url: `https://www.HomePrint.ro/bannere/${slug}`
@@ -88,11 +99,17 @@ export default async function BannereLandingPage({ params }: Props) {
             }} />
 
             <Suspense fallback={<div className="min-h-[60svh] flex items-center justify-center">Se încarcă...</div>}>
-                <ConfiguratorDispatcher
-                    configuratorId="banner"
-                    productSlug={slug}
-                    renderOnlyConfigurator={true}
-                />
+                {produsNou ? (
+                    <div className="brand-configurator">
+                        <ProdusNouConfigurator productId={produsNou} showContent={false} />
+                    </div>
+                ) : (
+                    <ConfiguratorDispatcher
+                        configuratorId="banner"
+                        productSlug={slug}
+                        renderOnlyConfigurator={true}
+                    />
+                )}
             </Suspense>
 
             {landingSEO.contentHtml && (

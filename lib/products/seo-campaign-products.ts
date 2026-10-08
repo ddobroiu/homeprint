@@ -1,5 +1,6 @@
 import { getBannerExampleImage } from "../originalPrintImages";
 import { Product } from "../products";
+import { produsNouFromPrice } from "../produseNoi/definitions";
 
 export const seoCampaignProducts: any[] = [
     // --- VARIATII ROLL-UP SEO ---
@@ -2012,33 +2013,33 @@ export const seoCampaignProducts: any[] = [
     {
         id: "seo-x-banner",
         slug: "x-banner-stand-economic-expozitii",
-        routeSlug: "configurator/banner",
+        routeSlug: "configurator/x-banner",
         title: "X-Banner Stand (Sistem Economic)",
         description: "Cea mai accesibilă soluție de afișaj portabil. Structură ușoară tip X, print inclus și montaj ultra-rapid sub 1 minut.",
-        image: "/products/homeprint-studio/rollup.webp",
-        price: "De la 85 LEI",
+        image: "/produse-img/x-banner-compact.jpg",
+        price: `De la ${String(Math.round(produsNouFromPrice("x-banner") * 100) / 100)} LEI`,
         category: "Campanii SEO",
         tags: ["x-banner", "stand economic", "afisaj portabil"]
     },
     {
         id: "seo-people-stopper",
         slug: "people-stopper-semn-stradal-board",
-        routeSlug: "configurator/afise",
+        routeSlug: "configurator/panou-stradal",
         title: "People Stopper (Semn Stradal tip A-Board)",
         description: "Captează atenția trecătorilor direct de pe trotuar. Cadru metalic rezistent, fețe duble pentru afișe interschimbabile.",
-        image: "/products/homeprint-studio/afise.webp",
-        price: "De la 220 LEI",
+        image: "/produse-img/people-stopper-silver-a1.jpg",
+        price: `De la ${String(Math.round(produsNouFromPrice("panou-stradal") * 100) / 100)} LEI`,
         category: "Campanii SEO",
         tags: ["people stopper", "a-board", "reclama trotuar", "semn stradal"]
     },
     {
         id: "seo-steaguri-publicitare",
         slug: "steaguri-publicitare-lacrima-pana-evenimente",
-        routeSlug: "configurator/banner",
+        routeSlug: "configurator/beachflag",
         title: "Steaguri Publicitare (Tip Lacrimă / Pană)",
         description: "Publicitate dinamică ce atrage privirea prin mișcare. Diferite forme și înălțimi (Beach Flags), print pe steag textil premium rezistent la vânt.",
-        image: "/products/homeprint-studio/banner.webp",
-        price: "De la 190 LEI",
+        image: "/products/produse-noi/steaguri-beachflag-forme.jpg",
+        price: `De la ${String(Math.round(produsNouFromPrice("beachflag") * 100) / 100)} LEI`,
         category: "Campanii SEO",
         tags: ["steaguri publicitare", "beach flags", "steag lacrima", "steag pana"]
     },

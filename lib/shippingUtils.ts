@@ -1,3 +1,4 @@
+import { declaredPackage } from './packageInfo';
 import { isFaItem, onlyFaItems } from './femeia-antreprenor';
 
 // Tipuri de împachetare
@@ -258,6 +259,9 @@ export function getEstimatedShippingCost(countryCode: string | null | undefined,
 
     // Check for large dimensions (> 100cm) ONLY for RIGID items
     const hasLargeRigidItem = items.some(item => {
+        // colet declarat de produs (ex. panouri stradale): tariful mare doar dacă produsul îl cere
+        const pkg = declaredPackage(item);
+        if (pkg) return pkg.large;
         const { w, h } = extractDimensions(item);
         if (w > 100 || h > 100) {
             const slugOrId = item.slug || item.productId || item.name || item.title || '';
@@ -274,8 +278,11 @@ export function getEstimatedShippingCost(countryCode: string | null | undefined,
     items.forEach(item => {
         const q = Number(item.quantity || item.qty || 1);
         const { w, h } = extractDimensions(item); // Folosim noua funcție
+        const pkg = declaredPackage(item);
 
-        if (w > 0 && h > 0) {
+        if (pkg) {
+            totalWeight += pkg.kg;
+        } else if (w > 0 && h > 0) {
             const slugOrId = item.slug || item.productId || item.name || item.title || '';
             const type = determinePackingType(slugOrId, item);
             const res = calculateShippingParams({ width: w, height: h, quantity: q, type });
@@ -301,6 +308,18 @@ export function validateDpdShipment(items: any[]): { valid: boolean; error?: str
     for (const item of items) {
         const q = Number(item.quantity || 1);
         const { w, h } = extractDimensions(item);
+        const pkg = declaredPackage(item);
+
+        if (pkg) {
+            // colet declarat (bucățile pot pleca în colete separate): verificăm o bucată
+            if (pkg.unitKg > DPD_LIMITS.MAX_WEIGHT_KG) {
+                return { valid: false, error: `Produsul "${item.title || item.name}" depășește greutatea maximă admisă (31.5kg).`, invalidItem: item };
+            }
+            if (pkg.lengthCm > DPD_LIMITS.MAX_LENGTH_CM) {
+                return { valid: false, error: `Produsul "${item.title || item.name}" are o lungime de ${Math.round(pkg.lengthCm)}cm (max admis ${DPD_LIMITS.MAX_LENGTH_CM}cm).`, invalidItem: item };
+            }
+            continue;
+        }
 
         if (w > 0 && h > 0) {
             const slug = item.slug || item.name || '';

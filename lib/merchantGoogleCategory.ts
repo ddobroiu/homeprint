@@ -41,6 +41,9 @@ export function googleProductCategoryId(product: Product): string {
   if (routePath.startsWith("banner-product/")) return "976";
   if (routePath.startsWith("semnalistica-product/")) return "976";
 
+  if (routeFull.includes("configurator/calendare")) return "927";
+  if (routeFull.includes("configurator/beachflag")) return "701";
+  if (routeFull.includes("configurator/x-banner") || routeFull.includes("configurator/panou-stradal")) return "5865";
   if (routeFull.includes("configurator/tricouri")) return "212";
   if (routeFull.includes("configurator/hanorace")) return "212";
   if (routeFull.includes("configurator/sepci")) return "173";

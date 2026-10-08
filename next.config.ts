@@ -54,9 +54,9 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        // Fără decor-foto-copil / personaj-propriu / canvas-8-martie / canvas-martisor: există doar sub
+        // Fără decor-foto-copil / personaj-propriu / canvas-8-martie / canvas-martisor / calendare / beachflag / x-banner / panou-stradal: există doar sub
         // /configurator/... (nu au pagină scurtă), altfel redirecționarea ducea la 404.
-        source: '/configurator/:path((?!(?:decor-foto-copil|personaj-propriu|canvas-8-martie|canvas-martisor)(?:/|$)).*)',
+        source: '/configurator/:path((?!(?:decor-foto-copil|personaj-propriu|canvas-8-martie|canvas-martisor|calendare|beachflag|x-banner|panou-stradal)(?:/|$)).*)',
         destination: '/:path',
         permanent: true,
         // Designul din editorul online vine cu ?image=...: îl servim direct din

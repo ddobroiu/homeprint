@@ -53,6 +53,7 @@ import {
 import { bannerProducts } from "@/lib/products/banner-products";
 import { HANORACE_MODELS, SEPCI_MODELS, type TextileModel } from "@/lib/products/textile-models";
 import { findSearchProduct, searchProductPrice } from "@/lib/searchProductDefinitions";
+import { PRODUSE_NOI_LIST, produsNouLandingPrice } from "@/lib/produseNoi/definitions";
 
 export type LandingPrice = { configurator: string; price: number };
 
@@ -225,6 +226,10 @@ export function landingPriceFor(pathname: string, sp: ParamSource): LandingPrice
         case "/configurator/canvas-8-martie":
             return {configurator: "canvas-8-martie", price: calculateCanvas8MartiePrice(seasonalCanvasInitialInput(sp)).finalPrice};
     }
+
+    // Calendare, steaguri beachflag, X-banner, panou stradal: aceeași stare inițială ca ProdusNouConfigurator
+    const nou = PRODUSE_NOI_LIST.find((d) => d.path === path);
+    if (nou) return { configurator: nou.id, price: produsNouLandingPrice(nou.id, sp) };
 
     // Modelele gata făcute (/shop/<categorie>/<slug>): components/SearchProductPage.tsx arată searchProductPrice(model)
     const model = path.match(/^\/shop\/([^/]+)\/([^/]+)$/);
