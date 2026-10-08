@@ -1225,5 +1225,434 @@
       "Suprafața tarifată este dreptunghiul exterior al formei.",
       "Suportul, prinderile și montajul nu sunt incluse."
     ]
+  },
+  {
+    "slug": "elefantel-vesel",
+    "category": "pvc-forex",
+    "title": "Decor PVC elefănțel vesel decupat pe contur",
+    "image": "/products/personaje-forex-20261008/elefantel-vesel.webp",
+    "width": 80,
+    "height": 100,
+    "quantity": 1,
+    "thickness": 3,
+    "contourCut": true,
+    "optionalTexts": true,
+    "fields": [
+      "Nume pentru personalizare (opțional)",
+      "Vârstă / indicații (opțional)"
+    ],
+    "keywords": [
+      "decor pvc elefănțel vesel",
+      "personaj desen animat decupat pe contur",
+      "decor aniversare copii",
+      "panou pvc contur"
+    ],
+    "notes": [
+      "Dimensiunile sunt lățimea și înălțimea totală a formei; prețul printului se calculează pentru dreptunghiul exterior.",
+      "Decuparea pe contur special costă 20% din valoarea printului PVC, fără taxa de grafică sau transport.",
+      "Modelul este o piesă PVC plată. Suportul, prinderea, montajul și alte accesorii de petrecere nu sunt incluse."
+    ],
+    "short": "Elefănțel vesel, ilustrație pentru un decor de petrecere imprimat pe PVC și decupat după siluetă.",
+    "description": "Model elefănțel vesel în stil de desen animat, imprimat pe PVC de 3 mm și decupat pe contur. Alege dimensiunea și cantitatea în configurator. Imaginea prezintă produsul finit: placă Forex plată, cu muchie și spate albe. Suportul și montajul nu sunt incluse."
+  },
+  {
+    "slug": "raton-jucaus",
+    "category": "pvc-forex",
+    "title": "Decor PVC raton jucăuș decupat pe contur",
+    "image": "/products/personaje-forex-20261008/raton-jucaus.webp",
+    "width": 70,
+    "height": 100,
+    "quantity": 1,
+    "thickness": 3,
+    "contourCut": true,
+    "optionalTexts": true,
+    "fields": [
+      "Nume pentru personalizare (opțional)",
+      "Vârstă / indicații (opțional)"
+    ],
+    "keywords": [
+      "decor pvc raton jucăuș",
+      "personaj desen animat decupat pe contur",
+      "decor aniversare copii",
+      "panou pvc contur"
+    ],
+    "notes": [
+      "Dimensiunile sunt lățimea și înălțimea totală a formei; prețul printului se calculează pentru dreptunghiul exterior.",
+      "Decuparea pe contur special costă 20% din valoarea printului PVC, fără taxa de grafică sau transport.",
+      "Modelul este o piesă PVC plată. Suportul, prinderea, montajul și alte accesorii de petrecere nu sunt incluse."
+    ],
+    "short": "Raton jucăuș, ilustrație pentru un decor de petrecere imprimat pe PVC și decupat după siluetă.",
+    "description": "Model raton jucăuș în stil de desen animat, imprimat pe PVC de 3 mm și decupat pe contur. Alege dimensiunea și cantitatea în configurator. Imaginea prezintă produsul finit: placă Forex plată, cu muchie și spate albe. Suportul și montajul nu sunt incluse."
+  },
+  {
+    "slug": "astronaut-curajos",
+    "category": "pvc-forex",
+    "title": "Decor PVC astronaut curajos decupat pe contur",
+    "image": "/products/personaje-forex-20261008/astronaut-curajos.webp",
+    "width": 65,
+    "height": 100,
+    "quantity": 1,
+    "thickness": 3,
+    "contourCut": true,
+    "optionalTexts": true,
+    "fields": [
+      "Nume pentru personalizare (opțional)",
+      "Vârstă / indicații (opțional)"
+    ],
+    "keywords": [
+      "decor pvc astronaut curajos",
+      "personaj desen animat decupat pe contur",
+      "decor aniversare copii",
+      "panou pvc contur"
+    ],
+    "notes": [
+      "Dimensiunile sunt lățimea și înălțimea totală a formei; prețul printului se calculează pentru dreptunghiul exterior.",
+      "Decuparea pe contur special costă 20% din valoarea printului PVC, fără taxa de grafică sau transport.",
+      "Modelul este o piesă PVC plată. Suportul, prinderea, montajul și alte accesorii de petrecere nu sunt incluse."
+    ],
+    "short": "Astronaut curajos, ilustrație pentru un decor de petrecere imprimat pe PVC și decupat după siluetă.",
+    "description": "Model astronaut curajos în stil de desen animat, imprimat pe PVC de 3 mm și decupat pe contur. Alege dimensiunea și cantitatea în configurator. Imaginea prezintă produsul finit: placă Forex plată, cu muchie și spate albe. Suportul și montajul nu sunt incluse."
+  },
+  {
+    "slug": "cavaler-vesel",
+    "category": "pvc-forex",
+    "title": "Decor PVC cavaler vesel decupat pe contur",
+    "image": "/products/personaje-forex-20261008/cavaler-vesel.webp",
+    "width": 65,
+    "height": 100,
+    "quantity": 1,
+    "thickness": 3,
+    "contourCut": true,
+    "optionalTexts": true,
+    "fields": [
+      "Nume pentru personalizare (opțional)",
+      "Vârstă / indicații (opțional)"
+    ],
+    "keywords": [
+      "decor pvc cavaler vesel",
+      "personaj desen animat decupat pe contur",
+      "decor aniversare copii",
+      "panou pvc contur"
+    ],
+    "notes": [
+      "Dimensiunile sunt lățimea și înălțimea totală a formei; prețul printului se calculează pentru dreptunghiul exterior.",
+      "Decuparea pe contur special costă 20% din valoarea printului PVC, fără taxa de grafică sau transport.",
+      "Modelul este o piesă PVC plată. Suportul, prinderea, montajul și alte accesorii de petrecere nu sunt incluse."
+    ],
+    "short": "Cavaler vesel, ilustrație pentru un decor de petrecere imprimat pe PVC și decupat după siluetă.",
+    "description": "Model cavaler vesel în stil de desen animat, imprimat pe PVC de 3 mm și decupat pe contur. Alege dimensiunea și cantitatea în configurator. Imaginea prezintă produsul finit: placă Forex plată, cu muchie și spate albe. Suportul și montajul nu sunt incluse."
+  },
+  {
+    "slug": "iepuras-balerina",
+    "category": "pvc-forex",
+    "title": "Decor PVC iepuraș balerină decupat pe contur",
+    "image": "/products/personaje-forex-20261008/iepuras-balerina.webp",
+    "width": 65,
+    "height": 100,
+    "quantity": 1,
+    "thickness": 3,
+    "contourCut": true,
+    "optionalTexts": true,
+    "fields": [
+      "Nume pentru personalizare (opțional)",
+      "Vârstă / indicații (opțional)"
+    ],
+    "keywords": [
+      "decor pvc iepuraș balerină",
+      "personaj desen animat decupat pe contur",
+      "decor aniversare copii",
+      "panou pvc contur"
+    ],
+    "notes": [
+      "Dimensiunile sunt lățimea și înălțimea totală a formei; prețul printului se calculează pentru dreptunghiul exterior.",
+      "Decuparea pe contur special costă 20% din valoarea printului PVC, fără taxa de grafică sau transport.",
+      "Modelul este o piesă PVC plată. Suportul, prinderea, montajul și alte accesorii de petrecere nu sunt incluse."
+    ],
+    "short": "Iepuraș balerină, ilustrație pentru un decor de petrecere imprimat pe PVC și decupat după siluetă.",
+    "description": "Model iepuraș balerină în stil de desen animat, imprimat pe PVC de 3 mm și decupat pe contur. Alege dimensiunea și cantitatea în configurator. Imaginea prezintă produsul finit: placă Forex plată, cu muchie și spate albe. Suportul și montajul nu sunt incluse."
+  },
+  {
+    "slug": "pirat-vesel",
+    "category": "pvc-forex",
+    "title": "Decor PVC pirat vesel decupat pe contur",
+    "image": "/products/personaje-forex-20261008/pirat-vesel.webp",
+    "width": 65,
+    "height": 100,
+    "quantity": 1,
+    "thickness": 3,
+    "contourCut": true,
+    "optionalTexts": true,
+    "fields": [
+      "Nume pentru personalizare (opțional)",
+      "Vârstă / indicații (opțional)"
+    ],
+    "keywords": [
+      "decor pvc pirat vesel",
+      "personaj desen animat decupat pe contur",
+      "decor aniversare copii",
+      "panou pvc contur"
+    ],
+    "notes": [
+      "Dimensiunile sunt lățimea și înălțimea totală a formei; prețul printului se calculează pentru dreptunghiul exterior.",
+      "Decuparea pe contur special costă 20% din valoarea printului PVC, fără taxa de grafică sau transport.",
+      "Modelul este o piesă PVC plată. Suportul, prinderea, montajul și alte accesorii de petrecere nu sunt incluse."
+    ],
+    "short": "Pirat vesel, ilustrație pentru un decor de petrecere imprimat pe PVC și decupat după siluetă.",
+    "description": "Model pirat vesel în stil de desen animat, imprimat pe PVC de 3 mm și decupat pe contur. Alege dimensiunea și cantitatea în configurator. Imaginea prezintă produsul finit: placă Forex plată, cu muchie și spate albe. Suportul și montajul nu sunt incluse."
+  },
+  {
+    "slug": "sirena-curcubeu",
+    "category": "pvc-forex",
+    "title": "Decor PVC sirenă curcubeu decupat pe contur",
+    "image": "/products/personaje-forex-20261008/sirena-curcubeu.webp",
+    "width": 75,
+    "height": 100,
+    "quantity": 1,
+    "thickness": 3,
+    "contourCut": true,
+    "optionalTexts": true,
+    "fields": [
+      "Nume pentru personalizare (opțional)",
+      "Vârstă / indicații (opțional)"
+    ],
+    "keywords": [
+      "decor pvc sirenă curcubeu",
+      "personaj desen animat decupat pe contur",
+      "decor aniversare copii",
+      "panou pvc contur"
+    ],
+    "notes": [
+      "Dimensiunile sunt lățimea și înălțimea totală a formei; prețul printului se calculează pentru dreptunghiul exterior.",
+      "Decuparea pe contur special costă 20% din valoarea printului PVC, fără taxa de grafică sau transport.",
+      "Modelul este o piesă PVC plată. Suportul, prinderea, montajul și alte accesorii de petrecere nu sunt incluse."
+    ],
+    "short": "Sirenă curcubeu, ilustrație pentru un decor de petrecere imprimat pe PVC și decupat după siluetă.",
+    "description": "Model sirenă curcubeu în stil de desen animat, imprimat pe PVC de 3 mm și decupat pe contur. Alege dimensiunea și cantitatea în configurator. Imaginea prezintă produsul finit: placă Forex plată, cu muchie și spate albe. Suportul și montajul nu sunt incluse."
+  },
+  {
+    "slug": "dragon-prietenos",
+    "category": "pvc-forex",
+    "title": "Decor PVC dragon prietenos decupat pe contur",
+    "image": "/products/personaje-forex-20261008/dragon-prietenos.webp",
+    "width": 80,
+    "height": 100,
+    "quantity": 1,
+    "thickness": 3,
+    "contourCut": true,
+    "optionalTexts": true,
+    "fields": [
+      "Nume pentru personalizare (opțional)",
+      "Vârstă / indicații (opțional)"
+    ],
+    "keywords": [
+      "decor pvc dragon prietenos",
+      "personaj desen animat decupat pe contur",
+      "decor aniversare copii",
+      "panou pvc contur"
+    ],
+    "notes": [
+      "Dimensiunile sunt lățimea și înălțimea totală a formei; prețul printului se calculează pentru dreptunghiul exterior.",
+      "Decuparea pe contur special costă 20% din valoarea printului PVC, fără taxa de grafică sau transport.",
+      "Modelul este o piesă PVC plată. Suportul, prinderea, montajul și alte accesorii de petrecere nu sunt incluse."
+    ],
+    "short": "Dragon prietenos, ilustrație pentru un decor de petrecere imprimat pe PVC și decupat după siluetă.",
+    "description": "Model dragon prietenos în stil de desen animat, imprimat pe PVC de 3 mm și decupat pe contur. Alege dimensiunea și cantitatea în configurator. Imaginea prezintă produsul finit: placă Forex plată, cu muchie și spate albe. Suportul și montajul nu sunt incluse."
+  },
+  {
+    "slug": "supererou-original",
+    "category": "pvc-forex",
+    "title": "Decor PVC supererou decupat pe contur",
+    "image": "/products/personaje-forex-20261008/supererou-original.webp",
+    "width": 65,
+    "height": 100,
+    "quantity": 1,
+    "thickness": 3,
+    "contourCut": true,
+    "optionalTexts": true,
+    "fields": [
+      "Nume pentru personalizare (opțional)",
+      "Vârstă / indicații (opțional)"
+    ],
+    "keywords": [
+      "decor pvc supererou",
+      "personaj desen animat decupat pe contur",
+      "decor aniversare copii",
+      "panou pvc contur"
+    ],
+    "notes": [
+      "Dimensiunile sunt lățimea și înălțimea totală a formei; prețul printului se calculează pentru dreptunghiul exterior.",
+      "Decuparea pe contur special costă 20% din valoarea printului PVC, fără taxa de grafică sau transport.",
+      "Modelul este o piesă PVC plată. Suportul, prinderea, montajul și alte accesorii de petrecere nu sunt incluse."
+    ],
+    "short": "Supererou, ilustrație pentru un decor de petrecere imprimat pe PVC și decupat după siluetă.",
+    "description": "Model supererou în stil de desen animat, imprimat pe PVC de 3 mm și decupat pe contur. Alege dimensiunea și cantitatea în configurator. Imaginea prezintă produsul finit: placă Forex plată, cu muchie și spate albe. Suportul și montajul nu sunt incluse."
+  },
+  {
+    "slug": "panda-vesel",
+    "category": "pvc-forex",
+    "title": "Decor Forex panda vesel decupat pe contur",
+    "image": "/products/personaje-forex-20261008/panda-vesel.webp",
+    "width": 75,
+    "height": 100,
+    "quantity": 1,
+    "thickness": 3,
+    "contourCut": true,
+    "optionalTexts": true,
+    "fields": [
+      "Nume pentru personalizare (opțional)",
+      "Vârstă / indicații (opțional)"
+    ],
+    "keywords": [
+      "decor forex panda vesel",
+      "personaj desen animat decupat pe contur",
+      "decor aniversare copii"
+    ],
+    "notes": [
+      "Dimensiunile sunt lățimea și înălțimea totală a formei; prețul printului se calculează pentru dreptunghiul exterior.",
+      "Decuparea pe contur special costă 20% din valoarea printului PVC, fără taxa de grafică sau transport.",
+      "Modelul este o piesă PVC plată. Suportul, prinderea, montajul și alte accesorii de petrecere nu sunt incluse."
+    ],
+    "short": "Panda vesel, decor imprimat pe Forex de 3 mm și decupat după siluetă.",
+    "description": "Model panda vesel în stil de desen animat, imprimat pe Forex de 3 mm și decupat pe contur. Alege dimensiunea și cantitatea în configurator. Produsul este o placă plată, cu muchie și spate albe. Suportul și montajul nu sunt incluse."
+  },
+  {
+    "slug": "tigru-safari",
+    "category": "pvc-forex",
+    "title": "Decor Forex tigru safari decupat pe contur",
+    "image": "/products/personaje-forex-20261008/tigru-safari.webp",
+    "width": 70,
+    "height": 100,
+    "quantity": 1,
+    "thickness": 3,
+    "contourCut": true,
+    "optionalTexts": true,
+    "fields": [
+      "Nume pentru personalizare (opțional)",
+      "Vârstă / indicații (opțional)"
+    ],
+    "keywords": [
+      "decor forex tigru safari",
+      "personaj desen animat decupat pe contur",
+      "decor aniversare copii"
+    ],
+    "notes": [
+      "Dimensiunile sunt lățimea și înălțimea totală a formei; prețul printului se calculează pentru dreptunghiul exterior.",
+      "Decuparea pe contur special costă 20% din valoarea printului PVC, fără taxa de grafică sau transport.",
+      "Modelul este o piesă PVC plată. Suportul, prinderea, montajul și alte accesorii de petrecere nu sunt incluse."
+    ],
+    "short": "Tigru safari, decor imprimat pe Forex de 3 mm și decupat după siluetă.",
+    "description": "Model tigru safari în stil de desen animat, imprimat pe Forex de 3 mm și decupat pe contur. Alege dimensiunea și cantitatea în configurator. Produsul este o placă plată, cu muchie și spate albe. Suportul și montajul nu sunt incluse."
+  },
+  {
+    "slug": "koala-jucaus",
+    "category": "pvc-forex",
+    "title": "Decor Forex koala jucăuș decupat pe contur",
+    "image": "/products/personaje-forex-20261008/koala-jucaus.webp",
+    "width": 70,
+    "height": 100,
+    "quantity": 1,
+    "thickness": 3,
+    "contourCut": true,
+    "optionalTexts": true,
+    "fields": [
+      "Nume pentru personalizare (opțional)",
+      "Vârstă / indicații (opțional)"
+    ],
+    "keywords": [
+      "decor forex koala jucăuș",
+      "personaj desen animat decupat pe contur",
+      "decor aniversare copii"
+    ],
+    "notes": [
+      "Dimensiunile sunt lățimea și înălțimea totală a formei; prețul printului se calculează pentru dreptunghiul exterior.",
+      "Decuparea pe contur special costă 20% din valoarea printului PVC, fără taxa de grafică sau transport.",
+      "Modelul este o piesă PVC plată. Suportul, prinderea, montajul și alte accesorii de petrecere nu sunt incluse."
+    ],
+    "short": "Koala jucăuș, decor imprimat pe Forex de 3 mm și decupat după siluetă.",
+    "description": "Model koala jucăuș în stil de desen animat, imprimat pe Forex de 3 mm și decupat pe contur. Alege dimensiunea și cantitatea în configurator. Produsul este o placă plată, cu muchie și spate albe. Suportul și montajul nu sunt incluse."
+  },
+  {
+    "slug": "magician-vesel",
+    "category": "pvc-forex",
+    "title": "Decor Forex magician vesel decupat pe contur",
+    "image": "/products/personaje-forex-20261008/magician-vesel.webp",
+    "width": 65,
+    "height": 100,
+    "quantity": 1,
+    "thickness": 3,
+    "contourCut": true,
+    "optionalTexts": true,
+    "fields": [
+      "Nume pentru personalizare (opțional)",
+      "Vârstă / indicații (opțional)"
+    ],
+    "keywords": [
+      "decor forex magician vesel",
+      "personaj desen animat decupat pe contur",
+      "decor aniversare copii"
+    ],
+    "notes": [
+      "Dimensiunile sunt lățimea și înălțimea totală a formei; prețul printului se calculează pentru dreptunghiul exterior.",
+      "Decuparea pe contur special costă 20% din valoarea printului PVC, fără taxa de grafică sau transport.",
+      "Modelul este o piesă PVC plată. Suportul, prinderea, montajul și alte accesorii de petrecere nu sunt incluse."
+    ],
+    "short": "Magician vesel, decor imprimat pe Forex de 3 mm și decupat după siluetă.",
+    "description": "Model magician vesel în stil de desen animat, imprimat pe Forex de 3 mm și decupat pe contur. Alege dimensiunea și cantitatea în configurator. Produsul este o placă plată, cu muchie și spate albe. Suportul și montajul nu sunt incluse."
+  },
+  {
+    "slug": "zana-florilor",
+    "category": "pvc-forex",
+    "title": "Decor Forex zâna florilor decupat pe contur",
+    "image": "/products/personaje-forex-20261008/zana-florilor.webp",
+    "width": 75,
+    "height": 100,
+    "quantity": 1,
+    "thickness": 3,
+    "contourCut": true,
+    "optionalTexts": true,
+    "fields": [
+      "Nume pentru personalizare (opțional)",
+      "Vârstă / indicații (opțional)"
+    ],
+    "keywords": [
+      "decor forex zâna florilor",
+      "personaj desen animat decupat pe contur",
+      "decor aniversare copii"
+    ],
+    "notes": [
+      "Dimensiunile sunt lățimea și înălțimea totală a formei; prețul printului se calculează pentru dreptunghiul exterior.",
+      "Decuparea pe contur special costă 20% din valoarea printului PVC, fără taxa de grafică sau transport.",
+      "Modelul este o piesă PVC plată. Suportul, prinderea, montajul și alte accesorii de petrecere nu sunt incluse."
+    ],
+    "short": "Zâna florilor, decor imprimat pe Forex de 3 mm și decupat după siluetă.",
+    "description": "Model zâna florilor în stil de desen animat, imprimat pe Forex de 3 mm și decupat pe contur. Alege dimensiunea și cantitatea în configurator. Produsul este o placă plată, cu muchie și spate albe. Suportul și montajul nu sunt incluse."
+  },
+  {
+    "slug": "pompier-curajos",
+    "category": "pvc-forex",
+    "title": "Decor Forex pompier curajos decupat pe contur",
+    "image": "/products/personaje-forex-20261008/pompier-curajos.webp",
+    "width": 65,
+    "height": 100,
+    "quantity": 1,
+    "thickness": 3,
+    "contourCut": true,
+    "optionalTexts": true,
+    "fields": [
+      "Nume pentru personalizare (opțional)",
+      "Vârstă / indicații (opțional)"
+    ],
+    "keywords": [
+      "decor forex pompier curajos",
+      "personaj desen animat decupat pe contur",
+      "decor aniversare copii"
+    ],
+    "notes": [
+      "Dimensiunile sunt lățimea și înălțimea totală a formei; prețul printului se calculează pentru dreptunghiul exterior.",
+      "Decuparea pe contur special costă 20% din valoarea printului PVC, fără taxa de grafică sau transport.",
+      "Modelul este o piesă PVC plată. Suportul, prinderea, montajul și alte accesorii de petrecere nu sunt incluse."
+    ],
+    "short": "Pompier curajos, decor imprimat pe Forex de 3 mm și decupat după siluetă.",
+    "description": "Model pompier curajos în stil de desen animat, imprimat pe Forex de 3 mm și decupat pe contur. Alege dimensiunea și cantitatea în configurator. Produsul este o placă plată, cu muchie și spate albe. Suportul și montajul nu sunt incluse."
   }
 ]
