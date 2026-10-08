@@ -1,0 +1,24 @@
+{
+  "intro": "În Târgu Mureș, reședința județului Mureș și un important centru universitar medical, camerele copiilor, holurile și dormitoarele pot primi un decor nou fără mobilă nouă. În apartamentele din blocuri, un perete de accent în spatele canapelei sau al patului face camera să pară gândită de un designer, fără lucrări mari. O fotografie cu Palatul Culturii, mărită pe un perete întreg, poate fi decorul unui living care spune imediat de unde ești. La imaginile panoramice merită lăsați câțiva centimetri în plus la fiecare margine, pentru tăierea finală pe perete. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână. Livrăm în toată țara, deci și în Târgu Mureș și în celelalte localități din județul Mureș, în 2-4 zile lucrătoare de la comandă. Iar dacă îți place rezultatul, poți continua cu holul sau cu camera copiilor.",
+  "useCases": [
+    "Autocolante pentru camera de student",
+    "Decor pentru biroul de acasă",
+    "Tapet pentru salon sau cabinet",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Târgu Mureș?",
+      "a": "Pentru Târgu Mureș, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Sâncraiu de Mureș?",
+      "a": "Sigur. Sâncraiu de Mureș, aflat la aproximativ 3 km de Târgu Mureș, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Târgu Mureș?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

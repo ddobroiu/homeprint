@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru familiile din Timișoara, reședința județului Timiș, mare centru universitar și industrial al Banatului, decorul casei nu mai înseamnă doar zugrăveală: tapetul personalizat și autocolantele fac diferența. Ușile de dulap, frigiderele vechi sau mobila de bucătărie pot primi o față nouă cu autocolante decorative, fără să cumperi mobilier. Imaginea cu Catedrala Mitropolitană poate fi tipărită și ca autocolant decorativ, mai mic, pentru o ușă sau un dulap. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Dacă nu ai o grafică pregătită, echipa de design poate potrivi imaginea pe dimensiunile peretelui, contra unei taxe afișate în configurator. AWB-ul vine pe e-mail și prin SMS, ca să știi când să fii acasă pentru tapet sau tablouri. Dacă ai doi pereți de decorat, adaugă în coș câte un tapet pentru fiecare, cu dimensiunile lui. Peretele potrivit, cu imaginea potrivită, face o casă să pară nouă.",
+  "useCases": [
+    "Tapet panoramic pentru cameră mică",
+    "Living renovat cu tapet și canvas",
+    "Autocolante pentru mobila de bucătărie",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Timișoara?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Timișoara în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Dumbrăvița?",
+      "a": "Da. Adresa poate fi în Timișoara sau în Dumbrăvița; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Timișoara?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

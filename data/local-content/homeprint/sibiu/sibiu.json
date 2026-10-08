@@ -1,0 +1,24 @@
+{
+  "intro": "Te muți într-o locuință nouă în Sibiu, reședința județului Sibiu, oraș cu centru istoric bine păstrat, Capitală Culturală Europeană în 2007, sau doar vrei să schimbi atmosfera unei camere? Camerele de student și cele de tineret se schimbă ușor cu autocolante pe perete, cu citate, siluete sau forme geometrice. Poți alege tapet autoadeziv, care se aplică direct, sau varianta clasică, lipită cu adeziv separat. Tapetul vine rulat, protejat pentru transport, iar coletele mici, cum sunt autocolantele, pot merge și la un locker DPD. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire. Un decor nou nu cere neapărat meseriași, ci o idee bună și măsurile corecte.",
+  "useCases": [
+    "Perete de accent în living",
+    "Autocolante cu numerele camerelor",
+    "Decor pentru biroul de acasă",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Sibiu?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Sibiu."
+    },
+    {
+      "q": "Renovez o casă în Șelimbăr, lângă Sibiu. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Șelimbăr și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Sibiu?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

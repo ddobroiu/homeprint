@@ -1,0 +1,24 @@
+{
+  "intro": "Pe lângă faptul că este reședința județului Teleorman, un oraș de câmpie cu străzi drepte, Alexandria are mii de camere care așteaptă un decor mai personal decât un perete alb. Saloanele, cabinetele și cafenelele mici folosesc tapetul personalizat pentru peretele din spatele recepției, cu o imagine care le reprezintă. Camera de oaspeți, cea în care dorm nepoții vara, poate primi un perete tapetat cu ceva vesel, fără renovare completă. La imaginile panoramice merită lăsați câțiva centimetri în plus la fiecare margine, pentru tăierea finală pe perete. Comanda ajunge prin DPD în 2-4 zile lucrătoare, așa că poți pregăti peretele, curățat și uscat, până vine tapetul. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire.",
+  "useCases": [
+    "Perete de accent în living",
+    "Decor pentru biroul de acasă",
+    "Tapet pentru apartament de închiriat",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Alexandria?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Alexandria în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Alexandria, de exemplu în Poroschia?",
+      "a": "Da, trece adresa completă din Poroschia și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Alexandria?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

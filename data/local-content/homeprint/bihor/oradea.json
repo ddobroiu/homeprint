@@ -1,0 +1,25 @@
+{
+  "intro": "Casele din Oradea, reședința județului Bihor, un oraș de pe Crișul Repede cunoscut pentru clădirile Art Nouveau, au pereți pe care o zugrăveală nouă îi schimbă puțin, iar un tapet cu imagine îi schimbă de tot. Saloanele, cabinetele și cafenelele mici folosesc tapetul personalizat pentru peretele din spatele recepției, cu o imagine care le reprezintă. La recensământul din 2021, Oradea avea aproximativ 180.000 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Autocolantele cu numerele camerelor, cu săgeți spre sala de mic dejun sau cu mesaje de bun venit completează decorul unei pensiuni. Imaginea pentru tapet poate fi o fotografie proprie sau orice imagine pentru care ai drept de folosire, la rezoluție cât mai mare. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat. Tapetul, tablourile și autocolantele ajung în Oradea și în restul localităților din județul Bihor în 2-4 zile lucrătoare, cu producția inclusă.",
+  "useCases": [
+    "Tapet pentru apartament de închiriat",
+    "Tapet cu harta zonei la recepție",
+    "Tapet pentru salon sau cabinet",
+    "Autocolante pentru camera de student",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Oradea?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Oradea în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Săldăbagiu de Munte?",
+      "a": "Da, trece adresa completă din Săldăbagiu de Munte și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Oradea?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

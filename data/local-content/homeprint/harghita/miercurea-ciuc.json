@@ -1,0 +1,23 @@
+{
+  "intro": "Pentru apartamentele și casele din Miercurea-Ciuc, reședința județului Harghita, cunoscut drept unul dintre cele mai reci orașe ale țării, HomePrint face decor tipărit la comandă, pe măsura fiecărei camere. Pentru cei plecați din Miercurea-Ciuc, un canvas cu Cetatea Mikó pus în casa nouă păstrează legătura cu locul de acasă. Saloanele, cabinetele și cafenelele mici folosesc tapetul personalizat pentru peretele din spatele recepției, cu o imagine care le reprezintă. Poți alege tapet autoadeziv, care se aplică direct, sau varianta clasică, lipită cu adeziv separat. Poți salva ideea, măsura încă o dată peretele și reveni la comandă când ești sigur pe cifre. Termenul de 2-4 zile lucrătoare e același în Miercurea-Ciuc și în orice altă localitate din județul Harghita.",
+  "useCases": [
+    "Tapet pentru apartament de închiriat",
+    "Fotografie de familie pe un perete întreg",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Miercurea-Ciuc?",
+      "a": "Pentru Miercurea-Ciuc, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Livrați tapetul și în Fitod?",
+      "a": "Da. Fitod e la circa 3 km de Miercurea-Ciuc, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Miercurea-Ciuc?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,24 @@
+{
+  "intro": "Dacă renovezi o cameră în Satu Mare, reședința județului Satu Mare, pe Someș, aproape de granițele cu Ungaria și Ucraina, tapetul tipărit după măsurile tale e o alternativă la modelele standard din magazin. Garsonierele și apartamentele închiriate pe termen scurt câștigă personalitate cu un tapet tematic, care arată bine și în fotografiile de prezentare. O fotografie cu Palatul Dacia, mărită pe un perete întreg, poate fi decorul unui living care spune imediat de unde ești. Dacă nu ai o grafică pregătită, echipa de design poate potrivi imaginea pe dimensiunile peretelui, contra unei taxe afișate în configurator. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire. Rambursul la curier e disponibil pentru comenzile de până la 300 lei, iar pentru un perete mare plătești cu cardul sau prin ordin de plată.",
+  "useCases": [
+    "Autocolante pentru mobila de bucătărie",
+    "Living renovat cu tapet și canvas",
+    "Tapet pentru camera copiilor",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Satu Mare?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Satu Mare în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Păulești, lângă Satu Mare. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Păulești și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Satu Mare?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,25 @@
+{
+  "intro": "Aiud — un municipiu de pe valea Mureșului, cu o cetate medievală chiar în centru — are case vechi, blocuri și locuințe noi, iar fiecare are măcar un perete care cere un decor nou. În locuințele din clădiri vechi, tapetul poate acoperi un perete cu imperfecțiuni fără să mai fie nevoie de o tencuială nouă perfectă. Pe același site se găsesc și perne decorative gata imprimate, afișe și preșuri, utile pentru un decor complet. Nu e nevoie să cauți tapet în magazinele din Alba Iulia, la circa 29 km: rola personalizată vine direct acasă, în Aiud. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire. Așa, renovarea începe cu decorul pe care îl vezi zilnic, nu cu cel care se termină ultimul.",
+  "useCases": [
+    "Autocolante pentru uși interioare",
+    "Tapet pentru apartament în clădire veche",
+    "Canvas cu hartă istorică",
+    "Perete nou în apartament de bloc",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Aiud?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Aiud în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Aiudul de Sus?",
+      "a": "Da. Adresa poate fi în Aiud sau în Aiudul de Sus; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Aiud?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

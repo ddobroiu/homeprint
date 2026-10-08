@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru apartamentele și casele din Tulcea, reședința județului Tulcea și poarta Deltei Dunării, HomePrint face decor tipărit la comandă, pe măsura fiecărei camere. Pentru un apartament nou în Tulcea, combinația dintre un perete tapetat și două canvasuri asortate dă un decor coerent din prima lună. Proprietarii de apartamente de vacanță din Tulcea pot comanda tapet pentru mai multe camere deodată, fiecare pe dimensiunea ei. Canvasul se face pe șasiu de lemn, gata de agățat, sau doar ca pânză printată, livrată rulată. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat. Livrăm în toată țara, deci și în Tulcea și în celelalte localități din județul Tulcea, în 2-4 zile lucrătoare de la comandă. Peretele măsurat azi poate fi tapetat săptămâna aceasta.",
+  "useCases": [
+    "Perete decorat pentru restaurant",
+    "Tapet pentru salon sau cabinet",
+    "Decor pentru biroul de acasă",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Tulcea?",
+      "a": "Pentru Tulcea, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Tulcea, de exemplu în Tudor Vladimirescu?",
+      "a": "Da. Tudor Vladimirescu e la circa 1 km de Tulcea, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Tulcea?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

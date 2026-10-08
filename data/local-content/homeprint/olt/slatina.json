@@ -1,0 +1,24 @@
+{
+  "intro": "Ai măsurat peretele din sufragerie și locuiești în Slatina, reședința județului Olt, un oraș de pe Olt cunoscut pentru industria aluminiului? Din acele cifre iese un tapet făcut pe comandă. Saloanele, cabinetele și cafenelele mici folosesc tapetul personalizat pentru peretele din spatele recepției, cu o imagine care le reprezintă. Un canvas mare deasupra canapelei și un perete tapetat în aceeași gamă de culori fac livingul să pară proaspăt renovat. Autocolantele decorative se taie la forma dorită și se lipesc pe pereți netezi, pe sticlă sau pe mobilă. Fotografiile din telefon merg bine pe pereți mici, iar pentru pereți mari e bine să cauți imaginea la rezoluția maximă. Casele din Slatina, Cireașov sau Proaspeți primesc comanda în același termen, așa că poți programa montajul încă de la plată. Rămâne doar să alegi imaginea; dimensiunile le ai deja de pe ruletă.",
+  "useCases": [
+    "Autocolante pentru uși interioare",
+    "Perete nou în apartament de bloc",
+    "Living renovat cu tapet și canvas",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Slatina?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Slatina, de exemplu în Cireașov?",
+      "a": "Sigur. Cireașov, aflat la aproximativ 3 km de Slatina, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Slatina?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

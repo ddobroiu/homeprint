@@ -1,0 +1,23 @@
+{
+  "intro": "Amenajările interioare din București, capitala României și cel mai mare oraș al țării, pot porni de la o fotografie, de la un model floral sau de la un peisaj întins pe tot peretele. Ușile de dulap, frigiderele vechi sau mobila de bucătărie pot primi o față nouă cu autocolante decorative, fără să cumperi mobilier. Un tapet cu Ateneul Român e o idee bună pentru un apartament de închiriat, pentru că le arată oaspeților un loc pe care îl pot vizita. Canvasul se face pe șasiu de lemn, gata de agățat, sau doar ca pânză printată, livrată rulată. Coletul pleacă prin DPD spre București, dar și spre Voluntari, Otopeni și celelalte localități din jur, în 2-4 zile lucrătoare cu tot cu producția. Imaginea se încarcă direct din telefon sau din calculator, iar previzualizarea arată cum se întinde pe perete. Camera rămâne aceeași, dar se simte complet altfel.",
+  "useCases": [
+    "Autocolante pentru camera de student",
+    "Tapet pentru salon sau cabinet",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în București?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din București."
+    },
+    {
+      "q": "Renovez o casă în Voluntari, lângă București. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Voluntari și un telefon de contact. Termenul e același, 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în București?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

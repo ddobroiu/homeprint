@@ -1,0 +1,24 @@
+{
+  "intro": "În Brașov, reședința județului Brașov, oraș turistic la poalele Tâmpei, un dormitor sau un living se poate schimba complet cu un singur perete tapetat cu o imagine aleasă de tine. Pentru un apartament nou în Brașov, combinația dintre un perete tapetat și două canvasuri asortate dă un decor coerent din prima lună. Restaurantele și barurile din zonele turistice folosesc un tapet mare pe peretele principal ca decor care se vede în fotografiile clienților. Autocolantele decorative pot fi și mici, pentru întrerupătoare sau uși de dulap, și mari, pentru o compoziție pe un perete întreg. AWB-ul vine pe e-mail și prin SMS, ca să știi când să fii acasă pentru tapet sau tablouri. Dacă pregătești o surpriză pentru cineva drag, treci la livrare adresa casei unde va fi montat tapetul.",
+  "useCases": [
+    "Perete de accent în living",
+    "Tapet cu peisaj local pentru cabană",
+    "Tapet pentru salon sau cabinet",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Brașov?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Brașov în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Sânpetru?",
+      "a": "Da. Sânpetru e la circa 6 km de Brașov, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Brașov?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

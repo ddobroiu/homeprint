@@ -1,0 +1,24 @@
+{
+  "intro": "Știm despre Blaj că este un municipiu cu veche tradiție școlară și religioasă, numit adesea „Mica Romă”; cum arată pereții casei tale de acolo poți decide chiar tu, de la imagine la dimensiune. Pentru cei plecați din Blaj, un canvas cu Câmpia Libertății pus în casa nouă păstrează legătura cu locul de acasă. Modelele florale sau cu ornamente se potrivesc cu mobila veche de familie și cu ușile de lemn ale caselor de altădată. În casele la curte din Blaj și din satele din jur, un tapet cu un model floral sau cu un peisaj de câmp aduce afară înăuntru. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. De la comandă până la livrare trec 2-4 zile lucrătoare, cu producția inclusă, iar transportul îl face curierul DPD. Confirmarea comenzii vine pe e-mail, iar când coletul pleacă, primești și numărul de urmărire.",
+  "useCases": [
+    "Fotografie de familie pe un perete întreg",
+    "Canvas cu hartă istorică",
+    "Tapet pentru apartament în clădire veche",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Blaj?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Blaj."
+    },
+    {
+      "q": "Renovez o casă în Veza, lângă Blaj. Ajunge comanda acolo?",
+      "a": "Da. Veza e la circa 1 km de Blaj, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Blaj?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

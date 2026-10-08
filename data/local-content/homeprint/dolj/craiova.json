@@ -1,0 +1,23 @@
+{
+  "intro": "În Craiova, reședința județului Dolj și cel mai mare oraș al Olteniei, un dormitor sau un living se poate schimba complet cu un singur perete tapetat cu o imagine aleasă de tine. O fotografie cu Parcul Nicolae Romanescu, mărită pe un perete întreg, poate fi decorul unui living care spune imediat de unde ești. Camerele de student și cele de tineret se schimbă ușor cu autocolante pe perete, cu citate, siluete sau forme geometrice. Un tablou canvas asortat cu tapetul, pe peretele opus, leagă culorile camerei între ele. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat. Comanda ajunge prin DPD în 2-4 zile lucrătoare, așa că poți pregăti peretele, curățat și uscat, până vine tapetul. Decorul ales de tine e cel care rămâne cel mai mult timp pe pereți.",
+  "useCases": [
+    "Tapet pentru camera copiilor",
+    "Decor pentru biroul de acasă",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Craiova?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Craiova în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Mofleni?",
+      "a": "Sigur. Mofleni, aflat la aproximativ 4 km de Craiova, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Craiova?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

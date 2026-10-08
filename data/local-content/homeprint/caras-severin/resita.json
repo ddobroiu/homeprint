@@ -1,0 +1,24 @@
+{
+  "intro": "Un interior cald în Reșița, reședința județului Caraș-Severin, un oraș cu tradiție siderurgică pe Bârzava, se construiește din detalii: un perete tapetat, un tablou pe pânză, câteva autocolante bine alese. Camerele de student și cele de tineret se schimbă ușor cu autocolante pe perete, cu citate, siluete sau forme geometrice. Autocolantele decorative pe ușile interioare sau pe mobila veche dau un aer nou unei locuințe fără să schimbi nimic din structură. Tapetul cu o imagine mare arată cel mai bine pe peretele fără mobilă înaltă în față, unde se vede de la un capăt la altul. Previzualizarea arată unde cad marginile imaginii, ca un detaliu important să nu ajungă după un dulap sau o ușă. Termenul de 2-4 zile lucrătoare e același în Reșița și în orice altă localitate din județul Caraș-Severin. Rămâne doar să alegi imaginea; dimensiunile le ai deja de pe ruletă.",
+  "useCases": [
+    "Tapet pentru camera copiilor",
+    "Living renovat cu tapet și canvas",
+    "Perete nou în apartament de bloc",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Reșița?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Reșița."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Reșița, de exemplu în Doman?",
+      "a": "Da. Doman e la circa 3 km de Reșița, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Reșița?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

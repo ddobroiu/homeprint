@@ -1,0 +1,23 @@
+{
+  "intro": "Știm despre Suceava că este reședința județului Suceava și fostă capitală a Moldovei; cum arată pereții casei tale de acolo poți decide chiar tu, de la imagine la dimensiune. Biroul de acasă, amenajat într-un colț de cameră, se delimitează frumos cu un tapet diferit de restul pereților. Pentru un apartament de închiriat într-o clădire istorică, un tapet cu un detaliu de arhitectură local îi dă oaspetelui senzația locului. Prețul tapetului se calculează pe metru pătrat și scade pe măsură ce crește suprafața comandată. Poți salva ideea, măsura încă o dată peretele și reveni la comandă când ești sigur pe cifre. AWB-ul vine pe e-mail și prin SMS, ca să știi când să fii acasă pentru tapet sau tablouri.",
+  "useCases": [
+    "Tapet pentru salon sau cabinet",
+    "Autocolante pentru camera de student",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Suceava?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Renovez o casă în Șcheia, lângă Suceava. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Șcheia și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Suceava?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

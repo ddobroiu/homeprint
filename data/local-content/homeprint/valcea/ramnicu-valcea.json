@@ -1,0 +1,25 @@
+{
+  "intro": "Pentru cine stă în Râmnicu Vâlcea, reședința județului Vâlcea, un oraș de pe Olt înconjurat de stațiuni balneare, un perete tapetat cu o imagine mare e una dintre cele mai rapide schimbări de decor. Pentru un apartament nou în Râmnicu Vâlcea, combinația dintre un perete tapetat și două canvasuri asortate dă un decor coerent din prima lună. Autocolantele cu numerele camerelor, cu săgeți spre sala de mic dejun sau cu mesaje de bun venit completează decorul unei pensiuni. Pentru un perete cu prize sau întrerupătoare, tapetul se decupează în jurul lor la montaj, cu un cutter, ca la orice tapet obișnuit. Livrarea merge oriunde în Râmnicu Vâlcea și în împrejurimi, inclusiv în Goranu, direct la casa sau apartamentul în renovare. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână.",
+  "useCases": [
+    "Tapet cu peisaj local pentru cabană",
+    "Autocolante pentru camera de student",
+    "Camere tematice pentru pensiune",
+    "Decor pentru biroul de acasă",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Râmnicu Vâlcea?",
+      "a": "Pentru Râmnicu Vâlcea, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Goranu?",
+      "a": "Da. Adresa poate fi în Râmnicu Vâlcea sau în Goranu; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Râmnicu Vâlcea?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

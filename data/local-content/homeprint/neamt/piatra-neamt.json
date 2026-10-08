@@ -1,0 +1,23 @@
+{
+  "intro": "Locuitorii din Piatra-Neamț, reședința județului Neamț, un oraș înconjurat de munți, pot comanda de acasă tapet, tablouri pe pânză și autocolante pentru mobilă sau pereți. Un tapet cu Turnul lui Ștefan cel Mare e o idee bună pentru un apartament de închiriat, pentru că le arată oaspeților un loc pe care îl pot vizita. Saloanele, cabinetele și cafenelele mici folosesc tapetul personalizat pentru peretele din spatele recepției, cu o imagine care le reprezintă. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Pentru o casă în Ciritei sau în alt sat din jurul orașului Piatra-Neamț, livrarea are același termen și același curier. Previzualizarea arată unde cad marginile imaginii, ca un detaliu important să nu ajungă după un dulap sau o ușă. Un singur perete schimbat face adesea mai mult decât o cameră întreagă de mobilă nouă.",
+  "useCases": [
+    "Autocolante pentru camera de student",
+    "Tapet pentru salon sau cabinet",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Piatra-Neamț?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Piatra-Neamț în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Ciritei?",
+      "a": "Da. Adresa poate fi în Piatra-Neamț sau în Ciritei; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Piatra-Neamț?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

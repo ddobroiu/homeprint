@@ -1,0 +1,23 @@
+{
+  "intro": "Amenajările interioare din Ploiești, reședința județului Prahova, centru industrial legat de petrol, pot porni de la o fotografie, de la un model floral sau de la un peisaj întins pe tot peretele. În apartamentele din blocuri, un perete de accent în spatele canapelei sau al patului face camera să pară gândită de un designer, fără lucrări mari. Folia transparentă e bună pentru autocolantele de pe geamuri și oglinzi, unde fundalul trebuie să se vadă. Nu avem showroom în Ploiești; totul se comandă online și vine prin curier, la adresă sau la un punct DPD în care încape coletul. Fotografiile din telefon merg bine pe pereți mici, iar pentru pereți mari e bine să cauți imaginea la rezoluția maximă. Un decor nou nu cere neapărat meseriași, ci o idee bună și măsurile corecte.",
+  "useCases": [
+    "Autocolante pentru uși interioare",
+    "Autocolante pentru mobila de bucătărie",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Ploiești?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Ploiești."
+    },
+    {
+      "q": "Livrați tapetul și în Țânțăreni?",
+      "a": "Da. Adresa poate fi în Ploiești sau în Țânțăreni; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Ploiești?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

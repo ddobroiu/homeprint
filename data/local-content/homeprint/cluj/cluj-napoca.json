@@ -1,0 +1,25 @@
+{
+  "intro": "Pe lângă faptul că este reședința județului Cluj, mare centru universitar și IT al Transilvaniei, Cluj-Napoca are mii de camere care așteaptă un decor mai personal decât un perete alb. În apartamentele din blocuri, un perete de accent în spatele canapelei sau al patului face camera să pară gândită de un designer, fără lucrări mari. Imaginea cu Piața Unirii poate fi tipărită și ca autocolant decorativ, mai mic, pentru o ușă sau un dulap. Prețul tapetului se calculează pe metru pătrat și scade pe măsură ce crește suprafața comandată. Rambursul la curier e disponibil pentru comenzile de până la 300 lei, iar pentru un perete mare plătești cu cardul sau prin ordin de plată. Nu ai nevoie de cunoștințe de grafică: alegi imaginea, o încadrezi pe perete și vezi rezultatul înainte să plătești.",
+  "useCases": [
+    "Tapet pentru salon sau cabinet",
+    "Tapet cu perspectivă pentru hol îngust",
+    "Perete de accent în living",
+    "Autocolante pentru camera de student",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Cluj-Napoca?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Cluj-Napoca, de exemplu în Baciu?",
+      "a": "Da. Adresa poate fi în Cluj-Napoca sau în Baciu; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Cluj-Napoca?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

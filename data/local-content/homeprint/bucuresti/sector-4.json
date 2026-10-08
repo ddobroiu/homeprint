@@ -1,0 +1,25 @@
+{
+  "intro": "Dacă renovezi o cameră în Sectorul 4, partea de sud a Bucureștiului, cu Berceni, Tineretului și Parcul Carol, tapetul tipărit după măsurile tale e o alternativă la modelele standard din magazin. Saloanele, cabinetele și cafenelele mici folosesc tapetul personalizat pentru peretele din spatele recepției, cu o imagine care le reprezintă. Pentru un perete cu ușă sau fereastră, măsori întreaga suprafață, iar decupajul se face la montaj, ca la orice tapet. Livrăm în toată țara, deci și în Sectorul 4 și în celelalte localități din București, în 2-4 zile lucrătoare de la comandă. Prețul se actualizează la fiecare schimbare de dimensiune, așa că poți compara un perete întreg cu o porțiune mai mică. Casa începe să semene cu tine din momentul în care pereții nu mai sunt toți la fel.",
+  "useCases": [
+    "Decor pentru biroul de acasă",
+    "Autocolante pentru mobila de bucătărie",
+    "Tapet pentru salon sau cabinet",
+    "Autocolante pentru camera de student",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Sectorul 4?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Renovez o casă în Sectorul 3, lângă Sectorul 4. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Sectorul 3 și un telefon de contact. Termenul e același, 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Sectorul 4?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

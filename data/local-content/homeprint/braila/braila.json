@@ -1,0 +1,24 @@
+{
+  "intro": "Ai măsurat peretele din sufragerie și locuiești în Brăila, reședința județului Brăila, port la Dunăre cu un centru vechi plin de clădiri istorice? Din acele cifre iese un tapet făcut pe comandă. O fotografie cu faleza Dunării, mărită pe un perete întreg, poate fi decorul unui living care spune imediat de unde ești. Recensământul din 2021 a numărat în Brăila în jur de 150.000 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. Ușile de dulap, frigiderele vechi sau mobila de bucătărie pot primi o față nouă cu autocolante decorative, fără să cumperi mobilier. Pe același site se găsesc și perne decorative gata imprimate, afișe și preșuri, utile pentru un decor complet. Termenul curge de la confirmarea comenzii și a graficii, deci o imagine bună încărcată de la început scurtează așteptarea. Livrarea merge oriunde în Brăila și în împrejurimi, inclusiv în Vărsătura, direct la casa sau apartamentul în renovare.",
+  "useCases": [
+    "Autocolante pentru mobila de bucătărie",
+    "Autocolante pentru camera de student",
+    "Decor pentru biroul de acasă",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Brăila?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Livrați tapetul și în Vărsătura?",
+      "a": "Da. Adresa poate fi în Brăila sau în Vărsătura; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Brăila?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,25 @@
+{
+  "intro": "Renovarea unei camere în Sectorul 2, partea de nord-est a Bucureștiului, cu Obor, Colentina, Tei și Iancului, poate începe cu ruleta și cu o imagine care îți place, nu neapărat cu un meseriaș. În apartamentele din blocuri, un perete de accent în spatele canapelei sau al patului face camera să pară gândită de un designer, fără lucrări mari. Autocolantele cu citate, siluete sau forme geometrice se pot comanda în mai multe bucăți, pentru o compoziție pe tot peretele. Termenul curge de la confirmarea comenzii și a graficii, deci o imagine bună încărcată de la început scurtează așteptarea. Casele din Sectorul 2, Sectorul 1 sau Sectorul 3 primesc comanda în același termen, așa că poți programa montajul încă de la plată. Casa începe să semene cu tine din momentul în care pereții nu mai sunt toți la fel.",
+  "useCases": [
+    "Tapet cu perspectivă pentru hol îngust",
+    "Autocolante pentru camera de student",
+    "Autocolante pentru mobila de bucătărie",
+    "Decor pentru biroul de acasă",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Sectorul 2?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Sectorul 1?",
+      "a": "Da. DPD livrează la orice adresă din țară, deci și în Sectorul 1. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Sectorul 2?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

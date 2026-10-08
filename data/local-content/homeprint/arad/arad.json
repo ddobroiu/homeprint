@@ -1,0 +1,25 @@
+{
+  "intro": "Un interior cald în Arad, reședința județului Arad, un oraș de pe Mureș cu multe clădiri istorice, se construiește din detalii: un perete tapetat, un tablou pe pânză, câteva autocolante bine alese. Dacă ai o poză reușită cu Palatul Cultural, ea poate deveni tapet pentru un perete de accent sau canvas pentru hol. Ușile de dulap, frigiderele vechi sau mobila de bucătărie pot primi o față nouă cu autocolante decorative, fără să cumperi mobilier. În locuințele din clădiri vechi, tapetul poate acoperi un perete cu imperfecțiuni fără să mai fie nevoie de o tencuială nouă perfectă. Folia transparentă e bună pentru autocolantele de pe geamuri și oglinzi, unde fundalul trebuie să se vadă. Poți salva ideea, măsura încă o dată peretele și reveni la comandă când ești sigur pe cifre. Tapetul vine rulat, protejat pentru transport, iar coletele mici, cum sunt autocolantele, pot merge și la un locker DPD. Peretele măsurat azi poate fi tapetat săptămâna aceasta.",
+  "useCases": [
+    "Tapet pentru apartament în clădire veche",
+    "Autocolante pentru camera de student",
+    "Autocolante pentru mobila de bucătărie",
+    "Decor pentru biroul de acasă",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Arad?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Arad în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Sânleani, lângă Arad. Ajunge comanda acolo?",
+      "a": "Da. Sânleani e la circa 7 km de Arad, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Arad?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

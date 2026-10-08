@@ -1,0 +1,25 @@
+{
+  "intro": "Renovarea unei camere în Baia Mare, reședința județului Maramureș, oraș cu tradiție minieră și centru vechi, poate începe cu ruleta și cu o imagine care îți place, nu neapărat cu un meseriaș. Biroul de acasă, amenajat într-un colț de cameră, se delimitează frumos cu un tapet diferit de restul pereților. Un canvas cu o gravură veche sau cu o hartă istorică se asortează bine cu un perete tapetat în tonuri calde. La imaginile panoramice merită lăsați câțiva centimetri în plus la fiecare margine, pentru tăierea finală pe perete. Un perete de accent e de obicei cel din spatele patului, al canapelei sau al biroului, pe care privirea se oprește prima. Comanda se face online: introduci lățimea și înălțimea peretelui, încarci imaginea sau alegi un model și vezi prețul imediat. Termenul de 2-4 zile lucrătoare e același în Baia Mare și în orice altă localitate din județul Maramureș.",
+  "useCases": [
+    "Tapet cu perspectivă pentru hol îngust",
+    "Model clasic pentru casă veche",
+    "Tapet pentru apartament în clădire veche",
+    "Decor pentru biroul de acasă",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Baia Mare?",
+      "a": "Pentru Baia Mare, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Renovez o casă în Satu Nou de Jos, lângă Baia Mare. Ajunge comanda acolo?",
+      "a": "Da. Adresa poate fi în Baia Mare sau în Satu Nou de Jos; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Baia Mare?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

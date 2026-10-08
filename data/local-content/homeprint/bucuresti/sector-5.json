@@ -1,0 +1,24 @@
+{
+  "intro": "Dacă renovezi o cameră în Sectorul 5, partea de sud-vest a Bucureștiului, cu Cotroceni, Rahova și Palatul Parlamentului, tapetul tipărit după măsurile tale e o alternativă la modelele standard din magazin. Pentru un apartament nou în Sectorul 5, combinația dintre un perete tapetat și două canvasuri asortate dă un decor coerent din prima lună. Dacă ai o poză reușită cu Palatul Parlamentului, ea poate deveni tapet pentru un perete de accent sau canvas pentru hol. Tapetul este lavabil și se șterge cu o lavetă umedă, util mai ales în camerele copiilor sau pe hol. Pentru o casă în Sectorul 4 sau în alt sat din jurul orașului Sectorul 5, livrarea are același termen și același curier. Fotografiile din telefon merg bine pe pereți mici, iar pentru pereți mari e bine să cauți imaginea la rezoluția maximă.",
+  "useCases": [
+    "Tapet pentru apartament de închiriat",
+    "Perete de accent în living",
+    "Autocolante pentru mobila de bucătărie",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Sectorul 5?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Sectorul 5 în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Sectorul 4?",
+      "a": "Da. DPD livrează la orice adresă din țară, deci și în Sectorul 4. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Sectorul 5?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

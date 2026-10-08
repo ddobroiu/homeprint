@@ -1,0 +1,24 @@
+{
+  "intro": "Deva, reședința județului Hunedoara, cu cetatea ridicată pe dealul din centru, e una dintre localitățile în care HomePrint livrează tapet la comandă, canvasuri și autocolante decorative. Biroul de acasă, amenajat într-un colț de cameră, se delimitează frumos cu un tapet diferit de restul pereților. În locuințele din clădiri vechi, tapetul poate acoperi un perete cu imperfecțiuni fără să mai fie nevoie de o tencuială nouă perfectă. Pentru un perete cu prize sau întrerupătoare, tapetul se decupează în jurul lor la montaj, cu un cutter, ca la orice tapet obișnuit. Termenul curge de la confirmarea comenzii și a graficii, deci o imagine bună încărcată de la început scurtează așteptarea. Comanda ajunge prin DPD în 2-4 zile lucrătoare, așa că poți pregăti peretele, curățat și uscat, până vine tapetul. Un singur perete schimbat face adesea mai mult decât o cameră întreagă de mobilă nouă.",
+  "useCases": [
+    "Decor floral asortat cu mobila de familie",
+    "Decor pentru biroul de acasă",
+    "Canvas cu hartă istorică",
+    "Canvas asortat cu tapetul"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Deva?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Deva."
+    },
+    {
+      "q": "Renovez o casă în Șoimuș, lângă Deva. Ajunge comanda acolo?",
+      "a": "Sigur. Șoimuș, aflat la aproximativ 4 km de Deva, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Deva?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

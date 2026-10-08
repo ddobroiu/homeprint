@@ -1,0 +1,23 @@
+{
+  "intro": "Te muți într-o locuință nouă în Alba Iulia, reședința județului Alba și orașul Marii Uniri de la 1918, sau doar vrei să schimbi atmosfera unei camere? Saloanele, cabinetele și cafenelele mici folosesc tapetul personalizat pentru peretele din spatele recepției, cu o imagine care le reprezintă. Recepția unei pensiuni poate avea pe perete un tapet cu harta zonei, util și ca decor, și ca informație pentru turiști. Imaginea cu Cetatea Alba Carolina poate fi tipărită și ca autocolant decorativ, mai mic, pentru o ușă sau un dulap. Canvasul se face pe șasiu de lemn, gata de agățat, sau doar ca pânză printată, livrată rulată. Livrarea merge oriunde în Alba Iulia și în împrejurimi, inclusiv în Bărăbanț, direct la casa sau apartamentul în renovare. Măsoară peretele în câteva puncte și folosește cea mai mare valoare, ca tapetul să acopere complet suprafața.",
+  "useCases": [
+    "Tapet pentru salon sau cabinet",
+    "Autocolante pentru camera de student",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Alba Iulia?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Alba Iulia, de exemplu în Bărăbanț?",
+      "a": "Sigur. Bărăbanț, aflat la aproximativ 4 km de Alba Iulia, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Alba Iulia?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

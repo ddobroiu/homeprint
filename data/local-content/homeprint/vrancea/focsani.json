@@ -1,0 +1,24 @@
+{
+  "intro": "Focșani, reședința județului Vrancea, aflat la vechea limită dintre Moldova și Țara Românească, e una dintre localitățile în care HomePrint livrează tapet la comandă, canvasuri și autocolante decorative. La recensământul din 2021, Focșani avea aproximativ 65.000 de locuitori, deci mii de locuințe în care un perete nou ar schimba atmosfera. Ușile de dulap, frigiderele vechi sau mobila de bucătărie pot primi o față nouă cu autocolante decorative, fără să cumperi mobilier. Camera de oaspeți, cea în care dorm nepoții vara, poate primi un perete tapetat cu ceva vesel, fără renovare completă. Canvasul și tapetul pot porni de la aceeași fotografie: una mare pe perete, una mică pe pânză, în altă cameră. Dacă renovezi o casă în Vâlcele sau în alt sat din apropiere, livrarea se face la fel, la adresa completă trecută în comandă. Previzualizarea arată unde cad marginile imaginii, ca un detaliu important să nu ajungă după un dulap sau o ușă.",
+  "useCases": [
+    "Perete de accent în living",
+    "Autocolante pentru mobila de bucătărie",
+    "Decor pentru bucătăria de vară",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Focșani?",
+      "a": "Pentru Focșani, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Focșani, de exemplu în Vâlcele?",
+      "a": "Da. Vâlcele e la circa 3 km de Focșani, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Focșani?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

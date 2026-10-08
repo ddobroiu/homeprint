@@ -1,0 +1,25 @@
+{
+  "intro": "Cine își amenajează locuința în Bistrița, reședința județului Bistrița-Năsăud, un vechi oraș săsesc, poate comanda online tapet făcut exact pe dimensiunea peretelui. Imaginea cu Biserica Evanghelică poate fi tipărită și ca autocolant decorativ, mai mic, pentru o ușă sau un dulap. Pentru un apartament nou în Bistrița, combinația dintre un perete tapetat și două canvasuri asortate dă un decor coerent din prima lună. Un perete de accent e de obicei cel din spatele patului, al canapelei sau al biroului, pe care privirea se oprește prima. Dacă renovezi o casă în Unirea sau în alt sat din apropiere, livrarea se face la fel, la adresa completă trecută în comandă. Poți salva ideea, măsura încă o dată peretele și reveni la comandă când ești sigur pe cifre.",
+  "useCases": [
+    "Tapet cu perspectivă pentru hol îngust",
+    "Tapet cu fotografie de arhivă a orașului",
+    "Decor floral asortat cu mobila de familie",
+    "Autocolante pentru camera de student",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Bistrița?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Bistrița în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Unirea?",
+      "a": "Sigur. Unirea, aflat la aproximativ 4 km de Bistrița, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Bistrița?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

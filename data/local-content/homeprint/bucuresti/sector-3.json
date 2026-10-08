@@ -1,0 +1,24 @@
+{
+  "intro": "Amenajările interioare din Sectorul 3, partea de est a Bucureștiului, cu Titan, Dristor, Vitan și o parte din Centrul Vechi, pot porni de la o fotografie, de la un model floral sau de la un peisaj întins pe tot peretele. Saloanele, cabinetele și cafenelele mici folosesc tapetul personalizat pentru peretele din spatele recepției, cu o imagine care le reprezintă. Autocolantele decorative pot fi și mici, pentru întrerupătoare sau uși de dulap, și mari, pentru o compoziție pe un perete întreg. Tapetul vine rulat, protejat pentru transport, iar coletele mici, cum sunt autocolantele, pot merge și la un locker DPD. Termenul curge de la confirmarea comenzii și a graficii, deci o imagine bună încărcată de la început scurtează așteptarea. Camera rămâne aceeași, dar se simte complet altfel.",
+  "useCases": [
+    "Decor pentru biroul de acasă",
+    "Tapet cu perspectivă pentru hol îngust",
+    "Autocolante pentru camera de student",
+    "Autocolante decorative decupate"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Sectorul 3?",
+      "a": "Pentru Sectorul 3, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Renovez o casă în Sectorul 2, lângă Sectorul 3. Ajunge comanda acolo?",
+      "a": "Da. DPD livrează la orice adresă din țară, deci și în Sectorul 2. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Sectorul 3?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

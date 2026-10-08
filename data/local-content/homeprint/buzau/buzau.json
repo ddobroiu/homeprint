@@ -1,0 +1,24 @@
+{
+  "intro": "Buzău, reședința județului Buzău, un oraș aflat între munte, câmpie și podgorii, e una dintre localitățile în care HomePrint livrează tapet la comandă, canvasuri și autocolante decorative. Garsonierele și apartamentele închiriate pe termen scurt câștigă personalitate cu un tapet tematic, care arată bine și în fotografiile de prezentare. Pentru camerele copiilor, un tapet cu personajele lor preferate sau cu harta lumii transformă o cameră banală într-una de poveste. Varianta autoadezivă se aplică pe pereți netezi, curați și uscați, fără adeziv separat. Ai nevoie de un sfat despre imagine sau dimensiuni? Pagina de contact a site-ului are datele echipei. Canvasurile pe șasiu vin la adresă, pentru că nu încap în lockere, iar autocolantele și pânza rulată pot merge la un punct DPD.",
+  "useCases": [
+    "Living renovat cu tapet și canvas",
+    "Autocolante pentru camera de student",
+    "Tapet cu perspectivă pentru hol îngust",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Buzău?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Buzău."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Mărăcineni?",
+      "a": "Sigur. Mărăcineni, aflat la aproximativ 3 km de Buzău, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Buzău?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

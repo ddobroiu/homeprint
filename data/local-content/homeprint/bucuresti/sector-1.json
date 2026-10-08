@@ -1,0 +1,24 @@
+{
+  "intro": "Ai măsurat peretele din sufragerie și locuiești în Sectorul 1, partea de nord a Bucureștiului, cu Piața Victoriei, Aviatorilor și zona Băneasa? Din acele cifre iese un tapet făcut pe comandă. Dacă ai o poză reușită cu Arcul de Triumf, ea poate deveni tapet pentru un perete de accent sau canvas pentru hol. Garsonierele și apartamentele închiriate pe termen scurt câștigă personalitate cu un tapet tematic, care arată bine și în fotografiile de prezentare. Canvasul și tapetul pot porni de la aceeași fotografie: una mare pe perete, una mică pe pânză, în altă cameră. Prețul se actualizează la fiecare schimbare de dimensiune, așa că poți compara un perete întreg cu o porțiune mai mică. Casele din Sectorul 1, Sectorul 2 sau Sectorul 6 primesc comanda în același termen, așa că poți programa montajul încă de la plată.",
+  "useCases": [
+    "Tapet cu perspectivă pentru hol îngust",
+    "Autocolante pentru mobila de bucătărie",
+    "Tapet pentru apartament de închiriat",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Sectorul 1?",
+      "a": "Pentru Sectorul 1, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Sectorul 2?",
+      "a": "Da, trece adresa completă din Sectorul 2 și un telefon de contact. Termenul e același, 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Pot plăti ramburs sau ridica decorurile dintr-un locker în Sectorul 1?",
+      "a": "Ramburs se poate plăti la comenzile de până la 300 lei; peste această sumă plătești cu cardul sau prin ordin de plată. Autocolantele și coletele mici pot merge la un locker DPD, iar canvasurile pe șasiu vin la adresă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

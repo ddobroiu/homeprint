@@ -1,0 +1,24 @@
+{
+  "intro": "Te muți într-o locuință nouă în Târgoviște, reședința județului Dâmbovița și fostă capitală a Țării Românești, sau doar vrei să schimbi atmosfera unei camere? Biroul de acasă, amenajat într-un colț de cameră, se delimitează frumos cu un tapet diferit de restul pereților. Un restaurant sau o cafenea din Târgoviște poate folosi o imagine cu Turnul Chindiei pe un perete întreg, ca decor pe care localnicii îl recunosc imediat. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Dacă pregătești o surpriză pentru cineva drag, treci la livrare adresa casei unde va fi montat tapetul. Livrăm în toată țara, deci și în Târgoviște și în celelalte localități din județul Dâmbovița, în 2-4 zile lucrătoare de la comandă. Decorul ales de tine e cel care rămâne cel mai mult timp pe pereți.",
+  "useCases": [
+    "Tapet pentru apartament în clădire veche",
+    "Model clasic pentru casă veche",
+    "Tapet cu perspectivă pentru hol îngust",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Târgoviște?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Livrați tapetul și în Valea Voievozilor?",
+      "a": "Da. Adresa poate fi în Târgoviște sau în Valea Voievozilor; coletul pleacă prin DPD și ajunge în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Târgoviște?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,25 @@
+{
+  "intro": "Știm despre Drobeta-Turnu Severin că este reședința județului Mehedinți, oraș la Dunăre cu ruinele podului lui Traian; cum arată pereții casei tale de acolo poți decide chiar tu, de la imagine la dimensiune. Ușile de dulap, frigiderele vechi sau mobila de bucătărie pot primi o față nouă cu autocolante decorative, fără să cumperi mobilier. Tapetul cu o imagine mare arată cel mai bine pe peretele fără mobilă înaltă în față, unde se vede de la un capăt la altul. Casele din Drobeta-Turnu Severin, Schela Cladovei sau Magheru primesc comanda în același termen, așa că poți programa montajul încă de la plată. Nu ai nevoie de cunoștințe de grafică: alegi imaginea, o încadrezi pe perete și vezi rezultatul înainte să plătești. Așa, renovarea începe cu decorul pe care îl vezi zilnic, nu cu cel care se termină ultimul.",
+  "useCases": [
+    "Decor floral asortat cu mobila de familie",
+    "Autocolante pentru mobila de bucătărie",
+    "Canvas cu hartă istorică",
+    "Tapet pentru apartament în clădire veche",
+    "Tapet autoadeziv"
+  ],
+  "faq": [
+    {
+      "q": "Care e termenul de livrare pentru tapet și decoruri în Drobeta-Turnu Severin?",
+      "a": "Pentru Drobeta-Turnu Severin, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Pot primi tablourile și autocolantele în Schela Cladovei?",
+      "a": "Da. Schela Cladovei e la circa 3 km de Drobeta-Turnu Severin, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Drobeta-Turnu Severin?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

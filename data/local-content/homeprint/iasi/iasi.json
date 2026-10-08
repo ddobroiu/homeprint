@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru apartamentele și casele din Iași, reședința județului Iași, oraș universitar și fostă capitală a Moldovei, HomePrint face decor tipărit la comandă, pe măsura fiecărei camere. Biroul de acasă, amenajat într-un colț de cameră, se delimitează frumos cu un tapet diferit de restul pereților. Cu circa 270.000 de locuitori numărați în 2021, Iași are destule case și apartamente în care un decor nou s-ar vedea imediat. Autocolantele decorative pot fi și mici, pentru întrerupătoare sau uși de dulap, și mari, pentru o compoziție pe un perete întreg. Canvasurile pe șasiu vin la adresă, pentru că nu încap în lockere, iar autocolantele și pânza rulată pot merge la un punct DPD. Previzualizarea arată unde cad marginile imaginii, ca un detaliu important să nu ajungă după un dulap sau o ușă. Peretele potrivit, cu imaginea potrivită, face o casă să pară nouă.",
+  "useCases": [
+    "Tapet pentru apartament în clădire veche",
+    "Tapet cu perspectivă pentru hol îngust",
+    "Tapet pentru salon sau cabinet",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "Când primesc tapetul comandat pentru o casă din Iași?",
+      "a": "Pentru Iași, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Renovez o casă în Valea Adâncă, lângă Iași. Ajunge comanda acolo?",
+      "a": "Da, trece adresa completă din Valea Adâncă și un telefon de contact. Termenul e același, 2-4 zile lucrătoare de la confirmarea comenzii."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Iași?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

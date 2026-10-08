@@ -1,0 +1,24 @@
+{
+  "intro": "Zalău este reședința județului Sălaj, la poalele Meseșului, iar în casele și apartamentele de aici renovările încep tot mai des cu un perete de accent. Pentru un apartament nou în Zalău, combinația dintre un perete tapetat și două canvasuri asortate dă un decor coerent din prima lună. Autocolantele decorative pe ușile interioare sau pe mobila veche dau un aer nou unei locuințe fără să schimbi nimic din structură. Tapetul se tipărește pe dimensiunea exactă a peretelui, introdusă în centimetri, nu pe role standard. Varianta autoadezivă se aplică pe pereți netezi, curați și uscați, fără adeziv separat. Plata se face cu cardul, prin ordin de plată sau ramburs la curier, pentru comenzile de până la 300 lei. Prețul se actualizează la fiecare schimbare de dimensiune, așa că poți compara un perete întreg cu o porțiune mai mică. Așa, renovarea începe cu decorul pe care îl vezi zilnic, nu cu cel care se termină ultimul.",
+  "useCases": [
+    "Autocolante pentru uși interioare",
+    "Decor pentru biroul de acasă",
+    "Tapet cu perspectivă pentru hol îngust",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Zalău?",
+      "a": "Pentru Zalău, ca pentru restul țării, termenul este de 2-4 zile lucrătoare, cu tot cu producția, de la confirmarea comenzii."
+    },
+    {
+      "q": "Livrați tapetul și în Aghireș?",
+      "a": "Sigur. Aghireș, aflat la aproximativ 4 km de Zalău, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Zalău?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

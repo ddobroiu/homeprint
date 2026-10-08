@@ -1,0 +1,24 @@
+{
+  "intro": "În Sectorul 6, partea de vest a Bucureștiului, cu Drumul Taberei, Militari și Crângași, camerele copiilor, holurile și dormitoarele pot primi un decor nou fără mobilă nouă. Saloanele, cabinetele și cafenelele mici folosesc tapetul personalizat pentru peretele din spatele recepției, cu o imagine care le reprezintă. Un perete de accent e de obicei cel din spatele patului, al canapelei sau al biroului, pe care privirea se oprește prima. Tapetul cu o imagine mare arată cel mai bine pe peretele fără mobilă înaltă în față, unde se vede de la un capăt la altul. Dacă pregătești o surpriză pentru cineva drag, treci la livrare adresa casei unde va fi montat tapetul. Coletul pleacă prin DPD spre Sectorul 6, dar și spre Sectorul 1, Sectorul 5 și celelalte localități din jur, în 2-4 zile lucrătoare cu tot cu producția.",
+  "useCases": [
+    "Tapet pentru apartament de închiriat",
+    "Autocolante pentru camera de student",
+    "Decor pentru biroul de acasă",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Sectorul 6?",
+      "a": "În 2-4 zile lucrătoare de la confirmarea comenzii și a graficii, cu producția inclusă. Coletul vine prin DPD, iar AWB-ul îl primești pe e-mail și prin SMS."
+    },
+    {
+      "q": "Livrați tapetul și în Sectorul 1?",
+      "a": "Da. DPD livrează la orice adresă din țară, deci și în Sectorul 1. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Sectorul 6?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

@@ -1,0 +1,24 @@
+{
+  "intro": "Pentru familiile din Sebeș, un municipiu industrial de pe valea Sebeșului, la capătul nordic al Transalpinei, decorul casei nu mai înseamnă doar zugrăveală: tapetul personalizat și autocolantele fac diferența. Pentru camerele copiilor, un tapet cu personajele lor preferate sau cu harta lumii transformă o cameră banală într-una de poveste. O fotografie de familie mărită pe un canvas mare sau chiar pe un perete întreg poate fi piesa centrală a unei case renovate. Un tablou canvas asortat cu tapetul, pe peretele opus, leagă culorile camerei între ele. Dacă renovezi o casă în Lancrăm sau în alt sat din apropiere, livrarea se face la fel, la adresa completă trecută în comandă. Dacă pregătești o surpriză pentru cineva drag, treci la livrare adresa casei unde va fi montat tapetul. Peretele potrivit, cu imaginea potrivită, face o casă să pară nouă.",
+  "useCases": [
+    "Tapet pentru camera copiilor",
+    "Tapet panoramic pentru cameră mică",
+    "Tapet floral pentru casă la curte",
+    "Fototapet din poza ta"
+  ],
+  "faq": [
+    {
+      "q": "Cât durează livrarea unui tapet sau a unui canvas în Sebeș?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Sebeș în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Livrați tapetul și în Lancrăm?",
+      "a": "Sigur. Lancrăm, aflat la aproximativ 4 km de Sebeș, e deservit de curierul DPD ca orice altă localitate, în 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum pot plăti tapetul comandat în Sebeș?",
+      "a": "Poți plăti cu cardul online, prin ordin de plată sau ramburs la curier, pentru comenzi de până la 300 lei. Coletul vine prin DPD la adresa ta sau, dacă încape, la un locker ori punct DPD."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

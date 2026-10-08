@@ -1,0 +1,25 @@
+{
+  "intro": "În Bacău, reședința județului Bacău, un oraș de pe Bistrița cu industrie și universitate, un dormitor sau un living se poate schimba complet cu un singur perete tapetat cu o imagine aleasă de tine. Biroul de acasă, amenajat într-un colț de cameră, se delimitează frumos cu un tapet diferit de restul pereților. Recensământul din 2021 a numărat în Bacău în jur de 130.000 de locuitori, iar fiecare casă are măcar o cameră care ar merita un decor nou. Varianta autoadezivă se aplică pe pereți netezi, curați și uscați, fără adeziv separat. Casele din Bacău, Letea Veche sau Măgura primesc comanda în același termen, așa că poți programa montajul încă de la plată. Comanda merge și de pe telefon, chiar din camera pe care o renovezi, cu ruleta încă în mână. Un decor nou nu cere neapărat meseriași, ci o idee bună și măsurile corecte.",
+  "useCases": [
+    "Perete de accent în living",
+    "Autocolante pentru camera de student",
+    "Tapet pentru camera copiilor",
+    "Tapet cu perspectivă pentru hol îngust",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Bacău?",
+      "a": "Comanda intră în lucru după confirmare și ajunge în Bacău în 2-4 zile lucrătoare. Poți urmări coletul cu numărul AWB primit."
+    },
+    {
+      "q": "Renovez o casă în Letea Veche, lângă Bacău. Ajunge comanda acolo?",
+      "a": "Da. Letea Veche e la circa 2 km de Bacău, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Cum se plătește comanda și cum ajunge tapetul la mine în Bacău?",
+      "a": "Ai trei variante: card, ordin de plată și ramburs până la 300 lei. Tapetul vine rulat prin DPD, la adresa trecută în comandă."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}

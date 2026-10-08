@@ -1,0 +1,24 @@
+{
+  "intro": "Te muți într-o locuință nouă în Vaslui, reședința județului Vaslui, legată de bătălia de la Podul Înalt, sau doar vrei să schimbi atmosfera unei camere? Garsonierele și apartamentele închiriate pe termen scurt câștigă personalitate cu un tapet tematic, care arată bine și în fotografiile de prezentare. O fotografie de arhivă cu centrul vechi, mărită pe tot peretele, leagă casa de istoria locului în care stai. La imaginile panoramice merită lăsați câțiva centimetri în plus la fiecare margine, pentru tăierea finală pe perete. De la comandă până la livrare trec 2-4 zile lucrătoare, cu producția inclusă, iar transportul îl face curierul DPD. Imaginea se încarcă direct din telefon sau din calculator, iar previzualizarea arată cum se întinde pe perete. Casa începe să semene cu tine din momentul în care pereții nu mai sunt toți la fel.",
+  "useCases": [
+    "Tapet pentru apartament de închiriat",
+    "Perete de accent în living",
+    "Canvas cu hartă istorică",
+    "Tapet personalizat pe dimensiunea peretelui"
+  ],
+  "faq": [
+    {
+      "q": "În cât timp ajunge tapetul personalizat în Vaslui?",
+      "a": "Socotește 2-4 zile lucrătoare de la comandă. Tapetul se tipărește pe dimensiunile tale, se rulează și pleacă prin DPD spre adresa din Vaslui."
+    },
+    {
+      "q": "Trimiteți comenzi și în localitățile din jurul orașului Vaslui, de exemplu în Moara Grecilor?",
+      "a": "Da. Moara Grecilor e la circa 4 km de Vaslui, iar DPD livrează la orice adresă din țară. Termenul rămâne 2-4 zile lucrătoare."
+    },
+    {
+      "q": "Ce variante de plată și de livrare am în Vaslui?",
+      "a": "Plata se face cu cardul, prin transfer bancar sau ramburs (până la 300 lei). Livrarea e la adresă sau la un punct DPD; pe hartă apar doar punctele în care încape coletul."
+    }
+  ],
+  "updatedAt": "2026-10-08"
+}
