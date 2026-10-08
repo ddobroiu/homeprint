@@ -123,10 +123,10 @@ export default function StockCanvasConfigurator({ productSlug, renderOnlyConfigu
         // standard (Portrait & Landscape)
         if (isPortraitProduct || isLandscapeProduct) {
             // M, L, XL, XXL
-            if (dimStr === "50x40" || dimStr === "40x50") return 119;
+            if (dimStr === "50x40" || dimStr === "40x50") return 129; // cost 51,90 → min 125,60 (2 × cost × 1,21)
             if (dimStr === "70x50" || dimStr === "50x70") return 169;
             if (dimStr === "90x60" || dimStr === "60x90" || dimStr === "90x70" || dimStr === "70x90") return 269;
-            if (dimStr === "120x90" || dimStr === "90x120") return 389;
+            if (dimStr === "120x90" || dimStr === "90x120") return 469; // cost ~189,33 (estimat) → min 458,18
         }
 
         // Square
@@ -134,7 +134,7 @@ export default function StockCanvasConfigurator({ productSlug, renderOnlyConfigu
             if (dimStr === "40x40") return 109;
             if (dimStr === "60x60") return 189;
             if (dimStr === "80x80") return 279;
-            if (dimStr === "100x100") return 349;
+            if (dimStr === "100x100") return 369; // cost 150 → min 363
         }
 
         // Panoramic

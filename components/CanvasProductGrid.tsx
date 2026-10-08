@@ -264,7 +264,7 @@ export default function CanvasProductGrid({ products, linkBase = 'canvas-product
                                         <span className="bg-white/90 backdrop-blur-sm text-slate-900 text-xs font-black px-3 py-1.5 rounded-lg shadow-md border border-gray-100">
                                             {(() => {
                                                 const orient = getProductOrientation(product);
-                                                let basePrice = 119;
+                                                let basePrice = 129; // prețul celui mai mic format portret/peisaj (40×50 cm)
                                                 if (orient === 'Pătrat') basePrice = 109;
                                                 if (orient === 'Panoramic') basePrice = 129;
                                                 return `DE LA ${basePrice} LEI`;

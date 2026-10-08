@@ -6,6 +6,20 @@ export const formatMoneyDisplay = (amount: number) =>
   new Intl.NumberFormat("ro-RO", { style: "currency", currency: "RON" }).format(amount);
 
 /* =========================================================================
+   REGULA DE PREȚ A PROPRIETARULUI (08.10.2026)
+   Prețul nostru ≥ 2 × costul real. Firma NU e plătitoare de TVA, deci costul real = prețul PrintCenter fără TVA × 1,21.
+   Costurile reale (fără TVA) vin din cele 263 de comenzi PrintCenter: _deploy/printcenter-preturi/preturi.json
+   (copie în data/productie/printcenter-preturi.json). Transportul (DPD) și comisionul de card se plătesc separat
+   de client sub pragul de transport gratuit; minimele de comandă de mai jos acoperă comenzile mici.
+   Tabelele de mai jos sunt calibrate pe regula asta; comentariile „cost … → min …” arată de unde vine fiecare prag.
+   ========================================================================= */
+export const OWNER_PRICE_MULTIPLIER = 2;
+export const SUPPLIER_VAT_FACTOR = 1.21;
+/** Prețul minim (lei întregi, rotunjit în sus) pentru un cost PrintCenter fără TVA: 2 × cost × 1,21. */
+export const minPriceForCost = (costExVat: number) =>
+  Math.ceil(roundMoney(costExVat * SUPPLIER_VAT_FACTOR * OWNER_PRICE_MULTIPLIER));
+
+/* =========================================================================
    HELPER NOU: UPSELL CALCULATOR (GENERIC)
    Detectează automat următorul prag de reducere pentru produse bazate pe benzi de preț/mp.
    ========================================================================= */
@@ -174,12 +188,14 @@ export const getRigidMaterialUpsell = (
 // ==========================================
 export const BANNER_CONSTANTS = {
   PRICES: {
+    // cost real Frontlit 440 (tiv și capse incluse): 26 lei/m² fără TVA → min 62,92 lei/m²; 510: 28 → 67,76 (×1,10);
+    // mesh 26,17 → 63,33. Peste 5 m² nu mai coborâm sub 65 lei/m².
     bands: [
       { max: 1, price: 100 },
       { max: 5, price: 75 },
-      { max: 20, price: 60 },
-      { max: 50, price: 45 },
-      { max: Infinity, price: 35 },
+      { max: 20, price: 65 },
+      { max: 50, price: 65 },
+      { max: Infinity, price: 65 },
     ],
     multipliers: {
       frontlit_510: 1.10,
@@ -272,13 +288,14 @@ export const getBannerUpsell = (input: PriceInputBanner): UpsellResult => {
 // ==========================================
 export const BANNER_VERSO_CONSTANTS = {
   PRICES: {
+    // cost real blockout față-verso: 52,43 lei/m² (< 2 m²), 50,97 (2–5), 50,9 (> 5) fără TVA → min 126,9 / 123,4 / 123,2
+    // lei/m²; tivul (×1,10) se aplică mereu, deci prețul efectiv e banda × 1,10.
     bands: [
-      // Prețurile sunt 1.5x față de cele de la BANNER_CONSTANTS
-      { max: 1, price: roundMoney(100 * 1.5) },    // 150.0
-      { max: 5, price: roundMoney(75 * 1.5) },     // 112.5
-      { max: 20, price: roundMoney(60 * 1.5) },    // 90.0
-      { max: 50, price: roundMoney(45 * 1.5) },    // 67.5
-      { max: Infinity, price: roundMoney(35 * 1.5) }, // 52.5
+      { max: 1, price: 150 },
+      { max: 5, price: 120 },
+      { max: 20, price: 115 },
+      { max: 50, price: 115 },
+      { max: Infinity, price: 115 },
     ],
     multipliers: {
       wind_holes: 1.10,
@@ -367,7 +384,9 @@ export const getBannerVersoUpsell = (input: PriceInputBannerVerso): UpsellResult
 // ==========================================
 export const POLIPROPILENA_CONSTANTS = {
   LIMITS: { MAX_WIDTH: 200, MAX_HEIGHT: 300 },
-  PRICES: { 3: 180, 4: 200, 5: 220 } as Record<number, number>,
+  // 3 mm: cost real 86,71 lei/m² (< 1 m²) / 62,4 (≥ 1 m²) fără TVA → min 209,8 lei/m². 4 și 5 mm: fără comenzi
+  // reale, urcate în aceeași proporție ca să rămână mai scumpe decât 3 mm.
+  PRICES: { 3: 210, 4: 230, 5: 250 } as Record<number, number>,
   GRAMAJ: { 3: 450, 4: 750, 5: 1050 } as Record<number, number>,
   AVAILABLE_THICKNESS: [3, 4, 5],
   PRO_DESIGN_FEE: 50,
@@ -416,9 +435,15 @@ export const getPolipropilenaUpsell = (input: PriceInputPolipropilena) =>
 export const PVC_FOREX_CONSTANTS = {
   CONTOUR_CUT_RATE: 0.20,
   LIMITS: { MAX_WIDTH: 200, MAX_HEIGHT: 300 },
+  // Cost real fără TVA: 1 mm 61,2 lei/m² → min 148,1; 3 mm 95,2 (0,1–0,25 m²) / 91,91 (0,25–5) / 83,95 (> 5) → min 230,4;
+  // 5 mm 122,28 (< 2 m²) → min 295,9. Grosimile fără comenzi reale (2, 4, 6, 8, 10 mm) urcate în aceeași proporție.
   PRICES: {
-    1: 120, 2: 150, 3: 180, 4: 210, 5: 240, 6: 270, 8: 300, 10: 400,
+    1: 155, 2: 195, 3: 235, 4: 275, 5: 315, 6: 355, 8: 390, 10: 520,
   } as Record<number, number>,
+  /** Modelele de stoc (contur, personaje) nu au penalizarea de suprafață mică; sub 0,1 m² costul PrintCenter e
+   *  166,67 lei/m², deci tariful pe m² se dublează acolo. */
+  STOCK_SMALL_AREA_SQM: 0.1,
+  STOCK_SMALL_AREA_MULTIPLIER: 2,
   AVAILABLE_THICKNESS: [1, 2, 3, 4, 5, 6, 8, 10],
   PRO_DESIGN_FEE: 50,
 };
@@ -448,6 +473,7 @@ export const calculatePVCForexPrice = (input: PriceInputPVCForex) => {
   else if (!input.stock_model && totalSqm < 0.3) pricePerSqm *= 3;
   else if (!input.stock_model && totalSqm < 0.4) pricePerSqm *= 2;
   else if (!input.stock_model && totalSqm < 0.5) pricePerSqm *= 1.5;
+  else if (input.stock_model && totalSqm < PVC_FOREX_CONSTANTS.STOCK_SMALL_AREA_SQM) pricePerSqm *= PVC_FOREX_CONSTANTS.STOCK_SMALL_AREA_MULTIPLIER;
 
   const basePrice = roundMoney(totalSqm * pricePerSqm);
   const contourCutPrice = input.contour_cut ? roundMoney(basePrice * PVC_FOREX_CONSTANTS.CONTOUR_CUT_RATE) : 0;
@@ -464,7 +490,8 @@ export const getPVCForexUpsell = (input: PriceInputPVCForex) =>
 // 5. ALUCOBOND
 // ==========================================
 export const ALUCOBOND_CONSTANTS = {
-  PRICES: { 3: 350, 4: 450 } as Record<number, number>,
+  // 3 mm: cost real 183,34 lei/m² (0,1–1 m²) / 173,74 (> 1 m²) fără TVA → min 443,7 lei/m². 4 mm: fără comenzi, aceeași proporție.
+  PRICES: { 3: 445, 4: 570 } as Record<number, number>,
   LIMITS: { MAX_WIDTH: 300, MAX_HEIGHT: 150 },
   AVAILABLE_THICKNESS: [3, 4],
   COLORS: ["Alb", "Argintiu (Silver)", "Antracit (Gri Închis)", "Negru", "Rosu", "Albastru", "Verde", "Galben", "Brushed (Aluminiu Perișat)"],
@@ -520,7 +547,8 @@ export const PLEXIGLASS_CONSTANTS = {
   },
   PRICES: {
     ALB: { 2: 200, 3: 250, 4: 300, 5: 350 } as Record<number, number>,
-    TRANSPARENT_SINGLE: { 2: 280, 3: 350, 4: 410, 5: 470, 6: 700, 8: 1100, 10: 1450 } as Record<number, number>,
+    // transparent 3 mm: cost real 235,49 lei/m² (0,1–1 m²) fără TVA → min 569,9 lei/m² după multiplicatorul ×1,5 de mai jos
+    TRANSPARENT_SINGLE: { 2: 280, 3: 380, 4: 410, 5: 470, 6: 700, 8: 1100, 10: 1450 } as Record<number, number>,
     TRANSPARENT_DOUBLE: { 2: 380, 3: 450, 4: 510, 5: 570, 6: 800, 8: 1200, 10: 1650 } as Record<number, number>,
   },
   PRO_DESIGN_FEE: 60,
@@ -668,11 +696,13 @@ export const getCartonUpsell = (input: PriceInputCarton) =>
 export const AUTOCOLANTE_CONSTANTS = {
   MATERIALS: [
     {
+      // cost real Oracal 3641 fără TVA: 41,85 lei/m² (0,5–1), 41 (1–2), 40,74 (2–10), 40 (> 10) → min 101,3 … 96,8 lei/m²;
+      // benzile acoperă și „Doar print” (−20%).
       key: "oracal_3641", label: "Economic — Folie economică", bands: [
-        { max_sqm: 1, price_per_sqm: 108 },
-        { max_sqm: 5, price_per_sqm: 81 },
-        { max_sqm: 20, price_per_sqm: 72 },
-        { max_sqm: Infinity, price_per_sqm: 63 },
+        { max_sqm: 1, price_per_sqm: 135 },
+        { max_sqm: 5, price_per_sqm: 128 },
+        { max_sqm: 20, price_per_sqm: 125 },
+        { max_sqm: Infinity, price_per_sqm: 122 },
       ]
     },
     {
@@ -703,8 +733,12 @@ export const AUTOCOLANTE_CONSTANTS = {
   PRO_DESIGN_FEE: 100,
   /** Latura max (cm) — sub aceasta aplicăm taxă de tăiere/buc (nu mai umflăm mp facturați). */
   SMALL_PIECE_MAX_SIDE_CM: 30,
-  /** Lei/buc tăiere+weed (print_cut). Calibrat: 2500×5×5 cm economic ≈ 750 lei fără laminare. */
-  CUT_FEE_PER_PIECE: 0.42,
+  /** Lei/buc tăiere pe contur (print_cut) la piesele mici. PrintCenter: 10×10 cm pe contur 1,01 lei/buc față de
+   *  0,41 tăiat drept (≈ 0,6 lei/buc fără TVA în plus) → 1,10 lei/buc la noi (cu banda de material). */
+  CUT_FEE_PER_PIECE: 1.1,
+  /** Comanda minimă (lei) pe un produs autocolant: PrintCenter ia 20–25 lei fără TVA pe o linie mică
+   *  (ex. 30×20 cm = 21 lei, 30×30 cm = 25 lei) → min 2 × 25 × 1,21 = 60,5 lei. Taxa de design se adaugă peste. */
+  MIN_ORDER_PRICE: 61,
   LAMINATE_MARKUP: 1.4,
   TRANSFER_FILM_MARKUP: 1.2,
 };
@@ -784,6 +818,7 @@ export const calculateAutocolantePrice = (input: PriceInputAutocolante) => {
   if (input.laminated) {
     subtotal = roundMoney(subtotal * AUTOCOLANTE_CONSTANTS.LAMINATE_MARKUP);
   }
+  subtotal = Math.max(subtotal, AUTOCOLANTE_CONSTANTS.MIN_ORDER_PRICE);
 
   let finalPrice = subtotal;
 
@@ -865,38 +900,45 @@ export const getAutocolanteUpsell = (input: PriceInputAutocolante): UpsellResult
 // ==========================================
 export const CANVAS_CONSTANTS = {
   PRICES: {
+    // Dimensiuni libere (pe șasiu). Costul PrintCenter pe bucată ≈ 100,7 lei/m² + 15,55 lei/ml de perimetru fără TVA
+    // (potrivit pe comenzile reale 30×40 … 100×100) → după reducerea de 20% de mai jos: ≥ 305 lei/m² și ≥ 48 lei/ml,
+    // cu marjă pentru formatele unde costul real e peste model (ex. 40×60 = 60,64 lei).
     bands: [
-      { max_sqm: 1, price_per_sqm: 180 },
-      { max_sqm: 3, price_per_sqm: 160 },
-      { max_sqm: 5, price_per_sqm: 140 },
-      { max_sqm: Infinity, price_per_sqm: 120 },
+      { max_sqm: 1, price_per_sqm: 330 },
+      { max_sqm: 3, price_per_sqm: 325 },
+      { max_sqm: 5, price_per_sqm: 320 },
+      { max_sqm: Infinity, price_per_sqm: 315 },
     ],
-    chassis_price_per_ml: 20,
+    chassis_price_per_ml: 55,
+    /** Prețul minim pe bucată (lei): cel mai mic tablou comandat real, 30×40 = 33,86 lei fără TVA → min 82. */
+    MIN_PIECE_PRICE: 82,
   },
+  // Canvas pe șasiu de lemn, preț pe bucată pe trepte de cantitate (FRAMED_QUANTITY_RANGES).
+  // Costul PrintCenter (fără TVA) pe format, din comenzile reale; formatele necomandate încă sunt interpolate după
+  // suprafață („estimat”). Ultima treaptă = minimul regulii (2 × cost × 1,21); prima = +10%, coborâre liniară.
   FRAMED_PRICES_RECTANGLE: {
-    "30x40": [83.36, 75.02, 67.52, 60.77, 57.39, 54.18],
-    "30x50": [102.19, 91.97, 82.77, 74.48, 74.48, 66.43],
-    "40x60": [147.90, 133.10, 119.79, 107.81, 101.82, 97.02],
-    "50x70": [169.44, 152.48, 137.23, 123.50, 116.64, 110.14],
-    "50x80": [189.58, 170.62, 153.55, 138.19, 130.51, 123.23],
-    "60x80": [243.36, 219.02, 197.12, 177.41, 167.55, 158.19],
-    "60x90": [248.75, 223.87, 201.49, 181.33, 171.26, 161.70],
-    "70x100": [321.36, 305.28, 289.20, 260.29, 234.27, 208.88],
-    "80x100": [330.77, 297.70, 267.94, 241.15, 229.10, 217.63],
-    "80x120": [357.65, 321.89, 289.70, 260.74, 247.71, 235.33],
-    "90x120": [389.92, 350.93, 315.84, 284.26, 270.03, 256.54],
-    "100x120": [540.51, 487.81, 463.42, 440.26, 418.24, 397.33],
+    "30x40": [91, 90, 88, 86, 84, 82], // cost 33,86 → min 82
+    "30x50": [112, 110, 108, 106, 104, 101], // cost 41,52 → min 101
+    "40x60": [162, 159, 156, 153, 150, 147], // cost 60,64 → min 147
+    "50x70": [184, 181, 178, 174, 171, 167], // cost 68,84 → min 167
+    "50x80": [206, 203, 199, 195, 191, 187], // cost 77,02 → min 187
+    "60x80": [244, 240, 235, 230, 225, 220], // cost ~90,76 (estimat) → min 220
+    "60x90": [270, 265, 260, 255, 250, 245], // cost 101,06 → min 245
+    "70x100": [327, 321, 315, 309, 303, 297], // cost ~122,57 (estimat) → min 297
+    "80x100": [364, 358, 351, 344, 337, 330], // cost 136,02 → min 330
+    "80x120": [392, 385, 378, 371, 364, 356], // cost 147,08 → min 356
+    "90x120": [505, 496, 487, 478, 469, 459], // cost ~189,33 (estimat) → min 459
+    "100x120": [662, 650, 638, 626, 614, 601], // cost 248,33 → min 601
   },
   FRAMED_PRICES_SQUARE: {
-
-    "30x30": [79.33, 71.41, 64.27, 57.84, 54.64, 51.57],
-    "40x40": [106.22, 95.60, 86.03, 77.42, 73.12, 69.06],
-    "50x50": [133.12, 126.46, 119.81, 107.82, 97.04, 86.53],
-    "60x60": [186.90, 168.21, 151.38, 136.24, 128.67, 121.33],
-    "70x70": [248.75, 223.89, 201.50, 181.34, 171.28, 161.70],
-    "80x80": [275.63, 248.06, 223.26, 200.94, 189.76, 179.17],
-    "90x90": [295.81, 266.22, 239.60, 215.63, 203.65, 192.27],
-    "100x100": [342.86, 308.58, 277.71, 249.94, 236.06, 240.00],
+    "30x30": [91, 90, 88, 86, 84, 82], // cost ~33,86 (estimat, ca 30×40) → min 82
+    "40x40": [117, 115, 113, 111, 109, 106], // cost ~43,60 (estimat) → min 106
+    "50x50": [145, 143, 140, 137, 134, 131], // cost 54,08 → min 131
+    "60x60": [189, 186, 182, 179, 175, 171], // cost ~70,48 (estimat) → min 171
+    "70x70": [249, 244, 239, 234, 229, 224], // cost ~92,47 (estimat) → min 224
+    "80x80": [306, 301, 295, 290, 284, 278], // cost ~114,51 (estimat) → min 278
+    "90x90": [365, 359, 352, 345, 338, 331], // cost ~136,71 (estimat) → min 331
+    "100x100": [400, 393, 386, 378, 371, 363], // cost 150 → min 363
   },
   FRAMED_QUANTITY_RANGES: [
     { min: 1, max: 1, index: 0 },
@@ -966,19 +1008,15 @@ export const calculateCanvasPrice = (input: PriceInputCanvas) => {
   const totalSqm = roundMoney(sqmPerUnit * input.quantity);
   const perimeterPerUnitMl = 2 * (input.width_cm + input.height_cm) / 100;
 
-  let pricePerSqm = 120;
+  let pricePerSqm = CANVAS_CONSTANTS.PRICES.bands[CANVAS_CONSTANTS.PRICES.bands.length - 1].price_per_sqm;
   for (const band of CANVAS_CONSTANTS.PRICES.bands) {
     if (totalSqm <= band.max_sqm) {
       pricePerSqm = band.price_per_sqm;
       break;
     }
   }
-  if (totalSqm < 0.1) pricePerSqm *= 5;
-  else if (totalSqm < 0.2) pricePerSqm *= 4;
-  else if (totalSqm < 0.3) pricePerSqm *= 3;
-  else if (totalSqm < 0.4) pricePerSqm *= 2;
-  else if (totalSqm < 0.5) pricePerSqm *= 1.5;
-
+  // Fără penalizare de suprafață mică: costul pe bucată vine din m² + perimetrul șasiului (inclus mai jos),
+  // iar formatele foarte mici au prețul minim pe bucată MIN_PIECE_PRICE.
   const printCost = totalSqm * pricePerSqm;
   const totalPerimeter = perimeterPerUnitMl * input.quantity;
   const chassisCost = totalPerimeter * CANVAS_CONSTANTS.PRICES.chassis_price_per_ml;
@@ -987,6 +1025,7 @@ export const calculateCanvasPrice = (input: PriceInputCanvas) => {
 
   // Aplicare reducere 20%
   finalPrice = roundMoney(finalPrice * 0.8);
+  finalPrice = Math.max(finalPrice, CANVAS_CONSTANTS.PRICES.MIN_PIECE_PRICE * input.quantity);
 
   if (input.designOption === "pro") {
     finalPrice += CANVAS_CONSTANTS.PRO_DESIGN_FEE;
@@ -1038,10 +1077,21 @@ export const AFISE_CONSTANTS = {
     { key: "foto_220", label: "Hârtie Foto 220g", description: "Foto Premium" },
   ],
   PRO_DESIGN_FEE: 100,
+  /** Tabelul de mai jos era ≈ 2 × costul PrintCenter FĂRĂ TVA; ×1,22 (TVA 1,21 rotunjit în sus) → 2 × costul real
+   *  (cu TVA). Cost real pe bucată (comenzi, cantități mici): whiteback A2 9,98 / S5 13,5 / S7 26,6 / A0 40; blueback A2 8,73 / A1 17,48 / S5 12,25 /
+   *  S7 24,5; hârtie 150 g A2 9,98 / S5 14; carton 250–300 g A3 1,56–1,69 / A2 14,97–15,42; foto A2 14,97.
+   *  Satin 170 g: nicio comandă reală încă → neschimbat. */
+  MATERIAL_MULTIPLIER: {
+    paper_150_lucioasa: 1.22,
+    whiteback_150_material: 1.22,
+    blueback_115: 1.22,
+    foto_220: 1.22,
+  } as Record<string, number>,
   PRICE_TABLE: {
     paper_150_lucioasa: {
       A3: [{ min: 1, price: 3.0 }],
-      A2: [{ min: 1, price: 9.98 }],
+      A2: [{ min: 1, price: 19.96 }], // era 9,98 = chiar costul PrintCenter
+
       A1: [{ min: 1, price: 39.96 }],
       A0: [{ min: 1, price: 80.0 }],
       S5: [{ min: 1, price: 28.0 }],
@@ -1293,7 +1343,7 @@ export const calculatePosterPrice = (input: PriceInputAfise) => {
     for (const t of sorted) { if (input.quantity >= t.min) { basePrice = t.price; break; } }
   }
 
-  const unitPrice = roundMoney(basePrice * multiplier);
+  const unitPrice = roundMoney(basePrice * multiplier * (AFISE_CONSTANTS.MATERIAL_MULTIPLIER[matKey] ?? 1));
   const proFee = input.designOption === "pro" ? AFISE_CONSTANTS.PRO_DESIGN_FEE : 0;
   const finalPrice = roundMoney(unitPrice * input.quantity + proFee);
   return { finalPrice, unitPrice, proFee };
@@ -1326,28 +1376,33 @@ export const getAfiseUpsell = (input: PriceInputAfise): UpsellResult => {
 // 11. FLYERE
 // ==========================================
 export const FLYER_CONSTANTS = {
+  // Cost real PrintCenter fără TVA (135 g): A5 față 0,45 (< 100 buc) / 0,41 (100–500) / 0,27 (≥ 500); A6 față 0,21 / 0,14
+  // (≥ 500); 210×100 față 0,38 / 0,31 (≥ 100); A5 față-verso 0,86 (< 250) / 0,79; A6 față-verso 0,40 / 0,27 (≥ 500).
+  // Fiecare tabel (format × fețe) e înmulțit cu factorul care îl aduce la 2 × cost × 1,21 în zona comandată real;
+  // treptele mari (≥ 2000 buc, fără comenzi reale) urmează aceeași proporție. 210×100 față-verso: fără cost real, același
+  // factor ca fața simplă (să nu iasă mai ieftin decât fața simplă).
   SIZES: [
     {
       key: "A6",
       label: "A6",
       dims: "105 × 148 mm",
       oneSided: [
-        { min: 1, price: 0.375 },    // 0.50 - 25% = 0.375
-        { min: 101, price: 0.345 },  // 0.46 - 25% = 0.345
-        { min: 501, price: 0.225 },  // 0.30 - 25% = 0.225
-        { min: 2000, price: 0.21 },  // 0.28 - 25% = 0.21
-        { min: 3000, price: 0.195 }, // 0.26 - 25% = 0.195
-        { min: 4000, price: 0.18 },  // 0.24 - 25% = 0.18
-        { min: 5000, price: 0.165 }, // 0.22 - 25% = 0.165
+        { min: 1, price: 0.567 }, // vechi 0.375 (×1.51)
+        { min: 101, price: 0.521 }, // vechi 0.345 (×1.51)
+        { min: 501, price: 0.34 }, // vechi 0.225 (×1.51)
+        { min: 2000, price: 0.318 }, // vechi 0.21 (×1.51)
+        { min: 3000, price: 0.295 }, // vechi 0.195 (×1.51)
+        { min: 4000, price: 0.272 }, // vechi 0.18 (×1.51)
+        { min: 5000, price: 0.25 }, // vechi 0.165 (×1.51)
       ],
       twoSided: [
-        { min: 1, price: 0.72 },     // 0.96 - 25% = 0.72
-        { min: 101, price: 0.66 },   // 0.88 - 25% = 0.66
-        { min: 501, price: 0.45 },   // 0.60 - 25% = 0.45
-        { min: 2000, price: 0.345 }, // 0.46 - 25% = 0.345
-        { min: 3000, price: 0.30 },  // 0.40 - 25% = 0.30
-        { min: 4000, price: 0.27 },  // 0.36 - 25% = 0.27
-        { min: 5000, price: 0.21 },  // 0.28 - 25% = 0.21
+        { min: 1, price: 1.059 }, // vechi 0.72 (×1.47)
+        { min: 101, price: 0.971 }, // vechi 0.66 (×1.47)
+        { min: 501, price: 0.662 }, // vechi 0.45 (×1.47)
+        { min: 2000, price: 0.508 }, // vechi 0.345 (×1.47)
+        { min: 3000, price: 0.441 }, // vechi 0.30 (×1.47)
+        { min: 4000, price: 0.397 }, // vechi 0.27 (×1.47)
+        { min: 5000, price: 0.309 }, // vechi 0.21 (×1.47)
       ]
     },
     {
@@ -1355,23 +1410,23 @@ export const FLYER_CONSTANTS = {
       label: "A5",
       dims: "148 × 210 mm",
       oneSided: [
-        { min: 1, price: 0.75 },     // 1.00 - 25% = 0.75
-        { min: 101, price: 0.69 },   // 0.92 - 25% = 0.69
-        { min: 501, price: 0.45 },   // 0.60 - 25% = 0.45
-        { min: 2000, price: 0.39 },  // 0.52 - 25% = 0.39
-        { min: 3000, price: 0.285 }, // 0.38 - 25% = 0.285
-        { min: 4000, price: 0.24 },  // 0.32 - 25% = 0.24
-        { min: 5000, price: 0.21 },  // 0.28 - 25% = 0.21
+        { min: 1, price: 1.095 }, // vechi 0.75 (×1.46)
+        { min: 101, price: 1.008 }, // vechi 0.69 (×1.46)
+        { min: 501, price: 0.657 }, // vechi 0.45 (×1.46)
+        { min: 2000, price: 0.57 }, // vechi 0.39 (×1.46)
+        { min: 3000, price: 0.417 }, // vechi 0.285 (×1.46)
+        { min: 4000, price: 0.351 }, // vechi 0.24 (×1.46)
+        { min: 5000, price: 0.307 }, // vechi 0.21 (×1.46)
       ],
       twoSided: [
-        { min: 1, price: 1.44 },     // 1.92 - 25% = 1.44
-        { min: 101, price: 1.32 },   // 1.76 - 25% = 1.32
-        { min: 501, price: 0.90 },   // 1.20 - 25% = 0.90
-        { min: 1000, price: 0.63 },  // FIX: Bridge cliff
-        { min: 2000, price: 0.48 },  // 0.64 - 25% = 0.48
-        { min: 3000, price: 0.33 },  // 0.44 - 25% = 0.33
-        { min: 4000, price: 0.285 }, // 0.38 - 25% = 0.285
-        { min: 5000, price: 0.24 },  // 0.32 - 25% = 0.24
+        { min: 1, price: 2.276 }, // vechi 1.44 (×1.58)
+        { min: 101, price: 2.086 }, // vechi 1.32 (×1.58)
+        { min: 501, price: 1.422 }, // vechi 0.90 (×1.58)
+        { min: 1000, price: 0.996 }, // vechi 0.63 (×1.58)
+        { min: 2000, price: 0.759 }, // vechi 0.48 (×1.58)
+        { min: 3000, price: 0.522 }, // vechi 0.33 (×1.58)
+        { min: 4000, price: 0.451 }, // vechi 0.285 (×1.58)
+        { min: 5000, price: 0.38 }, // vechi 0.24 (×1.58)
       ]
     },
     {
@@ -1379,23 +1434,23 @@ export const FLYER_CONSTANTS = {
       label: "21 × 10 cm",
       dims: "210 × 100 mm",
       oneSided: [
-        { min: 1, price: 0.57 },     // 0.76 - 25% = 0.57
-        { min: 101, price: 0.51 },   // 0.68 - 25% = 0.51
-        { min: 501, price: 0.405 },  // 0.54 - 25% = 0.405
-        { min: 2000, price: 0.30 },  // 0.40 - 25% = 0.30
-        { min: 3000, price: 0.27 },  // 0.36 - 25% = 0.27
-        { min: 4000, price: 0.21 },  // 0.28 - 25% = 0.21
-        { min: 5000, price: 0.165 }, // 0.22 - 25% = 0.165
+        { min: 1, price: 0.924 }, // vechi 0.57 (×1.62)
+        { min: 101, price: 0.827 }, // vechi 0.51 (×1.62)
+        { min: 501, price: 0.657 }, // vechi 0.405 (×1.62)
+        { min: 2000, price: 0.486 }, // vechi 0.30 (×1.62)
+        { min: 3000, price: 0.438 }, // vechi 0.27 (×1.62)
+        { min: 4000, price: 0.341 }, // vechi 0.21 (×1.62)
+        { min: 5000, price: 0.268 }, // vechi 0.165 (×1.62)
       ],
       twoSided: [
-        { min: 1, price: 1.05 },     // 1.40 - 25% = 1.05
-        { min: 101, price: 0.90 },   // 1.20 - 25% = 0.90
-        { min: 501, price: 0.75 },   // 1.00 - 25% = 0.75
-        { min: 1000, price: 0.63 },  // FIX: Bridge cliff
-        { min: 2000, price: 0.48 },  // 0.64 - 25% = 0.48
-        { min: 3000, price: 0.39 },  // 0.52 - 25% = 0.39
-        { min: 4000, price: 0.285 }, // 0.38 - 25% = 0.285
-        { min: 5000, price: 0.21 },  // 0.28 - 25% = 0.21
+        { min: 1, price: 1.701 }, // vechi 1.05 (×1.62)
+        { min: 101, price: 1.458 }, // vechi 0.90 (×1.62)
+        { min: 501, price: 1.215 }, // vechi 0.75 (×1.62)
+        { min: 1000, price: 1.021 }, // vechi 0.63 (×1.62)
+        { min: 2000, price: 0.778 }, // vechi 0.48 (×1.62)
+        { min: 3000, price: 0.632 }, // vechi 0.39 (×1.62)
+        { min: 4000, price: 0.462 }, // vechi 0.285 (×1.62)
+        { min: 5000, price: 0.341 }, // vechi 0.21 (×1.62)
       ]
     },
   ],
@@ -1461,58 +1516,62 @@ export const PLIANTE_CONSTANTS = {
     paralel: { label: "3 biguri (Paralel)", open: "297×210mm", closed: "75×210mm" },
     fluture: { label: "4 biguri (Fluture)", open: "297×210mm", closed: "74.25×210mm" },
   } as Record<PlianteFoldType, { label: string; open: string; closed: string }>,
+  // Cost real PrintCenter fără TVA (pliant A4 biguit): 1,49 lei/buc (100 buc, 130 g) / 0,89 (510 buc, 115 g); o comandă
+  // de 2 buc = 10 lei (vezi MIN_ORDER_PRICE). Tabelele vechi × 1,62 → 2 × cost × 1,21; toate gramajele în aceeași proporție.
   PRICE_TABLE: {
     "115": [
-      { min: 1, price: 2.24 },     // < 100: 3.20 - 30% = 2.24
-      { min: 500, price: 1.386 },  // 500: 1.98 - 30% = 1.386
-      { min: 1000, price: 0.966 }, // 1000: 1.38 - 30% = 0.966
-      { min: 2500, price: 0.574 }, // 2500: 0.82 - 30% = 0.574
-      { min: 5000, price: 0.406 }, // 5000: 0.58 - 30% = 0.406
-      { min: 10000, price: 0.35 }, // 10000: 0.50 - 30% = 0.35
+      { min: 1, price: 3.629 }, // vechi 2.24 (×1.62)
+      { min: 500, price: 2.246 }, // vechi 1.386 (×1.62)
+      { min: 1000, price: 1.565 }, // vechi 0.966 (×1.62)
+      { min: 2500, price: 0.93 }, // vechi 0.574 (×1.62)
+      { min: 5000, price: 0.658 }, // vechi 0.406 (×1.62)
+      { min: 10000, price: 0.567 }, // vechi 0.35 (×1.62)
     ],
     "135": [
-      { min: 1, price: 2.31 },     // < 100: 3.30 - 30% = 2.31
-      { min: 500, price: 1.456 },  // 500: 2.08 - 30% = 1.456
-      { min: 1000, price: 1.036 }, // 1000: 1.48 - 30% = 1.036
-      { min: 2500, price: 0.644 }, // 2500: 0.92 - 30% = 0.644
-      { min: 5000, price: 0.476 }, // 5000: 0.68 - 30% = 0.476
-      { min: 10000, price: 0.42 }, // 10000: 0.60 - 30% = 0.42
+      { min: 1, price: 3.743 }, // vechi 2.31 (×1.62)
+      { min: 500, price: 2.359 }, // vechi 1.456 (×1.62)
+      { min: 1000, price: 1.679 }, // vechi 1.036 (×1.62)
+      { min: 2500, price: 1.044 }, // vechi 0.644 (×1.62)
+      { min: 5000, price: 0.772 }, // vechi 0.476 (×1.62)
+      { min: 10000, price: 0.681 }, // vechi 0.42 (×1.62)
     ],
     "150": [
-      { min: 1, price: 2.38 },     // < 100: 3.40 - 30% = 2.38
-      { min: 500, price: 1.526 },  // 500: 2.18 - 30% = 1.526
-      { min: 1000, price: 1.106 }, // 1000: 1.58 - 30% = 1.106
-      { min: 2500, price: 0.714 }, // 2500: 1.02 - 30% = 0.714
-      { min: 5000, price: 0.546 }, // 5000: 0.78 - 30% = 0.546
-      { min: 10000, price: 0.49 }, // 10000: 0.70 - 30% = 0.49
+      { min: 1, price: 3.856 }, // vechi 2.38 (×1.62)
+      { min: 500, price: 2.473 }, // vechi 1.526 (×1.62)
+      { min: 1000, price: 1.792 }, // vechi 1.106 (×1.62)
+      { min: 2500, price: 1.157 }, // vechi 0.714 (×1.62)
+      { min: 5000, price: 0.885 }, // vechi 0.546 (×1.62)
+      { min: 10000, price: 0.794 }, // vechi 0.49 (×1.62)
     ],
     "170": [
-      { min: 1, price: 2.45 },     // < 100: 3.50 - 30% = 2.45
-      { min: 500, price: 1.596 },  // 500: 2.28 - 30% = 1.596
-      { min: 1000, price: 1.176 }, // 1000: 1.68 - 30% = 1.176
-      { min: 2500, price: 0.784 }, // 2500: 1.12 - 30% = 0.784
-      { min: 5000, price: 0.616 }, // 5000: 0.88 - 30% = 0.616
-      { min: 10000, price: 0.56 }, // 10000: 0.80 - 30% = 0.56
+      { min: 1, price: 3.969 }, // vechi 2.45 (×1.62)
+      { min: 500, price: 2.586 }, // vechi 1.596 (×1.62)
+      { min: 1000, price: 1.906 }, // vechi 1.176 (×1.62)
+      { min: 2500, price: 1.271 }, // vechi 0.784 (×1.62)
+      { min: 5000, price: 0.998 }, // vechi 0.616 (×1.62)
+      { min: 10000, price: 0.908 }, // vechi 0.56 (×1.62)
     ],
     "200": [
-      { min: 1, price: 2.52 },     // < 100: 3.60 - 30% = 2.52
-      { min: 500, price: 1.666 },  // 500: 2.38 - 30% = 1.666
-      { min: 1000, price: 1.246 }, // 1000: 1.78 - 30% = 1.246
-      { min: 2500, price: 0.854 }, // 2500: 1.22 - 30% = 0.854
-      { min: 5000, price: 0.686 }, // 5000: 0.98 - 30% = 0.686
-      { min: 10000, price: 0.63 }, // 10000: 0.90 - 30% = 0.63
+      { min: 1, price: 4.083 }, // vechi 2.52 (×1.62)
+      { min: 500, price: 2.699 }, // vechi 1.666 (×1.62)
+      { min: 1000, price: 2.019 }, // vechi 1.246 (×1.62)
+      { min: 2500, price: 1.384 }, // vechi 0.854 (×1.62)
+      { min: 5000, price: 1.112 }, // vechi 0.686 (×1.62)
+      { min: 10000, price: 1.021 }, // vechi 0.63 (×1.62)
     ],
     "250": [
-      { min: 1, price: 2.59 },     // < 100: 3.70 - 30% = 2.59
-      { min: 500, price: 1.736 },  // 500: 2.48 - 30% = 1.736
-      { min: 1000, price: 1.316 }, // 1000: 1.88 - 30% = 1.316
-      { min: 2500, price: 0.924 }, // 2500: 1.32 - 30% = 0.924
-      { min: 5000, price: 0.756 }, // 5000: 1.08 - 30% = 0.756
-      { min: 10000, price: 0.70 }, // 10000: 1.00 - 30% = 0.70
+      { min: 1, price: 4.196 }, // vechi 2.59 (×1.62)
+      { min: 500, price: 2.813 }, // vechi 1.736 (×1.62)
+      { min: 1000, price: 2.132 }, // vechi 1.316 (×1.62)
+      { min: 2500, price: 1.497 }, // vechi 0.924 (×1.62)
+      { min: 5000, price: 1.225 }, // vechi 0.756 (×1.62)
+      { min: 10000, price: 1.134 }, // vechi 0.70 (×1.62)
     ],
   } as Record<PlianteWeightKey, { min: number; price: number }[]>,
   PRO_FEES: { simplu: 100, fereastra: 135, paralel: 175, fluture: 200 } as Record<PlianteFoldType, number>,
   DISCOUNT_PERCENT: 30, // Reducere 30%
+  /** Comanda minimă (lei): PrintCenter ia ~10 lei fără TVA pe o comandă foarte mică → min 2 × 10 × 1,21. */
+  MIN_ORDER_PRICE: 25,
 };
 
 export type PriceInputPliante = { weight: PlianteWeightKey; quantity: number; fold: PlianteFoldType; designOption: "upload" | "pro" };
@@ -1532,7 +1591,7 @@ export const calculatePliantePrice = (input: PriceInputPliante) => {
     }
   }
 
-  const subtotal = roundMoney(unitBasePrice * input.quantity);
+  const subtotal = Math.max(roundMoney(unitBasePrice * input.quantity), PLIANTE_CONSTANTS.MIN_ORDER_PRICE);
   const proFee = input.designOption === "pro" ? (PLIANTE_CONSTANTS.PRO_FEES[input.fold] ?? 0) : 0;
   const finalPrice = roundMoney(subtotal + proFee);
   const pricePerUnit = roundMoney(finalPrice / input.quantity);
@@ -1658,17 +1717,17 @@ export const FONDURI_EU_CONSTANTS = {
       title: "Autocolante mici",
       options: [
         { id: "none", label: "Nu", price: 0 },
-        { id: "10x10-20", label: "10×10 cm (set 20 buc)", price: 49 },
-        { id: "15x15-10", label: "15×15 cm (set 10 buc)", price: 49 },
-        { id: "15x21-5", label: "15×21 cm (set 5 buc)", price: 49 },
+        { id: "10x10-20", label: "10×10 cm (set 20 buc)", price: 55 },
+        { id: "15x15-10", label: "15×15 cm (set 10 buc)", price: 55 },
+        { id: "15x21-5", label: "15×21 cm (set 5 buc)", price: 55 },
       ],
     },
     autoMari: {
       title: "Autocolante mari",
       options: [
         { id: "none", label: "Nu", price: 0 },
-        { id: "30x30-3", label: "30×30 cm (set 3 buc)", price: 49 },
-        { id: "40x40-1", label: "40×40 cm (1 buc)", price: 49 },
+        { id: "30x30-3", label: "30×30 cm (set 3 buc)", price: 55 },
+        { id: "40x40-1", label: "40×40 cm (1 buc)", price: 55 },
       ],
     },
     panouTemporar: {
@@ -1749,14 +1808,18 @@ export const calculateFonduriEUPrice = (input: PriceInputFonduriEU) => {
 // ==========================================
 export const WINDOW_GRAPHICS_CONSTANTS = {
   PRICES: {
+    // cost real window graphic (folie microperforată): mediana 76,49 lei/m² fără TVA → min 185,1 lei/m² (acoperit și la
+    // „Doar print”, −20%); o comandă de 180×73 cm a costat 101,86 lei/m² → min 246,5 lei/m² la print + tăiere.
     bands: [
-      { max: 1, price: 125 },
-      { max: 5, price: 100 },
-      { max: 20, price: 85 },
-      { max: Infinity, price: 75 },
+      { max: 1, price: 255 },
+      { max: 5, price: 250 },
+      { max: 20, price: 245 },
+      { max: Infinity, price: 242 },
     ]
   },
   PRO_DESIGN_FEE: 100,
+  /** Comanda minimă (lei), ca la autocolante: o linie mică la PrintCenter costă 20–25 lei fără TVA. */
+  MIN_ORDER_PRICE: 61,
 };
 
 export type PriceInputWindowGraphics = {
@@ -1798,7 +1861,7 @@ export const calculateWindowGraphicsPrice = (input: PriceInputWindowGraphics) =>
     pricePerSqm = roundMoney(pricePerSqm * 1.1);
   }
 
-  let finalPrice = roundMoney(total_sqm * pricePerSqm);
+  let finalPrice = Math.max(roundMoney(total_sqm * pricePerSqm), WINDOW_GRAPHICS_CONSTANTS.MIN_ORDER_PRICE);
 
   // Add design fee if pro option
   const designFee = designOption === "pro" ? WINDOW_GRAPHICS_CONSTANTS.PRO_DESIGN_FEE : 0;
@@ -1841,30 +1904,32 @@ export const ROLLUP_CONSTANTS = {
     { width_cm: 120, label: "Mare" },
     { width_cm: 150, label: "Premium" },
   ],
+  // Cost real PrintCenter (roll-up standard cu print, fără TVA): 100×200 = 240 lei → min 580,8; 150×200 = 370 lei →
+  // min 895,4. 85 și 120 cm: fără comenzi încă — estimat 230 lei (min 556,6) și 292 lei (interpolat, min 706,7).
   PRICE_TABLE: {
     85: [
-      { min: 1, max: 5, price: 220 },
-      { min: 6, max: 10, price: 200 },
-      { min: 11, max: 20, price: 190 },
-      { min: 21, max: Infinity, price: 175 },
+      { min: 1, max: 5, price: 579 },
+      { min: 6, max: 10, price: 575 },
+      { min: 11, max: 20, price: 569 },
+      { min: 21, max: Infinity, price: 565 },
     ],
     100: [
-      { min: 1, max: 5, price: 250 },
-      { min: 6, max: 10, price: 240 },
-      { min: 11, max: 20, price: 230 },
-      { min: 21, max: Infinity, price: 200 },
+      { min: 1, max: 5, price: 599 },
+      { min: 6, max: 10, price: 595 },
+      { min: 11, max: 20, price: 589 },
+      { min: 21, max: Infinity, price: 585 },
     ],
     120: [
-      { min: 1, max: 5, price: 290 },
-      { min: 6, max: 10, price: 270 },
-      { min: 11, max: 20, price: 250 },
-      { min: 21, max: Infinity, price: 230 },
+      { min: 1, max: 5, price: 739 },
+      { min: 6, max: 10, price: 729 },
+      { min: 11, max: 20, price: 719 },
+      { min: 21, max: Infinity, price: 709 },
     ],
     150: [
-      { min: 1, max: 5, price: 390 },
-      { min: 6, max: 10, price: 370 },
-      { min: 11, max: 20, price: 360 },
-      { min: 21, max: Infinity, price: 330 },
+      { min: 1, max: 5, price: 929 },
+      { min: 6, max: 10, price: 919 },
+      { min: 11, max: 20, price: 909 },
+      { min: 21, max: Infinity, price: 899 },
     ],
   },
   PRO_DESIGN_FEE: 100,
@@ -1992,12 +2057,21 @@ export const calculateCanvas8MartiePrice = (input: PriceInputCanvas8Martie) => {
 // 9. TEXTILE (TRICOURI / HANORACE)
 // ==========================================
 export const TEXTILE_CONSTANTS = {
+  // Prețul pe bucată (produs + tipar față); fata_si_spate = adaosul pentru tipar și pe spate.
+  // cost = costul real PrintCenter fără TVA (produs + personalizare, din comenzi), pentru minimul 2 × cost × 1,21.
   PRICES: {
-    tricouri: { base: 60, fata_si_spate: 20 },
-    polo: { base: 75, fata_si_spate: 25 },
-    hanorace: { base: 180, fata_si_spate: 30 },
-    sepci: { base: 45, fata_si_spate: 0 }
+    tricouri: { base: 79, fata_si_spate: 25, cost: { fata: 30.15, fata_si_spate: 40.15 } }, // tricou basic
+    v_neck: { base: 99, fata_si_spate: 25, cost: { fata: 39, fata_si_spate: 49 } },
+    polo: { base: 139, fata_si_spate: 25, cost: { fata: 54.14, fata_si_spate: 61.14 } }, // polo pique (adulți / copii)
+    hanorace: { base: 299, fata_si_spate: 30, cost: { fata: 117.38, fata_si_spate: 124.38 } }, // hanorac cu glugă
+    sepci: { base: 65, fata_si_spate: 0, cost: { fata: 24.94, fata_si_spate: 24.94 } },
   },
+  /** Reduceri de volum; prețul pe bucată nu coboară sub 2 × cost × 1,21 (PrintCenter nu ne dă reducere de volum). */
+  VOLUME_DISCOUNTS: [
+    { min: 50, factor: 0.8 },
+    { min: 30, factor: 0.85 },
+    { min: 10, factor: 0.9 },
+  ],
   PRO_DESIGN_FEE: 50,
 };
 
@@ -2016,20 +2090,22 @@ export const calculateTextilePrice = (input: PriceInputTextile) => {
     return { finalPrice: 0, pricePerUnit: 0 };
   }
 
-  // Specific pricing for Polo shirts
+  // Prețuri pe model: polo și V-neck au costuri proprii
   const isPolo = input.model?.startsWith('polo_pique');
-  const baseData = isPolo ? TEXTILE_CONSTANTS.PRICES.polo : TEXTILE_CONSTANTS.PRICES[input.type];
+  const isVNeck = input.model?.startsWith('v_neck');
+  const baseData = isPolo
+    ? TEXTILE_CONSTANTS.PRICES.polo
+    : isVNeck
+      ? TEXTILE_CONSTANTS.PRICES.v_neck
+      : TEXTILE_CONSTANTS.PRICES[input.type] ?? TEXTILE_CONSTANTS.PRICES.tricouri;
 
-  let unitPrice = baseData.base;
+  const bothSides = input.printPosition === 'fata_si_spate';
+  let unitPrice = baseData.base + (bothSides ? baseData.fata_si_spate : 0);
 
-  if (input.printPosition === 'fata_si_spate') {
-    unitPrice += baseData.fata_si_spate;
-  }
-
-  // Volum discount logic
-  if (input.quantity >= 10 && input.quantity < 30) unitPrice *= 0.9;
-  else if (input.quantity >= 30 && input.quantity < 50) unitPrice *= 0.85;
-  else if (input.quantity >= 50) unitPrice *= 0.8;
+  // Reducere de volum, dar nu sub minimul regulii (2 × cost real)
+  const discount = TEXTILE_CONSTANTS.VOLUME_DISCOUNTS.find((d) => input.quantity >= d.min);
+  if (discount) unitPrice *= discount.factor;
+  unitPrice = Math.max(unitPrice, minPriceForCost(bothSides ? baseData.cost.fata_si_spate : baseData.cost.fata));
 
   let finalPrice = roundMoney(unitPrice * input.quantity);
 
@@ -2066,11 +2142,14 @@ const BUSINESS_CARD_PRICE_MULTIPLIER = 1.5;
 
 export const BUSINESS_CARD_CONSTANTS = {
   PRICES: {
+    // Prețul final = preț × 1,5 (BUSINESS_CARD_PRICE_MULTIPLIER). Cost real carton 300–350 g față, fără TVA: 0,27 lei
+    // (< 250 buc) / 0,20 (250–499) / 0,18 (≥ 500) → min 0,654 / 0,484 / 0,436 lei pe bucată; pragurile urmează pe ale
+    // PrintCenter. Peste 2000 buc (fără comenzi reale) aceeași proporție ca înainte.
     standard: [
-      { max: 200, price: 0.30 },
-      { max: 500, price: 0.20 },
-      { max: 2000, price: 0.15 },
-      { max: Infinity, price: 0.12 }
+      { max: 249, price: 0.44 },
+      { max: 499, price: 0.33 },
+      { max: 1999, price: 0.30 },
+      { max: Infinity, price: 0.24 }
     ],
     plastic: [
       { max: 100, price: 1.60 }, // 0.5mm
@@ -2226,13 +2305,14 @@ export const calculateComunicatPrice = (input: PriceInputComunicat) => {
 // 16. AUTOCOLANTE SET (FONDURI EU)
 // ==========================================
 export const AUTOCOLANTE_SET_CONSTANTS = {
+  // cost real PrintCenter pentru un set (3641, tăiat): ~20,4 lei fără TVA → min 49,3 lei (era 49)
   OPTIONS: [
-    { id: "10x10-20", label: "Set 10x10 cm (20 buc)", price: 49 },
-    { id: "15x15-10", label: "Set 15x15 cm (10 buc)", price: 49 },
-    { id: "15x21-5", label: "Set 15x21 cm (5 buc)", price: 49 },
-    { id: "15x21-10", label: "Set 15x21 cm (10 buc)", price: 49 },
-    { id: "30x30-3", label: "Set 30x30 cm (3 buc)", price: 49 },
-    { id: "40x40-1", label: "Set 40x40 cm (1 buc)", price: 49 },
+    { id: "10x10-20", label: "Set 10x10 cm (20 buc)", price: 55 },
+    { id: "15x15-10", label: "Set 15x15 cm (10 buc)", price: 55 },
+    { id: "15x21-5", label: "Set 15x21 cm (5 buc)", price: 55 },
+    { id: "15x21-10", label: "Set 15x21 cm (10 buc)", price: 55 },
+    { id: "30x30-3", label: "Set 30x30 cm (3 buc)", price: 55 },
+    { id: "40x40-1", label: "Set 40x40 cm (1 buc)", price: 55 },
   ],
 };
 
@@ -2243,7 +2323,7 @@ export type PriceInputAutocolanteSet = {
 
 export const calculateAutocolanteSetPrice = (input: PriceInputAutocolanteSet) => {
   const option = AUTOCOLANTE_SET_CONSTANTS.OPTIONS.find(o => o.id === input.optionId);
-  const unitPrice = option?.price || 49;
+  const unitPrice = option?.price || 55;
   const finalPrice = unitPrice * input.quantity;
 
   return {

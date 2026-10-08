@@ -20,7 +20,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         title: "Print Banners",
         description: "Configurează online bannerul tău personalizat. Alege dimensiunile, materialul și încărcă grafica.",
         image: "/products/homeprint-studio/banner.webp",
-        price: "De la 29 LEI/mp",
+        price: "De la 65 LEI/mp",
         category: "Configuratoare",
         tags: ["banner", "print", "outdoor", "configurator"]
     },
@@ -31,7 +31,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         title: "Print Banner Față-Verso",
         description: "Banner cu print pe ambele fețe (Blockout). Ideal pentru expunere stradală vizibilă din ambele sensuri.",
         image: "/products/homeprint-studio/banner-verso.webp",
-        price: "De la 55 LEI/mp",
+        price: "De la 126 LEI/mp",
         category: "Configuratoare",
         tags: ["banner", "double sided", "blockout", "configurator"]
     },
@@ -42,7 +42,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         title: "Print Mesh Publicitar",
         description: "Material perforat ideal pentru suprafețe mari și zone cu vânt puternic. Permite trecerea aerului.",
         image: "/products/homeprint-studio/banner.webp",
-        price: "De la 35 LEI/mp",
+        price: "De la 65 LEI/mp",
         category: "Configuratoare",
         tags: ["mesh", "outdoor", "wind", "configurator"]
     },
@@ -53,7 +53,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         title: "Print Autocolant",
         description: "Autocolant PVC mat sau lucios pentru diverse aplicații. Decor vitrine, auto, panouri.",
         image: "/products/homeprint-studio/autocolante.webp",
-        price: "De la 39 LEI/mp",
+        price: "De la 84 LEI/mp",
         category: "Configuratoare",
         tags: ["autocolant", "sticker", "indoor", "outdoor", "configurator"]
     },
@@ -64,7 +64,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         title: "Tablouri Canvas",
         description: "Transformă-ți fotografiile în tablouri canvas. Print de înaltă rezoluție pe pânză de bumbac.",
         image: "/products/homeprint-studio/canvas.webp",
-        price: "De la 65 LEI",
+        price: "De la 82 LEI",
         category: "Configuratoare",
         tags: ["canvas", "tablou", "decor", "configurator"]
     },
@@ -97,7 +97,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         title: "Sisteme Roll-up",
         description: "Sisteme expoziționale portabile, ușor de montat. Include structură, print și geantă de transport.",
         image: "/products/homeprint-studio/rollup.webp",
-        price: "De la 120 LEI",
+        price: "De la 565 LEI",
         category: "Configuratoare",
         tags: ["rollup", "expozitional", "stand", "configurator"]
     },
@@ -119,7 +119,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         title: "Window Graphics",
         description: "Autocolant perforat pentru geamuri. Permite vizibilitatea din interior spre exterior.",
         image: "/products/homeprint-studio/window-graphics.webp",
-        price: "De la 55 LEI/mp",
+        price: "De la 185 LEI/mp",
         category: "Configuratoare",
         tags: ["window graphics", "owv", "geam", "configurator"]
     },
@@ -141,7 +141,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         title: "Print PVC Forex",
         description: "Plăci PVC Forex alb, grosimi 3mm, 5mm sau 10mm. Ideale pentru semnalistică economică și rigidă.",
         image: "/products/homeprint-studio/pvc-forex.webp",
-        price: "De la 85 LEI/mp",
+        price: "De la 155 LEI/mp",
         category: "Configuratoare",
         tags: ["forex", "pvc", "rigid", "configurator"]
     },
@@ -185,7 +185,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         title: "Panouri Alucobond (Dibond)",
         description: "Semnalistică rigidă și rezistentă pe panouri compozite din aluminiu. Recomandate pentru expunere pe termen lung.",
         image: "/products/homeprint-studio/alucobond.webp",
-        price: "De la 120 LEI/mp",
+        price: "De la 445 LEI/mp",
         category: "Configuratoare",
         tags: ["alucobond", "dibond", "aluminiu", "semnalistica", "configurator"]
     },
@@ -196,7 +196,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         title: "Plăci Polipropilenă (PP)",
         description: "Material sintetic subțire, extrem de flexibil și rezistent la rupere, ideal pentru afișaj suspendat și roll-up.",
         image: "/products/homeprint-studio/polipropilena.webp",
-        price: "De la 45 LEI/mp",
+        price: "De la 210 LEI/mp",
         category: "Configuratoare",
         tags: ["polipropilena", "pp", "sintetic", "configurator"]
     },
@@ -207,7 +207,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         title: "Tricouri Personalizate",
         description: "Personalizează tricouri premium din bumbac. Print DTF de înaltă rezistență. Ideal pentru firmă sau evenimente.",
         image: "/products/homeprint-studio/tricouri.webp",
-        price: "De la 60 LEI",
+        price: "De la 73 LEI",
         category: "Configuratoare",
         tags: ["tricou", "tricouri", "textile", "personalizat", "configurator"]
     },
@@ -218,7 +218,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         title: "Hanorace Personalizate",
         description: "Hanorace premium, groase, personalizate cu designul tău. Calitate maximă a printului DTF.",
         image: "/products/homeprint-studio/hanorace.webp",
-        price: "De la 160 LEI",
+        price: "De la 285 LEI",
         category: "Configuratoare",
         tags: ["hanorac", "hanorace", "textile", "personalizat", "configurator"]
     },
@@ -229,7 +229,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         title: "Șepci Personalizate",
         description: "Șepci premium personalizate cu logo-ul sau designul tău. Print DTF de înaltă calitate.",
         image: "/products/homeprint-studio/sepci.webp",
-        price: "De la 45 LEI",
+        price: "De la 61 LEI",
         category: "Configuratoare",
         tags: ["sapca", "sepci", "textile", "personalizat", "configurator"]
     },
@@ -240,7 +240,7 @@ export const configuratorProducts: ConfiguratorProduct[] = [
         title: "Cărți de Vizită",
         description: "Cărți de vizită premium tipărite pe carton mat/lucios, plastic PVC, lemn sau variante metalice.",
         image: "/products/homeprint-studio/carti-vizita.webp",
-        price: "De la 0.18 LEI",
+        price: "De la 0.36 LEI",
         category: "Configuratoare",
         tags: ["carti de vizita", "print", "standard", "business", "plastic", "metal"]
     },

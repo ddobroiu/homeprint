@@ -43,12 +43,12 @@ const tricouriFaqs: QA[] = [
     { question: "Ce mărimi aveți pentru adulți?", answer: "Tricoul Basic și V-Neck merg de la XS la XXL, iar modelele Polo Pique bărbați și V-Neck bărbați ajung până la XXXL — suficient pentru toate generațiile unei familii la aceeași comandă." },
     { question: "Pot combina mărimi diferite (copii și adulți) în aceeași comandă?", answer: "Da. Configurezi și adaugi în coș fiecare mărime și culoare de care ai nevoie, apoi finalizezi totul într-o singură comandă și o singură livrare." },
     { question: "Din ce material sunt făcute tricourile?", answer: "Tricoul Basic și V-Neck sunt din Single Jersey, bumbac pieptănat de 160-190 g/mp, cu finisaj din silicon (textură mătăsoasă, fără scame) și certificare OEKO-TEX. Modelele Polo Pique sunt dintr-un amestec de 65% bumbac și 35% poliester, cu guler și manșete raiate." },
-    { question: "Cât costă un tricou personalizat?", answer: "Tricoul Basic sau V-Neck pornește de la 60 RON/bucată cu print pe o singură față (75 RON pentru modelele Polo Pique). Printul pe față și spate adaugă 20-25 RON/bucată. La 10+ bucăți primești 10% reducere, la 30+ bucăți 15%, iar la 50+ bucăți 20% — util atât pentru o serie de familie mai mare, cât și pentru primul stoc al unei mici afaceri." },
+    { question: "Cât costă un tricou personalizat?", answer: "Tricoul Basic pornește de la 79 RON/bucată cu print pe o singură față (99 RON pentru V-Neck, 139 RON pentru modelele Polo Pique). Printul pe față și spate adaugă 25 RON/bucată. La 10+ bucăți primești până la 10% reducere, la 30+ bucăți până la 15%, iar la 50+ bucăți până la 20% (reducerea are un prag minim de preț pe bucată) — util atât pentru o serie de familie mai mare, cât și pentru primul stoc al unei mici afaceri." },
     { question: "Am nevoie de fișier grafic profesionist ca să comand?", answer: "Nu neapărat. Poți încărca direct o fotografie sau un desen din configurator. Pentru cel mai clar rezultat la print, un fișier vectorial (.ai, .eps, .svg) sau o imagine la minim 300 DPI la dimensiunea reală ajută cel mai mult, dar nu este obligatoriu pentru comenzi mici, personale." },
     { question: "Cât durează livrarea?", answer: "Estimarea standard este de 2-4 zile lucrătoare, producție și livrare prin curier incluse. Pentru o petrecere sau o revedere cu dată fixă, recomandăm plasarea comenzii cu câteva zile bune înainte, ca să ai marjă de siguranță." },
     { question: "Tricourile personalizate se pot folosi și pentru o mică afacere de acasă?", answer: "Da — mulți dintre clienții noștri comandă întâi 15-20 de bucăți din mai multe modele, ca să testeze ce se vinde la un târg local sau ca obiect oferit clienților fideli. Dacă un model devine bestseller și ajungi la comenzi de 200+ bucăți identice, merită să iei în calcul și serigrafia clasică — explicăm exact acest prag în ghidul nostru dedicat." },
     { question: "Ce diferență e între Tricoul Basic și Tricoul Polo Pique?", answer: "Basic e un tricou clasic, din bumbac 100% Single Jersey, croială tubulară — alegerea potrivită pentru poze de familie sau desene de copii pe toată suprafața. Polo Pique are guler și manșete raiate, cu nasturi, dintr-un amestec bumbac-poliester — o variantă puțin mai elegantă, potrivită și pentru tricourile oferite clienților unei mici afaceri." },
-    { question: "Pot printa doar pe spate sau pe ambele fețe?", answer: "Da, alegi direct din configurator: doar pe față, doar pe spate, sau pe ambele fețe (cu un cost suplimentar de 20-25 RON/bucată)." },
+    { question: "Pot printa doar pe spate sau pe ambele fețe?", answer: "Da, alegi direct din configurator: doar pe față, doar pe spate, sau pe ambele fețe (cu un cost suplimentar de 25 RON/bucată)." },
 ];
 
 type Props = {
@@ -64,7 +64,7 @@ export default async function TricouriPage({ searchParams }: Props) {
 
     return (
         <main className="min-h-screen bg-slate-50 pt-20">
-            {product && <ProductJsonLd name={product.title} description={product.description} image={product.images?.[0]} price={60} url={url} />}
+            {product && <ProductJsonLd name={product.title} description={product.description} image={product.images?.[0]} price={79} url={url} />}
 
             <BreadcrumbSchema
                 items={[
@@ -268,7 +268,7 @@ export default async function TricouriPage({ searchParams }: Props) {
                     <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
                         <h4 className="font-bold text-lg text-slate-900 mb-2">Buget: de la un tricou-cadou la primul stoc</h4>
                         <p className="text-slate-600 text-sm leading-relaxed">
-                            De la 60 RON/bucată (Basic, print pe o față), fără comandă minimă. La 10+ bucăți primești 10% reducere, la 30+ 15%, la 50+ 20% — util atât pentru 8 tricouri de familie, cât și pentru un prim lot de test al unei mici afaceri.
+                            De la 79 RON/bucată (Basic, print pe o față), fără comandă minimă. La 10+ bucăți primești până la 10% reducere, la 30+ până la 15%, la 50+ până la 20% — util atât pentru 8 tricouri de familie, cât și pentru un prim lot de test al unei mici afaceri.
                         </p>
                     </div>
                 </div>
