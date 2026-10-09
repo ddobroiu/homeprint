@@ -139,7 +139,7 @@ export default function MobileMenu({ children }: { children?: ReactNode }) {
                     <section className={styles.section} aria-labelledby={`${titleId}-cat`}>
                         <div className={styles.sectionHead}>
                             <h3 id={`${titleId}-cat`} className={styles.kicker}>Categorii</h3>
-                            <Link href="/shop" className={styles.sectionLink}>Tot catalogul <ArrowRight size={14} aria-hidden="true" /></Link>
+                            <Link href="/configuratoare" className={styles.sectionLink}>Toate configuratoarele <ArrowRight size={14} aria-hidden="true" /></Link>
                         </div>
                         <ul className={styles.grid}>
                             {mobileMenu.categories.map(({ label, href, icon: Icon }, index) => (
