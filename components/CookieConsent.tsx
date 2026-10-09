@@ -13,6 +13,7 @@ import {
 } from "@/lib/cookieConsent";
 import { CLARITY_ID, loadClarity, revokeClarity, syncClarityWithPath } from "@/lib/clarity";
 import { loadTikTok, revokeTikTok, syncTikTokWithPath } from "@/lib/tiktok";
+import { metaAllowedHere } from "@/lib/metaPixel";
 
 const HAS_ANALYTICS = TRACKING.ga4Ids.length > 0 || !!TRACKING.siteAnalyticsSrc || !!CLARITY_ID;
 const HAS_MARKETING =
@@ -87,9 +88,9 @@ function applyConsent(c: ConsentChoice, loaded: Set<string>) {
     // Microsoft Clarity: numai cu statistică acceptată și în afara paginilor cu date personale (lib/clarity.ts)
     if (c.analytics) loadClarity();
 
-    if (TRACKING.metaPixelId && c.marketing && !loaded.has("fbq")) {
+    if (TRACKING.metaPixelId && c.marketing && metaAllowedHere() && !loaded.has("fbq")) {
         loaded.add("fbq");
-        // snippetul oficial Meta Pixel
+        // snippetul oficial Meta Pixel (nu pe localhost / gazde de dezvoltare: lib/metaPixel.ts)
         inlineScript(
             "fbq-init",
             `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',${JSON.stringify(TRACKING.metaPixelId)});fbq('track','PageView');`

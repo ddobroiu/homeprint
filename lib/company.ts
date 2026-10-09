@@ -88,6 +88,8 @@ export const TRACKING: {
     siteAnalyticsSrc?: string;
 } = {
     ga4Ids: ["G-Z4KY7Q4B6J"],
+    /** Meta Pixel + Conversions API (lib/metaPixel.ts, lib/metaCapi.ts); numai cu consimțământ pentru marketing. */
+    metaPixelId: "2049864535715821",
     googleAdsIds: [],
     siteAnalyticsSrc: "https://www.shopprint.ro/t.js",
     /** TikTok Pixel (lib/tiktok.ts): numai cu consimțământ la marketing. */

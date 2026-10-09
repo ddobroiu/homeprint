@@ -16,6 +16,7 @@ import ClientLayoutWrapper from "../components/ClientLayoutWrapper";
 import ContactButton from "../components/ContactButton";
 import CookieConsent from "../components/CookieConsent";
 import { CONSENT_MODE_BOOTSTRAP } from "@/lib/cookieConsent";
+import MetaPixelEvents from "../components/MetaPixelEvents";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -117,6 +118,7 @@ export default function RootLayout({
       <body data-brand={brandKey} className={`${inter.variable} ${outfit.variable} bg-white text-slate-900 antialiased font-sans selection:bg-amber-500 selection:text-white relative`}>
         <CookieConsent />
         <Providers>
+          <MetaPixelEvents />
           <Header />
           <main className="w-full overflow-x-hidden">
             <ClientLayoutWrapper>

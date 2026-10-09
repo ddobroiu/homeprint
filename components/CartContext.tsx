@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { useToast } from "./ToastProvider";
 import { trackTikTok } from "@/lib/tiktok";
+import { metaEventId, trackMeta } from "@/lib/metaPixel";
 
 /**
  * Structura unui produs din coș
@@ -119,6 +120,16 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
                 price: item.price,
             }],
         });
+        // Meta AddToCart (no-op fără acord pentru marketing / pixel neîncărcat / localhost)
+        const metaId = String(item.productId || item.slug || item.id).slice(0, 100);
+        trackMeta("AddToCart", {
+            content_ids: [metaId],
+            content_type: "product",
+            content_name: item.title,
+            contents: [{ id: metaId, quantity: item.quantity, item_price: item.price }],
+            value: Number((item.price * item.quantity).toFixed(2)),
+            currency: item.currency || "RON",
+        }, metaEventId("atc"));
         setItems((prev) => {
             // Căutăm dacă există deja un produs identic
             const idx = prev.findIndex(

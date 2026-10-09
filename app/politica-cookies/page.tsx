@@ -46,7 +46,7 @@ const marketing: Row[] = [
         ? [{ name: "_gcl_au, _gcl_aw și cookie-uri Google pe domeniile Google", provider: "Google Ireland Limited (Google Ads / Google Tag Manager)", purpose: "Măsurarea conversiilor din reclamele Google și remarketing.", duration: "până la 90 de zile (_gcl_*), conform politicii Google pentru celelalte" }]
         : []),
     ...(TRACKING.metaPixelId
-        ? [{ name: "_fbp, fr", provider: "Meta Platforms Ireland Limited (Meta Pixel)", purpose: "Măsurarea conversiilor din reclamele Facebook/Instagram și publicuri de remarketing.", duration: "până la 90 de zile" }]
+        ? [{ name: "_fbp, _fbc, fr", provider: "Meta Platforms Ireland Limited (Meta Pixel)", purpose: "Măsurarea conversiilor din reclamele Facebook/Instagram și publicuri de remarketing.", duration: "până la 90 de zile" }]
         : []),
     ...(TRACKING.tiktokPixelId
         ? [

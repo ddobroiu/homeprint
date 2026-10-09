@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { CONSENT_CHANGE_EVENT, readConsent } from "@/lib/cookieConsent";
 import { loadTikTok, trackTikTok } from "@/lib/tiktok";
+import { readMetaCheckout, trackMeta } from "@/lib/metaPixel";
 
 type TrackingWindow = Window & {
     dataLayer?: unknown[];
@@ -52,16 +53,7 @@ export default function ConversionTracker({ orderNo, value, currency = "RON" }: 
             // GA4 + Google Ads, cu transaction_id pentru deduplicare
             if (typeof w.gtag === "function") w.gtag("event", "purchase", params);
 
-            // Meta Pixel: `fbq` există doar dacă s-a acceptat marketingul (vezi components/CookieConsent.tsx).
-            // eventID = numărul comenzii, ca să se deduplice dacă adăugăm și CAPI pe server.
-            if (consent.marketing && typeof w.fbq === "function") {
-                w.fbq(
-                    "track",
-                    "Purchase",
-                    { value: typeof params.value === "number" ? params.value : 0, currency, content_type: "product" },
-                    { eventID: `order-${orderNo}` }
-                );
-            }
+            // Meta Pixel: Purchase separat, mai jos (cheie proprie, reîncercare la acord)
         }, 0);
 
         return () => window.clearTimeout(timer);
@@ -104,6 +96,45 @@ export default function ConversionTracker({ orderNo, value, currency = "RON" }: 
             if (!fire()) window.addEventListener(CONSENT_CHANGE_EVENT, onChange);
         }, 0);
 
+        return () => {
+            window.clearTimeout(timer);
+            window.removeEventListener(CONSENT_CHANGE_EVENT, onChange);
+        };
+    }, [orderNo, value, currency]);
+
+    // Meta Pixel Purchase: numai cu acord pentru marketing (trackMeta), o singură dată per comandă.
+    // eventID = "order-<nr>", același ca evenimentul trimis de server prin Conversions API (lib/metaCapi.ts).
+    // content_ids = produsele reținute la începerea comenzii (components/MetaPixelEvents.tsx).
+    useEffect(() => {
+        if (!orderNo) return;
+        const key = `fb_purchase_${orderNo}`;
+        const fire = () => {
+            try {
+                if (localStorage.getItem(key)) return true;
+            } catch {
+                if ((window as unknown as Record<string, unknown>)[key]) return true;
+            }
+            const contents = readMetaCheckout();
+            const params: Record<string, unknown> = { currency, content_type: "product", order_id: String(orderNo) };
+            if (typeof value === "number" && value > 0) params.value = Number(value.toFixed(2));
+            if (contents.length > 0) {
+                params.content_ids = contents.map((c) => c.id);
+                params.contents = contents;
+                params.num_items = contents.reduce((s, c) => s + c.quantity, 0);
+            }
+            if (!trackMeta("Purchase", params, `order-${orderNo}`)) return false;
+            try {
+                localStorage.setItem(key, "1");
+            } catch {
+                (window as unknown as Record<string, unknown>)[key] = true;
+            }
+            return true;
+        };
+        const onChange = () => {
+            if (fire()) window.removeEventListener(CONSENT_CHANGE_EVENT, onChange);
+        };
+        const timer = window.setTimeout(onChange, 0);
+        window.addEventListener(CONSENT_CHANGE_EVENT, onChange);
         return () => {
             window.clearTimeout(timer);
             window.removeEventListener(CONSENT_CHANGE_EVENT, onChange);

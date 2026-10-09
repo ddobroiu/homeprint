@@ -16,6 +16,8 @@ import {
     computeCheckoutTotal,
     validateCheckoutPaymentMethod,
 } from '@/lib/paymentRules';
+import { metaBuyerFromAddress, metaCheckoutMetadata, metaContentsFromItems, metaContextFromRequest, sendMetaPurchase } from '@/lib/metaCapi';
+import { TRACKING } from '@/lib/company';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -143,6 +145,9 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: paymentError }, { status: 400 });
         }
 
+        // Acordul pentru marketing (același ca la TikTok): numai cu el trimitem Purchase prin Meta Conversions API
+        const metaMarketing = orderData.tiktokConsent === true;
+
         if (paymentMethod === 'card') {
             const { items } = orderData;
             const subtotal = items.reduce((s: number, it: any) => s + (Number(it.unitAmount ?? it.price ?? 0) * Number(it.quantity ?? 1)), 0);
@@ -223,6 +228,8 @@ export async function POST(req: NextRequest) {
                         dimensions: i.dimensions
                     })).slice(0, 4000)), // Limit just in case
                     marketing: JSON.stringify(orderData.marketing || {}).slice(0, 500),
+                    // Meta Conversions API (lib/metaCapi.ts): acord + _fbp/_fbc/IP/browser/URL, numai cu acord pentru marketing (altfel gol)
+                    ...metaCheckoutMetadata(metaContextFromRequest(req, metaMarketing)),
                     ...tiktok,
                 }
             });
@@ -245,6 +252,23 @@ export async function POST(req: NextRequest) {
                     { ...orderData, userId, cart: orderData.items, source },
                     paymentType
                 );
+
+                // Meta Purchase (server) la ramburs: comanda e confirmată acum. Numai cu acord pentru marketing;
+                // event_id = "order-<nr>", ca pixelul de pe pagina de mulțumire (deduplicare).
+                if (paymentType === 'Ramburs' && orderNo) {
+                    void sendMetaPurchase({
+                        pixelId: TRACKING.metaPixelId,
+                        eventId: `order-${orderNo}`,
+                        orderId: String(orderNo),
+                        value: orderTotal,
+                        currency: 'RON',
+                        contents: metaContentsFromItems(orderData.items),
+                        eventSourceUrl: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.homeprint.ro'}/checkout/success`,
+                        ...metaBuyerFromAddress(orderData.address),
+                        externalId: userId,
+                        context: metaContextFromRequest(req, metaMarketing),
+                    });
+                }
 
 
                 return NextResponse.json({

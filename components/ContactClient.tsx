@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CONTACT_EMAIL } from "@/lib/company";
 import OperatorDetails from "@/components/legal/OperatorDetails";
+import { metaEventId, trackMeta } from "@/lib/metaPixel";
 
 export default function ContactClient() {
     const [form, setForm] = useState({ name: "", email: "", phone: "", message: "", website: "" });
@@ -39,6 +40,7 @@ export default function ContactClient() {
                 throw new Error(data.error || 'A apărut o eroare la trimitere.');
             }
 
+            trackMeta("Lead", { content_name: "contact_form" }, metaEventId("lead"));
             setSent(true);
             setForm({ name: "", email: "", phone: "", message: "", website: "" });
         } catch (err: any) {

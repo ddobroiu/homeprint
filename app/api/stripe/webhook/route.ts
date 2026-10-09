@@ -7,6 +7,8 @@ import Stripe from 'stripe';
 import { prisma } from '@/lib/prisma';
 import { fulfillOrder } from '@/lib/orderService';
 import { sendTikTokPurchase } from '@/lib/tiktok-events';
+import { metaBuyerFromAddress, metaContentsFromItems, metaContextFromMetadata, sendMetaPurchase } from '@/lib/metaCapi';
+import { TRACKING } from '@/lib/company';
 
 export const dynamic = 'force-dynamic';
 
@@ -159,6 +161,21 @@ export async function POST(req: NextRequest) {
                     phone: session.customer_details?.phone || checkoutData.address?.telefon || checkoutData.address?.phone,
                     externalId: checkoutData.userId || session.metadata?.userId || null,
                     metadata: session.metadata,
+                });
+                // Meta Purchase (Conversions API), numai cu acordul pentru marketing salvat pe sesiune; același event_id
+                void sendMetaPurchase({
+                    pixelId: TRACKING.metaPixelId,
+                    eventId: `order-${result.orderNo}`,
+                    orderId: String(result.orderNo),
+                    value: (session.amount_total ?? 0) / 100,
+                    currency: session.currency || 'ron',
+                    contents: metaContentsFromItems(items),
+                    eventSourceUrl: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.homeprint.ro'}/checkout/success/stripe`,
+                    ...metaBuyerFromAddress(checkoutData.address),
+                    email: session.customer_details?.email || session.customer_email || checkoutData.address?.email,
+                    phone: session.customer_details?.phone || checkoutData.address?.telefon || checkoutData.address?.phone,
+                    externalId: checkoutData.userId || session.metadata?.userId || null,
+                    context: metaContextFromMetadata(session.metadata),
                 });
             }
 

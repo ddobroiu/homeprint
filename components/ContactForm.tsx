@@ -4,6 +4,7 @@ import React, { useState, ChangeEvent, FormEvent } from "react";
 import { siteConfig } from "@/lib/siteConfig";
 import { Mail, Phone, MapPin, MessageCircle, Send, CheckCircle2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { metaEventId, trackMeta } from "@/lib/metaPixel";
 
 export default function ContactForm() {
     const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
@@ -36,6 +37,7 @@ export default function ContactForm() {
                 throw new Error(data.error || 'A apărut o eroare la trimitere.');
             }
 
+            trackMeta("Lead", { content_name: "contact_form" }, metaEventId("lead"));
             setSent(true);
             setForm({ name: "", email: "", phone: "", message: "" });
         } catch (err: any) {
