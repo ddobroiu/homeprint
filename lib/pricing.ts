@@ -1686,6 +1686,18 @@ export const getTapetUpsell = (input: PriceInputTapet): UpsellResult => {
 // ==========================================
 // 14. FONDURI EU (KIT VIZIBILITATE)
 // ==========================================
+// Flyere cu datele proiectului: prețul din configuratorul de flyere (calculateFlyerPrice: A5, color pe o față,
+// 135 g, macheta noastră) × 1,5. Mape de prezentare: 6 lei/buc (50 buc = 300 lei).
+export const FONDURI_EU_FLYER_MULTIPLIER = 1.5;
+export const FONDURI_EU_FLYER_PRESET = { sizeKey: "A5", twoSided: false, paperWeightKey: "135" } as const;
+export const FONDURI_EU_FLYER_QUANTITIES = [100, 250, 500, 1000] as const;
+export const fonduriFlyerPrice = (quantity: number) =>
+  roundMoney(
+    calculateFlyerPrice({ ...FONDURI_EU_FLYER_PRESET, quantity, designOption: "upload" }).finalPrice * FONDURI_EU_FLYER_MULTIPLIER
+  );
+export const FONDURI_EU_MAPA_UNIT_PRICE = 6;
+export const FONDURI_EU_MAPE_QUANTITIES = [50, 100, 200] as const;
+
 export const FONDURI_EU_CONSTANTS = {
   GROUPS: {
     comunicat: {
@@ -1749,8 +1761,94 @@ export const FONDURI_EU_CONSTANTS = {
         { id: "150x100", label: "150×100 cm", price: 550 },
       ],
     },
+    flyere: {
+      title: "Flyere cu datele proiectului",
+      options: [
+        { id: "none", label: "Nu", price: 0 },
+        ...FONDURI_EU_FLYER_QUANTITIES.map((q) => ({ id: `A5-${q}`, label: `A5, ${q} buc`, price: fonduriFlyerPrice(q) })),
+      ],
+    },
+    mape: {
+      title: "Mape de prezentare",
+      options: [
+        { id: "none", label: "Nu", price: 0 },
+        ...FONDURI_EU_MAPE_QUANTITIES.map((q) => ({ id: `${q}`, label: `${q} buc`, price: roundMoney(q * FONDURI_EU_MAPA_UNIT_PRICE) })),
+      ],
+    },
   },
 };
+
+// Material pentru panoul temporar și placa permanentă: PVC (Forex) implicit sau Alucobond.
+// Alucobond = prețul PVC × 1,3 (ex. 200 lei PVC -> 260 lei Alucobond). Același multiplicator la /panouri.
+export const ALUCOBOND_PANEL_MULTIPLIER = 1.3;
+export const FONDURI_EU_PANEL_GROUPS = ["panouTemporar", "placaPermanenta"] as const;
+export type FonduriPanelGroup = (typeof FONDURI_EU_PANEL_GROUPS)[number];
+export type FonduriPanelMaterial = "pvc" | "alucobond";
+export const FONDURI_EU_PANEL_MATERIALS: { id: FonduriPanelMaterial; label: string; description: string }[] = [
+  { id: "pvc", label: "PVC (Forex)", description: "Placă PVC rigidă, ușoară, print UV — varianta standard." },
+  { id: "alucobond", label: "Alucobond", description: "Compozit rigid din aluminiu: mai durabil, nu se deformează la soare, aspect premium." },
+];
+/** Cheia din selecții pentru materialul unei grupe, ex. panouTemporar -> panouTemporarMaterial. */
+export const fonduriMaterialKey = (group: FonduriPanelGroup) => `${group}Material` as const;
+export const isFonduriPanelGroup = (key: string): key is FonduriPanelGroup =>
+  (FONDURI_EU_PANEL_GROUPS as readonly string[]).includes(key);
+/** „alucobond” / „bond” / „dibond” -> alucobond; orice altceva -> pvc. */
+export const normalizeFonduriMaterial = (value?: string | null): FonduriPanelMaterial =>
+  /^(alucobond|bond|dibond|alu)$/i.test(String(value ?? "").trim()) ? "alucobond" : "pvc";
+export const fonduriMaterialLabel = (material: FonduriPanelMaterial) =>
+  FONDURI_EU_PANEL_MATERIALS.find((m) => m.id === material)?.label ?? "PVC (Forex)";
+/** Prețul unui panou/plăci pe materialul ales (pornind de la prețul PVC). */
+export const fonduriPanelPrice = (pvcPrice: number, material: FonduriPanelMaterial) =>
+  material === "alucobond" ? roundMoney(pvcPrice * ALUCOBOND_PANEL_MULTIPLIER) : pvcPrice;
+/** Prețul opțiunii dintr-o grupă, ținând cont de material la panouri/plăci. */
+export const fonduriOptionPrice = (groupKey: string, optionPrice: number, selections: Record<string, string>) =>
+  isFonduriPanelGroup(groupKey)
+    ? fonduriPanelPrice(optionPrice, normalizeFonduriMaterial(selections[fonduriMaterialKey(groupKey)]))
+    : optionPrice;
+
+// Parametri din adresă pentru material: ?panouTemporarMaterial=alucobond, ?placaPermanentaMaterial=alucobond,
+// scurt ?panouMaterial= / ?placaMaterial=, sau ?material=alucobond pentru amândouă.
+const FONDURI_MATERIAL_PARAMS: Record<FonduriPanelGroup, string[]> = {
+  panouTemporar: ["panouTemporarMaterial", "panouMaterial", "material"],
+  placaPermanenta: ["placaPermanentaMaterial", "placaMaterial", "material"],
+};
+export function fonduriMaterialsFromParams(sp: { get(name: string): string | null }): Record<string, FonduriPanelMaterial> {
+  const out: Record<string, FonduriPanelMaterial> = {};
+  for (const g of FONDURI_EU_PANEL_GROUPS) {
+    const v = FONDURI_MATERIAL_PARAMS[g].map((k) => sp.get(k)).find((x) => !!x && !!x.trim());
+    if (v) out[fonduriMaterialKey(g)] = normalizeFonduriMaterial(v);
+  }
+  return out;
+}
+
+type FonduriGroupsLike = Record<string, { title: string; options: { id: string; label: string }[] }>;
+const fonduriIsChosen = (selections: Record<string, string>, key: string) =>
+  !!selections[key] && selections[key] !== "none" && selections[key] !== "Nu";
+
+/** Liniile din coș („Configurație”), ex. „Panou temporar: 80×50 cm · Material: Alucobond”. */
+export function fonduriCartLines(selections: Record<string, string>, groups: FonduriGroupsLike): string[] {
+  return Object.keys(groups)
+    .filter((k) => fonduriIsChosen(selections, k))
+    .map((k) => {
+      const g = groups[k];
+      const opt = g.options.find((o) => o.id === selections[k]) ?? g.options.find((o) => o.label === selections[k]);
+      const base = `${g.title}: ${opt?.label ?? selections[k]}`;
+      return isFonduriPanelGroup(k)
+        ? `${base} · Material: ${fonduriMaterialLabel(normalizeFonduriMaterial(selections[fonduriMaterialKey(k)]))}`
+        : base;
+    });
+}
+
+/** Materialul panourilor/plăcilor alese, pentru producție (metadata „Material”); "" dacă nu e ales niciun panou. */
+export function fonduriMaterialSummary(selections: Record<string, string>, groups: FonduriGroupsLike): string {
+  const chosen = FONDURI_EU_PANEL_GROUPS.filter((g) => fonduriIsChosen(selections, g)).map((g) => ({
+    title: groups[g]?.title ?? g,
+    label: fonduriMaterialLabel(normalizeFonduriMaterial(selections[fonduriMaterialKey(g)])),
+  }));
+  if (!chosen.length) return "";
+  if (chosen.every((c) => c.label === chosen[0].label)) return chosen[0].label;
+  return chosen.map((c) => `${c.title} — ${c.label}`).join("; ");
+}
 
 export function getFonduriEUGroups(isRegio: boolean = false) {
   const baseGroups = FONDURI_EU_CONSTANTS.GROUPS;
@@ -1795,7 +1893,7 @@ export const calculateFonduriEUPrice = (input: PriceInputFonduriEU) => {
         groupOptions.find(o => o.label === selectedValue);
 
       if (option) {
-        finalPrice += option.price;
+        finalPrice += fonduriOptionPrice(key, option.price, input.selections);
       }
     }
   }
@@ -2359,7 +2457,7 @@ export const PANOURI_CONSTANTS = {
     { id: "200x150", label: "200x150 cm", width: 200, height: 150, pricePVC: 700 },
     { id: "300x200", label: "300x200 cm", width: 300, height: 200, pricePVC: 1390 },
   ],
-  ALUCOBOND_MULTIPLIER: 1.5,
+  ALUCOBOND_MULTIPLIER: ALUCOBOND_PANEL_MULTIPLIER,
 };
 
 export type PriceInputPanou = {

@@ -17,6 +17,8 @@ import {
     calculatePolipropilenaPrice,
     calculateCartonPrice,
     calculateFonduriEUPrice,
+    fonduriMaterialLabel,
+    normalizeFonduriMaterial,
     type PlianteWeightKey,
     type PlianteFoldType,
 } from "@/lib/pricing";
@@ -344,12 +346,16 @@ export async function executeTool(fnName: string, args: any, context: ToolContex
             };
 
             if (args.add_logo) selections.logo = "yes";
+            // Materialul panoului temporar / plăcii permanente: PVC implicit, Alucobond = PVC × 1,3
+            const panelMaterial = normalizeFonduriMaterial(args.material);
+            selections.panouTemporarMaterial = panelMaterial;
+            selections.placaPermanentaMaterial = panelMaterial;
 
             const res = calculateFonduriEUPrice({ selections });
 
             return {
                 pret_total: res.finalPrice,
-                info: `Kit Vizibilitate Fonduri ${args.funding_type?.toUpperCase() || 'UE'}: Panou ${args.panou_principal_size} pe ${args.panou_principal_material || 'Alucobond'}${args.autocolante_size && args.autocolante_size !== 'none' ? ` + Autocolante ${args.autocolante_size}` : ''}${args.add_logo ? ' + Logo' : ''}`
+                info: `Kit Vizibilitate Fonduri ${args.funding_type?.toUpperCase() || 'UE'}: Panou ${args.panou_principal_size} pe ${args.panou_principal_material || 'Alucobond'}${args.autocolante_size && args.autocolante_size !== 'none' ? ` + Autocolante ${args.autocolante_size}` : ''}${args.add_logo ? ' + Logo' : ''}${selections.panouTemporar !== 'none' || selections.placaPermanenta !== 'none' ? ` (panou/placă pe ${fonduriMaterialLabel(panelMaterial)})` : ''}`
             };
         }
 

@@ -31,6 +31,9 @@ import {
     PVC_FOREX_CONSTANTS,
     getFonduriEUGroups,
     calculatePlexiglassPrice,
+    FONDURI_EU_PANEL_GROUPS,
+    FONDURI_EU_PANEL_MATERIALS,
+    fonduriMaterialKey,
 } from "./pricing";
 
 type OptValue = { value: string; label: string; param?: string };
@@ -114,7 +117,13 @@ const SEASONAL = [
 const CANVAS_FRAMED_KEYS = [...Object.keys(CANVAS_CONSTANTS.FRAMED_PRICES_RECTANGLE), ...Object.keys(CANVAS_CONSTANTS.FRAMED_PRICES_SQUARE)];
 
 function fonduriGroups() {
-    return getFonduriEUGroups(false) as Record<string, { title: string; options: { id: string; label: string }[] }>;
+    const groups = getFonduriEUGroups(false) as Record<string, { title: string; options: { id: string; label: string }[] }>;
+    // Materialul panoului / plăcii (PVC implicit, Alucobond = +30%), ca opțiune separată
+    const materials = FONDURI_EU_PANEL_MATERIALS.map((m) => ({ id: m.id, label: m.id === "alucobond" ? `${m.label} (+30%)` : m.label }));
+    const extra = Object.fromEntries(
+        FONDURI_EU_PANEL_GROUPS.map((g) => [fonduriMaterialKey(g), { title: `Material ${groups[g].title.toLowerCase()}`, options: materials }])
+    );
+    return { ...groups, ...extra };
 }
 
 const REGISTRY_CONFIGURATOR_IDS: string[] = [...ALL_CONFIGURATORS.map((c) => c.id), ...SEASONAL.map((s) => s.id)];
@@ -269,6 +278,10 @@ export function quoteConfigurator(args: QuoteArgs, baseUrl: string) {
             if (!g.options.some((o) => o.id === val)) return fail(`Valoare invalidă pentru ${k}. Valide: ${g.options.map((o) => o.id).join(", ")}`);
             if (val !== "none") { params.set(k, val); chosen[g.title] = g.options.find((o) => o.id === val)!.label; }
         }
+        // materialul singur nu e un produs: trebuie ales și panoul / placa
+        for (const g of FONDURI_EU_PANEL_GROUPS) {
+            if (params.has(fonduriMaterialKey(g)) && !params.has(g)) params.delete(fonduriMaterialKey(g));
+        }
         if (![...params.keys()].length) return fail("Spune ce elemente vrei în kit (ex. afisInformativ, placaPermanenta, panouTemporar). Folosește list_configurator_options pentru variante.");
     } else {
         const defs = id === "plexiglass" ? PLEXI_EXTRA : OPTIONS[id] ?? [];
@@ -322,7 +335,7 @@ export function quoteConfigurator(args: QuoteArgs, baseUrl: string) {
             if (!keys.includes(format!)) return fail(`Formate valide: ${keys.join(", ")}.`);
             if (id === "afise" && params.get("mat") && !isAfiseMaterialVisibleForSize(params.get("mat")!, format!)) return fail(`Materialul ales nu există pe formatul ${format}.`);
         } else if (id === "fonduri-eu") {
-            const [k, v] = [...params.entries()][0];
+            const [k, v] = [...params.entries()].find(([key]) => !key.endsWith("Material"))!;
             format = `${k}:${v}`;
             width = qp.width; height = qp.height;
         } else if (qp.mode === "quantity") {

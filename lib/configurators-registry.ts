@@ -826,6 +826,24 @@ export const CONFIGURATORS_REGISTRY: ConfiguratorMetadata[] = [
                 values: ['Nu', 'Format A2', '80×50 cm', '150×100 cm']
             },
             {
+                id: 'panouMaterial',
+                name: 'Material panou / placă',
+                type: 'radio',
+                values: ['PVC (Forex)', 'Alucobond (+30%)']
+            },
+            {
+                id: 'flyere',
+                name: 'Flyere cu datele proiectului',
+                type: 'radio',
+                values: ['Nu', 'A5, 100 buc', 'A5, 250 buc', 'A5, 500 buc', 'A5, 1000 buc']
+            },
+            {
+                id: 'mape',
+                name: 'Mape de prezentare',
+                type: 'radio',
+                values: ['Nu', '50 buc', '100 buc', '200 buc']
+            },
+            {
                 id: 'program',
                 name: 'Program Fiscal',
                 type: 'select',

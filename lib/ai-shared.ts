@@ -354,6 +354,7 @@ export const tools: OpenAI.Chat.Completions.ChatCompletionTool[] = [
           autocolante_size: { type: "string", description: "Dimensiune autocolante: none, 40x20, 50x25, 60x30" },
           panou_temporar: { type: "string", description: "Panou temporar: none, A2, 80x50, 200x150, 300x200" },
           placa_permanenta: { type: "string", description: "PlacÄƒ permanentÄƒ: none, A2, 80x50, 150x100" },
+          material: { type: "string", description: "Material panou temporar / placa permanenta: pvc (implicit) sau alucobond (+30% fata de PVC)" },
           add_logo: { type: "boolean", description: "AdaugÄƒ logo (+30 lei)" },
           funding_type: { type: "string", description: "Tip fonduri: pnrr, regio, nationale" }
         },

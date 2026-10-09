@@ -10,7 +10,15 @@ import { QA } from "@/types/configurator";
 import {
     calculateFonduriEUPrice,
     getFonduriEUGroups,
-    formatMoneyDisplay
+    formatMoneyDisplay,
+    FONDURI_EU_PANEL_MATERIALS,
+    fonduriMaterialKey,
+    fonduriMaterialsFromParams,
+    fonduriPanelPrice,
+    fonduriCartLines,
+    fonduriMaterialSummary,
+    normalizeFonduriMaterial,
+    type FonduriPanelGroup,
 } from "@/lib/pricing";
 
 import { AccordionStep } from "./ui/AccordionStep";
@@ -42,6 +50,30 @@ const SelectGroup = ({ label, options, value, onChange }: { label: string, optio
         </select>
     </div>
 );
+
+// Alegerea materialului pentru panou / placă: PVC (implicit) sau Alucobond (+30%, prețul din lib/pricing.ts)
+const PanelMaterialToggle = ({ group, selections, onChange }: { group: FonduriPanelGroup, selections: Record<string, string>, onChange: (material: string) => void }) => {
+    const material = normalizeFonduriMaterial(selections[fonduriMaterialKey(group)]);
+    return (
+        <div className="-mt-2 mb-5">
+            <span className="block text-xs font-bold uppercase tracking-wide text-slate-400 mb-1">Material</span>
+            <div className="grid grid-cols-2 gap-2">
+                {FONDURI_EU_PANEL_MATERIALS.map((m) => (
+                    <button
+                        key={m.id}
+                        type="button"
+                        aria-pressed={material === m.id}
+                        onClick={() => onChange(m.id)}
+                        className={`rounded-lg border px-3 py-2 text-left text-sm transition-all ${material === m.id ? "border-emerald-500 bg-emerald-600/15 text-white ring-1 ring-emerald-500" : "border-slate-700 text-slate-300 hover:border-slate-500"}`}
+                    >
+                        <span className="block font-bold">{m.label}{m.id === "alucobond" ? " (+30%)" : ""}</span>
+                    </button>
+                ))}
+            </div>
+            <p className="mt-1 text-xs text-slate-400">{FONDURI_EU_PANEL_MATERIALS.find((m) => m.id === material)?.description}</p>
+        </div>
+    );
+};
 
 import { euFundsProducts } from "@/lib/products/eu-funds-products";
 
@@ -83,6 +115,7 @@ const fonduriFaqs: QA[] = [
     { question: "Sunt materialele conforme cu manualul de identitate?", answer: "Da, respectăm cu strictețe manualul de identitate vizuală pentru fiecare program (PNRR, Regio, etc.), folosind fonturile, culorile și elementele grafice obligatorii." },
     { question: "Ce include comunicatul de presă?", answer: "Serviciul include redactarea textului, publicarea acestuia și oferirea dovezii de publicare cu confirmarea unui trafic de minim 3.000 de vizitatori unici (astfel se respectă rigorile multor finanțări)." },
     { question: "Panourile sunt rezistente la exterior?", answer: "Da, panourile temporare și plăcile permanente sunt realizate din materiale rezistente la intemperii (PVC Forex, Bond sau Banner) și printate cu cerneală UV." },
+    { question: "PVC sau Alucobond?", answer: "PVC-ul (Forex) e varianta standard, ușoară și economică. Alucobondul este un compozit rigid din aluminiu: mai durabil, nu se deformează la soare și are aspect premium. Costă cu 30% mai mult decât PVC-ul (ex. 200 lei PVC → 260 lei Alucobond)." },
 ];
 
 export default function FonduriEUConfigurator({ productSlug }: { productSlug?: string }) {
@@ -111,7 +144,9 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
         autoMici: "none",
         autoMari: "none",
         panouTemporar: "none",
-        placaPermanenta: "none"
+        placaPermanenta: "none",
+        flyere: "none",
+        mape: "none"
     });
     const [orderNotes, setOrderNotes] = useState("");
     const [activeTab, setActiveTab] = useState("descriere");
@@ -155,6 +190,10 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
         const sp = new URLSearchParams(window.location.search);
         const fromUrl = fonduriSelectionsFromParams(sp);
         if (fromUrl) setSelections(fromUrl);
+        else {
+            const materials = fonduriMaterialsFromParams(sp);
+            if (Object.keys(materials).length) setSelections(prev => ({ ...prev, ...materials }));
+        }
         setProjectData(fonduriProjectFromParams(sp));
         setUtm(fonduriUtmFromParams(sp));
     }, []);
@@ -174,6 +213,11 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
     }, [productSlug, currentProduct]);
 
     const groups = useMemo(() => getFonduriEUGroups(isRegio || false), [isRegio]);
+    // Prețurile din listă pe materialul ales (Alucobond = PVC × 1,3)
+    const panelOptions = (group: FonduriPanelGroup) => {
+        const material = normalizeFonduriMaterial(selections[fonduriMaterialKey(group)]);
+        return groups[group].options.map(o => ({ ...o, price: fonduriPanelPrice(o.price, material) }));
+    };
 
     // Pricing
     const priceData = useMemo(() => calculateFonduriEUPrice({ selections, isRegio: isRegio || false }), [selections, isRegio]);
@@ -191,13 +235,15 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
         const parts = [];
         if (selections.afisInformativ !== "none") parts.push("Afiș");
         if (selections.autoMici !== "none" || selections.autoMari !== "none") parts.push("Autocolante");
+        if (selections.flyere && selections.flyere !== "none") parts.push("Flyere");
+        if (selections.mape && selections.mape !== "none") parts.push("Mape");
         return parts.length ? parts.join(", ") : "Materiale Informare";
     }, [selections]);
 
     const summaryStep3 = useMemo(() => {
         const parts = [];
-        if (selections.panouTemporar !== "none") parts.push("Panouri");
-        if (selections.placaPermanenta !== "none") parts.push("Placă");
+        if (selections.panouTemporar !== "none") parts.push(normalizeFonduriMaterial(selections.panouTemporarMaterial) === "alucobond" ? "Panou Alucobond" : "Panouri");
+        if (selections.placaPermanenta !== "none") parts.push(normalizeFonduriMaterial(selections.placaPermanentaMaterial) === "alucobond" ? "Placă Alucobond" : "Placă");
         return parts.length ? parts.join(", ") : "Panouri & Plăci";
     }, [selections]);
 
@@ -224,13 +270,9 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
             return;
         }
 
-        const selectedItems = Object.entries(selections)
-            .filter(([_, val]) => val !== "none")
-            .map(([key, val]) => {
-                const group = groups[key as keyof typeof groups];
-                const opt = group?.options.find(o => o.id === val);
-                return `${group?.title}: ${opt?.label}`;
-            });
+        // „Panou temporar: 80×50 cm · Material: Alucobond” — materialul ajunge și separat, pentru producție
+        const selectedItems = fonduriCartLines(selections, groups);
+        const material = fonduriMaterialSummary(selections, groups);
 
         addItem({
             id: `fonduri-eu-${Date.now()}`,
@@ -240,6 +282,7 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
             quantity: 1,
             metadata: {
                 "Configurație": selectedItems.join(" | "),
+                ...(material ? { "Material": material } : {}),
                 "Note": orderNotes,
                 artworkUrl: artworkUrl,
                 ...(fonduriProjectSummary(projectData) ? { "Date proiect": fonduriProjectSummary(projectData) } : {}),
@@ -320,7 +363,7 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
                                 </div>
                             </AccordionStep>
 
-                            <AccordionStep stepNumber={2} title="Afișe & Autocolante" summary={summaryStep2} isOpen={activeStep === 2} onClick={() => setActiveStep(2)}>
+                            <AccordionStep stepNumber={2} title="Afișe, Autocolante, Flyere & Mape" summary={summaryStep2} isOpen={activeStep === 2} onClick={() => setActiveStep(2)}>
                                 <div className="py-2">
                                     <SelectGroup
                                         label="Afiș Informativ (Interior)"
@@ -340,6 +383,18 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
                                         value={selections.autoMari}
                                         onChange={(v) => setSelections(p => ({ ...p, autoMari: v }))}
                                     />
+                                    <SelectGroup
+                                        label="Flyere cu datele proiectului (A5, color, 135 g)"
+                                        options={groups.flyere.options}
+                                        value={selections.flyere}
+                                        onChange={(v) => setSelections(p => ({ ...p, flyere: v }))}
+                                    />
+                                    <SelectGroup
+                                        label="Mape de prezentare"
+                                        options={groups.mape.options}
+                                        value={selections.mape}
+                                        onChange={(v) => setSelections(p => ({ ...p, mape: v }))}
+                                    />
                                 </div>
                             </AccordionStep>
 
@@ -347,16 +402,18 @@ export default function FonduriEUConfigurator({ productSlug }: { productSlug?: s
                                 <div className="py-2">
                                     <SelectGroup
                                         label="Panou Temporar"
-                                        options={groups.panouTemporar.options}
+                                        options={panelOptions("panouTemporar")}
                                         value={selections.panouTemporar}
                                         onChange={(v) => setSelections(p => ({ ...p, panouTemporar: v }))}
                                     />
+                                    <PanelMaterialToggle group="panouTemporar" selections={selections} onChange={(m) => setSelections(p => ({ ...p, [fonduriMaterialKey("panouTemporar")]: m }))} />
                                     <SelectGroup
                                         label="Placă Permanentă"
-                                        options={groups.placaPermanenta.options}
+                                        options={panelOptions("placaPermanenta")}
                                         value={selections.placaPermanenta}
                                         onChange={(v) => setSelections(p => ({ ...p, placaPermanenta: v }))}
                                     />
+                                    <PanelMaterialToggle group="placaPermanenta" selections={selections} onChange={(m) => setSelections(p => ({ ...p, [fonduriMaterialKey("placaPermanenta")]: m }))} />
                                 </div>
                             </AccordionStep>
                         </div>

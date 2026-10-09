@@ -16,6 +16,7 @@ import {
     PLIANTE_CONSTANTS,
     PVC_FOREX_CONSTANTS,
     getFonduriEUGroups,
+    fonduriMaterialsFromParams,
     type AutocolantesMaterialKey,
     type PlianteFoldType,
     type PlianteWeightKey,
@@ -410,6 +411,8 @@ export const FONDURI_DEFAULT_SELECTIONS: Record<string, string> = {
     autoMari: "none",
     panouTemporar: "none",
     placaPermanenta: "none",
+    flyere: "none",
+    mape: "none",
 };
 
 export function fonduriInitialSelections(sp: ParamSource, isRegio = false): Record<string, string> {
@@ -419,7 +422,7 @@ export function fonduriInitialSelections(sp: ParamSource, isRegio = false): Reco
         const v = sp.get(key);
         if (v && groups[key]?.options.some((o) => o.id === v)) out[key] = v;
     }
-    return out;
+    return { ...out, ...fonduriMaterialsFromParams(sp) };
 }
 
 // ---------------------------------------------------------------------------

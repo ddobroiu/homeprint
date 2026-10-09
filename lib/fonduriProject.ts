@@ -6,7 +6,7 @@
 // Fără React aici — modulul e folosit și de paginile server (ex. /proiect/[cod]).
 // Prețul rămâne suma produselor alese (calculateFonduriEUPrice), fără pachete.
 
-import { getFonduriEUGroups } from "@/lib/pricing";
+import { fonduriMaterialsFromParams, getFonduriEUGroups } from "@/lib/pricing";
 
 type ParamSource = { get(name: string): string | null };
 
@@ -19,10 +19,12 @@ export const FONDURI_EMPTY_SELECTIONS: Record<string, string> = {
     autoMari: "none",
     panouTemporar: "none",
     placaPermanenta: "none",
+    flyere: "none",
+    mape: "none",
 };
 
 /**
- * Produsele preselectate din adresă, ex. ?placaPermanenta=80x50&panouTemporar=200x150.
+ * Produsele preselectate din adresă, ex. ?placaPermanenta=80x50&panouTemporar=200x150&placaPermanentaMaterial=alucobond.
  * Întoarce null dacă adresa nu conține nicio opțiune validă.
  */
 export function fonduriSelectionsFromParams(sp: ParamSource, isRegio = false): Record<string, string> | null {
@@ -36,6 +38,8 @@ export function fonduriSelectionsFromParams(sp: ParamSource, isRegio = false): R
             touched = true;
         }
     }
+    // Materialul panoului/plăcii (PVC implicit, Alucobond = +30%): ?panouTemporarMaterial=alucobond, ?material=alucobond
+    Object.assign(out, fonduriMaterialsFromParams(sp));
     return touched ? out : null;
 }
 
