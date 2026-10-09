@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  // Pe GitHub Actions (3 nuclee) /banner-verso si /rollup depasesc uneori 60 s la generarea statica
+  staticPageGenerationTimeout: 300,
   // Dev / build local în paralel cu alt agent: NEXT_DIST_DIR=.next-editor npm run dev
   ...(process.env.NEXT_DIST_DIR ? { distDir: process.env.NEXT_DIST_DIR } : {}),
   // Cache-ul ISR (paginile /judet/... și /dimensiuni/..., sute de mii de URL-uri) stă doar în memorie:
