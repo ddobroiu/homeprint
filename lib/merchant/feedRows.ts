@@ -37,9 +37,16 @@ export function merchantFeedRows(
 ): { rows: MerchantFeedRow[]; dropped: MerchantFeedDrop[] } {
     const rows: MerchantFeedRow[] = [];
     const dropped: MerchantFeedDrop[] = [];
-    const logo = `${baseUrl.replace(/\/$/, "")}/logo.png`;
+    // poza de rezervă din merchantImageLink (logo.png / logo.svg, după site) = produs fără poză acceptată
+    const logo = merchantImageLink(undefined, baseUrl);
     const seen = new Set<string>();
-    for (const product of products) {
+    const seenLinks = new Set<string>();
+    // Paginile SEO alternative (id „seo-…”) duc de obicei la același configurator ca produsul principal:
+    // le punem la coadă, ca pe fiecare pagină să rămână articolul principal.
+    const ordered = [...products].sort(
+        (a, b) => Number(String(a.id ?? "").startsWith("seo-")) - Number(String(b.id ?? "").startsWith("seo-"))
+    );
+    for (const product of ordered) {
         const link = withQuantityParam(linkFor(product, baseUrl));
         const id = String(product.id ?? "");
         if (!id || id.length > 50) {
@@ -65,7 +72,14 @@ export function merchantFeedRows(
             dropped.push({ product, link, reason: "id duplicat (alt produs cu același id e deja în feed)" });
             continue;
         }
+        // Un singur articol pe pagină: mai multe titluri diferite cu același link și același preț arată ca
+        // articole duplicate / titlu care nu descrie pagina (risc „Misrepresentation” în Merchant).
+        if (seenLinks.has(link)) {
+            dropped.push({ product, link, reason: "aceeași pagină ca alt articol din feed (titlu SEO alternativ)" });
+            continue;
+        }
         seen.add(id);
+        seenLinks.add(link);
         rows.push({ product, link, price: page.price });
     }
     return { rows, dropped };

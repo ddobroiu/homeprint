@@ -1,5 +1,5 @@
 import React from "react";
-import { COMPANY, CONTACT_EMAIL } from "@/lib/company";
+import { COMPANY, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_TEL } from "@/lib/company";
 import { siteConfig } from "@/lib/siteConfig";
 
 /** Datele de identificare ale operatorului (Legea 365/2002, OUG 34/2014). */
@@ -36,6 +36,15 @@ export default function OperatorDetails({
                         className={dark ? "font-medium text-emerald-400 underline underline-offset-2" : "font-medium text-emerald-700 underline underline-offset-2"}
                     >
                         {CONTACT_EMAIL}
+                    </a>
+                </li>
+                <li>
+                    Telefon / WhatsApp:{" "}
+                    <a
+                        href={`tel:${CONTACT_PHONE_TEL}`}
+                        className={dark ? "font-medium text-emerald-400 underline underline-offset-2" : "font-medium text-emerald-700 underline underline-offset-2"}
+                    >
+                        {CONTACT_PHONE}
                     </a>
                 </li>
             </ul>

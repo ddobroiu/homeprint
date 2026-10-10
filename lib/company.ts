@@ -27,8 +27,12 @@ export const COMPANY = {
     eFactura: true,
 } as const;
 
-/** Adresa de e-mail de contact a site-ului curent (singurul canal oficial de contact). */
+/** Adresa de e-mail de contact a site-ului curent. */
 export const CONTACT_EMAIL = "contact@homeprint.ro";
+
+/** Telefon / WhatsApp, afișat în subsol și pe pagina de contact (Google Merchant cere datele de contact vizibile, ca pe ShopPrint). */
+export const CONTACT_PHONE = "0750 473 111";
+export const CONTACT_PHONE_TEL = "+40750473111";
 
 /** Mențiunea de TVA care însoțește orice preț afișat. */
 export const VAT_NOTE = "preț final; furnizorul nu este plătitor de TVA";

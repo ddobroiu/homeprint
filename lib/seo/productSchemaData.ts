@@ -2,6 +2,7 @@ import { siteConfig } from "@/lib/siteConfig";
 import { getFromPrice } from "./fromPrice";
 import { resolveLocalProductKey } from "./siteSpecialization";
 import { getLocalProductFacts } from "./localProductFacts";
+import { landingPriceFor } from "@/lib/merchant/landingPrice";
 
 export type ProductSchemaInput = {
   name: string; description: string; image: string; url: string;
@@ -17,7 +18,12 @@ export function productSchemaData(input: ProductSchemaInput) {
   const from = key ? getFromPrice([key]) : null;
   const facts = key ? getLocalProductFacts([key])?.facts : undefined;
   const supplied = typeof input.price === "number" ? input.price : Number(input.price?.trim().replace(",", "."));
-  const price = from?.price ?? supplied;
+  // Configuratoarele din Google Merchant: datele structurate dau exact prețul cu care se deschide pagina
+  // (același ca în feed), nu „de la X” calculat pe altă variantă (ex. canvas rulat 264 lei vs. 162 lei pe șasiu).
+  const landing = url.origin === origin.origin ? landingPriceFor(url.pathname, new URLSearchParams()) : null;
+  const landingPrice = landing && landing.price > 0 ? Math.round(landing.price * 100) / 100 : null;
+  const price = landingPrice ?? from?.price ?? supplied;
+  const aggregate = !landingPrice && !!from;
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org", "@type": "Product",
     name: input.name, description: facts?.what || input.description,
@@ -27,9 +33,9 @@ export function productSchemaData(input: ProductSchemaInput) {
   };
   if (Number.isFinite(price) && price > 0) {
     schema.offers = {
-      "@type": from ? "AggregateOffer" : "Offer",
-      url: url.href, priceCurrency: from ? "RON" : input.currency || "RON",
-      ...(from ? { lowPrice: price } : { price }),
+      "@type": aggregate ? "AggregateOffer" : "Offer",
+      url: url.href, priceCurrency: aggregate || landingPrice ? "RON" : input.currency || "RON",
+      ...(aggregate ? { lowPrice: price } : { price }),
       availability: `https://schema.org/${input.availability || "InStock"}`,
       seller: { "@type": "Organization", name: siteConfig.name },
     };

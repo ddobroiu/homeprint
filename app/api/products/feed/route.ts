@@ -19,10 +19,9 @@ export async function GET() {
         const products = (await getProducts()).filter(includeProductInMerchantFeed);
 
         const baseUrl = (siteConfig.url || 'https://www.HomePrint.ro').replace(/\/$/, '');
-        const shippingOffer = merchantStandardShippingOffer();
 
         const feedItems = merchantFeedRows(products, baseUrl, merchantProductCanonicalLink).rows
-            .map((row) => mapProductToXml(row, baseUrl, shippingOffer))
+            .map((row) => mapProductToXml(row, baseUrl, merchantStandardShippingOffer(row.price)))
             .filter((block): block is string => Boolean(block));
 
         const xml = `<?xml version="1.0" encoding="UTF-8" ?>

@@ -68,6 +68,10 @@ export const MERCHANT_PAGE_EXCLUSIONS: Array<{ reason: string; test: (path: stri
         test: (path, title) => (path.startsWith("/shop/") || path.startsWith("/banner-product/")) && PROMO_THEMED.test(title),
     },
     {
+        reason: "text promoțional în titlu („ieftin”, „preț mic”)",
+        test: (_path, title) => /\bieftin|\bpre[tț] mic\b|cel mai bun pre[tț]/i.test(title),
+    },
+    {
         reason: "produs sezonier (Mărțișor / 8 Martie)",
         test: (path) => path === "/configurator/canvas-martisor" || path === "/configurator/canvas-8-martie",
     },

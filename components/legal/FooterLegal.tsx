@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ANPC_SAL_URL, COMPANY, CONTACT_EMAIL, LEGAL_LINKS } from "@/lib/company";
+import { ANPC_SAL_URL, COMPANY, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_TEL, LEGAL_LINKS } from "@/lib/company";
 import { siteConfig } from "@/lib/siteConfig";
 import CookieSettingsLink from "@/components/legal/CookieSettingsLink";
 import GarantieLegalaBadge from "@/components/legal/GarantieLegalaBadge";
@@ -42,6 +42,10 @@ export default function FooterLegal({
                     EUID {COMPANY.euid} · Sediul social: {COMPANY.address.full} · Neplătitor de TVA · E-mail:{" "}
                     <a href={`mailto:${CONTACT_EMAIL}`} className={linkClassName}>
                         {CONTACT_EMAIL}
+                    </a>{" "}
+                    · Telefon / WhatsApp:{" "}
+                    <a href={`tel:${CONTACT_PHONE_TEL}`} className={linkClassName}>
+                        {CONTACT_PHONE}
                     </a>{" "}
                     · Realizat de{" "}
                     <a href="https://e-web.ro" target="_blank" rel="noopener" className={linkClassName}>

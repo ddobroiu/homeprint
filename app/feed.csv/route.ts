@@ -19,7 +19,6 @@ export async function GET() {
     try {
         const products = (await getProducts()).filter(includeProductInMerchantFeed);
         const baseUrl = (siteConfig.url || 'https://www.HomePrint.ro').replace(/\/$/, '');
-        const shippingOffer = merchantStandardShippingOffer();
 
         const headers = [
             'id',
@@ -78,7 +77,7 @@ export async function GET() {
                     escapeCsv(String(productType)),
                     'no',
                     escapeCsv(product.sku || product.id),
-                    escapeCsv(shippingOffer.csvCell),
+                    escapeCsv(merchantStandardShippingOffer(priceNum).csvCell),
                 ].join(',');
             })
             .filter(Boolean) as string[];

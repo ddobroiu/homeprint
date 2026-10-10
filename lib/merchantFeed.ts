@@ -1,5 +1,6 @@
 import type { Product } from "@/lib/products";
 import { siteConfig } from "@/lib/siteConfig";
+import { FREE_SHIPPING_THRESHOLD } from "@/lib/paymentRules";
 
 const MERCHANT_IMAGE_EXT = /\.(jpe?g|png|gif|webp)(\?|#|$)/i;
 
@@ -204,12 +205,18 @@ export type MerchantShippingOffer = {
   csvCell: string;
 };
 
-export function merchantStandardShippingOffer(): MerchantShippingOffer {
+/**
+ * Transportul pentru un articol din feed: tariful standard (24 lei), sau 0 când prețul articolului
+ * atinge pragul de transport gratuit din checkout (lib/paymentRules.ts, 500 lei) — exact cât plătește
+ * clientul pentru acel articol singur în coș (Google compară cu checkoutul).
+ */
+export function merchantStandardShippingOffer(itemPrice?: number): MerchantShippingOffer {
   const std = siteConfig.shipping?.standardDelivery;
-  const price =
+  const standard =
     typeof std?.price === "number" && Number.isFinite(std.price) && std.price >= 0
       ? std.price
       : 24;
+  const price = typeof itemPrice === "number" && itemPrice >= FREE_SHIPPING_THRESHOLD ? 0 : standard;
   const cur = (std?.currency || "RON").toUpperCase();
   const priceAttribute = formatMerchantPriceAttributeStrict(price, cur);
   const service = String(std?.service || "Standard").trim() || "Standard";
