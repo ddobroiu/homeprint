@@ -31,6 +31,8 @@ const CARTS: Array<[string, string, any[]]> = [
     ['Panou PVC 150×100 (5 mm)', 'DE', [{ productId: 'pvc-forex', title: 'PVC Forex 150x100 cm', width: 150, height: 100, quantity: 1, metadata: { Grosime: '5 mm' } }]],
     ['Panou PVC 200×100 (prea mare)', 'HU', [{ productId: 'pvc-forex', title: 'PVC Forex 200x100 cm', width: 200, height: 100, quantity: 1, metadata: { Grosime: '3 mm' } }]],
     ['Roll-up 85×200', 'SE', [{ productId: 'rollup', title: 'Roll-up 85x200', quantity: 1, metadata: { Dimensiune: '85x200 cm' } }]],
+    ['2 panouri PVC 80×50 + autocolant 200×50', 'PL', [{ productId: 'pvc-forex', title: 'PVC Forex 80x50 cm', width: 80, height: 50, quantity: 2, metadata: { Grosime: '10 mm' } }, { productId: 'autocolante', title: 'Autocolant 200x50 cm', quantity: 1, metadata: { width: 200, height: 50 } }]],
+    ['2 panouri PVC 80×50 + autocolant 200×50', 'HU', [{ productId: 'pvc-forex', title: 'PVC Forex 80x50 cm', width: 80, height: 50, quantity: 2, metadata: { Grosime: '10 mm' } }, { productId: 'autocolante', title: 'Autocolant 200x50 cm', quantity: 1, metadata: { width: 200, height: 50 } }]],
     ['10 tricouri', 'BG', [{ productId: 'tricouri', title: 'Tricou personalizat', quantity: 10 }]],
 ];
 
@@ -60,7 +62,7 @@ async function main() {
         if (!q.ok) { console.log(`${name} → ${country}: OFERTĂ PE EMAIL — ${q.error}`); continue; }
         const live = await checkIntlQuoteLive(q);
         if (live.diff != null && Math.abs(live.diff) > 0.02) bad++;
-        console.log(`${name} → ${country}: DPD tabel ${q.dpdTotal} | DPD pe viu ${live.dpdLive ?? live.error} | client ${q.price} RON`);
+        console.log(`${name} → ${country}: ${q.shipments.length} expedieri | DPD tabel ${q.dpdTotal} | DPD pe viu ${live.dpdLive ?? live.error} | client ${q.price} RON`);
         console.log(`    ${describeIntlQuote(q)}: ${q.parcels.map((p) => `${p.kind} ${p.lengthCm}×${p.widthCm}×${p.heightCm} cm, ${p.weightKg} kg real / ${p.volumetricKg} kg vol.`).join('; ')}`);
     }
     if (process.argv.includes('--tarife')) bad += await checkTariffs();

@@ -5,8 +5,10 @@
 // Tarifele sunt cele din contractul nostru DPD, citite pe 10.10.2026 cu POST /calculate
 // (sumă finală cu TVA 21% + combustibil 22,2%; nu suntem plătitori de TVA, deci totalul = costul nostru).
 // Verificare / actualizare: `npx tsx scripts/check-dpd-intl.ts` (compară tabelul cu API-ul DPD).
-// - 2212 DPD REGIONAL CEE: mai multe colete într-o expediere, taxat pe greutatea taxabilă totală.
-// - 2303 DPD INTERNATIONAL (ROAD): un singur colet pe expediere → fiecare colet e o expediere separată.
+// - 2212 DPD REGIONAL CEE: Ungaria și Bulgaria primesc mai multe colete într-o expediere (taxat pe greutatea
+//   taxabilă totală); PL, CZ, SK, SI, HR, GR primesc UN SINGUR colet pe expediere (API: „Allowed [1, 1]”).
+// - 2303 DPD INTERNATIONAL (ROAD): un singur colet pe expediere.
+// Unde nu se acceptă mai multe colete, fiecare colet e o expediere separată (preț și AWB separat).
 // - Taxă manipulare 20 lei + TVA = 24,20 lei pentru fiecare colet cu o latură peste 100 cm.
 // Țările fără niciun serviciu DPD în contract (ex. Irlanda, Cipru, Malta, Norvegia, Elveția, UK, SUA,
 // Republica Moldova, Serbia) nu apar în listă.
@@ -25,15 +27,17 @@ type Tariff = {
     serviceName: string;
     /** [greutate maximă kg, preț total RON] crescător */
     bands: Array<[number, number]>;
-    /** RON pe fiecare kg (rotunjit în sus) peste ultima treaptă — doar 2212 (expediere cu mai multe colete) */
+    /** RON pe fiecare kg (rotunjit în sus) peste ultima treaptă — doar la expedierile cu mai multe colete */
     perKgOver?: number;
+    /** DPD acceptă mai multe colete într-o expediere (verificat cu /calculate, parcelsCount 2) */
+    multiParcel: boolean;
 };
 
-const CEE_NEAR: Tariff = { serviceId: 2212, serviceName: 'DPD Regional CEE', bands: [[1, 29.85], [3, 36.14], [5, 53.47], [7, 73.94], [10, 94.42], [20, 133.78], [30, 218.82]], perKgOver: 7.48 };
-const CEE: Tariff = { serviceId: 2212, serviceName: 'DPD Regional CEE', bands: [[1, 40.87], [3, 46.38], [5, 72.37], [7, 97.56], [10, 132.99], [20, 181.02], [30, 255.04]], perKgOver: 7.48 };
-const WEST_1: Tariff = { serviceId: 2303, serviceName: 'DPD International', bands: [[3, 98.47], [10, 110.86], [20, 123.14], [31.5, 147.72]] };
-const WEST_2: Tariff = { serviceId: 2303, serviceName: 'DPD International', bands: [[3, 164.96], [10, 179.91], [20, 195.04], [31.5, 224.95]] };
-const WEST_3: Tariff = { serviceId: 2303, serviceName: 'DPD International', bands: [[3, 224.95], [10, 344.96], [20, 404.94], [31.5, 449.97]] };
+const CEE_NEAR: Tariff = { serviceId: 2212, serviceName: 'DPD Regional CEE', bands: [[1, 29.85], [3, 36.14], [5, 53.47], [7, 73.94], [10, 94.42], [20, 133.78], [30, 218.82]], perKgOver: 7.48, multiParcel: true };
+const CEE: Tariff = { serviceId: 2212, serviceName: 'DPD Regional CEE', bands: [[1, 40.87], [3, 46.38], [5, 72.37], [7, 97.56], [10, 132.99], [20, 181.02], [30, 255.04]], perKgOver: 7.48, multiParcel: false };
+const WEST_1: Tariff = { serviceId: 2303, serviceName: 'DPD International', bands: [[3, 98.47], [10, 110.86], [20, 123.14], [31.5, 147.72]], multiParcel: false };
+const WEST_2: Tariff = { serviceId: 2303, serviceName: 'DPD International', bands: [[3, 164.96], [10, 179.91], [20, 195.04], [31.5, 224.95]], multiParcel: false };
+const WEST_3: Tariff = { serviceId: 2303, serviceName: 'DPD International', bands: [[3, 224.95], [10, 344.96], [20, 404.94], [31.5, 449.97]], multiParcel: false };
 
 export type IntlCountry = { code: string; name: string; isoNumeric: number; tariff: Tariff };
 
@@ -103,10 +107,10 @@ export type IntlQuote = {
     error?: string;
 };
 
-/** Gruparea coletelor în expedieri: 2212 = toate într-o expediere; 2303 = câte una pe colet. */
+/** Gruparea coletelor în expedieri: toate într-una unde DPD acceptă mai multe colete (HU, BG), altfel câte una pe colet. */
 export function groupShipments(t: Tariff, parcels: Parcel[]): Parcel[][] {
     if (!parcels.length) return [];
-    return t.serviceId === 2212 ? [parcels] : parcels.map((p) => [p]);
+    return t.multiParcel ? [parcels] : parcels.map((p) => [p]);
 }
 
 export function quoteInternationalShipping(country: string | null | undefined, items: any[]): IntlQuote {

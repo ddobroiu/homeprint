@@ -2,7 +2,9 @@ import { alerta } from '@/lib/alerts';
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { verifyAdminSession } from '@/lib/adminSession';
-import { createShipment, getPickupPoints, printExtended, trackingUrlForAwb } from '@/lib/dpdService';
+import { createShipment, getPickupPoints, printExtended, trackingUrlForAwb, validateShipment } from '@/lib/dpdService';
+import { intlCountry } from '@/lib/intlShipping';
+import { intlShipmentRequests } from '@/lib/dpdIntlLive';
 import { sendEmail } from '@/lib/email';
 import { calculateShippingParams, determinePackingType } from '@/lib/shippingUtils';
 import { declaredPackage } from '@/lib/packageInfo';
@@ -33,11 +35,12 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
     };
 
     const countryCode = (address.country || 'RO').toUpperCase();
-    const countryId = COUNTRY_IDS[countryCode] || 642; // default RO
+    const countryId = COUNTRY_IDS[countryCode] || intlCountry(countryCode)?.isoNumeric || 642; // default RO
 
     // Ajustare pentru intern vs internațional
     if (countryCode !== 'RO') {
-      serviceId = 2303; // DPD Classic International
+      // serviciul din contract pentru țara respectivă: 2212 Regional CEE (est) / 2303 International (vest)
+      serviceId = intlCountry(countryCode)?.tariff.serviceId || 2303;
     }
 
     if (!serviceId) return NextResponse.json({ ok: false, message: 'DPD serviceId unavailable' }, { status: 500 });
@@ -118,8 +121,26 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
 
     console.log('[emit-awb] Creating shipment for order:', order.orderNo, 'with weight:', calculatedWeight);
 
-    // Create shipment via DPD service
-    const created = await createShipment(shipment);
+    // Internațional: o expediere pe colet acolo unde DPD nu acceptă mai multe colete (toate țările în afară de HU / BG),
+    // cu coletele reale (lib/parcels.ts). Le validăm pe toate înainte să creăm vreuna, ca să nu rămână AWB-uri pe jumătate.
+    let shipmentsToCreate: any[] = [shipment];
+    if (countryCode !== 'RO') {
+      const built = intlShipmentRequests(shipment, countryCode, order.items || [], address?.strada_nr);
+      if (built.error) return NextResponse.json({ ok: false, message: built.error }, { status: 400 });
+      shipmentsToCreate = built.requests;
+      for (const [k, reqShipment] of shipmentsToCreate.entries()) {
+        const v = await validateShipment(reqShipment);
+        if (!v.valid) {
+          const msg = v.error?.message || v.error?.context || 'expediere invalidă';
+          return NextResponse.json({ ok: false, message: `DPD (colet ${k + 1}/${shipmentsToCreate.length}): ${msg}` }, { status: 400 });
+        }
+      }
+    }
+
+    // Create shipment(s) via DPD service
+    const createdAll: any[] = [];
+    for (const reqShipment of shipmentsToCreate) {
+    const created = await createShipment(reqShipment);
     if ((created as any)?.error || !created?.id) {
       const dpdError = (created as any)?.error;
       const errorMsg = dpdError?.message || dpdError?.context || 'Eroare creare expediție';
@@ -128,12 +149,16 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
       return NextResponse.json({ 
         ok: false, 
         message: `DPD: ${errorMsg}`, 
-        raw: created 
+        raw: created,
+        createdAwbs: createdAll.map((c) => String(c.id)),
       }, { status: 400 });
     }
+    createdAll.push(created);
+    }
 
-    const shipmentId = created.id!;
-    const parcels = created.parcels || [];
+    const shipmentId = String(createdAll[0].id);
+    const allAwbs = createdAll.map((c) => String(c.id)).join(', ');
+    const parcels = createdAll.flatMap((c) => c.parcels || []);
 
     // Optional: print label PDF (try to generate label before saving)
     let base64: string | undefined;
@@ -149,6 +174,8 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
     // Save AWB to order, include label if generated
     try {
       const updateData: any = { awbNumber: shipmentId, awbCarrier: 'DPD' };
+      // mai multe expedieri (internațional, câte un colet): toate AWB-urile rămân pe adresa comenzii
+      if (createdAll.length > 1) updateData.shippingAddress = { ...address, intlAwbs: createdAll.map((c) => String(c.id)) };
       if (base64) {
         updateData.awbLabelBase64 = base64;
         updateData.awbLabelFileName = labelFileName;
@@ -170,7 +197,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
       const trackingUrl = trackingUrlForAwb(shipmentId);
       if (address?.email || (order as any).user?.email) {
         const subject = `AWB DPD ${shipmentId}`;
-        const html = `<p>Bună ${address?.nume_prenume || (order as any).user?.name || ''},</p><p>Am emis AWB-ul: <strong>${shipmentId}</strong>.</p><p>Urmărește livrarea: <a href="${trackingUrl}">${trackingUrl}</a></p>`;
+        const html = `<p>Bună ${address?.nume_prenume || (order as any).user?.name || ''},</p><p>Am emis ${createdAll.length > 1 ? 'AWB-urile' : 'AWB-ul'}: <strong>${allAwbs}</strong>.</p><p>Urmărește livrarea: <a href="${trackingUrl}">${trackingUrl}</a></p>`;
         await sendEmail({
           from: process.env.EMAIL_FROM || 'contact@HomePrint.ro',
           to: address?.email || (order as any).user?.email,
@@ -184,7 +211,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
     }
 
     const trackingUrl = trackingUrlForAwb(shipmentId);
-    return NextResponse.json({ ok: true, shipmentId, awb: String(shipmentId), trackingUrl, hasLabel: !!base64 });
+    return NextResponse.json({ ok: true, shipmentId, awb: String(shipmentId), awbs: createdAll.map((c) => String(c.id)), trackingUrl, hasLabel: !!base64 });
   } catch (e: any) {
     console.error('[API /admin/orders/[id]/emit-awb] Error:', e?.message || e);
     return NextResponse.json({ ok: false, message: 'Eroare internă' }, { status: 500 });

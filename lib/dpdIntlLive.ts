@@ -5,7 +5,7 @@
 // tabelul (scripts/check-dpd-intl.ts). Doar cereri /calculate (fără expedieri create).
 
 import { intlCountry, groupShipments, type IntlQuote } from './intlShipping';
-import type { Parcel } from './parcels';
+import { planParcels, type Parcel } from './parcels';
 
 const BASE_URL = 'https://api.dpd.ro/v1';
 const CACHE_MS = 6 * 3_600_000;
@@ -80,4 +80,37 @@ export async function checkIntlQuoteLive(quote: IntlQuote, postCode?: string): P
     const diff = Math.round((dpdLive - quote.dpdTotal) * 100) / 100;
     if (diff > 0.5) console.warn(`[DPD intl] costul DPD pe viu (${dpdLive} RON) e mai mare decât tabelul (${quote.dpdTotal} RON) pentru ${quote.country}; actualizează lib/intlShipping.ts`);
     return { dpdLive, dpdTable: quote.dpdTotal, diff, checkedAt };
+}
+
+// --- AWB internațional ---
+// DPD acceptă un singur colet pe expediere peste tot în afară de Ungaria și Bulgaria (verificat cu
+// /calculate și /validation/shipment pe 10.10.2026: „Allowed values are between [1, 1]”). Din cererea
+// de expediere a comenzii facem câte o expediere pe colet (sau una cu toate coletele în HU / BG), cu
+// serviciul țării, coletele reale (dimensiuni + greutate) și adresa străină pe addressLine1.
+export function intlShipmentRequests<T extends { service: any; content: any; recipient?: any }>(
+    base: T, countryCode: string, items: any[], street?: string,
+): { requests: T[]; error?: string } {
+    const c = intlCountry(countryCode);
+    if (!c) return { requests: [], error: `DPD nu livrează în ${countryCode} din contractul nostru.` };
+    const plan = planParcels(items || []);
+    if (plan.problems.length) return { requests: [], error: `Colet peste limitele DPD internațional: ${plan.problems[0]}` };
+    const groups: Array<Array<Pick<Parcel, 'lengthCm' | 'widthCm' | 'heightCm' | 'weightKg'>>> = plan.parcels.length
+        ? groupShipments(c.tariff, plan.parcels)
+        : [[{ lengthCm: 30, widthCm: 20, heightCm: 10, weightKg: 1 }]];
+    const recipient = base.recipient?.address
+        ? { ...base.recipient, address: { ...base.recipient.address, countryId: c.isoNumeric, ...(street && !base.recipient.address.addressLine1 ? { addressLine1: String(street).slice(0, 35) } : {}) } }
+        : base.recipient;
+    const requests = groups.map((g, k) => ({
+        ...base,
+        recipient,
+        service: { ...base.service, serviceId: c.tariff.serviceId },
+        content: {
+            ...base.content,
+            contents: groups.length > 1 ? `${String(base.content?.contents || 'Materiale tipar').slice(0, 55)} (colet ${k + 1}/${groups.length})` : base.content?.contents,
+            parcelsCount: g.length,
+            totalWeight: Math.max(0.1, Math.round(g.reduce((s, p) => s + p.weightKg, 0) * 10) / 10),
+            parcels: g.map((p, i) => ({ seqNo: i + 1, weight: Math.max(0.1, p.weightKg), size: { width: p.widthCm, depth: p.lengthCm, height: p.heightCm } })),
+        },
+    }));
+    return { requests };
 }

@@ -5,6 +5,7 @@ import { quoteInternationalShipping, tariffPrice, INTL_COUNTRIES, intlDeliveryEs
 import { parcelsForItem, packingKind } from "./parcels";
 import { getEstimatedShippingCost, validateDpdShipment, DPD_COUNTRIES } from "./shippingUtils";
 import { shippingFeeFor } from "./paymentRules";
+import { intlShipmentRequests } from "./dpdIntlLive";
 
 const banner = { productId: "banner-generic", title: "Banner Frontlit 300x100 cm", width: 300, height: 100, quantity: 1 };
 const panou = { productId: "pvc-forex", title: "PVC Forex 80x50 cm", width: 80, height: 50, quantity: 1, metadata: { Grosime: "3 mm" } };
@@ -69,4 +70,20 @@ test("termen de livrare: producție 2–3 zile + transport pe zonă, fără week
     assert.equal(hu.label, "Livrare estimată: 16–20 octombrie");
     const fr = intlDeliveryEstimate("FR", mon); // 6–9 zile
     assert.equal(fr.label, "Livrare estimată: 20–23 octombrie");
+});
+
+test("mai multe colete: o expediere pe colet peste tot în afară de HU / BG", () => {
+    const doua = { ...panou, quantity: 2, title: "PVC Forex 100x70 cm", width: 100, height: 70, metadata: { Grosime: "10 mm" } };
+    const pl = quoteInternationalShipping("PL", [doua, sticker]);
+    assert.equal(pl.shipments.length, pl.parcels.length); // PL: câte o expediere pe colet
+    assert.equal(pl.dpdTotal, Math.round(pl.shipments.reduce((s, x) => s + x.dpdTotal, 0) * 100) / 100);
+    const hu = quoteInternationalShipping("HU", [doua, sticker]);
+    assert.equal(hu.shipments.length, 1); // HU: toate coletele într-o expediere
+    assert.ok(hu.parcels.length > 1);
+    const base = { recipient: { address: { siteName: "Warszawa", postCode: "00001" } }, service: { serviceId: 0 }, content: { contents: "Print", package: "BOX", parcelsCount: 1, totalWeight: 1 } };
+    const awb = intlShipmentRequests(base, "PL", [doua, sticker], "ul. Test 1");
+    assert.equal(awb.requests.length, pl.parcels.length);
+    for (const r of awb.requests) { assert.equal(r.content.parcelsCount, 1); assert.equal(r.service.serviceId, 2212); assert.equal((r.recipient as any).address.countryId, 616); }
+    assert.equal(intlShipmentRequests(base, "HU", [doua, sticker]).requests.length, 1);
+    assert.equal(intlShipmentRequests(base, "DE", [doua]).requests[0].service.serviceId, 2303);
 });
