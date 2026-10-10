@@ -6,7 +6,8 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
-      allow: '/',
+      // feedul Google Merchant e sub /api/: îl lăsăm explicit (regula mai lungă bate Disallow /api/)
+      allow: ['/', '/api/products/feed'],
       disallow: [
         '/admin/',
         '/api/',
