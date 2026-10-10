@@ -47,6 +47,7 @@ export function getLocalEditorial(origin: string, judetSlug: string, locSlug: st
     } catch {
         out = null;
     }
+    if (cache.size >= 5000) cache.clear(); // limita: roboții pot cere zeci de mii de localități
     cache.set(key, out);
     return out ?? undefined;
 }

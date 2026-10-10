@@ -146,7 +146,7 @@ const canvasProductsMapped: Product[] = canvasProducts.map(p => {
 const euFundsProductsMapped: Product[] = euFundsProducts.map(p => ({
   id: p.id,
   slug: p.slug,
-  routeSlug: `configurator/fonduri-eu?program=${p.program}&slug=${p.slug}`, // Fixed to point to configurator
+  routeSlug: `configurator/fonduri-eu?program=${encodeURIComponent(p.program)}&slug=${encodeURIComponent(p.slug)}`, // Fixed to point to configurator
   title: p.title,
   description: p.description,
   images: [p.image],

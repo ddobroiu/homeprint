@@ -33,6 +33,10 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y openssl
 
 ENV NODE_ENV=production
+# Memorie (11.10): containerul are 1 GB. glibc deschidea 33 de arene malloc (8 x 4 nuclee),
+# care tineau 300-400 MB fragmentati (sharp/zlib pe fire). 2 arene + heap V8 fix = sub limita.
+ENV MALLOC_ARENA_MAX=2
+ENV NODE_OPTIONS=--max-old-space-size=512
 # ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN addgroup --system --gid 1001 nodejs

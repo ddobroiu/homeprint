@@ -24,6 +24,7 @@ import { STILURI_DATA } from '@/lib/seo/stiluriData';
 import { handleSeoSitemap } from '@/lib/seo/localitySitemap';
 import { INDUSTRIE_DATA } from '@/lib/seo/industriiData';
 import { isNoindexCombination } from "@/lib/seo/thinPages";
+import { finalizeUrlset } from '@/lib/seo/sitemapFinal';
 
 // Real, site-native product/configurator keys (matches the WxH slug parser in
 // app/configurator/[slug]/page.tsx) - used instead of the inflated SEO
@@ -105,7 +106,7 @@ export async function GET(request: Request, props: any) {
             '/configurator/window-graphics', '/configurator/canvas', '/configurator/tapet',
             '/configurator/custom-glass', '/configurator/fonduri-eu', '/fonduri-nationale/placute-femeia-antreprenor', '/materiale/plexiglass', '/materiale/pvc-forex',
             '/contact', '/termeni', '/confidentialitate', '/livrare', '/politica-cookies', '/garantie-legala',
-            '/anpc', '/litigii', '/judet', '/seap'
+            '/judet', '/seap'
         ];
 
         for (const route of staticRoutes) {
@@ -318,6 +319,7 @@ export async function GET(request: Request, props: any) {
         }
     }
     xml += `</urlset>`;
+    xml = finalizeUrlset(xml);
 
     return new Response(xml, {
         headers: {

@@ -1,3 +1,5 @@
+import { GET as childSitemap } from "../server-sitemap/[id]/route";
+import { pruneEmptyChildSitemaps } from "@/lib/seo/sitemapFinal";
 import { countySitemapIds, STANDARD_SIZES_SITEMAP_ID } from "@/lib/seo/localitySitemap";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.homeprint.ro';
@@ -54,6 +56,8 @@ export async function GET() {
     xml += `  <sitemap>\n    <loc>${BASE_URL}/server-sitemap/intents-0</loc>\n  </sitemap>\n`;
 
     xml += `</sitemapindex>`;
+    // Listele goale (ex. recomandat-0 când toate combinațiile sunt noindex) nu intră în index.
+    xml = await pruneEmptyChildSitemaps(xml, (id) => childSitemap(new Request(`${BASE_URL}/server-sitemap/${id}`), { params: Promise.resolve({ id }) }));
 
     return new Response(xml, {
         headers: {
