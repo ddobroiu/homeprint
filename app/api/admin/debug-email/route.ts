@@ -10,10 +10,9 @@ export async function GET() {
     const token = cookieStore.get('admin_auth')?.value;
     const session = verifyAdminSession(token);
     
-    // We keep this behind admin session for security, 
-    // but if you can't log in, you can temporarily remove the session check below to test.
+    // Doar pentru adminul logat (altfel oricine vedea adresele si inceputul cheii Resend).
     if (!session) {
-       // return NextResponse.json({ error: 'Unauthorized. Please login as admin first.' }, { status: 401 });
+      return NextResponse.json({ error: 'Unauthorized. Please login as admin first.' }, { status: 401 });
     }
 
     const key = process.env.RESEND_API_KEY || process.env.REESEND_API_KEY;

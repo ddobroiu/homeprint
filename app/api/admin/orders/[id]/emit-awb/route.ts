@@ -6,6 +6,7 @@ import { createShipment, getPickupPoints, printExtended, trackingUrlForAwb, vali
 import { intlCountry } from '@/lib/intlShipping';
 import { intlShipmentRequests } from '@/lib/dpdIntlLive';
 import { sendEmail } from '@/lib/email';
+import { awbEmail, orderMailFrom } from '@/lib/order-notify-emails';
 import { calculateShippingParams, determinePackingType } from '@/lib/shippingUtils';
 import { declaredPackage } from '@/lib/packageInfo';
 
@@ -194,12 +195,17 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
 
     // Email client with AWB and label
     try {
-      const trackingUrl = trackingUrlForAwb(shipmentId);
       if (address?.email || (order as any).user?.email) {
-        const subject = `AWB DPD ${shipmentId}`;
-        const html = `<p>Bună ${address?.nume_prenume || (order as any).user?.name || ''},</p><p>Am emis ${createdAll.length > 1 ? 'AWB-urile' : 'AWB-ul'}: <strong>${allAwbs}</strong>.</p><p>Urmărește livrarea: <a href="${trackingUrl}">${trackingUrl}</a></p>`;
+        const { subject, html } = awbEmail({
+          carrier: 'DPD',
+          awbs: createdAll.map((c) => ({ awb: String(c.id), url: trackingUrlForAwb(String(c.id)) })),
+          orderNo: order.orderNo,
+          name: address?.nume_prenume || (order as any).user?.name,
+          source: order.source,
+          marketing: order.marketing,
+        });
         await sendEmail({
-          from: process.env.EMAIL_FROM || 'contact@HomePrint.ro',
+          from: orderMailFrom(order.source),
           to: address?.email || (order as any).user?.email,
           subject,
           html,

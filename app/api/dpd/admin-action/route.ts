@@ -3,6 +3,7 @@ import { NextRequest } from 'next/server';
 import { verifyAdminAction, signAdminAction } from '../../../../lib/adminAction';
 import { createShipment, getPickupPoints, printExtended, trackingUrlForAwb, type ShipmentSender, validateShipment } from '../../../../lib/dpdService';
 import { sendEmail } from '../../../../lib/email';
+import { awbEmail, orderMailFrom } from '../../../../lib/order-notify-emails';
 import { prisma } from '../../../../lib/prisma';
 
 export const runtime = 'nodejs';
@@ -278,14 +279,19 @@ export async function GET(req: NextRequest) {
             }
 
             try {
-                const trackingUrl = trackingUrlForAwb(shipmentId);
-                const subject = `AWB DPD ${shipmentId}`;
-                const html = `<p>Bună ${address.nume_prenume},</p>
-<p>Expediția ta a fost confirmată. AWB: <strong>${shipmentId}</strong>.</p>
-<p>Poți urmări statusul livrării aici: <a href="${trackingUrl}">${trackingUrl}</a>.</p>
-<p>Eticheta PDF este atașată.</p>`;
+                const ord = payload.orderId
+                    ? await prisma.order.findUnique({ where: { id: payload.orderId }, select: { orderNo: true, source: true, marketing: true } }).catch(() => null)
+                    : null;
+                const { subject, html } = awbEmail({
+                    carrier: 'DPD',
+                    awbs: [{ awb: String(shipmentId), url: trackingUrlForAwb(String(shipmentId)) }],
+                    orderNo: ord?.orderNo,
+                    name: address.nume_prenume,
+                    source: ord?.source,
+                    marketing: ord?.marketing,
+                });
                 await sendEmail({
-                    from: process.env.EMAIL_FROM || 'contact@HomePrint.ro',
+                    from: orderMailFrom(ord?.source),
                     to: address.email,
                     bcc: process.env.ADMIN_EMAIL ? [process.env.ADMIN_EMAIL] : undefined,
                     subject,

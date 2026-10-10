@@ -124,7 +124,7 @@ async function sendEmails(
           <div style="display: flex; justify-content: space-between; align-items: flex-start;">
             <div style="flex: 1; padding-right: 15px;">
               <div style="font-weight:600; font-size: 15px; color: #1e293b;">${name}</div>
-              <div style="font-size:13px; color:#64748b; margin-top: 4px;">Cantitate: ${qty} buc. @ ${unit} RON/buc.</div>
+              <div style="font-size:13px; color:#64748b; margin-top: 4px;">Cantitate: ${qty} buc. @ ${Number(unit).toFixed(Number(unit) > 0 && Number(unit) < 1 ? 4 : 2)} RON/buc.</div>
               ${artwork ? `<div style="font-size:12px; margin-top:6px;"><a href="${String(artwork)}" target="_blank" style="color:#4f46e5; font-weight:700; text-decoration:none;">Descarcă fișier print</a></div>` : ``}
             </div>
             <div style="font-weight: bold; color: #0f172a; font-size: 15px; white-space: nowrap;">
@@ -154,7 +154,7 @@ async function sendEmails(
         </div>
         ${intlEmailLine}
         <div style="display:flex; justify-content:space-between; color: #0f172a; font-size: 18px; font-weight: bold; margin-top: 8px;">
-          <span>Total de Achitat:</span> <span>${totalAmount.toFixed(2)} RON</span>
+          <span>${paymentType === 'Card' ? 'Total plătit' : 'Total de achitat'}:</span> <span>${totalAmount.toFixed(2)} RON</span>
         </div>
         <div style="display:flex; justify-content:space-between; margin-top: 8px; color: #64748b; font-size: 14px;">
           <span>Metodă de plată:</span> <span style="font-weight: 500;">${paymentType}</span>
@@ -163,9 +163,9 @@ async function sendEmails(
 
       <h2 style="font-size: 18px; color: #0f172a; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px; margin-top: 30px;">Detalii Livrare</h2>
       <p style="font-size: 14px; color: #334155; line-height: 1.5; margin: 10px 0;">
-        <strong>Client:</strong> ${address.nume_prenume}<br/>
-        <strong>Adresă:</strong> ${address.localitate}, ${address.judet}, ${address.strada_nr}<br/>
-        <strong>Telefon:</strong> ${address.telefon}
+        <strong>Client:</strong> ${escapeHtml(address.nume_prenume)}<br/>
+        <strong>Adresă:</strong> ${escapeHtml(address.localitate)}, ${escapeHtml(address.judet)}, ${escapeHtml(address.strada_nr)}<br/>
+        <strong>Telefon:</strong> ${escapeHtml(address.telefon)}
       </p>
     `;
 

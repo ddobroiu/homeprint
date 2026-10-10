@@ -36,9 +36,12 @@ export function getConfigForSource(source?: string | null) {
     return { name: 'Tablou.net', url: 'www.tablou.net', email: 'contact@tablou.net' };
   }
 
+  // site-ul curent (fără sursă): numele cu domeniul real („Tablou” -> „Tablou.net”, nu „Tablou.ro”)
+  const ownDomain = String(siteConfig.domain || (siteConfig as any).url || '').toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '');
+  const tld = ownDomain.includes('.') ? ownDomain.split('.').pop() : 'ro';
   return {
-    name: siteConfig.name.includes('.ro') || siteConfig.name.includes('.net') ? siteConfig.name : `${siteConfig.name}.ro`,
-    url: siteConfig.domain || (siteConfig as any).url?.replace('https://', '').replace('www.', ''),
+    name: /\.(ro|net|eu|com)$/i.test(siteConfig.name) ? siteConfig.name : `${siteConfig.name}.${tld}`,
+    url: ownDomain ? `www.${ownDomain}` : 'www.shopprint.ro',
     email: siteConfig.email
   };
 }
@@ -165,7 +168,7 @@ export async function sendOrderConfirmationEmail(order: any, customContent?: str
         <div style="padding:12px 0; border-bottom:1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center;">
           <div style="flex: 1; padding-right: 15px;">
             <div style="font-weight:600; font-size: 15px; color: #1e293b;">${escapeHtml(it.name || it.title)}</div>
-            <div style="font-size:13px; color:#64748b; margin-top: 4px;">Cantitate: ${it.quantity || it.qty} buc. @ ${it.price || it.unit} RON/buc.</div>
+            <div style="font-size:13px; color:#64748b; margin-top: 4px;">Cantitate: ${it.quantity || it.qty || 1} buc. @ ${Number(it.price || it.unit || 0).toFixed(2)} RON/buc.</div>
           </div>
           <div style="font-weight: bold; color: #0f172a; font-size: 15px; white-space: nowrap;">
             ${Number(it.total || 0).toFixed(2)} RON
@@ -234,7 +237,7 @@ export async function sendNewOrderAdminEmail(order: any, customContent?: string)
 
     const config = getConfigForSource(order.source);
     const orderNo = order.orderNo || (order.id && order.id !== 'N/A' ? order.id.slice(-6).toUpperCase() : 'NO-ID');
-    const adminEmail = process.env.ADMIN_EMAIL || 'contact@HomePrint.ro';
+    const adminEmail = process.env.ADMIN_EMAIL || 'contact@shopprint.ro';
 
     let content = '';
     if (customContent) {
@@ -302,7 +305,8 @@ export async function sendPasswordResetEmail(to: string, token: string, source?:
     const resend = getResend();
     if (!resend) return;
     const config = getConfigForSource(source);
-    const resetLink = `https://${config.url}/login?resetToken=${token}&view=reset`;
+    // pagina care citeste tokenul e /login/reset?token=... (app/login/reset/page.tsx -> /api/auth/reset-password)
+    const resetLink = `https://${config.url}/login/reset?token=${encodeURIComponent(token)}`;
 
     const content = `<p>Am primit o cerere de resetare a parolei pentru contul tău pe ${config.name}.</p>`;
 
@@ -336,7 +340,7 @@ export async function sendContactFormEmail({ name, email, phone, message, subjec
     const resend = getResend();
     if (!resend) return;
     const config = getConfigForSource(source);
-    const adminEmail = process.env.ADMIN_EMAIL || 'contact@HomePrint.ro';
+    const adminEmail = process.env.ADMIN_EMAIL || 'contact@shopprint.ro';
 
     const content = `
       <div style="background:#f1f5f9; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">

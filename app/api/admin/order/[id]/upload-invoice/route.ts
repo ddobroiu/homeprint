@@ -7,6 +7,7 @@ import { prisma } from '../../../../../../lib/prisma';
 import fs from 'fs';
 import path from 'path';
 import { sendEmail } from '../../../../../../lib/email';
+import { invoiceUploadedEmail, orderMailFrom } from '@/lib/order-notify-emails';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -142,12 +143,19 @@ export async function POST(req: Request, ctx: any) {
         const orderBilling = dbBilling || billing || {};
         const to = (orderBilling && orderBilling.email) || orderAddress.email;
         if (to) {
+          const mail = invoiceUploadedEmail({
+            url: secure_url,
+            orderNo: order?.orderNo,
+            name: orderAddress.nume_prenume || orderBilling.name,
+            source: order?.source,
+            marketing: order?.marketing,
+          });
           await sendEmail({
-              attachments: documentAttachments,
-            from: process.env.EMAIL_FROM || 'contact@HomePrint.ro',
+            attachments: documentAttachments,
+            from: orderMailFrom(order?.source),
             to,
-            subject: 'Factura pentru comanda ta - Shopprint',
-            html: `<p>Am adăugat factura pentru comanda ta. Poți descărca fișierul aici: <a href="${secure_url}">Descarcă factura</a></p>`,
+            subject: mail.subject,
+            html: mail.html,
           });
         }
       } catch (e: any) {

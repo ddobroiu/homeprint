@@ -208,12 +208,11 @@ export function decodeBase64PdfToBuffer(base64?: string): Buffer | null {
   return Buffer.from(base64, 'base64');
 }
 
-// Public tracking URL generator for DPD Romania
-// Note: DPD RO tracking page does not document a prefilled query param.
-// We return the main tracking portal and include the AWB separately in emails/UI.
+// Link public de urmarire DPD Romania, cu AWB-ul completat (acelasi format ca in contul clientului
+// si in admin: tracking.dpd.ro/?shipmentNumber=...&language=ro). Fara AWB: pagina generala.
 export function trackingUrlForAwb(awb: string): string {
-  // If in the future DPD documents a deep-link format, update this function.
-  return 'https://tracking.dpd.ro/';
+  const a = String(awb || '').trim();
+  return a ? `https://tracking.dpd.ro/?shipmentNumber=${encodeURIComponent(a)}&language=ro` : 'https://tracking.dpd.ro/';
 }
 
 // --- Location: Sites CSV (for RO counties/localities) ---
