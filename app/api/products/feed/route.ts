@@ -9,6 +9,7 @@ import {
   merchantFeedTitle,
   merchantImageLink,
   merchantProductCanonicalLink,
+  merchantReturnPolicyLabel,
   merchantStandardShippingOffer,
 } from '@/lib/merchantFeed';
 import { merchantFeedRows, type MerchantFeedRow } from '@/lib/merchant/feedRows';
@@ -89,6 +90,7 @@ function mapProductToXml({ product, link, price: priceNum }: MerchantFeedRow, ba
       <g:product_type>${escapeXml(String(productType))}</g:product_type>
       <g:identifier_exists>no</g:identifier_exists>
       <g:mpn>${escapeXml(product.sku || product.id)}</g:mpn>
+      <g:return_policy_label>${merchantReturnPolicyLabel(link, product.title)}</g:return_policy_label>
       <g:shipping>
         <g:country>${escapeXml(shippingOffer.country)}</g:country>
         <g:service>${escapeXml(shippingOffer.service)}</g:service>

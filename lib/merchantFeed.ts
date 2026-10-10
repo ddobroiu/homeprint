@@ -198,6 +198,20 @@ export function normalizeMerchantImageList(
   return out;
 }
 
+/**
+ * Eticheta politicii de retur din Merchant Center (`return_policy_label`):
+ *  - „personalizat” = produse făcute după datele clientului (configuratoare, bannere/modele cu textul lui):
+ *    fără drept de retragere (art. 16 lit. c OUG 34/2014), doar refacere dacă sunt neconforme;
+ *  - „standard” = produse de catalog (drapele, indicatoare, sisteme de afișaj...): retur în 14 zile.
+ * În Merchant Center trebuie create două politici de retur cu exact aceste etichete.
+ */
+export function merchantReturnPolicyLabel(link: string, title: string | undefined): "personalizat" | "standard" {
+  const path = new URL(link, "https://feed.local").pathname;
+  if (/^\/(configurator|materiale|banner-product|shop)\//.test(path)) return "personalizat";
+  if (/personaliz/i.test(String(title || ""))) return "personalizat";
+  return "standard";
+}
+
 export type MerchantShippingOffer = {
   country: string;
   service: string;

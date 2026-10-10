@@ -8,6 +8,7 @@ import {
     merchantFeedTitle,
     merchantImageLink,
     merchantProductCanonicalLink,
+    merchantReturnPolicyLabel,
     merchantStandardShippingOffer,
 } from '@/lib/merchantFeed';
 import { merchantFeedRows } from '@/lib/merchant/feedRows';
@@ -36,6 +37,7 @@ export async function GET() {
             'identifier_exists',
             'mpn',
             'shipping',
+            'return_policy_label',
         ];
 
         const escapeCsv = (field: string | number | undefined | null): string => {
@@ -78,6 +80,7 @@ export async function GET() {
                     'no',
                     escapeCsv(product.sku || product.id),
                     escapeCsv(merchantStandardShippingOffer(priceNum).csvCell),
+                    merchantReturnPolicyLabel(link, product.title),
                 ].join(',');
             })
             .filter(Boolean) as string[];
