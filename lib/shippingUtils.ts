@@ -1,5 +1,6 @@
 import { declaredPackage } from './packageInfo';
 import { isFaItem, onlyFaItems } from './femeia-antreprenor';
+import { INTL_COUNTRIES, quoteInternationalShipping } from './intlShipping';
 
 // Tipuri de împachetare
 export type PackingType = 'rigid' | 'foldable' | 'rolled';
@@ -11,33 +12,11 @@ export const DPD_LIMITS = {
     MAX_GIRTH_CM: 300 // Formula: Lungime + 2*(Lățime + Înălțime) <= 300cm
 };
 
-// Țări acceptate DPD (Zona UE principala)
-export const DPD_COUNTRIES = [
+// Țările din formular: România + țările unde DPD ne livrează efectiv (verificate cu API-ul DPD,
+// lista și tarifele în lib/intlShipping.ts).
+export const DPD_COUNTRIES: { code: string; name: string }[] = [
     { code: 'RO', name: 'România' },
-    { code: 'HU', name: 'Ungaria' },
-    { code: 'BG', name: 'Bulgaria' },
-    { code: 'AT', name: 'Austria' },
-    { code: 'DE', name: 'Germania' },
-    { code: 'IT', name: 'Italia' },
-    { code: 'FR', name: 'Franța' },
-    { code: 'ES', name: 'Spania' },
-    { code: 'GR', name: 'Grecia' },
-    { code: 'BE', name: 'Belgia' },
-    { code: 'NL', name: 'Olanda' },
-    { code: 'PL', name: 'Polonia' },
-    { code: 'CZ', name: 'Cehia' },
-    { code: 'SK', name: 'Slovacia' },
-    { code: 'DK', name: 'Danemarca' },
-    { code: 'SE', name: 'Suedia' },
-    { code: 'FI', name: 'Finlanda' },
-    { code: 'PT', name: 'Portugalia' },
-    { code: 'IE', name: 'Irlanda' },
-    { code: 'HR', name: 'Croația' },
-    { code: 'SI', name: 'Slovenia' },
-    { code: 'EE', name: 'Estonia' },
-    { code: 'LV', name: 'Letonia' },
-    { code: 'LT', name: 'Lituania' },
-    { code: 'LU', name: 'Luxemburg' }
+    ...INTL_COUNTRIES.map((c) => ({ code: c.code, name: c.name })),
 ];
 
 interface ProductDimensions {
@@ -234,21 +213,6 @@ export function estimateDensity(productSlug: string): number {
 
 
 // --- CALCUL COST ---
-const ZONES: Record<string, { base: number, kgPrice: number }> = {
-    'HU': { base: 40, kgPrice: 2 },
-    'BG': { base: 40, kgPrice: 2 },
-    'AT': { base: 60, kgPrice: 4 },
-    'DE': { base: 60, kgPrice: 4 },
-    'GR': { base: 60, kgPrice: 4 },
-    'CZ': { base: 60, kgPrice: 4 },
-    'PL': { base: 60, kgPrice: 4 },
-    'IT': { base: 70, kgPrice: 5 },
-    'FR': { base: 80, kgPrice: 5 },
-    'ES': { base: 90, kgPrice: 6 },
-    'BE': { base: 80, kgPrice: 5 },
-    'NL': { base: 80, kgPrice: 5 },
-    'EUROPE': { base: 100, kgPrice: 8 }
-};
 
 export function getEstimatedShippingCost(countryCode: string | null | undefined, items: any[]): number {
     // Plăcuțele Femeia Antreprenor au transport gratuit; celelalte produse din coș își păstrează transportul.
@@ -273,89 +237,27 @@ export function getEstimatedShippingCost(countryCode: string | null | undefined,
 
     if (code === 'RO') return hasLargeRigidItem ? 40 : 24;
 
-    let totalWeight = 0;
-
-    items.forEach(item => {
-        const q = Number(item.quantity || item.qty || 1);
-        const { w, h } = extractDimensions(item); // Folosim noua funcție
-        const pkg = declaredPackage(item);
-
-        if (pkg) {
-            totalWeight += pkg.kg;
-        } else if (w > 0 && h > 0) {
-            const slugOrId = item.slug || item.productId || item.name || item.title || '';
-            const type = determinePackingType(slugOrId, item);
-            const res = calculateShippingParams({ width: w, height: h, quantity: q, type });
-            totalWeight += res.billingWeight;
-        } else {
-            const name = String(item.slug || item.name || '').toLowerCase();
-            if (name.includes('rollup') || name.includes('roll-up')) totalWeight += (2.5 * q);
-            else if (name.includes('pop-up') || name.includes('spider')) totalWeight += (15.0 * q);
-            // Fallback mai mic pentru produse necunoscute
-            else totalWeight += (0.5 * q);
-        }
-    });
-
-    totalWeight = Math.max(1, Math.ceil(totalWeight));
-    const rate = ZONES[code] || ZONES['EUROPE'];
-
-    return Math.ceil(rate.base + (totalWeight * rate.kgPrice));
+    // Internațional: coletele reale ale coșului (lib/parcels.ts) × tariful DPD al țării + 10% (lib/intlShipping.ts).
+    // Coșurile care nu se pot trimite automat (țară neservită / colet peste limite) sunt blocate în checkout
+    // și la crearea comenzii (internationalShippingError).
+    const quote = quoteInternationalShipping(code, items);
+    return quote.ok ? quote.price : 0;
 }
 
-// --- VALIDARE LIMITE DPD ---
-// --- VALIDARE LIMITE DPD ---
-export function validateDpdShipment(items: any[]): { valid: boolean; error?: string; invalidItem?: any } {
-    for (const item of items) {
-        const q = Number(item.quantity || 1);
-        const { w, h } = extractDimensions(item);
-        const pkg = declaredPackage(item);
+/** Eroarea de livrare internațională pentru coș (null = se poate livra automat; România = mereu null). */
+export function internationalShippingError(countryCode: string | null | undefined, items: any[]): string | null {
+    let code = (countryCode || 'RO').toUpperCase().trim();
+    if (code === 'ROMANIA') code = 'RO';
+    if (code === 'RO') return null;
+    const rest = (items || []).filter((item) => !isFaItem(item));
+    const quote = quoteInternationalShipping(code, rest);
+    return quote.ok ? null : quote.error || 'Livrarea în țara aleasă nu este disponibilă.';
+}
 
-        if (pkg) {
-            // colet declarat (bucățile pot pleca în colete separate): verificăm o bucată
-            if (pkg.unitKg > DPD_LIMITS.MAX_WEIGHT_KG) {
-                return { valid: false, error: `Produsul "${item.title || item.name}" depășește greutatea maximă admisă (31.5kg).`, invalidItem: item };
-            }
-            if (pkg.lengthCm > DPD_LIMITS.MAX_LENGTH_CM) {
-                return { valid: false, error: `Produsul "${item.title || item.name}" are o lungime de ${Math.round(pkg.lengthCm)}cm (max admis ${DPD_LIMITS.MAX_LENGTH_CM}cm).`, invalidItem: item };
-            }
-            continue;
-        }
-
-        if (w > 0 && h > 0) {
-            const slug = item.slug || item.name || '';
-            const type = determinePackingType(slug, item);
-            const { packageDimensions, billingWeight } = calculateShippingParams({
-                width: w, height: h, quantity: q, type
-            });
-
-            // 1. Greutate
-            if (billingWeight > DPD_LIMITS.MAX_WEIGHT_KG) {
-                return {
-                    valid: false,
-                    error: `Produsul "${item.title || item.name}" depășește greutatea maximă admisă (31.5kg).`,
-                    invalidItem: item
-                };
-            }
-
-            // 2. Lungime
-            if (packageDimensions.length > DPD_LIMITS.MAX_LENGTH_CM) {
-                return {
-                    valid: false,
-                    error: `Produsul "${item.title || item.name}" are o lungime de ${Math.round(packageDimensions.length)}cm (max admis ${DPD_LIMITS.MAX_LENGTH_CM}cm). Te rugăm să alegi o dimensiune mai mică.`,
-                    invalidItem: item
-                };
-            }
-
-            // 3. Circumferință (Girth)
-            const girth = packageDimensions.length + 2 * (packageDimensions.width + packageDimensions.height);
-            if (girth > DPD_LIMITS.MAX_GIRTH_CM) {
-                return {
-                    valid: false,
-                    error: `Produsul "${item.title || item.name}" depășește circumferința maximă admisă pentru livrare internațională.`,
-                    invalidItem: item
-                };
-            }
-        }
-    }
-    return { valid: true };
+// --- VALIDARE LIMITE DPD (internațional) ---
+// Coletele reale ale coșului față de limitele DPD internațional (31,5 kg, 175 cm, L+2(l+h) ≤ 300 cm)
+// și țara aleasă; mesajul îi spune clientului că primește oferta de transport pe email.
+export function validateDpdShipment(items: any[], countryCode?: string | null): { valid: boolean; error?: string; invalidItem?: any } {
+    const error = internationalShippingError(countryCode || 'DE', items || []);
+    return error ? { valid: false, error } : { valid: true };
 }

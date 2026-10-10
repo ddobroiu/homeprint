@@ -5,6 +5,8 @@ import { prisma } from './prisma';
 import bcrypt from 'bcryptjs';
 import { sendOrderConfirmationEmail, sendNewOrderAdminEmail } from './email';
 import { getEstimatedShippingCost } from './shippingUtils';
+import { shippingFeeFor } from './paymentRules';
+import { quoteInternationalShipping, describeIntlQuote, intlDeliveryEstimate } from './intlShipping';
 import { oblioVatFields } from '@/lib/company';
 import { redeemDiscountCode } from '@/lib/discount-server';
 import { subscribeFromOrder } from '@/lib/mail-optout';
@@ -103,7 +105,7 @@ async function sendEmails(
 ) {
   try {
     const subtotal = (cart || []).reduce((acc, it) => acc + (Number(it.totalAmount || it.total || (it.price * it.quantity) || 0)), 0);
-    const fee = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : getEstimatedShippingCost(address.country || 'RO', cart);
+    const fee = shippingFeeFor(address.country || 'RO', cart, subtotal);
     const disc = (marketing as any)?.discount && Number((marketing as any).discount.amount) > 0 ? (marketing as any).discount as { code: string; amount: number } : null;
     const discAmount = disc ? Math.min(Number(disc.amount), subtotal) : 0;
     const totalAmount = subtotal - discAmount + fee;
@@ -134,6 +136,11 @@ async function sendEmails(
       `;
     }));
 
+    // Livrare internațională: serviciul DPD, coletele și data estimată (lib/intlShipping.ts)
+    const intlCode = String(address.country || 'RO').toUpperCase().trim();
+    const intlEmailLine = intlCode !== 'RO' && intlCode !== 'ROMANIA'
+      ? `<div style="margin: -4px 0 8px; color: #64748b; font-size: 12px;">${escapeHtml(describeIntlQuote(quoteInternationalShipping(intlCode, cart || [])))}<br>${escapeHtml(intlDeliveryEstimate(intlCode).label)}</div>`
+      : '';
     const content = `
       <h2 style="font-size: 18px; color: #0f172a; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px; margin-top: 0;">Detalii Comandă</h2>
       <div>${itemsHtml.join('')}</div>
@@ -145,6 +152,7 @@ async function sendEmails(
         <div style="display:flex; justify-content:space-between; margin-bottom: 8px; color: #64748b; font-size: 14px;">
           <span>Transport:</span> <span style="font-weight: 500;">${fee.toFixed(2)} RON</span>
         </div>
+        ${intlEmailLine}
         <div style="display:flex; justify-content:space-between; color: #0f172a; font-size: 18px; font-weight: bold; margin-top: 8px;">
           <span>Total de Achitat:</span> <span>${totalAmount.toFixed(2)} RON</span>
         </div>
@@ -237,7 +245,7 @@ export async function fulfillOrder(
       const sub = productsForOblio.reduce((sum, p) => sum + (p.price * p.quantity), 0);
       // Reducerea: linie Oblio care se aplică produselor de deasupra (nu transportului); testat pe proformă 30.09.2026
       if (discount) productsForOblio.push({ name: `Reducere (cod ${discount.code})`, discount: Math.min(discount.amount, sub), discountType: 'valoric', discountAllAbove: 1 } as any);
-      const shipping = sub >= FREE_SHIPPING_THRESHOLD ? 0 : getEstimatedShippingCost(address.country || 'RO', cart);
+      const shipping = shippingFeeFor(address.country || 'RO', cart, sub);
       if (shipping > 0) productsForOblio.push({ name: 'Transport', price: shipping, measuringUnitName: 'buc', ...oblioVatFields(), quantity: 1 });
 
       const invoice = await createOblioInvoice({
@@ -267,7 +275,7 @@ export async function fulfillOrder(
     });
 
     const subtotal = normalized.reduce((s, it) => s + Number(it.total), 0);
-    const fee = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : getEstimatedShippingCost(address.country || 'RO', cart);
+    const fee = shippingFeeFor(address.country || 'RO', cart, subtotal);
     const finalTotal = Math.round((subtotal - Math.min(discount?.amount || 0, subtotal) + fee) * 100) / 100;
 
     // -- DUPLICATE CHECK FOR RAMBURS/OP --

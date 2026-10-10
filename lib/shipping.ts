@@ -1,3 +1,5 @@
+import { INTL_PRODUCTION_DAYS, INTL_TRANSIT_DAYS } from './intlShipping';
+
 export type EtaResult = {
     shipDate: Date;
     minDate: Date;
@@ -71,8 +73,10 @@ export function computeEtaByCounty(countyRaw: string | null | undefined, country
     let codAvailable = true;
 
     if (isInternational) {
-        transitMinDays = 4;
-        transitMaxDays = 7;
+        // producție + transport DPD pe zona țării (lib/intlShipping.ts)
+        const [tMin, tMax] = INTL_TRANSIT_DAYS[country] || [4, 6];
+        transitMinDays = INTL_PRODUCTION_DAYS[0] + tMin;
+        transitMaxDays = INTL_PRODUCTION_DAYS[1] + tMax;
         codAvailable = false;
     } else {
         const isTwoDay = TWO_DAY_COUNTIES.has(county);

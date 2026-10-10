@@ -11,10 +11,12 @@ import { clientIp, tiktokCheckoutMetadata } from '@/lib/tiktok-events';
 import { prisma } from '@/lib/prisma';
 import Stripe from 'stripe';
 import { getEstimatedShippingCost } from '@/lib/shippingUtils';
+import { quoteInternationalShipping, intlQuoteSummary, intlDeliveryEstimate } from '@/lib/intlShipping';
+import { checkIntlQuoteLive } from '@/lib/dpdIntlLive';
 import {
     FREE_SHIPPING_THRESHOLD,
     computeCheckoutTotal,
-    validateCheckoutPaymentMethod,
+    validateCheckoutPaymentMethod, shippingFeeFor,
 } from '@/lib/paymentRules';
 import { metaBuyerFromAddress, metaCheckoutMetadata, metaContentsFromItems, metaContextFromRequest, sendMetaPurchase } from '@/lib/metaCapi';
 import { TRACKING } from '@/lib/company';
@@ -145,13 +147,22 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: paymentError }, { status: 400 });
         }
 
+        // Livrare internațională: coletele, costul DPD (tabel + verificare pe viu cu /calculate) și data estimată
+        // se salvează pe comandă, în adresa de livrare. Prețul pentru client rămâne cel din tabel (același în checkout).
+        const shipCountry = String(orderData.address?.country || 'RO').toUpperCase();
+        if (shipCountry !== 'RO') {
+            const quote = quoteInternationalShipping(shipCountry, (orderData.items || []).filter((it: any) => !isFaItem(it)));
+            const live = quote.shipments.length <= 3 ? await checkIntlQuoteLive(quote, orderData.address?.postCode).catch(() => null) : null;
+            orderData.address.intlShipping = { ...intlQuoteSummary(quote), estimate: intlDeliveryEstimate(shipCountry).label, live };
+        }
+
         // Acordul pentru marketing (același ca la TikTok): numai cu el trimitem Purchase prin Meta Conversions API
         const metaMarketing = orderData.tiktokConsent === true;
 
         if (paymentMethod === 'card') {
             const { items } = orderData;
             const subtotal = items.reduce((s: number, it: any) => s + (Number(it.unitAmount ?? it.price ?? 0) * Number(it.quantity ?? 1)), 0);
-            const costLivrare = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : getEstimatedShippingCost(orderData.address?.country || 'RO', items);
+            const costLivrare = shippingFeeFor(orderData.address?.country || 'RO', items, subtotal);
 
             const origin = req.headers.get('origin') || process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
             const secret = process.env.STRIPE_SECRET_KEY;

@@ -3,7 +3,7 @@ import { guardCheckoutItems } from '@/lib/checkoutGuard';
 import Stripe from 'stripe';
 import { prisma } from '@/lib/prisma';
 import { getEstimatedShippingCost } from '@/lib/shippingUtils';
-import { FREE_SHIPPING_THRESHOLD } from '@/lib/paymentRules';
+import { FREE_SHIPPING_THRESHOLD, shippingFeeFor } from '@/lib/paymentRules';
 import { getAuthSession } from '@/lib/auth';
 
 export const runtime = 'nodejs';
@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
   if (!itemsCheck.ok) return NextResponse.json({ error: itemsCheck.error }, { status: 400 });
 
     const subtotal = (cart ?? []).reduce((s: number, it: any) => s + (Number(it.unitAmount ?? it.price ?? 0) * Number(it.quantity ?? 1)), 0);
-  const costLivrare = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : getEstimatedShippingCost(address?.country || 'RO', cart);
+  const costLivrare = shippingFeeFor(address?.country || 'RO', cart, subtotal);
 
   try {
     const origin =

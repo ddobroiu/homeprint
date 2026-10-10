@@ -28,6 +28,7 @@ import GarantieLegalaLine from "@/components/legal/GarantieLegalaLine";
 import DeliveryInfo from "@/components/DeliveryInfo";
 import DiscountCodeInput from "@/components/DiscountCodeInput";
 import { getEstimatedShippingCost, validateDpdShipment } from "@/lib/shippingUtils";
+import { quoteInternationalShipping, describeIntlQuote, intlDeliveryEstimate } from "@/lib/intlShipping";
 import {
   MIN_CARD_PAYMENT,
   MAX_RAMBURS_LIMIT,
@@ -36,7 +37,7 @@ import {
   hasTextiles,
   BANK_TRANSFER_BENEFICIARY,
   BANK_TRANSFER_BANK_NAME,
-  BANK_TRANSFER_IBAN,
+  BANK_TRANSFER_IBAN, shippingFeeFor,
 } from "@/lib/paymentRules";
 import dynamic from "next/dynamic";
 import type { DpdPointChoice } from "@/components/checkout/DpdPointPicker";
@@ -222,19 +223,26 @@ export default function CheckoutPage() {
 
   const subtotal = useMemo(() => cartTotal || 0, [cartTotal]);
   const shippingCost = useMemo(() => {
-    if (subtotal >= FREE_SHIPPING_THRESHOLD) return 0;
-    return getEstimatedShippingCost(address.country || 'RO', items);
+    return shippingFeeFor(address.country || 'RO', items, subtotal);
   }, [subtotal, items, address.country]);
 
   const dpdCheckResult = useMemo(() => {
     if (address.country && address.country !== 'RO') {
-      return validateDpdShipment(items || []);
+      return validateDpdShipment(items || [], address.country);
     }
     return { valid: true };
   }, [address.country, items]);
 
   const dpdError = dpdCheckResult.valid ? null : dpdCheckResult.error;
   const invalidItem = dpdCheckResult.valid ? null : dpdCheckResult.invalidItem;
+
+  // Livrare internațională: coletele + costul DPD (lib/intlShipping.ts) și data estimată
+  const isIntl = !!address.country && address.country !== 'RO';
+  const intlInfo = useMemo(() => {
+    if (!isIntl) return null;
+    const quote = quoteInternationalShipping(address.country, items || []);
+    return { details: quote.ok ? describeIntlQuote(quote) : null, eta: intlDeliveryEstimate(address.country).label };
+  }, [isIntl, address.country, items]);
 
   const totalWithShipping = useMemo(
     () => Math.max(0, subtotal + shippingCost - discountAmount),
@@ -645,7 +653,7 @@ export default function CheckoutPage() {
     }
 
     if (address.country && address.country !== 'RO') {
-      const dpdCheck = validateDpdShipment(items);
+      const dpdCheck = validateDpdShipment(items, address.country);
       if (!dpdCheck.valid) {
         showToast(dpdCheck.error || "Eroare livrare internațională.", "error");
         return;
@@ -667,7 +675,7 @@ export default function CheckoutPage() {
     setPlacing(true);
 
     const shippingCostForPayload =
-      cartTotal >= FREE_SHIPPING_THRESHOLD ? 0 : getEstimatedShippingCost(address.country || 'RO', items);
+      shippingFeeFor(address.country || 'RO', items, cartTotal);
 
     // Impartim numele complet (tinut nedespartit in firstName cat timp s-a
     // editat) in prenume/nume abia acum, o singura data, pentru payload.
@@ -781,7 +789,7 @@ export default function CheckoutPage() {
   const discountApplied = discountAmount > 0;
 
   const freeShippingRemaining = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
-  const hasFreeShipping = items.length > 0 && shippingCost === 0;
+  const hasFreeShipping = items.length > 0 && shippingCost === 0 && !dpdError;
 
   // DEBUG: Log pentru a verifica dacă există probleme de render
   useEffect(() => {
@@ -1055,7 +1063,13 @@ export default function CheckoutPage() {
                     )}
                   </div>
 
-                  {!hasFreeShipping && (
+                  {intlInfo && (
+                    <div className="text-xs text-slate-700 dark:text-slate-300 space-y-0.5 -mt-1">
+                      {intlInfo.details && <p>{intlInfo.details} · fără transport gratuit în afara României</p>}
+                      {!dpdError && <p className="font-semibold">{intlInfo.eta}</p>}
+                    </div>
+                  )}
+                  {!hasFreeShipping && !isIntl && (
                     <p className="text-xs text-slate-700 dark:text-slate-300 flex items-start gap-1 mt-1">
                       <AlertCircle className="h-3.5 w-3.5 mt-0.5 text-amber-500" />
                       <span>
