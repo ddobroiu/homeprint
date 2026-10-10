@@ -8,6 +8,7 @@ import { MATERIALE_DATA } from "./materialeData";
 import { INTENT_LABELS } from "./intents";
 import { STILURI_DATA } from "./stiluriData";
 import { REGLEMENTARI_DATA } from "./reglementariData";
+import { campaignLocalKey } from "./thinPages";
 
 /**
  * Lista paginilor /judet/... indexabile pe site-ul curent (= sitemap-ul pe județ).
@@ -61,7 +62,7 @@ export function trafficCountyPaths(county: string): string[] {
     const tail = parts.slice(3);
     if (tail.length > 1 && QUALIFIERS.includes(tail[tail.length - 1])) tail.pop();
     if (!validLocalProduct(tail)) continue; // URL-uri vechi cu afișări, dar produse retrase (404).
-    const key = resolveLocalProductKey(tail);
+    const key = resolveLocalProductKey(tail) ?? campaignLocalKey(tail); // campanie generică → 301 spre cheie
     out.add(key ? `/judet/${county}/${parts[2]}/${key}` : `/${parts.slice(0, 3).concat(tail).join("/")}`);
   }
   return [...out];

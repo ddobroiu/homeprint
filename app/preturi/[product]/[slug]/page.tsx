@@ -9,6 +9,7 @@ import { buildQtyContent, brandKeyFromName } from "@/lib/seo/quantityContent";
 import { formatLei } from "@/lib/seo/dimensionPricing";
 import { getLocalityLinks } from "@/lib/seo/dimensionContent";
 import { WhatsAppBar, WhatsAppButton } from "@/components/seo/WhatsAppBar";
+import { combinationRobots } from "@/lib/seo/thinPages";
 
 export const revalidate = 604800;
 
@@ -42,7 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
         description: r.content.metaDescription,
         alternates: { canonical: url },
         openGraph: { title: r.content.metaTitle, description: r.content.metaDescription, url, siteName: siteConfig.name, locale: "ro_RO", type: "website", images: r.cfg?.image ? [{ url: `${BASE_URL}${r.cfg.image}` }] : undefined },
-        robots: { index: true, follow: true },
+        robots: combinationRobots(qtyUrl(r.product, r.format, r.qty)) ?? { index: true, follow: true },
     };
 }
 

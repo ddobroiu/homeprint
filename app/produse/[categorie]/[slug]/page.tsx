@@ -17,6 +17,7 @@ import {
 import { formatMoneyDisplay } from "@/lib/pricing";
 import { siteConfig } from "@/lib/siteConfig";
 import { SITE_GROUP_INTROS } from "@/lib/catalog/siteIntros";
+import { combinationRobots } from "@/lib/seo/thinPages";
 
 export const revalidate = 604800;
 
@@ -36,6 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description: p.short,
     alternates: { canonical: url },
+    robots: combinationRobots(catalogProductUrl(p)),
     openGraph: { title: p.title, description: p.short, url, images: p.images.slice(0, 1), type: "website" },
   };
 }

@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ industryS
     return {
         title: `${ind.title} Industry`,
         description: ind.description,
-        alternates: { canonical: `https://HomePrint.ro/industrii/${ind.slug}` }
+        alternates: { canonical: `https://www.homeprint.ro/industrii/${ind.slug}` }
     };
 }
 

@@ -10,6 +10,7 @@ import { Suspense } from 'react';
 import ProductStructuredData from '@/components/ProductStructuredData';
 import FAQSchema from '@/components/FAQSchema';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
+import { combinationRobots } from "@/lib/seo/thinPages";
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -57,6 +58,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 
     return {
         title: seoTitle,
+        robots: combinationRobots(`/banner-product/${slug}`),
         description: seoDesc,
         keywords: `banner, ${product.title.toLowerCase()}, print outdoor, publicitate stradala, bannere bucuresti, bannere ilfov, print uv, banner imobiliare`,
         openGraph: {

@@ -23,6 +23,7 @@ import { REGLEMENTARI_DATA } from '@/lib/seo/reglementariData';
 import { STILURI_DATA } from '@/lib/seo/stiluriData';
 import { handleSeoSitemap } from '@/lib/seo/localitySitemap';
 import { INDUSTRIE_DATA } from '@/lib/seo/industriiData';
+import { isNoindexCombination } from "@/lib/seo/thinPages";
 
 // Real, site-native product/configurator keys (matches the WxH slug parser in
 // app/configurator/[slug]/page.tsx) - used instead of the inflated SEO
@@ -74,6 +75,8 @@ const CONTENT_LASTMOD = '2026-09-11';
 const CATALOG_LASTMOD = '2026-09-28';
 
 function generateUrlNode(url: string, priority: string, changefreq: string, lastmod: string = CONTENT_LASTMOD) {
+    // Combinațiile generate fără afișări în GSC sunt noindex,follow: nu intră în sitemap (lib/seo/thinPages.ts).
+    if (isNoindexCombination(url.replace(/^https?:\/\/[^/]+/, ''))) return '';
     return `  <url>\n    <loc>${url}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>\n`;
 }
 

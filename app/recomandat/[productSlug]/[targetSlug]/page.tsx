@@ -1,5 +1,5 @@
 import React from 'react';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { Metadata } from 'next';
 import { SeoIntentLanding } from '@/components/SeoIntentLanding';
 import { CONFIGURATORS_REGISTRY } from '@/lib/configurators-registry';
@@ -52,6 +52,8 @@ function getTargetInfo(slug: string) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { productSlug, targetSlug } = await params;
+    // /recomandat/x/pentru-y e aceeași pagină ca /recomandat/x/y (dublură în GSC) → 301 spre varianta din sitemap.
+    if (targetSlug.startsWith('pentru-')) permanentRedirect(`/recomandat/${productSlug}/${targetSlug.slice('pentru-'.length)}`);
     const product = CONFIGURATORS_REGISTRY.find(p => (p.slug || p.id) === productSlug);
     if (!product) return {};
 
@@ -64,12 +66,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
         title,
         description,
-        alternates: { canonical: `https://www.homeprint.ro/recomandat/${productSlug}/${targetSlug}` }
+        alternates: { canonical: `https://www.homeprint.ro/recomandat/${productSlug}/${targetSlug}` },
+        robots: combinationRobots(`/recomandat/${productSlug}/${targetSlug}`)
     };
 }
 
 export default async function RecomandatPage({ params }: Props) {
     const { productSlug, targetSlug } = await params;
+    // /recomandat/x/pentru-y e aceeași pagină ca /recomandat/x/y (dublură în GSC) → 301 spre varianta din sitemap.
+    if (targetSlug.startsWith('pentru-')) permanentRedirect(`/recomandat/${productSlug}/${targetSlug.slice('pentru-'.length)}`);
     const product = CONFIGURATORS_REGISTRY.find(p => (p.slug || p.id) === productSlug);
     if (!product) notFound();
 
@@ -87,6 +92,7 @@ export default async function RecomandatPage({ params }: Props) {
 }
 
 import { MARKETING_INTENTS } from '@/lib/seo/intents';
+import { combinationRobots } from "@/lib/seo/thinPages";
 
 export async function generateStaticParams() {
     const params: { productSlug: string; targetSlug: string }[] = [];

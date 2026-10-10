@@ -31,6 +31,7 @@ import { withDisplayName, nearbyLocalities } from "@/lib/seo/localityData";
 import { Breadcrumbs, LocalProductJsonLd, FromPriceNote, LocalityFacts } from "@/components/seo/LocalitySeo";
 import { JUDET_LOCALITY_SLUGS } from "@/lib/seo/mainTowns";
 import { LocalTownSections, localOrConfigHref } from "@/components/seo/LocalTownBlocks";
+import { campaignLocalKey } from "@/lib/seo/thinPages";
 
 // Randare la prima cerere, apoi din cache (ISR, 7 zile): Googlebot nu mai randează pagina la fiecare vizită.
 // Cache-ul ISR stă doar în memorie (next.config: experimental.isrFlushToDisk=false), nu pe disc.
@@ -79,6 +80,8 @@ export async function generateMetadata({ params }: { params: Promise<{ judetSlug
     }
     const aliasKey = resolveLocalProductKey(productSlug);
     if (aliasKey && productSlug.join('/') !== aliasKey) permanentRedirect(`/judet/${judetSlug}/${localitateSlug}/${aliasKey}`);
+    const campaignKey = aliasKey ? undefined : campaignLocalKey(productSlug);
+    if (campaignKey) permanentRedirect(`/judet/${judetSlug}/${localitateSlug}/${campaignKey}`);
 
     // Aceeasi rezolvare ca in pagina: produsul complet are prioritate fata de modificatori.
     const fullProduct = !aliasKey ? getProductBySlug(productSlug.join('/')) : undefined;
@@ -157,6 +160,8 @@ export default async function ProductLocalityPage({ params }: { params: Promise<
     // Aliasurile /configurator/... randează exact produsul de pe calea scurtă (același conținut ca pagina canonică).
     const aliasKey = resolveLocalProductKey(productSlug);
     if (aliasKey && productSlug.join('/') !== aliasKey) permanentRedirect(`/judet/${judetSlug}/${localitateSlug}/${aliasKey}`);
+    const campaignKey = aliasKey ? undefined : campaignLocalKey(productSlug);
+    if (campaignKey) permanentRedirect(`/judet/${judetSlug}/${localitateSlug}/${campaignKey}`);
 
     let productResolved = getProductBySlug(aliasKey ?? productSlug.join('/'));
     let baseSlug = aliasKey ?? productSlug.join('/');

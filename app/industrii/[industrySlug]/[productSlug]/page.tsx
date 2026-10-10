@@ -7,6 +7,7 @@ import { ArrowRight, CheckCircle2, MessageCircle, Zap } from 'lucide-react';
 import { INDUSTRIE_DATA } from '@/lib/seo/industriiData';
 import { CONFIGURATORS_REGISTRY } from '@/lib/configurators-registry';
 import { siteConfig } from '@/lib/siteConfig';
+import { combinationRobots } from "@/lib/seo/thinPages";
 
 // Spintax helper - seed salted with the site domain so the same industry/product
 // slug doesn't render identical copy across every site in the network.
@@ -42,7 +43,8 @@ export async function generateMetadata({ params }: { params: Promise<{ industryS
     return {
         title,
         description,
-        alternates: { canonical: `https://HomePrint.ro/industrii/${ind.slug}/${productSlug}` }
+        alternates: { canonical: `https://www.homeprint.ro/industrii/${ind.slug}/${productSlug}` },
+        robots: combinationRobots(`/industrii/${ind.slug}/${productSlug}`)
     };
 }
 

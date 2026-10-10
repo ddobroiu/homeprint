@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title,
         description,
         alternates: {
-            canonical: `https://HomePrint.ro/material/${materialSlug}`
+            canonical: `https://www.homeprint.ro/material/${materialSlug}`
         },
         openGraph: {
             title,
